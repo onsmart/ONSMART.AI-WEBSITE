@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Favicon - onsmartAI</title>
+    
+    <!-- Favicon Test -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=1" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=1" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico?v=1" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon.ico?v=1" />
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .favicon-test {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .favicon-test img {
+            border: 2px solid #ddd;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .info {
+            background-color: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Teste de Favicon - onsmartAI</h1>
+        
+        <div class="status info">
+            <strong>Instruções:</strong> Verifique se o ícone da aba do navegador está mostrando o logo da onsmartAI.
+        </div>
+        
+        <div class="favicon-test">
+            <h3>Favicon Atual:</h3>
+            <img src="/favicon.ico?v=1" alt="Favicon" width="32" height="32">
+            <img src="/favicon.ico?v=1" alt="Favicon" width="16" height="16">
+            <img src="/favicon.ico?v=1" alt="Favicon" width="48" height="48">
+        </div>
+        
+        <div class="status success">
+            <strong>✅ Configuração Completa:</strong>
+            <ul>
+                <li>Favicon.ico configurado com cache-busting (?v=1)</li>
+                <li>Múltiplos tamanhos suportados (16x16, 32x32, 48x48)</li>
+                <li>Apple Touch Icons configurados</li>
+                <li>Windows Metro tiles configurados</li>
+                <li>Manifest.json atualizado</li>
+            </ul>
+        </div>
+        
+        <div class="status info">
+            <strong>💡 Dicas:</strong>
+            <ul>
+                <li>Se o favicon não aparecer, limpe o cache do navegador (Ctrl+F5)</li>
+                <li>O favicon pode demorar alguns segundos para aparecer</li>
+                <li>Teste em diferentes navegadores (Chrome, Firefox, Safari, Edge)</li>
+            </ul>
+        </div>
+        
+        <p><strong>URL do Favicon:</strong> <code>/favicon.ico?v=1</code></p>
+        <p><strong>Tamanho do arquivo:</strong> 33KB</p>
+        <p><strong>Última atualização:</strong> <span id="timestamp"></span></p>
+    </div>
+    
+    <script>
+        document.getElementById('timestamp').textContent = new Date().toLocaleString('pt-BR');
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+# Favicon configuration
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Serve favicon.ico for all favicon requests
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^favicon\.ico$ /favicon.ico [L]
+    
+    # Cache favicon for 1 year
+    <Files "favicon.ico">
+        ExpiresActive On
+        ExpiresDefault "access plus 1 year"
+        Header set Cache-Control "public, max-age=31536000"
+    </Files>
+</IfModule>
+
+# MIME types
+AddType image/x-icon .ico
+AddType image/png .png

@@ -1,0 +1,13 @@
+{
+  "functions": {
+    "api/elevenlabs-widget.js": {
+      "maxDuration": 10
+    },
+    "api/elevenlabs/webhook.js": {
+      "maxDuration": 30
+    },
+    "api/calendly-polling.js": {
+      "maxDuration": 30
+    }
+  }
+}

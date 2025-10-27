@@ -1,0 +1,116 @@
+# ===========================================
+# CONFIGURAÇÕES DO SERVIDOR
+# ===========================================
+PORT=3001
+NODE_ENV=development
+
+# ===========================================
+# OPENAI API (Para o chat da Sonia)
+# ===========================================
+# Chave da API da OpenAI - Obtenha em: https://platform.openai.com/api-keys
+OPENAI_API_KEY=<OPENAI_API_KEY_REMOVED>
+
+# Modelo da OpenAI (padrão: gpt-4o-mini)
+OPENAI_MODEL=gpt-4o-mini
+
+# Temperatura para geração de texto (0.0 a 1.0)
+OPENAI_TEMPERATURE=0.7
+
+# ===========================================
+# ELEVENLABS API (Para voz da Sonia)
+# ===========================================
+# Chave da API do ElevenLabs - Obtenha em: https://elevenlabs.io/app/settings/api-keys
+ELEVENLABS_AGENT_ID=your-elevenlabs-agent-id-here
+
+# ===========================================
+# CONFIGURAÇÕES DO FRONTEND (VITE_)
+# ===========================================
+
+# OpenAI (Frontend)
+VITE_OPENAI_MODEL=gpt-4o-mini
+VITE_OPENAI_TEMPERATURE=0.7
+VITE_OPENAI_MAX_TOKENS=150
+
+# ElevenLabs (Frontend)
+VITE_ELEVENLABS_API_KEY=your-elevenlabs-api-key-here
+
+# YouTube API - Obtenha em: https://console.developers.google.com/
+VITE_YOUTUBE_API_KEY=your-youtube-api-key-here
+
+# Google PageSpeed Insights API - Obtenha em: https://console.developers.google.com/
+VITE_GOOGLE_PAGESPEED_API_KEY=your-google-pagespeed-api-key-here
+
+# Supabase (Banco de dados)
+VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_ANON_KEY=your-supabase-anon-key-here
+
+# ===========================================
+# CONFIGURAÇÕES DA EMPRESA
+# ===========================================
+VITE_COMPANY_PHONE=5511996669247
+VITE_COMPANY_EMAIL=contato@onsmartai.com
+VITE_COMPANY_NAME=OnSmart AI
+
+# Calendly URL para agendamentos
+VITE_CALENDLY_URL=https://calendly.com/ricardo-palomar-onsmartai/30min
+
+# ===========================================
+# CONFIGURAÇÕES DE ANALYTICS
+# ===========================================
+# Google Analytics Debug Mode (true/false)
+VITE_GA_DEBUG_MODE=false
+
+# ===========================================
+# WEBHOOK INTEGRATIONS
+# ===========================================
+# HubSpot Token para webhook do ElevenLabs/Twilio
+HUBSPOT_TOKEN=your-hubspot-token-here
+
+# Twilio Webhook Secret (opcional, para validação)
+TWILIO_WEBHOOK_SECRET=your-twilio-webhook-secret-here
+
+# ElevenLabs Webhook Secret (opcional, para validação)
+ELEVENLABS_WEBHOOK_SECRET=your-elevenlabs-webhook-secret-here
+
+# ===========================================
+# INSTRUÇÕES PARA CONFIGURAÇÃO
+# ===========================================
+# 
+# 1. OPENAI_API_KEY:
+#    - Acesse: https://platform.openai.com/api-keys
+#    - Crie uma nova chave API
+#    - Cole aqui (começa com sk-)
+#
+# 2. ELEVENLABS_AGENT_ID:
+#    - Acesse: https://elevenlabs.io/app/conversational-ai
+#    - Crie um agente conversacional
+#    - Copie o Agent ID
+#
+# 3. VITE_ELEVENLABS_API_KEY:
+#    - Acesse: https://elevenlabs.io/app/settings/api-keys
+#    - Crie uma nova chave API
+#    - Cole aqui
+#
+# 4. VITE_YOUTUBE_API_KEY:
+#    - Acesse: https://console.developers.google.com/
+#    - Ative a YouTube Data API v3
+#    - Crie uma chave API
+#
+# 5. VITE_GOOGLE_PAGESPEED_API_KEY:
+#    - Acesse: https://console.developers.google.com/
+#    - Ative a PageSpeed Insights API
+#    - Crie uma chave API
+#
+# 6. VITE_SUPABASE_URL e VITE_SUPABASE_ANON_KEY:
+#    - Acesse: https://supabase.com/
+#    - Crie um projeto
+#    - Vá em Settings > API
+#    - Copie a URL e a chave anônima
+#
+# ===========================================
+# IMPORTANTE:
+# ===========================================
+# - NUNCA commite este arquivo no Git
+# - Mantenha suas chaves API seguras
+# - Use valores diferentes para desenvolvimento e produção
+# - Teste cada integração após configurar

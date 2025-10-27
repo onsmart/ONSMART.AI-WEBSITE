@@ -1,0 +1,271 @@
+import React, { useState, useEffect } from 'react';
+import { Button } from '@/components/ui/button';
+import { Slider } from '@/components/ui/slider';
+import { Label } from '@/components/ui/label';
+import { Calculator, TrendingUp, DollarSign, Clock, Users } from 'lucide-react';
+
+const ROICalculator: React.FC = () => {
+  const [employees, setEmployees] = useState(100);
+  const [averageSalary, setAverageSalary] = useState(8000);
+  const [automationRate, setAutomationRate] = useState(30);
+  const [manualHours, setManualHours] = useState(4);
+  const [showResults, setShowResults] = useState(false);
+  const [isCalculating, setIsCalculating] = useState(false);
+  const [animatedValues, setAnimatedValues] = useState({
+    savings: 0,
+    roi: 0,
+    payback: 0,
+    productivity: 0
+  });
+
+  // Animação dos valores
+  const animateValue = (start: number, end: number, duration: number, callback: (value: number) => void) => {
+    const startTime = performance.now();
+    const animate = (currentTime: number) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const currentValue = start + (end - start) * progress;
+      callback(Math.round(currentValue));
+      
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+    requestAnimationFrame(animate);
+  };
+
+  const handleCalculate = () => {
+    setIsCalculating(true);
+    setShowResults(false);
+    
+    setTimeout(() => {
+      // Cálculos do ROI
+      const annualSalaryCost = employees * averageSalary * 12;
+      const hoursAutomated = manualHours * (automationRate / 100);
+      const dailySavings = employees * hoursAutomated * (averageSalary / 22 / 8); // 22 dias úteis, 8h/dia
+      const monthlySavings = dailySavings * 22;
+      const annualSavings = monthlySavings * 12;
+      
+      // Investimento estimado (baseado no número de funcionários)
+      const estimatedInvestment = employees * 800; // R$ 800 por funcionário
+      
+      const roi = ((annualSavings - estimatedInvestment) / estimatedInvestment) * 100;
+      const paybackMonths = estimatedInvestment / monthlySavings;
+      const productivityIncrease = automationRate * 1.4; // Fator de produtividade
+
+      const finalValues = {
+        savings: Math.round(annualSavings),
+        roi: Math.round(roi),
+        payback: paybackMonths,
+        productivity: Math.round(productivityIncrease)
+      };
+
+      // Animar os valores
+      animateValue(0, finalValues.savings, 1500, (value) => {
+        setAnimatedValues(prev => ({ ...prev, savings: value }));
+      });
+      
+      setTimeout(() => {
+        animateValue(0, finalValues.roi, 1000, (value) => {
+          setAnimatedValues(prev => ({ ...prev, roi: value }));
+        });
+      }, 200);
+      
+      setTimeout(() => {
+        animateValue(0, finalValues.payback, 1000, (value) => {
+          setAnimatedValues(prev => ({ ...prev, payback: value }));
+        });
+      }, 400);
+      
+      setTimeout(() => {
+        animateValue(0, finalValues.productivity, 1000, (value) => {
+          setAnimatedValues(prev => ({ ...prev, productivity: value }));
+        });
+      }, 600);
+
+      setShowResults(true);
+      setIsCalculating(false);
+    }, 1500);
+  };
+
+  const monthlySavings = animatedValues.savings / 12;
+
+  const formatCurrency = (value: number): string => {
+    return new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }).format(value);
+  };
+
+  return (
+    <section className="py-12 sm:py-16 md:py-20 bg-white">
+      <div className="container mx-auto max-w-4xl px-4 sm:px-6 md:px-8">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-gray-900">
+            Calcule seu <span className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">ROI</span>
+          </h2>
+          <p className="text-gray-600 text-base sm:text-lg md:text-xl max-w-2xl mx-auto">
+            Descubra o impacto financeiro da IA na sua empresa
+          </p>
+        </div>
+        
+        {/* Calculadora Minimalista */}
+        <div className="max-w-xl mx-auto">
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+            
+            {/* Estado: Calculando */}
+            {isCalculating && (
+              <div className="flex flex-col items-center justify-center py-12">
+                <div className="w-8 h-8 border-2 border-brand-blue/20 border-t-brand-blue rounded-full animate-spin mb-4"></div>
+                <p className="text-brand-blue font-medium">Calculando...</p>
+              </div>
+            )}
+
+            {/* Estado: Resultados */}
+            {!isCalculating && showResults && (
+              <div className="p-6">
+                {/* Resultado Principal */}
+                <div className="text-center mb-6">
+                  <p className="text-sm text-gray-600 mb-2">Economia Mensal</p>
+                  <p className="text-3xl font-bold text-brand-blue mb-4">
+                    {formatCurrency(monthlySavings)}
+                  </p>
+                </div>
+
+                {/* Métricas Simples */}
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="text-center p-3 bg-gray-50 rounded-lg">
+                    <p className="text-xs text-gray-600 mb-1">ROI Anual</p>
+                    <p className="text-lg font-bold text-brand-blue">{animatedValues.roi}%</p>
+                  </div>
+                  <div className="text-center p-3 bg-gray-50 rounded-lg">
+                    <p className="text-xs text-gray-600 mb-1">Payback</p>
+                    <p className="text-lg font-bold text-brand-blue">{animatedValues.payback.toFixed(1)}m</p>
+                  </div>
+                  <div className="text-center p-3 bg-gray-50 rounded-lg">
+                    <p className="text-xs text-gray-600 mb-1">Economia Anual</p>
+                    <p className="text-sm font-bold text-brand-blue">{formatCurrency(animatedValues.savings)}</p>
+                  </div>
+                  <div className="text-center p-3 bg-gray-50 rounded-lg">
+                    <p className="text-xs text-gray-600 mb-1">Produtividade</p>
+                    <p className="text-lg font-bold text-brand-blue">+{animatedValues.productivity}%</p>
+                  </div>
+                </div>
+
+                {/* Botões */}
+                <div className="space-y-3">
+                  <Button 
+                    onClick={() => window.location.href = '/contato'} 
+                    className="w-full bg-brand-blue hover:bg-blue-600 text-white py-3 rounded-lg"
+                  >
+                    Solicitar Consultoria
+                  </Button>
+                  <Button 
+                    onClick={() => window.location.href = '/diagnostico'} 
+                    variant="outline" 
+                    className="w-full border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white py-3 rounded-lg"
+                  >
+                    Diagnóstico Gratuito
+                  </Button>
+                </div>
+
+                {/* Botão Recalcular */}
+                <div className="text-center mt-4">
+                  <Button 
+                    onClick={() => {
+                      setShowResults(false);
+                      setAnimatedValues({ savings: 0, roi: 0, payback: 0, productivity: 0 });
+                    }}
+                    variant="ghost" 
+                    className="text-sm text-brand-blue hover:text-blue-600"
+                  >
+                    Recalcular
+                  </Button>
+                </div>
+              </div>
+            )}
+
+            {/* Estado: Configuração */}
+            {!isCalculating && !showResults && (
+              <div className="p-6">
+                {/* Campos */}
+                <div className="space-y-4 mb-6">
+                  {/* Funcionários */}
+                  <div className="space-y-2">
+                    <Label className="text-sm font-medium text-gray-700">Funcionários</Label>
+                    <div className="text-center">
+                      <div className="text-xl font-bold text-brand-blue mb-1">{employees}</div>
+                      <Slider
+                        min={10} max={1000} step={10}
+                        value={[employees]}
+                        onValueChange={(value) => setEmployees(value[0])}
+                        className="w-full"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Salário */}
+                  <div className="space-y-2">
+                    <Label className="text-sm font-medium text-gray-700">Salário Médio</Label>
+                    <div className="text-center">
+                      <div className="text-xl font-bold text-brand-blue mb-1">{formatCurrency(averageSalary)}</div>
+                      <Slider
+                        min={2000} max={25000} step={500}
+                        value={[averageSalary]}
+                        onValueChange={(value) => setAverageSalary(value[0])}
+                        className="w-full"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Automação */}
+                  <div className="space-y-2">
+                    <Label className="text-sm font-medium text-gray-700">Taxa de Automação</Label>
+                    <div className="text-center">
+                      <div className="text-xl font-bold text-brand-blue mb-1">{automationRate}%</div>
+                      <Slider
+                        min={15} max={70} step={5}
+                        value={[automationRate]}
+                        onValueChange={(value) => setAutomationRate(value[0])}
+                        className="w-full"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Horas */}
+                  <div className="space-y-2">
+                    <Label className="text-sm font-medium text-gray-700">Horas Manuais/Dia</Label>
+                    <div className="text-center">
+                      <div className="text-xl font-bold text-brand-blue mb-1">{manualHours}h</div>
+                      <Slider
+                        min={1} max={8} step={0.5}
+                        value={[manualHours]}
+                        onValueChange={(value) => setManualHours(value[0])}
+                        className="w-full"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Botão Calcular */}
+                <div className="text-center">
+                  <Button 
+                    onClick={handleCalculate} 
+                    disabled={isCalculating}
+                    className="w-full bg-brand-blue hover:bg-blue-600 text-white font-semibold py-3 rounded-lg"
+                  >
+                    Calcular ROI
+                  </Button>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ROICalculator;

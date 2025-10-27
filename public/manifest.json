@@ -1,0 +1,42 @@
+
+{
+  "name": "onsmartAI - Agentes de IA Empresarial",
+  "short_name": "onsmartAI",
+  "description": "Transforme sua empresa com Agentes de IA especializados. ROI garantido em 90 dias.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1a1a1a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32 48x48",
+      "type": "image/x-icon",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/91fc510f-198e-415f-b2c6-af34fe41fa23.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/91fc510f-198e-415f-b2c6-af34fe41fa23.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity", "technology"],
+  "lang": "pt-BR",
+  "scope": "/",
+  "screenshots": [
+    {
+      "src": "/images/91fc510f-198e-415f-b2c6-af34fe41fa23.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ]
+}
