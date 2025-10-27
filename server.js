@@ -317,6 +317,16 @@ app.get('/health', (req, res) => {
   res.json({ status: 'OK', message: 'Server is running' });
 });
 
+// Catch all handler: must be last route - redireciona todas as rotas para index.html
+// Isso é necessário para SPAs que usam React Router
+app.get('*', (req, res) => {
+  // Ignorar requisições de API para evitar conflitos
+  if (req.path.startsWith('/api/')) {
+    return res.status(404).json({ error: 'API endpoint not found' });
+  }
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
+
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
   console.log(`OpenAI proxy available at http://localhost:${PORT}/api/openai-proxy`);

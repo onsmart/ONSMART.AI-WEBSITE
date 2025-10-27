@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { MobileButton, MobileInput } from '@/components/ui/mobile-optimized';
 import { ChevronUp, Phone, MessageCircle } from 'lucide-react';
 import { scrollToForm, scrollToTop } from '@/utils/scrollUtils';
+import { BREAKPOINTS } from '@/hooks/use-mobile';
 
 // Componente para sticky CTA mobile
 export const MobileStickyFooter: React.FC = () => {
@@ -107,7 +108,7 @@ export const useMobileOptimizations = () => {
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+      setIsMobile(window.innerWidth < BREAKPOINTS.md);
       
       // Detectar iOS Safari
       const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
@@ -159,11 +160,11 @@ export const MobileOptimizedImage: React.FC<{
   return (
     <picture>
       <source 
-        media="(max-width: 767px)" 
+        media={`(max-width: ${BREAKPOINTS.md - 1}px)`}
         srcSet={`${src}?w=400&q=75`} 
       />
       <source 
-        media="(min-width: 768px)" 
+        media={`(min-width: ${BREAKPOINTS.md}px)`}
         srcSet={`${src}?w=800&q=85`} 
       />
       <img 

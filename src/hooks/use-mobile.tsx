@@ -1,6 +1,18 @@
 import * as React from "react"
 
-const MOBILE_BREAKPOINT = 768
+// Breakpoints consistentes com Tailwind
+export const BREAKPOINTS = {
+  xs: 475,
+  sm: 640,
+  md: 768,
+  lg: 1024,
+  xl: 1280,
+  '2xl': 1536,
+  '3xl': 1920,
+} as const
+
+// Breakpoint móvel padrão (md)
+const MOBILE_BREAKPOINT = BREAKPOINTS.md
 
 export function useIsMobile() {
   const [isMobile, setIsMobile] = React.useState<boolean | undefined>(undefined)
@@ -16,4 +28,22 @@ export function useIsMobile() {
   }, [])
 
   return !!isMobile
+}
+
+// Hook para detectar tamanhos específicos de tela
+export function useBreakpoint(breakpoint: keyof typeof BREAKPOINTS) {
+  const [isBreakpoint, setIsBreakpoint] = React.useState<boolean | undefined>(undefined)
+
+  React.useEffect(() => {
+    const breakpointValue = BREAKPOINTS[breakpoint]
+    const mql = window.matchMedia(`(min-width: ${breakpointValue}px)`)
+    const onChange = () => {
+      setIsBreakpoint(window.innerWidth >= breakpointValue)
+    }
+    mql.addEventListener("change", onChange)
+    setIsBreakpoint(window.innerWidth >= breakpointValue)
+    return () => mql.removeEventListener("change", onChange)
+  }, [breakpoint])
+
+  return !!isBreakpoint
 }
