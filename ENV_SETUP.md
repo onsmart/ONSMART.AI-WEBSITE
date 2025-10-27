@@ -2,7 +2,7 @@
 
 Este guia te ajudará a configurar todas as chaves de API necessárias para o projeto OnSmart AI.
 
-## 🚀 Configuração Rápida
+## 🚀 Configuração Rápida.
 
 ### 1. Criar o arquivo .env
 ```bash
