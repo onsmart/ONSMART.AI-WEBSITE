@@ -1,10 +1,7 @@
 🧭 Guia de Configuração e Deploy – On Smart Tech / Onsmart.AI
 🔧 Configuração inicial do Git
 
-Antes de qualquer interação com os repositórios da empresa, configure seu ambiente Git com o nome e e-mail padrão da On Smart:
 
-git config --global user.name "onsmart"
-git config --global user.email "ricardo.palomar@onsmart.com.br"
 
 
 💡 Essa configuração garante que todos os commits feitos pelo time mantenham um padrão de identificação da empresa.
@@ -57,4 +54,5 @@ Mantenha commits limpos e descritivos (ex: fix: corrigir carregamento de imagens
 Nunca faça push direto na branch main sem revisão.
 
 Antes de fazer deploy, rode localmente npm run build e npm run dev para validar a integridade do projeto.
-# Test
+---
+🧪 Teste de Deploy: [28/10/2025]
