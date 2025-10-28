@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import DesktopMenu from "./DesktopMenu";
+import TabletMenu from "./TabletMenu";
 import MobileMenu from "./mobile"; 
 import Logo from "./Logo";
 import { Calendar } from "lucide-react";
@@ -110,7 +111,7 @@ const Navbar = () => {
         role="banner"
         aria-label="Navegação principal"
       >
-        <div className="container mx-auto flex items-center justify-between px-4 md:px-6 py-2.5">
+        <div className="container mx-auto flex items-center justify-between px-2 sm:px-4 md:px-6 py-2.5">
           <Logo />
           
           {/* Desktop Navigation */}
@@ -120,15 +121,24 @@ const Navbar = () => {
             handleContatoClick={handleContatoClick}
           />
           
+          {/* Tablet Navigation */}
+          <TabletMenu 
+            isActive={isActive} 
+            isActivePrefix={isActivePrefix}
+            handleContatoClick={handleContatoClick}
+            handleDiagnosticoClick={handleDiagnosticoClick}
+          />
+          
           {/* CTA and Mobile Menu */}
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-2 sm:gap-4 md:gap-6">
             <Button 
-              className="hidden md:flex bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg shadow-lg border-2 border-orange-500 hover:border-orange-400 transition-all duration-300 ml-4 hover:scale-105"
+              className="hidden lg:flex bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg shadow-lg border-2 border-orange-500 hover:border-orange-400 transition-all duration-300 ml-2 sm:ml-4 hover:scale-105 text-sm sm:text-base px-3 sm:px-4 py-2"
               onClick={handleDiagnosticoClick}
               aria-label="Agendar diagnóstico gratuito de IA"
             >
-              <Calendar className="h-4 w-4 mr-2" />
-              Agendar Diagnóstico
+              <Calendar className="h-4 w-4 mr-1 sm:mr-2" />
+              <span className="hidden xl:inline">Agendar Diagnóstico</span>
+              <span className="xl:hidden">Agendar</span>
             </Button>
             
             <MobileMenu isActive={isActive} isActivePrefix={isActivePrefix} />

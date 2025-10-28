@@ -42,7 +42,7 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({ isActive, isActivePrefix, han
   } = useMenuState();
 
   return (
-    <NavigationMenu className="hidden md:flex">
+    <NavigationMenu className="hidden lg:flex">
       <NavigationMenuList className="gap-1">
         <NavMenuItem
           icon={Home}
