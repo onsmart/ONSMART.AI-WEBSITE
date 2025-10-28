@@ -55,3 +55,4 @@ Mantenha commits limpos e descritivos (ex: fix: corrigir carregamento de imagens
 Nunca faça push direto na branch main sem revisão.
 
 Antes de fazer deploy, rode localmente npm run build e npm run dev para validar a integridade do projeto.
+-- TESTE
