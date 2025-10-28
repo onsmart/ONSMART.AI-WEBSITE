@@ -1,7 +1,8 @@
 🧭 Guia de Configuração e Deploy – On Smart Tech / Onsmart.AI
 🔧 Configuração inicial do Git
 
-
+git config --global user.name onsmart-admin
+git config --global user.email maicon.nunes@onsmart.com.br
 
 
 💡 Essa configuração garante que todos os commits feitos pelo time mantenham um padrão de identificação da empresa.
