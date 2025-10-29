@@ -2,7 +2,7 @@ name: Vercel Deploy (Deploy Hook)
 
 on:
   push:
-    branches: [ "main" ]   # troque se seu branch for outro
+    branches: [ "main", "Mateus" ]   # troque se seu branch for outro
   workflow_dispatch:        # opção de disparar manualmente
 
 concurrency:
