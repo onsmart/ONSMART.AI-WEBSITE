@@ -4,12 +4,14 @@ import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Briefcase } from 'lucide-react';
 import { servicesData } from '@/data/servicesData';
 import { getServiceIcon } from '@/utils/serviceIcons';
+import { useTranslation } from 'react-i18next';
 
 interface ServicosDropdownProps {
   onMenuItemClick?: () => void;
 }
 
 const ServicosDropdown: React.FC<ServicosDropdownProps> = ({ onMenuItemClick }) => {
+  const { t } = useTranslation('navigation');
   const navigate = useNavigate();
 
   const handleServiceClick = (serviceSlug: string) => {
@@ -40,7 +42,7 @@ const ServicosDropdown: React.FC<ServicosDropdownProps> = ({ onMenuItemClick }) 
             onClick={handleViewAllClick}
             className="w-full text-left px-3 py-2 text-sm text-brand-blue font-medium hover:bg-blue-50 rounded-md transition-colors"
           >
-            Ver Todos os Serviços
+            {t('menu.viewAllServices')}
           </button>
         </div>
       </div>

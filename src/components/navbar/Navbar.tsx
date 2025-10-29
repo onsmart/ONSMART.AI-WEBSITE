@@ -8,8 +8,11 @@ import MobileMenu from "./mobile";
 import Logo from "./Logo";
 import { Calendar } from "lucide-react";
 import { scrollToElement, scrollToForm } from "@/utils/scrollUtils";
+import LanguageSwitcher from "@/components/shared/LanguageSwitcher";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
+  const { t } = useTranslation('navigation');
   const location = useLocation();
   const navigate = useNavigate();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -88,19 +91,19 @@ const Navbar = () => {
           href="#main-content" 
           className="skip-link bg-brand-blue text-white px-4 py-2 rounded mr-4 hover:bg-brand-blue/90 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:ring-offset-2"
         >
-          Pular para o conteúdo principal
+          {t('menu.skipToContent')}
         </a>
         <a 
           href="#navigation" 
           className="skip-link bg-brand-blue text-white px-4 py-2 rounded mr-4 hover:bg-brand-blue/90 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:ring-offset-2"
         >
-          Pular para a navegação
+          {t('menu.skipToNavigation')}
         </a>
         <a 
           href="#footer" 
           className="skip-link bg-brand-blue text-white px-4 py-2 rounded hover:bg-brand-blue/90 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:ring-offset-2"
         >
-          Pular para o rodapé
+          {t('menu.skipToFooter')}
         </a>
       </div>
 
@@ -108,7 +111,7 @@ const Navbar = () => {
         id="navigation"
         className="fixed top-0 z-[100] w-full bg-white shadow-lg py-0 border-b border-gray-200"
         role="banner"
-        aria-label="Navegação principal"
+        aria-label={t('menu.navigationLabel')}
       >
         <div className="container mx-auto flex items-center justify-between px-4 md:px-6 py-2.5">
           <Logo />
@@ -121,14 +124,17 @@ const Navbar = () => {
           />
           
           {/* CTA and Mobile Menu */}
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-4">
+            {/* Language Switcher - Seletor de idioma */}
+            <LanguageSwitcher />
+            
             <Button 
               className="hidden md:flex bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg shadow-lg border-2 border-orange-500 hover:border-orange-400 transition-all duration-300 ml-4 hover:scale-105"
               onClick={handleDiagnosticoClick}
-              aria-label="Agendar diagnóstico gratuito de IA"
+              aria-label={t('menu.scheduleDiagnosticAria')}
             >
               <Calendar className="h-4 w-4 mr-2" />
-              Agendar Diagnóstico
+              {t('menu.scheduleDiagnostic')}
             </Button>
             
             <MobileMenu isActive={isActive} isActivePrefix={isActivePrefix} />

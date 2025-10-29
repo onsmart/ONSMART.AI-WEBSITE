@@ -16,10 +16,13 @@ import {
   Sparkles,
   Share2
 } from "lucide-react";
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const { t } = useTranslation('navigation');
+  
   return (
-    <footer id="footer" className="bg-gradient-to-br from-gray-900 via-brand-black to-gray-900 text-white relative overflow-hidden" role="contentinfo" aria-label="Rodapé do site">
+    <footer id="footer" className="bg-gradient-to-br from-gray-900 via-brand-black to-gray-900 text-white relative overflow-hidden" role="contentinfo" aria-label={t('footer.footerLabel')}>
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-brand-blue rounded-full mix-blend-multiply filter blur-xl"></div>
@@ -40,7 +43,7 @@ const Footer = () => {
                   className="h-8 brightness-150" 
                 />
                 <p className="text-gray-300 text-xs leading-relaxed">
-                  Transformando organizações através da IA com agentes digitais inteligentes.
+                  {t('footer.companyDescription')}
                 </p>
               </div>
             </div>
@@ -49,17 +52,17 @@ const Footer = () => {
             <div className="space-y-4">
               <h3 className="font-semibold text-white text-sm flex items-center gap-1">
                 <div className="w-0.5 h-4 bg-brand-blue rounded-full"></div>
-                Navegação
+                {t('footer.navigation')}
               </h3>
               
               <div className="space-y-2">
                 {[
-                  { to: "/", label: "Início" },
-                  { to: "/servicos", label: "Serviços" },
-                  { to: "/case-de-sucesso", label: "Cases de Sucesso" },
-                  { to: "/conteudo", label: "Central de Conteúdo" },
-                  { to: "/diagnostico", label: "Diagnóstico" },
-                  { to: "/contato", label: "Contato" }
+                  { to: "/", label: t('footer.home') },
+                  { to: "/servicos", label: t('footer.services') },
+                  { to: "/case-de-sucesso", label: t('footer.successCases') },
+                  { to: "/conteudo", label: t('footer.contentCenter') },
+                  { to: "/diagnostico", label: t('footer.diagnostic') },
+                  { to: "/contato", label: t('footer.contact') }
                 ].map((link) => (
                   <Link 
                     key={link.to}
@@ -74,10 +77,10 @@ const Footer = () => {
               {/* Legal Links */}
               <div className="pt-2 border-t border-gray-700/50 space-y-1">
                 <Link to="/politica-privacidade" className="block text-gray-400 hover:text-brand-blue transition-colors text-xs">
-                  Política de Privacidade
+                  {t('footer.privacyPolicy')}
                 </Link>
                 <Link to="/termos-uso" className="block text-gray-400 hover:text-brand-blue transition-colors text-xs">
-                  Termos de Uso
+                  {t('footer.termsOfUse')}
                 </Link>
               </div>
             </div>
@@ -86,30 +89,30 @@ const Footer = () => {
             <div className="space-y-4">
               <h3 className="font-semibold text-white text-sm flex items-center gap-1">
                 <div className="w-0.5 h-4 bg-brand-blue rounded-full"></div>
-                Parcerias
+                {t('footer.partnerships')}
               </h3>
               
               <div className="space-y-3">
                 <div>
-                  <h4 className="font-medium text-white mb-2 text-sm">Revendas</h4>
+                  <h4 className="font-medium text-white mb-2 text-sm">{t('footer.resellers')}</h4>
                   <div className="space-y-1">
                     <Link to="/revendas" className="block text-gray-300 hover:text-brand-blue transition-colors text-xs leading-relaxed">
-                      Seja uma Revenda
+                      {t('footer.becomeReseller')}
                     </Link>
                     <Link to="/revendas/cadastro" className="block text-gray-300 hover:text-brand-blue transition-colors text-xs leading-relaxed">
-                      Cadastrar-se
+                      {t('footer.register')}
                     </Link>
                   </div>
                 </div>
 
                 <div>
-                  <h4 className="font-medium text-white mb-2 text-sm">Agentes Digitais</h4>
+                  <h4 className="font-medium text-white mb-2 text-sm">{t('footer.digitalAgents')}</h4>
                   <div className="space-y-1">
                     <Link to="/agentes-digitais" className="block text-gray-300 hover:text-brand-blue transition-colors text-xs leading-relaxed">
-                      Programa de Indicação
+                      {t('footer.referralProgram')}
                     </Link>
                     <Link to="/agentes-digitais/cadastro" className="block text-gray-300 hover:text-brand-blue transition-colors text-xs leading-relaxed">
-                      Tornar-se Agente
+                      {t('footer.becomeAgent')}
                     </Link>
                   </div>
                 </div>
@@ -120,7 +123,7 @@ const Footer = () => {
             <div className="space-y-4">
               <h3 className="font-semibold text-white text-sm flex items-center gap-1">
                 <div className="w-0.5 h-4 bg-brand-blue rounded-full"></div>
-                Redes Sociais
+                {t('footer.socialMedia')}
               </h3>
               
               <div className="space-y-3">
@@ -153,7 +156,7 @@ const Footer = () => {
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="text-gray-300 hover:text-brand-blue transition-colors"
-                      aria-label={`Siga-nos no ${social.label}`}
+                      aria-label={`${t('footer.followUsOn')} ${social.label}`}
                     >
                       <social.icon className="h-4 w-4" />
                     </a>
@@ -161,7 +164,7 @@ const Footer = () => {
                 </div>
 
                 <div>
-                  <h4 className="font-medium text-white mb-1 text-sm">Contato</h4>
+                  <h4 className="font-medium text-white mb-1 text-sm">{t('footer.contactSection')}</h4>
                   <div className="space-y-1">
                     <a 
                       href="mailto:atendimento.ai@onsmart.com.br" 
@@ -191,17 +194,17 @@ const Footer = () => {
           <div className="container mx-auto max-w-6xl px-4 py-4">
             <div className="flex flex-col sm:flex-row justify-between items-center gap-2">
               <div className="text-gray-400 text-xs text-center sm:text-left">
-                © {new Date().getFullYear()} onsmartAI. Todos os direitos reservados.
+                © {new Date().getFullYear()} onsmartAI. {t('footer.rights')}.
               </div>
               <div className="flex items-center gap-3 text-gray-400 text-xs">
                 <div className="flex items-center gap-1">
                   <MapPin className="h-3 w-3" />
-                  <span>São Paulo, Brasil</span>
+                  <span>{t('footer.location')}</span>
                 </div>
                 <div className="w-px h-3 bg-gray-600"></div>
                 <div className="flex items-center gap-1">
                   <Sparkles className="h-3 w-3 text-brand-blue" />
-                  <span>Powered by AI</span>
+                  <span>{t('footer.poweredBy')}</span>
                 </div>
               </div>
             </div>

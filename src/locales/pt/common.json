@@ -1,0 +1,46 @@
+{
+  "button": {
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "submit": "Enviar",
+    "send": "Enviar",
+    "close": "Fechar",
+    "confirm": "Confirmar",
+    "back": "Voltar",
+    "next": "Próximo",
+    "previous": "Anterior",
+    "learnMore": "Saiba mais",
+    "contact": "Fale com Especialista",
+    "schedule": "Agendar Reunião",
+    "start": "Começar",
+    "continue": "Continuar",
+    "finish": "Finalizar",
+    "retry": "Tentar novamente",
+    "reload": "Recarregar"
+  },
+  "label": {
+    "name": "Nome",
+    "email": "E-mail",
+    "phone": "Telefone",
+    "company": "Empresa",
+    "message": "Mensagem",
+    "required": "Obrigatório",
+    "optional": "Opcional"
+  },
+  "message": {
+    "loading": "Carregando...",
+    "error": "Erro ao carregar",
+    "success": "Sucesso",
+    "noData": "Nenhum dado disponível",
+    "tryAgain": "Tente novamente",
+    "somethingWrong": "Algo deu errado"
+  },
+  "validation": {
+    "required": "Este campo é obrigatório",
+    "emailInvalid": "E-mail inválido",
+    "phoneInvalid": "Telefone inválido",
+    "minLength": "Mínimo de {{min}} caracteres",
+    "maxLength": "Máximo de {{max}} caracteres"
+  }
+}
+

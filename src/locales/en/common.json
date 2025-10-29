@@ -1,0 +1,46 @@
+{
+  "button": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "send": "Send",
+    "close": "Close",
+    "confirm": "Confirm",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "learnMore": "Learn More",
+    "contact": "Talk to Expert",
+    "schedule": "Schedule Meeting",
+    "start": "Start",
+    "continue": "Continue",
+    "finish": "Finish",
+    "retry": "Try Again",
+    "reload": "Reload"
+  },
+  "label": {
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "company": "Company",
+    "message": "Message",
+    "required": "Required",
+    "optional": "Optional"
+  },
+  "message": {
+    "loading": "Loading...",
+    "error": "Error loading",
+    "success": "Success",
+    "noData": "No data available",
+    "tryAgain": "Try again",
+    "somethingWrong": "Something went wrong"
+  },
+  "validation": {
+    "required": "This field is required",
+    "emailInvalid": "Invalid email",
+    "phoneInvalid": "Invalid phone",
+    "minLength": "Minimum {{min}} characters",
+    "maxLength": "Maximum {{max}} characters"
+  }
+}
+

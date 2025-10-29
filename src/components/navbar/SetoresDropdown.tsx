@@ -3,12 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Building } from 'lucide-react';
 import { sectorsData } from '@/data/sectorsData';
 import { getSectorIcon } from '@/utils/sectorIcons';
+import { useTranslation } from 'react-i18next';
 
 interface SetoresDropdownProps {
   onMenuItemClick?: () => void;
 }
 
 const SetoresDropdown: React.FC<SetoresDropdownProps> = ({ onMenuItemClick }) => {
+  const { t } = useTranslation('navigation');
   const navigate = useNavigate();
 
   const handleSectorClick = (sectorSlug: string) => {
@@ -39,7 +41,7 @@ const SetoresDropdown: React.FC<SetoresDropdownProps> = ({ onMenuItemClick }) =>
             onClick={handleViewAllClick}
             className="w-full text-left px-3 py-2 text-sm text-brand-blue font-medium hover:bg-blue-50 rounded-md transition-colors"
           >
-            Ver Todos os Setores
+            {t('menu.viewAllSectors')}
           </button>
         </div>
       </div>

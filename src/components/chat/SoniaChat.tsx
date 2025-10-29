@@ -1,9 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Send, X, User, Minimize2, Sparkles, RefreshCw, Mic, MessageSquare } from 'lucide-react';
+import { useTranslation } from 'react-i18next'; // Hook para traduções
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { openAIService } from '@/lib/openaiService';
-import { CONVERSATION_STARTERS } from '@/lib/soniaPrompts';
+import { getConversationStarters } from '@/lib/soniaPrompts'; // Função que retorna starters traduzidos
 import { useSoniaChat } from '@/hooks/useSoniaChat';
 import VoiceChat from './VoiceChat';
 
@@ -20,12 +21,18 @@ interface SoniaChatProps {
 }
 
 const SoniaChat: React.FC<SoniaChatProps> = ({ className = '' }) => {
+  // Hook de tradução - namespace 'chat' contém todas as traduções do chat
+  const { t, i18n } = useTranslation('chat');
   const { isOpen, isMinimized, chatMode, closeChat, minimizeChat, maximizeChat, setChatMode } = useSoniaChat();
   const [message, setMessage] = useState('');
+  
+  // Mensagem de boas-vindas traduzida - usa o idioma atual
+  const getWelcomeMessage = () => t('welcome');
+  
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: 'Olá! Eu sou a Sonia, assistente de IA da onsmart AI. Estou aqui para esclarecer suas dúvidas sobre nossos Agentes de IA corporativos. Como posso ajudá-lo hoje?',
+      text: getWelcomeMessage(),
       sender: 'sonia',
       timestamp: new Date()
     }
@@ -106,10 +113,10 @@ const SoniaChat: React.FC<SoniaChatProps> = ({ className = '' }) => {
     } catch (error) {
       console.error('Error getting response from Sonia:', error);
       
-      // Fallback em caso de erro
+      // Fallback em caso de erro - mensagem traduzida
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: 'Desculpe, estou com dificuldades técnicas no momento. Mas posso te ajudar! Nossa equipe comercial pode esclarecer todas suas dúvidas sobre nossos Agentes de IA. Gostaria que eu te conectasse com eles?',
+        text: t('error'), // Traduz automaticamente conforme o idioma
         sender: 'sonia',
         timestamp: new Date()
       };
@@ -120,18 +127,34 @@ const SoniaChat: React.FC<SoniaChatProps> = ({ className = '' }) => {
     }
   };
 
-  // Função para resetar a conversa
+  // Função para resetar a conversa - atualiza mensagem de boas-vindas quando idioma muda
   const handleResetConversation = () => {
     openAIService.resetConversation();
     setMessages([
       {
         id: '1',
-        text: 'Olá! Eu sou a Sonia, assistente de IA da onsmart AI. Estou aqui para esclarecer suas dúvidas sobre nossos Agentes de IA corporativos. Como posso ajudá-lo hoje?',
+        text: getWelcomeMessage(), // Sempre usa o idioma atual
         sender: 'sonia',
         timestamp: new Date()
       }
     ]);
   };
+  
+  // Atualizar mensagem de boas-vindas e prompt da IA quando o idioma mudar
+  useEffect(() => {
+    // Atualizar prompt da IA no serviço
+    openAIService.updateLanguage();
+    
+    // Se for a mensagem inicial de boas-vindas, atualizar
+    if (messages.length === 1 && messages[0].sender === 'sonia' && messages[0].id === '1') {
+      setMessages([{
+        id: '1',
+        text: getWelcomeMessage(),
+        sender: 'sonia',
+        timestamp: new Date()
+      }]);
+    }
+  }, [i18n.language]); // Reexecuta quando o idioma muda
 
   // Função para enviar sugestões rápidas
   const handleQuickSuggestion = (suggestion: string) => {
@@ -162,7 +185,7 @@ const SoniaChat: React.FC<SoniaChatProps> = ({ className = '' }) => {
           onClick={handleOpenChat}
           onTouchEnd={handleOpenChat}
           className="h-16 w-16 rounded-full bg-emerald-500 active:bg-emerald-600 hover:bg-emerald-600 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer flex items-center justify-center relative"
-          aria-label="Abrir chat com Sonia"
+          aria-label={t('button.openChat')}
           type="button"
           style={{ 
             pointerEvents: 'auto',
@@ -182,9 +205,9 @@ const SoniaChat: React.FC<SoniaChatProps> = ({ className = '' }) => {
           />
           
           {/* Tooltip */}
-          <div className="absolute bottom-full mb-2 opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap">
+            <div className="absolute bottom-full mb-2 opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap">
             <div className="bg-gray-900 text-white text-xs px-3 py-2 rounded-lg shadow-xl">
-              Fale com a Sonia
+              {t('tooltip.talkToSonia')}
             </div>
           </div>
         </button>
@@ -214,12 +237,12 @@ const SoniaChat: React.FC<SoniaChatProps> = ({ className = '' }) => {
             </div>
             <div>
               <div className="flex items-center gap-2">
-                    <h3 className="font-semibold text-white text-xs">Sonia</h3>
+                    <h3 className="font-semibold text-white text-xs">{t('header.title')}</h3>
                 <Sparkles className="h-3 w-3 text-yellow-300 animate-pulse" />
               </div>
               <div className="text-white/80 text-[10px] flex items-center gap-1 -ml-0.5">
                 <div className="h-1.5 bg-green-400 rounded-full animate-pulse"></div>
-                <span>Assistente de IA</span>
+                <span>{t('header.subtitle')}</span>
               </div>
             </div>
           </div>
@@ -230,7 +253,7 @@ const SoniaChat: React.FC<SoniaChatProps> = ({ className = '' }) => {
               size="sm"
               onClick={() => setChatMode(chatMode === 'text' ? 'voice' : 'text')}
               className="h-6 w-6 p-0 text-white hover:bg-white/20 rounded-full transition-all duration-300 hover:scale-110"
-              title={chatMode === 'text' ? "Mudar para voz" : "Mudar para texto"}
+              title={chatMode === 'text' ? t('header.switchToVoice') : t('header.switchToText')}
             >
               {chatMode === 'text' ? (
                 <Mic className="h-3 w-3" />
@@ -243,7 +266,7 @@ const SoniaChat: React.FC<SoniaChatProps> = ({ className = '' }) => {
               size="sm"
               onClick={handleResetConversation}
               className="h-6 w-6 p-0 text-white hover:bg-white/20 rounded-full transition-all duration-300 hover:scale-110"
-              title="Nova conversa"
+              title={t('header.newConversation')}
             >
               <RefreshCw className="h-3 w-3" />
             </Button>
@@ -320,7 +343,7 @@ const SoniaChat: React.FC<SoniaChatProps> = ({ className = '' }) => {
                                 <div className="mt-2">
                                   <audio controls className="w-full h-8">
                                     <source src={msg.audioUrl} type="audio/mpeg" />
-                                    Seu navegador não suporta o elemento de áudio.
+                                    {t('audio.notSupported')}
                                   </audio>
                                 </div>
                               )}
@@ -352,7 +375,7 @@ const SoniaChat: React.FC<SoniaChatProps> = ({ className = '' }) => {
                               <div className="w-2 h-2 bg-emerald-500/60 rounded-full animate-bounce" style={{animationDelay: '150ms'}}></div>
                               <div className="w-2 h-2 bg-emerald-500/60 rounded-full animate-bounce" style={{animationDelay: '300ms'}}></div>
                             </div>
-                            <span className="text-xs text-gray-500 animate-pulse">Sonia está digitando...</span>
+                            <span className="text-xs text-gray-500 animate-pulse">{t('typing')}</span>
                           </div>
                         </div>
                       </div>
@@ -361,9 +384,10 @@ const SoniaChat: React.FC<SoniaChatProps> = ({ className = '' }) => {
                     {/* Quick suggestions - only show when conversation is minimal */}
                     {messages.length === 1 && !isTyping && (
                       <div className="mt-4 animate-in slide-in-from-bottom-2">
-                        <p className="text-xs text-gray-500 mb-2 text-center">Sugestões rápidas:</p>
+                        <p className="text-xs text-gray-500 mb-2 text-center">{t('suggestions.title')}</p>
                         <div className="space-y-2">
-                          {CONVERSATION_STARTERS.slice(0, 3).map((starter, index) => (
+                          {/* Usa função que retorna starters traduzidos baseado no idioma atual */}
+                          {getConversationStarters(i18n.language).slice(0, 3).map((starter, index) => (
                             <button
                               key={index}
                               onClick={() => handleQuickSuggestion(starter)}
@@ -388,7 +412,7 @@ const SoniaChat: React.FC<SoniaChatProps> = ({ className = '' }) => {
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
                         onKeyPress={handleKeyPress}
-                        placeholder="Digite sua pergunta..."
+                        placeholder={t('placeholder')}
                         className="text-sm border border-gray-200 focus:border-emerald-500 transition-all duration-300 rounded-lg shadow-sm hover:shadow-md focus:shadow-lg pr-10"
                       />
                       {/* Sparkle icon when typing */}

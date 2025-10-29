@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
 import { Label } from '@/components/ui/label';
 import { Calculator, TrendingUp, DollarSign, Clock, Users } from 'lucide-react';
 
 const ROICalculator: React.FC = () => {
+  const { t, i18n } = useTranslation('home');
   const [employees, setEmployees] = useState(100);
   const [averageSalary, setAverageSalary] = useState(8000);
   const [automationRate, setAutomationRate] = useState(30);
@@ -91,9 +93,22 @@ const ROICalculator: React.FC = () => {
   const monthlySavings = animatedValues.savings / 12;
 
   const formatCurrency = (value: number): string => {
-    return new Intl.NumberFormat('pt-BR', {
+    const localeMap: Record<string, string> = {
+      'pt': 'pt-BR',
+      'en': 'en-US',
+      'es': 'es-ES'
+    };
+    const locale = localeMap[i18n.language.split('-')[0]] || 'pt-BR';
+    const currencyMap: Record<string, string> = {
+      'pt': 'BRL',
+      'en': 'USD',
+      'es': 'EUR'
+    };
+    const currency = currencyMap[i18n.language.split('-')[0]] || 'BRL';
+    
+    return new Intl.NumberFormat(locale, {
       style: 'currency',
-      currency: 'BRL',
+      currency: currency,
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,
     }).format(value);
@@ -104,10 +119,10 @@ const ROICalculator: React.FC = () => {
       <div className="container mx-auto max-w-4xl px-4 sm:px-6 md:px-8">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-gray-900">
-            Calcule seu <span className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">ROI</span>
+            {t('roi.title')} <span className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">ROI</span>
           </h2>
           <p className="text-gray-600 text-base sm:text-lg md:text-xl max-w-2xl mx-auto">
-            Descubra o impacto financeiro da IA na sua empresa
+            {t('roi.subtitle')}
           </p>
         </div>
         
@@ -119,7 +134,7 @@ const ROICalculator: React.FC = () => {
             {isCalculating && (
               <div className="flex flex-col items-center justify-center py-12">
                 <div className="w-8 h-8 border-2 border-brand-blue/20 border-t-brand-blue rounded-full animate-spin mb-4"></div>
-                <p className="text-brand-blue font-medium">Calculando...</p>
+                <p className="text-brand-blue font-medium">{t('roi.calculating')}</p>
               </div>
             )}
 
@@ -128,7 +143,7 @@ const ROICalculator: React.FC = () => {
               <div className="p-6">
                 {/* Resultado Principal */}
                 <div className="text-center mb-6">
-                  <p className="text-sm text-gray-600 mb-2">Economia Mensal</p>
+                  <p className="text-sm text-gray-600 mb-2">{t('roi.results.monthlySavings')}</p>
                   <p className="text-3xl font-bold text-brand-blue mb-4">
                     {formatCurrency(monthlySavings)}
                   </p>
@@ -137,19 +152,19 @@ const ROICalculator: React.FC = () => {
                 {/* Métricas Simples */}
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div className="text-center p-3 bg-gray-50 rounded-lg">
-                    <p className="text-xs text-gray-600 mb-1">ROI Anual</p>
+                    <p className="text-xs text-gray-600 mb-1">{t('roi.results.annualROI')}</p>
                     <p className="text-lg font-bold text-brand-blue">{animatedValues.roi}%</p>
                   </div>
                   <div className="text-center p-3 bg-gray-50 rounded-lg">
-                    <p className="text-xs text-gray-600 mb-1">Payback</p>
-                    <p className="text-lg font-bold text-brand-blue">{animatedValues.payback.toFixed(1)}m</p>
+                    <p className="text-xs text-gray-600 mb-1">{t('roi.results.payback')}</p>
+                    <p className="text-lg font-bold text-brand-blue">{animatedValues.payback.toFixed(1)}{t('roi.results.paybackUnit')}</p>
                   </div>
                   <div className="text-center p-3 bg-gray-50 rounded-lg">
-                    <p className="text-xs text-gray-600 mb-1">Economia Anual</p>
+                    <p className="text-xs text-gray-600 mb-1">{t('roi.results.annualSavings')}</p>
                     <p className="text-sm font-bold text-brand-blue">{formatCurrency(animatedValues.savings)}</p>
                   </div>
                   <div className="text-center p-3 bg-gray-50 rounded-lg">
-                    <p className="text-xs text-gray-600 mb-1">Produtividade</p>
+                    <p className="text-xs text-gray-600 mb-1">{t('roi.results.productivity')}</p>
                     <p className="text-lg font-bold text-brand-blue">+{animatedValues.productivity}%</p>
                   </div>
                 </div>
@@ -160,14 +175,14 @@ const ROICalculator: React.FC = () => {
                     onClick={() => window.location.href = '/contato'} 
                     className="w-full bg-brand-blue hover:bg-blue-600 text-white py-3 rounded-lg"
                   >
-                    Solicitar Consultoria
+                    {t('roi.results.cta.consultancy')}
                   </Button>
                   <Button 
                     onClick={() => window.location.href = '/diagnostico'} 
                     variant="outline" 
                     className="w-full border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white py-3 rounded-lg"
                   >
-                    Diagnóstico Gratuito
+                    {t('roi.results.cta.diagnostic')}
                   </Button>
                 </div>
 
@@ -181,7 +196,7 @@ const ROICalculator: React.FC = () => {
                     variant="ghost" 
                     className="text-sm text-brand-blue hover:text-blue-600"
                   >
-                    Recalcular
+                    {t('roi.results.recalculate')}
                   </Button>
                 </div>
               </div>
@@ -194,7 +209,7 @@ const ROICalculator: React.FC = () => {
                 <div className="space-y-4 mb-6">
                   {/* Funcionários */}
                   <div className="space-y-2">
-                    <Label className="text-sm font-medium text-gray-700">Funcionários</Label>
+                    <Label className="text-sm font-medium text-gray-700">{t('roi.fields.employees')}</Label>
                     <div className="text-center">
                       <div className="text-xl font-bold text-brand-blue mb-1">{employees}</div>
                       <Slider
@@ -208,7 +223,7 @@ const ROICalculator: React.FC = () => {
 
                   {/* Salário */}
                   <div className="space-y-2">
-                    <Label className="text-sm font-medium text-gray-700">Salário Médio</Label>
+                    <Label className="text-sm font-medium text-gray-700">{t('roi.fields.averageSalary')}</Label>
                     <div className="text-center">
                       <div className="text-xl font-bold text-brand-blue mb-1">{formatCurrency(averageSalary)}</div>
                       <Slider
@@ -222,7 +237,7 @@ const ROICalculator: React.FC = () => {
 
                   {/* Automação */}
                   <div className="space-y-2">
-                    <Label className="text-sm font-medium text-gray-700">Taxa de Automação</Label>
+                    <Label className="text-sm font-medium text-gray-700">{t('roi.fields.automationRate')}</Label>
                     <div className="text-center">
                       <div className="text-xl font-bold text-brand-blue mb-1">{automationRate}%</div>
                       <Slider
@@ -236,9 +251,9 @@ const ROICalculator: React.FC = () => {
 
                   {/* Horas */}
                   <div className="space-y-2">
-                    <Label className="text-sm font-medium text-gray-700">Horas Manuais/Dia</Label>
+                    <Label className="text-sm font-medium text-gray-700">{t('roi.fields.manualHours')}</Label>
                     <div className="text-center">
-                      <div className="text-xl font-bold text-brand-blue mb-1">{manualHours}h</div>
+                      <div className="text-xl font-bold text-brand-blue mb-1">{manualHours}{t('roi.fields.hoursUnit')}</div>
                       <Slider
                         min={1} max={8} step={0.5}
                         value={[manualHours]}
@@ -256,7 +271,7 @@ const ROICalculator: React.FC = () => {
                     disabled={isCalculating}
                     className="w-full bg-brand-blue hover:bg-blue-600 text-white font-semibold py-3 rounded-lg"
                   >
-                    Calcular ROI
+                    {t('roi.calculateButton')}
                   </Button>
                 </div>
               </div>

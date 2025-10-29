@@ -1,0 +1,25 @@
+{
+  "title": "Contáctanos",
+  "description": "Completa el formulario a continuación y nuestro equipo se pondrá en contacto",
+  "form": {
+    "name": "Nombre completo",
+    "email": "Correo electrónico",
+    "phone": "Teléfono",
+    "company": "Empresa",
+    "position": "Cargo",
+    "message": "Mensaje",
+    "interestArea": "Área de interés",
+    "submit": "Enviar Mensaje",
+    "sending": "Enviando...",
+    "success": "¡Mensaje enviado con éxito!",
+    "error": "Error al enviar mensaje. Por favor, inténtalo de nuevo."
+  },
+  "validation": {
+    "nameRequired": "El nombre es obligatorio",
+    "emailRequired": "El correo electrónico es obligatorio",
+    "emailInvalid": "Correo electrónico inválido",
+    "phoneRequired": "El teléfono es obligatorio",
+    "messageRequired": "El mensaje es obligatorio"
+  }
+}
+

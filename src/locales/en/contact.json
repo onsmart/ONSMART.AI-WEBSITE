@@ -1,0 +1,25 @@
+{
+  "title": "Contact Us",
+  "description": "Fill out the form below and our team will contact you",
+  "form": {
+    "name": "Full name",
+    "email": "Email",
+    "phone": "Phone",
+    "company": "Company",
+    "position": "Position",
+    "message": "Message",
+    "interestArea": "Area of interest",
+    "submit": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent successfully!",
+    "error": "Error sending message. Please try again."
+  },
+  "validation": {
+    "nameRequired": "Name is required",
+    "emailRequired": "Email is required",
+    "emailInvalid": "Invalid email",
+    "phoneRequired": "Phone is required",
+    "messageRequired": "Message is required"
+  }
+}
+

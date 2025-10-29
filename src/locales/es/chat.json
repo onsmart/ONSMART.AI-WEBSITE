@@ -1,0 +1,41 @@
+{
+  "welcome": "¡Hola! Soy Sonia, asistente de IA de onsmart AI. Estoy aquí para responder tus dudas sobre nuestros Agentes de IA corporativos. ¿Cómo puedo ayudarte hoy?",
+  "placeholder": "Escribe tu mensaje...",
+  "button": {
+    "send": "Enviar",
+    "close": "Cerrar",
+    "minimize": "Minimizar",
+    "reset": "Nueva Conversación",
+    "voice": "Modo Voz",
+    "text": "Modo Texto",
+    "openChat": "Abrir chat con Sonia"
+  },
+  "header": {
+    "title": "Sonia",
+    "subtitle": "Asistente de IA",
+    "switchToVoice": "Cambiar a voz",
+    "switchToText": "Cambiar a texto",
+    "newConversation": "Nueva conversación",
+    "minimize": "Minimizar",
+    "close": "Cerrar"
+  },
+  "typing": "Sonia está escribiendo...",
+  "error": "Lo siento, estoy experimentando dificultades técnicas en este momento. ¡Pero puedo ayudarte! Nuestro equipo comercial puede responder todas tus preguntas sobre nuestros Agentes de IA. ¿Te gustaría que te conectara con ellos?",
+  "tooltip": {
+    "talkToSonia": "Hablar con Sonia"
+  },
+  "suggestions": {
+    "title": "Sugerencias rápidas:"
+  },
+  "conversationStarter": {
+    "howItWorks": "¿Cómo funciona la automatización de ventas?",
+    "pricing": "¿Cuánto cuesta implementar IA?",
+    "demo": "Quiero agendar una demostración",
+    "timeline": "¿Cuál es el plazo de implementación?",
+    "problems": "¿Qué problemas resuelve la IA?"
+  },
+  "audio": {
+    "notSupported": "Tu navegador no soporta el elemento de audio."
+  }
+}
+
