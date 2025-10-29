@@ -50,8 +50,16 @@ Clique em Redeploy na versão desejada para restaurá-la.
 
 Sempre crie branches específicas para features (feature/nome-da-feature) e use Pull Requests para integrar com a main.
 
+
+
+
+
+
 Mantenha commits limpos e descritivos (ex: fix: corrigir carregamento de imagens na home).
 
 Nunca faça push direto na branch main sem revisão.
 
 Antes de fazer deploy, rode localmente npm run build e npm run dev para validar a integridade do projeto.
+<<<<<<< HEAD
+
+
