@@ -14,7 +14,8 @@
     "start": "npm run build && npm run server",
     "docker:monitor": "node scripts/docker-monitor.js",
     "docker:status": "node scripts/docker-monitor.js --once",
-    "setup:env": "node setup-env.js"
+    "setup:env": "node setup-env.js",
+    "vercel:ignore": "node scripts/ignore-branch.js"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
