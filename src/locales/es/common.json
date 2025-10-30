@@ -16,7 +16,8 @@
     "continue": "Continuar",
     "finish": "Finalizar",
     "retry": "Intentar de nuevo",
-    "reload": "Recargar"
+    "reload": "Recargar",
+    "viewMore": "Ver más"
   },
   "label": {
     "name": "Nombre",

@@ -1,0 +1,55 @@
+{
+  "hero": {
+    "badge": "AI Governance",
+    "title": "watsonx.governance™",
+    "subtitle": "Complete AI governance with transparency, compliance and accountability."
+  },
+  "statsTop": {
+    "monitoring": "Model Monitoring",
+    "compliance": "Regulatory Compliance",
+    "audit": "AI Auditing"
+  },
+  "cta": {
+    "requestDemo": "Request Demo",
+    "viewOthers": "View Other Products",
+    "title": "Implement effective AI governance",
+    "subtitle": "Control risk and ensure compliance across the lifecycle."
+  },
+  "features": {
+    "title": "Key Features",
+    "risk": {
+      "title": "Risk Management",
+      "desc": "Model risk assessment and mitigation policies"
+    },
+    "lineage": {
+      "title": "Lineage & Provenance",
+      "desc": "Traceability of data, models and artifacts"
+    },
+    "policies": {
+      "title": "Policies & Controls",
+      "desc": "Rules, checkpoints and governance approvals"
+    }
+  },
+  "advanced": {
+    "title": "Advanced Capabilities",
+    "subtitle": "End-to-end transparency and control",
+    "catalog": "Model Catalog",
+    "catalogDesc": "Central registry of versions, owners and SLAs",
+    "monitoring": "Continuous Monitoring",
+    "monitoringDesc": "Metrics, drift and proactive alerts",
+    "explain": "Explainability",
+    "explainDesc": "Explainability and impact reports",
+    "audit": "Complete Audit",
+    "auditDesc": "Auditable trails for compliance"
+  },
+  "numbers": {
+    "title": "Numbers that Matter",
+    "subtitle": "Measurable compliance and reliability",
+    "models": "Monitored models",
+    "incidents": "Incidents prevented",
+    "reports": "Reports generated",
+    "modelsDesc": "In production",
+    "incidentsDesc": "By active policies",
+    "reportsDesc": "For auditing"
+  }
+}

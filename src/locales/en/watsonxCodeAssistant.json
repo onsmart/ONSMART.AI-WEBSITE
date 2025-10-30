@@ -1,0 +1,77 @@
+{
+  "hero": {
+    "badge": "AI Development",
+    "title": "watsonx Code Assistant",
+    "subtitle": "AI assistant specialized in code development to boost developer productivity."
+  },
+  "statsTop": {
+    "productivity": "More productivity",
+    "availability": "Availability",
+    "languages": "Supported languages"
+  },
+  "features": {
+    "title": "Key Features",
+    "generation": {
+      "title": "Intelligent Code Generation",
+      "desc": "Automatic code creation based on natural language descriptions"
+    },
+    "debugging": {
+      "title": "Advanced Debugging",
+      "desc": "Automatic detection and fixing of bugs and code issues"
+    },
+    "refactor": {
+      "title": "Smart Refactoring",
+      "desc": "Automatic improvement of code quality and structure"
+    },
+    "docs": {
+      "title": "Automatic Documentation",
+      "desc": "Automatic generation of technical documentation and comments"
+    }
+  },
+  "advanced": {
+    "title": "Advanced Resources",
+    "subtitle": "Discover how watsonx Code Assistant can revolutionize your development",
+    "autocomplete": {
+      "title": "Smart Autocomplete",
+      "desc": "Contextual code suggestions based on the project's patterns."
+    },
+    "testing": {
+      "title": "Automated Tests",
+      "desc": "Automatic generation of unit and integration tests."
+    },
+    "collab": {
+      "title": "Team Collaboration",
+      "desc": "Knowledge and standards sharing among developers."
+    },
+    "security": {
+      "title": "Code Security",
+      "desc": "Automatic detection of vulnerabilities and insecure practices."
+    },
+    "performance": {
+      "title": "Performance Analysis",
+      "desc": "Automatic code optimization for better performance."
+    },
+    "ide": {
+      "title": "IDE Integration",
+      "desc": "Native integration with major IDEs and code editors."
+    }
+  },
+  "numbers": {
+    "title": "Impressive Numbers",
+    "subtitle": "See how watsonx Code Assistant is transforming software development",
+    "projects": "Completed Projects",
+    "projectsDesc": "Successfully at global companies",
+    "developers": "Active Developers",
+    "developersDesc": "Using the platform daily",
+    "accuracy": "Code Accuracy",
+    "accuracyDesc": "Automatically generated"
+  },
+  "cta": {
+    "title": "Accelerate your Development with AI",
+    "subtitle": "Join developers who have already boosted their productivity with watsonx Code Assistant.",
+    "requestDemo": "Request Demo",
+    "viewOthers": "View Other Products"
+  }
+}
+
+

@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "badge": "Business Intelligence",
+    "title": "Planning Analytics",
+    "subtitle": "Integrated enterprise planning and analytics platform to optimize strategic decisions."
+  },
+  "statsTop": {
+    "accuracy": "Forecast accuracy",
+    "speed": "Faster than spreadsheets",
+    "collaboration": "Real-time collaboration"
+  },
+  "features": {
+    "title": "Key Features",
+    "corporate": {
+      "title": "Corporate Planning",
+      "desc": "Advanced tools for strategic and budget planning"
+    },
+    "predictive": {
+      "title": "Predictive Analytics",
+      "desc": "Predictive models to anticipate trends and opportunities"
+    },
+    "realtime": {
+      "title": "Real-time Collaboration",
+      "desc": "Collaborative work with multiple simultaneous users"
+    },
+    "optimization": {
+      "title": "Goal Optimization",
+      "desc": "Definition and tracking of KPIs and organizational goals"
+    }
+  },
+  "advanced": {
+    "title": "Advanced Resources",
+    "subtitle": "Discover how Planning Analytics can revolutionize your business planning",
+    "modeling": {
+      "title": "Advanced Modeling",
+      "desc": "Creation of complex models for planning and analysis scenarios."
+    },
+    "forecasting": {
+      "title": "Intelligent Forecasting",
+      "desc": "AI-based forecasts for better strategic decision making."
+    },
+    "workflow": {
+      "title": "Collaborative Workflow",
+      "desc": "Approval flows and collaboration between teams and departments."
+    },
+    "governance": {
+      "title": "Data Governance",
+      "desc": "Access controls and auditing for regulatory compliance."
+    },
+    "automation": {
+      "title": "Process Automation",
+      "desc": "Automation of repetitive planning and analysis tasks."
+    },
+    "dashboard": {
+      "title": "Executive Dashboard",
+      "desc": "Executive visualizations for performance monitoring."
+    }
+  },
+  "numbers": {
+    "title": "Impressive Numbers",
+    "subtitle": "See how Planning Analytics is revolutionizing business planning",
+    "users": "Active Users",
+    "usersDesc": "Worldwide",
+    "enterprises": "Active Enterprises",
+    "enterprisesDesc": "Using the platform",
+    "efficiency": "Efficiency",
+    "efficiencyDesc": "In planning"
+  },
+  "cta": {
+    "title": "Transform your Business Planning",
+    "subtitle": "Join companies that have already transformed their business with Planning Analytics.",
+    "requestDemo": "Request Demo",
+    "viewOthers": "View Other Products"
+  }
+}

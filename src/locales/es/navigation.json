@@ -17,7 +17,10 @@
     "skipToContent": "Saltar al contenido principal",
     "skipToNavigation": "Saltar a la navegación",
     "skipToFooter": "Saltar al pie de página",
-    "navigationLabel": "Navegación principal"
+    "navigationLabel": "Navegación principal",
+    "aiAgents": "Agentes de IA",
+    "ibmEcosystem": "Ecosistema IBM",
+    "soniaAssistant": "Sonia Asistente IA"
   },
   "footer": {
     "company": "Empresa",

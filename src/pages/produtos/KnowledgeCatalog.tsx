@@ -4,9 +4,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { CheckCircle, ArrowLeft, Star, Shield, Users, Clock, Send } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 export default function KnowledgeCatalog() {
   const navigate = useNavigate();
+  const { t } = useTranslation('knowledgeCatalog');
 
   // Hook para contador animado
   const useCountUp = (end: number, duration: number = 2000) => {
@@ -69,17 +71,17 @@ export default function KnowledgeCatalog() {
                 <div className="p-3 sm:p-4 rounded-full bg-blue-50">
                   <img 
                     src="https://images-onsmart.vercel.app/onsmart.ai/knowledge.png" 
-                    alt="Knowledge Catalog" 
+                    alt={t('hero.title')} 
                     className="w-12 h-12 sm:w-16 sm:h-16 scale-125 object-contain"
                   />
                 </div>
                 <div>
-                  <Badge variant="outline" className="mb-2">Data Catalog</Badge>
-                  <h1 className="text-4xl font-bold text-gray-900">Knowledge Catalog</h1>
+                  <Badge variant="outline" className="mb-2">{t('hero.badge')}</Badge>
+                  <h1 className="text-4xl font-bold text-gray-900">{t('hero.title')}</h1>
                 </div>
               </div>
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                Catálogo inteligente de dados que organiza, descobre e governa ativos de dados empresariais.
+                {t('hero.subtitle')}
               </p>
               
               {/* Stats */}
@@ -88,19 +90,19 @@ export default function KnowledgeCatalog() {
                   <div className="text-2xl font-bold text-blue-600 transition-all duration-300">
                     {discoveryCount.count}%
                   </div>
-                  <div className="text-sm text-gray-600">Melhoria na descoberta</div>
+                  <div className="text-sm text-gray-600">{t('statsTop.discovery')}</div>
                 </div>
                 <div className="text-center" ref={speedCount.ref}>
                   <div className="text-2xl font-bold text-green-600 transition-all duration-300">
                     {speedCount.count}x
                   </div>
-                  <div className="text-sm text-gray-600">Mais rápido acesso</div>
+                  <div className="text-sm text-gray-600">{t('statsTop.collaboration')}</div>
                 </div>
                 <div className="text-center" ref={governanceCount.ref}>
                   <div className="text-2xl font-bold text-purple-600 transition-all duration-300">
                     {governanceCount.count}%
                   </div>
-                  <div className="text-sm text-gray-600">Governança integrada</div>
+                  <div className="text-sm text-gray-600">{t('statsTop.governance')}</div>
                 </div>
               </div>
 
@@ -110,40 +112,33 @@ export default function KnowledgeCatalog() {
                 onClick={() => navigate('/contato')}
               >
                 <Send className="mr-2 h-5 w-5" />
-                Solicitar Demonstração
+                {t('cta.requestDemo')}
               </Button>
             </div>
 
             <div className="lg:w-1/2">
               <div className="bg-white rounded-2xl shadow-xl p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Principais Recursos</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">{t('features.title')}</h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Descoberta Automática</h4>
-                      <p className="text-gray-600">Encontre dados automaticamente com IA avançada</p>
+                      <h4 className="font-semibold text-gray-900">{t('features.discovery.title')}</h4>
+                      <p className="text-gray-600">{t('features.discovery.desc')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Governança de Dados</h4>
-                      <p className="text-gray-600">Controle total sobre qualidade e acesso aos dados</p>
+                      <h4 className="font-semibold text-gray-900">{t('features.governance.title')}</h4>
+                      <p className="text-gray-600">{t('features.governance.desc')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Colaboração Inteligente</h4>
-                      <p className="text-gray-600">Compartilhe conhecimento e melhore a produtividade</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-gray-900">Qualidade de Dados</h4>
-                      <p className="text-gray-600">Monitore e melhore a qualidade dos dados em tempo real</p>
+                      <h4 className="font-semibold text-gray-900">{t('features.collaboration.title')}</h4>
+                      <p className="text-gray-600">{t('features.collaboration.desc')}</p>
                     </div>
                   </div>
                 </div>
@@ -157,9 +152,9 @@ export default function KnowledgeCatalog() {
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Recursos Avançados</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('advanced.title')}</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Descubra como o Knowledge Catalog pode revolucionar sua gestão de dados
+              {t('advanced.subtitle')}
             </p>
           </div>
 
@@ -169,11 +164,11 @@ export default function KnowledgeCatalog() {
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <Star className="w-6 h-6 text-blue-600" />
                 </div>
-                <CardTitle>IA para Descoberta</CardTitle>
+                <CardTitle>{t('advanced.automation')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Use inteligência artificial para descobrir e catalogar dados automaticamente.
+                  {t('advanced.automationDesc')}
                 </p>
               </CardContent>
             </Card>
@@ -183,11 +178,11 @@ export default function KnowledgeCatalog() {
                 <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
                   <Shield className="w-6 h-6 text-green-600" />
                 </div>
-                <CardTitle>Qualidade de Dados</CardTitle>
+                <CardTitle>{t('advanced.classifications')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Monitore e melhore a qualidade dos dados em tempo real.
+                  {t('advanced.classificationsDesc')}
                 </p>
               </CardContent>
             </Card>
@@ -197,53 +192,11 @@ export default function KnowledgeCatalog() {
                 <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                   <Users className="w-6 h-6 text-purple-600" />
                 </div>
-                <CardTitle>Colaboração</CardTitle>
+                <CardTitle>{t('advanced.integrations')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Trabalhe em equipe com ferramentas de colaboração integradas.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
-                  <Clock className="w-6 h-6 text-orange-600" />
-                </div>
-                <CardTitle>Governança Integrada</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Controle total sobre acesso e qualidade dos dados.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
-                  <CheckCircle className="w-6 h-6 text-red-600" />
-                </div>
-                <CardTitle>Metadados Inteligentes</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Organização automática e rica de metadados dos dados.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
-                  <Send className="w-6 h-6 text-indigo-600" />
-                </div>
-                <CardTitle>API Enterprise</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Integração fácil com sistemas existentes via APIs robustas.
+                  {t('advanced.integrationsDesc')}
                 </p>
               </CardContent>
             </Card>
@@ -255,9 +208,9 @@ export default function KnowledgeCatalog() {
       <section className="py-16 px-4 bg-gradient-to-r from-blue-50 to-purple-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Números Impressionantes</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('numbers.title')}</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Veja como o Knowledge Catalog está revolucionando a gestão de dados
+              {t('numbers.subtitle')}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -265,22 +218,22 @@ export default function KnowledgeCatalog() {
               <div className="text-4xl font-bold text-blue-600 mb-2 transition-all duration-300">
                 {datasetsCount.count.toLocaleString()}+
               </div>
-              <div className="text-lg font-semibold text-gray-900 mb-2">Datasets Catalogados</div>
-              <div className="text-gray-600">Automaticamente</div>
+              <div className="text-lg font-semibold text-gray-900 mb-2">{t('numbers.assets')}</div>
+              <div className="text-gray-600">{t('numbers.assetsDesc')}</div>
             </div>
             <div className="text-center bg-white rounded-xl p-8 shadow-lg" ref={enterpriseCount.ref}>
               <div className="text-4xl font-bold text-green-600 mb-2 transition-all duration-300">
                 {enterpriseCount.count}+
               </div>
-              <div className="text-lg font-semibold text-gray-900 mb-2">Empresas Ativas</div>
-              <div className="text-gray-600">Usando a plataforma</div>
+              <div className="text-lg font-semibold text-gray-900 mb-2">{t('numbers.teams')}</div>
+              <div className="text-gray-600">{t('numbers.teamsDesc')}</div>
             </div>
             <div className="text-center bg-white rounded-xl p-8 shadow-lg" ref={qualityCount.ref}>
               <div className="text-4xl font-bold text-purple-600 mb-2 transition-all duration-300">
                 {qualityCount.count}%
               </div>
-              <div className="text-lg font-semibold text-gray-900 mb-2">Qualidade</div>
-              <div className="text-gray-600">Dos dados catalogados</div>
+              <div className="text-lg font-semibold text-gray-900 mb-2">{t('numbers.policies')}</div>
+              <div className="text-gray-600">{t('numbers.policiesDesc')}</div>
             </div>
           </div>
         </div>
@@ -290,10 +243,10 @@ export default function KnowledgeCatalog() {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-            Potencialize seus dados hoje
+            {t('cta.title')}
           </h2>
           <p className="text-xl mb-8 text-gray-600">
-            Junte-se às empresas que já transformaram sua gestão de dados com Knowledge Catalog.
+            {t('cta.subtitle')}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -303,7 +256,7 @@ export default function KnowledgeCatalog() {
               onClick={() => navigate('/contato')}
             >
               <Send className="mr-2 h-5 w-5" />
-              Solicitar Demonstração
+              {t('cta.requestDemo')}
             </Button>
             <Button 
               variant="outline"
@@ -311,7 +264,7 @@ export default function KnowledgeCatalog() {
               className="font-medium px-8 py-6 text-lg rounded-xl"
               onClick={() => navigate('/produtos')}
             >
-              Ver Outros Produtos
+              {t('cta.viewOthers')}
             </Button>
           </div>
         </div>

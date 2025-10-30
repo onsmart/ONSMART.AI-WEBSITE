@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "badge": "Seguridad de Datos",
+    "title": "Guardium Data Security Center",
+    "subtitle": "Plataforma de seguridad de datos para protección, monitoreo y cumplimiento regulatorio."
+  },
+  "statsTop": {
+    "coverage": "Cobertura de Datos",
+    "monitoring": "Monitoreo",
+    "compliance": "Cumplimientos"
+  },
+  "features": {
+    "title": "Funciones Principales",
+    "protection": {
+      "title": "Protección de Datos",
+      "desc": "Cifrado y enmascaramiento avanzado de datos sensibles"
+    },
+    "monitoring": {
+      "title": "Monitoreo de Acceso",
+      "desc": "Seguimiento completo de acceso y actividades de datos"
+    },
+    "compliance": {
+      "title": "Cumplimiento Regulatorio",
+      "desc": "Soporte para GDPR, SOX, PCI-DSS y otras regulaciones"
+    },
+    "threatDetection": {
+      "title": "Detección de Amenazas",
+      "desc": "Identificación automática de actividades sospechosas"
+    }
+  },
+  "advanced": {
+    "title": "Recursos Avanzados",
+    "subtitle": "Descubre cómo Guardium Data Security Center puede revolucionar tu seguridad de datos",
+    "advancedProtection": {
+      "title": "Protección Avanzada",
+      "desc": "Cifrado, enmascaramiento y tokenización de datos sensibles."
+    },
+    "realtimeMonitoring": {
+      "title": "Monitoreo en Tiempo Real",
+      "desc": "Vigilancia continua de todas las actividades de acceso a datos."
+    },
+    "accessControl": {
+      "title": "Control de Acceso",
+      "desc": "Políticas granulares de acceso y autenticación multifactor."
+    },
+    "governance": {
+      "title": "Gobernanza de Datos",
+      "desc": "Políticas de gobernanza y clasificación automática de datos."
+    },
+    "alerts": {
+      "title": "Alertas Inteligentes",
+      "desc": "Notificaciones proactivas sobre violaciones y actividades sospechosas."
+    },
+    "reports": {
+      "title": "Reportes de Cumplimiento",
+      "desc": "Reportes automatizados para auditorías y cumplimiento."
+    }
+  },
+  "numbers": {
+    "title": "Números Impresionantes",
+    "subtitle": "Ve cómo Guardium Data Security Center está protegiendo datos en todo el mundo",
+    "threats": "Amenazas Detectadas",
+    "threatsDesc": "Diariamente",
+    "enterprises": "Empresas Protegidas",
+    "enterprisesDesc": "En todo el mundo",
+    "uptime": "Disponibilidad",
+    "uptimeDesc": "Monitoreo continuo"
+  },
+  "cta": {
+    "title": "Transforma tu Seguridad de Datos",
+    "subtitle": "Únete a las empresas que ya transformaron sus negocios con Guardium Data Security Center.",
+    "requestDemo": "Solicitar Demostración",
+    "viewOthers": "Ver Otros Productos"
+  }
+}

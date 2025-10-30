@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "badge": "Data Security",
+    "title": "Guardium Data Security Center",
+    "subtitle": "Data security platform for protection, monitoring and regulatory compliance."
+  },
+  "statsTop": {
+    "coverage": "Data Coverage",
+    "monitoring": "Monitoring",
+    "compliance": "Compliances"
+  },
+  "features": {
+    "title": "Key Features",
+    "protection": {
+      "title": "Data Protection",
+      "desc": "Advanced encryption and masking of sensitive data"
+    },
+    "monitoring": {
+      "title": "Access Monitoring",
+      "desc": "Complete tracking of data access and activities"
+    },
+    "compliance": {
+      "title": "Regulatory Compliance",
+      "desc": "Support for GDPR, SOX, PCI-DSS and other regulations"
+    },
+    "threatDetection": {
+      "title": "Threat Detection",
+      "desc": "Automatic identification of suspicious activities"
+    }
+  },
+  "advanced": {
+    "title": "Advanced Resources",
+    "subtitle": "Discover how Guardium Data Security Center can revolutionize your data security",
+    "advancedProtection": {
+      "title": "Advanced Protection",
+      "desc": "Encryption, masking and tokenization of sensitive data."
+    },
+    "realtimeMonitoring": {
+      "title": "Real-time Monitoring",
+      "desc": "Continuous surveillance of all data access activities."
+    },
+    "accessControl": {
+      "title": "Access Control",
+      "desc": "Granular access policies and multi-factor authentication."
+    },
+    "governance": {
+      "title": "Data Governance",
+      "desc": "Governance policies and automatic data classification."
+    },
+    "alerts": {
+      "title": "Intelligent Alerts",
+      "desc": "Proactive notifications about violations and suspicious activities."
+    },
+    "reports": {
+      "title": "Compliance Reports",
+      "desc": "Automated reports for audits and compliance."
+    }
+  },
+  "numbers": {
+    "title": "Impressive Numbers",
+    "subtitle": "See how Guardium Data Security Center is protecting data worldwide",
+    "threats": "Threats Detected",
+    "threatsDesc": "Daily",
+    "enterprises": "Protected Enterprises",
+    "enterprisesDesc": "Worldwide",
+    "uptime": "Availability",
+    "uptimeDesc": "Continuous monitoring"
+  },
+  "cta": {
+    "title": "Transform your Data Security",
+    "subtitle": "Join companies that have already transformed their business with Guardium Data Security Center.",
+    "requestDemo": "Request Demo",
+    "viewOthers": "View Other Products"
+  }
+}

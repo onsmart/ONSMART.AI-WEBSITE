@@ -1,0 +1,63 @@
+{
+  "hero": {
+    "badge": "Modelos de IA",
+    "title": "Mistral",
+    "subtitle": "Modelos de lenguaje de última generación para aplicaciones de IA generativa con rendimiento excepcional."
+  },
+  "statsTop": {
+    "parameters": "Parámetros",
+    "efficiency": "Más eficiente",
+    "opensource": "Código Abierto"
+  },
+  "cta": {
+    "requestDemo": "Solicitar Demostración",
+    "viewOthers": "Ver Otros Productos",
+    "title": "Potencia tu IA con Mistral",
+    "subtitle": "Únete a las empresas que ya transformaron sus negocios con Mistral."
+  },
+  "features": {
+    "title": "Características Clave",
+    "nlp": {
+      "title": "Procesamiento de Lenguaje Natural",
+      "desc": "Comprensión avanzada de texto y lenguaje humano"
+    },
+    "generation": {
+      "title": "Generación de Contenido",
+      "desc": "Creación de texto, código y contenido creativo"
+    },
+    "efficiency": {
+      "title": "Eficiencia Computacional",
+      "desc": "Optimizado para rendimiento y bajo consumo de recursos"
+    },
+    "flexibility": {
+      "title": "Flexibilidad Total",
+      "desc": "Modelo de código abierto con control total"
+    }
+  },
+  "advanced": {
+    "title": "Características Avanzadas",
+    "subtitle": "Descubre cómo Mistral puede revolucionar tus aplicaciones de IA",
+    "architecture": "Arquitectura Avanzada",
+    "architectureDesc": "Sliding Window Attention para procesamiento eficiente",
+    "performance": "Rendimiento Optimizado",
+    "performanceDesc": "Velocidad y eficiencia superiores",
+    "community": "Comunidad Activa",
+    "communityDesc": "Soporte de la comunidad open source",
+    "security": "Seguridad y Privacidad",
+    "securityDesc": "Control total sobre datos y despliegue",
+    "finetune": "Fine‑tuning Personalizado",
+    "finetuneDesc": "Adaptación para dominios y casos de uso",
+    "integration": "Integración Simple",
+    "integrationDesc": "APIs y herramientas para integración rápida"
+  },
+  "numbers": {
+    "title": "Números Impresionantes",
+    "subtitle": "Mira cómo Mistral está revolucionando la IA generativa",
+    "downloads": "Descargas",
+    "companies": "Empresas Activas",
+    "accuracy": "Precisión",
+    "downloadsDesc": "Del modelo",
+    "companiesDesc": "Usando el modelo",
+    "accuracyDesc": "En tareas de lenguaje"
+  }
+}

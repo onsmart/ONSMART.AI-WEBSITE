@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { CheckCircle, ArrowLeft, Star, Shield, Users, Clock, Send } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 // Hook para contador animado
 const useCountUp = (end: number, duration: number = 2000) => {
@@ -45,6 +46,7 @@ const useCountUp = (end: number, duration: number = 2000) => {
 
 export default function AICodeAssistant() {
   const navigate = useNavigate();
+  const { t } = useTranslation(["aiCodeAssistant", "produtos", "common"]);
   
   // Contadores animados
   const productivityCount = useCountUp(90, 1500);
@@ -67,17 +69,17 @@ export default function AICodeAssistant() {
                 <div className="p-4 rounded-full bg-blue-50">
                   <img 
                     src="https://images-onsmart.vercel.app/onsmart.ai/ai-code-assistant.png" 
-                    alt="AI Code Assistant" 
+                    alt={t('aiCodeAssistant:hero.title')}
                     className="w-16 h-16"
                   />
                 </div>
                 <div>
-                  <Badge variant="outline" className="mb-2">AI Assistants</Badge>
-                  <h1 className="text-4xl font-bold text-gray-900">AI Code Assistant</h1>
+                  <Badge variant="outline" className="mb-2">{t('aiCodeAssistant:hero.badge')}</Badge>
+                  <h1 className="text-4xl font-bold text-gray-900">{t('aiCodeAssistant:hero.title')}</h1>
                 </div>
               </div>
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                Reinvente a forma de trabalhar com agentes de IA inteligentes que revolucionam o desenvolvimento de software.
+                {t('aiCodeAssistant:hero.subtitle')}
               </p>
               
               {/* Stats */}
@@ -86,19 +88,19 @@ export default function AICodeAssistant() {
                   <div className="text-2xl font-bold text-blue-600 transition-all duration-300">
                     {productivityCount.count}%
                   </div>
-                  <div className="text-sm text-gray-600">Redução no tempo de desenvolvimento</div>
+                  <div className="text-sm text-gray-600">{t('aiCodeAssistant:statsTop.devTime')}</div>
                 </div>
                 <div className="text-center" ref={accuracyCount.ref}>
                   <div className="text-2xl font-bold text-green-600 transition-all duration-300">
                     {accuracyCount.count}%
                   </div>
-                  <div className="text-sm text-gray-600">Precisão na detecção de bugs</div>
+                  <div className="text-sm text-gray-600">{t('aiCodeAssistant:statsTop.bugAccuracy')}</div>
                 </div>
                 <div className="text-center" ref={efficiencyCount.ref}>
                   <div className="text-2xl font-bold text-purple-600 transition-all duration-300">
                     {efficiencyCount.count}x
                   </div>
-                  <div className="text-sm text-gray-600">Aumento na produtividade</div>
+                  <div className="text-sm text-gray-600">{t('aiCodeAssistant:statsTop.productivity')}</div>
                 </div>
               </div>
 
@@ -108,40 +110,40 @@ export default function AICodeAssistant() {
                 onClick={() => navigate('/contato')}
               >
                 <Send className="mr-2 h-5 w-5" />
-                Solicitar Demonstração
+                {t('aiCodeAssistant:cta.requestDemo')}
               </Button>
             </div>
 
             <div className="lg:w-1/2">
               <div className="bg-white rounded-2xl shadow-xl p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Principais Recursos</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">{t('aiCodeAssistant:features.title')}</h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Geração Inteligente de Código</h4>
-                      <p className="text-gray-600">Crie código de alta qualidade automaticamente com base em especificações naturais</p>
+                      <h4 className="font-semibold text-gray-900">{t('aiCodeAssistant:features.generation.title')}</h4>
+                      <p className="text-gray-600">{t('aiCodeAssistant:features.generation.desc')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Detecção Avançada de Bugs</h4>
-                      <p className="text-gray-600">Identifique e corrija problemas antes que cheguem à produção</p>
+                      <h4 className="font-semibold text-gray-900">{t('aiCodeAssistant:features.bugDetection.title')}</h4>
+                      <p className="text-gray-600">{t('aiCodeAssistant:features.bugDetection.desc')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Otimização de Performance</h4>
-                      <p className="text-gray-600">Melhore automaticamente a eficiência e velocidade do seu código</p>
+                      <h4 className="font-semibold text-gray-900">{t('aiCodeAssistant:features.performance.title')}</h4>
+                      <p className="text-gray-600">{t('aiCodeAssistant:features.performance.desc')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Refatoração Inteligente</h4>
-                      <p className="text-gray-600">Mantenha seu código limpo e organizado com sugestões automáticas</p>
+                      <h4 className="font-semibold text-gray-900">{t('aiCodeAssistant:features.refactor.title')}</h4>
+                      <p className="text-gray-600">{t('aiCodeAssistant:features.refactor.desc')}</p>
                     </div>
                   </div>
                 </div>
@@ -155,9 +157,9 @@ export default function AICodeAssistant() {
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Recursos Avançados</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('aiCodeAssistant:advanced.title')}</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Descubra como o AI Code Assistant pode transformar seu fluxo de desenvolvimento
+              {t('aiCodeAssistant:advanced.subtitle')}
             </p>
           </div>
 
@@ -167,12 +169,10 @@ export default function AICodeAssistant() {
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <Star className="w-6 h-6 text-blue-600" />
                 </div>
-                <CardTitle>Análise de Código em Tempo Real</CardTitle>
+                <CardTitle>{t('aiCodeAssistant:advanced.realtime.title')}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600">
-                  Receba feedback instantâneo sobre qualidade, performance e boas práticas enquanto codifica.
-                </p>
+                <p className="text-gray-600">{t('aiCodeAssistant:advanced.realtime.desc')}</p>
               </CardContent>
             </Card>
 
@@ -181,12 +181,10 @@ export default function AICodeAssistant() {
                 <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
                   <Shield className="w-6 h-6 text-green-600" />
                 </div>
-                <CardTitle>Segurança Integrada</CardTitle>
+                <CardTitle>{t('aiCodeAssistant:advanced.security.title')}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600">
-                  Detecção automática de vulnerabilidades e implementação de práticas de segurança.
-                </p>
+                <p className="text-gray-600">{t('aiCodeAssistant:advanced.security.desc')}</p>
               </CardContent>
             </Card>
 
@@ -195,12 +193,10 @@ export default function AICodeAssistant() {
                 <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                   <Users className="w-6 h-6 text-purple-600" />
                 </div>
-                <CardTitle>Colaboração Inteligente</CardTitle>
+                <CardTitle>{t('aiCodeAssistant:advanced.collab.title')}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600">
-                  Facilite a colaboração entre equipes com sugestões contextualizadas e documentação automática.
-                </p>
+                <p className="text-gray-600">{t('aiCodeAssistant:advanced.collab.desc')}</p>
               </CardContent>
             </Card>
 
@@ -209,12 +205,10 @@ export default function AICodeAssistant() {
                 <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
                   <Clock className="w-6 h-6 text-orange-600" />
                 </div>
-                <CardTitle>Debugging Inteligente</CardTitle>
+                <CardTitle>{t('aiCodeAssistant:advanced.debug.title')}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600">
-                  Identifique e resolva problemas rapidamente com análise inteligente de logs e stack traces.
-                </p>
+                <p className="text-gray-600">{t('aiCodeAssistant:advanced.debug.desc')}</p>
               </CardContent>
             </Card>
 
@@ -223,12 +217,10 @@ export default function AICodeAssistant() {
                 <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
                   <CheckCircle className="w-6 h-6 text-red-600" />
                 </div>
-                <CardTitle>Testes Automatizados</CardTitle>
+                <CardTitle>{t('aiCodeAssistant:advanced.tests.title')}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600">
-                  Gere testes unitários e de integração automaticamente com alta cobertura.
-                </p>
+                <p className="text-gray-600">{t('aiCodeAssistant:advanced.tests.desc')}</p>
               </CardContent>
             </Card>
 
@@ -237,12 +229,10 @@ export default function AICodeAssistant() {
                 <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
                   <Send className="w-6 h-6 text-indigo-600" />
                 </div>
-                <CardTitle>Deploy Otimizado</CardTitle>
+                <CardTitle>{t('aiCodeAssistant:advanced.deploy.title')}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600">
-                  Automatize o processo de deploy com verificações de qualidade e rollback inteligente.
-                </p>
+                <p className="text-gray-600">{t('aiCodeAssistant:advanced.deploy.desc')}</p>
               </CardContent>
             </Card>
           </div>
@@ -253,9 +243,9 @@ export default function AICodeAssistant() {
       <section className="py-16 px-4 bg-gradient-to-r from-blue-50 to-purple-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Números Impressionantes</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('aiCodeAssistant:numbers.title')}</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Veja como o AI Code Assistant está revolucionando o desenvolvimento de software
+              {t('aiCodeAssistant:numbers.subtitle')}
             </p>
           </div>
 
@@ -264,24 +254,24 @@ export default function AICodeAssistant() {
               <div className="text-4xl font-bold text-blue-600 mb-2 transition-all duration-300">
                 {projectsCount.count}+
               </div>
-              <div className="text-lg font-semibold text-gray-900 mb-2">Projetos Otimizados</div>
-              <div className="text-gray-600">Com IA assistiva</div>
+              <div className="text-lg font-semibold text-gray-900 mb-2">{t('aiCodeAssistant:numbers.projects')}</div>
+              <div className="text-gray-600">{t('aiCodeAssistant:numbers.projectsDesc')}</div>
             </div>
 
             <div className="text-center bg-white rounded-xl p-8 shadow-lg" ref={developersCount.ref}>
               <div className="text-4xl font-bold text-green-600 mb-2 transition-all duration-300">
                 {developersCount.count}+
               </div>
-              <div className="text-lg font-semibold text-gray-900 mb-2">Desenvolvedores Ativos</div>
-              <div className="text-gray-600">Usando a plataforma</div>
+              <div className="text-lg font-semibold text-gray-900 mb-2">{t('aiCodeAssistant:numbers.developers')}</div>
+              <div className="text-gray-600">{t('aiCodeAssistant:numbers.developersDesc')}</div>
             </div>
 
             <div className="text-center bg-white rounded-xl p-8 shadow-lg" ref={bugsCount.ref}>
               <div className="text-4xl font-bold text-purple-600 mb-2 transition-all duration-300">
                 {bugsCount.count}%
               </div>
-              <div className="text-lg font-semibold text-gray-900 mb-2">Bugs Detectados</div>
-              <div className="text-gray-600">Antes da produção</div>
+              <div className="text-lg font-semibold text-gray-900 mb-2">{t('aiCodeAssistant:numbers.bugs')}</div>
+              <div className="text-gray-600">{t('aiCodeAssistant:numbers.bugsDesc')}</div>
             </div>
           </div>
         </div>
@@ -290,11 +280,9 @@ export default function AICodeAssistant() {
       {/* CTA Section */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-            Transforme seu desenvolvimento hoje
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">{t('aiCodeAssistant:cta.title')}</h2>
           <p className="text-xl mb-8 text-gray-600">
-            Junte-se às empresas que já aumentaram sua produtividade em 300% com AI Code Assistant.
+            {t('aiCodeAssistant:cta.subtitle')}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -304,7 +292,7 @@ export default function AICodeAssistant() {
               onClick={() => navigate('/contato')}
             >
               <Send className="mr-2 h-5 w-5" />
-              Solicitar Demonstração
+              {t('aiCodeAssistant:cta.requestDemo')}
             </Button>
             <Button 
               variant="outline"
@@ -312,7 +300,7 @@ export default function AICodeAssistant() {
               className="font-medium px-8 py-6 text-lg rounded-xl"
               onClick={() => navigate('/produtos')}
             >
-              Ver Outros Produtos
+              {t('aiCodeAssistant:cta.viewOthers')}
             </Button>
           </div>
         </div>

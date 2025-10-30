@@ -1,0 +1,43 @@
+{
+  "hero": {
+    "badge": "IA de Código Abierto",
+    "title": "Meta Llama",
+    "subtitle": "Modelos de lenguaje de código abierto de última generación para desarrollo de IA responsable."
+  },
+  "statsTop": {
+    "performance": "Rendimiento",
+    "efficiency": "Eficiencia",
+    "accuracy": "Precisión"
+  },
+  "cta": {
+    "requestDemo": "Solicitar Demostración",
+    "viewOthers": "Ver Otros Productos",
+    "title": "Construye con LLMs de última generación",
+    "subtitle": "Acelera el desarrollo con modelos abiertos, auditables y de alto rendimiento."
+  },
+  "features": {
+    "title": "Características Clave",
+    "opensource": {
+      "title": "Código Abierto",
+      "desc": "Transparencia, auditabilidad y una gran comunidad de desarrolladores"
+    },
+    "customization": {
+      "title": "Personalización",
+      "desc": "Ajuste fino con tus datos para casos de uso específicos"
+    },
+    "tooling": {
+      "title": "Herramientas y Ecosistema",
+      "desc": "Soporte para frameworks populares e inferencia optimizada"
+    }
+  },
+  "advanced": {
+    "title": "Capacidades Avanzadas",
+    "subtitle": "Modelos listos para producción con seguridad y gobernanza",
+    "community": "Ecosistema Activo",
+    "communityDesc": "Plugins, ejemplos y soporte de una comunidad global",
+    "safety": "Controles de Seguridad",
+    "safetyDesc": "Filtros, políticas y observabilidad para uso responsable",
+    "performance": "Rendimiento Optimizado",
+    "performanceDesc": "Inferencia rápida y eficiente en diferentes hardware"
+  }
+}

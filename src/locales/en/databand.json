@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "badge": "Data Observability",
+    "title": "Databand",
+    "subtitle": "Data observability platform for monitoring and quality of data pipelines."
+  },
+  "statsTop": {
+    "detection": "Problem Detection",
+    "reduction": "Time Reduction",
+    "monitoring": "Monitoring"
+  },
+  "features": {
+    "title": "Key Features",
+    "monitoring": {
+      "title": "Pipeline Monitoring",
+      "desc": "Automatic detection of problems in data pipelines"
+    },
+    "alerts": {
+      "title": "Intelligent Alerts",
+      "desc": "Proactive notifications about quality issues"
+    },
+    "impact": {
+      "title": "Impact Analysis",
+      "desc": "Assessment of the impact of problems on downstream data"
+    },
+    "debugging": {
+      "title": "Advanced Debugging",
+      "desc": "Tools for investigation and problem resolution"
+    }
+  },
+  "advanced": {
+    "title": "Advanced Resources",
+    "subtitle": "Discover how Databand can revolutionize your data observability",
+    "anomalyDetection": {
+      "title": "Anomaly Detection",
+      "desc": "Automatic identification of anomalous patterns in data and pipelines."
+    },
+    "visibility": {
+      "title": "Complete Visibility",
+      "desc": "Detailed visualization of all aspects of data pipelines."
+    },
+    "quality": {
+      "title": "Data Quality",
+      "desc": "Continuous monitoring of data quality and integrity."
+    },
+    "collaboration": {
+      "title": "Team Collaboration",
+      "desc": "Tools for collaborative work in problem resolution."
+    },
+    "realtimeAlerts": {
+      "title": "Real-time Alerts",
+      "desc": "Instant notifications about critical data problems."
+    },
+    "integration": {
+      "title": "Universal Integration",
+      "desc": "Connectors for all major data and ETL tools."
+    }
+  },
+  "numbers": {
+    "title": "Impressive Numbers",
+    "subtitle": "See how Databand is revolutionizing data observability",
+    "pipelines": "Monitored Pipelines",
+    "pipelinesDesc": "In active production",
+    "accuracy": "Detection Accuracy",
+    "accuracyDesc": "Of data problems",
+    "enterprises": "Active Enterprises",
+    "enterprisesDesc": "Using the platform"
+  },
+  "cta": {
+    "title": "Transform your Data Observability",
+    "subtitle": "Join companies that have already transformed their business with Databand.",
+    "requestDemo": "Request Demo",
+    "viewOthers": "View Other Products"
+  }
+}

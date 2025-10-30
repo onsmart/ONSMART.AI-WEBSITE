@@ -1,0 +1,43 @@
+{
+  "hero": {
+    "badge": "Open Source AI",
+    "title": "Meta Llama",
+    "subtitle": "State-of-the-art open-source language models for responsible AI development."
+  },
+  "statsTop": {
+    "performance": "Performance",
+    "efficiency": "Efficiency",
+    "accuracy": "Accuracy"
+  },
+  "cta": {
+    "requestDemo": "Request Demo",
+    "viewOthers": "View Other Products",
+    "title": "Build with cutting-edge LLMs",
+    "subtitle": "Accelerate development with open, auditable and high-performance models."
+  },
+  "features": {
+    "title": "Key Features",
+    "opensource": {
+      "title": "Open Source",
+      "desc": "Transparency, auditability and a large developer community"
+    },
+    "customization": {
+      "title": "Customization",
+      "desc": "Fine-tune with your data for specific use cases"
+    },
+    "tooling": {
+      "title": "Tooling & Ecosystem",
+      "desc": "Support for popular frameworks and optimized inference"
+    }
+  },
+  "advanced": {
+    "title": "Advanced Capabilities",
+    "subtitle": "Production-ready models with safety and governance",
+    "community": "Active Ecosystem",
+    "communityDesc": "Plugins, examples and support from a global community",
+    "safety": "Safety Controls",
+    "safetyDesc": "Filters, policies and observability for responsible use",
+    "performance": "Optimized Performance",
+    "performanceDesc": "Fast and efficient inference on diverse hardware"
+  }
+}

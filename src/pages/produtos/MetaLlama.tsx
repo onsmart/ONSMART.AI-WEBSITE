@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { CheckCircle, ArrowLeft, Star, Shield, Users, Clock, Send } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 // Hook para contador animado
 const useCountUp = (end: number, duration: number = 2000) => {
@@ -45,6 +46,7 @@ const useCountUp = (end: number, duration: number = 2000) => {
 
 export default function MetaLlama() {
   const navigate = useNavigate();
+  const { t } = useTranslation('metaLlama');
   
   // Contadores animados
   const performanceCount = useCountUp(70, 1500);
@@ -67,17 +69,17 @@ export default function MetaLlama() {
                 <div className="p-3 sm:p-4 rounded-full bg-blue-50">
                   <img 
                     src="https://images-onsmart.vercel.app/onsmart.ai/meta.png" 
-                    alt="Meta Llama" 
+                    alt={t('hero.title')} 
                     className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
                   />
                 </div>
                 <div>
-                  <Badge variant="outline" className="mb-2">Open Source AI</Badge>
-                  <h1 className="text-4xl font-bold text-gray-900">Meta Llama</h1>
+                  <Badge variant="outline" className="mb-2">{t('hero.badge')}</Badge>
+                  <h1 className="text-4xl font-bold text-gray-900">{t('hero.title')}</h1>
                 </div>
               </div>
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                Modelos de linguagem de código aberto de última geração para desenvolvimento de IA responsável.
+                {t('hero.subtitle')}
               </p>
               
               {/* Stats */}
@@ -86,19 +88,19 @@ export default function MetaLlama() {
                   <div className="text-2xl font-bold text-blue-600 transition-all duration-300">
                     {performanceCount.count}B+
                   </div>
-                  <div className="text-sm text-gray-600">Parâmetros do modelo</div>
+                  <div className="text-sm text-gray-600">{t('statsTop.performance')}</div>
                 </div>
                 <div className="text-center" ref={efficiencyCount.ref}>
                   <div className="text-2xl font-bold text-green-600 transition-all duration-300">
                     {efficiencyCount.count}%
                   </div>
-                  <div className="text-sm text-gray-600">Código aberto</div>
+                  <div className="text-sm text-gray-600">{t('statsTop.efficiency')}</div>
                 </div>
                 <div className="text-center" ref={accuracyCount.ref}>
                   <div className="text-2xl font-bold text-purple-600 transition-all duration-300">
                     {accuracyCount.count}x
                   </div>
-                  <div className="text-sm text-gray-600">Mais eficiente</div>
+                  <div className="text-sm text-gray-600">{t('statsTop.accuracy')}</div>
                 </div>
               </div>
 
@@ -108,40 +110,40 @@ export default function MetaLlama() {
                 onClick={() => navigate('/contato')}
               >
                 <Send className="mr-2 h-5 w-5" />
-                Solicitar Demonstração
+                {t('cta.requestDemo')}
               </Button>
             </div>
 
             <div className="lg:w-1/2">
               <div className="bg-white rounded-2xl shadow-xl p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Principais Recursos</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">{t('features.title')}</h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Modelos Avançados</h4>
-                      <p className="text-gray-600">Acesse modelos de linguagem de última geração</p>
+                      <h4 className="font-semibold text-gray-900">{t('features.opensource.title')}</h4>
+                      <p className="text-gray-600">{t('features.opensource.desc')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Código Aberto</h4>
-                      <p className="text-gray-600">Transparência total e personalização completa</p>
+                      <h4 className="font-semibold text-gray-900">{t('features.customization.title')}</h4>
+                      <p className="text-gray-600">{t('features.customization.desc')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">IA Responsável</h4>
-                      <p className="text-gray-600">Desenvolvimento ético e seguro de aplicações de IA</p>
+                      <h4 className="font-semibold text-gray-900">{t('features.tooling.title')}</h4>
+                      <p className="text-gray-600">{t('features.tooling.desc')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Performance Superior</h4>
-                      <p className="text-gray-600">Modelos otimizados para máxima eficiência e qualidade</p>
+                      <h4 className="font-semibold text-gray-900">{t('advanced.performance')}</h4>
+                      <p className="text-gray-600">{t('advanced.performanceDesc')}</p>
                     </div>
                   </div>
                 </div>
@@ -155,9 +157,9 @@ export default function MetaLlama() {
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Recursos Avançados</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('advanced.title')}</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Descubra como o Meta Llama pode revolucionar seus projetos de IA
+              {t('advanced.subtitle')}
             </p>
           </div>
 
@@ -167,11 +169,11 @@ export default function MetaLlama() {
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <Star className="w-6 h-6 text-blue-600" />
                 </div>
-                <CardTitle>Modelos Especializados</CardTitle>
+                <CardTitle>{t('advanced.community')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Modelos otimizados para diferentes domínios e aplicações específicas.
+                  {t('advanced.communityDesc')}
                 </p>
               </CardContent>
             </Card>
@@ -181,11 +183,11 @@ export default function MetaLlama() {
                 <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
                   <Shield className="w-6 h-6 text-green-600" />
                 </div>
-                <CardTitle>IA Responsável</CardTitle>
+                <CardTitle>{t('advanced.safety')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Desenvolvimento ético e seguro com proteções integradas.
+                  {t('advanced.safetyDesc')}
                 </p>
               </CardContent>
             </Card>
@@ -195,53 +197,11 @@ export default function MetaLlama() {
                 <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                   <Users className="w-6 h-6 text-purple-600" />
                 </div>
-                <CardTitle>Comunidade Ativa</CardTitle>
+                <CardTitle>{t('features.customization.title')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Suporte da comunidade e atualizações contínuas de melhorias.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
-                  <Clock className="w-6 h-6 text-orange-600" />
-                </div>
-                <CardTitle>Inferência Rápida</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Respostas instantâneas para aplicações de tempo real.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
-                  <CheckCircle className="w-6 h-6 text-red-600" />
-                </div>
-                <CardTitle>Fine-tuning Automático</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Otimização automática dos modelos baseada nos seus dados.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
-                  <Send className="w-6 h-6 text-indigo-600" />
-                </div>
-                <CardTitle>API Enterprise</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Integração fácil com sistemas existentes via APIs robustas.
+                  {t('features.customization.desc')}
                 </p>
               </CardContent>
             </Card>
@@ -253,9 +213,9 @@ export default function MetaLlama() {
       <section className="py-16 px-4 bg-gradient-to-r from-blue-50 to-purple-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Números Impressionantes</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('numbers.title')}</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Veja como o Meta Llama está revolucionando a IA de código aberto
+              {t('numbers.subtitle')}
             </p>
           </div>
 
@@ -264,24 +224,24 @@ export default function MetaLlama() {
               <div className="text-4xl font-bold text-blue-600 mb-2 transition-all duration-300">
                 {modelsCount.count}+
               </div>
-              <div className="text-lg font-semibold text-gray-900 mb-2">Modelos Disponíveis</div>
-              <div className="text-gray-600">Para diferentes aplicações</div>
+              <div className="text-lg font-semibold text-gray-900 mb-2">{t('numbers.availableModels')}</div>
+              <div className="text-gray-600">{t('numbers.availableModelsDesc')}</div>
             </div>
 
             <div className="text-center bg-white rounded-xl p-8 shadow-lg" ref={developersCount.ref}>
               <div className="text-4xl font-bold text-green-600 mb-2 transition-all duration-300">
                 {developersCount.count}+
               </div>
-              <div className="text-lg font-semibold text-gray-900 mb-2">Desenvolvedores Ativos</div>
-              <div className="text-gray-600">Contribuindo para o projeto</div>
+              <div className="text-lg font-semibold text-gray-900 mb-2">{t('numbers.developers')}</div>
+              <div className="text-gray-600">{t('numbers.developersDesc')}</div>
             </div>
 
             <div className="text-center bg-white rounded-xl p-8 shadow-lg" ref={applicationsCount.ref}>
               <div className="text-4xl font-bold text-purple-600 mb-2 transition-all duration-300">
                 {applicationsCount.count}+
               </div>
-              <div className="text-lg font-semibold text-gray-900 mb-2">Aplicações Criadas</div>
-              <div className="text-gray-600">Baseadas na plataforma</div>
+              <div className="text-lg font-semibold text-gray-900 mb-2">{t('numbers.apps')}</div>
+              <div className="text-gray-600">{t('numbers.appsDesc')}</div>
             </div>
           </div>
         </div>
@@ -291,10 +251,10 @@ export default function MetaLlama() {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-            Potencialize sua IA hoje
+            {t('cta.title')}
           </h2>
           <p className="text-xl mb-8 text-gray-600">
-            Junte-se às empresas que já transformaram seus negócios com Meta Llama.
+            {t('cta.subtitle')}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -304,7 +264,7 @@ export default function MetaLlama() {
               onClick={() => navigate('/contato')}
             >
               <Send className="mr-2 h-5 w-5" />
-              Solicitar Demonstração
+              {t('cta.requestDemo')}
             </Button>
             <Button 
               variant="outline"
@@ -312,7 +272,7 @@ export default function MetaLlama() {
               className="font-medium px-8 py-6 text-lg rounded-xl"
               onClick={() => navigate('/produtos')}
             >
-              Ver Outros Produtos
+              {t('cta.viewOthers')}
             </Button>
           </div>
         </div>

@@ -1,0 +1,63 @@
+{
+  "hero": {
+    "badge": "AI Models",
+    "title": "Granite™",
+    "subtitle": "Advanced AI models for enterprise applications with enhanced security and exceptional performance."
+  },
+  "statsTop": {
+    "availability": "Availability",
+    "speed": "Faster than competitors",
+    "security": "Security compliance"
+  },
+  "cta": {
+    "requestDemo": "Request Demo",
+    "viewOthers": "View Other Products",
+    "title": "Power your AI today",
+    "subtitle": "Join the companies that have already transformed their business with Granite™."
+  },
+  "features": {
+    "title": "Key Features",
+    "nlp": {
+      "title": "Natural Language Processing",
+      "desc": "Advanced understanding of text and human language"
+    },
+    "multimodal": {
+      "title": "Multimodal AI",
+      "desc": "Processing of text, image, audio and video"
+    },
+    "security": {
+      "title": "Enterprise Security",
+      "desc": "Data protection and regulatory compliance"
+    },
+    "scalability": {
+      "title": "Advanced Scalability",
+      "desc": "Support for millions of simultaneous requests"
+    }
+  },
+  "advanced": {
+    "title": "Advanced Capabilities",
+    "subtitle": "Discover how Granite™ can revolutionize your AI applications",
+    "specializedModels": "Specialized Models",
+    "specializedModelsDesc": "Models optimized for domains like healthcare, finance, legal and more.",
+    "governance": "AI Governance",
+    "governanceDesc": "Full control over AI decisions with complete traceability.",
+    "personalization": "Advanced Personalization",
+    "personalizationDesc": "Adapt models to your company's specific needs.",
+    "realtime": "Real-time Inference",
+    "realtimeDesc": "Instant responses for time-critical applications.",
+    "finetune": "Automatic Fine-tuning",
+    "finetuneDesc": "Automatic model optimization based on your data.",
+    "api": "Enterprise API",
+    "apiDesc": "Easy integration with existing systems via robust APIs."
+  },
+  "numbers": {
+    "title": "Impressive Numbers",
+    "subtitle": "See how Granite™ is revolutionizing enterprise AI",
+    "availableModels": "Available Models",
+    "accuracy": "Average Accuracy",
+    "activeEnterprises": "Active Enterprises",
+    "availableModelsDesc": "For different use cases",
+    "accuracyDesc": "On complex tasks",
+    "activeEnterprisesDesc": "Using the platform"
+  }
+}

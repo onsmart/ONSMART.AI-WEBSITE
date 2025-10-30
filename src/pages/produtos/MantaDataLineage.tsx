@@ -4,9 +4,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { CheckCircle, ArrowLeft, GitBranch, Search, Shield, Users, Zap, Send } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function MantaDataLineage() {
   const navigate = useNavigate();
+  const { t } = useTranslation(["mantaDataLineage", "produtos", "common"]);
 
   // Hook para contador animado
   const useCountUp = (end: number, duration: number = 2000) => {
@@ -69,17 +71,17 @@ export default function MantaDataLineage() {
                 <div className="p-3 sm:p-4 rounded-full bg-blue-50">
                   <img 
                     src="https://images-onsmart.vercel.app/onsmart.ai/manta.png" 
-                    alt="Manta Data Lineage" 
+                    alt={t('mantaDataLineage:hero.title')} 
                     className="w-12 h-12 sm:w-16 sm:h-16 object-contain scale-150"
                   />
                 </div>
                 <div>
-                  <Badge variant="outline" className="mb-2">Data Governance</Badge>
-                  <h1 className="text-4xl font-bold text-gray-900">Manta Data Lineage</h1>
+                  <Badge variant="outline" className="mb-2">{t('mantaDataLineage:hero.badge')}</Badge>
+                  <h1 className="text-4xl font-bold text-gray-900">{t('mantaDataLineage:hero.title')}</h1>
                 </div>
               </div>
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                Plataforma de linhagem de dados para rastreabilidade completa e governança de dados empresariais.
+                {t('mantaDataLineage:hero.subtitle')}
               </p>
               
               {/* Stats */}
@@ -88,19 +90,19 @@ export default function MantaDataLineage() {
                   <div className="text-2xl font-bold text-blue-600 transition-all duration-300">
                     {traceabilityCount.count}%
                   </div>
-                  <div className="text-sm text-gray-600">Rastreabilidade</div>
+                  <div className="text-sm text-gray-600">{t('mantaDataLineage:statsTop.traceability')}</div>
                 </div>
                 <div className="text-center" ref={connectorsCount.ref}>
                   <div className="text-2xl font-bold text-green-600 transition-all duration-300">
                     {connectorsCount.count}+
                   </div>
-                  <div className="text-sm text-gray-600">Conectores</div>
+                  <div className="text-sm text-gray-600">{t('mantaDataLineage:statsTop.connectors')}</div>
                 </div>
                 <div className="text-center" ref={monitoringCount.ref}>
                   <div className="text-2xl font-bold text-purple-600 transition-all duration-300">
                     {monitoringCount.count}/7
                   </div>
-                  <div className="text-sm text-gray-600">Monitoramento</div>
+                  <div className="text-sm text-gray-600">{t('mantaDataLineage:statsTop.monitoring')}</div>
                 </div>
               </div>
 
@@ -110,40 +112,40 @@ export default function MantaDataLineage() {
                 onClick={() => navigate('/contato')}
               >
                 <Send className="mr-2 h-5 w-5" />
-                Solicitar Demonstração
+                {t('mantaDataLineage:cta.requestDemo')}
               </Button>
             </div>
 
             <div className="lg:w-1/2">
               <div className="bg-white rounded-2xl shadow-xl p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Principais Recursos</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">{t('mantaDataLineage:features.title')}</h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Linhagem Automática</h4>
-                      <p className="text-gray-600">Descoberta automática de linhagem de dados em tempo real</p>
+                      <h4 className="font-semibold text-gray-900">{t('mantaDataLineage:features.lineage.title')}</h4>
+                      <p className="text-gray-600">{t('mantaDataLineage:features.lineage.desc')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Governança de Dados</h4>
-                      <p className="text-gray-600">Controle total sobre qualidade e conformidade dos dados</p>
+                      <h4 className="font-semibold text-gray-900">{t('mantaDataLineage:features.governance.title')}</h4>
+                      <p className="text-gray-600">{t('mantaDataLineage:features.governance.desc')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Impacto de Mudanças</h4>
-                      <p className="text-gray-600">Análise de impacto de mudanças em pipelines de dados</p>
+                      <h4 className="font-semibold text-gray-900">{t('mantaDataLineage:features.impact.title')}</h4>
+                      <p className="text-gray-600">{t('mantaDataLineage:features.impact.desc')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Documentação Automática</h4>
-                      <p className="text-gray-600">Geração automática de documentação de dados</p>
+                      <h4 className="font-semibold text-gray-900">{t('mantaDataLineage:features.documentation.title')}</h4>
+                      <p className="text-gray-600">{t('mantaDataLineage:features.documentation.desc')}</p>
                     </div>
                   </div>
                 </div>
@@ -157,9 +159,9 @@ export default function MantaDataLineage() {
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Recursos Avançados</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('mantaDataLineage:advanced.title')}</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Descubra como o Manta Data Lineage pode revolucionar sua governança de dados
+              {t('mantaDataLineage:advanced.subtitle')}
             </p>
           </div>
 
@@ -169,11 +171,11 @@ export default function MantaDataLineage() {
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <GitBranch className="w-6 h-6 text-blue-600" />
                 </div>
-                <CardTitle>Linhagem Detalhada</CardTitle>
+                <CardTitle>{t('mantaDataLineage:advanced.detailed.title')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Rastreamento completo da origem e transformação de cada campo de dados.
+                  {t('mantaDataLineage:advanced.detailed.desc')}
                 </p>
               </CardContent>
             </Card>
@@ -183,11 +185,11 @@ export default function MantaDataLineage() {
                 <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
                   <Search className="w-6 h-6 text-green-600" />
                 </div>
-                <CardTitle>Descoberta Automática</CardTitle>
+                <CardTitle>{t('mantaDataLineage:advanced.discovery.title')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Identificação automática de relacionamentos e dependências entre dados.
+                  {t('mantaDataLineage:advanced.discovery.desc')}
                 </p>
               </CardContent>
             </Card>
@@ -197,11 +199,11 @@ export default function MantaDataLineage() {
                 <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                   <Shield className="w-6 h-6 text-purple-600" />
                 </div>
-                <CardTitle>Conformidade Regulatória</CardTitle>
+                <CardTitle>{t('mantaDataLineage:advanced.compliance.title')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Suporte a regulamentações como GDPR, SOX e outras normas de compliance.
+                  {t('mantaDataLineage:advanced.compliance.desc')}
                 </p>
               </CardContent>
             </Card>
@@ -211,11 +213,11 @@ export default function MantaDataLineage() {
                 <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
                   <Users className="w-6 h-6 text-orange-600" />
                 </div>
-                <CardTitle>Colaboração em Equipe</CardTitle>
+                <CardTitle>{t('mantaDataLineage:advanced.collaboration.title')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Ferramentas colaborativas para análise e documentação de dados.
+                  {t('mantaDataLineage:advanced.collaboration.desc')}
                 </p>
               </CardContent>
             </Card>
@@ -225,11 +227,11 @@ export default function MantaDataLineage() {
                 <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
                   <Zap className="w-6 h-6 text-red-600" />
                 </div>
-                <CardTitle>Análise de Impacto</CardTitle>
+                <CardTitle>{t('mantaDataLineage:advanced.impactAnalysis.title')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Simulação de mudanças para avaliar impacto em sistemas downstream.
+                  {t('mantaDataLineage:advanced.impactAnalysis.desc')}
                 </p>
               </CardContent>
             </Card>
@@ -239,11 +241,11 @@ export default function MantaDataLineage() {
                 <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
                   <Send className="w-6 h-6 text-indigo-600" />
                 </div>
-                <CardTitle>Integração Universal</CardTitle>
+                <CardTitle>{t('mantaDataLineage:advanced.integration.title')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Conectores para mais de 50 fontes de dados e ferramentas ETL.
+                  {t('mantaDataLineage:advanced.integration.desc')}
                 </p>
               </CardContent>
             </Card>
@@ -255,9 +257,9 @@ export default function MantaDataLineage() {
       <section className="py-16 px-4 bg-gradient-to-r from-blue-50 to-purple-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Números Impressionantes</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('mantaDataLineage:numbers.title')}</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Veja como o Manta Data Lineage está revolucionando a governança de dados
+              {t('mantaDataLineage:numbers.subtitle')}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -265,22 +267,22 @@ export default function MantaDataLineage() {
               <div className="text-4xl font-bold text-blue-600 mb-2 transition-all duration-300">
                 {dataSourcesCount.count}+
               </div>
-              <div className="text-lg font-semibold text-gray-900 mb-2">Fontes de Dados</div>
-              <div className="text-gray-600">Conectadas</div>
+              <div className="text-lg font-semibold text-gray-900 mb-2">{t('mantaDataLineage:numbers.dataSources')}</div>
+              <div className="text-gray-600">{t('mantaDataLineage:numbers.dataSourcesDesc')}</div>
             </div>
             <div className="text-center bg-white rounded-xl p-8 shadow-lg" ref={enterpriseCount.ref}>
               <div className="text-4xl font-bold text-green-600 mb-2 transition-all duration-300">
                 {enterpriseCount.count}+
               </div>
-              <div className="text-lg font-semibold text-gray-900 mb-2">Empresas Ativas</div>
-              <div className="text-gray-600">Usando a plataforma</div>
+              <div className="text-lg font-semibold text-gray-900 mb-2">{t('mantaDataLineage:numbers.enterprises')}</div>
+              <div className="text-gray-600">{t('mantaDataLineage:numbers.enterprisesDesc')}</div>
             </div>
             <div className="text-center bg-white rounded-xl p-8 shadow-lg" ref={accuracyCount.ref}>
               <div className="text-4xl font-bold text-purple-600 mb-2 transition-all duration-300">
                 {accuracyCount.count}%
               </div>
-              <div className="text-lg font-semibold text-gray-900 mb-2">Precisão</div>
-              <div className="text-gray-600">Na linhagem de dados</div>
+              <div className="text-lg font-semibold text-gray-900 mb-2">{t('mantaDataLineage:numbers.accuracy')}</div>
+              <div className="text-gray-600">{t('mantaDataLineage:numbers.accuracyDesc')}</div>
             </div>
           </div>
         </div>
@@ -289,11 +291,9 @@ export default function MantaDataLineage() {
       {/* CTA Section */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-            Transforme sua Governança de Dados
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">{t('mantaDataLineage:cta.title')}</h2>
           <p className="text-xl mb-8 text-gray-600">
-            Junte-se às empresas que já transformaram seus negócios com Manta Data Lineage.
+            {t('mantaDataLineage:cta.subtitle')}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -303,7 +303,7 @@ export default function MantaDataLineage() {
               onClick={() => navigate('/contato')}
             >
               <Send className="mr-2 h-5 w-5" />
-              Solicitar Demonstração
+              {t('mantaDataLineage:cta.requestDemo')}
             </Button>
             <Button 
               variant="outline"
@@ -311,7 +311,7 @@ export default function MantaDataLineage() {
               className="font-medium px-8 py-6 text-lg rounded-xl"
               onClick={() => navigate('/produtos')}
             >
-              Ver Outros Produtos
+              {t('mantaDataLineage:cta.viewOthers')}
             </Button>
           </div>
         </div>

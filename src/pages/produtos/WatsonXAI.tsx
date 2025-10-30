@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { CheckCircle, ArrowLeft, Star, Shield, Users, Clock, Send } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 // Hook para contador animado
 const useCountUp = (end: number, duration: number = 2000) => {
@@ -45,6 +46,7 @@ const useCountUp = (end: number, duration: number = 2000) => {
 
 export default function WatsonXAI() {
   const navigate = useNavigate();
+  const { t } = useTranslation('watsonxAI');
   
   // Contadores animados
   const implementationCount = useCountUp(85, 1500);
@@ -67,17 +69,17 @@ export default function WatsonXAI() {
                 <div className="p-3 sm:p-4 rounded-full bg-blue-50">
                   <img 
                     src="https://images-onsmart.vercel.app/onsmart.ai/watsonx.png" 
-                    alt="watsonx.ai" 
+                    alt={t('hero.title')} 
                     className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover"
                   />
                 </div>
                 <div>
-                  <Badge variant="outline" className="mb-2">AI Tools</Badge>
-                  <h1 className="text-4xl font-bold text-gray-900">watsonx.ai™</h1>
+                  <Badge variant="outline" className="mb-2">{t('hero.badge')}</Badge>
+                  <h1 className="text-4xl font-bold text-gray-900">{t('hero.title')}</h1>
                 </div>
               </div>
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                Trabalhe com modelos, ferramentas e governança de IA criados especificamente para negócios.
+                {t('hero.subtitle')}
               </p>
               
               {/* Stats */}
@@ -86,19 +88,19 @@ export default function WatsonXAI() {
                   <div className="text-2xl font-bold text-blue-600 transition-all duration-300">
                     {implementationCount.count}%
                   </div>
-                  <div className="text-sm text-gray-600">Redução no tempo de implementação</div>
+                  <div className="text-sm text-gray-600">{t('statsTop.implementation')}</div>
                 </div>
                 <div className="text-center" ref={complianceCount.ref}>
                   <div className="text-2xl font-bold text-green-600 transition-all duration-300">
                     {complianceCount.count}%
                   </div>
-                  <div className="text-sm text-gray-600">Conformidade regulatória</div>
+                  <div className="text-sm text-gray-600">{t('statsTop.compliance')}</div>
                 </div>
                 <div className="text-center" ref={roiCount.ref}>
                   <div className="text-2xl font-bold text-purple-600 transition-all duration-300">
                     {roiCount.count}x
                   </div>
-                  <div className="text-sm text-gray-600">ROI médio em 6 meses</div>
+                  <div className="text-sm text-gray-600">{t('statsTop.roi')}</div>
                 </div>
               </div>
 
@@ -108,40 +110,40 @@ export default function WatsonXAI() {
                 onClick={() => navigate('/contato')}
               >
                 <Send className="mr-2 h-5 w-5" />
-                Solicitar Demonstração
+                {t('cta.requestDemo')}
               </Button>
             </div>
 
             <div className="lg:w-1/2">
               <div className="bg-white rounded-2xl shadow-xl p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Principais Recursos</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">{t('features.title')}</h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Treinamento de Modelos</h4>
-                      <p className="text-gray-600">Crie e treine modelos de IA com seus dados empresariais</p>
+                      <h4 className="font-semibold text-gray-900">{t('features.training.title')}</h4>
+                      <p className="text-gray-600">{t('features.training.desc')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Governança de IA</h4>
-                      <p className="text-gray-600">Controle total sobre o ciclo de vida dos modelos de IA</p>
+                      <h4 className="font-semibold text-gray-900">{t('features.governance.title')}</h4>
+                      <p className="text-gray-600">{t('features.governance.desc')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Inteligência Empresarial</h4>
-                      <p className="text-gray-600">Insights acionáveis baseados em dados reais</p>
+                      <h4 className="font-semibold text-gray-900">{t('features.business.title')}</h4>
+                      <p className="text-gray-600">{t('features.business.desc')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Integração Simplificada</h4>
-                      <p className="text-gray-600">Conecte-se facilmente com sistemas existentes</p>
+                      <h4 className="font-semibold text-gray-900">{t('advanced.deployment')}</h4>
+                      <p className="text-gray-600">{t('advanced.deploymentDesc')}</p>
                     </div>
                   </div>
                 </div>
@@ -155,9 +157,9 @@ export default function WatsonXAI() {
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Recursos Avançados</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('advanced.title')}</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Descubra como o watsonx.ai™ pode transformar sua estratégia de IA
+              {t('advanced.subtitle')}
             </p>
           </div>
 
@@ -167,11 +169,11 @@ export default function WatsonXAI() {
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <Star className="w-6 h-6 text-blue-600" />
                 </div>
-                <CardTitle>Studio de IA</CardTitle>
+                <CardTitle>{t('advanced.catalog')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Ambiente visual para criar, treinar e implantar modelos de IA sem código.
+                  {t('advanced.catalogDesc')}
                 </p>
               </CardContent>
             </Card>
@@ -181,11 +183,11 @@ export default function WatsonXAI() {
                 <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
                   <Shield className="w-6 h-6 text-green-600" />
                 </div>
-                <CardTitle>Governança Avançada</CardTitle>
+                <CardTitle>{t('advanced.evaluation')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Controle de acesso, auditoria e conformidade regulatória integrados.
+                  {t('advanced.evaluationDesc')}
                 </p>
               </CardContent>
             </Card>
@@ -195,53 +197,11 @@ export default function WatsonXAI() {
                 <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                   <Users className="w-6 h-6 text-purple-600" />
                 </div>
-                <CardTitle>Colaboração em Equipe</CardTitle>
+                <CardTitle>{t('features.business.title')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Trabalhe em conjunto com sua equipe em projetos de IA.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
-                  <Clock className="w-6 h-6 text-orange-600" />
-                </div>
-                <CardTitle>Monitoramento em Tempo Real</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Acompanhe o desempenho e saúde dos seus modelos de IA.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
-                  <CheckCircle className="w-6 h-6 text-red-600" />
-                </div>
-                <CardTitle>AutoML</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Automatização completa do processo de machine learning.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
-                  <Send className="w-6 h-6 text-indigo-600" />
-                </div>
-                <CardTitle>Deploy Automatizado</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Implante modelos em produção com um clique.
+                  {t('features.business.desc')}
                 </p>
               </CardContent>
             </Card>
@@ -253,9 +213,9 @@ export default function WatsonXAI() {
       <section className="py-16 px-4 bg-gradient-to-r from-blue-50 to-purple-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Números Impressionantes</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('numbers.title')}</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Veja como o watsonx.ai™ está transformando a IA empresarial
+              {t('numbers.subtitle')}
             </p>
           </div>
 
@@ -264,24 +224,24 @@ export default function WatsonXAI() {
               <div className="text-4xl font-bold text-blue-600 mb-2 transition-all duration-300">
                 {modelsCount.count}+
               </div>
-              <div className="text-lg font-semibold text-gray-900 mb-2">Modelos Treinados</div>
-              <div className="text-gray-600">Em produção ativa</div>
+              <div className="text-lg font-semibold text-gray-900 mb-2">{t('numbers.models')}</div>
+              <div className="text-gray-600">{t('numbers.modelsDesc')}</div>
             </div>
 
             <div className="text-center bg-white rounded-xl p-8 shadow-lg" ref={accuracyCount.ref}>
               <div className="text-4xl font-bold text-green-600 mb-2 transition-all duration-300">
                 {accuracyCount.count}%
               </div>
-              <div className="text-lg font-semibold text-gray-900 mb-2">Precisão Média</div>
-              <div className="text-gray-600">Dos modelos em produção</div>
+              <div className="text-lg font-semibold text-gray-900 mb-2">{t('numbers.uptime')}</div>
+              <div className="text-gray-600">{t('numbers.uptimeDesc')}</div>
             </div>
 
             <div className="text-center bg-white rounded-xl p-8 shadow-lg" ref={enterpriseCount.ref}>
               <div className="text-4xl font-bold text-purple-600 mb-2 transition-all duration-300">
                 {enterpriseCount.count}+
               </div>
-              <div className="text-lg font-semibold text-gray-900 mb-2">Empresas Ativas</div>
-              <div className="text-gray-600">Usando a plataforma</div>
+              <div className="text-lg font-semibold text-gray-900 mb-2">{t('numbers.companies')}</div>
+              <div className="text-gray-600">{t('numbers.companiesDesc')}</div>
             </div>
           </div>
         </div>
@@ -291,10 +251,10 @@ export default function WatsonXAI() {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-            Transforme sua IA hoje
+            {t('cta.title')}
           </h2>
           <p className="text-xl mb-8 text-gray-600">
-            Junte-se às empresas que já revolucionaram seus negócios com watsonx.ai™.
+            {t('cta.subtitle')}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -304,7 +264,7 @@ export default function WatsonXAI() {
               onClick={() => navigate('/contato')}
             >
               <Send className="mr-2 h-5 w-5" />
-              Solicitar Demonstração
+              {t('cta.requestDemo')}
             </Button>
             <Button 
               variant="outline"
@@ -312,7 +272,7 @@ export default function WatsonXAI() {
               className="font-medium px-8 py-6 text-lg rounded-xl"
               onClick={() => navigate('/produtos')}
             >
-              Ver Outros Produtos
+              {t('cta.viewOthers')}
             </Button>
           </div>
         </div>

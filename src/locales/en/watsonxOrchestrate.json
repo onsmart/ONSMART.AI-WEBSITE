@@ -1,0 +1,63 @@
+{
+  "hero": {
+    "badge": "AI Orchestration",
+    "title": "watsonx Orchestrate™",
+    "subtitle": "Orchestrate complex AI workflows with intelligent automation and seamless integration."
+  },
+  "statsTop": {
+    "reduction": "Orchestration time reduction",
+    "automation": "Continuous automation",
+    "efficiency": "Operational efficiency"
+  },
+  "cta": {
+    "requestDemo": "Request Demo",
+    "viewOthers": "View Other Products",
+    "title": "Power your orchestration today",
+    "subtitle": "Transform your processes with watsonx Orchestrate™."
+  },
+  "features": {
+    "title": "Key Features",
+    "flows": {
+      "title": "Flow Orchestration",
+      "desc": "Automate complex AI processes with ease"
+    },
+    "integration": {
+      "title": "Multi‑platform Integration",
+      "desc": "Connect different systems and AI tools"
+    },
+    "monitoring": {
+      "title": "Smart Monitoring",
+      "desc": "Track performance and optimize flows in real time"
+    },
+    "continuous": {
+      "title": "Continuous Automation",
+      "desc": "Run workflows 24/7 without manual intervention"
+    }
+  },
+  "advanced": {
+    "title": "Advanced Features",
+    "subtitle": "Optimize, monitor and scale your AI workflows",
+    "smart": "Intelligent Automation",
+    "smartDesc": "Repetitive tasks with AI and rules",
+    "security": "Enterprise Security",
+    "securityDesc": "Access controls and encryption",
+    "realtime": "Real‑time Execution",
+    "realtimeDesc": "Workflows with low latency",
+    "multiplaform": "Multi‑platform Integration",
+    "multiplaformDesc": "Connectors for tools and systems",
+    "monitor": "Advanced Monitoring",
+    "monitorDesc": "Dashboards and execution metrics",
+    "api": "Enterprise API",
+    "apiDesc": "Integration via robust APIs"
+  },
+  "numbers": {
+    "title": "Impressive Numbers",
+    "subtitle": "Real orchestration at scale",
+    "workflows": "Active workflows",
+    "companies": "Active companies",
+    "performance": "Performance",
+    "workflowsDesc": "Orchestrated",
+    "companiesDesc": "Using the platform",
+    "performanceDesc": "Operational"
+  }
+}

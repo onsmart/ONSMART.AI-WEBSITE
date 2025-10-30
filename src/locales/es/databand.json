@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "badge": "Observabilidad de Datos",
+    "title": "Databand",
+    "subtitle": "Plataforma de observabilidad de datos para monitoreo y calidad de pipelines de datos."
+  },
+  "statsTop": {
+    "detection": "Detección de Problemas",
+    "reduction": "Reducción de Tiempo",
+    "monitoring": "Monitoreo"
+  },
+  "features": {
+    "title": "Funciones Principales",
+    "monitoring": {
+      "title": "Monitoreo de Pipelines",
+      "desc": "Detección automática de problemas en pipelines de datos"
+    },
+    "alerts": {
+      "title": "Alertas Inteligentes",
+      "desc": "Notificaciones proactivas sobre problemas de calidad"
+    },
+    "impact": {
+      "title": "Análisis de Impacto",
+      "desc": "Evaluación del impacto de problemas en datos aguas abajo"
+    },
+    "debugging": {
+      "title": "Depuración Avanzada",
+      "desc": "Herramientas para investigación y resolución de problemas"
+    }
+  },
+  "advanced": {
+    "title": "Recursos Avanzados",
+    "subtitle": "Descubre cómo Databand puede revolucionar tu observabilidad de datos",
+    "anomalyDetection": {
+      "title": "Detección de Anomalías",
+      "desc": "Identificación automática de patrones anómalos en datos y pipelines."
+    },
+    "visibility": {
+      "title": "Visibilidad Completa",
+      "desc": "Visualización detallada de todos los aspectos de los pipelines de datos."
+    },
+    "quality": {
+      "title": "Calidad de Datos",
+      "desc": "Monitoreo continuo de la calidad e integridad de los datos."
+    },
+    "collaboration": {
+      "title": "Colaboración en Equipo",
+      "desc": "Herramientas para trabajo colaborativo en la resolución de problemas."
+    },
+    "realtimeAlerts": {
+      "title": "Alertas en Tiempo Real",
+      "desc": "Notificaciones instantáneas sobre problemas críticos en los datos."
+    },
+    "integration": {
+      "title": "Integración Universal",
+      "desc": "Conectores para todas las principales herramientas de datos y ETL."
+    }
+  },
+  "numbers": {
+    "title": "Números Impresionantes",
+    "subtitle": "Ve cómo Databand está revolucionando la observabilidad de datos",
+    "pipelines": "Pipelines Monitoreados",
+    "pipelinesDesc": "En producción activa",
+    "accuracy": "Precisión de Detección",
+    "accuracyDesc": "De problemas de datos",
+    "enterprises": "Empresas Activas",
+    "enterprisesDesc": "Usando la plataforma"
+  },
+  "cta": {
+    "title": "Transforma tu Observabilidad de Datos",
+    "subtitle": "Únete a las empresas que ya transformaron sus negocios con Databand.",
+    "requestDemo": "Solicitar Demostración",
+    "viewOthers": "Ver Otros Productos"
+  }
+}

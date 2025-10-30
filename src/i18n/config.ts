@@ -8,18 +8,81 @@ import ptNavigation from '../locales/pt/navigation.json';
 import ptHome from '../locales/pt/home.json';
 import ptChat from '../locales/pt/chat.json';
 import ptContact from '../locales/pt/contact.json';
+import ptProdutos from '../locales/pt/produtos.json';
+import ptAgentesIA from '../locales/pt/agentesIA.json';
+import ptSonia from '../locales/pt/sonia.json';
 
 import enCommon from '../locales/en/common.json';
 import enNavigation from '../locales/en/navigation.json';
 import enHome from '../locales/en/home.json';
 import enChat from '../locales/en/chat.json';
 import enContact from '../locales/en/contact.json';
+import enProdutos from '../locales/en/produtos.json';
+import enAgentesIA from '../locales/en/agentesIA.json';
+import enSonia from '../locales/en/sonia.json';
 
 import esCommon from '../locales/es/common.json';
 import esNavigation from '../locales/es/navigation.json';
 import esHome from '../locales/es/home.json';
 import esChat from '../locales/es/chat.json';
 import esContact from '../locales/es/contact.json';
+import esProdutos from '../locales/es/produtos.json';
+import esAgentesIA from '../locales/es/agentesIA.json';
+import esSonia from '../locales/es/sonia.json';
+import ptGranite from '../locales/pt/granite.json';
+import enGranite from '../locales/en/granite.json';
+import esGranite from '../locales/es/granite.json';
+import ptMetaLlama from '../locales/pt/metaLlama.json';
+import enMetaLlama from '../locales/en/metaLlama.json';
+import esMetaLlama from '../locales/es/metaLlama.json';
+import ptWatsonxAI from '../locales/pt/watsonxAI.json';
+import enWatsonxAI from '../locales/en/watsonxAI.json';
+import esWatsonxAI from '../locales/es/watsonxAI.json';
+import ptDataProductHub from '../locales/pt/dataProductHub.json';
+import enDataProductHub from '../locales/en/dataProductHub.json';
+import esDataProductHub from '../locales/es/dataProductHub.json';
+import ptKnowledgeCatalog from '../locales/pt/knowledgeCatalog.json';
+import enKnowledgeCatalog from '../locales/en/knowledgeCatalog.json';
+import esKnowledgeCatalog from '../locales/es/knowledgeCatalog.json';
+import ptMistral from '../locales/pt/mistral.json';
+import enMistral from '../locales/en/mistral.json';
+import esMistral from '../locales/es/mistral.json';
+import ptWatsonxData from '../locales/pt/watsonxData.json';
+import enWatsonxData from '../locales/en/watsonxData.json';
+import esWatsonxData from '../locales/es/watsonxData.json';
+import ptDataStage from '../locales/pt/dataStage.json';
+import enDataStage from '../locales/en/dataStage.json';
+import esDataStage from '../locales/es/dataStage.json';
+import ptStreamsets from '../locales/pt/streamsets.json';
+import enStreamsets from '../locales/en/streamsets.json';
+import esStreamsets from '../locales/es/streamsets.json';
+import ptStorageCeph from '../locales/pt/storageCeph.json';
+import enStorageCeph from '../locales/en/storageCeph.json';
+import esStorageCeph from '../locales/es/storageCeph.json';
+import ptWatsonxOrchestrate from '../locales/pt/watsonxOrchestrate.json';
+import enWatsonxOrchestrate from '../locales/en/watsonxOrchestrate.json';
+import esWatsonxOrchestrate from '../locales/es/watsonxOrchestrate.json';
+import ptWatsonxGovernance from '../locales/pt/watsonxGovernance.json';
+import enWatsonxGovernance from '../locales/en/watsonxGovernance.json';
+import esWatsonxGovernance from '../locales/es/watsonxGovernance.json';
+import ptAiCodeAssistant from '../locales/pt/aiCodeAssistant.json';
+import enAiCodeAssistant from '../locales/en/aiCodeAssistant.json';
+import esAiCodeAssistant from '../locales/es/aiCodeAssistant.json';
+import ptWatsonxCodeAssistant from '../locales/pt/watsonxCodeAssistant.json';
+import enWatsonxCodeAssistant from '../locales/en/watsonxCodeAssistant.json';
+import esWatsonxCodeAssistant from '../locales/es/watsonxCodeAssistant.json';
+import ptMantaDataLineage from '../locales/pt/mantaDataLineage.json';
+import enMantaDataLineage from '../locales/en/mantaDataLineage.json';
+import esMantaDataLineage from '../locales/es/mantaDataLineage.json';
+import ptPlanningAnalytics from '../locales/pt/planningAnalytics.json';
+import enPlanningAnalytics from '../locales/en/planningAnalytics.json';
+import esPlanningAnalytics from '../locales/es/planningAnalytics.json';
+import ptGuardiumDataSecurityCenter from '../locales/pt/guardiumDataSecurityCenter.json';
+import enGuardiumDataSecurityCenter from '../locales/en/guardiumDataSecurityCenter.json';
+import esGuardiumDataSecurityCenter from '../locales/es/guardiumDataSecurityCenter.json';
+import ptDataband from '../locales/pt/databand.json';
+import enDataband from '../locales/en/databand.json';
+import esDataband from '../locales/es/databand.json';
 
 /**
  * CONFIGURAÇÃO DO I18NEXT
@@ -53,7 +116,7 @@ i18n
     
     // Namespaces (categorias de traduções)
     // Isso permite organizar: t('common.button'), t('home.title'), etc.
-    ns: ['common', 'navigation', 'home', 'chat', 'contact'],
+    ns: ['common', 'navigation', 'home', 'chat', 'contact', 'produtos', 'agentesIA', 'sonia', 'granite', 'metaLlama', 'watsonxAI', 'dataProductHub', 'knowledgeCatalog', 'mistral', 'watsonxData', 'dataStage', 'streamsets', 'storageCeph', 'watsonxOrchestrate', 'watsonxGovernance', 'watsonxCodeAssistant', 'aiCodeAssistant', 'mantaDataLineage', 'planningAnalytics', 'guardiumDataSecurityCenter', 'databand'],
     defaultNS: 'common',
     
     // Recursos (traduções)
@@ -64,6 +127,27 @@ i18n
         home: ptHome,
         chat: ptChat,
         contact: ptContact,
+        produtos: ptProdutos,
+        agentesIA: ptAgentesIA,
+        sonia: ptSonia,
+        granite: ptGranite,
+        metaLlama: ptMetaLlama,
+        watsonxAI: ptWatsonxAI,
+        dataProductHub: ptDataProductHub,
+        knowledgeCatalog: ptKnowledgeCatalog,
+        mistral: ptMistral,
+        watsonxData: ptWatsonxData,
+        dataStage: ptDataStage,
+        streamsets: ptStreamsets,
+        storageCeph: ptStorageCeph,
+        watsonxOrchestrate: ptWatsonxOrchestrate,
+        watsonxGovernance: ptWatsonxGovernance,
+        watsonxCodeAssistant: ptWatsonxCodeAssistant,
+        aiCodeAssistant: ptAiCodeAssistant,
+        mantaDataLineage: ptMantaDataLineage,
+        planningAnalytics: ptPlanningAnalytics,
+        guardiumDataSecurityCenter: ptGuardiumDataSecurityCenter,
+        databand: ptDataband,
       },
       en: {
         common: enCommon,
@@ -71,6 +155,27 @@ i18n
         home: enHome,
         chat: enChat,
         contact: enContact,
+        produtos: enProdutos,
+        agentesIA: enAgentesIA,
+        sonia: enSonia,
+        granite: enGranite,
+        metaLlama: enMetaLlama,
+        watsonxAI: enWatsonxAI,
+        dataProductHub: enDataProductHub,
+        knowledgeCatalog: enKnowledgeCatalog,
+        mistral: enMistral,
+        watsonxData: enWatsonxData,
+        dataStage: enDataStage,
+        streamsets: enStreamsets,
+        storageCeph: enStorageCeph,
+        watsonxOrchestrate: enWatsonxOrchestrate,
+        watsonxGovernance: enWatsonxGovernance,
+        watsonxCodeAssistant: enWatsonxCodeAssistant,
+        aiCodeAssistant: enAiCodeAssistant,
+        mantaDataLineage: enMantaDataLineage,
+        planningAnalytics: enPlanningAnalytics,
+        guardiumDataSecurityCenter: enGuardiumDataSecurityCenter,
+        databand: enDataband,
       },
       es: {
         common: esCommon,
@@ -78,6 +183,27 @@ i18n
         home: esHome,
         chat: esChat,
         contact: esContact,
+        produtos: esProdutos,
+        agentesIA: esAgentesIA,
+        sonia: esSonia,
+        granite: esGranite,
+        metaLlama: esMetaLlama,
+        watsonxAI: esWatsonxAI,
+        dataProductHub: esDataProductHub,
+        knowledgeCatalog: esKnowledgeCatalog,
+        mistral: esMistral,
+        watsonxData: esWatsonxData,
+        dataStage: esDataStage,
+        streamsets: esStreamsets,
+        storageCeph: esStorageCeph,
+        watsonxOrchestrate: esWatsonxOrchestrate,
+        watsonxGovernance: esWatsonxGovernance,
+        watsonxCodeAssistant: esWatsonxCodeAssistant,
+        aiCodeAssistant: esAiCodeAssistant,
+        mantaDataLineage: esMantaDataLineage,
+        planningAnalytics: esPlanningAnalytics,
+        guardiumDataSecurityCenter: esGuardiumDataSecurityCenter,
+        databand: esDataband,
       },
     },
     

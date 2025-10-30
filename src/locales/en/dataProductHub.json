@@ -1,0 +1,53 @@
+{
+  "hero": {
+    "badge": "Data Intelligence",
+    "title": "Data Product Hub",
+    "subtitle": "Centralized platform to manage and discover data products with advanced intelligence."
+  },
+  "statsTop": {
+    "discovery": "Data discovery",
+    "accuracy": "Quality",
+    "efficiency": "Delivery time"
+  },
+  "cta": {
+    "requestDemo": "Request Demo",
+    "viewOthers": "View Other Products",
+    "title": "Centralize your data products",
+    "subtitle": "Catalog, governance and discovery in one place."
+  },
+  "features": {
+    "title": "Key Features",
+    "catalog": {
+      "title": "Data Catalog",
+      "desc": "Organize, document and discover data products with ease"
+    },
+    "metadata": {
+      "title": "Metadata Management",
+      "desc": "Consistent standards and end‑to‑end lineage"
+    },
+    "lineage": {
+      "title": "Data Lineage",
+      "desc": "Automatic tracking of data flows"
+    }
+  },
+  "advanced": {
+    "title": "Advanced Capabilities",
+    "subtitle": "Everything to speed up data democratization",
+    "governance": "Integrated Governance",
+    "governanceDesc": "Policies, access and audit at the product level",
+    "marketplace": "Internal Marketplace",
+    "marketplaceDesc": "Publishing, versioning and reuse with approvals",
+    "observability": "Observability",
+    "observabilityDesc": "Data SLOs, quality and proactive alerts"
+  },
+  "numbers": {
+    "title": "Tangible Results",
+    "subtitle": "Speed and quality in data delivery",
+    "products": "Data products",
+    "users": "Enabled users",
+    "quality": "Quality compliance",
+    "productsDesc": "Published and maintained",
+    "usersDesc": "Teams consuming data",
+    "qualityDesc": "Rules met"
+  }
+}

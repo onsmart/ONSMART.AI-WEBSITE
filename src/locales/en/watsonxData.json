@@ -1,0 +1,63 @@
+{
+  "hero": {
+    "badge": "Databases",
+    "title": "watsonx.data™",
+    "subtitle": "Bring together all business data and optimize how it moves through systems with advanced intelligence."
+  },
+  "statsTop": {
+    "speed": "Faster than traditional solutions",
+    "availability": "Guaranteed availability",
+    "compliance": "Data compliance"
+  },
+  "cta": {
+    "requestDemo": "Request Demo",
+    "viewOthers": "View Other Products",
+    "title": "Transform your data today",
+    "subtitle": "Join the companies that already revolutionized their data strategy with watsonx.data™."
+  },
+  "features": {
+    "title": "Key Features",
+    "integration": {
+      "title": "Data Integration",
+      "desc": "Connect and unify data from multiple sources"
+    },
+    "realtime": {
+      "title": "Real-time Analytics",
+      "desc": "Real-time data processing and analysis"
+    },
+    "cloud": {
+      "title": "Cloud Native",
+      "desc": "Cloud-native architecture with automatic scalability"
+    },
+    "governance": {
+      "title": "Data Governance",
+      "desc": "Full control over data quality and security"
+    }
+  },
+  "advanced": {
+    "title": "Advanced Features",
+    "subtitle": "Discover how watsonx.data™ can revolutionize your data strategy",
+    "lake": "Data Lake",
+    "lakeDesc": "Store and process large volumes of data",
+    "security": "Advanced Security",
+    "securityDesc": "Encryption, access and full auditing",
+    "collab": "Data Collaboration",
+    "collabDesc": "Share and collaborate with granular control",
+    "stream": "Real-time Processing",
+    "streamDesc": "Data streaming with ultra-low latency",
+    "autoscale": "Auto-scaling",
+    "autoscaleDesc": "Automatic scalability on demand",
+    "api": "RESTful APIs",
+    "apiDesc": "Integration via standardized APIs"
+  },
+  "numbers": {
+    "title": "Impressive Numbers",
+    "subtitle": "See how watsonx.data™ is revolutionizing data management",
+    "datasets": "Processed datasets",
+    "accuracy": "Data accuracy",
+    "companies": "Active companies",
+    "datasetsDesc": "In real time",
+    "accuracyDesc": "Guaranteed by AI",
+    "companiesDesc": "Using the platform"
+  }
+}

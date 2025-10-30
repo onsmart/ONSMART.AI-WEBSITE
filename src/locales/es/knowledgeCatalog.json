@@ -1,0 +1,53 @@
+{
+  "hero": {
+    "badge": "Inteligencia de Datos",
+    "title": "Knowledge Catalog",
+    "subtitle": "Catálogo inteligente de datos con gobernanza y descubrimiento para acelerar analytics e IA."
+  },
+  "statsTop": {
+    "discovery": "Descubrimiento",
+    "governance": "Gobernanza",
+    "collaboration": "Colaboración"
+  },
+  "cta": {
+    "requestDemo": "Solicitar Demostración",
+    "viewOthers": "Ver Otros Productos",
+    "title": "Organiza y gobierna tus datos",
+    "subtitle": "Catálogo, políticas y colaboración a escala empresarial."
+  },
+  "features": {
+    "title": "Características Clave",
+    "discovery": {
+      "title": "Descubrimiento de Datos",
+      "desc": "Búsqueda semántica, clasificación y recomendaciones"
+    },
+    "governance": {
+      "title": "Gobernanza de Metadatos",
+      "desc": "Políticas, calidad y linaje integrado"
+    },
+    "collaboration": {
+      "title": "Colaboración de Datos",
+      "desc": "Flujos de trabajo, aprobaciones y anotaciones en equipo"
+    }
+  },
+  "advanced": {
+    "title": "Capacidades Avanzadas",
+    "subtitle": "Escala, seguridad y productividad para datos",
+    "automation": "Automatización de Metadatos",
+    "automationDesc": "Recolección y enriquecimiento automático de metadatos",
+    "classifications": "Clasificaciones y PII",
+    "classificationsDesc": "Detección de datos sensibles y etiquetado automático",
+    "integrations": "Amplias Integraciones",
+    "integrationsDesc": "Conectores para lakes, warehouses y herramientas BI"
+  },
+  "numbers": {
+    "title": "Impacto en Números",
+    "subtitle": "Productividad y cumplimiento acelerados",
+    "assets": "Activos catalogados",
+    "teams": "Equipos colaborando",
+    "policies": "Políticas aplicadas",
+    "assetsDesc": "Con metadatos completos",
+    "teamsDesc": "Usando datos confiables",
+    "policiesDesc": "Activas y auditables"
+  }
+}

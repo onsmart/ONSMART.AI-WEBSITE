@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Package, ArrowRight, Bot, ExternalLink } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface ProdutosDropdownProps {
   onMenuItemClick?: () => void;
@@ -8,6 +9,7 @@ interface ProdutosDropdownProps {
 
 const ProdutosDropdown: React.FC<ProdutosDropdownProps> = ({ onMenuItemClick }) => {
   const navigate = useNavigate();
+  const { t } = useTranslation('navigation');
 
   const handleAgentesIAClick = () => {
     navigate('/agentes-ia');
@@ -32,19 +34,19 @@ const ProdutosDropdown: React.FC<ProdutosDropdownProps> = ({ onMenuItemClick }) 
             onClick={handleAgentesIAClick}
             className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue rounded-md transition-colors"
           >
-            Agentes de IA
+            {t('menu.aiAgents')}
           </button>
           <button
             onClick={handleEcossistemaIBMClick}
             className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue rounded-md transition-colors"
           >
-            Ecossistema IBM
+            {t('menu.ibmEcosystem')}
           </button>
           <button
             onClick={handleSoniaAssistenteIAClick}
             className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue rounded-md transition-colors"
           >
-            Sonia Assistente IA
+            {t('menu.soniaAssistant')}
           </button>
         </div>
       </div>

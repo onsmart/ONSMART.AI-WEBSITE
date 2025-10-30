@@ -4,9 +4,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { CheckCircle, ArrowLeft, Star, Shield, Users, Clock, Send } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 export default function WatsonXGovernance() {
   const navigate = useNavigate();
+  const { t } = useTranslation('watsonxGovernance');
 
   // Hook para contador animado
   const useCountUp = (end: number, duration: number = 2000) => {
@@ -47,14 +49,14 @@ export default function WatsonXGovernance() {
   };
 
   // Contadores animados
-  const complianceCount = useCountUp(100, 1500);
-  const visibilityCount = useCountUp(360, 2000);
-  const monitoringCount = useCountUp(24, 1800);
+  const monitoringCount = useCountUp(100, 1500);
+  const complianceCount = useCountUp(100, 2000);
+  const auditCount = useCountUp(100, 1800);
 
   // Contadores para seção adicional
-  const modelsCount = useCountUp(5000, 2500);
-  const enterpriseCount = useCountUp(450, 2200);
-  const auditCount = useCountUp(99, 2000);
+  const modelsCount = useCountUp(500, 2500);
+  const incidentsCount = useCountUp(300, 2200);
+  const reportsCount = useCountUp(2000, 2000);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
@@ -69,38 +71,38 @@ export default function WatsonXGovernance() {
                 <div className="p-3 sm:p-4 rounded-full bg-blue-50">
                   <img 
                     src="https://images-onsmart.vercel.app/onsmart.ai/watsonx.png" 
-                    alt="watsonx Governance" 
-                    className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
+                    alt={t('hero.title')} 
+                    className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover"
                   />
                 </div>
                 <div>
-                  <Badge variant="outline" className="mb-2">AI Governance</Badge>
-                  <h1 className="text-4xl font-bold text-gray-900">watsonx.governance™</h1>
+                  <Badge variant="outline" className="mb-2">{t('hero.badge')}</Badge>
+                  <h1 className="text-4xl font-bold text-gray-900">{t('hero.title')}</h1>
                 </div>
               </div>
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                Governança completa de IA com controle de ciclo de vida, conformidade e transparência total.
+                {t('hero.subtitle')}
               </p>
               
               {/* Stats */}
               <div className="grid grid-cols-3 gap-6 mb-8">
-                <div className="text-center" ref={complianceCount.ref}>
+                <div className="text-center" ref={monitoringCount.ref}>
                   <div className="text-2xl font-bold text-blue-600 transition-all duration-300">
+                    {monitoringCount.count}%
+                  </div>
+                  <div className="text-sm text-gray-600">{t('statsTop.monitoring')}</div>
+                </div>
+                <div className="text-center" ref={complianceCount.ref}>
+                  <div className="text-2xl font-bold text-green-600 transition-all duration-300">
                     {complianceCount.count}%
                   </div>
-                  <div className="text-sm text-gray-600">Conformidade regulatória</div>
+                  <div className="text-sm text-gray-600">{t('statsTop.compliance')}</div>
                 </div>
-                <div className="text-center" ref={visibilityCount.ref}>
-                  <div className="text-2xl font-bold text-green-600 transition-all duration-300">
-                    {visibilityCount.count}°
-                  </div>
-                  <div className="text-sm text-gray-600">Visibilidade completa</div>
-                </div>
-                <div className="text-center" ref={monitoringCount.ref}>
+                <div className="text-center" ref={auditCount.ref}>
                   <div className="text-2xl font-bold text-purple-600 transition-all duration-300">
-                    {monitoringCount.count}/7
+                    {auditCount.count}%
                   </div>
-                  <div className="text-sm text-gray-600">Monitoramento contínuo</div>
+                  <div className="text-sm text-gray-600">{t('statsTop.audit')}</div>
                 </div>
               </div>
 
@@ -110,40 +112,33 @@ export default function WatsonXGovernance() {
                 onClick={() => navigate('/contato')}
               >
                 <Send className="mr-2 h-5 w-5" />
-                Solicitar Demonstração
+                {t('cta.requestDemo')}
               </Button>
             </div>
 
             <div className="lg:w-1/2">
               <div className="bg-white rounded-2xl shadow-xl p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Principais Recursos</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">{t('features.title')}</h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Ciclo de Vida Completo</h4>
-                      <p className="text-gray-600">Gerencie todo o ciclo de vida dos modelos de IA</p>
+                      <h4 className="font-semibold text-gray-900">{t('features.risk.title')}</h4>
+                      <p className="text-gray-600">{t('features.risk.desc')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Conformidade Regulatória</h4>
-                      <p className="text-gray-600">Atenda aos requisitos de compliance e regulamentações</p>
+                      <h4 className="font-semibold text-gray-900">{t('features.lineage.title')}</h4>
+                      <p className="text-gray-600">{t('features.lineage.desc')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Transparência Total</h4>
-                      <p className="text-gray-600">Rastreabilidade completa de decisões e processos</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-gray-900">Auditoria Contínua</h4>
-                      <p className="text-gray-600">Logs detalhados e relatórios de auditoria em tempo real</p>
+                      <h4 className="font-semibold text-gray-900">{t('features.policies.title')}</h4>
+                      <p className="text-gray-600">{t('features.policies.desc')}</p>
                     </div>
                   </div>
                 </div>
@@ -157,9 +152,9 @@ export default function WatsonXGovernance() {
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Recursos Avançados</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('advanced.title')}</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Descubra como o watsonx Governance pode revolucionar sua governança de IA
+              {t('advanced.subtitle')}
             </p>
           </div>
 
@@ -167,13 +162,13 @@ export default function WatsonXGovernance() {
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <Shield className="w-6 h-6 text-blue-600" />
+                  <Star className="w-6 h-6 text-blue-600" />
                 </div>
-                <CardTitle>Governança de IA</CardTitle>
+                <CardTitle>{t('advanced.catalog')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Controle total sobre decisões de IA com rastreabilidade completa.
+                  {t('advanced.catalogDesc')}
                 </p>
               </CardContent>
             </Card>
@@ -181,13 +176,13 @@ export default function WatsonXGovernance() {
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
                 <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
-                  <Users className="w-6 h-6 text-green-600" />
+                  <Shield className="w-6 h-6 text-green-600" />
                 </div>
-                <CardTitle>Controle de Acesso</CardTitle>
+                <CardTitle>{t('advanced.monitoring')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Gerenciamento granular de permissões e controle de usuários.
+                  {t('advanced.monitoringDesc')}
                 </p>
               </CardContent>
             </Card>
@@ -195,13 +190,13 @@ export default function WatsonXGovernance() {
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
                 <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                  <Clock className="w-6 h-6 text-purple-600" />
+                  <Users className="w-6 h-6 text-purple-600" />
                 </div>
-                <CardTitle>Auditoria Contínua</CardTitle>
+                <CardTitle>{t('advanced.explain')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Logs detalhados e relatórios de auditoria em tempo real.
+                  {t('advanced.explainDesc')}
                 </p>
               </CardContent>
             </Card>
@@ -209,41 +204,13 @@ export default function WatsonXGovernance() {
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
                 <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
-                  <Star className="w-6 h-6 text-orange-600" />
+                  <CheckCircle className="w-6 h-6 text-orange-600" />
                 </div>
-                <CardTitle>Conformidade Regulatória</CardTitle>
+                <CardTitle>{t('advanced.audit')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Atenda aos requisitos de compliance e regulamentações.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
-                  <CheckCircle className="w-6 h-6 text-red-600" />
-                </div>
-                <CardTitle>Transparência Total</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Rastreabilidade completa de decisões e processos de IA.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
-                  <Send className="w-6 h-6 text-indigo-600" />
-                </div>
-                <CardTitle>Monitoramento 24/7</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Monitoramento contínuo de modelos e alertas em tempo real.
+                  {t('advanced.auditDesc')}
                 </p>
               </CardContent>
             </Card>
@@ -255,32 +222,32 @@ export default function WatsonXGovernance() {
       <section className="py-16 px-4 bg-gradient-to-r from-blue-50 to-purple-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Números Impressionantes</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('numbers.title')}</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Veja como o watsonx Governance está revolucionando a governança de IA
+              {t('numbers.subtitle')}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center bg-white rounded-xl p-8 shadow-lg" ref={modelsCount.ref}>
               <div className="text-4xl font-bold text-blue-600 mb-2 transition-all duration-300">
-                {modelsCount.count.toLocaleString()}+
+                {modelsCount.count}+
               </div>
-              <div className="text-lg font-semibold text-gray-900 mb-2">Modelos Governados</div>
-              <div className="text-gray-600">Em produção</div>
+              <div className="text-lg font-semibold text-gray-900 mb-2">{t('numbers.models')}</div>
+              <div className="text-gray-600">{t('numbers.modelsDesc')}</div>
             </div>
-            <div className="text-center bg-white rounded-xl p-8 shadow-lg" ref={enterpriseCount.ref}>
+            <div className="text-center bg-white rounded-xl p-8 shadow-lg" ref={incidentsCount.ref}>
               <div className="text-4xl font-bold text-green-600 mb-2 transition-all duration-300">
-                {enterpriseCount.count}+
+                {incidentsCount.count}+
               </div>
-              <div className="text-lg font-semibold text-gray-900 mb-2">Empresas Ativas</div>
-              <div className="text-gray-600">Usando a plataforma</div>
+              <div className="text-lg font-semibold text-gray-900 mb-2">{t('numbers.incidents')}</div>
+              <div className="text-gray-600">{t('numbers.incidentsDesc')}</div>
             </div>
-            <div className="text-center bg-white rounded-xl p-8 shadow-lg" ref={auditCount.ref}>
+            <div className="text-center bg-white rounded-xl p-8 shadow-lg" ref={reportsCount.ref}>
               <div className="text-4xl font-bold text-purple-600 mb-2 transition-all duration-300">
-                {auditCount.count}%
+                {reportsCount.count}+
               </div>
-              <div className="text-lg font-semibold text-gray-900 mb-2">Conformidade</div>
-              <div className="text-gray-600">Regulatória</div>
+              <div className="text-lg font-semibold text-gray-900 mb-2">{t('numbers.reports')}</div>
+              <div className="text-gray-600">{t('numbers.reportsDesc')}</div>
             </div>
           </div>
         </div>
@@ -290,10 +257,10 @@ export default function WatsonXGovernance() {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-            Potencialize sua governança hoje
+            {t('cta.title')}
           </h2>
           <p className="text-xl mb-8 text-gray-600">
-            Junte-se às empresas que já transformaram sua governança com watsonx Governance™.
+            {t('cta.subtitle')}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -303,7 +270,7 @@ export default function WatsonXGovernance() {
               onClick={() => navigate('/contato')}
             >
               <Send className="mr-2 h-5 w-5" />
-              Solicitar Demonstração
+              {t('cta.requestDemo')}
             </Button>
             <Button 
               variant="outline"
@@ -311,7 +278,7 @@ export default function WatsonXGovernance() {
               className="font-medium px-8 py-6 text-lg rounded-xl"
               onClick={() => navigate('/produtos')}
             >
-              Ver Outros Produtos
+              {t('cta.viewOthers')}
             </Button>
           </div>
         </div>

@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "badge": "Inteligencia de Negocios",
+    "title": "Planning Analytics",
+    "subtitle": "Plataforma integrada de planificación y análisis empresarial para optimizar decisiones estratégicas."
+  },
+  "statsTop": {
+    "accuracy": "Precisión en pronósticos",
+    "speed": "Más rápido que hojas de cálculo",
+    "collaboration": "Colaboración en tiempo real"
+  },
+  "features": {
+    "title": "Funciones Principales",
+    "corporate": {
+      "title": "Planificación Corporativa",
+      "desc": "Herramientas avanzadas para planificación estratégica y presupuestaria"
+    },
+    "predictive": {
+      "title": "Análisis Predictivo",
+      "desc": "Modelos predictivos para anticipar tendencias y oportunidades"
+    },
+    "realtime": {
+      "title": "Colaboración en Tiempo Real",
+      "desc": "Trabajo colaborativo con múltiples usuarios simultáneamente"
+    },
+    "optimization": {
+      "title": "Optimización de Metas",
+      "desc": "Definición y seguimiento de KPIs y metas organizacionales"
+    }
+  },
+  "advanced": {
+    "title": "Recursos Avanzados",
+    "subtitle": "Descubre cómo Planning Analytics puede revolucionar tu planificación empresarial",
+    "modeling": {
+      "title": "Modelado Avanzado",
+      "desc": "Creación de modelos complejos para escenarios de planificación y análisis."
+    },
+    "forecasting": {
+      "title": "Pronósticos Inteligentes",
+      "desc": "Pronósticos basados en IA para mejor toma de decisiones estratégicas."
+    },
+    "workflow": {
+      "title": "Flujo de Trabajo Colaborativo",
+      "desc": "Flujos de aprobación y colaboración entre equipos y departamentos."
+    },
+    "governance": {
+      "title": "Gobernanza de Datos",
+      "desc": "Controles de acceso y auditoría para cumplimiento regulatorio."
+    },
+    "automation": {
+      "title": "Automatización de Procesos",
+      "desc": "Automatización de tareas repetitivas de planificación y análisis."
+    },
+    "dashboard": {
+      "title": "Dashboard Ejecutivo",
+      "desc": "Visualizaciones ejecutivas para monitoreo de rendimiento."
+    }
+  },
+  "numbers": {
+    "title": "Números Impresionantes",
+    "subtitle": "Ve cómo Planning Analytics está revolucionando la planificación empresarial",
+    "users": "Usuarios Activos",
+    "usersDesc": "En todo el mundo",
+    "enterprises": "Empresas Activas",
+    "enterprisesDesc": "Usando la plataforma",
+    "efficiency": "Eficiencia",
+    "efficiencyDesc": "En planificación"
+  },
+  "cta": {
+    "title": "Transforma tu Planificación Empresarial",
+    "subtitle": "Únete a las empresas que ya transformaron sus negocios con Planning Analytics.",
+    "requestDemo": "Solicitar Demostración",
+    "viewOthers": "Ver Otros Productos"
+  }
+}

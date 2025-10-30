@@ -5,6 +5,7 @@ import { CheckCircle, ArrowRight, Star, Clock, Send, Shield, Bot, Zap, Target, B
 import { Button } from "@/components/ui/button";
 import { useNavigate, useLocation } from "react-router-dom";
 import TypewriterText from "@/components/ui/TypewriterText";
+import { useTranslation } from 'react-i18next';
 
 const nossosProdutos = [
   {
@@ -135,6 +136,23 @@ const categories = [
 export default function NossosProdutos() {
   const navigate = useNavigate();
   const location = useLocation();
+  const { t, i18n } = useTranslation('agentesIA');
+  
+  // Get translated categories - using useMemo to recalculate when language changes
+  const translatedCategories = React.useMemo(() => {
+    return categories.map((cat) => {
+      const categoryKey = `categories.items.${cat.id}`;
+      return {
+        ...cat,
+        name: t(`${categoryKey}.name`),
+        description: t(`${categoryKey}.description`),
+        detailedDescription: t(`${categoryKey}.detailedDescription`),
+        benefits: t(`${categoryKey}.benefits`, { returnObjects: true }) as string[],
+        stats: t(`${categoryKey}.stats`, { returnObjects: true }) as Record<string, string>,
+        statsLabels: t(`${categoryKey}.statsLabels`, { returnObjects: true }) as Record<string, string>,
+      };
+    });
+  }, [t, i18n.language]);
   
   // Carousel state
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -146,14 +164,14 @@ export default function NossosProdutos() {
   const nextSlide = () => {
     if (isTransitioning) return;
     setIsTransitioning(true);
-    setCurrentSlide((prev) => (prev + 1) % categories.length);
+    setCurrentSlide((prev) => (prev + 1) % translatedCategories.length);
     setTimeout(() => setIsTransitioning(false), 500);
   };
 
   const prevSlide = () => {
     if (isTransitioning) return;
     setIsTransitioning(true);
-    setCurrentSlide((prev) => (prev - 1 + categories.length) % categories.length);
+    setCurrentSlide((prev) => (prev - 1 + translatedCategories.length) % translatedCategories.length);
     setTimeout(() => setIsTransitioning(false), 500);
   };
 
@@ -177,7 +195,7 @@ export default function NossosProdutos() {
     }
 
     return () => clearInterval(intervalRef.current);
-  }, [isPlaying, currentSlide]);
+  }, [isPlaying, currentSlide, translatedCategories.length]);
   
   const scrollToForm = () => {
     const formSelectors = [
@@ -230,12 +248,7 @@ export default function NossosProdutos() {
             <div className="mb-4 sm:mb-6">
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-3 sm:mb-4">
                 <TypewriterText 
-                  texts={[
-                    "Agentes de IA Proprietários",
-                    "Tecnologia 100% Brasileira", 
-                    "IA Corporativa Avançada",
-                    "Automação Inteligente"
-                  ]}
+                  texts={t('hero.title.texts', { returnObjects: true }) as string[]}
                   className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent"
                   speed={100}
                   deleteSpeed={60}
@@ -246,22 +259,22 @@ export default function NossosProdutos() {
             
             {/* Subheadline compacta */}
             <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-6 sm:mb-8 leading-relaxed">
-              Soluções de IA desenvolvidas com base nas principais demandas do mercado brasileiro
+              {t('hero.subtitle')}
             </p>
 
             {/* Stats minimalistas */}
             <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 mb-4 sm:mb-6">
               <div className="text-center">
                 <div className="text-xl sm:text-2xl font-bold text-brand-blue mb-1">500+</div>
-                <div className="text-xs sm:text-sm text-gray-600">Empresas</div>
+                <div className="text-xs sm:text-sm text-gray-600">{t('hero.stats.companies')}</div>
               </div>
               <div className="text-center">
                 <div className="text-xl sm:text-2xl font-bold text-brand-blue mb-1">98%</div>
-                <div className="text-xs sm:text-sm text-gray-600">Sucesso</div>
+                <div className="text-xs sm:text-sm text-gray-600">{t('hero.stats.success')}</div>
               </div>
               <div className="text-center">
-                <div className="text-xl sm:text-2xl font-bold text-brand-blue mb-1">30 dias</div>
-                <div className="text-xs sm:text-sm text-gray-600">Implementação</div>
+                <div className="text-xl sm:text-2xl font-bold text-brand-blue mb-1">30 {i18n.language.split('-')[0] === 'en' ? 'days' : i18n.language.split('-')[0] === 'es' ? 'días' : 'dias'}</div>
+                <div className="text-xs sm:text-sm text-gray-600">{t('hero.stats.implementation')}</div>
               </div>
             </div>
           </div>
@@ -272,9 +285,9 @@ export default function NossosProdutos() {
       <section className="py-6 sm:py-8 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-6 sm:mb-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2 sm:mb-3">Categorias de Soluções de IA</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2 sm:mb-3">{t('categories.title')}</h2>
             <p className="text-sm sm:text-base text-gray-600 max-w-3xl mx-auto">
-              Desenvolvemos soluções baseadas nas principais demandas do mercado brasileiro de IA corporativa
+              {t('categories.subtitle')}
             </p>
           </div>
 
@@ -286,7 +299,7 @@ export default function NossosProdutos() {
                 className="flex transition-transform duration-500 ease-in-out"
                 style={{ transform: `translateX(-${currentSlide * 100}%)` }}
               >
-                {categories.map((category, index) => {
+                {translatedCategories.map((category, index) => {
                   const IconComponent = category.icon;
                   return (
                     <div 
@@ -332,7 +345,7 @@ export default function NossosProdutos() {
                                 className="flex-1 bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue hover:from-brand-blue/90 hover:via-blue-600/90 hover:to-brand-blue/90 text-white px-3 sm:px-4 py-2 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 text-sm sm:text-base"
                               >
                                 <Calendar className="h-3 w-3 sm:h-4 sm:w-4 mr-2" />
-                                Marcar Reunião
+                                {t('categories.buttons.scheduleMeeting')}
                               </Button>
                               <Button 
                                 variant="outline"
@@ -350,7 +363,7 @@ export default function NossosProdutos() {
                                 className="flex-1 border-2 border-brand-blue text-brand-blue hover:bg-gradient-to-r hover:from-brand-blue hover:via-blue-600 hover:to-brand-blue hover:text-white px-3 sm:px-4 py-2 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 text-sm sm:text-base"
                               >
                                 <Info className="h-3 w-3 sm:h-4 sm:w-4 mr-2" />
-                                Ver Detalhes
+                                {t('categories.buttons.viewDetails')}
                               </Button>
                             </div>
                           </div>
@@ -360,27 +373,13 @@ export default function NossosProdutos() {
                             <div className="bg-white rounded-xl p-3 sm:p-4 shadow-md border border-gray-100">
                               <h4 className="text-sm sm:text-base font-semibold text-gray-900 mb-2 sm:mb-3 flex items-center gap-2">
                                 <Target className="h-3 w-3 sm:h-4 sm:w-4 text-brand-blue" />
-                                Resultados Comprovados
+                                {t('categories.results')}
                               </h4>
                               <div className="grid grid-cols-1 gap-2">
                                 {Object.entries(category.stats).map(([key, value], idx) => (
                                   <div key={idx} className="flex items-center justify-between p-2 bg-white rounded-md">
-                                    <span className="text-xs text-gray-600 capitalize">
-                                      {key === 'conversion' ? 'Conversão' : 
-                                       key === 'leads' ? 'Leads' : 
-                                       key === 'time' ? 'Tempo' : 
-                                       key === 'satisfaction' ? 'Satisfação' : 
-                                       key === 'response' ? 'Resposta' : 
-                                       key === 'resolution' ? 'Resolução' : 
-                                       key === 'hiring' ? 'Contratação' : 
-                                       key === 'accuracy' ? 'Precisão' : 
-                                       key === 'retention' ? 'Retenção' : 
-                                       key === 'speed' ? 'Velocidade' : 
-                                       key === 'insights' ? 'Insights' : 
-                                       key === 'efficiency' ? 'Eficiência' : 
-                                       key === 'cost' ? 'Custo' : 
-                                       key === 'languages' ? 'Idioma' : 
-                                       key === 'processing' ? 'Processamento' : key}
+                                    <span className="text-xs text-gray-600">
+                                      {category.statsLabels[key] || key}
                                     </span>
                                     <span className="text-xs font-semibold text-brand-blue">{value}</span>
                                   </div>
@@ -400,7 +399,7 @@ export default function NossosProdutos() {
             <div className="flex justify-center mt-4 sm:mt-6">
               {/* Dots Indicator */}
               <div className="flex items-center gap-2">
-                {categories.map((_, index) => (
+                {translatedCategories.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => goToSlide(index)}
@@ -422,9 +421,9 @@ export default function NossosProdutos() {
       <section className="py-12 sm:py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">Características das Nossas <span className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">Soluções</span></h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">{t('features.title')} <span className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">{t('features.titleHighlight')}</span></h2>
             <p className="text-sm sm:text-base text-gray-600 max-w-3xl mx-auto">
-              Desenvolvidas com base em demandas reais do mercado brasileiro e tendências globais de IA corporativa
+              {t('features.subtitle')}
             </p>
           </div>
 
@@ -433,32 +432,32 @@ export default function NossosProdutos() {
               <div className="w-12 h-12 sm:w-16 sm:h-16 bg-brand-blue rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
                 <MessageSquare className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">Português Otimizado</h3>
-              <p className="text-gray-600 text-xs sm:text-sm">NLP especializado para o mercado brasileiro</p>
+              <h3 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">{t('features.items.portuguese.title')}</h3>
+              <p className="text-gray-600 text-xs sm:text-sm">{t('features.items.portuguese.description')}</p>
             </div>
             
             <div className="text-center">
               <div className="w-12 h-12 sm:w-16 sm:h-16 bg-brand-blue rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
                 <Database className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">Integração Nativa</h3>
-              <p className="text-gray-600 text-xs sm:text-sm">Conecta com CRMs e sistemas existentes</p>
+              <h3 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">{t('features.items.integration.title')}</h3>
+              <p className="text-gray-600 text-xs sm:text-sm">{t('features.items.integration.description')}</p>
             </div>
             
             <div className="text-center">
               <div className="w-12 h-12 sm:w-16 sm:h-16 bg-brand-blue rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
                 <Clock className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">Disponibilidade 24/7</h3>
-              <p className="text-gray-600 text-xs sm:text-sm">Operação contínua e resposta instantânea</p>
+              <h3 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">{t('features.items.availability.title')}</h3>
+              <p className="text-gray-600 text-xs sm:text-sm">{t('features.items.availability.description')}</p>
             </div>
             
             <div className="text-center">
               <div className="w-12 h-12 sm:w-16 sm:h-16 bg-brand-blue rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
                 <TrendingUp className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">Analytics Avançada</h3>
-              <p className="text-gray-600 text-xs sm:text-sm">Insights preditivos e análise em tempo real</p>
+              <h3 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">{t('features.items.analytics.title')}</h3>
+              <p className="text-gray-600 text-xs sm:text-sm">{t('features.items.analytics.description')}</p>
             </div>
           </div>
         </div>
@@ -469,31 +468,31 @@ export default function NossosProdutos() {
         <div className="max-w-5xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-brand-blue text-white px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-bold mb-4 sm:mb-6">
             <Bot className="h-3 w-3 sm:h-4 sm:w-4" />
-            SOLUÇÕES BASEADAS EM DEMANDA REAL DE MERCADO
+            {t('cta.badge')}
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-gray-900">
-            Implemente <span className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">IA</span> com foco em resultados reais
+            {t('cta.title')} <span className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">{t('cta.titleHighlight')}</span> {t('cta.titleEnd')}
           </h2>
           <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 text-gray-600">
-            Nossas soluções são desenvolvidas com base nas principais tendências e demandas verificadas do mercado brasileiro de IA corporativa.
+            {t('cta.description')}
           </p>
           
           {/* Social proof cards */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 max-w-3xl mx-auto mb-6 sm:mb-8">
             <div className="bg-white/90 backdrop-blur-sm rounded-lg p-3 sm:p-4 shadow-lg border border-brand-blue/20">
               <TrendingUp className="h-5 w-5 sm:h-6 sm:w-6 text-blue-500 mx-auto mb-2" />
-              <div className="text-base sm:text-lg font-bold text-brand-blue">Vendas</div>
-              <div className="text-xs text-gray-600">Automação Comprovada</div>
+              <div className="text-base sm:text-lg font-bold text-brand-blue">{t('cta.proofCards.sales.title')}</div>
+              <div className="text-xs text-gray-600">{t('cta.proofCards.sales.subtitle')}</div>
             </div>
             <div className="bg-white/90 backdrop-blur-sm rounded-lg p-3 sm:p-4 shadow-lg border border-brand-blue/20">
               <HeadphonesIcon className="h-5 w-5 sm:h-6 sm:w-6 text-green-500 mx-auto mb-2" />
-              <div className="text-base sm:text-lg font-bold text-brand-blue">Atendimento</div>
-              <div className="text-xs text-gray-600">Disponibilidade Total</div>
+              <div className="text-base sm:text-lg font-bold text-brand-blue">{t('cta.proofCards.support.title')}</div>
+              <div className="text-xs text-gray-600">{t('cta.proofCards.support.subtitle')}</div>
             </div>
             <div className="bg-white/90 backdrop-blur-sm rounded-lg p-3 sm:p-4 shadow-lg border border-brand-blue/20">
               <Workflow className="h-5 w-5 sm:h-6 sm:w-6 text-red-500 mx-auto mb-2" />
-              <div className="text-base sm:text-lg font-bold text-brand-blue">Processos</div>
-              <div className="text-xs text-gray-600">Automação Inteligente</div>
+              <div className="text-base sm:text-lg font-bold text-brand-blue">{t('cta.proofCards.processes.title')}</div>
+              <div className="text-xs text-gray-600">{t('cta.proofCards.processes.subtitle')}</div>
             </div>
           </div>
           
@@ -506,7 +505,7 @@ export default function NossosProdutos() {
             >
               <span className="relative z-10 flex items-center">
                 <Send className="mr-2 h-3 w-3 sm:h-4 sm:w-4" />
-                Solicitar Demonstração Gratuita
+                {t('cta.button')}
               </span>
               <span className="absolute inset-0 bg-gradient-to-r from-brand-blue to-brand-blue-light opacity-0 group-hover:opacity-100 transition-opacity"></span>
             </Button>
@@ -516,15 +515,15 @@ export default function NossosProdutos() {
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center text-xs sm:text-sm text-gray-600">
             <div className="flex items-center justify-center">
               <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 text-green-500 mr-2" />
-              <span>Consultoria especializada</span>
+              <span>{t('cta.benefits.consulting')}</span>
             </div>
             <div className="flex items-center justify-center">
               <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 text-green-500 mr-2" />
-              <span>Soluções baseadas em demanda real</span>
+              <span>{t('cta.benefits.demand')}</span>
             </div>
             <div className="flex items-center justify-center">
               <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 text-green-500 mr-2" />
-              <span>Implementação orientada a resultados</span>
+              <span>{t('cta.benefits.results')}</span>
             </div>
           </div>
         </div>

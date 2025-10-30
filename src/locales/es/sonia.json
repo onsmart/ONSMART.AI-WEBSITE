@@ -1,0 +1,32 @@
+{
+  "hero": {
+    "badge": "Pionera Omnicanal de IA",
+    "title": "Sonia Asistente IA",
+    "subtitle": "La primera asistente de IA omnicanal de Brasil, pionera en prospección por voz. Con tecnología bidireccional, multilingüe y simultaneidad, mejora en cada interacción para transformar ventas y atención."
+  },
+  "stats": {
+    "companies": "Empresas",
+    "success": "Éxito",
+    "implementation": "Implementación"
+  },
+  "features": {
+    "voiceProspecting": {
+      "title": "Prospección por Voz",
+      "description": "Llamadas salientes con comprensión de contexto y agendamiento automático"
+    },
+    "omnichannel": {
+      "title": "Omnicanal Real",
+      "description": "WhatsApp, Web, Teléfono y Email en un único flujo"
+    },
+    "learning": {
+      "title": "Simultaneidad y Aprendizaje",
+      "description": "Atiende a miles de clientes simultáneamente y mejora con cada interacción"
+    }
+  },
+  "cta": {
+    "title": "Sé pionero con Sonia",
+    "subtitle": "Únete a las empresas que ya revolucionaron sus negocios con la primera asistente omnicanal de Brasil.",
+    "talkToSonia": "Hablar con Sonia",
+    "viewOthers": "Ver Otros Productos"
+  }
+}

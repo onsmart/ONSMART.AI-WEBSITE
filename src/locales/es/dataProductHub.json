@@ -1,0 +1,53 @@
+{
+  "hero": {
+    "badge": "Inteligencia de Datos",
+    "title": "Data Product Hub",
+    "subtitle": "Plataforma centralizada para gestionar y descubrir productos de datos con inteligencia avanzada."
+  },
+  "statsTop": {
+    "discovery": "Descubrimiento de datos",
+    "accuracy": "Calidad",
+    "efficiency": "Tiempo de entrega"
+  },
+  "cta": {
+    "requestDemo": "Solicitar Demostración",
+    "viewOthers": "Ver Otros Productos",
+    "title": "Centraliza tus productos de datos",
+    "subtitle": "Catálogo, gobernanza y descubrimiento en un solo lugar."
+  },
+  "features": {
+    "title": "Características Clave",
+    "catalog": {
+      "title": "Catálogo de Datos",
+      "desc": "Organiza, documenta y descubre productos de datos con facilidad"
+    },
+    "metadata": {
+      "title": "Gestión de Metadatos",
+      "desc": "Estándares consistentes y linaje de extremo a extremo"
+    },
+    "lineage": {
+      "title": "Linaje de Datos",
+      "desc": "Seguimiento automático del flujo de datos"
+    }
+  },
+  "advanced": {
+    "title": "Capacidades Avanzadas",
+    "subtitle": "Todo para acelerar la democratización de datos",
+    "governance": "Gobernanza Integrada",
+    "governanceDesc": "Políticas, acceso y auditoría a nivel de producto",
+    "marketplace": "Marketplace Interno",
+    "marketplaceDesc": "Publicación, versionado y reutilización con aprobaciones",
+    "observability": "Observabilidad",
+    "observabilityDesc": "SLOs de datos, calidad y alertas proactivas"
+  },
+  "numbers": {
+    "title": "Resultados Tangibles",
+    "subtitle": "Velocidad y calidad en la entrega de datos",
+    "products": "Productos de datos",
+    "users": "Usuarios habilitados",
+    "quality": "Cumplimiento de calidad",
+    "productsDesc": "Publicados y mantenidos",
+    "usersDesc": "Equipos consumiendo datos",
+    "qualityDesc": "Reglas cumplidas"
+  }
+}

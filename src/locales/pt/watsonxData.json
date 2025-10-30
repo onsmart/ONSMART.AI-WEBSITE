@@ -1,0 +1,63 @@
+{
+  "hero": {
+    "badge": "Databases",
+    "title": "watsonx.data™",
+    "subtitle": "Reúna todos os dados de negócios e otimize como eles se movem pelos sistemas com inteligência avançada."
+  },
+  "statsTop": {
+    "speed": "Mais rápido que soluções tradicionais",
+    "availability": "Disponibilidade garantida",
+    "compliance": "Conformidade de dados"
+  },
+  "cta": {
+    "requestDemo": "Solicitar Demonstração",
+    "viewOthers": "Ver Outros Produtos",
+    "title": "Transforme seus dados hoje",
+    "subtitle": "Junte-se às empresas que já revolucionaram sua estratégia de dados com watsonx.data™."
+  },
+  "features": {
+    "title": "Principais Recursos",
+    "integration": {
+      "title": "Integração de Dados",
+      "desc": "Conecte e unifique dados de múltiplas fontes"
+    },
+    "realtime": {
+      "title": "Analytics em Tempo Real",
+      "desc": "Processamento e análise de dados em tempo real"
+    },
+    "cloud": {
+      "title": "Cloud Nativo",
+      "desc": "Arquitetura nativa para cloud com escalabilidade automática"
+    },
+    "governance": {
+      "title": "Governança de Dados",
+      "desc": "Controle total sobre qualidade e segurança dos dados"
+    }
+  },
+  "advanced": {
+    "title": "Recursos Avançados",
+    "subtitle": "Descubra como o watsonx.data™ pode revolucionar sua estratégia de dados",
+    "lake": "Data Lake",
+    "lakeDesc": "Armazene e processe grandes volumes de dados",
+    "security": "Segurança Avançada",
+    "securityDesc": "Criptografia, acesso e auditoria completos",
+    "collab": "Colaboração de Dados",
+    "collabDesc": "Compartilhe e colabore com controle granular",
+    "stream": "Processamento em Tempo Real",
+    "streamDesc": "Stream de dados com latência ultra‑baixa",
+    "autoscale": "Auto‑scaling",
+    "autoscaleDesc": "Escalabilidade automática por demanda",
+    "api": "APIs RESTful",
+    "apiDesc": "Integração via APIs padronizadas"
+  },
+  "numbers": {
+    "title": "Números Impressionantes",
+    "subtitle": "Veja como o watsonx.data™ está revolucionando a gestão de dados",
+    "datasets": "Datasets Processados",
+    "accuracy": "Precisão de Dados",
+    "companies": "Empresas Ativas",
+    "datasetsDesc": "Em tempo real",
+    "accuracyDesc": "Garantida pela IA",
+    "companiesDesc": "Usando a plataforma"
+  }
+}

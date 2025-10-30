@@ -6,6 +6,7 @@ import { Shield, CheckCircle, Award, Star, ArrowRight, Users, Clock, Send } from
 import { Button } from "@/components/ui/button";
 import { useNavigate, useLocation } from "react-router-dom";
 import { scrollToForm } from "@/utils/scrollUtils";
+import { useTranslation } from 'react-i18next';
 
 const products = {
   "ai-productivity": [
@@ -127,6 +128,7 @@ const certifications = {
 export default function Produtos() {
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useTranslation('produtos');
   
   const scrollToForm = () => {
     // Tentar múltiplos seletores para encontrar o formulário
@@ -184,12 +186,12 @@ export default function Produtos() {
             
             {/* Headline principal */}
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 md:mb-8 text-white leading-tight drop-shadow-lg">
-              Ecossistema IBM - Realize a promessa da IA com watsonx
+              {t('hero.title')}
             </h1>
             
             {/* Subheadline com social proof */}
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-100 max-w-4xl mx-auto mb-8 sm:mb-10 md:mb-12 leading-relaxed drop-shadow-md">
-              Faça com que sua empresa priorize a IA e acelere os resultados de negócios internamente
+              {t('hero.subtitle')}
             </p>
 
 
@@ -203,10 +205,9 @@ export default function Produtos() {
       <section className="py-12 sm:py-16 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">Certificações e <span className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">Conformidade</span></h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">{t('certifications.title')}</h2>
             <p className="text-sm sm:text-base text-gray-600 max-w-3xl mx-auto">
-              Nossos produtos atendem aos mais altos padrões de segurança e conformidade da indústria, garantindo a
-              proteção dos seus dados e operações.
+              {t('certifications.description')}
             </p>
           </div>
 
@@ -214,19 +215,19 @@ export default function Produtos() {
             {/* Produtos - Lado Esquerdo */}
             <div className="lg:w-1/2 space-y-6 sm:space-y-8">
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6 text-center lg:text-left">
-                Nossos <span className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">Produtos</span>
+                {t('products.title')}
               </h3>
               
               {/* AI Productivity */}
               <div className="space-y-3 sm:space-y-4">
                 <div className="mb-3 sm:mb-4 ml-3 sm:ml-6">
-                  <h4 className="text-base sm:text-lg font-semibold text-gray-800">AI Productivity</h4>
-                  <p className="text-xs sm:text-sm text-gray-600">Reinvente a forma de trabalhar com assistentes de IA.</p>
+                  <h4 className="text-base sm:text-lg font-semibold text-gray-800">{t('products.aiProductivity.title')}</h4>
+                  <p className="text-xs sm:text-sm text-gray-600">{t('products.aiProductivity.description')}</p>
                 </div>
                 
                 {/* AI Assistants */}
                 <div className="ml-3 sm:ml-6 space-y-2 sm:space-y-3">
-                  <h5 className="text-sm sm:text-md font-medium text-gray-700">AI Assistants</h5>
+                  <h5 className="text-sm sm:text-md font-medium text-gray-700">{t('products.aiProductivity.categories.assistants.title')}</h5>
                   
                   {/* watsonx Code Assistant™ */}
                   <Card className="hover:shadow-lg transition-shadow">
@@ -240,30 +241,24 @@ export default function Produtos() {
                           />
                         </div>
                         <div>
-                          <CardTitle className="text-lg sm:text-xl">watsonx Code Assistant™</CardTitle>
-                          <Badge variant="outline" className="mt-1 text-xs">AI Assistants</Badge>
+                          <CardTitle className="text-lg sm:text-xl">{t('products.aiProductivity.categories.assistants.items.watsonxCodeAssistant.name')}</CardTitle>
+                          <Badge variant="outline" className="mt-1 text-xs">{t('products.aiProductivity.categories.assistants.title')}</Badge>
                         </div>
                       </div>
                       <CardDescription className="text-sm sm:text-base text-gray-600 leading-relaxed">
-                        Reinvente a forma de trabalhar com assistentes de IA para desenvolvimento
+                        {t('products.aiProductivity.categories.assistants.items.watsonxCodeAssistant.description')}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-3 sm:space-y-4">
                       <div>
-                        <h4 className="text-sm sm:text-base font-semibold text-gray-900 mb-2">Principais Recursos</h4>
+                        <h4 className="text-sm sm:text-base font-semibold text-gray-900 mb-2">{t('products.aiProductivity.categories.assistants.items.watsonxCodeAssistant.features.title')}</h4>
                         <ul className="space-y-1">
-                          <li className="flex items-center text-xs sm:text-sm text-gray-600">
-                            <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Geração de Código
-                          </li>
-                          <li className="flex items-center text-xs sm:text-sm text-gray-600">
-                            <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Detecção de Bugs
-                          </li>
-                          <li className="flex items-center text-xs sm:text-sm text-gray-600">
-                            <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Otimização de Performance
-                          </li>
+                          {(t('products.aiProductivity.categories.assistants.items.watsonxCodeAssistant.features.items', { returnObjects: true }) as string[]).map((feature, idx) => (
+                            <li key={idx} className="flex items-center text-xs sm:text-sm text-gray-600">
+                              <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-green-500 mr-2 flex-shrink-0" />
+                              {feature}
+                            </li>
+                          ))}
                         </ul>
                       </div>
                       <div className="pt-3 sm:pt-4">
@@ -272,7 +267,7 @@ export default function Produtos() {
                           className="w-full flex items-center justify-center gap-2 border-2 border-brand-blue text-brand-blue hover:bg-gradient-to-r hover:from-brand-blue hover:via-blue-600 hover:to-brand-blue hover:text-white hover:border-transparent text-xs sm:text-sm"
                           onClick={() => navigate('/produtos/watsonx-code-assistant')}
                         >
-                          Ver mais
+                          {t('common.viewMore')}
                           <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4" />
                         </Button>
                       </div>
@@ -291,30 +286,24 @@ export default function Produtos() {
                           />
                         </div>
                         <div>
-                          <CardTitle className="text-xl">watsonx Orchestrate™</CardTitle>
-                          <Badge variant="outline" className="mt-1">AI Assistants</Badge>
+                          <CardTitle className="text-xl">{t('products.aiProductivity.categories.assistants.items.watsonxOrchestrate.name')}</CardTitle>
+                          <Badge variant="outline" className="mt-1">{t('products.aiProductivity.categories.assistants.title')}</Badge>
                         </div>
                       </div>
                       <CardDescription className="text-gray-600 leading-relaxed">
-                        Orquestre fluxos de trabalho de IA e automatize processos empresariais
+                        {t('products.aiProductivity.categories.assistants.items.watsonxOrchestrate.description')}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">Principais Recursos</h4>
+                        <h4 className="font-semibold text-gray-900 mb-2">{t('products.aiProductivity.categories.assistants.items.watsonxOrchestrate.features.title')}</h4>
                         <ul className="space-y-1">
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Automação de Fluxos
-                          </li>
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Integração de Sistemas
-                          </li>
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Governança de Processos
-                          </li>
+                          {(t('products.aiProductivity.categories.assistants.items.watsonxOrchestrate.features.items', { returnObjects: true }) as string[]).map((feature, idx) => (
+                            <li key={idx} className="flex items-center text-sm text-gray-600">
+                              <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                              {feature}
+                            </li>
+                          ))}
                         </ul>
                       </div>
                       <div className="pt-4">
@@ -323,7 +312,7 @@ export default function Produtos() {
                           className="w-full flex items-center justify-center gap-2 border-2 border-brand-blue text-brand-blue hover:bg-gradient-to-r hover:from-brand-blue hover:via-blue-600 hover:to-brand-blue hover:text-white hover:border-transparent"
                           onClick={() => navigate('/produtos/watsonx-orchestrate')}
                         >
-                          Ver mais
+                          {t('common.viewMore')}
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </div>
@@ -342,30 +331,24 @@ export default function Produtos() {
                           />
                         </div>
                         <div>
-                          <CardTitle className="text-xl">Planning Analytics</CardTitle>
-                          <Badge variant="outline" className="mt-1">AI Assistants</Badge>
+                          <CardTitle className="text-xl">{t('products.aiProductivity.categories.assistants.items.planningAnalytics.name')}</CardTitle>
+                          <Badge variant="outline" className="mt-1">{t('products.aiProductivity.categories.assistants.title')}</Badge>
                         </div>
                       </div>
                       <CardDescription className="text-gray-600 leading-relaxed">
-                        Plataforma de planejamento e análise empresarial integrada
+                        {t('products.aiProductivity.categories.assistants.items.planningAnalytics.description')}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">Principais Recursos</h4>
+                        <h4 className="font-semibold text-gray-900 mb-2">{t('products.aiProductivity.categories.assistants.items.planningAnalytics.features.title')}</h4>
                         <ul className="space-y-1">
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Planejamento Corporativo
-                          </li>
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Análise Preditiva
-                          </li>
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Colaboração em Tempo Real
-                          </li>
+                          {(t('products.aiProductivity.categories.assistants.items.planningAnalytics.features.items', { returnObjects: true }) as string[]).map((feature, idx) => (
+                            <li key={idx} className="flex items-center text-sm text-gray-600">
+                              <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                              {feature}
+                            </li>
+                          ))}
                         </ul>
                       </div>
                       <div className="pt-4">
@@ -374,7 +357,7 @@ export default function Produtos() {
                           className="w-full flex items-center justify-center gap-2 border-2 border-brand-blue text-brand-blue hover:bg-gradient-to-r hover:from-brand-blue hover:via-blue-600 hover:to-brand-blue hover:text-white hover:border-transparent"
                           onClick={() => navigate('/produtos/planning-analytics')}
                         >
-                          Ver mais
+                          {t('common.viewMore')}
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </div>
@@ -386,13 +369,13 @@ export default function Produtos() {
               {/* AI/ML Ops */}
               <div className="space-y-4">
                 <div className="mb-4 ml-6">
-                  <h4 className="text-lg font-semibold text-gray-800">AI/ML Ops</h4>
-                  <p className="text-sm text-gray-600">Modelos, ferramentas e governança de IA para garantir confiança e escalabilidade.</p>
+                  <h4 className="text-lg font-semibold text-gray-800">{t('products.aiMLOps.title')}</h4>
+                  <p className="text-sm text-gray-600">{t('products.aiMLOps.description')}</p>
                 </div>
                 
                 {/* AI Models */}
                 <div className="ml-6 space-y-3">
-                  <h5 className="text-md font-medium text-gray-700">AI Models</h5>
+                  <h5 className="text-md font-medium text-gray-700">{t('products.aiMLOps.categories.models.title')}</h5>
                   
                   {/* Granite™ */}
                   <Card className="hover:shadow-lg transition-shadow">
@@ -406,8 +389,8 @@ export default function Produtos() {
                           />
                         </div>
                         <div>
-                          <CardTitle className="text-xl">Granite™</CardTitle>
-                          <Badge variant="outline" className="mt-1">AI Models</Badge>
+                          <CardTitle className="text-xl">{t('products.aiMLOps.categories.models.items.granite.name')}</CardTitle>
+                          <Badge variant="outline" className="mt-1">{t('products.aiMLOps.categories.models.title')}</Badge>
                         </div>
                       </div>
                       <CardDescription className="text-gray-600 leading-relaxed">
@@ -550,7 +533,7 @@ export default function Produtos() {
 
                 {/* AI Tools */}
                 <div className="ml-6 space-y-3">
-                  <h5 className="text-md font-medium text-gray-700">AI Tools</h5>
+                  <h5 className="text-md font-medium text-gray-700">{t('products.aiMLOps.categories.tools.title')}</h5>
                   
                   {/* watsonx.ai™ */}
                   <Card className="hover:shadow-lg transition-shadow">
@@ -609,7 +592,7 @@ export default function Produtos() {
 
                 {/* AI Governance */}
                 <div className="ml-6 space-y-3">
-                  <h5 className="text-md font-medium text-gray-700">AI Governance</h5>
+                  <h5 className="text-md font-medium text-gray-700">{t('products.aiMLOps.categories.governance.title')}</h5>
                   
                   {/* watsonx.governance™ */}
                   <Card className="hover:shadow-lg transition-shadow">
@@ -687,30 +670,24 @@ export default function Produtos() {
                           />
                         </div>
                         <div>
-                          <CardTitle className="text-xl">watsonx.data™</CardTitle>
-                          <Badge variant="outline" className="mt-1">Databases</Badge>
+                          <CardTitle className="text-xl">{t('products.dataFabric.categories.databases.items.watsonxData.name')}</CardTitle>
+                          <Badge variant="outline" className="mt-1">{t('products.dataFabric.categories.databases.title')}</Badge>
                         </div>
                       </div>
                       <CardDescription className="text-gray-600 leading-relaxed">
-                        Reúna todos os dados de negócios e otimize como eles se movem pelos sistemas
+                        {t('products.dataFabric.categories.databases.items.watsonxData.description')}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">Principais Recursos</h4>
+                        <h4 className="font-semibold text-gray-900 mb-2">{t('products.dataFabric.categories.databases.items.watsonxData.features.title')}</h4>
                         <ul className="space-y-1">
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Integração de Dados
-                          </li>
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Analytics em Tempo Real
-                          </li>
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Cloud Nativo
-                          </li>
+                          {(t('products.dataFabric.categories.databases.items.watsonxData.features.items', { returnObjects: true }) as string[]).map((feature, idx) => (
+                            <li key={idx} className="flex items-center text-sm text-gray-600">
+                              <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                              {feature}
+                            </li>
+                          ))}
                         </ul>
                       </div>
                       <div className="pt-4">
@@ -719,7 +696,7 @@ export default function Produtos() {
                           className="w-full flex items-center justify-center gap-2 border-2 border-brand-blue text-brand-blue hover:bg-gradient-to-r hover:from-brand-blue hover:via-blue-600 hover:to-brand-blue hover:text-white hover:border-transparent"
                           onClick={() => navigate('/produtos/watsonx-data')}
                         >
-                          Ver mais
+                          {t('common.viewMore')}
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </div>
@@ -729,7 +706,7 @@ export default function Produtos() {
 
                 {/* Data Intelligence */}
                 <div className="ml-6 space-y-3">
-                  <h5 className="text-md font-medium text-gray-700">Data Intelligence</h5>
+                  <h5 className="text-md font-medium text-gray-700">{t('products.dataFabric.categories.intelligence.title')}</h5>
                   
                   {/* Data Product Hub */}
                   <Card className="hover:shadow-lg transition-shadow">
@@ -1168,14 +1145,14 @@ export default function Produtos() {
             {/* Certificações - Lado Direito */}
             <div className="lg:w-1/2 space-y-4 sm:space-y-6">
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6 text-center lg:text-left">
-                <span className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">Certificações</span>
+                <span className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">{t('certifications.sectionTitle')}</span>
               </h3>
               
               {/* IBM Certifications */}
               <div className="mb-4 sm:mb-6">
-                <h4 className="text-base sm:text-lg font-semibold text-gray-800 mb-2">IBM Professional Certifications</h4>
+                <h4 className="text-base sm:text-lg font-semibold text-gray-800 mb-2">{t('certifications.ibmSection.title')}</h4>
                 <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4">
-                  Credenciais oficiais IBM que validam expertise em tecnologias de IA empresarial e capacitação técnica avançada
+                  {t('certifications.ibmSection.description')}
                 </p>
               </div>
               
@@ -1193,8 +1170,8 @@ export default function Produtos() {
                           />
                         </div>
                         <div className="flex-1">
-                          <CardTitle className="text-sm sm:text-lg">IBM watsonx Orchestrate Build an AI Assistant</CardTitle>
-                          <CardDescription className="text-xs sm:text-sm">Certificação oficial para construção de assistentes de IA com watsonx</CardDescription>
+                          <CardTitle className="text-sm sm:text-lg">{t('certifications.items.watsonxOrchestrateBuild.title')}</CardTitle>
+                          <CardDescription className="text-xs sm:text-sm">{t('certifications.items.watsonxOrchestrateBuild.description')}</CardDescription>
                         </div>
                       </div>
                     </CardHeader>
@@ -1211,8 +1188,8 @@ export default function Produtos() {
                           />
                         </div>
                         <div className="flex-1">
-                          <CardTitle className="text-lg">watsonx Assistant Technical Sales Intermediate</CardTitle>
-                          <CardDescription>Certificação intermediária em vendas técnicas de assistentes watsonx</CardDescription>
+                          <CardTitle className="text-lg">{t('certifications.items.watsonxAssistantSales.title')}</CardTitle>
+                          <CardDescription>{t('certifications.items.watsonxAssistantSales.description')}</CardDescription>
                         </div>
                       </div>
                     </CardHeader>
@@ -1229,8 +1206,8 @@ export default function Produtos() {
                           />
                         </div>
                         <div className="flex-1">
-                          <CardTitle className="text-lg">watsonx Orchestrate Technical Sales Intermediate</CardTitle>
-                          <CardDescription>Certificação intermediária em vendas técnicas de orquestração watsonx</CardDescription>
+                          <CardTitle className="text-lg">{t('certifications.items.watsonxOrchestrateSales.title')}</CardTitle>
+                          <CardDescription>{t('certifications.items.watsonxOrchestrateSales.description')}</CardDescription>
                         </div>
                       </div>
                     </CardHeader>
@@ -1247,8 +1224,8 @@ export default function Produtos() {
                           />
                         </div>
                         <div className="flex-1">
-                          <CardTitle className="text-lg">watsonx Agentic AI Bootcamp - Level 2</CardTitle>
-                          <CardDescription>Bootcamp avançado de IA agentiva com watsonx</CardDescription>
+                          <CardTitle className="text-lg">{t('certifications.items.watsonxAgenticAI.title')}</CardTitle>
+                          <CardDescription>{t('certifications.items.watsonxAgenticAI.description')}</CardDescription>
                         </div>
                       </div>
                     </CardHeader>
@@ -1265,8 +1242,8 @@ export default function Produtos() {
                           />
                         </div>
                         <div className="flex-1">
-                          <CardTitle className="text-lg">watsonx Assistant Sales Foundation</CardTitle>
-                          <CardDescription>Certificação de fundação em vendas de assistentes watsonx</CardDescription>
+                          <CardTitle className="text-lg">{t('certifications.items.watsonxAssistantFoundation.title')}</CardTitle>
+                          <CardDescription>{t('certifications.items.watsonxAssistantFoundation.description')}</CardDescription>
                         </div>
                       </div>
                     </CardHeader>
@@ -1283,8 +1260,8 @@ export default function Produtos() {
                           />
                         </div>
                         <div className="flex-1">
-                          <CardTitle className="text-lg">watsonx Orchestrate Sales Foundation</CardTitle>
-                          <CardDescription>Certificação de fundação em vendas de orquestração watsonx</CardDescription>
+                          <CardTitle className="text-lg">{t('certifications.items.watsonxOrchestrateFoundation.title')}</CardTitle>
+                          <CardDescription>{t('certifications.items.watsonxOrchestrateFoundation.description')}</CardDescription>
                         </div>
                       </div>
                     </CardHeader>
@@ -1301,8 +1278,8 @@ export default function Produtos() {
                           />
                         </div>
                         <div className="flex-1">
-                          <CardTitle className="text-lg">Advanced Deep Learning Specialist</CardTitle>
-                          <CardDescription>Especialização avançada em deep learning com foco em redes neurais complexas e arquiteturas modernas</CardDescription>
+                          <CardTitle className="text-lg">{t('certifications.items.deepLearningSpecialist.title')}</CardTitle>
+                          <CardDescription>{t('certifications.items.deepLearningSpecialist.description')}</CardDescription>
                         </div>
                       </div>
                     </CardHeader>
@@ -1319,8 +1296,8 @@ export default function Produtos() {
                           />
                         </div>
                         <div className="flex-1">
-                          <CardTitle className="text-lg">Generative AI and LLMs: Arquitecture and Data Preparation</CardTitle>
-                          <CardDescription>Certificação em arquitetura de IA generativa e preparação de dados para modelos de linguagem grandes</CardDescription>
+                          <CardTitle className="text-lg">{t('certifications.items.generativeAI.title')}</CardTitle>
+                          <CardDescription>{t('certifications.items.generativeAI.description')}</CardDescription>
                         </div>
                       </div>
                     </CardHeader>
@@ -1337,8 +1314,8 @@ export default function Produtos() {
                           />
                         </div>
                         <div className="flex-1">
-                          <CardTitle className="text-lg">Machine Learning with Python</CardTitle>
-                          <CardDescription>Certificação em machine learning utilizando Python para desenvolvimento de modelos preditivos</CardDescription>
+                          <CardTitle className="text-lg">{t('certifications.items.machineLearningPython.title')}</CardTitle>
+                          <CardDescription>{t('certifications.items.machineLearningPython.description')}</CardDescription>
                         </div>
                       </div>
                     </CardHeader>
@@ -1355,8 +1332,8 @@ export default function Produtos() {
                           />
                         </div>
                         <div className="flex-1">
-                          <CardTitle className="text-lg">IBM AI Engineering Professional Certificate (V2)</CardTitle>
-                          <CardDescription>Certificação profissional em engenharia de IA da IBM, versão atualizada com as melhores práticas</CardDescription>
+                          <CardTitle className="text-lg">{t('certifications.items.aiEngineering.title')}</CardTitle>
+                          <CardDescription>{t('certifications.items.aiEngineering.description')}</CardDescription>
                         </div>
                       </div>
                     </CardHeader>
@@ -1373,8 +1350,8 @@ export default function Produtos() {
                           />
                         </div>
                         <div className="flex-1">
-                          <CardTitle className="text-lg">Computer Vision and Image Processing Essentials</CardTitle>
-                          <CardDescription>Fundamentos de visão computacional e processamento de imagens para aplicações de IA</CardDescription>
+                          <CardTitle className="text-lg">{t('certifications.items.computerVision.title')}</CardTitle>
+                          <CardDescription>{t('certifications.items.computerVision.description')}</CardDescription>
                         </div>
                       </div>
                     </CardHeader>
@@ -1391,8 +1368,8 @@ export default function Produtos() {
                           />
                         </div>
                         <div className="flex-1">
-                          <CardTitle className="text-lg">Deep Learning Essentials with Keras</CardTitle>
-                          <CardDescription>Essenciais de deep learning utilizando o framework Keras para desenvolvimento de redes neurais</CardDescription>
+                          <CardTitle className="text-lg">{t('certifications.items.deepLearningKeras.title')}</CardTitle>
+                          <CardDescription>{t('certifications.items.deepLearningKeras.description')}</CardDescription>
                         </div>
                       </div>
                     </CardHeader>
@@ -1409,8 +1386,8 @@ export default function Produtos() {
                           />
                         </div>
                         <div className="flex-1">
-                          <CardTitle className="text-lg">Introduction to Neural Networks with PyTorch</CardTitle>
-                          <CardDescription>Introdução às redes neurais utilizando o framework PyTorch para desenvolvimento de modelos de IA</CardDescription>
+                          <CardTitle className="text-lg">{t('certifications.items.neuralNetworks.title')}</CardTitle>
+                          <CardDescription>{t('certifications.items.neuralNetworks.description')}</CardDescription>
                         </div>
                       </div>
                     </CardHeader>
@@ -1434,22 +1411,22 @@ export default function Produtos() {
           {/* Badge Superior - Estilo Homepage */}
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-brand-blue/10 to-brand-blue/5 text-brand-blue px-3 py-1.5 rounded-full text-xs sm:text-sm font-semibold mb-3 sm:mb-4 border border-brand-blue/20">
             <Clock className="h-3 w-3" />
-            Implementação Rápida
+            {t('cta.badge')}
           </div>
           
           {/* Título - Estilo Homepage */}
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 text-gray-900 dark:text-white leading-tight">
             <span className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">
-              Transforme
-            </span> sua empresa em{" "}
+              {t('cta.title')}
+            </span> {t('cta.company')} {t('cta.in')}{" "}
             <span className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">
-              30 dias
-            </span> com IA
+              {t('cta.days')}
+            </span> {t('cta.titleEnd')}
           </h2>
           
           <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed px-2 sm:px-4 md:px-0 mb-4 sm:mb-6">
-            Junte-se às <span className="font-bold text-brand-blue">350+ empresas</span> que já multiplicaram seus resultados com nossa{" "}
-            <span className="font-bold text-brand-blue">metodologia LÍDER</span>
+            {t('cta.description')} <span className="font-bold text-brand-blue">{t('cta.companies')}</span> {t('cta.descriptionEnd')}{" "}
+            <span className="font-bold text-brand-blue">{t('cta.methodology')}</span>
           </p>
           
           {/* Stats Cards - Estilo Homepage */}
@@ -1459,21 +1436,21 @@ export default function Produtos() {
                 <Star className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
               </div>
               <div className="text-sm sm:text-lg font-bold text-gray-900">420%</div>
-              <div className="text-xs text-gray-600">ROI Médio</div>
+              <div className="text-xs text-gray-600">{t('cta.stats.roi')}</div>
             </div>
             <div className="group bg-white/80 backdrop-blur-sm rounded-xl p-3 sm:p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200/50">
               <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center mx-auto mb-2 sm:mb-3">
                 <Shield className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
               </div>
-              <div className="text-sm sm:text-lg font-bold text-gray-900">30 dias</div>
-              <div className="text-xs text-gray-600">Implementação</div>
+              <div className="text-sm sm:text-lg font-bold text-gray-900">{t('cta.days')}</div>
+              <div className="text-xs text-gray-600">{t('cta.stats.implementation')}</div>
             </div>
             <div className="group bg-white/80 backdrop-blur-sm rounded-xl p-3 sm:p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200/50">
               <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-brand-blue to-blue-600 rounded-lg flex items-center justify-center mx-auto mb-2 sm:mb-3">
                 <Users className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
               </div>
               <div className="text-sm sm:text-lg font-bold text-gray-900">350+</div>
-              <div className="text-xs text-gray-600">Empresas</div>
+              <div className="text-xs text-gray-600">{t('cta.stats.companies')}</div>
             </div>
           </div>
           
@@ -1486,7 +1463,7 @@ export default function Produtos() {
             >
               <span className="relative z-10 flex items-center">
                 <Send className="mr-2 h-3 w-3 sm:h-4 sm:w-4" />
-                Garantir Minha Vaga Agora
+                {t('cta.button')}
               </span>
               <span className="absolute inset-0 bg-gradient-to-r from-brand-blue to-brand-blue-light opacity-0 group-hover:opacity-100 transition-opacity"></span>
             </Button>
@@ -1496,15 +1473,15 @@ export default function Produtos() {
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center text-xs sm:text-sm text-gray-600">
             <div className="flex items-center justify-center">
               <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 text-green-500 mr-2" />
-              <span>Setup gratuito</span>
+              <span>{t('cta.benefits.freeSetup')}</span>
             </div>
             <div className="flex items-center justify-center">
               <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 text-green-500 mr-2" />
-              <span>Sem compromisso inicial</span>
+              <span>{t('cta.benefits.noCommitment')}</span>
             </div>
             <div className="flex items-center justify-center">
               <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 text-green-500 mr-2" />
-              <span>ROI garantido em 90 dias</span>
+              <span>{t('cta.benefits.guaranteedROI')}</span>
             </div>
           </div>
         </div>

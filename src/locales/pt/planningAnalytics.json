@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "badge": "Business Intelligence",
+    "title": "Planning Analytics",
+    "subtitle": "Plataforma de planejamento e análise empresarial integrada para otimizar decisões estratégicas."
+  },
+  "statsTop": {
+    "accuracy": "Precisão nas previsões",
+    "speed": "Mais rápido que planilhas",
+    "collaboration": "Colaboração em tempo real"
+  },
+  "features": {
+    "title": "Principais Recursos",
+    "corporate": {
+      "title": "Planejamento Corporativo",
+      "desc": "Ferramentas avançadas para planejamento estratégico e orçamentário"
+    },
+    "predictive": {
+      "title": "Análise Preditiva",
+      "desc": "Modelos preditivos para antecipar tendências e oportunidades"
+    },
+    "realtime": {
+      "title": "Colaboração em Tempo Real",
+      "desc": "Trabalho colaborativo com múltiplos usuários simultaneamente"
+    },
+    "optimization": {
+      "title": "Otimização de Metas",
+      "desc": "Definição e acompanhamento de KPIs e metas organizacionais"
+    }
+  },
+  "advanced": {
+    "title": "Recursos Avançados",
+    "subtitle": "Descubra como o Planning Analytics pode revolucionar seu planejamento empresarial",
+    "modeling": {
+      "title": "Modelagem Avançada",
+      "desc": "Criação de modelos complexos para cenários de planejamento e análise."
+    },
+    "forecasting": {
+      "title": "Forecasting Inteligente",
+      "desc": "Previsões baseadas em IA para melhor tomada de decisão estratégica."
+    },
+    "workflow": {
+      "title": "Workflow Colaborativo",
+      "desc": "Fluxos de aprovação e colaboração entre equipes e departamentos."
+    },
+    "governance": {
+      "title": "Governança de Dados",
+      "desc": "Controles de acesso e auditoria para conformidade regulatória."
+    },
+    "automation": {
+      "title": "Automação de Processos",
+      "desc": "Automação de tarefas repetitivas de planejamento e análise."
+    },
+    "dashboard": {
+      "title": "Dashboard Executivo",
+      "desc": "Visualizações executivas para monitoramento de performance."
+    }
+  },
+  "numbers": {
+    "title": "Números Impressionantes",
+    "subtitle": "Veja como o Planning Analytics está revolucionando o planejamento empresarial",
+    "users": "Usuários Ativos",
+    "usersDesc": "Em todo o mundo",
+    "enterprises": "Empresas Ativas",
+    "enterprisesDesc": "Usando a plataforma",
+    "efficiency": "Eficiência",
+    "efficiencyDesc": "No planejamento"
+  },
+  "cta": {
+    "title": "Transforme seu Planejamento Empresarial",
+    "subtitle": "Junte-se às empresas que já transformaram seus negócios com Planning Analytics.",
+    "requestDemo": "Solicitar Demonstração",
+    "viewOthers": "Ver Outros Produtos"
+  }
+}

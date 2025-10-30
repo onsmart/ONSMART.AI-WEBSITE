@@ -1,0 +1,176 @@
+{
+  "hero": {
+    "title": {
+      "texts": [
+        "Proprietary AI Agents",
+        "100% Brazilian Technology",
+        "Advanced Corporate AI",
+        "Intelligent Automation"
+      ]
+    },
+    "subtitle": "AI solutions developed based on the main demands of the Brazilian market",
+    "stats": {
+      "companies": "Companies",
+      "success": "Success",
+      "implementation": "Implementation"
+    }
+  },
+  "categories": {
+    "title": "AI Solution Categories",
+    "subtitle": "We develop solutions based on the main demands of the Brazilian corporate AI market",
+    "items": {
+      "vendas": {
+        "name": "Sales Automation",
+        "description": "Virtual SDRs and automated lead qualification",
+        "detailedDescription": "Transform your sales process with AI agents that work 24/7. Our virtual SDRs qualify leads, make intelligent follow-ups, integrate with CRM and automatically schedule meetings. Increase your conversion rate by up to 300% with intelligent prospecting.",
+        "benefits": ["24/7 Prospecting", "Intelligent qualification", "Native CRM integration", "Proven ROI"],
+        "stats": {
+          "conversion": "+300%",
+          "leads": "10x more",
+          "time": "80% less time"
+        },
+        "statsLabels": {
+          "conversion": "Conversion",
+          "leads": "Leads",
+          "time": "Time"
+        }
+      },
+      "atendimento": {
+        "name": "Intelligent Support",
+        "description": "Multi-channel chatbots and virtual assistants",
+        "detailedDescription": "Revolutionize customer service with advanced conversational AI. Chatbots that understand context, solve complex problems and learn continuously. Multi-channel support (WhatsApp, web, phone) with processing optimized for Brazilian Portuguese.",
+        "benefits": ["Multi-channel support", "Intelligent resolution", "Continuous learning", "Satisfaction +95%"],
+        "stats": {
+          "satisfaction": "+95%",
+          "response": "Instant response",
+          "resolution": "85% resolution"
+        },
+        "statsLabels": {
+          "satisfaction": "Satisfaction",
+          "response": "Response",
+          "resolution": "Resolution"
+        }
+      },
+      "rh": {
+        "name": "Intelligent HR",
+        "description": "Automated recruitment and workforce analytics",
+        "detailedDescription": "Enhance your HR with predictive AI. Automate recruitment, perform intelligent candidate screening, predict turnover and optimize engagement. Advanced analytics for strategic people decisions based on real data.",
+        "benefits": ["Automated recruitment", "Intelligent screening", "Predictive analytics", "Retention +40%"],
+        "stats": {
+          "hiring": "70% faster",
+          "accuracy": "90% accuracy",
+          "retention": "+40% retention"
+        },
+        "statsLabels": {
+          "hiring": "Hiring",
+          "accuracy": "Accuracy",
+          "retention": "Retention"
+        }
+      },
+      "analytics": {
+        "name": "BI & Analytics",
+        "description": "Predictive and real-time Business Intelligence",
+        "detailedDescription": "Transform data into actionable insights with advanced AI. Predictive analytics, real-time processing, anomaly detection and intelligent forecasting. Dynamic dashboards that reveal hidden opportunities in your business.",
+        "benefits": ["Predictive analytics", "Real-time", "Anomaly detection", "Actionable insights"],
+        "stats": {
+          "accuracy": "95% accuracy",
+          "speed": "Real-time",
+          "insights": "Unique insights"
+        },
+        "statsLabels": {
+          "accuracy": "Accuracy",
+          "speed": "Speed",
+          "insights": "Insights"
+        }
+      },
+      "processos": {
+        "name": "Process Automation",
+        "description": "Intelligent RPA with advanced AI",
+        "detailedDescription": "Automate complex processes by combining traditional RPA with cognitive AI. Document processing, administrative workflows, intelligent approvals and 24/7 operations. Reduce operational costs by up to 60% with intelligent automation.",
+        "benefits": ["RPA + Cognitive AI", "24/7 Processing", "Intelligent workflows", "60% cost reduction"],
+        "stats": {
+          "efficiency": "+500%",
+          "cost": "-60% costs",
+          "accuracy": "99% accuracy"
+        },
+        "statsLabels": {
+          "efficiency": "Efficiency",
+          "cost": "Cost",
+          "accuracy": "Accuracy"
+        }
+      },
+      "voz": {
+        "name": "Voice & Language",
+        "description": "NLP optimized for Brazilian Portuguese",
+        "detailedDescription": "Master voice communication with AI specialized in Portuguese. Conversational interfaces, intelligent transcription, sentiment analysis and automatic routing. Technology 100% optimized for Brazilian accents and expressions.",
+        "benefits": ["Optimized Portuguese", "Voice interfaces", "Sentiment analysis", "Intelligent transcription"],
+        "stats": {
+          "accuracy": "98% accuracy",
+          "languages": "Native PT-BR",
+          "processing": "Real-time"
+        },
+        "statsLabels": {
+          "accuracy": "Accuracy",
+          "languages": "Language",
+          "processing": "Processing"
+        }
+      }
+    },
+    "buttons": {
+      "scheduleMeeting": "Schedule Meeting",
+      "viewDetails": "View Details"
+    },
+    "results": "Proven Results"
+  },
+  "features": {
+    "title": "Characteristics of Our",
+    "titleHighlight": "Solutions",
+    "subtitle": "Developed based on real demands from the Brazilian market and global corporate AI trends",
+    "items": {
+      "portuguese": {
+        "title": "Optimized Portuguese",
+        "description": "NLP specialized for the Brazilian market"
+      },
+      "integration": {
+        "title": "Native Integration",
+        "description": "Connects with existing CRMs and systems"
+      },
+      "availability": {
+        "title": "24/7 Availability",
+        "description": "Continuous operation and instant response"
+      },
+      "analytics": {
+        "title": "Advanced Analytics",
+        "description": "Predictive insights and real-time analysis"
+      }
+    }
+  },
+  "cta": {
+    "badge": "SOLUTIONS BASED ON REAL MARKET DEMAND",
+    "title": "Implement",
+    "titleHighlight": "AI",
+    "titleEnd": "focused on real results",
+    "description": "Our solutions are developed based on the main trends and verified demands from the Brazilian corporate AI market.",
+    "proofCards": {
+      "sales": {
+        "title": "Sales",
+        "subtitle": "Proven Automation"
+      },
+      "support": {
+        "title": "Support",
+        "subtitle": "Total Availability"
+      },
+      "processes": {
+        "title": "Processes",
+        "subtitle": "Intelligent Automation"
+      }
+    },
+    "button": "Request Free Demo",
+    "benefits": {
+      "consulting": "Specialized consulting",
+      "demand": "Solutions based on real demand",
+      "results": "Results-oriented implementation"
+    }
+  }
+}
+
