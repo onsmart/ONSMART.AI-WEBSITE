@@ -5,10 +5,12 @@ import { ArrowRight, CheckCircle, Building2, Stethoscope, Home, ShoppingBag, Sca
 import { getSectorBySlug } from '@/data/sectorsData';
 import NotFound from '@/pages/NotFound';
 import ServiceChart from '@/components/shared/ServiceChart';
+import { useTranslation } from 'react-i18next';
 
 const SectorDynamic: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
+  const { t } = useTranslation(['setores', 'common']);
   
   if (!slug) {
     return <NotFound />;
@@ -34,55 +36,55 @@ const SectorDynamic: React.FC = () => {
       case 'advocacia':
         return {
           chartType: 'bar' as const,
-          chartTitle: 'Automação Jurídica',
+          chartTitle: t('setores:chartTitles.legalAutomation'),
           icon: <Scale className="h-6 w-6 text-white" />
         };
       case 'bancos':
         return {
           chartType: 'line' as const,
-          chartTitle: 'Análise de Crédito',
+          chartTitle: t('setores:chartTitles.creditAnalysis'),
           icon: <Banknote className="h-6 w-6 text-white" />
         };
       case 'comercio':
         return {
           chartType: 'growth' as const,
-          chartTitle: 'Crescimento de Vendas',
+          chartTitle: t('setores:chartTitles.salesGrowth'),
           icon: <ShoppingBag className="h-6 w-6 text-white" />
         };
       case 'industria':
         return {
           chartType: 'bar' as const,
-          chartTitle: 'Otimização Industrial',
+          chartTitle: t('setores:chartTitles.industrialEfficiency'),
           icon: <Factory className="h-6 w-6 text-white" />
         };
       case 'saude':
         return {
           chartType: 'pie' as const,
-          chartTitle: 'Diagnósticos Médicos',
+          chartTitle: t('setores:chartTitles.healthAnalytics'),
           icon: <Stethoscope className="h-6 w-6 text-white" />
         };
       case 'telecomunicacoes':
         return {
           chartType: 'line' as const,
-          chartTitle: 'Performance de Rede',
+          chartTitle: t('setores:chartTitles.telecomAnalytics'),
           icon: <Phone className="h-6 w-6 text-white" />
         };
       case 'varejo':
         return {
           chartType: 'growth' as const,
-          chartTitle: 'Experiência do Cliente',
+          chartTitle: t('setores:chartTitles.retailOptimization'),
           icon: <Package className="h-6 w-6 text-white" />
         };
       case 'setor-imobiliario':
         return {
           chartType: 'bar' as const,
-          chartTitle: 'Gestão Imobiliária',
+          chartTitle: t('setores:chartTitles.realEstateInsights'),
           icon: <Home className="h-6 w-6 text-white" />
         };
       default:
         return {
           chartType: 'bar' as const,
-          chartTitle: 'Resultados do Setor',
+          chartTitle: t('setores:chartTitles.sectorResults'),
           icon: <Building2 className="h-6 w-6 text-white" />
         };
     }

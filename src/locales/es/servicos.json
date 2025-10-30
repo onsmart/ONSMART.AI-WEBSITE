@@ -1,0 +1,30 @@
+{
+  "buttons": {
+    "requestQuote": "Solicitar Cotización",
+    "freeDiagnostic": "Diagnóstico Gratuito"
+  },
+  "sections": {
+    "features": {
+      "title": "Qué está incluido",
+      "subtitle": "Todo lo que necesitas para transformar tu empresa"
+    },
+    "process": {
+      "title": "Cómo Funciona",
+      "subtitle": "Proceso estructurado para garantizar resultados"
+    },
+    "pricing": {
+      "title": "Nuestros Planes",
+      "subtitle": "Soluciones personalizadas para tu empresa",
+      "completeSolution": "Solución completa y personalizada"
+    }
+  },
+  "chartTitles": {
+    "potentialAnalysis": "Análisis de Potencial",
+    "adoptionGrowth": "Crecimiento de Adopción de IA",
+    "technicalPerformance": "Rendimiento Técnico",
+    "dataInsights": "Insights de Datos",
+    "knowledgeDistribution": "Distribución de Conocimiento",
+    "continuousMonitoring": "Monitoreo Continuo",
+    "serviceResults": "Resultados del Servicio"
+  }
+}

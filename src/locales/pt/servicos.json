@@ -1,0 +1,30 @@
+{
+  "buttons": {
+    "requestQuote": "Solicitar Orçamento",
+    "freeDiagnostic": "Diagnóstico Gratuito"
+  },
+  "sections": {
+    "features": {
+      "title": "O que está incluído",
+      "subtitle": "Tudo o que você precisa para transformar sua empresa"
+    },
+    "process": {
+      "title": "Como Funciona",
+      "subtitle": "Processo estruturado para garantir resultados"
+    },
+    "pricing": {
+      "title": "Nossos Planos",
+      "subtitle": "Soluções personalizadas para sua empresa",
+      "completeSolution": "Solução completa e personalizada"
+    }
+  },
+  "chartTitles": {
+    "potentialAnalysis": "Análise de Potencial",
+    "adoptionGrowth": "Crescimento da Adoção de IA",
+    "technicalPerformance": "Performance Técnica",
+    "dataInsights": "Insights de Dados",
+    "knowledgeDistribution": "Distribuição de Conhecimento",
+    "continuousMonitoring": "Monitoramento Contínuo",
+    "serviceResults": "Resultados do Serviço"
+  }
+}

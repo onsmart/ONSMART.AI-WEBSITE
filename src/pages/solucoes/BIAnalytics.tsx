@@ -4,9 +4,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { CheckCircle, ArrowRight, Database, BarChart3, TrendingUp, Clock, Target, Zap, Shield, Brain } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 export default function BIAnalytics() {
   const navigate = useNavigate();
+  const { t } = useTranslation(['solucoes', 'common']);
 
   const scrollToForm = () => {
     const formSelectors = ['form', '[data-testid="contact-form"]', '.contact-form', '#contact-form'];
@@ -24,20 +26,24 @@ export default function BIAnalytics() {
   };
 
   const features = [
-    { icon: BarChart3, title: "Analytics Preditiva", description: "Previsões precisas baseadas em machine learning e análise de padrões históricos" },
-    { icon: Clock, title: "Processamento Tempo Real", description: "Análise instantânea de dados com dashboards que se atualizam automaticamente" },
-    { icon: Target, title: "Detecção de Anomalias", description: "Identificação automática de padrões suspeitos e oportunidades ocultas" },
-    { icon: TrendingUp, title: "Insights Acionáveis", description: "Recomendações práticas baseadas em análise inteligente dos seus dados" }
+    { icon: BarChart3, title: t('solucoes:biAnalytics.features.predictiveAnalytics.title'), description: t('solucoes:biAnalytics.features.predictiveAnalytics.description') },
+    { icon: Clock, title: t('solucoes:biAnalytics.features.realTimeProcessing.title'), description: t('solucoes:biAnalytics.features.realTimeProcessing.description') },
+    { icon: Target, title: t('solucoes:biAnalytics.features.anomalyDetection.title'), description: t('solucoes:biAnalytics.features.anomalyDetection.description') },
+    { icon: TrendingUp, title: t('solucoes:biAnalytics.features.actionableInsights.title'), description: t('solucoes:biAnalytics.features.actionableInsights.description') }
   ];
 
-  const benefits = ["Analytics preditiva avançada", "Processamento em tempo real", "Detecção automática de anomalias", "95% de precisão nas previsões", "Insights únicos e acionáveis", "Dashboards dinâmicos inteligentes"];
-  const stats = [{ label: "Precisão", value: "95%", icon: Target }, { label: "Velocidade", value: "Tempo Real", icon: Clock }, { label: "Insights", value: "Únicos", icon: Brain }];
+  const benefits = t('solucoes:biAnalytics.benefits', { returnObjects: true }) as string[];
+  const stats = [
+    { label: t('solucoes:biAnalytics.stats.precision'), value: "95%", icon: Target }, 
+    { label: t('solucoes:biAnalytics.stats.speed'), value: "Tempo Real", icon: Clock }, 
+    { label: t('solucoes:biAnalytics.stats.insights'), value: "Únicos", icon: Brain }
+  ];
 
   const useCases = [
-    { title: "Previsão de Vendas", description: "Análise preditiva de tendências de vendas com precisão de 95% para planejamento estratégico." },
-    { title: "Análise de Churn", description: "Identificação precoce de clientes em risco de cancelamento com estratégias de retenção." },
-    { title: "Otimização de Preços", description: "Definição inteligente de preços baseada em demanda, concorrência e elasticidade." },
-    { title: "Forecasting Financeiro", description: "Projeções financeiras precisas com análise de cenários e simulações avançadas." }
+    { title: t('solucoes:biAnalytics.useCases.salesForecasting.title'), description: t('solucoes:biAnalytics.useCases.salesForecasting.description') },
+    { title: t('solucoes:biAnalytics.useCases.churnAnalysis.title'), description: t('solucoes:biAnalytics.useCases.churnAnalysis.description') },
+    { title: t('solucoes:biAnalytics.useCases.priceOptimization.title'), description: t('solucoes:biAnalytics.useCases.priceOptimization.description') },
+    { title: t('solucoes:biAnalytics.useCases.financialForecasting.title'), description: t('solucoes:biAnalytics.useCases.financialForecasting.description') }
   ];
 
   return (
@@ -151,14 +157,14 @@ export default function BIAnalytics() {
       <section className="py-16 px-4 bg-gradient-to-r from-orange-500 to-orange-600">
         <div className="max-w-4xl mx-auto text-center">
           <BarChart3 className="h-12 w-12 text-white mx-auto mb-6" />
-          <h2 className="text-3xl font-bold text-white mb-4">Pronto para Transformar seus Dados?</h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">Agende uma demonstração e veja como nossa IA pode revelar insights ocultos nos seus dados com 95% de precisão.</p>
+          <h2 className="text-3xl font-bold text-white mb-4">{t('solucoes:biAnalytics.cta.title')}</h2>
+          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">{t('solucoes:biAnalytics.cta.subtitle')}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" onClick={scrollToForm} className="bg-white text-orange-500 hover:bg-gray-100 font-medium px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all">
-              Agendar Demonstração<ArrowRight className="ml-2 h-5 w-5" />
+              {t('solucoes:biAnalytics.cta.button')}<ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button size="lg" variant="outline" onClick={() => navigate('/agentes-ia')} className="border-white text-white bg-white/10 hover:bg-white/20 font-medium px-8 py-6 text-lg rounded-xl transition-all">
-              Ver Outras Soluções
+              {t('cta.viewOthers')}
             </Button>
           </div>
         </div>

@@ -83,6 +83,18 @@ import esGuardiumDataSecurityCenter from '../locales/es/guardiumDataSecurityCent
 import ptDataband from '../locales/pt/databand.json';
 import enDataband from '../locales/en/databand.json';
 import esDataband from '../locales/es/databand.json';
+import ptServicos from '../locales/pt/servicos.json';
+import enServicos from '../locales/en/servicos.json';
+import esServicos from '../locales/es/servicos.json';
+import ptSetores from '../locales/pt/setores.json';
+import enSetores from '../locales/en/setores.json';
+import esSetores from '../locales/es/setores.json';
+import ptSolucoes from '../locales/pt/solucoes.json';
+import enSolucoes from '../locales/en/solucoes.json';
+import esSolucoes from '../locales/es/solucoes.json';
+import ptSobre from '../locales/pt/sobre.json';
+import enSobre from '../locales/en/sobre.json';
+import esSobre from '../locales/es/sobre.json';
 
 /**
  * CONFIGURAÇÃO DO I18NEXT
@@ -116,7 +128,7 @@ i18n
     
     // Namespaces (categorias de traduções)
     // Isso permite organizar: t('common.button'), t('home.title'), etc.
-    ns: ['common', 'navigation', 'home', 'chat', 'contact', 'produtos', 'agentesIA', 'sonia', 'granite', 'metaLlama', 'watsonxAI', 'dataProductHub', 'knowledgeCatalog', 'mistral', 'watsonxData', 'dataStage', 'streamsets', 'storageCeph', 'watsonxOrchestrate', 'watsonxGovernance', 'watsonxCodeAssistant', 'aiCodeAssistant', 'mantaDataLineage', 'planningAnalytics', 'guardiumDataSecurityCenter', 'databand'],
+    ns: ['common', 'navigation', 'home', 'chat', 'contact', 'produtos', 'agentesIA', 'sonia', 'granite', 'metaLlama', 'watsonxAI', 'dataProductHub', 'knowledgeCatalog', 'mistral', 'watsonxData', 'dataStage', 'streamsets', 'storageCeph', 'watsonxOrchestrate', 'watsonxGovernance', 'watsonxCodeAssistant', 'aiCodeAssistant', 'mantaDataLineage', 'planningAnalytics', 'guardiumDataSecurityCenter', 'databand', 'servicos', 'setores', 'solucoes', 'sobre'],
     defaultNS: 'common',
     
     // Recursos (traduções)
@@ -148,6 +160,10 @@ i18n
         planningAnalytics: ptPlanningAnalytics,
         guardiumDataSecurityCenter: ptGuardiumDataSecurityCenter,
         databand: ptDataband,
+        servicos: ptServicos,
+        setores: ptSetores,
+        solucoes: ptSolucoes,
+        sobre: ptSobre,
       },
       en: {
         common: enCommon,
@@ -176,6 +192,10 @@ i18n
         planningAnalytics: enPlanningAnalytics,
         guardiumDataSecurityCenter: enGuardiumDataSecurityCenter,
         databand: enDataband,
+        servicos: enServicos,
+        setores: enSetores,
+        solucoes: enSolucoes,
+        sobre: enSobre,
       },
       es: {
         common: esCommon,
@@ -204,6 +224,10 @@ i18n
         planningAnalytics: esPlanningAnalytics,
         guardiumDataSecurityCenter: esGuardiumDataSecurityCenter,
         databand: esDataband,
+        servicos: esServicos,
+        setores: esSetores,
+        solucoes: esSolucoes,
+        sobre: esSobre,
       },
     },
     

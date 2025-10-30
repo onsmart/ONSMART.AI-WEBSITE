@@ -46,7 +46,7 @@ const useCountUp = (end: number, duration: number = 2000) => {
 
 export default function AICodeAssistant() {
   const navigate = useNavigate();
-  const { t } = useTranslation(["aiCodeAssistant", "produtos", "common"]);
+  const { t } = useTranslation(["aiCodeAssistant", "common"]);
   
   // Contadores animados
   const productivityCount = useCountUp(90, 1500);
@@ -110,7 +110,7 @@ export default function AICodeAssistant() {
                 onClick={() => navigate('/contato')}
               >
                 <Send className="mr-2 h-5 w-5" />
-                {t('aiCodeAssistant:cta.requestDemo')}
+                {t('cta.requestDemo')}
               </Button>
             </div>
 
@@ -292,7 +292,7 @@ export default function AICodeAssistant() {
               onClick={() => navigate('/contato')}
             >
               <Send className="mr-2 h-5 w-5" />
-              {t('aiCodeAssistant:cta.requestDemo')}
+              {t('cta.requestDemo')}
             </Button>
             <Button 
               variant="outline"

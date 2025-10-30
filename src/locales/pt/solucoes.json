@@ -1,0 +1,365 @@
+{
+  "atendimentoInteligente": {
+    "hero": {
+      "title": "Atendimento Inteligente",
+      "subtitle": "Transforme o atendimento ao cliente com IA conversacional",
+      "description": "Soluções completas de atendimento automatizado que reduzem custos e aumentam a satisfação do cliente"
+    },
+    "features": {
+      "multichannelChatbots": {
+        "title": "Chatbots Multicanal",
+        "description": "Atendimento integrado em WhatsApp, website, redes sociais e telefone"
+      },
+      "conversationalAI": {
+        "title": "IA Conversacional",
+        "description": "Entende contexto, resolve problemas complexos e aprende continuamente"
+      },
+      "sentimentAnalysis": {
+        "title": "Análise de Sentimento",
+        "description": "Detecta emoções e adapta o atendimento para cada situação"
+      },
+      "automatedRouting": {
+        "title": "Roteamento Inteligente",
+        "description": "Direciona automaticamente para o especialista certo"
+      },
+      "realTimeAnalytics": {
+        "title": "Analytics em Tempo Real",
+        "description": "Métricas detalhadas de performance e satisfação do cliente"
+      },
+      "integration": {
+        "title": "Integração Total",
+        "description": "Conecta com CRM, ERP e todas as suas ferramentas existentes"
+      }
+    },
+    "benefits": {
+      "title": "Benefícios do Atendimento Inteligente",
+      "subtitle": "Resultados comprovados em empresas de todos os tamanhos",
+      "costReduction": {
+        "title": "Redução de Custos",
+        "description": "Até 70% de redução nos custos de atendimento"
+      },
+      "availability": {
+        "title": "Disponibilidade 24/7",
+        "description": "Atendimento ininterrupto, todos os dias do ano"
+      },
+      "satisfaction": {
+        "title": "Maior Satisfação",
+        "description": "Respostas instantâneas e precisas para seus clientes"
+      },
+      "scalability": {
+        "title": "Escalabilidade",
+        "description": "Atende milhares de clientes simultaneamente"
+      }
+    },
+    "cta": {
+      "title": "Pronto para revolucionar seu atendimento?",
+      "subtitle": "Implemente em 30 dias e veja os resultados imediatamente",
+      "button": "Solicitar Demonstração"
+    }
+  },
+  "automacaoProcessos": {
+    "hero": {
+      "title": "Automação de Processos",
+      "subtitle": "Transforme processos manuais em workflows inteligentes",
+      "description": "Soluções completas de automação que reduzem custos, eliminam erros e aumentam a eficiência operacional"
+    },
+    "features": {
+      "rpaAI": {
+        "title": "RPA + IA Cognitiva",
+        "description": "Combinação de automação robótica com inteligência artificial para processos complexos"
+      },
+      "operation24x7": {
+        "title": "Operação 24/7",
+        "description": "Processamento contínuo de documentos e workflows sem interrupções"
+      },
+      "intelligentWorkflows": {
+        "title": "Workflows Inteligentes",
+        "description": "Fluxos adaptativos que aprendem e se otimizam automaticamente"
+      },
+      "costReduction": {
+        "title": "Redução de Custos",
+        "description": "Diminuição significativa de custos operacionais e erros humanos"
+      }
+    },
+    "benefits": [
+      "RPA + IA cognitiva integrada",
+      "Processamento 24/7 contínuo",
+      "Workflows inteligentes adaptativos",
+      "60% de redução de custos",
+      "500% de aumento na eficiência",
+      "99% de precisão no processamento"
+    ],
+    "stats": {
+      "efficiency": "Eficiência",
+      "costReduction": "Redução Custos",
+      "precision": "Precisão"
+    },
+    "useCases": {
+      "documentProcessing": {
+        "title": "Processamento de Documentos",
+        "description": "Extração e processamento automático de dados de faturas, contratos e documentos fiscais."
+      },
+      "administrativeWorkflows": {
+        "title": "Workflows Administrativos",
+        "description": "Automação de processos de aprovação, solicitações e fluxos burocráticos internos."
+      },
+      "financialReconciliation": {
+        "title": "Conciliação Financeira",
+        "description": "Reconciliação automática de contas, pagamentos e movimentações financeiras."
+      },
+      "automatedCompliance": {
+        "title": "Compliance Automatizado",
+        "description": "Verificação automática de conformidade regulatória e geração de relatórios."
+      }
+    },
+    "cta": {
+      "title": "Pronto para automatizar seus processos?",
+      "subtitle": "Implemente em 30 dias e veja os resultados imediatamente",
+      "button": "Solicitar Demonstração"
+    }
+  },
+  "automacaoVendas": {
+    "hero": {
+      "title": "Automação de Vendas",
+      "subtitle": "Transforme seu funil de vendas com IA inteligente",
+      "description": "Soluções completas de automação que qualificam leads, nutrem prospects e fecham mais negócios"
+    },
+    "features": {
+      "virtualSDR": {
+        "title": "SDR Virtual 24/7",
+        "description": "Agentes de IA que prospectam e qualificam leads continuamente, sem parar"
+      },
+      "intelligentQualification": {
+        "title": "Qualificação Inteligente",
+        "description": "Sistema avançado de scoring que identifica os leads mais promissores"
+      },
+      "conversationalAI": {
+        "title": "IA Conversacional",
+        "description": "Conversas naturais que engajam e convertem prospects em clientes"
+      },
+      "salesAnalytics": {
+        "title": "Analytics de Vendas",
+        "description": "Insights detalhados sobre performance, conversão e oportunidades"
+      }
+    },
+    "benefits": [
+      "SDR virtual 24/7 trabalhando",
+      "Qualificação inteligente de leads",
+      "Conversas naturais e engajantes",
+      "40% mais conversões",
+      "300% mais leads qualificados",
+      "ROI de 500% em vendas"
+    ],
+    "stats": {
+      "conversion": "Conversão",
+      "leads": "Leads",
+      "roi": "ROI"
+    },
+    "useCases": {
+      "leadGeneration": {
+        "title": "Geração de Leads",
+        "description": "Prospecção automática e qualificação de leads em múltiplos canais."
+      },
+      "nurturing": {
+        "title": "Nutrição de Prospects",
+        "description": "Sequências personalizadas de follow-up que mantêm prospects engajados."
+      },
+      "qualification": {
+        "title": "Qualificação Inteligente",
+        "description": "Sistema de scoring que identifica leads prontos para comprar."
+      },
+      "closing": {
+        "title": "Fechamento de Negócios",
+        "description": "Automação do processo de fechamento com IA conversacional."
+      }
+    },
+    "cta": {
+      "title": "Pronto para automatizar suas vendas?",
+      "subtitle": "Implemente em 30 dias e veja os resultados imediatamente",
+      "button": "Solicitar Demonstração"
+    }
+  },
+  "biAnalytics": {
+    "hero": {
+      "title": "BI & Analytics Inteligente",
+      "subtitle": "Transforme dados em insights acionáveis com IA",
+      "description": "Soluções avançadas de Business Intelligence que revelam padrões ocultos e geram previsões precisas para decisões estratégicas"
+    },
+    "features": {
+      "predictiveAnalytics": {
+        "title": "Analytics Preditiva",
+        "description": "Previsões precisas baseadas em machine learning e análise de padrões históricos"
+      },
+      "realTimeProcessing": {
+        "title": "Processamento Tempo Real",
+        "description": "Análise instantânea de dados com dashboards que se atualizam automaticamente"
+      },
+      "anomalyDetection": {
+        "title": "Detecção de Anomalias",
+        "description": "Identificação automática de padrões suspeitos e oportunidades ocultas"
+      },
+      "actionableInsights": {
+        "title": "Insights Acionáveis",
+        "description": "Recomendações práticas baseadas em análise inteligente dos seus dados"
+      }
+    },
+    "benefits": [
+      "Analytics preditiva avançada",
+      "Processamento em tempo real",
+      "Detecção automática de anomalias",
+      "95% de precisão nas previsões",
+      "Insights únicos e acionáveis",
+      "Dashboards dinâmicos inteligentes"
+    ],
+    "stats": {
+      "precision": "Precisão",
+      "speed": "Velocidade",
+      "insights": "Insights"
+    },
+    "useCases": {
+      "salesForecasting": {
+        "title": "Previsão de Vendas",
+        "description": "Análise preditiva de tendências de vendas com precisão de 95% para planejamento estratégico."
+      },
+      "churnAnalysis": {
+        "title": "Análise de Churn",
+        "description": "Identificação precoce de clientes em risco de cancelamento com estratégias de retenção."
+      },
+      "priceOptimization": {
+        "title": "Otimização de Preços",
+        "description": "Definição inteligente de preços baseada em demanda, concorrência e elasticidade."
+      },
+      "financialForecasting": {
+        "title": "Forecasting Financeiro",
+        "description": "Projeções financeiras precisas com análise de cenários e simulações avançadas."
+      }
+    },
+    "cta": {
+      "title": "Pronto para transformar seus dados em insights?",
+      "subtitle": "Implemente em 30 dias e veja os resultados imediatamente",
+      "button": "Solicitar Demonstração"
+    }
+  },
+  "rhInteligente": {
+    "hero": {
+      "title": "RH Inteligente",
+      "subtitle": "Transforme o recrutamento e gestão de pessoas com IA",
+      "description": "Soluções avançadas de Recursos Humanos que automatizam processos, melhoram a experiência do candidato e otimizam a gestão de talentos"
+    },
+    "features": {
+      "automatedRecruitment": {
+        "title": "Recrutamento Automatizado",
+        "description": "Triagem inteligente de currículos e matching automático com vagas disponíveis"
+      },
+      "intelligentScreening": {
+        "title": "Screening Inteligente",
+        "description": "Avaliação automatizada de candidatos com base em competências e fit cultural"
+      },
+      "performanceAnalytics": {
+        "title": "Analytics de Performance",
+        "description": "Análise preditiva de performance e identificação de talentos de alto potencial"
+      },
+      "employeeExperience": {
+        "title": "Experiência do Funcionário",
+        "description": "Chatbots e assistentes virtuais para suporte contínuo aos colaboradores"
+      }
+    },
+    "benefits": [
+      "Recrutamento 10x mais eficiente",
+      "Screening automático inteligente",
+      "Analytics preditiva de performance",
+      "Experiência do candidato otimizada",
+      "Redução de 70% no tempo de contratação",
+      "Aumento de 40% na retenção"
+    ],
+    "stats": {
+      "efficiency": "Eficiência",
+      "timeReduction": "Redução Tempo",
+      "retention": "Retenção"
+    },
+    "useCases": {
+      "talentAcquisition": {
+        "title": "Aquisição de Talentos",
+        "description": "Identificação e atração automática de candidatos ideais para cada posição."
+      },
+      "performanceManagement": {
+        "title": "Gestão de Performance",
+        "description": "Análise contínua de performance com insights para desenvolvimento de carreira."
+      },
+      "employeeEngagement": {
+        "title": "Engajamento de Funcionários",
+        "description": "Ferramentas de IA para medir e melhorar o engajamento dos colaboradores."
+      },
+      "predictiveHR": {
+        "title": "RH Preditivo",
+        "description": "Previsão de turnover, identificação de riscos e planejamento de sucessão."
+      }
+    },
+    "cta": {
+      "title": "Pronto para revolucionar seu RH?",
+      "subtitle": "Implemente em 30 dias e veja os resultados imediatamente",
+      "button": "Solicitar Demonstração"
+    }
+  },
+  "vozLinguagem": {
+    "hero": {
+      "title": "Voz & Linguagem",
+      "subtitle": "Processamento de linguagem natural em português brasileiro",
+      "description": "Soluções avançadas de NLP e processamento de voz otimizadas para o português brasileiro, com compreensão natural e interfaces conversacionais"
+    },
+    "features": {
+      "portugueseOptimized": {
+        "title": "Português Otimizado",
+        "description": "NLP especializado para sotaques, gírias e expressões do português brasileiro"
+      },
+      "voiceInterfaces": {
+        "title": "Interfaces por Voz",
+        "description": "Comandos de voz naturais para sistemas e aplicações empresariais"
+      },
+      "sentimentAnalysis": {
+        "title": "Análise de Sentimento",
+        "description": "Compreensão emocional e contextual das conversas em tempo real"
+      },
+      "intelligentTranscription": {
+        "title": "Transcrição Inteligente",
+        "description": "Conversão precisa de áudio em texto com formatação automática"
+      }
+    },
+    "benefits": [
+      "Português brasileiro nativo",
+      "Interfaces por voz naturais",
+      "Análise de sentimento avançada",
+      "98% de precisão na transcrição",
+      "Processamento em tempo real",
+      "Integração com sistemas existentes"
+    ],
+    "stats": {
+      "precision": "Precisão",
+      "language": "Idioma",
+      "processing": "Processamento"
+    },
+    "useCases": {
+      "voiceSupport": {
+        "title": "Atendimento por Voz",
+        "description": "Central de atendimento automatizada com compreensão natural da fala e respostas inteligentes."
+      },
+      "meetingTranscription": {
+        "title": "Transcrição de Reuniões",
+        "description": "Conversão automática de reuniões em atas formatadas com identificação de participantes."
+      },
+      "voiceCommands": {
+        "title": "Comandos de Voz",
+        "description": "Controle de sistemas empresariais através de comandos de voz naturais em português."
+      },
+      "callAnalysis": {
+        "title": "Análise de Chamadas",
+        "description": "Avaliação automática de qualidade, sentimento e compliance em gravações de call center."
+      }
+    },
+    "cta": {
+      "title": "Pronto para revolucionar a comunicação por voz?",
+      "subtitle": "Implemente em 30 dias e veja os resultados imediatamente",
+      "button": "Solicitar Demonstração"
+    }
+  }
+}

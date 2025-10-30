@@ -4,9 +4,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { CheckCircle, ArrowRight, Mic, MessageSquare, Volume2, Brain, Target, Zap, Shield, Headphones } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 export default function VozLinguagem() {
   const navigate = useNavigate();
+  const { t } = useTranslation(['solucoes', 'common']);
 
   const scrollToForm = () => {
     const formSelectors = ['form', '[data-testid="contact-form"]', '.contact-form', '#contact-form'];
@@ -24,20 +26,24 @@ export default function VozLinguagem() {
   };
 
   const features = [
-    { icon: MessageSquare, title: "Português Otimizado", description: "NLP especializado para sotaques, gírias e expressões do português brasileiro" },
-    { icon: Volume2, title: "Interfaces por Voz", description: "Comandos de voz naturais para sistemas e aplicações empresariais" },
-    { icon: Brain, title: "Análise de Sentimento", description: "Compreensão emocional e contextual das conversas em tempo real" },
-    { icon: Headphones, title: "Transcrição Inteligente", description: "Conversão precisa de áudio em texto com formatação automática" }
+    { icon: MessageSquare, title: t('solucoes:vozLinguagem.features.portugueseOptimized.title'), description: t('solucoes:vozLinguagem.features.portugueseOptimized.description') },
+    { icon: Volume2, title: t('solucoes:vozLinguagem.features.voiceInterfaces.title'), description: t('solucoes:vozLinguagem.features.voiceInterfaces.description') },
+    { icon: Brain, title: t('solucoes:vozLinguagem.features.sentimentAnalysis.title'), description: t('solucoes:vozLinguagem.features.sentimentAnalysis.description') },
+    { icon: Headphones, title: t('solucoes:vozLinguagem.features.intelligentTranscription.title'), description: t('solucoes:vozLinguagem.features.intelligentTranscription.description') }
   ];
 
-  const benefits = ["Português brasileiro nativo", "Interfaces por voz naturais", "Análise de sentimento avançada", "98% de precisão na transcrição", "Processamento em tempo real", "Integração com sistemas existentes"];
-  const stats = [{ label: "Precisão", value: "98%", icon: Target }, { label: "Idioma", value: "PT-BR", icon: MessageSquare }, { label: "Processamento", value: "Tempo Real", icon: Zap }];
+  const benefits = t('solucoes:vozLinguagem.benefits', { returnObjects: true }) as string[];
+  const stats = [
+    { label: t('solucoes:vozLinguagem.stats.precision'), value: "98%", icon: Target }, 
+    { label: t('solucoes:vozLinguagem.stats.language'), value: "PT-BR", icon: MessageSquare }, 
+    { label: t('solucoes:vozLinguagem.stats.processing'), value: "Tempo Real", icon: Zap }
+  ];
 
   const useCases = [
-    { title: "Atendimento por Voz", description: "Central de atendimento automatizada com compreensão natural da fala e respostas inteligentes." },
-    { title: "Transcrição de Reuniões", description: "Conversão automática de reuniões em atas formatadas com identificação de participantes." },
-    { title: "Comandos de Voz", description: "Controle de sistemas empresariais através de comandos de voz naturais em português." },
-    { title: "Análise de Chamadas", description: "Avaliação automática de qualidade, sentimento e compliance em gravações de call center." }
+    { title: t('solucoes:vozLinguagem.useCases.voiceSupport.title'), description: t('solucoes:vozLinguagem.useCases.voiceSupport.description') },
+    { title: t('solucoes:vozLinguagem.useCases.meetingTranscription.title'), description: t('solucoes:vozLinguagem.useCases.meetingTranscription.description') },
+    { title: t('solucoes:vozLinguagem.useCases.voiceCommands.title'), description: t('solucoes:vozLinguagem.useCases.voiceCommands.description') },
+    { title: t('solucoes:vozLinguagem.useCases.callAnalysis.title'), description: t('solucoes:vozLinguagem.useCases.callAnalysis.description') }
   ];
 
   return (
@@ -151,14 +157,14 @@ export default function VozLinguagem() {
       <section className="py-16 px-4 bg-gradient-to-r from-indigo-500 to-indigo-600">
         <div className="max-w-4xl mx-auto text-center">
           <Volume2 className="h-12 w-12 text-white mx-auto mb-6" />
-          <h2 className="text-3xl font-bold text-white mb-4">Pronto para Dominar a Comunicação por Voz?</h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">Agende uma demonstração e veja como nossa IA especializada em português pode transformar suas interfaces de comunicação.</p>
+          <h2 className="text-3xl font-bold text-white mb-4">{t('solucoes:vozLinguagem.cta.title')}</h2>
+          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">{t('solucoes:vozLinguagem.cta.subtitle')}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" onClick={scrollToForm} className="bg-white text-indigo-500 hover:bg-gray-100 font-medium px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all">
-              Agendar Demonstração<ArrowRight className="ml-2 h-5 w-5" />
+              {t('solucoes:vozLinguagem.cta.button')}<ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button size="lg" variant="outline" onClick={() => navigate('/agentes-ia')} className="border-white text-white bg-white/10 hover:bg-white/20 font-medium px-8 py-6 text-lg rounded-xl transition-all">
-              Ver Outras Soluções
+              {t('cta.viewOthers')}
             </Button>
           </div>
         </div>

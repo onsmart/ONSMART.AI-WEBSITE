@@ -1,0 +1,52 @@
+{
+  "hero": {
+    "badge": "Nossa História",
+    "title": "Transformando o Futuro com",
+    "titleHighlight": "Inteligência Artificial",
+    "description": "Somos especialistas em Inteligência Artificial empresarial, dedicados a democratizar o acesso à IA e transformar negócios através de soluções inovadoras e resultados mensuráveis.",
+    "seoDescription": "Conheça a onsmart AI: especialistas em Inteligência Artificial empresarial com foco em resultados reais e transformação digital sustentável."
+  },
+  "mission": {
+    "title": "Nossa Missão",
+    "description": "Democratizar o acesso à Inteligência Artificial para empresas de todos os tamanhos, oferecendo soluções práticas e resultados mensuráveis que transformam negócios e criam valor real."
+  },
+  "vision": {
+    "title": "Nossa Visão",
+    "description": "Ser a referência em IA empresarial no Brasil, reconhecida pela excelência técnica, inovação constante e pelo impacto positivo que geramos na transformação digital das organizações."
+  },
+  "values": {
+    "title": "Nossos Valores",
+    "innovation": {
+      "title": "Inovação",
+      "description": "Sempre buscamos as tecnologias mais avançadas e soluções criativas para resolver os desafios dos nossos clientes."
+    },
+    "excellence": {
+      "title": "Excelência",
+      "description": "Comprometimento com a qualidade máxima em cada projeto, desde o planejamento até a entrega final."
+    },
+    "transparency": {
+      "title": "Transparência",
+      "description": "Comunicação clara e honesta em todas as etapas do processo, garantindo total transparência para nossos clientes."
+    },
+    "results": {
+      "title": "Resultados",
+      "description": "Foco em entregar valor real e mensurável, com métricas claras de sucesso e ROI comprovado."
+    }
+  },
+  "team": {
+    "title": "Nossa Equipe",
+    "subtitle": "Especialistas apaixonados por IA e transformação digital",
+    "description": "Nossa equipe é formada por profissionais altamente qualificados, com vasta experiência em IA, machine learning e transformação digital empresarial."
+  },
+  "stats": {
+    "clients": "Clientes Atendidos",
+    "projects": "Projetos Concluídos",
+    "satisfaction": "Satisfação",
+    "years": "Anos de Experiência"
+  },
+  "cta": {
+    "title": "Pronto para transformar seu negócio?",
+    "subtitle": "Vamos conversar sobre como a IA pode revolucionar sua empresa",
+    "button": "Falar com Especialista"
+  }
+}

@@ -4,9 +4,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { CheckCircle, ArrowRight, Users, UserCheck, BarChart3, Clock, Target, Zap, Shield, Brain } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 export default function RHInteligente() {
   const navigate = useNavigate();
+  const { t } = useTranslation(['solucoes', 'common']);
 
   const scrollToForm = () => {
     const formSelectors = [
@@ -40,57 +42,50 @@ export default function RHInteligente() {
   const features = [
     {
       icon: UserCheck,
-      title: "Recrutamento Automatizado",
-      description: "Triagem inteligente de currículos e matching automático com vagas disponíveis"
+      title: t('solucoes:rhInteligente.features.automatedRecruitment.title'),
+      description: t('solucoes:rhInteligente.features.automatedRecruitment.description')
     },
     {
       icon: Target,
-      title: "Screening Inteligente",
-      description: "Avaliação automatizada de candidatos com base em competências e fit cultural"
+      title: t('solucoes:rhInteligente.features.intelligentScreening.title'),
+      description: t('solucoes:rhInteligente.features.intelligentScreening.description')
     },
     {
       icon: BarChart3,
-      title: "Analytics Preditiva",
-      description: "Previsão de turnover, identificação de talentos e análise de performance"
+      title: t('solucoes:rhInteligente.features.performanceAnalytics.title'),
+      description: t('solucoes:rhInteligente.features.performanceAnalytics.description')
     },
     {
       icon: Brain,
-      title: "Aprendizado Personalizado",
-      description: "Plataformas de desenvolvimento adaptadas ao perfil de cada colaborador"
+      title: t('solucoes:rhInteligente.features.employeeExperience.title'),
+      description: t('solucoes:rhInteligente.features.employeeExperience.description')
     }
   ];
 
-  const benefits = [
-    "Recrutamento automatizado eficiente",
-    "Screening inteligente de candidatos",
-    "Analytics preditiva avançada",
-    "40% de melhoria na retenção",
-    "Processo 70% mais rápido",
-    "90% de precisão no matching"
-  ];
-
+  const benefits = t('solucoes:rhInteligente.benefits', { returnObjects: true }) as string[];
+  
   const stats = [
-    { label: "Mais Rápido", value: "70%", icon: Clock },
-    { label: "Precisão", value: "90%", icon: Target },
-    { label: "Retenção", value: "+40%", icon: Users }
+    { label: t('solucoes:rhInteligente.stats.efficiency'), value: "70%", icon: Clock },
+    { label: t('solucoes:rhInteligente.stats.timeReduction'), value: "90%", icon: Target },
+    { label: t('solucoes:rhInteligente.stats.retention'), value: "+40%", icon: Users }
   ];
 
   const useCases = [
     {
-      title: "Triagem de Currículos",
-      description: "Análise automática de currículos com matching inteligente baseado em competências e experiência."
+      title: t('solucoes:rhInteligente.useCases.talentAcquisition.title'),
+      description: t('solucoes:rhInteligente.useCases.talentAcquisition.description')
     },
     {
-      title: "Entrevistas Automatizadas",
-      description: "Condução de entrevistas iniciais via chatbot com análise de respostas e scoring automático."
+      title: t('solucoes:rhInteligente.useCases.performanceManagement.title'),
+      description: t('solucoes:rhInteligente.useCases.performanceManagement.description')
     },
     {
-      title: "Análise de Turnover",
-      description: "Identificação precoce de riscos de saída e estratégias preventivas personalizadas."
+      title: t('solucoes:rhInteligente.useCases.employeeEngagement.title'),
+      description: t('solucoes:rhInteligente.useCases.employeeEngagement.description')
     },
     {
-      title: "Desenvolvimento de Talentos",
-      description: "Criação de trilhas de aprendizado personalizadas baseadas no perfil e objetivos do colaborador."
+      title: t('solucoes:rhInteligente.useCases.predictiveHR.title'),
+      description: t('solucoes:rhInteligente.useCases.predictiveHR.description')
     }
   ];
 
@@ -238,11 +233,10 @@ export default function RHInteligente() {
         <div className="max-w-4xl mx-auto text-center">
           <Brain className="h-12 w-12 text-white mx-auto mb-6" />
           <h2 className="text-3xl font-bold text-white mb-4">
-            Pronto para Revolucionar seu RH?
+            {t('solucoes:rhInteligente.cta.title')}
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Agende uma demonstração e veja como nossa IA pode otimizar seus processos 
-            de RH e melhorar a retenção de talentos em 40%.
+            {t('solucoes:rhInteligente.cta.subtitle')}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -251,7 +245,7 @@ export default function RHInteligente() {
               onClick={scrollToForm}
               className="bg-white text-purple-500 hover:bg-gray-100 font-medium px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all"
             >
-              Agendar Demonstração
+              {t('solucoes:rhInteligente.cta.button')}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button 
@@ -260,7 +254,7 @@ export default function RHInteligente() {
               onClick={() => navigate('/agentes-ia')}
               className="border-white text-white bg-white/10 hover:bg-white/20 font-medium px-8 py-6 text-lg rounded-xl transition-all"
             >
-              Ver Outras Soluções
+              {t('cta.viewOthers')}
             </Button>
           </div>
         </div>

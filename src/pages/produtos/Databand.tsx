@@ -46,7 +46,7 @@ const useCountUp = (end: number, duration: number = 2000) => {
 
 export default function Databand() {
   const navigate = useNavigate();
-  const { t } = useTranslation(["databand", "produtos", "common"]);
+  const { t } = useTranslation(["databand", "common"]);
   
   // Contadores animados
   const detectionCount = useCountUp(99, 1500);
@@ -110,7 +110,7 @@ export default function Databand() {
                 onClick={() => navigate('/contato')}
               >
                 <Send className="mr-2 h-5 w-5" />
-                {t('databand:cta.requestDemo')}
+                {t('cta.requestDemo')}
               </Button>
             </div>
 
@@ -304,7 +304,7 @@ export default function Databand() {
               onClick={() => navigate('/contato')}
             >
               <Send className="mr-2 h-5 w-5" />
-              {t('databand:cta.requestDemo')}
+              {t('cta.requestDemo')}
             </Button>
             <Button 
               variant="outline"
@@ -312,7 +312,7 @@ export default function Databand() {
               className="font-medium px-8 py-6 text-lg rounded-xl"
               onClick={() => navigate('/produtos')}
             >
-              {t('databand:cta.viewOthers')}
+              {t('cta.viewOthers')}
             </Button>
           </div>
         </div>

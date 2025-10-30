@@ -46,7 +46,7 @@ const useCountUp = (end: number, duration: number = 2000) => {
 
 export default function WatsonXCodeAssistant() {
   const navigate = useNavigate();
-  const { t } = useTranslation(["watsonxCodeAssistant", "produtos", "common"]);
+  const { t } = useTranslation(["watsonxCodeAssistant", "common"]);
   
   // Contadores animados
   const productivityCount = useCountUp(50, 1500);
@@ -110,7 +110,7 @@ export default function WatsonXCodeAssistant() {
                 onClick={() => navigate('/contato')}
               >
                 <Send className="mr-2 h-5 w-5" />
-                {t('watsonxCodeAssistant:cta.requestDemo')}
+                {t('cta.requestDemo')}
               </Button>
             </div>
 
@@ -292,7 +292,7 @@ export default function WatsonXCodeAssistant() {
               onClick={() => navigate('/contato')}
             >
               <Send className="mr-2 h-5 w-5" />
-              {t('watsonxCodeAssistant:cta.requestDemo')}
+              {t('cta.requestDemo')}
             </Button>
             <Button 
               variant="outline"

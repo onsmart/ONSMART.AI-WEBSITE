@@ -5,10 +5,12 @@ import { ArrowRight, CheckCircle, Star, Users, TrendingUp, Calendar, Clock, Doll
 import { getServiceBySlug } from '@/data/servicesData';
 import NotFound from '@/pages/NotFound';
 import ServiceChart from '@/components/shared/ServiceChart';
+import { useTranslation } from 'react-i18next';
 
 const ServiceDynamic: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
+  const { t } = useTranslation(['servicos', 'common']);
 
   if (!slug) {
     return <NotFound />;
@@ -34,43 +36,43 @@ const ServiceDynamic: React.FC = () => {
       case 'diagnostico-ia':
         return {
           chartType: 'bar' as const,
-          chartTitle: 'Análise de Potencial',
+          chartTitle: t('servicos:chartTitles.potentialAnalysis'),
           icon: <CheckCircle className="h-6 w-6 text-white" />
         };
       case 'aceleracao-adocao-ia':
         return {
           chartType: 'growth' as const,
-          chartTitle: 'Crescimento da Adoção de IA',
+          chartTitle: t('servicos:chartTitles.adoptionGrowth'),
           icon: <TrendingUp className="h-6 w-6 text-white" />
         };
       case 'implementacao-tecnica':
         return {
           chartType: 'bar' as const,
-          chartTitle: 'Performance Técnica',
+          chartTitle: t('servicos:chartTitles.technicalPerformance'),
           icon: <Users className="h-6 w-6 text-white" />
         };
       case 'analise-dados':
         return {
           chartType: 'line' as const,
-          chartTitle: 'Insights de Dados',
+          chartTitle: t('servicos:chartTitles.dataInsights'),
           icon: <TrendingUp className="h-6 w-6 text-white" />
         };
       case 'treinamento-ia':
         return {
           chartType: 'pie' as const,
-          chartTitle: 'Distribuição de Conhecimento',
+          chartTitle: t('servicos:chartTitles.knowledgeDistribution'),
           icon: <Star className="h-6 w-6 text-white" />
         };
       case 'suporte-continuo':
         return {
           chartType: 'line' as const,
-          chartTitle: 'Monitoramento Contínuo',
+          chartTitle: t('servicos:chartTitles.continuousMonitoring'),
           icon: <CheckCircle className="h-6 w-6 text-white" />
         };
       default:
         return {
           chartType: 'bar' as const,
-          chartTitle: 'Resultados do Serviço',
+          chartTitle: t('servicos:chartTitles.serviceResults'),
           icon: <CheckCircle className="h-6 w-6 text-white" />
         };
     }
@@ -105,7 +107,7 @@ const ServiceDynamic: React.FC = () => {
                   onClick={handleContactClick}
                   className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg"
                 >
-                  Solicitar Orçamento
+                  {t('servicos:buttons.requestQuote')}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
                 
@@ -114,7 +116,7 @@ const ServiceDynamic: React.FC = () => {
                   onClick={handleDiagnosticoClick}
                   className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 hover:border-blue-700 px-8 py-3 text-lg font-medium bg-white"
                 >
-                  Diagnóstico Gratuito
+                  {t('servicos:buttons.freeDiagnostic')}
                 </Button>
               </div>
             </div>
@@ -132,10 +134,10 @@ const ServiceDynamic: React.FC = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              O que está incluído
+              {t('servicos:sections.features.title')}
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300">
-              Tudo o que você precisa para transformar sua empresa
+              {t('servicos:sections.features.subtitle')}
             </p>
           </div>
           
@@ -167,10 +169,10 @@ const ServiceDynamic: React.FC = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Como Funciona
+              {t('servicos:sections.process.title')}
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300">
-              Processo estruturado para garantir resultados
+              {t('servicos:sections.process.subtitle')}
             </p>
           </div>
           
@@ -197,10 +199,10 @@ const ServiceDynamic: React.FC = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Nossos Planos
+              {t('servicos:sections.pricing.title')}
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300">
-              Soluções personalizadas para sua empresa
+              {t('servicos:sections.pricing.subtitle')}
             </p>
           </div>
           
@@ -212,7 +214,7 @@ const ServiceDynamic: React.FC = () => {
                     {plan.tier}
                   </h3>
                   <div className="text-lg text-gray-600 dark:text-gray-300 mb-2">
-                    Solução completa e personalizada
+                    {t('servicos:sections.pricing.completeSolution')}
                   </div>
                 </div>
                 
@@ -229,7 +231,7 @@ const ServiceDynamic: React.FC = () => {
                   onClick={handleContactClick}
                   className={`w-full ${index === 1 ? 'bg-blue-600 hover:bg-blue-700' : 'bg-gray-600 hover:bg-gray-700'} text-white`}
                 >
-                  Solicitar Orçamento
+                  {t('servicos:buttons.requestQuote')}
                 </Button>
               </div>
             ))}
@@ -252,7 +254,7 @@ const ServiceDynamic: React.FC = () => {
               onClick={handleContactClick}
               className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 text-lg"
             >
-              Solicitar Orçamento
+              {t('servicos:buttons.requestQuote')}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             
@@ -261,7 +263,7 @@ const ServiceDynamic: React.FC = () => {
               onClick={handleDiagnosticoClick}
               className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 text-lg font-medium bg-transparent"
             >
-              Diagnóstico Gratuito
+              {t('servicos:buttons.freeDiagnostic')}
             </Button>
           </div>
         </div>

@@ -1,0 +1,121 @@
+{
+  "atendimentoInteligente": {
+    "hero": {
+      "title": "Intelligent Customer Service",
+      "subtitle": "Transform customer service with conversational AI",
+      "description": "Complete automated customer service solutions that reduce costs and increase customer satisfaction"
+    },
+    "features": {
+      "multichannelChatbots": {
+        "title": "Multichannel Chatbots",
+        "description": "Integrated service across WhatsApp, website, social media and phone"
+      },
+      "conversationalAI": {
+        "title": "Conversational AI",
+        "description": "Understands context, solves complex problems and learns continuously"
+      },
+      "sentimentAnalysis": {
+        "title": "Sentiment Analysis",
+        "description": "Detects emotions and adapts service for each situation"
+      },
+      "automatedRouting": {
+        "title": "Smart Routing",
+        "description": "Automatically directs to the right specialist"
+      },
+      "realTimeAnalytics": {
+        "title": "Real-time Analytics",
+        "description": "Detailed performance and customer satisfaction metrics"
+      },
+      "integration": {
+        "title": "Total Integration",
+        "description": "Connects with CRM, ERP and all your existing tools"
+      }
+    },
+    "benefits": {
+      "title": "Benefits of Intelligent Customer Service",
+      "subtitle": "Proven results in companies of all sizes",
+      "costReduction": {
+        "title": "Cost Reduction",
+        "description": "Up to 70% reduction in service costs"
+      },
+      "availability": {
+        "title": "24/7 Availability",
+        "description": "Uninterrupted service, every day of the year"
+      },
+      "satisfaction": {
+        "title": "Higher Satisfaction",
+        "description": "Instant and accurate responses for your customers"
+      },
+      "scalability": {
+        "title": "Scalability",
+        "description": "Serves thousands of customers simultaneously"
+      }
+    },
+    "cta": {
+      "title": "Ready to revolutionize your customer service?",
+      "subtitle": "Implement in 30 days and see results immediately",
+      "button": "Request Demo"
+    }
+  },
+  "automacaoProcessos": {
+    "hero": {
+      "title": "Process Automation",
+      "subtitle": "Transform manual processes into intelligent workflows",
+      "description": "Complete automation solutions that reduce costs, eliminate errors and increase operational efficiency"
+    },
+    "features": {
+      "rpaAI": {
+        "title": "RPA + Cognitive AI",
+        "description": "Combination of robotic automation with artificial intelligence for complex processes"
+      },
+      "operation24x7": {
+        "title": "24/7 Operation",
+        "description": "Continuous processing of documents and workflows without interruptions"
+      },
+      "intelligentWorkflows": {
+        "title": "Intelligent Workflows",
+        "description": "Adaptive flows that learn and optimize automatically"
+      },
+      "costReduction": {
+        "title": "Cost Reduction",
+        "description": "Significant reduction in operational costs and human errors"
+      }
+    },
+    "benefits": [
+      "Integrated RPA + cognitive AI",
+      "Continuous 24/7 processing",
+      "Adaptive intelligent workflows",
+      "60% cost reduction",
+      "500% efficiency increase",
+      "99% processing accuracy"
+    ],
+    "stats": {
+      "efficiency": "Efficiency",
+      "costReduction": "Cost Reduction",
+      "precision": "Precision"
+    },
+    "useCases": {
+      "documentProcessing": {
+        "title": "Document Processing",
+        "description": "Automatic extraction and processing of data from invoices, contracts and tax documents."
+      },
+      "administrativeWorkflows": {
+        "title": "Administrative Workflows",
+        "description": "Automation of approval processes, requests and internal bureaucratic flows."
+      },
+      "financialReconciliation": {
+        "title": "Financial Reconciliation",
+        "description": "Automatic reconciliation of accounts, payments and financial movements."
+      },
+      "automatedCompliance": {
+        "title": "Automated Compliance",
+        "description": "Automatic verification of regulatory compliance and report generation."
+      }
+    },
+    "cta": {
+      "title": "Ready to automate your processes?",
+      "subtitle": "Implement in 30 days and see results immediately",
+      "button": "Request Demo"
+    }
+  }
+}

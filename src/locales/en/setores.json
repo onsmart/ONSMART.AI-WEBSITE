@@ -1,0 +1,55 @@
+{
+  "hero": {
+    "title": "Specialized Sectors",
+    "subtitle": "Customized AI solutions for each market segment",
+    "description": "We transform companies from all sectors with AI implementations specific to their unique needs and challenges."
+  },
+  "sections": {
+    "sectors": {
+      "title": "Our Sectors",
+      "subtitle": "Discover specialized solutions for each area"
+    },
+    "benefits": {
+      "title": "Why choose specialized solutions?",
+      "subtitle": "Each sector has its unique particularities and challenges"
+    },
+    "cta": {
+      "title": "Ready to transform your sector?",
+      "subtitle": "Discover how AI can revolutionize your field of activity"
+    }
+  },
+  "benefits": {
+    "specialized": {
+      "title": "Sector Specialization",
+      "description": "Deep knowledge of each sector's particularities"
+    },
+    "compliance": {
+      "title": "Regulatory Compliance",
+      "description": "Solutions that respect specific regulations for each area"
+    },
+    "integration": {
+      "title": "Native Integration",
+      "description": "Specific connectors and APIs for sector tools"
+    },
+    "roi": {
+      "title": "Proven ROI",
+      "description": "Measurable results based on real sector cases"
+    }
+  },
+  "buttons": {
+    "learnMore": "Learn More",
+    "requestQuote": "Request Quote",
+    "freeDiagnostic": "Free Diagnostic"
+  },
+  "chartTitles": {
+    "legalAutomation": "Legal Automation",
+    "creditAnalysis": "Credit Analysis",
+    "salesGrowth": "Sales Growth",
+    "healthAnalytics": "Health Analytics",
+    "realEstateInsights": "Real Estate Insights",
+    "retailOptimization": "Retail Optimization",
+    "telecomAnalytics": "Telecom Analytics",
+    "industrialEfficiency": "Industrial Efficiency",
+    "sectorResults": "Sector Results"
+  }
+}

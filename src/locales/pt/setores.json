@@ -1,0 +1,55 @@
+{
+  "hero": {
+    "title": "Setores Especializados",
+    "subtitle": "Soluções de IA personalizadas para cada segmento de mercado",
+    "description": "Transformamos empresas de todos os setores com implementações de IA específicas para suas necessidades e desafios únicos."
+  },
+  "sections": {
+    "sectors": {
+      "title": "Nossos Setores",
+      "subtitle": "Conheça as soluções especializadas para cada área"
+    },
+    "benefits": {
+      "title": "Por que escolher soluções especializadas?",
+      "subtitle": "Cada setor tem suas particularidades e desafios únicos"
+    },
+    "cta": {
+      "title": "Pronto para transformar seu setor?",
+      "subtitle": "Descubra como a IA pode revolucionar sua área de atuação"
+    }
+  },
+  "benefits": {
+    "specialized": {
+      "title": "Especialização Setorial",
+      "description": "Conhecimento profundo das particularidades de cada setor"
+    },
+    "compliance": {
+      "title": "Conformidade Regulatória",
+      "description": "Soluções que respeitam as normas específicas de cada área"
+    },
+    "integration": {
+      "title": "Integração Nativa",
+      "description": "Conectores e APIs específicas para ferramentas do setor"
+    },
+    "roi": {
+      "title": "ROI Comprovado",
+      "description": "Resultados mensuráveis baseados em casos reais do setor"
+    }
+  },
+  "buttons": {
+    "learnMore": "Saiba Mais",
+    "requestQuote": "Solicitar Orçamento",
+    "freeDiagnostic": "Diagnóstico Gratuito"
+  },
+  "chartTitles": {
+    "legalAutomation": "Automação Jurídica",
+    "creditAnalysis": "Análise de Crédito",
+    "salesGrowth": "Crescimento de Vendas",
+    "healthAnalytics": "Análise de Saúde",
+    "realEstateInsights": "Insights Imobiliários",
+    "retailOptimization": "Otimização de Varejo",
+    "telecomAnalytics": "Análise de Telecomunicações",
+    "industrialEfficiency": "Eficiência Industrial",
+    "sectorResults": "Resultados do Setor"
+  }
+}

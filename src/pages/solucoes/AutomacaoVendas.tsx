@@ -4,9 +4,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { CheckCircle, ArrowRight, TrendingUp, Users, Clock, Target, BarChart3, Zap, Shield, Cpu } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 export default function AutomacaoVendas() {
   const navigate = useNavigate();
+  const { t } = useTranslation(['solucoes', 'common']);
 
   const scrollToForm = () => {
     const formSelectors = [
@@ -40,57 +42,50 @@ export default function AutomacaoVendas() {
   const features = [
     {
       icon: Users,
-      title: "SDR Virtual 24/7",
-      description: "Agentes de IA que prospectam e qualificam leads continuamente, sem parar"
+      title: t('solucoes:automacaoVendas.features.virtualSDR.title'),
+      description: t('solucoes:automacaoVendas.features.virtualSDR.description')
     },
     {
       icon: Target,
-      title: "Qualificação Inteligente",
-      description: "Sistema avançado de scoring que identifica os leads mais promissores"
+      title: t('solucoes:automacaoVendas.features.intelligentQualification.title'),
+      description: t('solucoes:automacaoVendas.features.intelligentQualification.description')
     },
     {
       icon: BarChart3,
-      title: "Integração CRM Nativa",
-      description: "Conecta automaticamente com Salesforce, HubSpot, Pipedrive e outros"
+      title: t('solucoes:automacaoVendas.features.salesAnalytics.title'),
+      description: t('solucoes:automacaoVendas.features.salesAnalytics.description')
     },
     {
       icon: Clock,
-      title: "Agendamento Automático",
-      description: "Agenda reuniões automaticamente baseado na disponibilidade da equipe"
+      title: t('solucoes:automacaoVendas.features.conversationalAI.title'),
+      description: t('solucoes:automacaoVendas.features.conversationalAI.description')
     }
   ];
 
-  const benefits = [
-    "Prospecção 24/7 sem interrupções",
-    "Qualificação inteligente de leads",
-    "Integração CRM nativa completa", 
-    "ROI comprovado em 30 dias",
-    "Aumento de 300% na conversão",
-    "Redução de 80% no tempo manual"
-  ];
-
+  const benefits = t('solucoes:automacaoVendas.benefits', { returnObjects: true }) as string[];
+  
   const stats = [
-    { label: "Conversão", value: "+300%", icon: TrendingUp },
-    { label: "Leads Qualificados", value: "10x mais", icon: Target },
-    { label: "Tempo Economizado", value: "80%", icon: Clock }
+    { label: t('solucoes:automacaoVendas.stats.conversion'), value: "+300%", icon: TrendingUp },
+    { label: t('solucoes:automacaoVendas.stats.leads'), value: "10x mais", icon: Target },
+    { label: t('solucoes:automacaoVendas.stats.roi'), value: "80%", icon: Clock }
   ];
 
   const useCases = [
     {
-      title: "Prospecção Outbound",
-      description: "Identifica e contata prospects ideais automaticamente via email, LinkedIn e telefone."
+      title: t('solucoes:automacaoVendas.useCases.leadGeneration.title'),
+      description: t('solucoes:automacaoVendas.useCases.leadGeneration.description')
     },
     {
-      title: "Qualificação de Leads",
-      description: "Analisa comportamento e fit do lead para priorizar os mais promissores."
+      title: t('solucoes:automacaoVendas.useCases.qualification.title'),
+      description: t('solucoes:automacaoVendas.useCases.qualification.description')
     },
     {
-      title: "Follow-up Inteligente",
-      description: "Mantém contato consistente com leads em diferentes estágios do funil."
+      title: t('solucoes:automacaoVendas.useCases.nurturing.title'),
+      description: t('solucoes:automacaoVendas.useCases.nurturing.description')
     },
     {
-      title: "Agendamento de Reuniões",
-      description: "Coordena automaticamente agendas e confirma reuniões com prospects qualificados."
+      title: t('solucoes:automacaoVendas.useCases.closing.title'),
+      description: t('solucoes:automacaoVendas.useCases.closing.description')
     }
   ];
 
@@ -238,11 +233,10 @@ export default function AutomacaoVendas() {
         <div className="max-w-4xl mx-auto text-center">
           <Cpu className="h-12 w-12 text-white mx-auto mb-6" />
           <h2 className="text-3xl font-bold text-white mb-4">
-            Pronto para Automatizar suas Vendas?
+            {t('solucoes:automacaoVendas.cta.title')}
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Agende uma demonstração personalizada e veja como nossos SDRs virtuais podem 
-            transformar seus resultados em apenas 30 dias.
+            {t('solucoes:automacaoVendas.cta.subtitle')}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -251,7 +245,7 @@ export default function AutomacaoVendas() {
               onClick={scrollToForm}
               className="bg-white text-brand-blue hover:bg-gray-100 font-medium px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all"
             >
-              Agendar Demonstração
+              {t('solucoes:automacaoVendas.cta.button')}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button 
@@ -260,7 +254,7 @@ export default function AutomacaoVendas() {
               onClick={() => navigate('/agentes-ia')}
               className="border-white text-white bg-white/10 hover:bg-white/20 font-medium px-8 py-6 text-lg rounded-xl transition-all"
             >
-              Ver Outras Soluções
+              {t('cta.viewOthers')}
             </Button>
           </div>
         </div>

@@ -4,9 +4,11 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Building2, Stethoscope, Home, ShoppingBag, Scale, Banknote, Phone, Package, Factory, TrendingUp, CheckCircle } from 'lucide-react';
 import UnifiedSEO from '@/components/shared/UnifiedSEO';
 import { sectorsData } from '@/data/sectorsData';
+import { useTranslation } from 'react-i18next';
 
 const Setores: React.FC = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation(['setores', 'common']);
 
   const handleCtaClick = () => {
     navigate('/contato');
@@ -40,8 +42,8 @@ const Setores: React.FC = () => {
       <UnifiedSEO 
         pageType="service"
         pageData={{
-          title: "Setores Especializados - IA Personalizada por Segmento | onsmartAI",
-          description: "Soluções de IA especializadas para cada setor: Saúde, Contabilidade, Imobiliário, Comércio, Advocacia, Bancos e mais. Implementação personalizada em 30 dias."
+          title: t('setores:hero.title') + " - IA Personalizada por Segmento | onsmartAI",
+          description: t('setores:hero.subtitle') + " Implementação personalizada em 30 dias."
         }}
       />
 
@@ -60,14 +62,14 @@ const Setores: React.FC = () => {
                 {/* Badge */}
                 <div className="inline-flex items-center gap-2 bg-gradient-to-r from-brand-blue/10 to-brand-blue/5 text-brand-blue px-3 py-1.5 rounded-full text-xs sm:text-sm font-semibold mb-3 sm:mb-4 border border-brand-blue/20">
                   <Building2 className="h-3 w-3" />
-                  Soluções por Setor
+                  {t('setores:sections.sectors.title')}
                 </div>
                 
                 <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
-                  IA Especializada por <span className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">Setor</span>
+                  {t('setores:hero.title')}
                 </h1>
                 <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-3xl mx-auto mb-6 sm:mb-8">
-                  Cada setor tem suas <span className="font-bold text-brand-blue">particularidades</span>. Descubra como nossa IA pode transformar <span className="font-bold text-brand-blue">seu segmento</span>
+                  {t('setores:hero.subtitle')}
                 </p>
                 
                 {/* Stats */}
@@ -131,7 +133,7 @@ const Setores: React.FC = () => {
                       </p>
                       
                       <div className="flex items-center text-brand-blue text-xs sm:text-sm font-medium group-hover:gap-2 transition-all">
-                        <span>Saiba Mais</span>
+                        <span>{t('setores:buttons.learnMore')}</span>
                         <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 ml-1 group-hover:translate-x-1 transition-transform" />
                       </div>
                     </div>
@@ -147,14 +149,14 @@ const Setores: React.FC = () => {
               <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 sm:p-8 shadow-lg border border-gray-200/50">
                 <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500/10 to-emerald-500/5 text-green-600 px-3 py-1.5 rounded-full text-xs sm:text-sm font-semibold mb-3 sm:mb-4 border border-green-500/20">
                   <CheckCircle className="h-3 w-3" />
-                  Consultoria Especializada
+                  {t('setores:sections.cta.title')}
                 </div>
                 
                 <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
-                  Não encontrou seu <span className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">setor</span>?
+                  {t('setores:sections.cta.title')}
                 </h2>
                 <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 max-w-3xl mx-auto">
-                  Nossa equipe desenvolve soluções <span className="font-bold text-brand-blue">personalizadas</span> para qualquer segmento. Fale conosco e descubra como a IA pode transformar seu negócio.
+                  {t('setores:sections.cta.subtitle')}
                 </p>
                 
                 <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
@@ -164,7 +166,7 @@ const Setores: React.FC = () => {
                   >
                     <div className="flex items-center gap-2">
                       <Building2 className="h-3 w-3 sm:h-4 sm:w-4" />
-                      Falar com Especialista
+                      {t('setores:buttons.requestQuote')}
                       <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4" />
                     </div>
                   </Button>
@@ -176,7 +178,7 @@ const Setores: React.FC = () => {
                   >
                     <div className="flex items-center gap-2">
                       <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4" />
-                      Diagnóstico Gratuito
+                      {t('setores:buttons.freeDiagnostic')}
                     </div>
                   </Button>
                 </div>

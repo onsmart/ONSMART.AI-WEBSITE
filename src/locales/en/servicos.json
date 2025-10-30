@@ -1,0 +1,30 @@
+{
+  "buttons": {
+    "requestQuote": "Request Quote",
+    "freeDiagnostic": "Free Diagnostic"
+  },
+  "sections": {
+    "features": {
+      "title": "What's Included",
+      "subtitle": "Everything you need to transform your business"
+    },
+    "process": {
+      "title": "How It Works",
+      "subtitle": "Structured process to ensure results"
+    },
+    "pricing": {
+      "title": "Our Plans",
+      "subtitle": "Customized solutions for your business",
+      "completeSolution": "Complete and customized solution"
+    }
+  },
+  "chartTitles": {
+    "potentialAnalysis": "Potential Analysis",
+    "adoptionGrowth": "AI Adoption Growth",
+    "technicalPerformance": "Technical Performance",
+    "dataInsights": "Data Insights",
+    "knowledgeDistribution": "Knowledge Distribution",
+    "continuousMonitoring": "Continuous Monitoring",
+    "serviceResults": "Service Results"
+  }
+}

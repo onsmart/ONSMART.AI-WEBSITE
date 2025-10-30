@@ -42,6 +42,21 @@
     "phoneInvalid": "Invalid phone",
     "minLength": "Minimum {{min}} characters",
     "maxLength": "Maximum {{max}} characters"
+  },
+  "cta": {
+    "requestDemo": "Request Demo",
+    "viewOthers": "View Other Products",
+    "learnMore": "Learn More",
+    "contact": "Talk to Expert",
+    "schedule": "Schedule Meeting"
+  },
+  "sections": {
+    "title": "Title",
+    "subtitle": "Subtitle",
+    "description": "Description",
+    "features": "Key Features",
+    "advancedFeatures": "Advanced Features",
+    "keyFeatures": "Main Features"
   }
 }
 

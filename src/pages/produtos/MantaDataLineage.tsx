@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 
 export default function MantaDataLineage() {
   const navigate = useNavigate();
-  const { t } = useTranslation(["mantaDataLineage", "produtos", "common"]);
+  const { t } = useTranslation(["mantaDataLineage", "common"]);
 
   // Hook para contador animado
   const useCountUp = (end: number, duration: number = 2000) => {
@@ -112,7 +112,7 @@ export default function MantaDataLineage() {
                 onClick={() => navigate('/contato')}
               >
                 <Send className="mr-2 h-5 w-5" />
-                {t('mantaDataLineage:cta.requestDemo')}
+                {t('cta.requestDemo')}
               </Button>
             </div>
 
@@ -303,7 +303,7 @@ export default function MantaDataLineage() {
               onClick={() => navigate('/contato')}
             >
               <Send className="mr-2 h-5 w-5" />
-              {t('mantaDataLineage:cta.requestDemo')}
+              {t('cta.requestDemo')}
             </Button>
             <Button 
               variant="outline"

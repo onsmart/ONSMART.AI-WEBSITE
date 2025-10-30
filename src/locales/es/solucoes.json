@@ -1,0 +1,121 @@
+{
+  "atendimentoInteligente": {
+    "hero": {
+      "title": "Atención Inteligente",
+      "subtitle": "Transforma la atención al cliente con IA conversacional",
+      "description": "Soluciones completas de atención automatizada que reducen costos y aumentan la satisfacción del cliente"
+    },
+    "features": {
+      "multichannelChatbots": {
+        "title": "Chatbots Multicanal",
+        "description": "Atención integrada en WhatsApp, sitio web, redes sociales y teléfono"
+      },
+      "conversationalAI": {
+        "title": "IA Conversacional",
+        "description": "Entiende contexto, resuelve problemas complejos y aprende continuamente"
+      },
+      "sentimentAnalysis": {
+        "title": "Análisis de Sentimientos",
+        "description": "Detecta emociones y adapta la atención para cada situación"
+      },
+      "automatedRouting": {
+        "title": "Enrutamiento Inteligente",
+        "description": "Dirige automáticamente al especialista correcto"
+      },
+      "realTimeAnalytics": {
+        "title": "Analytics en Tiempo Real",
+        "description": "Métricas detalladas de rendimiento y satisfacción del cliente"
+      },
+      "integration": {
+        "title": "Integración Total",
+        "description": "Se conecta con CRM, ERP y todas tus herramientas existentes"
+      }
+    },
+    "benefits": {
+      "title": "Beneficios de la Atención Inteligente",
+      "subtitle": "Resultados comprobados en empresas de todos los tamaños",
+      "costReduction": {
+        "title": "Reducción de Costos",
+        "description": "Hasta 70% de reducción en costos de atención"
+      },
+      "availability": {
+        "title": "Disponibilidad 24/7",
+        "description": "Atención ininterrumpida, todos los días del año"
+      },
+      "satisfaction": {
+        "title": "Mayor Satisfacción",
+        "description": "Respuestas instantáneas y precisas para tus clientes"
+      },
+      "scalability": {
+        "title": "Escalabilidad",
+        "description": "Atiende miles de clientes simultáneamente"
+      }
+    },
+    "cta": {
+      "title": "¿Listo para revolucionar tu atención al cliente?",
+      "subtitle": "Implementa en 30 días y ve los resultados inmediatamente",
+      "button": "Solicitar Demostración"
+    }
+  },
+  "automacaoProcessos": {
+    "hero": {
+      "title": "Automatización de Procesos",
+      "subtitle": "Transforma procesos manuales en flujos de trabajo inteligentes",
+      "description": "Soluciones completas de automatización que reducen costos, eliminan errores y aumentan la eficiencia operacional"
+    },
+    "features": {
+      "rpaAI": {
+        "title": "RPA + IA Cognitiva",
+        "description": "Combinación de automatización robótica con inteligencia artificial para procesos complejos"
+      },
+      "operation24x7": {
+        "title": "Operación 24/7",
+        "description": "Procesamiento continuo de documentos y flujos de trabajo sin interrupciones"
+      },
+      "intelligentWorkflows": {
+        "title": "Flujos de Trabajo Inteligentes",
+        "description": "Flujos adaptativos que aprenden y se optimizan automáticamente"
+      },
+      "costReduction": {
+        "title": "Reducción de Costos",
+        "description": "Reducción significativa de costos operacionales y errores humanos"
+      }
+    },
+    "benefits": [
+      "RPA + IA cognitiva integrada",
+      "Procesamiento 24/7 continuo",
+      "Flujos de trabajo inteligentes adaptativos",
+      "60% de reducción de costos",
+      "500% de aumento en la eficiencia",
+      "99% de precisión en el procesamiento"
+    ],
+    "stats": {
+      "efficiency": "Eficiencia",
+      "costReduction": "Reducción Costos",
+      "precision": "Precisión"
+    },
+    "useCases": {
+      "documentProcessing": {
+        "title": "Procesamiento de Documentos",
+        "description": "Extracción y procesamiento automático de datos de facturas, contratos y documentos fiscales."
+      },
+      "administrativeWorkflows": {
+        "title": "Flujos de Trabajo Administrativos",
+        "description": "Automatización de procesos de aprobación, solicitudes y flujos burocráticos internos."
+      },
+      "financialReconciliation": {
+        "title": "Conciliación Financiera",
+        "description": "Conciliación automática de cuentas, pagos y movimientos financieros."
+      },
+      "automatedCompliance": {
+        "title": "Cumplimiento Automatizado",
+        "description": "Verificación automática de cumplimiento regulatorio y generación de informes."
+      }
+    },
+    "cta": {
+      "title": "¿Listo para automatizar tus procesos?",
+      "subtitle": "Implementa en 30 días y ve los resultados inmediatamente",
+      "button": "Solicitar Demostración"
+    }
+  }
+}
