@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { ArrowRight, BookOpen, FileText, GraduationCap, Wrench } from 'lucide-react';
 import { contentData, getContentByCategory } from '@/data/contentData';
 import { getContentIcon } from '@/utils/contentIcons';
@@ -12,6 +13,7 @@ interface MenuConteudoDropdownProps {
 const MenuConteudoDropdown: React.FC<MenuConteudoDropdownProps> = ({ 
   onMenuItemClick = () => {} 
 }) => {
+  const { t } = useTranslation('navigation');
   const navigate = useNavigate();
   
   const handleContentClick = (contentSlug: string, category: string) => {
@@ -52,7 +54,7 @@ const MenuConteudoDropdown: React.FC<MenuConteudoDropdownProps> = ({
             }}
             className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue rounded-md transition-colors"
           >
-            Blog
+            {t('menu.blog')}
           </button>
           <button
             onClick={() => {
@@ -61,7 +63,7 @@ const MenuConteudoDropdown: React.FC<MenuConteudoDropdownProps> = ({
             }}
             className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue rounded-md transition-colors"
           >
-            Materiais Gratuitos
+            {t('menu.freeMaterials')}
           </button>
           <button
             onClick={() => {
@@ -70,7 +72,7 @@ const MenuConteudoDropdown: React.FC<MenuConteudoDropdownProps> = ({
             }}
             className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue rounded-md transition-colors"
           >
-            Ferramentas
+            {t('menu.freeTools')}
           </button>
           <button
             onClick={() => {
@@ -79,14 +81,14 @@ const MenuConteudoDropdown: React.FC<MenuConteudoDropdownProps> = ({
             }}
             className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue rounded-md transition-colors"
           >
-            University
+            {t('menu.university')}
           </button>
           <hr className="my-2 border-gray-200" />
           <button
             onClick={handleViewAllClick}
             className="w-full text-left px-3 py-2 text-sm text-brand-blue font-medium hover:bg-blue-50 rounded-md transition-colors"
           >
-            Ver Todo o Conteúdo
+            {t('menu.viewAllContent')}
           </button>
         </div>
       </div>

@@ -1,0 +1,102 @@
+{
+  "seo": {
+    "title": "Contact - Get in Touch | onsmartAI",
+    "description": "Get in touch with onsmartAI. Our team of AI specialists is ready to help your company transform processes with artificial intelligence."
+  },
+  "hero": {
+    "title": "Get in Touch",
+    "subtitle": "Our team of AI specialists is ready to help your company",
+    "description": "Transform your company with personalized Artificial Intelligence solutions. Get in touch and discover how we can accelerate your results."
+  },
+  "success": {
+    "title": "Message Sent Successfully!",
+    "message": "✓ We received your message!",
+    "responseTime": "Our team will respond within",
+    "responseTimeValue": "2 business hours",
+    "responseTimeEnd": "with a personalized proposal.",
+    "emailConfirmation": "Confirmation sent to your email",
+    "responseTimeLabel": "Response time: up to 2 business hours",
+    "sendAnother": "Send Another Message",
+    "backToHome": "Back to Home"
+  },
+  "form": {
+    "title": "Get in Touch",
+    "subtitle": "Fill out the form below and our team will contact you within 2 business hours",
+    "name": {
+      "label": "Full Name",
+      "placeholder": "Enter your full name"
+    },
+    "email": {
+      "label": "E-mail",
+      "placeholder": "your@email.com"
+    },
+    "phone": {
+      "label": "Phone/WhatsApp",
+      "placeholder": "(11) 99999-9999"
+    },
+    "company": {
+      "label": "Company",
+      "placeholder": "Your company name"
+    },
+    "subject": {
+      "label": "Subject",
+      "placeholder": "Select the subject",
+      "options": {
+        "consultoria": "AI Consulting",
+        "implementacao": "Solution Implementation",
+        "suporte": "Technical Support",
+        "parceria": "Commercial Partnership",
+        "outros": "Others"
+      }
+    },
+    "message": {
+      "label": "How can we help?",
+      "placeholder": "Ex: I want to automate customer service, reduce operational costs, increase team productivity..."
+    },
+    "submit": "REQUEST FREE DIAGNOSTIC",
+    "sending": "Sending Request...",
+    "required": "Required field",
+    "invalidEmail": "Invalid email",
+    "minLength": "Minimum 10 characters",
+    "socialProof": {
+      "companies": "Companies served",
+      "satisfaction": "Average satisfaction",
+      "responseTime": "Response time"
+    }
+  },
+  "info": {
+    "title": "Contact Information",
+    "subtitle": "Other ways to reach us",
+    "email": {
+      "label": "E-mail",
+      "value": "contato@onsmartai.com",
+      "description": "We respond within 2 business hours"
+    },
+    "phone": {
+      "label": "Phone/WhatsApp",
+      "value": "(11) 99999-9999",
+      "description": "Monday to Friday, 9am to 6pm"
+    },
+    "address": {
+      "label": "Address",
+      "value": "São Paulo, SP - Brazil",
+      "description": "In-person service by appointment"
+    },
+    "hours": {
+      "label": "Business Hours",
+      "value": "Monday to Friday: 9am to 6pm",
+      "description": "Saturday: 9am to 12pm"
+    }
+  },
+  "cta": {
+    "title": "Ready to Transform Your Company?",
+    "subtitle": "Our team of specialists is ready to help you implement AI solutions that really work.",
+    "button": "Talk to Specialist"
+  },
+  "guarantee": {
+    "title": "Our Guarantee",
+    "subtitle": "We respond to all contacts within",
+    "subtitleValue": "2 business hours",
+    "subtitleEnd": "or we offer a free 30-minute consultation."
+  }
+}

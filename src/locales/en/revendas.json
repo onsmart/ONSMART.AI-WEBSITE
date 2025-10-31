@@ -1,0 +1,85 @@
+{
+  "seo": {
+    "title": "Become an onsmartAI Reseller - Commercial Partnership Program",
+    "description": "Become a commercial partner of onsmartAI. Resell enterprise AI solutions with complete support, training and attractive margins. Exclusive program for companies."
+  },
+  "hero": {
+    "badge": "Reseller Program",
+    "title": "Become an onsmartAI Reseller",
+    "subtitle": "Transform your company into an AI commercial powerhouse",
+    "description": "Join the most profitable AI reseller program in the market. Complete support, specialized training and margins up to 40%."
+  },
+  "benefits": {
+    "title": "Why become an onsmartAI Reseller?",
+    "items": [
+      {
+        "title": "Attractive Margins",
+        "description": "Up to 40% profit margin on each sale",
+        "icon": "TrendingUp"
+      },
+      {
+        "title": "Complete Support",
+        "description": "Training, marketing and technical support included",
+        "icon": "Users"
+      },
+      {
+        "title": "Award-Winning Products",
+        "description": "AI solutions recognized in the market",
+        "icon": "Award"
+      },
+      {
+        "title": "Guaranteed Growth",
+        "description": "Increase your revenue with the expanding market",
+        "icon": "ShoppingCart"
+      }
+    ]
+  },
+  "requirements": {
+    "title": "Requirements to become a Reseller",
+    "items": [
+      "Legally constituted company",
+      "B2B sales experience",
+      "Qualified technical team",
+      "Initial investment capacity",
+      "Commitment to sales goals"
+    ]
+  },
+  "process": {
+    "title": "How it Works",
+    "steps": [
+      {
+        "step": "1",
+        "title": "Registration",
+        "description": "Fill out the interest form"
+      },
+      {
+        "step": "2",
+        "title": "Evaluation",
+        "description": "Our team analyzes your profile"
+      },
+      {
+        "step": "3",
+        "title": "Training",
+        "description": "Complete team training"
+      },
+      {
+        "step": "4",
+        "title": "Launch",
+        "description": "Start selling with full support"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to become a Reseller?",
+    "subtitle": "Join the most profitable AI market program",
+    "button": "I want to be a Reseller",
+    "secondaryButton": "Talk to Specialist"
+  },
+  "contact": {
+    "title": "Talk to Our Team",
+    "description": "Ask your questions about the reseller program",
+    "phone": "(11) 99999-9999",
+    "email": "revendas@onsmart.ai"
+  }
+}
+

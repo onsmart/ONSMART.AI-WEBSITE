@@ -1,0 +1,61 @@
+{
+  "seo": {
+    "title": "Conteúdo Gratuito - Artigos, E-books e Recursos de IA | onsmartAI",
+    "description": "Acesse nosso acervo gratuito de conteúdo sobre IA: artigos, e-books, vídeos, templates e calculadoras para acelerar sua transformação digital."
+  },
+  "hero": {
+    "title": "Conteúdo Gratuito",
+    "subtitle": "Recursos exclusivos para acelerar sua transformação com IA",
+    "description": "Acesse artigos, e-books, vídeos, templates e ferramentas desenvolvidas por nossos especialistas em IA."
+  },
+  "categories": {
+    "artigos": "Artigos & Guias",
+    "videos": "Vídeos",
+    "ebooks": "E-books",
+    "templates": "Templates",
+    "checklists": "Checklists",
+    "calculadoras": "Calculadoras"
+  },
+  "filters": {
+    "all": "Todos",
+    "recent": "Mais Recentes",
+    "popular": "Mais Populares",
+    "featured": "Em Destaque"
+  },
+  "content": {
+    "readMore": "Ler Mais",
+    "download": "Baixar",
+    "watch": "Assistir",
+    "downloadNow": "Baixar Agora",
+    "watchNow": "Assistir Agora",
+    "readArticle": "Ler Artigo",
+    "viewTemplate": "Ver Template",
+    "useCalculator": "Usar Calculadora",
+    "downloadChecklist": "Baixar Checklist"
+  },
+  "stats": {
+    "articles": "Artigos",
+    "videos": "Vídeos",
+    "downloads": "Downloads",
+    "users": "Usuários"
+  },
+  "cta": {
+    "title": "Pronto para Transformar sua Empresa?",
+    "subtitle": "Fale com nossos especialistas e descubra como a IA pode acelerar seus resultados",
+    "button": "Falar com Especialista"
+  },
+  "newsletter": {
+    "title": "Receba Conteúdo Exclusivo",
+    "subtitle": "Cadastre-se e receba novos artigos, e-books e recursos diretamente no seu email",
+    "placeholder": "Seu melhor email",
+    "button": "Cadastrar",
+    "success": "Cadastro realizado com sucesso!",
+    "error": "Erro ao cadastrar. Tente novamente."
+  },
+  "modal": {
+    "close": "Fechar",
+    "download": "Baixar",
+    "share": "Compartilhar"
+  }
+}
+

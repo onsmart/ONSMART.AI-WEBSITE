@@ -1,0 +1,127 @@
+{
+  "seo": {
+    "title": "onsmartAI Digital Agents - Referral Program with Commissions",
+    "description": "Become an onsmartAI Digital Agent and earn commissions by referring clients. Simple program, attractive commissions and complete support for your referrals."
+  },
+  "hero": {
+    "badge": "Digital Agents Program",
+    "title": "Digital Agents Program",
+    "subtitle": "Refer companies to onsmartAI and earn attractive commissions for each client that closes a deal",
+    "buttons": {
+      "becomeAgent": "Become an Agent",
+      "viewCommissions": "View Commissions"
+    }
+  },
+  "benefits": {
+    "title": "Why become a Digital Agent?",
+    "items": [
+      {
+        "title": "Attractive Commissions",
+        "description": "Earn up to 15% commission on each sale made",
+        "icon": "DollarSign"
+      },
+      {
+        "title": "Recurring Income",
+        "description": "Receive monthly commissions while your clients remain active",
+        "icon": "TrendingUp"
+      },
+      {
+        "title": "Complete Support",
+        "description": "Our team handles the entire sales process",
+        "icon": "Users"
+      },
+      {
+        "title": "Total Flexibility",
+        "description": "Work at your own pace, no mandatory goals",
+        "icon": "UserCheck"
+      }
+    ]
+  },
+  "howItWorks": {
+    "title": "How it Works",
+    "steps": [
+      {
+        "step": "1",
+        "title": "Sign Up",
+        "description": "Fill out the form and become an agent"
+      },
+      {
+        "step": "2",
+        "title": "Refer Clients",
+        "description": "Send qualified leads to our team"
+      },
+      {
+        "step": "3",
+        "title": "Track Sales",
+        "description": "Monitor the progress of your referrals"
+      },
+      {
+        "step": "4",
+        "title": "Earn Commissions",
+        "description": "Get commissions for each sale made"
+      }
+    ]
+  },
+  "commissions": {
+    "title": "Commission Table",
+    "description": "The more you sell, the more you earn",
+    "levels": [
+      {
+        "level": "Beginner",
+        "sales": "1-5 sales",
+        "commission": "10%",
+        "description": "To start your journey"
+      },
+      {
+        "level": "Intermediate",
+        "sales": "6-15 sales",
+        "commission": "12%",
+        "description": "For growing agents"
+      },
+      {
+        "level": "Advanced",
+        "sales": "16-30 sales",
+        "commission": "15%",
+        "description": "For experienced agents"
+      },
+      {
+        "level": "Master",
+        "sales": "30+ sales",
+        "commission": "20%",
+        "description": "For elite agents"
+      }
+    ]
+  },
+  "requirements": {
+    "title": "Requirements to be an Agent",
+    "items": [
+      "Over 18 years old",
+      "Valid CPF",
+      "Bank account",
+      "Basic sales knowledge",
+      "Availability to refer clients"
+    ]
+  },
+  "cta": {
+    "title": "Ready to Start?",
+    "subtitle": "Join the most profitable digital agents program in the market",
+    "button": "Become an Agent Now",
+    "secondaryButton": "Talk to Specialist"
+  },
+  "testimonials": {
+    "title": "What our Agents say",
+    "items": [
+      {
+        "name": "Maria Silva",
+        "role": "Digital Agent",
+        "testimonial": "In 3 months I already earned more than R$ 15,000 in commissions. The program is very simple and onsmartAI takes care of everything."
+      },
+      {
+        "name": "João Santos",
+        "role": "Digital Agent",
+        "testimonial": "The flexibility is incredible. I can work at my own pace and still have an excellent income."
+      }
+    ]
+  }
+}
+

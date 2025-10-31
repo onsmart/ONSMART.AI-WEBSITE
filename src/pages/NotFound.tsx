@@ -3,9 +3,11 @@ import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Home, ArrowLeft, Search } from "lucide-react";
+import { useTranslation } from 'react-i18next';
 
 const NotFound = () => {
   const location = useLocation();
+  const { t } = useTranslation(['notFound', 'common']);
 
   useEffect(() => {
     console.error(
@@ -14,12 +16,12 @@ const NotFound = () => {
     );
     
     // SEO: Update document title for 404 page
-    document.title = "Página não encontrada - onsmartAI";
+    document.title = t('seo.title');
     
     // SEO: Add meta description for 404 page
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Página não encontrada. Explore nossos serviços de Agentes de IA.');
+      metaDescription.setAttribute('content', t('seo.description'));
     }
 
     // Add noindex meta tag for 404 pages to prevent indexing

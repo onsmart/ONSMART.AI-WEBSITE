@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Check, Circle, ChevronLeft, ChevronRight } from "lucide-react";
@@ -69,15 +70,16 @@ const ALL_QUESTIONS: string[] = [
 // Versão compacta: 30 perguntas
 const QUESTIONS: string[] = ALL_QUESTIONS.slice(0, 30);
 
-const LIKERT_OPTIONS: { label: string; value: AnswerValue }[] = [
-  { label: "Discordo totalmente", value: 1 },
-  { label: "Discordo", value: 2 },
-  { label: "Neutro", value: 3 },
-  { label: "Concordo", value: 4 },
-  { label: "Concordo totalmente", value: 5 }
+const getLikertOptions = (t: any): { label: string; value: AnswerValue }[] => [
+  { label: t('diagnostic.likert.stronglyDisagree'), value: 1 },
+  { label: t('diagnostic.likert.disagree'), value: 2 },
+  { label: t('diagnostic.likert.neutral'), value: 3 },
+  { label: t('diagnostic.likert.agree'), value: 4 },
+  { label: t('diagnostic.likert.stronglyAgree'), value: 5 }
 ];
 
 const DiagnosticQuestionnaire: React.FC = () => {
+  const { t } = useTranslation(['common', 'diagnostico']);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [answers, setAnswers] = useState<(AnswerValue | null)[]>(() => Array(QUESTIONS.length).fill(null));
 
@@ -205,7 +207,7 @@ const DiagnosticQuestionnaire: React.FC = () => {
 
         {/* Opções Likert aprimoradas */}
         <div className="mt-2 grid grid-cols-2 sm:grid-cols-5 gap-2">
-          {LIKERT_OPTIONS.map(({ label, value }) => {
+          {getLikertOptions(t).map(({ label, value }) => {
             const selected = answers[currentIndex] === value;
             return (
               <button

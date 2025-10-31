@@ -1,0 +1,127 @@
+{
+  "seo": {
+    "title": "Agentes Digitales onsmartAI - Programa de Referidos con Comisiones",
+    "description": "Conviértete en un Agente Digital onsmartAI y gana comisiones refiriendo clientes. Programa simple, comisiones atractivas y soporte completo para tus referidos."
+  },
+  "hero": {
+    "badge": "Programa de Agentes Digitales",
+    "title": "Programa de Agentes Digitales",
+    "subtitle": "Refiere empresas a onsmartAI y gana comisiones atractivas por cada cliente que cierre un negocio",
+    "buttons": {
+      "becomeAgent": "Convertirse en Agente",
+      "viewCommissions": "Ver Comisiones"
+    }
+  },
+  "benefits": {
+    "title": "¿Por qué ser un Agente Digital?",
+    "items": [
+      {
+        "title": "Comisiones Atractivas",
+        "description": "Gana hasta 15% de comisión por cada venta realizada",
+        "icon": "DollarSign"
+      },
+      {
+        "title": "Ingresos Recurrentes",
+        "description": "Recibe comisiones mensuales mientras tus clientes permanezcan activos",
+        "icon": "TrendingUp"
+      },
+      {
+        "title": "Soporte Completo",
+        "description": "Nuestro equipo se encarga de todo el proceso de ventas",
+        "icon": "Users"
+      },
+      {
+        "title": "Flexibilidad Total",
+        "description": "Trabaja a tu ritmo, sin metas obligatorias",
+        "icon": "UserCheck"
+      }
+    ]
+  },
+  "howItWorks": {
+    "title": "Cómo Funciona",
+    "steps": [
+      {
+        "step": "1",
+        "title": "Regístrate",
+        "description": "Completa el formulario y conviértete en agente"
+      },
+      {
+        "step": "2",
+        "title": "Refiere Clientes",
+        "description": "Envía leads calificados a nuestro equipo"
+      },
+      {
+        "step": "3",
+        "title": "Rastrea Ventas",
+        "description": "Monitorea el progreso de tus referidos"
+      },
+      {
+        "step": "4",
+        "title": "Gana Comisiones",
+        "description": "Obtén comisiones por cada venta realizada"
+      }
+    ]
+  },
+  "commissions": {
+    "title": "Tabla de Comisiones",
+    "description": "Mientras más vendas, más ganas",
+    "levels": [
+      {
+        "level": "Principiante",
+        "sales": "1-5 ventas",
+        "commission": "10%",
+        "description": "Para comenzar tu viaje"
+      },
+      {
+        "level": "Intermedio",
+        "sales": "6-15 ventas",
+        "commission": "12%",
+        "description": "Para agentes en crecimiento"
+      },
+      {
+        "level": "Avanzado",
+        "sales": "16-30 ventas",
+        "commission": "15%",
+        "description": "Para agentes experimentados"
+      },
+      {
+        "level": "Master",
+        "sales": "30+ ventas",
+        "commission": "20%",
+        "description": "Para agentes de élite"
+      }
+    ]
+  },
+  "requirements": {
+    "title": "Requisitos para ser un Agente",
+    "items": [
+      "Mayor de 18 años",
+      "CPF válido",
+      "Cuenta bancaria",
+      "Conocimiento básico en ventas",
+      "Disponibilidad para referir clientes"
+    ]
+  },
+  "cta": {
+    "title": "¿Listo para Comenzar?",
+    "subtitle": "Únete al programa de agentes digitales más rentable del mercado",
+    "button": "Convertirse en Agente Ahora",
+    "secondaryButton": "Hablar con Especialista"
+  },
+  "testimonials": {
+    "title": "Lo que dicen nuestros Agentes",
+    "items": [
+      {
+        "name": "Maria Silva",
+        "role": "Agente Digital",
+        "testimonial": "En 3 meses ya gané más de R$ 15.000 en comisiones. El programa es muy simple y onsmartAI se encarga de todo."
+      },
+      {
+        "name": "João Santos",
+        "role": "Agente Digital",
+        "testimonial": "La flexibilidad es increíble. Puedo trabajar a mi ritmo y aún así tener un ingreso excelente."
+      }
+    ]
+  }
+}
+

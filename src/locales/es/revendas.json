@@ -1,0 +1,85 @@
+{
+  "seo": {
+    "title": "Sé un Revendedor onsmartAI - Programa de Asociación Comercial",
+    "description": "Conviértete en socio comercial de onsmartAI. Revende soluciones de IA empresarial con soporte completo, entrenamiento y márgenes atractivos. Programa exclusivo para empresas."
+  },
+  "hero": {
+    "badge": "Programa de Revendedores",
+    "title": "Sé un Revendedor onsmartAI",
+    "subtitle": "Transforma tu empresa en una potencia comercial de IA",
+    "description": "Únete al programa de revendedores más rentable del mercado de IA. Soporte completo, entrenamiento especializado y márgenes de hasta 40%."
+  },
+  "benefits": {
+    "title": "¿Por qué ser un Revendedor onsmartAI?",
+    "items": [
+      {
+        "title": "Márgenes Atractivos",
+        "description": "Hasta 40% de margen de ganancia en cada venta",
+        "icon": "TrendingUp"
+      },
+      {
+        "title": "Soporte Completo",
+        "description": "Entrenamiento, marketing y soporte técnico incluidos",
+        "icon": "Users"
+      },
+      {
+        "title": "Productos Premiados",
+        "description": "Soluciones de IA reconocidas en el mercado",
+        "icon": "Award"
+      },
+      {
+        "title": "Crecimiento Garantizado",
+        "description": "Aumenta tus ingresos con el mercado en expansión",
+        "icon": "ShoppingCart"
+      }
+    ]
+  },
+  "requirements": {
+    "title": "Requisitos para ser un Revendedor",
+    "items": [
+      "Empresa legalmente constituida",
+      "Experiencia en ventas B2B",
+      "Equipo técnico calificado",
+      "Capacidad de inversión inicial",
+      "Compromiso con metas de ventas"
+    ]
+  },
+  "process": {
+    "title": "Cómo Funciona",
+    "steps": [
+      {
+        "step": "1",
+        "title": "Registro",
+        "description": "Completa el formulario de interés"
+      },
+      {
+        "step": "2",
+        "title": "Evaluación",
+        "description": "Nuestro equipo analiza tu perfil"
+      },
+      {
+        "step": "3",
+        "title": "Entrenamiento",
+        "description": "Capacitación completa del equipo"
+      },
+      {
+        "step": "4",
+        "title": "Lanzamiento",
+        "description": "Inicio de ventas con soporte total"
+      }
+    ]
+  },
+  "cta": {
+    "title": "¿Listo para ser un Revendedor?",
+    "subtitle": "Únete al programa más rentable del mercado de IA",
+    "button": "Quiero ser un Revendedor",
+    "secondaryButton": "Hablar con Especialista"
+  },
+  "contact": {
+    "title": "Habla con Nuestro Equipo",
+    "description": "Resuelve tus dudas sobre el programa de revendedores",
+    "phone": "(11) 99999-9999",
+    "email": "revendas@onsmart.ai"
+  }
+}
+

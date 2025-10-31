@@ -1,0 +1,28 @@
+{
+  "seo": {
+    "title": "Reseller Registration onsmartAI - Apply to Program",
+    "description": "Apply to the onsmartAI reseller program. Fill out the form and our team will contact you to evaluate your application.",
+    "keywords": "reseller registration, partnership application, reseller form, apply program"
+  },
+  "header": {
+    "badge": "Reseller Application",
+    "title": "Enterprise Reseller Registration",
+    "subtitle": "Fill out the form below and our team will evaluate your application to sell AI to companies from R$ 50M-1B"
+  },
+  "submit": {
+    "processing": "Sending Application...",
+    "button": "Submit Enterprise Application",
+    "helper": "Our specialized team will contact you within 24 hours to evaluate your application"
+  },
+  "toast": {
+    "error": {
+      "title": "Error sending",
+      "description": "An error occurred while sending your application. Please try again."
+    }
+  },
+  "success": {
+    "title": "Application sent successfully!",
+    "description": "Our team will contact you within 24 hours."
+  }
+}
+

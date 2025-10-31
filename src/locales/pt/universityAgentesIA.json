@@ -1,0 +1,96 @@
+{
+  "seo": {
+    "title": "Agentes de IA - Curso Avançado de Implementação | onsmartAI University",
+    "description": "Domine a implementação de Agentes de IA empresarial. Curso avançado com metodologia LÍDER e casos práticos reais.",
+    "keywords": "curso agentes ia, implementação agentes ia, metodologia líder, ia empresarial avançado"
+  },
+  "hero": {
+    "badge": "onsmartAI University - Avançado",
+    "title": "Agentes de IA",
+    "subtitle": "Domine a implementação de Agentes de IA como força de trabalho autônoma na sua empresa",
+    "rating": "4.9/5 (127 avaliações)",
+    "buttons": {
+      "startCourse": "Iniciar Curso",
+      "downloadSyllabus": "Syllabus Completo"
+    }
+  },
+  "curriculum": {
+    "title": "Currículo",
+    "titleHighlight": "Completo",
+    "modules": {
+      "1": {
+        "title": "Fundamentos dos Agentes de IA",
+        "description": "Entenda a arquitetura e funcionamento dos Agentes de IA empresarial.",
+        "items": [
+          "Tipos de agentes (reativos, cognitivos, colaborativos)",
+          "Arquitetura de sistemas multi-agente",
+          "Comunicação entre agentes"
+        ]
+      },
+      "2": {
+        "title": "Metodologia LÍDER",
+        "description": "Nossa metodologia proprietária para implementação estruturada de IA.",
+        "items": [
+          "L - Levantamento de processos",
+          "Í - Identificação de oportunidades",
+          "D - Desenvolvimento dos agentes",
+          "E - Execução e implementação",
+          "R - Refinamento contínuo"
+        ]
+      },
+      "3": {
+        "title": "Implementação Prática",
+        "description": "Casos reais de implementação com hands-on em ferramentas.",
+        "items": [
+          "Agente de atendimento ao cliente",
+          "Agente de análise de dados",
+          "Agente de automação de processos"
+        ]
+      },
+      "4": {
+        "title": "Monitoramento e Otimização",
+        "description": "Como medir performance e otimizar continuamente seus agentes.",
+        "items": [
+          "KPIs e métricas de sucesso",
+          "Dashboards de monitoramento",
+          "Processo de melhoria contínua"
+        ]
+      }
+    }
+  },
+  "sidebar": {
+    "courseInfo": {
+      "title": "Informações do Curso",
+      "duration": "Duração",
+      "durationValue": "8 horas",
+      "level": "Nível",
+      "levelValue": "Avançado",
+      "format": "Formato",
+      "formatValue": "Vídeo + Prática + Mentoria",
+      "certificate": "Certificado",
+      "certificateValue": "Certificação Profissional",
+      "support": "Suporte",
+      "supportValue": "1 ano de suporte"
+    },
+    "youWillBeAble": {
+      "title": "Você será capaz de",
+      "items": [
+        "Projetar arquiteturas de agentes",
+        "Implementar a metodologia LÍDER",
+        "Gerenciar projetos de IA empresarial",
+        "Calcular e apresentar ROI",
+        "Treinar equipes internas"
+      ]
+    },
+    "bonus": {
+      "title": "Bônus Exclusivos",
+      "items": [
+        "Templates de implementação",
+        "Acesso ao grupo VIP",
+        "Sessões de mentoria ao vivo",
+        "Certificação onsmartAI"
+      ]
+    }
+  }
+}
+

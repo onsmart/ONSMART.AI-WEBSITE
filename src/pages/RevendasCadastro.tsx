@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import UnifiedSEO from '@/components/shared/UnifiedSEO';
 import { useToast } from '@/hooks/use-toast';
+import { useTranslation } from 'react-i18next';
 import RevendasCadastroHeader from '@/components/revendas/cadastro/RevendasCadastroHeader';
 import EmpresaInfoForm from '@/components/revendas/cadastro/EmpresaInfoForm';
 import PerformanceComercialForm from '@/components/revendas/cadastro/PerformanceComercialForm';
@@ -10,6 +11,7 @@ import ComprometimentoForm from '@/components/revendas/cadastro/ComprometimentoF
 
 const RevendasCadastro = () => {
   const { toast } = useToast();
+  const { t } = useTranslation(['revendasCadastro', 'common']);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
 
@@ -33,8 +35,8 @@ const RevendasCadastro = () => {
       form.reset();
     } else {
       toast({
-        title: "Erro ao enviar",
-        description: "Ocorreu um erro ao enviar sua candidatura. Tente novamente.",
+        title: t('toast.error.title'),
+        description: t('toast.error.description'),
         variant: "destructive",
       });
     }
@@ -44,9 +46,9 @@ const RevendasCadastro = () => {
   return (
     <>
       <UnifiedSEO 
-        title="Cadastro Revenda onsmartAI - Candidatar-se ao Programa"
-        description="Candidate-se ao programa de revendas onsmartAI. Preencha o formulário e nossa equipe entrará em contato para avaliar sua candidatura."
-        keywords="cadastro revenda, candidatura parceria, formulário revenda, aplicar programa"
+        title={t('seo.title')}
+        description={t('seo.description')}
+        keywords={t('seo.keywords')}
       />
       
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 py-12">
@@ -67,13 +69,13 @@ const RevendasCadastro = () => {
                 className="bg-blue-600 hover:bg-blue-700 px-12"
               >
                 {isSubmitting ? (
-                  "Enviando Candidatura..."
+                  t('submit.processing')
                 ) : (
-                  "Enviar Candidatura Enterprise"
+                  t('submit.button')
                 )}
               </Button>
               <p className="text-sm text-gray-600 dark:text-gray-400 mt-4">
-                Nossa equipe especializada entrará em contato em até 24 horas para avaliar sua candidatura
+                {t('submit.helper')}
               </p>
             </div>
           </form>
@@ -81,8 +83,8 @@ const RevendasCadastro = () => {
           {success && (
             <div className="flex flex-col items-center justify-center bg-green-100 border border-green-400 text-green-800 px-6 py-4 rounded-lg mt-8 shadow animate-fade-in">
               <svg className="w-8 h-8 mb-2 text-green-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
-              <span className="font-bold text-lg">Candidatura enviada com sucesso!</span>
-              <span className="text-sm mt-1">Nossa equipe entrará em contato em até 24 horas.</span>
+              <span className="font-bold text-lg">{t('success.title')}</span>
+              <span className="text-sm mt-1">{t('success.description')}</span>
             </div>
           )}
         </div>

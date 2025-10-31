@@ -1,0 +1,9 @@
+{
+  "seo": {
+    "title": "Monitor Docker - OnSmart AI",
+    "description": "Monitoramento em tempo real do Docker e containers"
+  },
+  "title": "Monitor Docker",
+  "subtitle": "Acompanhe o status do Docker, containers e Ollama em tempo real"
+}
+

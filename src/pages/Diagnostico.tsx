@@ -6,13 +6,24 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useForm, ValidationError } from '@formspree/react';
+import { useTranslation } from 'react-i18next';
+import UnifiedSEO from '@/components/shared/UnifiedSEO';
 
 const Diagnostico = () => {
   const [state, handleSubmit] = useForm("mwprkloy");
+  const { t } = useTranslation(['diagnostico', 'common']);
 
   if (state.succeeded) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-white via-blue-50/20 to-brand-blue/5 relative overflow-hidden">
+      <>
+        <UnifiedSEO 
+          pageType="page"
+          pageData={{
+            title: t('seo.title'),
+            description: t('seo.description')
+          }}
+        />
+        <div className="min-h-screen bg-gradient-to-br from-white via-blue-50/20 to-brand-blue/5 relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-1/4 left-1/4 w-16 h-16 bg-gradient-to-br from-brand-blue to-blue-600 rounded-full mix-blend-multiply filter blur-2xl opacity-15 animate-pulse"></div>
@@ -26,13 +37,13 @@ const Diagnostico = () => {
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
               <span className="bg-gradient-to-r from-green-600 via-green-500 to-green-600 bg-clip-text text-transparent">
-                Diagnóstico Agendado!
+                {t('success.title')}
               </span>
             </h2>
             <div className="bg-gradient-to-r from-green-50 to-emerald-50/30 rounded-lg p-4 mb-6 border border-green-200/50">
               <p className="text-gray-700 text-center">
-                <span className="font-bold text-green-600">✓ Solicitação recebida!</span><br/>
-                Nossa equipe entrará em contato em até <span className="font-bold text-brand-blue">24 horas</span> para agendar seu diagnóstico.
+                <span className="font-bold text-green-600">{t('success.message')}</span><br/>
+                {t('success.responseTime')} <span className="font-bold text-brand-blue">{t('success.responseTimeValue')}</span> {t('success.responseTimeEnd')}
               </p>
             </div>
             <div className="text-sm text-gray-600 mb-6 space-y-2">
@@ -64,11 +75,20 @@ const Diagnostico = () => {
           </div>
         </div>
       </div>
+      </>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-blue-50/20 to-brand-blue/5 relative overflow-hidden">
+    <>
+      <UnifiedSEO 
+        pageType="page"
+        pageData={{
+          title: t('seo.title'),
+          description: t('seo.description')
+        }}
+      />
+      <div className="min-h-screen bg-gradient-to-br from-white via-blue-50/20 to-brand-blue/5 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-16 h-16 bg-gradient-to-br from-brand-blue to-blue-600 rounded-full mix-blend-multiply filter blur-2xl opacity-15 animate-pulse"></div>
@@ -500,6 +520,7 @@ const Diagnostico = () => {
         </section>
       </div>
     </div>
+    </>
   );
 };
 

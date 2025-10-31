@@ -57,6 +57,29 @@
     "features": "Funciones Principales",
     "advancedFeatures": "Funciones Avanzadas",
     "keyFeatures": "Características Principales"
+  },
+  "language": {
+    "selectLanguage": "Seleccionar idioma",
+    "portuguese": "Português",
+    "english": "English",
+    "spanish": "Español"
+  },
+  "toast": {
+    "formSubmitted": "¡Formulario enviado con éxito!",
+    "formSubmittedDescription": "Nuestro equipo se pondrá en contacto pronto.",
+    "nextStep": "Próximo paso",
+    "diagnosticScheduled": "¡Diagnóstico agendado!",
+    "diagnosticScheduledDescription": "Recibirás un correo de confirmación en breve.",
+    "viewCalendar": "Ver calendario"
+  },
+  "diagnostic": {
+    "likert": {
+      "stronglyDisagree": "Totalmente en desacuerdo",
+      "disagree": "En desacuerdo",
+      "neutral": "Neutral",
+      "agree": "De acuerdo",
+      "stronglyAgree": "Totalmente de acuerdo"
+    }
   }
 }
 

@@ -1,0 +1,28 @@
+{
+  "seo": {
+    "title": "Cadastro Revenda onsmartAI - Candidatar-se ao Programa",
+    "description": "Candidate-se ao programa de revendas onsmartAI. Preencha o formulário e nossa equipe entrará em contato para avaliar sua candidatura.",
+    "keywords": "cadastro revenda, candidatura parceria, formulário revenda, aplicar programa"
+  },
+  "header": {
+    "badge": "Candidatura para Revenda",
+    "title": "Cadastro de Revenda Enterprise",
+    "subtitle": "Preencha o formulário abaixo e nossa equipe avaliará sua candidatura para vender IA para empresas de R$ 50M-1B"
+  },
+  "submit": {
+    "processing": "Enviando Candidatura...",
+    "button": "Enviar Candidatura Enterprise",
+    "helper": "Nossa equipe especializada entrará em contato em até 24 horas para avaliar sua candidatura"
+  },
+  "toast": {
+    "error": {
+      "title": "Erro ao enviar",
+      "description": "Ocorreu um erro ao enviar sua candidatura. Tente novamente."
+    }
+  },
+  "success": {
+    "title": "Candidatura enviada com sucesso!",
+    "description": "Nossa equipe entrará em contato em até 24 horas."
+  }
+}
+

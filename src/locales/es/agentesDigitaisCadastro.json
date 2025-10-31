@@ -1,0 +1,22 @@
+{
+  "seo": {
+    "title": "Registro Agente Digital onsmartAI - Conviértete en un Referidor",
+    "description": "Regístrate gratis como Agente Digital onsmartAI. Recibe tu enlace exclusivo y comienza a ganar comisiones refiriendo clientes hoy mismo.",
+    "keywords": "registro agente digital, enlace referencia, programa afiliados, ingresos extras"
+  },
+  "header": {
+    "badge": "Registro de Agente Digital",
+    "title": "Conviértete en un Agente Digital",
+    "subtitle": "Registro 100% gratuito. Comienza a ganar comisiones refiriendo empresas a onsmartAI"
+  },
+  "submit": {
+    "processing": "Procesando Registro...",
+    "button": "Completar Registro",
+    "helper": "Recibirás tu enlace exclusivo por correo electrónico en unos minutos"
+  },
+  "toast": {
+    "title": "¡Registro Completado!",
+    "description": "¡Bienvenido al programa! Recibirás tu enlace exclusivo por correo electrónico en unos minutos."
+  }
+}
+

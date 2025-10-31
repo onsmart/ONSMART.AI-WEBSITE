@@ -1,0 +1,177 @@
+{
+  "hero": {
+    "title": "Agentes de IA - Soluções Proprietárias",
+    "subtitle": "Agentes de IA personalizados e plataformas desenvolvidas especialmente para transformar seu negócio"
+  },
+  "stats": {
+    "companies": "Empresas Atendidas",
+    "successRate": "Taxa de Sucesso",
+    "implementation": "Implementação Média"
+  },
+  "categories": {
+    "title": "Nossas Categorias de Produtos",
+    "subtitle": "Soluções completas desenvolvidas internamente para atender todas as necessidades de IA da sua empresa"
+  },
+  "products": {
+    "agentBuilder": {
+      "name": "OnSmart Agent Builder",
+      "description": "Plataforma no-code para criar agentes de IA personalizados para sua empresa",
+      "category": "Agentes de IA",
+      "features": [
+        "Interface No-Code",
+        "Templates Pré-configurados",
+        "Integração API",
+        "Treinamento Personalizado"
+      ],
+      "benefits": [
+        "Desenvolvimento 10x mais rápido",
+        "Sem necessidade de programação",
+        "Deploy em 24h"
+      ],
+      "price": "A partir de R$ 2.500/mês"
+    },
+    "analytics": {
+      "name": "OnSmart Analytics",
+      "description": "Suite completa de análise preditiva e business intelligence com IA",
+      "category": "Analytics",
+      "features": [
+        "Análise Preditiva",
+        "Dashboards Inteligentes",
+        "Alertas Automáticos",
+        "Integração Multi-fonte"
+      ],
+      "benefits": [
+        "Insights em tempo real",
+        "Previsões precisas",
+        "ROI mensurável"
+      ],
+      "price": "A partir de R$ 3.500/mês"
+    },
+    "automation": {
+      "name": "OnSmart Automation",
+      "description": "Automação inteligente de processos empresariais com IA generativa",
+      "category": "Automação",
+      "features": [
+        "RPA Inteligente",
+        "Processamento de Documentos",
+        "Workflows Adaptativos",
+        "OCR Avançado"
+      ],
+      "benefits": [
+        "Redução de 80% em tarefas manuais",
+        "Precisão de 99%",
+        "Escalabilidade total"
+      ],
+      "price": "A partir de R$ 4.000/mês"
+    },
+    "customerAI": {
+      "name": "OnSmart Customer AI",
+      "description": "Agentes conversacionais avançados para atendimento e vendas",
+      "category": "Atendimento",
+      "features": [
+        "Chatbots Inteligentes",
+        "Análise de Sentimento",
+        "Escalabilidade Automática",
+        "Integração CRM"
+      ],
+      "benefits": [
+        "Atendimento 24/7",
+        "Satisfação +40%",
+        "Conversão +60%"
+      ],
+      "price": "A partir de R$ 1.800/mês"
+    },
+    "vision": {
+      "name": "OnSmart Vision",
+      "description": "Plataforma de visão computacional para análise de imagens e vídeos",
+      "category": "Visão Computacional",
+      "features": [
+        "Reconhecimento de Objetos",
+        "Análise Facial",
+        "Detecção de Anomalias",
+        "Processamento em Tempo Real"
+      ],
+      "benefits": [
+        "Precisão de 98%",
+        "Análise instantânea",
+        "Redução de custos"
+      ],
+      "price": "A partir de R$ 5.000/mês"
+    },
+    "brain": {
+      "name": "OnSmart Brain",
+      "description": "Modelos de IA proprietários treinados especificamente para seu negócio",
+      "category": "Modelos de IA",
+      "features": [
+        "Modelos Personalizados",
+        "Fine-tuning Avançado",
+        "Governança de Dados",
+        "Deploy Seguro"
+      ],
+      "benefits": [
+        "Performance superior",
+        "Dados proprietários",
+        "Compliance total"
+      ],
+      "price": "Sob consulta"
+    }
+  },
+  "categoryNames": {
+    "agentes": "Agentes de IA",
+    "analytics": "Analytics",
+    "automacao": "Automação",
+    "atendimento": "Atendimento",
+    "visao": "Visão Computacional",
+    "modelos": "Modelos de IA"
+  },
+  "features": {
+    "title": "Principais Recursos",
+    "titleBenefits": "Benefícios"
+  },
+  "price": {
+    "from": "A partir de"
+  },
+  "buttons": {
+    "viewDetails": "Ver Detalhes",
+    "requestDemo": "Solicitar Demo"
+  },
+  "whyChoose": {
+    "title": "Por que Escolher Nossos Produtos?",
+    "subtitle": "Desenvolvemos soluções próprias com foco na realidade brasileira e nas necessidades específicas do seu negócio"
+  },
+  "benefits": {
+    "national": {
+      "title": "100% Nacional",
+      "description": "Desenvolvido no Brasil para empresas brasileiras"
+    },
+    "security": {
+      "title": "Segurança Total",
+      "description": "LGPD compliant e infraestrutura segura"
+    },
+    "implementation": {
+      "title": "Implementação Rápida",
+      "description": "Deploy em até 30 dias úteis"
+    },
+    "support": {
+      "title": "Suporte Especializado",
+      "description": "Time dedicado e suporte 24/7"
+    }
+  },
+  "cta": {
+    "badge": "ÚLTIMAS 12 VAGAS - Junho 2025",
+    "title": "Transforme sua empresa com nossos produtos de IA",
+    "description": "Junte-se às 500+ empresas que já multiplicaram seus resultados com nossas soluções proprietárias. Implemente agentes de IA personalizados em 30 dias.",
+    "button": "Solicitar Demonstração Gratuita",
+    "stats": {
+      "roi": "ROI Médio em 6 meses",
+      "guarantee": "Garantia de Resultados",
+      "implementation": "Implementação Completa"
+    },
+    "benefits": {
+      "freeSetup": "Demo gratuita",
+      "noCommitment": "Sem compromisso inicial",
+      "guaranteedROI": "ROI garantido em 90 dias"
+    }
+  }
+}
+

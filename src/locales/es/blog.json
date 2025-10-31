@@ -1,0 +1,49 @@
+{
+  "seo": {
+    "title": "Blog - Artículos sobre IA y Transformación Digital | onsmartAI",
+    "description": "Accede a nuestro blog con artículos exclusivos sobre Inteligencia Artificial, transformación digital e innovación empresarial. Consejos prácticos e insights de especialistas."
+  },
+  "hero": {
+    "title": "Blog onsmartAI",
+    "subtitle": "Artículos exclusivos sobre IA y Transformación Digital",
+    "description": "Descubre insights valiosos, consejos prácticos y tendencias del mercado de Inteligencia Artificial para acelerar la transformación de tu empresa."
+  },
+  "filters": {
+    "all": "Todos los Artículos",
+    "ia": "Inteligencia Artificial",
+    "transformacao": "Transformación Digital",
+    "negocios": "Negocios",
+    "tecnologia": "Tecnología"
+  },
+  "search": {
+    "placeholder": "Buscar artículos...",
+    "noResults": "No se encontraron artículos",
+    "results": "artículos encontrados"
+  },
+  "article": {
+    "readMore": "Leer más",
+    "readTime": "min de lectura",
+    "publishedOn": "Publicado el",
+    "author": "Por",
+    "category": "Categoría",
+    "tags": "Etiquetas"
+  },
+  "cta": {
+    "title": "¿Quieres Recibir Nuestros Artículos?",
+    "subtitle": "Suscríbete a nuestro boletín y recibe el mejor contenido sobre IA directamente en tu email.",
+    "button": "Suscribirse",
+    "placeholder": "Tu mejor email",
+    "success": "¡Suscripción realizada con éxito!"
+  },
+  "pagination": {
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "page": "Página",
+    "of": "de"
+  },
+  "empty": {
+    "title": "No se encontraron artículos",
+    "description": "Intenta ajustar los filtros o hacer una nueva búsqueda.",
+    "button": "Ver Todos los Artículos"
+  }
+}

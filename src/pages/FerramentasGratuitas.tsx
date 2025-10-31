@@ -3,44 +3,47 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Calculator, CheckCircle, Target, Zap } from "lucide-react";
 import UnifiedSEO from "@/components/shared/UnifiedSEO";
+import { useTranslation } from 'react-i18next';
 
 const FerramentasGratuitas = () => {
+  const { t } = useTranslation(['ferramentasGratuitas', 'common']);
+  
   const ferramentas = [
     {
-      title: "Calculadora de ROI de IA",
-      description: "Calcule o retorno sobre investimento potencial da implementação de IA na sua empresa",
+      title: t('tools.roiCalculator.title'),
+      description: t('tools.roiCalculator.description'),
       icon: Calculator,
       url: "#",
-      category: "Análise Financeira"
+      category: t('tools.roiCalculator.category')
     },
     {
-      title: "Avaliador de Maturidade Digital",
-      description: "Descubra o nível de maturidade digital da sua empresa e áreas de melhoria",
+      title: t('tools.digitalMaturity.title'),
+      description: t('tools.digitalMaturity.description'),
       icon: CheckCircle,
       url: "#",
-      category: "Diagnóstico"
+      category: t('tools.digitalMaturity.category')
     },
     {
-      title: "Planejador de Automação",
-      description: "Identifique quais processos da sua empresa podem ser automatizados com IA",
+      title: t('tools.automationPlanner.title'),
+      description: t('tools.automationPlanner.description'),
       icon: Target,
       url: "#",
-      category: "Planejamento"
+      category: t('tools.automationPlanner.category')
     },
     {
-      title: "Simulador de Produtividade",
-      description: "Simule o ganho de produtividade com a implementação de agentes de IA",
+      title: t('tools.productivitySimulator.title'),
+      description: t('tools.productivitySimulator.description'),
       icon: Zap,
       url: "#",
-      category: "Simulação"
+      category: t('tools.productivitySimulator.category')
     }
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50/30">
       <UnifiedSEO 
-        title="Ferramentas Gratuitas de IA - Calculadoras e Simuladores | onsmartAI"
-        description="Acesse ferramentas gratuitas para avaliar o potencial de IA na sua empresa: calculadora de ROI, avaliador de maturidade digital e simuladores de produtividade."
+        title={t('seo.title')}
+        description={t('seo.description')}
         keywords="ferramentas gratuitas ia, calculadora roi ia, avaliador maturidade digital, simulador produtividade"
       />
       

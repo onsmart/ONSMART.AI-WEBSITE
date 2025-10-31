@@ -1,0 +1,28 @@
+{
+  "title": "Teste de Carregamento de Imagens",
+  "subtitle": "Verificando se as imagens do CMS estão carregando corretamente",
+  "loading": {
+    "title": "Carregando testes de imagem...",
+    "error": "Erro"
+  },
+  "instructions": {
+    "title": "Instruções para Teste",
+    "items": {
+      "1": "Verifique o console do navegador para logs de debug",
+      "2": "Teste URLs válidas: Devem carregar normalmente",
+      "3": "Teste URLs inválidas: Devem mostrar erro e fallback",
+      "4": "Teste URLs vazias: Devem mostrar \"Sem imagem\"",
+      "5": "Use o botão \"Abrir URL\" para testar URLs manualmente"
+    }
+  },
+  "testArticles": {
+    "1": "Teste 1 - Imagem válida",
+    "2": "Teste 2 - Imagem válida",
+    "3": "Teste 3 - URL inválida",
+    "4": "Teste 4 - Sem imagem"
+  },
+  "errors": {
+    "unknown": "Erro desconhecido"
+  }
+}
+

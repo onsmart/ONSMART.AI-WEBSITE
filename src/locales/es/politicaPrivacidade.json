@@ -1,0 +1,86 @@
+{
+  "seo": {
+    "title": "Política de Privacidad - onsmartAI",
+    "description": "Política de privacidad de onsmartAI. Conoce cómo protegemos tus datos personales y respetamos tu privacidad.",
+    "keywords": "política de privacidad, protección de datos, LGPD, privacidad, onsmartAI"
+  },
+  "title": "Política de Privacidad",
+  "lastUpdate": "Última actualización:",
+  "sections": {
+    "1": {
+      "title": "1. Introducción",
+      "content": "onsmartAI (\"nosotros\", \"nuestro\" o \"empresa\") está comprometida a proteger y respetar tu privacidad. Esta Política de Privacidad explica cómo recopilamos, usamos, divulgamos y protegemos tu información cuando visitas nuestro sitio web o utilizas nuestros servicios."
+    },
+    "2": {
+      "title": "2. Información que Recopilamos",
+      "subtitle1": "2.1 Información Personal",
+      "subtitle1Content": "Podemos recopilar la siguiente información personal:",
+      "personalInfo": [
+        "Nombre completo",
+        "Dirección de correo electrónico",
+        "Número de teléfono",
+        "Empresa y cargo",
+        "Información de contacto profesional"
+      ],
+      "subtitle2": "2.2 Información Técnica",
+      "technicalInfo": [
+        "Dirección IP",
+        "Tipo de navegador y versión",
+        "Sistema operativo",
+        "Páginas visitadas y tiempo de permanencia",
+        "Cookies y tecnologías similares"
+      ]
+    },
+    "3": {
+      "title": "3. Cómo Usamos tu Información",
+      "content": "Utilizamos tu información para:",
+      "items": [
+        "Proporcionar y mejorar nuestros servicios",
+        "Responder a tus consultas y solicitudes",
+        "Enviar comunicaciones de marketing (con tu consentimiento)",
+        "Análisis y mejora del sitio web",
+        "Cumplimiento de obligaciones legales"
+      ]
+    },
+    "4": {
+      "title": "4. Compartir Información",
+      "content": "No vendemos, alquilamos ni compartimos tu información personal con terceros, excepto en las siguientes circunstancias:",
+      "items": [
+        "Con tu consentimiento explícito",
+        "A proveedores de servicios que nos ayudan",
+        "Cuando lo exija la ley",
+        "Para proteger nuestros derechos legales"
+      ]
+    },
+    "5": {
+      "title": "5. Cookies",
+      "content": "Utilizamos cookies para mejorar tu experiencia en nuestro sitio web. Puedes configurar tu navegador para rechazar cookies, pero esto puede afectar la funcionalidad del sitio web."
+    },
+    "6": {
+      "title": "6. Tus Derechos (LGPD)",
+      "content": "Conforme a la Ley General de Protección de Datos (LGPD), tienes derecho a:",
+      "rights": [
+        "Confirmar la existencia de tratamiento de datos",
+        "Acceder a tus datos personales",
+        "Corregir datos incompletos o inexactos",
+        "Solicitar la eliminación de datos",
+        "Revocar consentimiento",
+        "Portabilidad de los datos"
+      ]
+    },
+    "7": {
+      "title": "7. Seguridad",
+      "content": "Implementamos medidas de seguridad técnicas y organizativas adecuadas para proteger tu información personal contra acceso no autorizado, alteración, divulgación o destrucción."
+    },
+    "8": {
+      "title": "8. Contacto",
+      "content": "Para ejercer tus derechos o aclarar dudas sobre esta Política de Privacidad, contáctanos:",
+      "contact": {
+        "email": "Email:",
+        "phone": "Teléfono:",
+        "whatsapp": "WhatsApp:"
+      }
+    }
+  }
+}
+

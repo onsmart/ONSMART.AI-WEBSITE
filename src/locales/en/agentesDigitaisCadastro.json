@@ -1,0 +1,22 @@
+{
+  "seo": {
+    "title": "Digital Agent Registration onsmartAI - Become a Referrer",
+    "description": "Register for free as an onsmartAI Digital Agent. Receive your exclusive link and start earning commissions by referring clients today.",
+    "keywords": "digital agent registration, referral link, affiliate program, extra income"
+  },
+  "header": {
+    "badge": "Digital Agent Registration",
+    "title": "Become a Digital Agent",
+    "subtitle": "100% free registration. Start earning commissions by referring companies to onsmartAI"
+  },
+  "submit": {
+    "processing": "Processing Registration...",
+    "button": "Complete Registration",
+    "helper": "You will receive your exclusive link by email in a few minutes"
+  },
+  "toast": {
+    "title": "Registration Completed!",
+    "description": "Welcome to the program! You will receive your exclusive link by email in a few minutes."
+  }
+}
+

@@ -1,0 +1,24 @@
+{
+  "title": "Admin Panel",
+  "subtitle": "Manage content, success cases and blog posts",
+  "tabs": {
+    "content": "Content",
+    "cases": "Success Cases",
+    "blog": "Blog"
+  },
+  "sections": {
+    "content": {
+      "title": "Manage Content",
+      "description": "Add, edit and manage e-books, articles, videos and other materials"
+    },
+    "cases": {
+      "title": "Manage Success Cases",
+      "description": "Add and edit case studies by sector"
+    },
+    "blog": {
+      "title": "Manage Blog",
+      "description": "Create and publish blog articles"
+    }
+  }
+}
+

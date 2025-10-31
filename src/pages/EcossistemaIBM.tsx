@@ -394,25 +394,19 @@ export default function Produtos() {
                         </div>
                       </div>
                       <CardDescription className="text-gray-600 leading-relaxed">
-                        Modelos de IA avançados para aplicações empresariais com segurança aprimorada
+                        {t('products.aiMLOps.categories.models.items.granite.description')}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">Principais Recursos</h4>
+                        <h4 className="font-semibold text-gray-900 mb-2">{t('products.aiMLOps.categories.models.items.granite.features.title')}</h4>
                         <ul className="space-y-1">
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Processamento de Linguagem Natural
-                          </li>
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            IA Multi-modal
-                          </li>
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Segurança Empresarial
-                          </li>
+                          {(t('products.aiMLOps.categories.models.items.granite.features.items', { returnObjects: true }) as string[]).map((feature, idx) => (
+                            <li key={idx} className="flex items-center text-sm text-gray-600">
+                              <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                              {feature}
+                            </li>
+                          ))}
                         </ul>
                       </div>
                       <div className="pt-4">
@@ -421,7 +415,7 @@ export default function Produtos() {
                           className="w-full flex items-center justify-center gap-2 border-2 border-brand-blue text-brand-blue hover:bg-gradient-to-r hover:from-brand-blue hover:via-blue-600 hover:to-brand-blue hover:text-white hover:border-transparent"
                           onClick={() => navigate('/produtos/granite')}
                         >
-                          {t('viewMore')}
+                          {t('common.viewMore', { ns: 'common' })}
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </div>
@@ -440,30 +434,24 @@ export default function Produtos() {
                           />
                         </div>
                         <div>
-                          <CardTitle className="text-xl">Meta Llama</CardTitle>
-                          <Badge variant="outline" className="mt-1">AI Models</Badge>
+                          <CardTitle className="text-xl">{t('products.aiMLOps.categories.models.items.metaLlama.name')}</CardTitle>
+                          <Badge variant="outline" className="mt-1">{t('products.aiMLOps.categories.models.title')}</Badge>
                         </div>
                       </div>
                       <CardDescription className="text-gray-600 leading-relaxed">
-                        Modelos de linguagem avançados para aplicações de IA generativa
+                        {t('products.aiMLOps.categories.models.items.metaLlama.description')}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">Principais Recursos</h4>
+                        <h4 className="font-semibold text-gray-900 mb-2">{t('products.aiMLOps.categories.models.items.metaLlama.features.title')}</h4>
                         <ul className="space-y-1">
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Geração de Texto Avançada
-                          </li>
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Compreensão de Contexto
-                          </li>
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Personalização de Modelos
-                          </li>
+                          {(t('products.aiMLOps.categories.models.items.metaLlama.features.items', { returnObjects: true }) as string[]).map((feature, idx) => (
+                            <li key={idx} className="flex items-center text-sm text-gray-600">
+                              <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                              {feature}
+                            </li>
+                          ))}
                         </ul>
                       </div>
                       <div className="pt-4">
@@ -491,30 +479,24 @@ export default function Produtos() {
                           />
                         </div>
                         <div>
-                          <CardTitle className="text-xl">Mistral</CardTitle>
-                          <Badge variant="outline" className="mt-1">AI Models</Badge>
+                          <CardTitle className="text-xl">{t('products.aiMLOps.categories.models.items.mistral.name')}</CardTitle>
+                          <Badge variant="outline" className="mt-1">{t('products.aiMLOps.categories.models.title')}</Badge>
                         </div>
                       </div>
                       <CardDescription className="text-gray-600 leading-relaxed">
-                        Modelos de IA de alta performance para aplicações empresariais
+                        {t('products.aiMLOps.categories.models.items.mistral.description')}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">Principais Recursos</h4>
+                        <h4 className="font-semibold text-gray-900 mb-2">{t('products.aiMLOps.categories.models.items.mistral.features.title')}</h4>
                         <ul className="space-y-1">
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Performance Otimizada
-                          </li>
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Eficiência Computacional
-                          </li>
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Flexibilidade de Deployment
-                          </li>
+                          {(t('products.aiMLOps.categories.models.items.mistral.features.items', { returnObjects: true }) as string[]).map((feature, idx) => (
+                            <li key={idx} className="flex items-center text-sm text-gray-600">
+                              <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                              {feature}
+                            </li>
+                          ))}
                         </ul>
                       </div>
                       <div className="pt-4">
@@ -550,30 +532,24 @@ export default function Produtos() {
                           />
                         </div>
                         <div>
-                          <CardTitle className="text-xl">watsonx.ai™</CardTitle>
-                          <Badge variant="outline" className="mt-1">AI Tools</Badge>
+                          <CardTitle className="text-xl">{t('products.aiMLOps.categories.tools.items.watsonxAI.name')}</CardTitle>
+                          <Badge variant="outline" className="mt-1">{t('products.aiMLOps.categories.tools.title')}</Badge>
                         </div>
                       </div>
                       <CardDescription className="text-gray-600 leading-relaxed">
-                        Trabalhe com modelos, ferramentas e governança de IA criados para negócios
+                        {t('products.aiMLOps.categories.tools.items.watsonxAI.description')}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">Principais Recursos</h4>
+                        <h4 className="font-semibold text-gray-900 mb-2">{t('products.aiMLOps.categories.tools.items.watsonxAI.features.title')}</h4>
                         <ul className="space-y-1">
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Treinamento de Modelos
-                          </li>
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Governança de IA
-                          </li>
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Inteligência Empresarial
-                          </li>
+                          {(t('products.aiMLOps.categories.tools.items.watsonxAI.features.items', { returnObjects: true }) as string[]).map((feature, idx) => (
+                            <li key={idx} className="flex items-center text-sm text-gray-600">
+                              <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                              {feature}
+                            </li>
+                          ))}
                         </ul>
                       </div>
                       <div className="pt-4">
@@ -606,30 +582,24 @@ export default function Produtos() {
                           />
                         </div>
                         <div>
-                          <CardTitle className="text-xl">watsonx.governance™</CardTitle>
-                          <Badge variant="outline" className="mt-1">AI Governance</Badge>
+                          <CardTitle className="text-xl">{t('products.aiMLOps.categories.governance.items.watsonxGovernance.name')}</CardTitle>
+                          <Badge variant="outline" className="mt-1">{t('products.aiMLOps.categories.governance.title')}</Badge>
                         </div>
                       </div>
                       <CardDescription className="text-gray-600 leading-relaxed">
-                        Governança completa de IA com transparência e responsabilidade
+                        {t('products.aiMLOps.categories.governance.items.watsonxGovernance.description')}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">Principais Recursos</h4>
+                        <h4 className="font-semibold text-gray-900 mb-2">{t('products.aiMLOps.categories.governance.items.watsonxGovernance.features.title')}</h4>
                         <ul className="space-y-1">
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Monitoramento de Modelos
-                          </li>
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Conformidade Regulatória
-                          </li>
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Auditoria de IA
-                          </li>
+                          {(t('products.aiMLOps.categories.governance.items.watsonxGovernance.features.items', { returnObjects: true }) as string[]).map((feature, idx) => (
+                            <li key={idx} className="flex items-center text-sm text-gray-600">
+                              <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                              {feature}
+                            </li>
+                          ))}
                         </ul>
                       </div>
                       <div className="pt-4">
@@ -650,13 +620,13 @@ export default function Produtos() {
               {/* Data Fabric */}
               <div className="space-y-4">
                 <div className="mb-4 ml-6">
-                  <h4 className="text-lg font-semibold text-gray-800">Data Fabric</h4>
-                  <p className="text-sm text-gray-600">Integração e otimização dos dados corporativos para IA e análises.</p>
+                  <h4 className="text-lg font-semibold text-gray-800">{t('products.dataFabric.title')}</h4>
+                  <p className="text-sm text-gray-600">{t('products.dataFabric.description')}</p>
                 </div>
                 
                 {/* Databases */}
                 <div className="ml-6 space-y-3">
-                  <h5 className="text-md font-medium text-gray-700">Databases</h5>
+                  <h5 className="text-md font-medium text-gray-700">{t('products.dataFabric.categories.databases.title')}</h5>
                   
                   {/* watsonx.data™ */}
                   <Card className="hover:shadow-lg transition-shadow">
@@ -720,30 +690,24 @@ export default function Produtos() {
                           />
                         </div>
                         <div>
-                          <CardTitle className="text-xl">Data Product Hub</CardTitle>
-                          <Badge variant="outline" className="mt-1">Data Intelligence</Badge>
+                          <CardTitle className="text-xl">{t('products.dataFabric.categories.intelligence.items.dataProductHub.name')}</CardTitle>
+                          <Badge variant="outline" className="mt-1">{t('products.dataFabric.categories.intelligence.title')}</Badge>
                         </div>
                       </div>
                       <CardDescription className="text-gray-600 leading-relaxed">
-                        Plataforma centralizada para gerenciar e descobrir produtos de dados
+                        {t('products.dataFabric.categories.intelligence.items.dataProductHub.description')}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">Principais Recursos</h4>
+                        <h4 className="font-semibold text-gray-900 mb-2">{t('products.dataFabric.categories.intelligence.items.dataProductHub.features.title')}</h4>
                         <ul className="space-y-1">
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Catálogo de Dados
-                          </li>
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Gerenciamento de Metadados
-                          </li>
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Linhagem de Dados
-                          </li>
+                          {(t('products.dataFabric.categories.intelligence.items.dataProductHub.features.items', { returnObjects: true }) as string[]).map((feature, idx) => (
+                            <li key={idx} className="flex items-center text-sm text-gray-600">
+                              <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                              {feature}
+                            </li>
+                          ))}
                         </ul>
                       </div>
                       <div className="pt-4">
@@ -771,30 +735,24 @@ export default function Produtos() {
                           />
                         </div>
                         <div>
-                          <CardTitle className="text-xl">Knowledge Catalog</CardTitle>
-                          <Badge variant="outline" className="mt-1">Data Intelligence</Badge>
+                          <CardTitle className="text-xl">{t('products.dataFabric.categories.intelligence.items.knowledgeCatalog.name')}</CardTitle>
+                          <Badge variant="outline" className="mt-1">{t('products.dataFabric.categories.intelligence.title')}</Badge>
                         </div>
                       </div>
                       <CardDescription className="text-gray-600 leading-relaxed">
-                        Catálogo inteligente de dados com governança e descoberta
+                        {t('products.dataFabric.categories.intelligence.items.knowledgeCatalog.description')}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">Principais Recursos</h4>
+                        <h4 className="font-semibold text-gray-900 mb-2">{t('products.dataFabric.categories.intelligence.items.knowledgeCatalog.features.title')}</h4>
                         <ul className="space-y-1">
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Descoberta de Dados
-                          </li>
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Governança de Metadados
-                          </li>
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Colaboração de Dados
-                          </li>
+                          {(t('products.dataFabric.categories.intelligence.items.knowledgeCatalog.features.items', { returnObjects: true }) as string[]).map((feature, idx) => (
+                            <li key={idx} className="flex items-center text-sm text-gray-600">
+                              <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                              {feature}
+                            </li>
+                          ))}
                         </ul>
                       </div>
                       <div className="pt-4">
@@ -822,30 +780,24 @@ export default function Produtos() {
                           />
                         </div>
                         <div>
-                          <CardTitle className="text-xl">Manta Data Lineage</CardTitle>
-                          <Badge variant="outline" className="mt-1">Data Intelligence</Badge>
+                          <CardTitle className="text-xl">{t('products.dataFabric.categories.intelligence.items.mantaDataLineage.name')}</CardTitle>
+                          <Badge variant="outline" className="mt-1">{t('products.dataFabric.categories.intelligence.title')}</Badge>
                         </div>
                       </div>
                       <CardDescription className="text-gray-600 leading-relaxed">
-                        Rastreamento automático de linhagem de dados em toda a organização
+                        {t('products.dataFabric.categories.intelligence.items.mantaDataLineage.description')}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">Principais Recursos</h4>
+                        <h4 className="font-semibold text-gray-900 mb-2">{t('products.dataFabric.categories.intelligence.items.mantaDataLineage.features.title')}</h4>
                         <ul className="space-y-1">
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Rastreamento Automático
-                          </li>
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Visualização de Fluxo
-                          </li>
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Impacto de Mudanças
-                          </li>
+                          {(t('products.dataFabric.categories.intelligence.items.mantaDataLineage.features.items', { returnObjects: true }) as string[]).map((feature, idx) => (
+                            <li key={idx} className="flex items-center text-sm text-gray-600">
+                              <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                              {feature}
+                            </li>
+                          ))}
                         </ul>
                       </div>
                       <div className="pt-4">
@@ -864,7 +816,7 @@ export default function Produtos() {
 
                 {/* Data Integration */}
                 <div className="ml-6 space-y-3">
-                  <h5 className="text-md font-medium text-gray-700">Data Integration</h5>
+                  <h5 className="text-md font-medium text-gray-700">{t('products.dataFabric.categories.integration.title')}</h5>
                   
                   {/* DataStage® */}
                   <Card className="hover:shadow-lg transition-shadow">
@@ -878,30 +830,24 @@ export default function Produtos() {
                           />
                         </div>
                         <div>
-                          <CardTitle className="text-xl">DataStage®</CardTitle>
-                          <Badge variant="outline" className="mt-1">Data Integration</Badge>
+                          <CardTitle className="text-xl">{t('products.dataFabric.categories.integration.items.datastage.name')}</CardTitle>
+                          <Badge variant="outline" className="mt-1">{t('products.dataFabric.categories.integration.title')}</Badge>
                         </div>
                       </div>
                       <CardDescription className="text-gray-600 leading-relaxed">
-                        Plataforma empresarial de integração e transformação de dados
+                        {t('products.dataFabric.categories.integration.items.datastage.description')}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">Principais Recursos</h4>
+                        <h4 className="font-semibold text-gray-900 mb-2">{t('products.dataFabric.categories.integration.items.datastage.features.title')}</h4>
                         <ul className="space-y-1">
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Processamento ETL
-                          </li>
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Qualidade de Dados
-                          </li>
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Processamento Paralelo
-                          </li>
+                          {(t('products.dataFabric.categories.integration.items.datastage.features.items', { returnObjects: true }) as string[]).map((feature, idx) => (
+                            <li key={idx} className="flex items-center text-sm text-gray-600">
+                              <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                              {feature}
+                            </li>
+                          ))}
                         </ul>
                       </div>
                       <div className="pt-4">
@@ -929,30 +875,24 @@ export default function Produtos() {
                           />
                         </div>
                         <div>
-                          <CardTitle className="text-xl">Databand®</CardTitle>
-                          <Badge variant="outline" className="mt-1">Data Integration</Badge>
+                          <CardTitle className="text-xl">{t('products.dataFabric.categories.integration.items.databand.name')}</CardTitle>
+                          <Badge variant="outline" className="mt-1">{t('products.dataFabric.categories.integration.title')}</Badge>
                         </div>
                       </div>
                       <CardDescription className="text-gray-600 leading-relaxed">
-                        Observabilidade completa de dados para pipelines e workflows
+                        {t('products.dataFabric.categories.integration.items.databand.description')}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">Principais Recursos</h4>
+                        <h4 className="font-semibold text-gray-900 mb-2">{t('products.dataFabric.categories.integration.items.databand.features.title')}</h4>
                         <ul className="space-y-1">
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Monitoramento de Pipelines
-                          </li>
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Detecção de Anomalias
-                          </li>
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Alertas Inteligentes
-                          </li>
+                          {(t('products.dataFabric.categories.integration.items.databand.features.items', { returnObjects: true }) as string[]).map((feature, idx) => (
+                            <li key={idx} className="flex items-center text-sm text-gray-600">
+                              <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                              {feature}
+                            </li>
+                          ))}
                         </ul>
                       </div>
                       <div className="pt-4">
@@ -980,30 +920,24 @@ export default function Produtos() {
                           />
                         </div>
                         <div>
-                          <CardTitle className="text-xl">Streamsets</CardTitle>
-                          <Badge variant="outline" className="mt-1">Data Integration</Badge>
+                          <CardTitle className="text-xl">{t('products.dataFabric.categories.integration.items.streamsets.name')}</CardTitle>
+                          <Badge variant="outline" className="mt-1">{t('products.dataFabric.categories.integration.title')}</Badge>
                         </div>
                       </div>
                       <CardDescription className="text-gray-600 leading-relaxed">
-                        Plataforma de integração de dados em tempo real e streaming
+                        {t('products.dataFabric.categories.integration.items.streamsets.description')}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">Principais Recursos</h4>
+                        <h4 className="font-semibold text-gray-900 mb-2">{t('products.dataFabric.categories.integration.items.streamsets.features.title')}</h4>
                         <ul className="space-y-1">
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Streaming de Dados
-                          </li>
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Transformação em Tempo Real
-                          </li>
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Monitoramento de Performance
-                          </li>
+                          {(t('products.dataFabric.categories.integration.items.streamsets.features.items', { returnObjects: true }) as string[]).map((feature, idx) => (
+                            <li key={idx} className="flex items-center text-sm text-gray-600">
+                              <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                              {feature}
+                            </li>
+                          ))}
                         </ul>
                       </div>
                       <div className="pt-4">
@@ -1022,7 +956,7 @@ export default function Produtos() {
 
                 {/* Data Security */}
                 <div className="ml-6 space-y-3">
-                  <h5 className="text-md font-medium text-gray-700">Data Security</h5>
+                  <h5 className="text-md font-medium text-gray-700">{t('products.dataFabric.categories.security.title')}</h5>
                   
                   {/* Guardium® Data Security Center */}
                   <Card className="hover:shadow-lg transition-shadow">
@@ -1036,30 +970,24 @@ export default function Produtos() {
                           />
                         </div>
                         <div>
-                          <CardTitle className="text-xl">Guardium® Data Security Center</CardTitle>
-                          <Badge variant="outline" className="mt-1">Data Security</Badge>
+                          <CardTitle className="text-xl">{t('products.dataFabric.categories.security.items.guardium.name')}</CardTitle>
+                          <Badge variant="outline" className="mt-1">{t('products.dataFabric.categories.security.title')}</Badge>
                         </div>
                       </div>
                       <CardDescription className="text-gray-600 leading-relaxed">
-                        Centro de segurança de dados com proteção avançada e conformidade
+                        {t('products.dataFabric.categories.security.items.guardium.description')}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">Principais Recursos</h4>
+                        <h4 className="font-semibold text-gray-900 mb-2">{t('products.dataFabric.categories.security.items.guardium.features.title')}</h4>
                         <ul className="space-y-1">
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Proteção de Dados Sensíveis
-                          </li>
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Monitoramento de Acesso
-                          </li>
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Conformidade Regulatória
-                          </li>
+                          {(t('products.dataFabric.categories.security.items.guardium.features.items', { returnObjects: true }) as string[]).map((feature, idx) => (
+                            <li key={idx} className="flex items-center text-sm text-gray-600">
+                              <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                              {feature}
+                            </li>
+                          ))}
                         </ul>
                       </div>
                       <div className="pt-4">
@@ -1080,13 +1008,13 @@ export default function Produtos() {
               {/* Data Storage */}
               <div className="space-y-4">
                 <div className="mb-4 ml-6">
-                  <h4 className="text-lg font-semibold text-gray-800">Data Storage</h4>
-                  <p className="text-sm text-gray-600">Armazenamento em borda, núcleo e nuvem.</p>
+                  <h4 className="text-lg font-semibold text-gray-800">{t('products.dataStorage.title')}</h4>
+                  <p className="text-sm text-gray-600">{t('products.dataStorage.description')}</p>
                 </div>
                 
                 {/* Software-defined Storage */}
                 <div className="ml-6 space-y-3">
-                  <h5 className="text-md font-medium text-gray-700">Software-defined Storage</h5>
+                  <h5 className="text-md font-medium text-gray-700">{t('products.dataStorage.categories.storage.title')}</h5>
                   
                   {/* Storage Ceph® */}
                   <Card className="hover:shadow-lg transition-shadow">
@@ -1100,30 +1028,24 @@ export default function Produtos() {
                           />
                         </div>
                         <div>
-                          <CardTitle className="text-xl">Storage Ceph®</CardTitle>
-                          <Badge variant="outline" className="mt-1">Storage Solution</Badge>
+                          <CardTitle className="text-xl">{t('products.dataStorage.categories.storage.items.storageCeph.name')}</CardTitle>
+                          <Badge variant="outline" className="mt-1">{t('products.dataStorage.categories.storage.title')}</Badge>
                         </div>
                       </div>
                       <CardDescription className="text-gray-600 leading-relaxed">
-                        Plataforma de armazenamento distribuído e escalável para dados empresariais
+                        {t('products.dataStorage.categories.storage.items.storageCeph.description')}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">Principais Recursos</h4>
+                        <h4 className="font-semibold text-gray-900 mb-2">{t('products.dataStorage.categories.storage.items.storageCeph.features.title')}</h4>
                         <ul className="space-y-1">
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Armazenamento Distribuído
-                          </li>
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Alta Disponibilidade
-                          </li>
-                          <li className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                            Escalabilidade Horizontal
-                          </li>
+                          {(t('products.dataStorage.categories.storage.items.storageCeph.features.items', { returnObjects: true }) as string[]).map((feature, idx) => (
+                            <li key={idx} className="flex items-center text-sm text-gray-600">
+                              <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                              {feature}
+                            </li>
+                          ))}
                         </ul>
                       </div>
                       <div className="pt-4">
@@ -1132,7 +1054,7 @@ export default function Produtos() {
                           className="w-full flex items-center justify-center gap-2 border-2 border-brand-blue text-brand-blue hover:bg-gradient-to-r hover:from-brand-blue hover:via-blue-600 hover:to-brand-blue hover:text-white hover:border-transparent"
                           onClick={() => navigate('/produtos/storage-ceph')}
                         >
-                          {t('viewMore')}
+                          {t('common.viewMore', { ns: 'common' })}
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </div>

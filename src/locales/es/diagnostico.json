@@ -1,0 +1,93 @@
+{
+  "seo": {
+    "title": "Diagnóstico Gratuito de IA - Análisis Personalizado | onsmartAI",
+    "description": "Solicita tu diagnóstico gratuito de IA y descubre cómo la Inteligencia Artificial puede transformar tu empresa. Análisis personalizado en 45 minutos."
+  },
+  "hero": {
+    "title": "Diagnóstico Gratuito de IA",
+    "subtitle": "Descubre el potencial de ahorro de IA en tu empresa",
+    "description": "Recibe un análisis personalizado y descubre cómo la Inteligencia Artificial puede reducir costos y aumentar la eficiencia de tu negocio."
+  },
+  "success": {
+    "title": "¡Diagnóstico Agendado!",
+    "message": "✓ ¡Solicitud recibida!",
+    "responseTime": "Nuestro equipo se pondrá en contacto en",
+    "responseTimeValue": "24 horas",
+    "responseTimeEnd": "para agendar tu diagnóstico.",
+    "diagnosticTime": "Diagnóstico personalizado en 45 minutos",
+    "freeGuarantee": "100% gratuito y sin compromiso",
+    "scheduleAnother": "Agendar Otro Diagnóstico",
+    "backToHome": "Volver al Inicio"
+  },
+  "form": {
+    "title": "Solicita Tu Diagnóstico",
+    "subtitle": "Completa el formulario y recibe tu análisis personalizado",
+    "name": {
+      "label": "Nombre Completo",
+      "placeholder": "Ingresa tu nombre completo"
+    },
+    "email": {
+      "label": "Email Profesional",
+      "placeholder": "tu@empresa.com"
+    },
+    "phone": {
+      "label": "Teléfono/WhatsApp",
+      "placeholder": "(11) 99999-9999"
+    },
+    "company": {
+      "label": "Nombre de la Empresa",
+      "placeholder": "Nombre de tu empresa"
+    },
+    "employees": {
+      "label": "Número de Empleados",
+      "placeholder": "Selecciona el tamaño de la empresa",
+      "options": {
+        "1-10": "1-10 empleados",
+        "11-50": "11-50 empleados",
+        "51-200": "51-200 empleados",
+        "201-500": "201-500 empleados",
+        "500+": "Más de 500 empleados"
+      }
+    },
+    "sector": {
+      "label": "Sector de Actuación",
+      "placeholder": "Selecciona tu sector",
+      "options": {
+        "tecnologia": "Tecnología",
+        "saude": "Salud",
+        "financeiro": "Financiero",
+        "varejo": "Retail",
+        "industria": "Industria",
+        "servicos": "Servicios",
+        "outros": "Otros"
+      }
+    },
+    "currentChallenges": {
+      "label": "Principales Desafíos Actuales",
+      "placeholder": "Describe brevemente los principales desafíos de tu empresa..."
+    },
+    "submit": "Solicitar Diagnóstico",
+    "sending": "Enviando...",
+    "required": "Campo obligatorio"
+  },
+  "benefits": {
+    "title": "Lo que recibes en el diagnóstico:",
+    "items": [
+      "Análisis personalizado del potencial de IA",
+      "Identificación de procesos para automatización",
+      "Proyección de ahorros y ROI",
+      "Hoja de ruta de implementación",
+      "Contacto de nuestro equipo en 24 horas"
+    ]
+  },
+  "guarantee": {
+    "title": "Nuestra Garantía",
+    "description": "Diagnóstico 100% gratuito, sin compromiso y enfocado en resultados reales para tu empresa."
+  },
+  "cta": {
+    "title": "¿Listo para Descubrir el Potencial de la IA?",
+    "subtitle": "Solicita tu diagnóstico gratuito y ve cómo la Inteligencia Artificial puede transformar tu empresa.",
+    "button": "Solicitar Diagnóstico Gratuito"
+  }
+}
+

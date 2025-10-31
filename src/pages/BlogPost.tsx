@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowLeft, Calendar, User, Clock, Share2 } from 'lucide-react';
@@ -8,6 +9,7 @@ import UnifiedSEO from '@/components/shared/UnifiedSEO';
 
 const BlogPost = () => {
   const { slug } = useParams();
+  const { t } = useTranslation(['blogPost', 'common']);
 
   // Mock data - em um projeto real, isso viria de uma API ou CMS
   const post = {
@@ -41,8 +43,8 @@ const BlogPost = () => {
     <>
       <UnifiedSEO 
         title={`${post.title} | Blog onsmartAI`}
-        description="Aprenda como implementar Agentes de IA na sua empresa em 30 dias com nossa metodologia LÍDER comprovada."
-        keywords="implementação ia, agentes ia, metodologia líder, automação empresarial"
+        description={t('seo.description')}
+        keywords={t('seo.keywords')}
       />
       
       <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
@@ -51,7 +53,7 @@ const BlogPost = () => {
           <Button asChild variant="ghost" className="mb-8">
             <Link to="/blog">
               <ArrowLeft className="mr-2 h-4 w-4" />
-              Voltar ao Blog
+              {t('backButton')}
             </Link>
           </Button>
 
@@ -69,7 +71,7 @@ const BlogPost = () => {
                 </div>
                 <div className="flex items-center gap-1">
                   <Clock className="h-4 w-4" />
-                  {post.readTime} de leitura
+                  {post.readTime} {t('readTime')}
                 </div>
               </div>
 
@@ -83,7 +85,7 @@ const BlogPost = () => {
                 </span>
                 <Button variant="outline" size="sm">
                   <Share2 className="mr-2 h-4 w-4" />
-                  Compartilhar
+                  {t('share')}
                 </Button>
               </div>
 
@@ -97,28 +99,28 @@ const BlogPost = () => {
 
           {/* Related Articles */}
           <section className="mt-16">
-            <h2 className="text-2xl font-bold mb-8">Artigos Relacionados</h2>
+            <h2 className="text-2xl font-bold mb-8">{t('related.title')}</h2>
             <div className="grid md:grid-cols-2 gap-6">
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <h3 className="font-semibold mb-2">5 Erros Comuns na Implementação de IA</h3>
+                  <h3 className="font-semibold mb-2">{t('related.article1.title')}</h3>
                   <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
-                    Evite os principais erros que podem comprometer seu projeto de IA empresarial.
+                    {t('related.article1.description')}
                   </p>
                   <Link to="/blog/erros-implementacao-ia" className="text-brand-blue hover:underline text-sm font-medium">
-                    Ler artigo →
+                    {t('related.article1.link')}
                   </Link>
                 </CardContent>
               </Card>
 
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <h3 className="font-semibold mb-2">ROI em Projetos de IA: Como Calcular</h3>
+                  <h3 className="font-semibold mb-2">{t('related.article2.title')}</h3>
                   <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
-                    Aprenda a calcular e apresentar o retorno sobre investimento em IA.
+                    {t('related.article2.description')}
                   </p>
                   <Link to="/blog/roi-projetos-ia" className="text-brand-blue hover:underline text-sm font-medium">
-                    Ler artigo →
+                    {t('related.article2.link')}
                   </Link>
                 </CardContent>
               </Card>

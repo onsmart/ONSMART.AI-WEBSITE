@@ -1,0 +1,49 @@
+{
+  "seo": {
+    "title": "Blog - AI and Digital Transformation Articles | onsmartAI",
+    "description": "Access our blog with exclusive articles about Artificial Intelligence, digital transformation and business innovation. Practical tips and expert insights."
+  },
+  "hero": {
+    "title": "onsmartAI Blog",
+    "subtitle": "Exclusive articles about AI and Digital Transformation",
+    "description": "Discover valuable insights, practical tips and Artificial Intelligence market trends to accelerate your company's transformation."
+  },
+  "filters": {
+    "all": "All Articles",
+    "ia": "Artificial Intelligence",
+    "transformacao": "Digital Transformation",
+    "negocios": "Business",
+    "tecnologia": "Technology"
+  },
+  "search": {
+    "placeholder": "Search articles...",
+    "noResults": "No articles found",
+    "results": "articles found"
+  },
+  "article": {
+    "readMore": "Read more",
+    "readTime": "min read",
+    "publishedOn": "Published on",
+    "author": "By",
+    "category": "Category",
+    "tags": "Tags"
+  },
+  "cta": {
+    "title": "Want to Receive Our Articles?",
+    "subtitle": "Subscribe to our newsletter and receive the best AI content directly in your email.",
+    "button": "Subscribe",
+    "placeholder": "Your best email",
+    "success": "Subscription successful!"
+  },
+  "pagination": {
+    "previous": "Previous",
+    "next": "Next",
+    "page": "Page",
+    "of": "of"
+  },
+  "empty": {
+    "title": "No articles found",
+    "description": "Try adjusting the filters or doing a new search.",
+    "button": "View All Articles"
+  }
+}

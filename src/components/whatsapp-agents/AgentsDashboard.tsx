@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -19,6 +20,7 @@ import RealTimeMetrics from './RealTimeMetrics';
 import WhatsappSimulator from './WhatsappSimulator';
 
 const AgentsDashboard: React.FC = () => {
+  const { t } = useTranslation(['whatsappAgents', 'common']);
   const { 
     isServiceReady, 
     isLoading, 
@@ -31,7 +33,7 @@ const AgentsDashboard: React.FC = () => {
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 p-6 flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-          <p className="text-gray-600 dark:text-gray-400">Inicializando Agentes de IA...</p>
+          <p className="text-gray-600 dark:text-gray-400">{t('dashboard.loading')}</p>
         </div>
       </div>
     );
@@ -49,10 +51,10 @@ const AgentsDashboard: React.FC = () => {
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
-              Dashboard Agentes IA - WhatsApp
+              {t('dashboard.title')}
             </h1>
             <p className="text-gray-600 dark:text-gray-400">
-              Sistema de atendimento automatizado para vendas
+              {t('dashboard.subtitle')}
             </p>
           </div>
           <div className="flex items-center gap-4">
@@ -60,12 +62,12 @@ const AgentsDashboard: React.FC = () => {
               {isServiceReady ? (
                 <>
                   <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                  <span className="text-sm text-gray-600 dark:text-gray-400">Sistema Online</span>
+                  <span className="text-sm text-gray-600 dark:text-gray-400">{t('dashboard.status.online')}</span>
                 </>
               ) : (
                 <>
                   <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                  <span className="text-sm text-gray-600 dark:text-gray-400">Sistema Offline</span>
+                  <span className="text-sm text-gray-600 dark:text-gray-400">{t('dashboard.status.offline')}</span>
                 </>
               )}
             </div>
@@ -77,7 +79,7 @@ const AgentsDashboard: React.FC = () => {
           <Alert>
             <AlertTriangle className="h-4 w-4" />
             <AlertDescription>
-              O sistema WhatsApp não está configurado. Acesse a <a href="/admin/whatsapp" className="underline">configuração</a> para ativar os agentes.
+              {t('dashboard.alert.description')} <a href="/admin/whatsapp" className="underline">{t('dashboard.alert.link')}</a> {t('dashboard.alert.linkEnd')}
             </AlertDescription>
           </Alert>
         )}
@@ -303,30 +305,30 @@ const AgentsDashboard: React.FC = () => {
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <div className="space-y-2">
-                    <h4 className="font-medium">Teste de Triagem:</h4>
+                    <h4 className="font-medium">{t('dashboard.tests.screening.title')}</h4>
                     <p className="text-sm text-muted-foreground bg-gray-100 dark:bg-gray-800 p-2 rounded">
-                      "Olá! Gostaria de saber mais sobre os Agentes de IA da onsmart."
+                      "{t('dashboard.tests.screening.message')}"
                     </p>
                   </div>
                   
                   <div className="space-y-2">
-                    <h4 className="font-medium">Teste Comercial:</h4>
+                    <h4 className="font-medium">{t('dashboard.tests.commercial.title')}</h4>
                     <p className="text-sm text-muted-foreground bg-gray-100 dark:bg-gray-800 p-2 rounded">
-                      "Qual o preço dos Agentes de IA? Gostaria de uma proposta."
+                      "{t('dashboard.tests.commercial.message')}"
                     </p>
                   </div>
                   
                   <div className="space-y-2">
-                    <h4 className="font-medium">Teste Técnico:</h4>
+                    <h4 className="font-medium">{t('dashboard.tests.technical.title')}</h4>
                     <p className="text-sm text-muted-foreground bg-gray-100 dark:bg-gray-800 p-2 rounded">
-                      "Como funciona a implementação? Preciso integrar com meu sistema."
+                      "{t('dashboard.tests.technical.message')}"
                     </p>
                   </div>
                   
                   <div className="space-y-2">
-                    <h4 className="font-medium">Teste Demo:</h4>
+                    <h4 className="font-medium">{t('dashboard.tests.demo.title')}</h4>
                     <p className="text-sm text-muted-foreground bg-gray-100 dark:bg-gray-800 p-2 rounded">
-                      "Gostaria de agendar uma demonstração dos Agentes de IA."
+                      "{t('dashboard.tests.demo.message')}"
                     </p>
                   </div>
                 </CardContent>

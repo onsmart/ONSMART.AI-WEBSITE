@@ -1,0 +1,54 @@
+{
+  "seo": {
+    "title": "WhatsApp AI Agents System - onsmart.AI",
+    "description": "Complete dashboard to manage multiple AI agents specialized in sales support via WhatsApp. Intelligent automation, automatic routing and real-time analytics."
+  },
+  "dashboard": {
+    "title": "AI Agents Dashboard - WhatsApp",
+    "subtitle": "Automated sales support system",
+    "status": {
+      "online": "System Online",
+      "offline": "System Offline"
+    },
+    "alert": {
+      "title": "WhatsApp system is not configured",
+      "description": "WhatsApp system is not configured. Access the",
+      "link": "configuration",
+      "linkEnd": "to activate agents."
+    },
+    "loading": "Initializing AI Agents...",
+    "tabs": {
+      "agents": "Agents",
+      "conversations": "Conversations",
+      "analytics": "Analytics",
+      "tests": "Tests"
+    },
+    "metrics": {
+      "totalConversations": "Total Conversations",
+      "agentsOnline": "Agents Online",
+      "avgResponseTime": "Average Response Time",
+      "conversionRate": "Conversion Rate"
+    },
+    "tests": {
+      "title": "Quick Tests",
+      "subtitle": "Test agents with pre-configured messages",
+      "screening": {
+        "title": "Screening Test:",
+        "message": "Hello! I would like to know more about onsmart's AI Agents."
+      },
+      "commercial": {
+        "title": "Commercial Test:",
+        "message": "What is the price of AI Agents? I would like a proposal."
+      },
+      "technical": {
+        "title": "Technical Test:",
+        "message": "How does the implementation work? I need to integrate with my system."
+      },
+      "demo": {
+        "title": "Demo Test:",
+        "message": "I would like to schedule a demonstration of AI Agents."
+      }
+    }
+  }
+}
+

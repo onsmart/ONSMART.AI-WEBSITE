@@ -1,0 +1,49 @@
+{
+  "seo": {
+    "title": "Materiales Gratuitos de IA - E-books y Guías | onsmartAI",
+    "description": "Descarga gratuitamente nuestros e-books, guías y plantillas sobre Inteligencia Artificial empresarial. Contenido especializado para acelerar tu viaje con IA."
+  },
+  "hero": {
+    "title": "Materiales Gratuitos",
+    "subtitle": "E-books, guías y plantillas especializadas",
+    "description": "Descarga gratuitamente nuestros materiales exclusivos sobre IA empresarial y acelera tu transformación digital."
+  },
+  "materials": {
+    "completeGuide": {
+      "title": "Guía Completa de IA para Empresas",
+      "description": "Una guía integral sobre cómo implementar Inteligencia Artificial en tu empresa",
+      "pages": "45 páginas"
+    },
+    "implementationChecklist": {
+      "title": "Lista de Verificación de Implementación de Agentes",
+      "description": "Lista completa de verificación para implementar agentes de IA con éxito",
+      "pages": "12 páginas"
+    },
+    "roiTemplate": {
+      "title": "Plantilla de ROI para IA",
+      "description": "Hoja de cálculo para calcular el retorno de inversión en proyectos de IA",
+      "pages": "Plantilla Excel"
+    },
+    "leaderMethodology": {
+      "title": "Metodología LÍDER",
+      "description": "E-book completo sobre nuestra metodología propietaria de implementación",
+      "pages": "67 páginas"
+    }
+  },
+  "buttons": {
+    "download": "Descargar Ahora",
+    "learnMore": "Saber Más",
+    "viewAll": "Ver Todos"
+  },
+  "stats": {
+    "downloads": "Descargas",
+    "users": "Usuarios",
+    "materials": "Materiales"
+  },
+  "cta": {
+    "title": "¿Listo para Transformar tu Empresa?",
+    "subtitle": "Habla con nuestros especialistas y descubre cómo la IA puede acelerar tus resultados",
+    "button": "Hablar con Especialista"
+  }
+}
+

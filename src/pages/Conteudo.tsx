@@ -4,18 +4,20 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, BookOpen, FileText, Video, Download, Users, TrendingUp, CheckCircle, Play, Calendar, GraduationCap, Wrench, BarChart3, Image, FileCheck, Calculator, Lightbulb, Target, Zap } from "lucide-react";
 import UnifiedSEO from "@/components/shared/UnifiedSEO";
+import { useTranslation } from 'react-i18next';
 
 const contentCategories = [
-  { id: 'artigos', name: 'Artigos & Guias', icon: FileText },
-  { id: 'videos', name: 'Vídeos', icon: Play },
-  { id: 'ebooks', name: 'E-books', icon: BookOpen },
-  { id: 'templates', name: 'Templates', icon: FileCheck },
-  { id: 'checklists', name: 'Checklists', icon: CheckCircle },
-  { id: 'calculadoras', name: 'Calculadoras', icon: Calculator }
+  { id: 'artigos', name: 'conteudo:categories.artigos', icon: FileText },
+  { id: 'videos', name: 'conteudo:categories.videos', icon: Play },
+  { id: 'ebooks', name: 'conteudo:categories.ebooks', icon: BookOpen },
+  { id: 'templates', name: 'conteudo:categories.templates', icon: FileCheck },
+  { id: 'checklists', name: 'conteudo:categories.checklists', icon: CheckCircle },
+  { id: 'calculadoras', name: 'conteudo:categories.calculadoras', icon: Calculator }
 ];
 
 const Conteudo = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation(['conteudo', 'common']);
   const [selectedCategory, setSelectedCategory] = useState('artigos');
   const [contentData, setContentData] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);

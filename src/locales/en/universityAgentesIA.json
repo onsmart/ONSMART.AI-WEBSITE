@@ -1,0 +1,96 @@
+{
+  "seo": {
+    "title": "AI Agents - Advanced Implementation Course | onsmartAI University",
+    "description": "Master the implementation of enterprise AI Agents. Advanced course with LÍDER methodology and real practical cases.",
+    "keywords": "ai agents course, ai agents implementation, lider methodology, advanced enterprise ai"
+  },
+  "hero": {
+    "badge": "onsmartAI University - Advanced",
+    "title": "AI Agents",
+    "subtitle": "Master the implementation of AI Agents as autonomous workforce in your company",
+    "rating": "4.9/5 (127 reviews)",
+    "buttons": {
+      "startCourse": "Start Course",
+      "downloadSyllabus": "Complete Syllabus"
+    }
+  },
+  "curriculum": {
+    "title": "Curriculum",
+    "titleHighlight": "Complete",
+    "modules": {
+      "1": {
+        "title": "Fundamentals of AI Agents",
+        "description": "Understand the architecture and operation of enterprise AI Agents.",
+        "items": [
+          "Types of agents (reactive, cognitive, collaborative)",
+          "Multi-agent system architecture",
+          "Inter-agent communication"
+        ]
+      },
+      "2": {
+        "title": "LÍDER Methodology",
+        "description": "Our proprietary methodology for structured AI implementation.",
+        "items": [
+          "L - Process mapping",
+          "Í - Opportunity identification",
+          "D - Agent development",
+          "E - Execution and implementation",
+          "R - Continuous refinement"
+        ]
+      },
+      "3": {
+        "title": "Practical Implementation",
+        "description": "Real implementation cases with hands-on tools.",
+        "items": [
+          "Customer service agent",
+          "Data analysis agent",
+          "Process automation agent"
+        ]
+      },
+      "4": {
+        "title": "Monitoring and Optimization",
+        "description": "How to measure performance and continuously optimize your agents.",
+        "items": [
+          "KPIs and success metrics",
+          "Monitoring dashboards",
+          "Continuous improvement process"
+        ]
+      }
+    }
+  },
+  "sidebar": {
+    "courseInfo": {
+      "title": "Course Information",
+      "duration": "Duration",
+      "durationValue": "8 hours",
+      "level": "Level",
+      "levelValue": "Advanced",
+      "format": "Format",
+      "formatValue": "Video + Practice + Mentoring",
+      "certificate": "Certificate",
+      "certificateValue": "Professional Certification",
+      "support": "Support",
+      "supportValue": "1 year support"
+    },
+    "youWillBeAble": {
+      "title": "You will be able to",
+      "items": [
+        "Design agent architectures",
+        "Implement LÍDER methodology",
+        "Manage enterprise AI projects",
+        "Calculate and present ROI",
+        "Train internal teams"
+      ]
+    },
+    "bonus": {
+      "title": "Exclusive Bonuses",
+      "items": [
+        "Implementation templates",
+        "VIP group access",
+        "Live mentoring sessions",
+        "onsmartAI certification"
+      ]
+    }
+  }
+}
+

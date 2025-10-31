@@ -3,44 +3,47 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Download, FileText, Book, Users } from "lucide-react";
 import UnifiedSEO from "@/components/shared/UnifiedSEO";
+import { useTranslation } from 'react-i18next';
 
 const MateriaisGratuitos = () => {
+  const { t } = useTranslation(['materiaisGratuitos', 'common']);
+  
   const materiais = [
     {
-      title: "Guia Completo de IA para Empresas",
-      description: "Um guia abrangente sobre como implementar Inteligência Artificial na sua empresa",
+      title: t('materials.completeGuide.title'),
+      description: t('materials.completeGuide.description'),
       icon: Book,
       downloadUrl: "#",
-      pages: "45 páginas"
+      pages: t('materials.completeGuide.pages')
     },
     {
-      title: "Checklist de Implementação de Agentes",
-      description: "Lista completa de verificação para implementar agentes de IA com sucesso",
+      title: t('materials.implementationChecklist.title'),
+      description: t('materials.implementationChecklist.description'),
       icon: FileText,
       downloadUrl: "#",
-      pages: "12 páginas"
+      pages: t('materials.implementationChecklist.pages')
     },
     {
-      title: "Template de ROI para IA",
-      description: "Planilha para calcular o retorno sobre investimento em projetos de IA",
+      title: t('materials.roiTemplate.title'),
+      description: t('materials.roiTemplate.description'),
       icon: FileText,
       downloadUrl: "#",
-      pages: "Template Excel"
+      pages: t('materials.roiTemplate.pages')
     },
     {
-      title: "Metodologia LÍDER",
-      description: "E-book completo sobre nossa metodologia proprietária de implementação",
+      title: t('materials.leaderMethodology.title'),
+      description: t('materials.leaderMethodology.description'),
       icon: Book,
       downloadUrl: "#",
-      pages: "67 páginas"
+      pages: t('materials.leaderMethodology.pages')
     }
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50/30">
       <UnifiedSEO 
-        title="Materiais Gratuitos de IA - E-books e Guias | onsmartAI"
-        description="Baixe gratuitamente nossos e-books, guias e templates sobre Inteligência Artificial empresarial. Conteúdo especializado para acelerar sua jornada com IA."
+        title={t('seo.title')}
+        description={t('seo.description')}
         keywords="materiais gratuitos ia, e-books ia, guias inteligencia artificial, templates ia, metodologia líder"
       />
       

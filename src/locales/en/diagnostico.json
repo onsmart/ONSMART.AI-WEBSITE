@@ -1,0 +1,93 @@
+{
+  "seo": {
+    "title": "Free AI Diagnostic - Personalized Analysis | onsmartAI",
+    "description": "Request your free AI diagnostic and discover how Artificial Intelligence can transform your company. Personalized analysis in 45 minutes."
+  },
+  "hero": {
+    "title": "Free AI Diagnostic",
+    "subtitle": "Discover the cost-saving potential of AI in your company",
+    "description": "Receive a personalized analysis and discover how Artificial Intelligence can reduce costs and increase your business efficiency."
+  },
+  "success": {
+    "title": "Diagnostic Scheduled!",
+    "message": "✓ Request received!",
+    "responseTime": "Our team will contact you within",
+    "responseTimeValue": "24 hours",
+    "responseTimeEnd": "to schedule your diagnostic.",
+    "diagnosticTime": "Personalized diagnostic in 45 minutes",
+    "freeGuarantee": "100% free and no commitment",
+    "scheduleAnother": "Schedule Another Diagnostic",
+    "backToHome": "Back to Home"
+  },
+  "form": {
+    "title": "Request Your Diagnostic",
+    "subtitle": "Fill out the form and receive your personalized analysis",
+    "name": {
+      "label": "Full Name",
+      "placeholder": "Enter your full name"
+    },
+    "email": {
+      "label": "Professional Email",
+      "placeholder": "your@company.com"
+    },
+    "phone": {
+      "label": "Phone/WhatsApp",
+      "placeholder": "(11) 99999-9999"
+    },
+    "company": {
+      "label": "Company Name",
+      "placeholder": "Your company name"
+    },
+    "employees": {
+      "label": "Number of Employees",
+      "placeholder": "Select company size",
+      "options": {
+        "1-10": "1-10 employees",
+        "11-50": "11-50 employees",
+        "51-200": "51-200 employees",
+        "201-500": "201-500 employees",
+        "500+": "More than 500 employees"
+      }
+    },
+    "sector": {
+      "label": "Industry Sector",
+      "placeholder": "Select your sector",
+      "options": {
+        "tecnologia": "Technology",
+        "saude": "Healthcare",
+        "financeiro": "Financial",
+        "varejo": "Retail",
+        "industria": "Industry",
+        "servicos": "Services",
+        "outros": "Others"
+      }
+    },
+    "currentChallenges": {
+      "label": "Current Main Challenges",
+      "placeholder": "Briefly describe your company's main challenges..."
+    },
+    "submit": "Request Diagnostic",
+    "sending": "Sending...",
+    "required": "Required field"
+  },
+  "benefits": {
+    "title": "What you get in the diagnostic:",
+    "items": [
+      "Personalized AI potential analysis",
+      "Process identification for automation",
+      "Savings and ROI projection",
+      "Implementation roadmap",
+      "Our team contact within 24 hours"
+    ]
+  },
+  "guarantee": {
+    "title": "Our Guarantee",
+    "description": "100% free diagnostic, no commitment and focused on real results for your company."
+  },
+  "cta": {
+    "title": "Ready to Discover AI Potential?",
+    "subtitle": "Request your free diagnostic and see how Artificial Intelligence can transform your company.",
+    "button": "Request Free Diagnostic"
+  }
+}
+

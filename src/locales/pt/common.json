@@ -57,6 +57,29 @@
     "features": "Principais Recursos",
     "advancedFeatures": "Recursos Avançados",
     "keyFeatures": "Funcionalidades Principais"
+  },
+  "language": {
+    "selectLanguage": "Selecionar idioma",
+    "portuguese": "Português",
+    "english": "English",
+    "spanish": "Español"
+  },
+  "toast": {
+    "formSubmitted": "Formulário enviado com sucesso!",
+    "formSubmittedDescription": "Nossa equipe entrará em contato em breve.",
+    "nextStep": "Próximo passo",
+    "diagnosticScheduled": "Diagnóstico agendado!",
+    "diagnosticScheduledDescription": "Você receberá um e-mail de confirmação em instantes.",
+    "viewCalendar": "Ver calendário"
+  },
+  "diagnostic": {
+    "likert": {
+      "stronglyDisagree": "Discordo totalmente",
+      "disagree": "Discordo",
+      "neutral": "Neutro",
+      "agree": "Concordo",
+      "stronglyAgree": "Concordo totalmente"
+    }
   }
 }
 

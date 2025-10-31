@@ -4,10 +4,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useForm, ValidationError } from '@formspree/react';
+import { useTranslation } from 'react-i18next';
 
 const Contato = () => {
   const [state, handleSubmit] = useForm("xyzpvjrd");
   const [mapLoading, setMapLoading] = useState(true);
+  const { t } = useTranslation(['contato', 'common']);
 
   if (state.succeeded) {
     return (
@@ -25,23 +27,23 @@ const Contato = () => {
             </div>
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
               <span className="bg-gradient-to-r from-green-600 via-green-500 to-green-600 bg-clip-text text-transparent">
-                Mensagem Enviada com Sucesso!
+                {t('success.title')}
               </span>
             </h2>
             <div className="bg-gradient-to-r from-green-50 to-emerald-50/30 rounded-lg p-3 sm:p-4 mb-4 sm:mb-6 border border-green-200/50">
               <p className="text-gray-700 text-center text-sm sm:text-base">
-                <span className="font-bold text-green-600">✓ Recebemos sua mensagem!</span><br/>
-                Nossa equipe responderá em até <span className="font-bold text-brand-blue">2 horas úteis</span> com uma proposta personalizada.
+                <span className="font-bold text-green-600">{t('success.message')}</span><br/>
+                {t('success.responseTime')} <span className="font-bold text-brand-blue">{t('success.responseTimeValue')}</span> {t('success.responseTimeEnd')}
               </p>
             </div>
             <div className="text-xs sm:text-sm text-gray-600 mb-4 sm:mb-6 space-y-2">
               <div className="flex items-center justify-center gap-2">
                 <Mail className="h-3 w-3 sm:h-4 sm:w-4 text-brand-blue" />
-                <span>Confirmação enviada para seu email</span>
+                <span>{t('success.emailConfirmation')}</span>
               </div>
               <div className="flex items-center justify-center gap-2">
                 <Clock className="h-3 w-3 sm:h-4 sm:w-4 text-green-500" />
-                <span>Tempo de resposta: até 2 horas úteis</span>
+                <span>{t('success.responseTimeLabel')}</span>
               </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -50,14 +52,14 @@ const Contato = () => {
                 className="bg-gradient-to-r from-brand-blue to-blue-600 hover:from-blue-600 hover:to-brand-blue text-white font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-xl transition-all duration-300 text-sm sm:text-base"
               >
                 <Send className="h-3 w-3 sm:h-4 sm:w-4 mr-2" />
-                Enviar Nova Mensagem
+                {t('success.sendAnother')}
               </Button>
               <Button 
                 onClick={() => window.location.href = '/'}
                 variant="outline"
                 className="border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white px-4 sm:px-6 py-2 sm:py-3 rounded-xl transition-all duration-300 text-sm sm:text-base"
               >
-                Voltar ao Início
+                {t('success.backToHome')}
               </Button>
             </div>
           </div>
@@ -282,17 +284,17 @@ const Contato = () => {
                   <div className="mb-4 sm:mb-6">
                     <div className="inline-flex items-center gap-2 bg-gradient-to-r from-brand-blue/10 to-brand-blue/5 text-brand-blue px-3 py-1.5 rounded-full text-xs sm:text-sm font-semibold mb-3 sm:mb-4 border border-brand-blue/20">
                       <Send className="h-3 w-3" />
-                      Formulário de Contato
+                      {t('form.title')}
                     </div>
                     <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">
-                      Garanta Seu <span className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">Diagnóstico Gratuito</span>
+                      {t('form.diagnosticTitle')} <span className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">{t('form.diagnosticHighlight')}</span>
                     </h2>
                     <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
                       <p className="text-gray-800 text-sm sm:text-base font-semibold">
-                        Descubra o potencial de economia da IA na sua empresa
+                        {t('form.discoverPotential')}
                       </p>
                       <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
-                        Preencha o formulário abaixo e receba em até <span className="font-bold text-green-600">2 horas úteis</span>: análise personalizada, projeção de ROI e plano de implementação detalhado.
+                        {t('form.fillFormDescription')} <span className="font-bold text-green-600">{t('form.fillFormDescriptionValue')}</span>{t('form.fillFormDescriptionEnd')}
                       </p>
                     </div>
                     
@@ -301,15 +303,15 @@ const Contato = () => {
                       <div className="grid grid-cols-3 gap-3 sm:gap-4 text-center">
                         <div>
                           <div className="text-base sm:text-lg font-bold text-blue-600">1.247</div>
-                          <div className="text-xs text-gray-600">Empresas atendidas</div>
+                          <div className="text-xs text-gray-600">{t('form.socialProof.companies')}</div>
                         </div>
                         <div>
                           <div className="text-base sm:text-lg font-bold text-blue-600">4.9/5</div>
-                          <div className="text-xs text-gray-600">Satisfação média</div>
+                          <div className="text-xs text-gray-600">{t('form.socialProof.satisfaction')}</div>
                         </div>
                         <div>
                           <div className="text-base sm:text-lg font-bold text-blue-600">2h</div>
-                          <div className="text-xs text-gray-600">Tempo resposta</div>
+                          <div className="text-xs text-gray-600">{t('form.socialProof.responseTime')}</div>
                         </div>
                       </div>
                     </div>
@@ -319,7 +321,7 @@ const Contato = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                       <div>
                         <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">
-                          Nome Completo *
+                          {t('form.name.label')} *
                         </label>
                         <Input
                           id="name"
@@ -338,7 +340,7 @@ const Contato = () => {
                       </div>
                       <div>
                         <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">
-                          Email Profissional *
+                          {t('form.email.label')} *
                         </label>
                         <Input
                           id="email"
@@ -359,7 +361,7 @@ const Contato = () => {
                     
                     <div>
                       <label htmlFor="company" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">
-                        Nome da Empresa
+                        {t('form.company.label')}
                       </label>
                       <Input
                         id="company"
@@ -372,7 +374,7 @@ const Contato = () => {
                     
                     <div>
                       <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">
-                        Como podemos ajudar? *
+                        {t('form.message.label')} *
                       </label>
                       <Textarea
                         id="message"
@@ -380,7 +382,7 @@ const Contato = () => {
                         required
                         rows={4}
                         className="w-full border-gray-300 focus:border-brand-blue focus:ring-brand-blue resize-none rounded-lg text-sm sm:text-base"
-                        placeholder="Ex: Quero automatizar atendimento ao cliente, reduzir custos operacionais, aumentar produtividade da equipe..."
+                        placeholder={t('form.message.placeholder')}
                       />
                       <ValidationError
                         prefix="Mensagem"
@@ -426,12 +428,12 @@ const Contato = () => {
                       {state.submitting ? (
                         <div className="flex items-center justify-center gap-2">
                           <div className="animate-spin h-4 w-4 sm:h-5 sm:w-5 border-2 border-white border-t-transparent rounded-full"></div>
-                          Enviando Solicitação...
+                          {t('form.sending')}
                         </div>
                       ) : (
                         <div className="flex items-center justify-center gap-2">
                           <Send className="h-4 w-4 sm:h-5 sm:w-5" />
-                          SOLICITAR DIAGNÓSTICO GRATUITO
+                          {t('form.submit')}
                         </div>
                       )}
                     </Button>

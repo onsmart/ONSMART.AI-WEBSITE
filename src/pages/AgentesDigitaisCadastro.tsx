@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import UnifiedSEO from '@/components/shared/UnifiedSEO';
 import { useToast } from '@/hooks/use-toast';
+import { useTranslation } from 'react-i18next';
 import AgentesDigitaisHeader from '@/components/agentes-digitais/cadastro/AgentesDigitaisHeader';
 import DadosPessoaisForm from '@/components/agentes-digitais/cadastro/DadosPessoaisForm';
 import InformacoesProfissionaisForm from '@/components/agentes-digitais/cadastro/InformacoesProfissionaisForm';
@@ -12,6 +13,7 @@ import TermosCondicoesForm from '@/components/agentes-digitais/cadastro/TermosCo
 
 const AgentesDigitaisCadastro = () => {
   const { toast } = useToast();
+  const { t } = useTranslation(['agentesDigitaisCadastro', 'common']);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -22,8 +24,8 @@ const AgentesDigitaisCadastro = () => {
     await new Promise(resolve => setTimeout(resolve, 2000));
     
     toast({
-      title: "Cadastro Realizado!",
-      description: "Bem-vindo ao programa! Você receberá seu link exclusivo por email em alguns minutos.",
+      title: t('toast.title'),
+      description: t('toast.description'),
     });
     
     setIsSubmitting(false);
@@ -32,9 +34,9 @@ const AgentesDigitaisCadastro = () => {
   return (
     <>
       <UnifiedSEO 
-        title="Cadastro Agente Digital onsmartAI - Torne-se um Indicador"
-        description="Cadastre-se gratuitamente como Agente Digital onsmartAI. Receba seu link exclusivo e comece a ganhar comissões indicando clientes hoje mesmo."
-        keywords="cadastro agente digital, link indicação, programa afiliados, renda extra"
+        title={t('seo.title')}
+        description={t('seo.description')}
+        keywords={t('seo.keywords')}
       />
       
       <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 py-12">
@@ -57,13 +59,13 @@ const AgentesDigitaisCadastro = () => {
                 className="bg-purple-600 hover:bg-purple-700 px-12"
               >
                 {isSubmitting ? (
-                  "Processando Cadastro..."
+                  t('submit.processing')
                 ) : (
-                  "Finalizar Cadastro"
+                  t('submit.button')
                 )}
               </Button>
               <p className="text-sm text-gray-600 dark:text-gray-400 mt-4">
-                Você receberá seu link exclusivo por email em alguns minutos
+                {t('submit.helper')}
               </p>
             </div>
           </form>

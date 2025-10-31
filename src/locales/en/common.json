@@ -57,6 +57,29 @@
     "features": "Key Features",
     "advancedFeatures": "Advanced Features",
     "keyFeatures": "Main Features"
+  },
+  "language": {
+    "selectLanguage": "Select language",
+    "portuguese": "Português",
+    "english": "English",
+    "spanish": "Español"
+  },
+  "toast": {
+    "formSubmitted": "Form submitted successfully!",
+    "formSubmittedDescription": "Our team will contact you soon.",
+    "nextStep": "Next step",
+    "diagnosticScheduled": "Diagnostic scheduled!",
+    "diagnosticScheduledDescription": "You will receive a confirmation email shortly.",
+    "viewCalendar": "View calendar"
+  },
+  "diagnostic": {
+    "likert": {
+      "stronglyDisagree": "Strongly disagree",
+      "disagree": "Disagree",
+      "neutral": "Neutral",
+      "agree": "Agree",
+      "stronglyAgree": "Strongly agree"
+    }
   }
 }
 

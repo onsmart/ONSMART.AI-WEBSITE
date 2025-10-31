@@ -1,13 +1,16 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 import DockerStatus from '@/components/monitoring/DockerStatus';
 
 const DockerMonitor: React.FC = () => {
+  const { t } = useTranslation(['dockerMonitor', 'common']);
+  
   return (
     <>
       <Helmet>
-        <title>Monitor Docker - OnSmart AI</title>
-        <meta name="description" content="Monitoramento em tempo real do Docker e containers" />
+        <title>{t('seo.title')}</title>
+        <meta name="description" content={t('seo.description')} />
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
@@ -15,10 +18,10 @@ const DockerMonitor: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
             <h1 className="text-3xl font-bold text-gray-900">
-              🐳 Monitor Docker
+              🐳 {t('title')}
             </h1>
             <p className="mt-2 text-gray-600">
-              Acompanhe o status do Docker, containers e Ollama em tempo real
+              {t('subtitle')}
             </p>
           </div>
 

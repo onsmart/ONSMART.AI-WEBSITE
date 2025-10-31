@@ -1,0 +1,98 @@
+{
+  "seo": {
+    "title": "Plans and Pricing - Custom AI Solutions | onsmartAI",
+    "description": "Choose the ideal plan for your company. Custom AI solutions with 30-day implementation. Flexible plans for all business sizes."
+  },
+  "hero": {
+    "title": "Choose the Ideal Plan",
+    "subtitle": "Custom AI solutions for your company",
+    "description": "30-day implementation with guaranteed results. Choose the plan that best fits your business."
+  },
+  "plans": {
+    "starter": {
+      "name": "Starter",
+      "description": "Ideal for small companies that want to get started",
+      "price": "R$ 2.997",
+      "period": "/month",
+      "features": [
+        "Up to 3 AI Agents",
+        "Basic implementation",
+        "Email support",
+        "Basic dashboard",
+        "Integration with 1 system",
+        "Monthly reports"
+      ]
+    },
+    "business": {
+      "name": "Business",
+      "description": "For growing companies that need to scale",
+      "price": "R$ 7.997",
+      "period": "/month",
+      "features": [
+        "Up to 10 AI Agents",
+        "Complete implementation",
+        "Priority support",
+        "Advanced dashboard",
+        "Integration with up to 5 systems",
+        "Weekly reports",
+        "Team training",
+        "Basic customizations"
+      ]
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "description": "Complete solution for large organizations",
+      "price": "Contact us",
+      "period": "",
+      "features": [
+        "Unlimited AI Agents",
+        "Custom implementation",
+        "24/7 support",
+        "Custom dashboard",
+        "Integration with all systems",
+        "Real-time reports",
+        "Complete training",
+        "Advanced customizations",
+        "Strategic consulting",
+        "Guaranteed SLA"
+      ]
+    }
+  },
+  "badges": {
+    "popular": "Most Popular",
+    "enterprise": "Enterprise"
+  },
+  "buttons": {
+    "choosePlan": "Choose Plan",
+    "contactSales": "Contact Sales",
+    "requestDemo": "Request Demo",
+    "getStarted": "Get Started"
+  },
+  "guarantee": {
+    "title": "Our Guarantee",
+    "description": "30 days to test without commitment. If you're not satisfied, we'll refund your money."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "questions": [
+      {
+        "question": "Can I cancel at any time?",
+        "answer": "Yes, you can cancel your plan at any time without cancellation fees."
+      },
+      {
+        "question": "Is technical support included?",
+        "answer": "Yes, all plans include technical support. The level varies according to the chosen plan."
+      },
+      {
+        "question": "How long does implementation take?",
+        "answer": "Basic implementation takes 30 days. Enterprise plans can have custom schedules."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to Transform Your Company?",
+    "subtitle": "Choose your plan and start your AI journey today.",
+    "button": "View Plans"
+  }
+}
+

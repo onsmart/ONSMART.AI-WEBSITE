@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface ServiceChartProps {
   type: 'bar' | 'line' | 'pie' | 'growth';
@@ -7,6 +8,7 @@ interface ServiceChartProps {
 }
 
 const ServiceChart: React.FC<ServiceChartProps> = ({ type, data, title }) => {
+  const { t } = useTranslation('servicos');
   const renderChart = () => {
     switch (type) {
       case 'bar':
@@ -15,19 +17,19 @@ const ServiceChart: React.FC<ServiceChartProps> = ({ type, data, title }) => {
             <div className="flex items-end justify-between h-full space-x-2">
               <div className="flex flex-col items-center">
                 <div className="w-8 bg-blue-500 rounded-t h-16 mb-2"></div>
-                <span className="text-xs text-gray-600">Antes</span>
+                <span className="text-xs text-gray-600 dark:text-gray-400">{t('chartLabels.before')}</span>
               </div>
               <div className="flex flex-col items-center">
                 <div className="w-8 bg-green-500 rounded-t h-24 mb-2"></div>
-                <span className="text-xs text-gray-600">Depois</span>
+                <span className="text-xs text-gray-600 dark:text-gray-400">{t('chartLabels.after')}</span>
               </div>
               <div className="flex flex-col items-center">
                 <div className="w-8 bg-purple-500 rounded-t h-20 mb-2"></div>
-                <span className="text-xs text-gray-600">Meta</span>
+                <span className="text-xs text-gray-600 dark:text-gray-400">{t('chartLabels.goal')}</span>
               </div>
               <div className="flex flex-col items-center">
                 <div className="w-8 bg-orange-500 rounded-t h-28 mb-2"></div>
-                <span className="text-xs text-gray-600">ROI</span>
+                <span className="text-xs text-gray-600 dark:text-gray-400">{t('chartLabels.roi')}</span>
               </div>
             </div>
           </div>
@@ -105,8 +107,8 @@ const ServiceChart: React.FC<ServiceChartProps> = ({ type, data, title }) => {
                 </svg>
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-gray-800">100%</div>
-                    <div className="text-xs text-gray-600">Certificados</div>
+                    <div className="text-2xl font-bold text-gray-800 dark:text-gray-200">100%</div>
+                    <div className="text-xs text-gray-600 dark:text-gray-400">{t('chartLabels.certified')}</div>
                   </div>
                 </div>
               </div>
@@ -120,23 +122,23 @@ const ServiceChart: React.FC<ServiceChartProps> = ({ type, data, title }) => {
             <div className="flex items-end justify-center h-full space-x-4">
               <div className="flex flex-col items-center">
                 <div className="w-6 bg-orange-400 rounded-t h-8 mb-2"></div>
-                <span className="text-xs text-gray-600">Mês 1</span>
+                <span className="text-xs text-gray-600 dark:text-gray-400">{t('chartLabels.month1')}</span>
               </div>
               <div className="flex flex-col items-center">
                 <div className="w-6 bg-orange-500 rounded-t h-12 mb-2"></div>
-                <span className="text-xs text-gray-600">Mês 2</span>
+                <span className="text-xs text-gray-600 dark:text-gray-400">{t('chartLabels.month2')}</span>
               </div>
               <div className="flex flex-col items-center">
                 <div className="w-6 bg-orange-600 rounded-t h-16 mb-2"></div>
-                <span className="text-xs text-gray-600">Mês 3</span>
+                <span className="text-xs text-gray-600 dark:text-gray-400">{t('chartLabels.month3')}</span>
               </div>
               <div className="flex flex-col items-center">
                 <div className="w-6 bg-red-500 rounded-t h-20 mb-2"></div>
-                <span className="text-xs text-gray-600">Mês 4</span>
+                <span className="text-xs text-gray-600 dark:text-gray-400">{t('chartLabels.month4')}</span>
               </div>
               <div className="flex flex-col items-center">
                 <div className="w-6 bg-red-600 rounded-t h-24 mb-2"></div>
-                <span className="text-xs text-gray-600">Mês 5</span>
+                <span className="text-xs text-gray-600 dark:text-gray-400">{t('chartLabels.month5')}</span>
               </div>
             </div>
           </div>
@@ -144,8 +146,8 @@ const ServiceChart: React.FC<ServiceChartProps> = ({ type, data, title }) => {
       
       default:
         return (
-          <div className="w-full h-64 bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-4 flex items-center justify-center">
-            <span className="text-gray-500">Gráfico não disponível</span>
+          <div className="w-full h-64 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-lg p-4 flex items-center justify-center">
+            <span className="text-gray-500 dark:text-gray-400">{t('chartLabels.chartNotAvailable')}</span>
           </div>
         );
     }

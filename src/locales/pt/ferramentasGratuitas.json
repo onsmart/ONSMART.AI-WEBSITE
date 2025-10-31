@@ -1,0 +1,43 @@
+{
+  "seo": {
+    "title": "Ferramentas Gratuitas de IA - Calculadoras e Simuladores | onsmartAI",
+    "description": "Acesse ferramentas gratuitas para avaliar o potencial de IA na sua empresa: calculadora de ROI, avaliador de maturidade digital e simuladores de produtividade."
+  },
+  "hero": {
+    "title": "Ferramentas Gratuitas",
+    "subtitle": "Avalie o potencial de IA na sua empresa",
+    "description": "Use nossas ferramentas gratuitas para calcular ROI, avaliar maturidade digital e simular ganhos de produtividade com IA."
+  },
+  "tools": {
+    "roiCalculator": {
+      "title": "Calculadora de ROI de IA",
+      "description": "Calcule o retorno sobre investimento potencial da implementação de IA na sua empresa",
+      "category": "Análise Financeira"
+    },
+    "digitalMaturity": {
+      "title": "Avaliador de Maturidade Digital",
+      "description": "Descubra o nível de maturidade digital da sua empresa e áreas de melhoria",
+      "category": "Diagnóstico"
+    },
+    "automationPlanner": {
+      "title": "Planejador de Automação",
+      "description": "Identifique quais processos da sua empresa podem ser automatizados com IA",
+      "category": "Planejamento"
+    },
+    "productivitySimulator": {
+      "title": "Simulador de Produtividade",
+      "description": "Simule o ganho de produtividade com a implementação de agentes de IA",
+      "category": "Simulação"
+    }
+  },
+  "buttons": {
+    "useTool": "Usar Ferramenta",
+    "learnMore": "Saiba Mais",
+    "download": "Baixar"
+  },
+  "cta": {
+    "title": "Pronto para Implementar IA?",
+    "subtitle": "Fale com nossos especialistas e transforme sua empresa com IA",
+    "button": "Falar com Especialista"
+  }
+}

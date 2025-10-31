@@ -1,0 +1,24 @@
+{
+  "title": "Painel Administrativo",
+  "subtitle": "Gerencie conteúdos, cases de sucesso e posts do blog",
+  "tabs": {
+    "content": "Conteúdos",
+    "cases": "Cases de Sucesso",
+    "blog": "Blog"
+  },
+  "sections": {
+    "content": {
+      "title": "Gerenciar Conteúdos",
+      "description": "Adicione, edite e gerencie e-books, artigos, vídeos e outros materiais"
+    },
+    "cases": {
+      "title": "Gerenciar Cases de Sucesso",
+      "description": "Adicione e edite estudos de caso por setor"
+    },
+    "blog": {
+      "title": "Gerenciar Blog",
+      "description": "Crie e publique artigos para o blog"
+    }
+  }
+}
+

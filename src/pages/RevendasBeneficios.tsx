@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import UnifiedSEO from '@/components/shared/UnifiedSEO';
 import RevendasBeneficiosHeader from '@/components/revendas/beneficios/RevendasBeneficiosHeader';
 import BeneficiosFinanceiros from '@/components/revendas/beneficios/BeneficiosFinanceiros';
@@ -9,12 +10,14 @@ import EstruturaMargensTable from '@/components/revendas/beneficios/EstruturaMar
 import RevendasBeneficiosCTA from '@/components/revendas/beneficios/RevendasBeneficiosCTA';
 
 const RevendasBeneficios = () => {
+  const { t } = useTranslation(['revendasBeneficios', 'common']);
+  
   return (
     <>
       <UnifiedSEO 
-        title="Benefícios do Programa de Revendas onsmartAI - Margens e Vantagens"
-        description="Descubra todos os benefícios de ser uma revenda onsmartAI: margens atrativas, suporte técnico completo, treinamentos, material de vendas e muito mais."
-        keywords="benefícios revenda, margens revenda ia, suporte técnico, treinamento vendas, material marketing"
+        title={t('seo.title')}
+        description={t('seo.description')}
+        keywords={t('seo.keywords')}
       />
       
       <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100 dark:from-gray-900 dark:to-gray-800">

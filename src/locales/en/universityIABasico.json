@@ -1,0 +1,72 @@
+{
+  "seo": {
+    "title": "Basic AI - Introductory Artificial Intelligence Course | onsmartAI University",
+    "description": "Learn the fundamentals of Artificial Intelligence with our Basic AI course. Essential concepts for beginners in enterprise AI.",
+    "keywords": "basic ai course, artificial intelligence beginners, ai fundamentals, learn ai, free ai course"
+  },
+  "hero": {
+    "badge": "onsmartAI University",
+    "title": "Basic AI",
+    "subtitle": "Learn the fundamentals of Artificial Intelligence and how it can transform your company",
+    "buttons": {
+      "startCourse": "Start Course",
+      "downloadMaterial": "PDF Material"
+    }
+  },
+  "curriculum": {
+    "title": "Course",
+    "titleHighlight": "Modules",
+    "modules": {
+      "1": {
+        "title": "What is Artificial Intelligence?",
+        "description": "Fundamental concepts, history and practical applications of AI in the business world.",
+        "items": [
+          "Definitions and basic concepts",
+          "History of AI",
+          "Types of AI (Narrow, General, Super)"
+        ]
+      },
+      "2": {
+        "title": "Essential Machine Learning",
+        "description": "Understand how machines learn and make automated decisions.",
+        "items": [
+          "Types of learning (supervised, unsupervised)",
+          "Basic algorithms",
+          "Business practical examples"
+        ]
+      },
+      "3": {
+        "title": "AI in Business Practice",
+        "description": "How to implement AI in your company in a practical and efficient way.",
+        "items": [
+          "Use cases by sector",
+          "ROI and success metrics",
+          "First steps for implementation"
+        ]
+      }
+    }
+  },
+  "sidebar": {
+    "courseInfo": {
+      "title": "Course Information",
+      "duration": "Duration",
+      "durationValue": "2 hours",
+      "level": "Level",
+      "levelValue": "Beginner",
+      "format": "Format",
+      "formatValue": "Video + Material",
+      "certificate": "Certificate",
+      "certificateValue": "Yes"
+    },
+    "whatYouWillLearn": {
+      "title": "What you will learn",
+      "items": [
+        "Fundamental AI concepts",
+        "How AI can help your company",
+        "Identify automation opportunities",
+        "Calculate ROI for AI projects"
+      ]
+    }
+  }
+}
+

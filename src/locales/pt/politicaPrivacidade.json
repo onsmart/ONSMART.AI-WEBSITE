@@ -1,0 +1,86 @@
+{
+  "seo": {
+    "title": "Política de Privacidade - onsmartAI",
+    "description": "Política de privacidade da onsmartAI. Saiba como protegemos seus dados pessoais e respeitamos sua privacidade.",
+    "keywords": "política de privacidade, proteção de dados, LGPD, privacidade, onsmartAI"
+  },
+  "title": "Política de Privacidade",
+  "lastUpdate": "Última atualização:",
+  "sections": {
+    "1": {
+      "title": "1. Introdução",
+      "content": "A onsmartAI (\"nós\", \"nosso\" ou \"empresa\") está comprometida em proteger e respeitar sua privacidade. Esta Política de Privacidade explica como coletamos, usamos, divulgamos e protegemos suas informações quando você visita nosso site ou utiliza nossos serviços."
+    },
+    "2": {
+      "title": "2. Informações que Coletamos",
+      "subtitle1": "2.1 Informações Pessoais",
+      "subtitle1Content": "Podemos coletar as seguintes informações pessoais:",
+      "personalInfo": [
+        "Nome completo",
+        "Endereço de email",
+        "Número de telefone",
+        "Empresa e cargo",
+        "Informações de contato profissional"
+      ],
+      "subtitle2": "2.2 Informações Técnicas",
+      "technicalInfo": [
+        "Endereço IP",
+        "Tipo de navegador e versão",
+        "Sistema operacional",
+        "Páginas visitadas e tempo de permanência",
+        "Cookies e tecnologias similares"
+      ]
+    },
+    "3": {
+      "title": "3. Como Usamos suas Informações",
+      "content": "Utilizamos suas informações para:",
+      "items": [
+        "Fornecer e melhorar nossos serviços",
+        "Responder às suas consultas e solicitações",
+        "Enviar comunicações de marketing (com seu consentimento)",
+        "Análise e melhoria do site",
+        "Cumprimento de obrigações legais"
+      ]
+    },
+    "4": {
+      "title": "4. Compartilhamento de Informações",
+      "content": "Não vendemos, alugamos ou compartilhamos suas informações pessoais com terceiros, exceto nas seguintes circunstâncias:",
+      "items": [
+        "Com seu consentimento explícito",
+        "Para prestadores de serviços que nos auxiliam",
+        "Quando exigido por lei",
+        "Para proteger nossos direitos legais"
+      ]
+    },
+    "5": {
+      "title": "5. Cookies",
+      "content": "Utilizamos cookies para melhorar sua experiência em nosso site. Você pode configurar seu navegador para recusar cookies, mas isso pode afetar a funcionalidade do site."
+    },
+    "6": {
+      "title": "6. Seus Direitos (LGPD)",
+      "content": "Conforme a Lei Geral de Proteção de Dados (LGPD), você tem direito a:",
+      "rights": [
+        "Confirmar a existência de tratamento de dados",
+        "Acessar seus dados pessoais",
+        "Corrigir dados incompletos ou inexatos",
+        "Solicitar a exclusão de dados",
+        "Revogar consentimento",
+        "Portabilidade dos dados"
+      ]
+    },
+    "7": {
+      "title": "7. Segurança",
+      "content": "Implementamos medidas de segurança técnicas e organizacionais adequadas para proteger suas informações pessoais contra acesso não autorizado, alteração, divulgação ou destruição."
+    },
+    "8": {
+      "title": "8. Contato",
+      "content": "Para exercer seus direitos ou esclarecer dúvidas sobre esta Política de Privacidade, entre em contato conosco:",
+      "contact": {
+        "email": "Email:",
+        "phone": "Telefone:",
+        "whatsapp": "WhatsApp:"
+      }
+    }
+  }
+}
+

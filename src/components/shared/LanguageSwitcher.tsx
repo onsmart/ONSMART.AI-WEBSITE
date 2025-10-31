@@ -27,13 +27,13 @@ import { Button } from '@/components/ui/button';
  */
 
 const languages = [
-  { code: 'pt', name: 'Português', flag: '🇧🇷' },
-  { code: 'en', name: 'English', flag: '🇺🇸' },
-  { code: 'es', name: 'Español', flag: '🇪🇸' },
+  { code: 'pt', nameKey: 'portuguese', flag: '🇧🇷' },
+  { code: 'en', nameKey: 'english', flag: '🇺🇸' },
+  { code: 'es', nameKey: 'spanish', flag: '🇪🇸' },
 ];
 
 const LanguageSwitcher: React.FC = () => {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation('common');
 
   // Função para trocar idioma
   const changeLanguage = (langCode: string) => {
@@ -51,10 +51,10 @@ const LanguageSwitcher: React.FC = () => {
           variant="ghost" 
           size="sm"
           className="flex items-center gap-2"
-          aria-label="Selecionar idioma"
+          aria-label={t('language.selectLanguage')}
         >
           <Globe className="h-4 w-4" />
-          <span className="hidden sm:inline">{currentLanguage.flag} {currentLanguage.name}</span>
+          <span className="hidden sm:inline">{currentLanguage.flag} {t(`language.${currentLanguage.nameKey}`)}</span>
           <span className="sm:hidden">{currentLanguage.flag}</span>
         </Button>
       </DropdownMenuTrigger>
@@ -68,7 +68,7 @@ const LanguageSwitcher: React.FC = () => {
             }`}
           >
             <span>{lang.flag}</span>
-            <span>{lang.name}</span>
+            <span>{t(`language.${lang.nameKey}`)}</span>
             {i18n.language === lang.code && (
               <span className="ml-auto text-xs">✓</span>
             )}

@@ -5,13 +5,16 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { UserCheck, DollarSign, TrendingUp, Users, ArrowRight, CheckCircle, Star } from 'lucide-react';
 import UnifiedSEO from '@/components/shared/UnifiedSEO';
+import { useTranslation } from 'react-i18next';
 
 const AgentesDigitais = () => {
+  const { t } = useTranslation(['agentesDigitais', 'common']);
+  
   return (
     <>
       <UnifiedSEO 
-        title="Agentes Digitais onsmartAI - Programa de Indicação com Comissões"
-        description="Torne-se um Agente Digital onsmartAI e ganhe comissões indicando clientes. Programa simples, comissões atrativas e suporte completo para seus indicados."
+        title={t('seo.title')}
+        description={t('seo.description')}
         keywords="agente digital, programa indicação, comissões vendas, indicar clientes, renda extra"
         pageType="service"
       />
@@ -22,27 +25,27 @@ const AgentesDigitais = () => {
           <div className="container mx-auto max-w-6xl text-center">
             <div className="inline-flex items-center gap-2 bg-purple-100 text-purple-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
               <UserCheck className="h-4 w-4" />
-              Programa de Agentes Digitais
+              {t('hero.badge')}
             </div>
             
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
-              Programa de Agentes Digitais
+              {t('hero.title')}
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
-              Indique empresas para a onsmartAI e ganhe comissões atrativas por cada cliente que fechar negócio
+              {t('hero.subtitle')}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-purple-600 hover:bg-purple-700">
                 <Link to="/agentes-digitais/cadastro">
                   <UserCheck className="mr-2 h-5 w-5" />
-                  Tornar-se Agente
+                  {t('hero.buttons.becomeAgent')}
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg">
                 <Link to="/agentes-digitais/comissoes">
-                  Ver Comissões
+                  {t('hero.buttons.viewCommissions')}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>

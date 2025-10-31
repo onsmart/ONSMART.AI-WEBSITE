@@ -5,13 +5,16 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { ShoppingCart, Users, TrendingUp, Award, ArrowRight, CheckCircle } from 'lucide-react';
 import UnifiedSEO from '@/components/shared/UnifiedSEO';
+import { useTranslation } from 'react-i18next';
 
 const Revendas = () => {
+  const { t } = useTranslation(['revendas', 'common']);
+  
   return (
     <>
       <UnifiedSEO 
-        title="Seja uma Revenda onsmartAI - Programa de Parceria Comercial"
-        description="Torne-se um parceiro comercial da onsmartAI. Revenda soluções de IA empresarial com suporte completo, treinamento e margens atrativas. Programa exclusivo para empresas."
+        title={t('seo.title')}
+        description={t('seo.description')}
         keywords="revenda ia, parceria comercial, distribuidor ia, agentes ia revenda, programa parceiros, negócio ia"
         pageType="service"
       />
@@ -22,11 +25,11 @@ const Revendas = () => {
           <div className="container mx-auto max-w-6xl text-center">
             <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
               <ShoppingCart className="h-4 w-4" />
-              Programa de Revendas
+              {t('hero.badge')}
             </div>
             
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-              Seja uma Revenda onsmartAI
+              {t('hero.title')}
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">

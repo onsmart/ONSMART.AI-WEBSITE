@@ -6,10 +6,12 @@ import BlogGrid from '@/components/blog/BlogGrid';
 import BlogNewsletter from '@/components/blog/BlogNewsletter';
 import BlogEngagementTracker from '@/components/blog/BlogEngagementTracker';
 import { blogPosts, blogCategories } from '@/components/blog/data/blogData';
+import { useTranslation } from 'react-i18next';
 
 const Blog = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('todos');
+  const { t } = useTranslation(['blog', 'common']);
 
   // Filtrar artigos baseado na busca e categoria
   const filteredArticles = useMemo(() => {
@@ -24,8 +26,8 @@ const Blog = () => {
   return (
     <BlogEngagementTracker selectedCategory={selectedCategory}>
       <UnifiedSEO 
-        title="Blog onsmartAI - Artigos sobre IA e Agentes Digitais"
-        description="Aprenda sobre implementação de IA, Agentes Digitais e transformação empresarial com nossos artigos especializados e casos práticos."
+        title={t('seo.title')}
+        description={t('seo.description')}
         keywords="blog ia, artigos agentes digitais, implementação ia, metodologia líder, casos de sucesso ia"
       />
       

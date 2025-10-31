@@ -1,0 +1,86 @@
+{
+  "seo": {
+    "title": "Privacy Policy - onsmartAI",
+    "description": "onsmartAI privacy policy. Learn how we protect your personal data and respect your privacy.",
+    "keywords": "privacy policy, data protection, LGPD, privacy, onsmartAI"
+  },
+  "title": "Privacy Policy",
+  "lastUpdate": "Last update:",
+  "sections": {
+    "1": {
+      "title": "1. Introduction",
+      "content": "onsmartAI (\"we\", \"our\" or \"company\") is committed to protecting and respecting your privacy. This Privacy Policy explains how we collect, use, disclose and protect your information when you visit our website or use our services."
+    },
+    "2": {
+      "title": "2. Information We Collect",
+      "subtitle1": "2.1 Personal Information",
+      "subtitle1Content": "We may collect the following personal information:",
+      "personalInfo": [
+        "Full name",
+        "Email address",
+        "Phone number",
+        "Company and position",
+        "Professional contact information"
+      ],
+      "subtitle2": "2.2 Technical Information",
+      "technicalInfo": [
+        "IP address",
+        "Browser type and version",
+        "Operating system",
+        "Pages visited and time spent",
+        "Cookies and similar technologies"
+      ]
+    },
+    "3": {
+      "title": "3. How We Use Your Information",
+      "content": "We use your information to:",
+      "items": [
+        "Provide and improve our services",
+        "Respond to your inquiries and requests",
+        "Send marketing communications (with your consent)",
+        "Analysis and website improvement",
+        "Compliance with legal obligations"
+      ]
+    },
+    "4": {
+      "title": "4. Information Sharing",
+      "content": "We do not sell, rent or share your personal information with third parties, except in the following circumstances:",
+      "items": [
+        "With your explicit consent",
+        "To service providers who assist us",
+        "When required by law",
+        "To protect our legal rights"
+      ]
+    },
+    "5": {
+      "title": "5. Cookies",
+      "content": "We use cookies to improve your experience on our website. You can configure your browser to refuse cookies, but this may affect the functionality of the website."
+    },
+    "6": {
+      "title": "6. Your Rights (LGPD)",
+      "content": "Under the General Data Protection Law (LGPD), you have the right to:",
+      "rights": [
+        "Confirm the existence of data processing",
+        "Access your personal data",
+        "Correct incomplete or inaccurate data",
+        "Request data deletion",
+        "Revoke consent",
+        "Data portability"
+      ]
+    },
+    "7": {
+      "title": "7. Security",
+      "content": "We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure or destruction."
+    },
+    "8": {
+      "title": "8. Contact",
+      "content": "To exercise your rights or clarify questions about this Privacy Policy, contact us:",
+      "contact": {
+        "email": "Email:",
+        "phone": "Phone:",
+        "whatsapp": "WhatsApp:"
+      }
+    }
+  }
+}
+

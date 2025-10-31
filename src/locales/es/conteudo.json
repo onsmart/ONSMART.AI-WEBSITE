@@ -1,0 +1,61 @@
+{
+  "seo": {
+    "title": "Contenido Gratuito - Artículos, E-books y Recursos de IA | onsmartAI",
+    "description": "Accede a nuestra biblioteca gratuita de contenido sobre IA: artículos, e-books, videos, plantillas y calculadoras para acelerar tu transformación digital."
+  },
+  "hero": {
+    "title": "Contenido Gratuito",
+    "subtitle": "Recursos exclusivos para acelerar tu transformación con IA",
+    "description": "Accede a artículos, e-books, videos, plantillas y herramientas desarrolladas por nuestros especialistas en IA."
+  },
+  "categories": {
+    "artigos": "Artículos y Guías",
+    "videos": "Videos",
+    "ebooks": "E-books",
+    "templates": "Plantillas",
+    "checklists": "Listas de Verificación",
+    "calculadoras": "Calculadoras"
+  },
+  "filters": {
+    "all": "Todos",
+    "recent": "Más Recientes",
+    "popular": "Más Populares",
+    "featured": "Destacados"
+  },
+  "content": {
+    "readMore": "Leer Más",
+    "download": "Descargar",
+    "watch": "Ver",
+    "downloadNow": "Descargar Ahora",
+    "watchNow": "Ver Ahora",
+    "readArticle": "Leer Artículo",
+    "viewTemplate": "Ver Plantilla",
+    "useCalculator": "Usar Calculadora",
+    "downloadChecklist": "Descargar Lista"
+  },
+  "stats": {
+    "articles": "Artículos",
+    "videos": "Videos",
+    "downloads": "Descargas",
+    "users": "Usuarios"
+  },
+  "cta": {
+    "title": "¿Listo para Transformar tu Empresa?",
+    "subtitle": "Habla con nuestros especialistas y descubre cómo la IA puede acelerar tus resultados",
+    "button": "Hablar con Especialista"
+  },
+  "newsletter": {
+    "title": "Recibe Contenido Exclusivo",
+    "subtitle": "Regístrate y recibe nuevos artículos, e-books y recursos directamente en tu email",
+    "placeholder": "Tu mejor email",
+    "button": "Registrarse",
+    "success": "¡Registro exitoso!",
+    "error": "Error al registrarse. Inténtalo de nuevo."
+  },
+  "modal": {
+    "close": "Cerrar",
+    "download": "Descargar",
+    "share": "Compartir"
+  }
+}
+
