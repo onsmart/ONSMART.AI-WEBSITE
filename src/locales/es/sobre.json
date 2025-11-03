@@ -1,0 +1,52 @@
+{
+  "hero": {
+    "badge": "Nuestra Historia",
+    "title": "Transformando el Futuro con",
+    "titleHighlight": "Inteligencia Artificial",
+    "description": "Somos especialistas en Inteligencia Artificial empresarial, dedicados a democratizar el acceso a la IA y transformar negocios a través de soluciones innovadoras y resultados medibles.",
+    "seoDescription": "Conoce onsmart AI: especialistas en Inteligencia Artificial empresarial enfocados en resultados reales y transformación digital sostenible."
+  },
+  "mission": {
+    "title": "Nuestra Misión",
+    "description": "Democratizar el acceso a la Inteligencia Artificial para empresas de todos los tamaños, ofreciendo soluciones prácticas y resultados medibles que transforman negocios y crean valor real."
+  },
+  "vision": {
+    "title": "Nuestra Visión",
+    "description": "Ser la referencia en IA empresarial en Brasil, reconocidos por la excelencia técnica, innovación constante y el impacto positivo que generamos en la transformación digital de las organizaciones."
+  },
+  "values": {
+    "title": "Nuestros Valores",
+    "innovation": {
+      "title": "Innovación",
+      "description": "Siempre buscamos las tecnologías más avanzadas y soluciones creativas para resolver los desafíos de nuestros clientes."
+    },
+    "excellence": {
+      "title": "Excelencia",
+      "description": "Compromiso con la máxima calidad en cada proyecto, desde la planificación hasta la entrega final."
+    },
+    "transparency": {
+      "title": "Transparencia",
+      "description": "Comunicación clara y honesta en todas las etapas del proceso, garantizando total transparencia para nuestros clientes."
+    },
+    "results": {
+      "title": "Resultados",
+      "description": "Enfoque en entregar valor real y medible, con métricas claras de éxito y ROI comprobado."
+    }
+  },
+  "team": {
+    "title": "Nuestro Equipo",
+    "subtitle": "Especialistas apasionados por la IA y la transformación digital",
+    "description": "Nuestro equipo está formado por profesionales altamente calificados, con amplia experiencia en IA, machine learning y transformación digital empresarial."
+  },
+  "stats": {
+    "clients": "Clientes Atendidos",
+    "projects": "Proyectos Completados",
+    "satisfaction": "Satisfacción",
+    "years": "Años de Experiencia"
+  },
+  "cta": {
+    "title": "¿Listo para transformar tu negocio?",
+    "subtitle": "Hablemos sobre cómo la IA puede revolucionar tu empresa",
+    "button": "Hablar con Especialista"
+  }
+}

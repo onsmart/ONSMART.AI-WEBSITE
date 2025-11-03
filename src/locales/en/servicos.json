@@ -1,0 +1,777 @@
+{
+  "seo": {
+    "title": "AI Services - onsmartAI | Specialized Implementation and Consulting",
+    "description": "Discover our specialized AI services: Diagnosis, Consulting, Implementation, Training and Support. Proven LÍDER methodology."
+  },
+  "hero": {
+    "badge": "Our Services",
+    "title": "Transform your company with",
+    "titleHighlight": "AI",
+    "subtitle": "Specialized solutions to implement",
+    "subtitleHighlight1": "Artificial Intelligence",
+    "subtitleHighlight2": "LÍDER methodology",
+    "subtitleEnd": "in your company through"
+  },
+  "stats": {
+    "companies": "Companies Transformed",
+    "companiesDescription": "Proven results",
+    "productivity": "Productivity Increase",
+    "productivityDescription": "Proven average ROI",
+    "days": "Days to Results",
+    "daysDescription": "Fast implementation"
+  },
+  "benefits": {
+    "badge": "Why choose our services?",
+    "title": "Exclusive",
+    "titleHighlight": "Advantages",
+    "subtitle": "Our exclusive methodology combines",
+    "subtitleHighlight1": "technical expertise",
+    "subtitleHighlight2": "personalized follow-up",
+    "subtitleEnd": "market experience and",
+    "items": {
+      "methodology": {
+        "title": "Proven Methodology",
+        "subtitle": "LÍDER Framework",
+        "description": "Tested in 350+ companies with proven results"
+      },
+      "experts": {
+        "title": "Certified Experts",
+        "subtitle": "Qualified team",
+        "description": "AI certifications and market experience"
+      },
+      "implementation": {
+        "title": "Fast Implementation",
+        "subtitle": "30 days to results",
+        "description": "Agile and efficient implementation"
+      },
+      "support": {
+        "title": "Continuous Support",
+        "subtitle": "24/7 follow-up",
+        "description": "Maximum performance and security"
+      }
+    }
+  },
+  "services": {
+    "badge": "Our Services",
+    "title": "Specialized",
+    "titleHighlight": "Solutions",
+    "subtitle": "From the",
+    "subtitleHighlight1": "initial diagnosis",
+    "subtitleHighlight2": "continuous support",
+    "subtitleEnd": "to",
+    "subtitleEnd2": "we offer a complete ecosystem of AI services",
+    "items": {
+      "diagnostico": {
+        "title": "AI Diagnosis",
+        "heroTitle": "Discover Your Company's AI Potential",
+        "heroSubtitle": "Complete and free assessment to identify specific AI implementation opportunities in your processes",
+        "description": "Complete assessment of your company's AI potential. We identify specific implementation opportunities in your processes and create a personalized roadmap for digital transformation.",
+        "features": [
+          "Process analysis",
+          "Opportunity identification",
+          "Personalized report",
+          "Implementation roadmap",
+          "ROI analysis"
+        ],
+        "detailedFeatures": [
+          {
+            "title": "Process Analysis",
+            "description": "Complete mapping of your company's current processes",
+            "benefits": [
+              "Identification of operational bottlenecks",
+              "Current efficiency analysis",
+              "Automation opportunities"
+            ]
+          },
+          {
+            "title": "Data Evaluation",
+            "description": "Analysis of the quality and availability of your data",
+            "benefits": [
+              "Audit of existing data",
+              "Identification of gaps",
+              "Data collection strategy"
+            ]
+          },
+          {
+            "title": "Personalized Roadmap",
+            "description": "Strategic plan for AI implementation",
+            "benefits": [
+              "Project prioritization",
+              "Implementation schedule",
+              "ROI estimate"
+            ]
+          }
+        ],
+        "process": [
+          {
+            "step": 1,
+            "title": "Initial Questionnaire",
+            "description": "Completion of questionnaire about processes and objectives"
+          },
+          {
+            "step": 2,
+            "title": "Technical Analysis",
+            "description": "Evaluation of existing infrastructure and data"
+          },
+          {
+            "step": 3,
+            "title": "Detailed Report",
+            "description": "Delivery of report with recommendations"
+          }
+        ],
+        "pricing": [
+          {
+            "tier": "Basic Diagnosis",
+            "price": "Free",
+            "features": [
+              "Evaluation questionnaire",
+              "Basic report",
+              "Initial recommendations",
+              "30 min consultation"
+            ]
+          },
+          {
+            "tier": "Complete Diagnosis",
+            "price": "Contact us",
+            "features": [
+              "Detailed analysis",
+              "Executive report",
+              "Personalized roadmap",
+              "2 hour consultation"
+            ]
+          },
+          {
+            "tier": "Enterprise Diagnosis",
+            "price": "Contact us",
+            "features": [
+              "Complete analysis",
+              "Strategic report",
+              "Implementation plan",
+              "Continuous support"
+            ]
+          }
+        ],
+        "price": "Free",
+        "duration": "15 min",
+        "button": "Request Diagnosis",
+        "ctaTitle": "Discover Your Company's AI Potential",
+        "ctaSubtitle": "Over 500 companies have already discovered their AI opportunities"
+      },
+      "aceleracao": {
+        "title": "AI Adoption Acceleration",
+        "heroTitle": "Accelerate Your Company's Digital Transformation",
+        "heroSubtitle": "We implement AI strategically and gradually, ensuring successful adoption across your organization",
+        "description": "Personalized strategy for AI implementation in your company. We develop a complete digital transformation plan adapted to your sector and company size.",
+        "features": [
+          "Personalized roadmap",
+          "Market analysis",
+          "Implementation plan",
+          "Technology selection",
+          "Execution schedule"
+        ],
+        "detailedFeatures": [
+          {
+            "title": "Complete Diagnosis",
+            "description": "Deep analysis of current processes and identification of AI opportunities",
+            "benefits": [
+              "Mapping of 100+ business processes",
+              "Identification of bottlenecks and inefficiencies",
+              "Prioritization based on potential ROI"
+            ]
+          },
+          {
+            "title": "Strategic Roadmap",
+            "description": "Detailed implementation plan with clear milestones and metrics",
+            "benefits": [
+              "Realistic 6-18 month timeline",
+              "Measurable progress milestones",
+              "Change management strategy"
+            ]
+          },
+          {
+            "title": "Gradual Implementation",
+            "description": "Phased rollout to ensure adoption and minimize resistance",
+            "benefits": [
+              "Pilot with strategic department",
+              "Controlled expansion by phases",
+              "Continuous support during transition"
+            ]
+          }
+        ],
+        "process": [
+          {
+            "step": 1,
+            "title": "Initial Assessment",
+            "description": "Discovery workshop to understand needs and objectives"
+          },
+          {
+            "step": 2,
+            "title": "Detailed Diagnosis",
+            "description": "Technical and strategic analysis of current processes"
+          },
+          {
+            "step": 3,
+            "title": "Personalized Roadmap",
+            "description": "Creation of strategic implementation plan"
+          },
+          {
+            "step": 4,
+            "title": "Pilot Implementation",
+            "description": "Execution of pilot project in selected department"
+          },
+          {
+            "step": 5,
+            "title": "Controlled Expansion",
+            "description": "Gradual rollout to other departments"
+          },
+          {
+            "step": 6,
+            "title": "Continuous Optimization",
+            "description": "Constant monitoring and improvements"
+          }
+        ],
+        "pricing": [
+          {
+            "tier": "Starter",
+            "price": "$3,000/month",
+            "features": [
+              "Basic diagnosis",
+              "Simplified roadmap",
+              "1 pilot project",
+              "Email support"
+            ]
+          },
+          {
+            "tier": "Professional",
+            "price": "$7,000/month",
+            "features": [
+              "Complete diagnosis",
+              "Detailed roadmap",
+              "3 pilot projects",
+              "Dedicated support",
+              "Change management"
+            ]
+          },
+          {
+            "tier": "Enterprise",
+            "price": "Contact us",
+            "features": [
+              "Enterprise diagnosis",
+              "Multi-departmental roadmap",
+              "Unlimited projects",
+              "Dedicated team",
+              "Executive training"
+            ]
+          }
+        ],
+        "price": "Contact us",
+        "duration": "1-2 weeks",
+        "button": "Request Quote",
+        "ctaTitle": "Accelerate Your Digital Transformation",
+        "ctaSubtitle": "Over 150 companies have already accelerated their AI adoption with us"
+      },
+      "implementacao": {
+        "title": "Technical Implementation",
+        "heroTitle": "World-Class AI Technical Implementation",
+        "heroSubtitle": "We develop and integrate robust and scalable AI solutions into your technology environment",
+        "description": "Complete deployment of AI solutions in your infrastructure. We implement robust and scalable systems, integrating with your existing systems and ensuring high performance.",
+        "features": [
+          "Technical configuration",
+          "System integration",
+          "Team training",
+          "Continuous monitoring",
+          "Technical documentation"
+        ],
+        "detailedFeatures": [
+          {
+            "title": "Custom Development",
+            "description": "AI solutions developed specifically for your needs",
+            "benefits": [
+              "Personalized algorithms",
+              "Integration with existing systems",
+              "Guaranteed scalability"
+            ]
+          },
+          {
+            "title": "Robust Architecture",
+            "description": "Infrastructure prepared for high performance and availability",
+            "benefits": [
+              "99.9% guaranteed uptime",
+              "Automatic auto-scaling",
+              "Enterprise security"
+            ]
+          },
+          {
+            "title": "Seamless Integration",
+            "description": "Perfect connection with your systems and current workflows",
+            "benefits": [
+              "RESTful and GraphQL APIs",
+              "Real-time webhooks",
+              "Bidirectional synchronization"
+            ]
+          }
+        ],
+        "process": [
+          {
+            "step": 1,
+            "title": "Technical Analysis",
+            "description": "Complete audit of infrastructure and current systems"
+          },
+          {
+            "step": 2,
+            "title": "Solution Architecture",
+            "description": "Technical architecture design and technology selection"
+          },
+          {
+            "step": 3,
+            "title": "MVP Development",
+            "description": "Creation of minimum viable product for validation"
+          },
+          {
+            "step": 4,
+            "title": "Testing and Validation",
+            "description": "Extensive performance and security testing"
+          },
+          {
+            "step": 5,
+            "title": "Production Deploy",
+            "description": "Implementation in production environment"
+          },
+          {
+            "step": 6,
+            "title": "Monitoring",
+            "description": "Continuous monitoring and optimizations"
+          }
+        ],
+        "pricing": [
+          {
+            "tier": "MVP",
+            "price": "$5,000",
+            "features": [
+              "Basic technical analysis",
+              "Functional MVP",
+              "Technical documentation",
+              "3 months of support"
+            ]
+          },
+          {
+            "tier": "Production Ready",
+            "price": "$15,000",
+            "features": [
+              "Complete technical analysis",
+              "Production-ready solution",
+              "Automated tests",
+              "12 months of support",
+              "24/7 monitoring"
+            ]
+          },
+          {
+            "tier": "Enterprise",
+            "price": "$30,000+",
+            "features": [
+              "Enterprise architecture",
+              "High availability",
+              "Advanced security",
+              "Dedicated support",
+              "Custom SLA"
+            ]
+          }
+        ],
+        "price": "Contact us",
+        "duration": "30-60 days",
+        "button": "Request Quote",
+        "ctaTitle": "Implement World-Class AI",
+        "ctaSubtitle": "Over 80 technical projects successfully delivered"
+      },
+      "treinamento": {
+        "title": "AI Training",
+        "heroTitle": "Empower Your Team for the AI Era",
+        "heroSubtitle": "Personalized training programs to accelerate AI adoption in your organization",
+        "description": "Complete training of your team to work with AI. We offer personalized courses and certifications that prepare your employees to lead digital transformation.",
+        "features": [
+          "Personalized course",
+          "AI certification",
+          "Post-training support",
+          "Practical workshops",
+          "Educational material"
+        ],
+        "detailedFeatures": [
+          {
+            "title": "Personalized Training",
+            "description": "Content adapted to your team's level and needs",
+            "benefits": [
+              "Customized curriculum by role",
+              "Practical cases from your sector",
+              "Hands-on with your tools"
+            ]
+          },
+          {
+            "title": "Practical Methodology",
+            "description": "Learning based on real projects and practical cases",
+            "benefits": [
+              "70% practice, 30% theory",
+              "Projects with real data",
+              "Individual mentoring"
+            ]
+          },
+          {
+            "title": "Recognized Certification",
+            "description": "Industry-validated certificates",
+            "benefits": [
+              "onsmartAI certification",
+              "LinkedIn badge",
+              "Market recognition"
+            ]
+          }
+        ],
+        "process": [
+          {
+            "step": 1,
+            "title": "Initial Assessment",
+            "description": "Evaluation of team's current knowledge level"
+          },
+          {
+            "step": 2,
+            "title": "Personalized Curriculum",
+            "description": "Development of customized training program"
+          },
+          {
+            "step": 3,
+            "title": "Intensive Training",
+            "description": "Program execution with theoretical and practical classes"
+          },
+          {
+            "step": 4,
+            "title": "Practical Projects",
+            "description": "Development of supervised real projects"
+          },
+          {
+            "step": 5,
+            "title": "Final Assessment",
+            "description": "Knowledge evaluation and certification"
+          },
+          {
+            "step": 6,
+            "title": "Continuous Support",
+            "description": "Mentoring and post-training support"
+          }
+        ],
+        "pricing": [
+          {
+            "tier": "Individual",
+            "price": "$500/person",
+            "features": [
+              "40h of training",
+              "Educational material",
+              "Completion certificate",
+              "30 days of support"
+            ]
+          },
+          {
+            "tier": "Team (5-20 people)",
+            "price": "$400/person",
+            "features": [
+              "60h of training",
+              "Group projects",
+              "Dedicated mentoring",
+              "90 days of support",
+              "Advanced certification"
+            ]
+          },
+          {
+            "tier": "Corporate (20+ people)",
+            "price": "$300/person",
+            "features": [
+              "80h of training",
+              "Personalized curriculum",
+              "Projects with real data",
+              "Executive mentoring",
+              "6 months of support"
+            ]
+          }
+        ],
+        "price": "Contact us",
+        "duration": "1-4 weeks",
+        "button": "Request Quote",
+        "ctaTitle": "Empower Your Team in AI",
+        "ctaSubtitle": "Over 2,000 professionals have been certified through our programs"
+      },
+      "suporte": {
+        "title": "Continuous Support",
+        "heroTitle": "24/7 Technical Support for Your AI Solutions",
+        "heroSubtitle": "Continuous follow-up and optimization of implemented solutions with specialized technical support",
+        "description": "Follow-up and optimization of implemented solutions. We offer 24/7 technical support and proactive monitoring to ensure maximum efficiency and security.",
+        "features": [
+          "24/7 monitoring",
+          "Continuous optimizations",
+          "Regular updates",
+          "Specialized support",
+          "Performance reports"
+        ],
+        "detailedFeatures": [
+          {
+            "title": "24/7 Monitoring",
+            "description": "Continuous monitoring of your AI solutions performance",
+            "benefits": [
+              "Real-time monitoring",
+              "Automatic alerts",
+              "Performance reports"
+            ]
+          },
+          {
+            "title": "Continuous Optimizations",
+            "description": "Constant improvements based on data and feedback",
+            "benefits": [
+              "Performance analysis",
+              "Automatic adjustments",
+              "Incremental improvements"
+            ]
+          },
+          {
+            "title": "Specialized Support",
+            "description": "Dedicated technical team to solve your needs",
+            "benefits": [
+              "Specialized technical support",
+              "Fast incident response",
+              "Continuous consulting"
+            ]
+          }
+        ],
+        "process": [
+          {
+            "step": 1,
+            "title": "Active Monitoring",
+            "description": "Continuous performance monitoring"
+          },
+          {
+            "step": 2,
+            "title": "Data Analysis",
+            "description": "Analysis of performance and usage data"
+          },
+          {
+            "step": 3,
+            "title": "Optimizations",
+            "description": "Implementation of identified improvements"
+          }
+        ],
+        "pricing": [
+          {
+            "tier": "Basic Support",
+            "price": "Contact us",
+            "features": [
+              "Basic monitoring",
+              "Email support",
+              "Monthly reports",
+              "Business hours"
+            ]
+          },
+          {
+            "tier": "Pro Support",
+            "price": "Contact us",
+            "features": [
+              "24/7 monitoring",
+              "Priority support",
+              "Weekly reports",
+              "Phone support"
+            ]
+          },
+          {
+            "tier": "Enterprise Support",
+            "price": "Contact us",
+            "features": [
+              "Advanced monitoring",
+              "Dedicated support",
+              "Real-time reports",
+              "24/7 support"
+            ]
+          }
+        ],
+        "price": "Contact us",
+        "duration": "Continuous",
+        "button": "Request Quote",
+        "ctaTitle": "Ensure Continuous Success of Your Solutions",
+        "ctaSubtitle": "Over 200 companies trust our technical support"
+      },
+      "analise": {
+        "title": "Data Analysis",
+        "heroTitle": "Transform Data into Competitive Advantage",
+        "heroSubtitle": "Extract valuable insights from your data with our advanced analysis and AI solutions",
+        "description": "Transforming data into actionable insights with AI. We process your historical and real-time data, creating intelligent dashboards and accurate predictions.",
+        "features": [
+          "Data processing",
+          "Intelligent dashboards",
+          "Automatic reports",
+          "Predictions and trends",
+          "Interactive visualizations"
+        ],
+        "detailedFeatures": [
+          {
+            "title": "Advanced Data Mining",
+            "description": "Discovery of hidden patterns in large volumes of data",
+            "benefits": [
+              "Analysis of petabytes of data",
+              "Identification of complex patterns",
+              "Non-obvious insights revealed"
+            ]
+          },
+          {
+            "title": "Predictive Analysis",
+            "description": "Accurate predictions based on machine learning",
+            "benefits": [
+              "90%+ accuracy predictions",
+              "Trend anticipation",
+              "Resource optimization"
+            ]
+          },
+          {
+            "title": "Intelligent Dashboards",
+            "description": "Interactive visualizations and real-time insights",
+            "benefits": [
+              "Customized dashboards",
+              "Automatic alerts",
+              "Self-service analysis"
+            ]
+          }
+        ],
+        "process": [
+          {
+            "step": 1,
+            "title": "Data Audit",
+            "description": "Evaluation of quality and structure of existing data"
+          },
+          {
+            "step": 2,
+            "title": "Data Preparation",
+            "description": "Cleaning, normalization and structuring of data"
+          },
+          {
+            "step": 3,
+            "title": "Analytical Modeling",
+            "description": "Development of machine learning models"
+          },
+          {
+            "step": 4,
+            "title": "Validation and Testing",
+            "description": "Statistical validation and performance testing"
+          },
+          {
+            "step": 5,
+            "title": "Implementation",
+            "description": "Deploy models to production environment"
+          },
+          {
+            "step": 6,
+            "title": "Monitoring",
+            "description": "Continuous monitoring of model performance"
+          }
+        ],
+        "pricing": [
+          {
+            "tier": "Analytics Basic",
+            "price": "$1,600/month",
+            "features": [
+              "Analysis of up to 1M records",
+              "5 customized dashboards",
+              "Monthly reports",
+              "Email support"
+            ]
+          },
+          {
+            "tier": "Analytics Pro",
+            "price": "$4,000/month",
+            "features": [
+              "Analysis of up to 10M records",
+              "Unlimited dashboards",
+              "Predictive analysis",
+              "Priority support",
+              "Real-time alerts"
+            ]
+          },
+          {
+            "tier": "Analytics Enterprise",
+            "price": "$10,000/month",
+            "features": [
+              "Unlimited data",
+              "Advanced machine learning",
+              "Custom API",
+              "Dedicated team",
+              "99.9% SLA"
+            ]
+          }
+        ],
+        "price": "Contact us",
+        "duration": "2-4 weeks",
+        "button": "Request Quote",
+        "ctaTitle": "Transform Your Data into Insights",
+        "ctaSubtitle": "Over 200 companies have optimized their operations with our data analysis"
+      }
+    },
+    "labels": {
+      "investment": "Investment",
+      "duration": "Duration",
+      "viewDetails": "View Details"
+    }
+  },
+  "contact": {
+    "badge": "Contact Us",
+    "title": "Ready to",
+    "titleHighlight": "Transform",
+    "titleEnd": "Your Company?",
+    "subtitle": "Contact us today and discover how",
+    "subtitleHighlight": "AI can revolutionize",
+    "subtitleEnd": "your processes",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "buttons": {
+      "freeDiagnostic": "Free Diagnosis",
+      "talkExpert": "Talk to Expert"
+    }
+  },
+  "submitted": {
+    "title": "Request Sent!",
+    "description": "Thank you for your interest in our services. We will contact you soon.",
+    "button": "Make New Request"
+  },
+  "buttons": {
+    "requestQuote": "Request Quote",
+    "freeDiagnostic": "Free Diagnosis"
+  },
+  "sections": {
+    "features": {
+      "title": "What's included",
+      "subtitle": "Everything you need to transform your company"
+    },
+    "process": {
+      "title": "How It Works",
+      "subtitle": "Structured process to guarantee results"
+    },
+    "pricing": {
+      "title": "Our Plans",
+      "subtitle": "Customized solutions for your company",
+      "completeSolution": "Complete and personalized solution"
+    }
+  },
+  "chartTitles": {
+    "potentialAnalysis": "Potential Analysis",
+    "adoptionGrowth": "AI Adoption Growth",
+    "technicalPerformance": "Technical Performance",
+    "dataInsights": "Data Insights",
+    "knowledgeDistribution": "Knowledge Distribution",
+    "continuousMonitoring": "Continuous Monitoring",
+    "serviceResults": "Service Results"
+  },
+  "chartLabels": {
+    "before": "Before",
+    "after": "After",
+    "goal": "Goal",
+    "roi": "ROI",
+    "month1": "Month 1",
+    "month2": "Month 2",
+    "month3": "Month 3",
+    "month4": "Month 4",
+    "month5": "Month 5",
+    "certified": "Certified",
+    "chartNotAvailable": "Chart not available"
+  }
+}

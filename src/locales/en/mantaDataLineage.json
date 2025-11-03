@@ -1,0 +1,73 @@
+{
+  "hero": {
+    "badge": "Data Governance",
+    "title": "Manta Data Lineage",
+    "subtitle": "Data lineage platform for complete traceability and enterprise data governance."
+  },
+  "statsTop": {
+    "traceability": "Traceability",
+    "connectors": "Connectors",
+    "monitoring": "Monitoring"
+  },
+  "features": {
+    "title": "Key Features",
+    "lineage": {
+      "title": "Automatic Lineage",
+      "desc": "Real-time automatic data lineage discovery"
+    },
+    "governance": {
+      "title": "Data Governance",
+      "desc": "Complete control over data quality and compliance"
+    },
+    "impact": {
+      "title": "Change Impact",
+      "desc": "Impact analysis of changes in data pipelines"
+    },
+    "documentation": {
+      "title": "Automatic Documentation",
+      "desc": "Automatic generation of data documentation"
+    }
+  },
+  "advanced": {
+    "title": "Advanced Resources",
+    "subtitle": "Discover how Manta Data Lineage can revolutionize your data governance",
+    "detailed": {
+      "title": "Detailed Lineage",
+      "desc": "Complete tracking of the origin and transformation of each data field."
+    },
+    "discovery": {
+      "title": "Automatic Discovery",
+      "desc": "Automatic identification of relationships and dependencies between data."
+    },
+    "compliance": {
+      "title": "Regulatory Compliance",
+      "desc": "Support for regulations like GDPR, SOX and other compliance standards."
+    },
+    "collaboration": {
+      "title": "Team Collaboration",
+      "desc": "Collaborative tools for data analysis and documentation."
+    },
+    "impactAnalysis": {
+      "title": "Impact Analysis",
+      "desc": "Change simulation to assess impact on downstream systems."
+    },
+    "integration": {
+      "title": "Universal Integration",
+      "desc": "Connectors for more than 50 data sources and ETL tools."
+    }
+  },
+  "numbers": {
+    "title": "Impressive Numbers",
+    "subtitle": "See how Manta Data Lineage is revolutionizing data governance",
+    "dataSources": "Data Sources",
+    "dataSourcesDesc": "Connected",
+    "enterprises": "Active Enterprises",
+    "enterprisesDesc": "Using the platform",
+    "accuracy": "Accuracy",
+    "accuracyDesc": "In data lineage"
+  },
+  "cta": {
+    "title": "Transform your Data Governance",
+    "subtitle": "Join companies that have already transformed their business with Manta Data Lineage."
+  }
+}

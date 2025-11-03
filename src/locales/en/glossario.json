@@ -1,0 +1,56 @@
+{
+  "seo": {
+    "title": "AI Glossary - Terms and Definitions | onsmartAI",
+    "description": "Access our complete glossary of Artificial Intelligence terms. Clear and objective definitions to better understand the world of business AI."
+  },
+  "hero": {
+    "title": "AI Glossary",
+    "subtitle": "Essential terms and definitions",
+    "description": "Learn the main Artificial Intelligence concepts with clear and objective definitions."
+  },
+  "search": {
+    "placeholder": "Search terms...",
+    "noResults": "No terms found"
+  },
+  "terms": {
+    "aiAgents": {
+      "termo": "AI Agents",
+      "definicao": "Autonomous systems that can make decisions and execute specific tasks using artificial intelligence, without constant human intervention."
+    },
+    "machineLearning": {
+      "termo": "Machine Learning",
+      "definicao": "AI subfield that allows systems to learn and improve automatically through experience, without being explicitly programmed."
+    },
+    "nlp": {
+      "termo": "Natural Language Processing (NLP)",
+      "definicao": "AI area that focuses on interaction between computers and human language, allowing machines to understand and respond in natural language."
+    },
+    "rpa": {
+      "termo": "Robotic Process Automation (RPA)",
+      "definicao": "Technology that uses software to automate routine and repetitive business tasks, mimicking human actions."
+    },
+    "deepLearning": {
+      "termo": "Deep Learning",
+      "definicao": "Machine learning subset that uses neural networks with multiple layers to analyze data similar to the human brain."
+    },
+    "api": {
+      "termo": "API",
+      "definicao": "Application Programming Interface - set of protocols that allows communication between different software and systems."
+    },
+    "bigData": {
+      "termo": "Big Data",
+      "definicao": "Extremely large and complex data sets that require specialized tools for processing and analysis."
+    },
+    "roi": {
+      "termo": "ROI (Return on Investment)",
+      "definicao": "Metric that measures investment efficiency, calculating the return obtained in relation to the invested value."
+    }
+  },
+  "cta": {
+    "title": "Ready to Implement AI?",
+    "subtitle": "Talk to our specialists and transform your company with AI",
+    "button": "Talk to Specialist"
+  }
+}
+
+

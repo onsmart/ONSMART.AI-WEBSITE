@@ -1,0 +1,98 @@
+{
+  "seo": {
+    "title": "Planes y Precios - Soluciones de IA Personalizadas | onsmartAI",
+    "description": "Elige el plan ideal para tu empresa. Soluciones de IA personalizadas con implementación en 30 días. Planes flexibles para todos los tamaños de negocio."
+  },
+  "hero": {
+    "title": "Elige el Plan Ideal",
+    "subtitle": "Soluciones de IA personalizadas para tu empresa",
+    "description": "Implementación en 30 días con resultados garantizados. Elige el plan que mejor se adapte a tu negocio."
+  },
+  "plans": {
+    "starter": {
+      "name": "Starter",
+      "description": "Ideal para pequeñas empresas que quieren comenzar",
+      "price": "R$ 2.997",
+      "period": "/mes",
+      "features": [
+        "Hasta 3 Agentes de IA",
+        "Implementación básica",
+        "Soporte por email",
+        "Dashboard básico",
+        "Integración con 1 sistema",
+        "Reportes mensuales"
+      ]
+    },
+    "business": {
+      "name": "Business",
+      "description": "Para empresas en crecimiento que necesitan escalar",
+      "price": "R$ 7.997",
+      "period": "/mes",
+      "features": [
+        "Hasta 10 Agentes de IA",
+        "Implementación completa",
+        "Soporte prioritario",
+        "Dashboard avanzado",
+        "Integración con hasta 5 sistemas",
+        "Reportes semanales",
+        "Entrenamiento del equipo",
+        "Personalizaciones básicas"
+      ]
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "description": "Solución completa para grandes organizaciones",
+      "price": "Consultar",
+      "period": "",
+      "features": [
+        "Agentes de IA ilimitados",
+        "Implementación personalizada",
+        "Soporte 24/7",
+        "Dashboard personalizado",
+        "Integración con todos los sistemas",
+        "Reportes en tiempo real",
+        "Entrenamiento completo",
+        "Personalizaciones avanzadas",
+        "Consultoría estratégica",
+        "SLA garantizado"
+      ]
+    }
+  },
+  "badges": {
+    "popular": "Más Popular",
+    "enterprise": "Enterprise"
+  },
+  "buttons": {
+    "choosePlan": "Elegir Plan",
+    "contactSales": "Hablar con Ventas",
+    "requestDemo": "Solicitar Demostración",
+    "getStarted": "Comenzar Ahora"
+  },
+  "guarantee": {
+    "title": "Nuestra Garantía",
+    "description": "30 días para probar sin compromiso. Si no estás satisfecho, te devolvemos tu dinero."
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "questions": [
+      {
+        "question": "¿Puedo cancelar en cualquier momento?",
+        "answer": "Sí, puedes cancelar tu plan en cualquier momento sin tarifas de cancelación."
+      },
+      {
+        "question": "¿Hay soporte técnico incluido?",
+        "answer": "Sí, todos los planes incluyen soporte técnico. El nivel varía según el plan elegido."
+      },
+      {
+        "question": "¿Cuánto tiempo toma implementar?",
+        "answer": "La implementación básica toma 30 días. Los planes Enterprise pueden tener cronogramas personalizados."
+      }
+    ]
+  },
+  "cta": {
+    "title": "¿Listo para Transformar tu Empresa?",
+    "subtitle": "Elige tu plan y comienza tu viaje con IA hoy mismo.",
+    "button": "Ver Planes"
+  }
+}
+

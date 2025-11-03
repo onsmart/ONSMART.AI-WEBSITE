@@ -1,0 +1,77 @@
+{
+  "seo": {
+    "title": "Free AI Materials - E-books and Guides | onsmartAI",
+    "description": "Download our free e-books, guides and templates about business Artificial Intelligence. Specialized content to accelerate your AI journey."
+  },
+  "hero": {
+    "title": "Free Materials",
+    "subtitle": "E-books, guides and specialized templates",
+    "description": "Download our exclusive materials about business AI for free and accelerate your digital transformation."
+  },
+  "materials": {
+    "completeGuide": {
+      "title": "Complete AI Guide for Companies",
+      "description": "A comprehensive guide on how to implement Artificial Intelligence in your company",
+      "pages": "45 pages"
+    },
+    "implementationChecklist": {
+      "title": "Agent Implementation Checklist",
+      "description": "Complete checklist for successfully implementing AI agents",
+      "pages": "12 pages"
+    },
+    "roiTemplate": {
+      "title": "AI ROI Template",
+      "description": "Spreadsheet to calculate return on investment in AI projects",
+      "pages": "Excel Template"
+    },
+    "leaderMethodology": {
+      "title": "LEADER Methodology",
+      "description": "Complete e-book about our proprietary implementation methodology",
+      "pages": "67 pages"
+    }
+  },
+  "buttons": {
+    "download": "Download Now",
+    "learnMore": "Learn More",
+    "viewAll": "View All"
+  },
+  "stats": {
+    "downloads": "Downloads",
+    "users": "Users",
+    "materials": "Materials"
+  },
+  "cta": {
+    "title": "Ready to Transform Your Company?",
+    "subtitle": "Talk to our specialists and discover how AI can accelerate your results",
+    "button": "Talk to Specialist"
+  },
+  "hero": {
+    "badge": "Free Resources",
+    "title": "Materials",
+    "titleHighlight": "Free",
+    "description": "Download our e-books, guides and specialized templates on business Artificial Intelligence for free",
+    "downloadAll": "Download All Materials",
+    "viewSuccessCases": "View Success Cases"
+  },
+  "specialized": {
+    "title": "Specialized Content",
+    "description": "Materials developed by AI specialists to accelerate your digital transformation journey"
+  },
+  "buttons": {
+    "download": "Download Now",
+    "learnMore": "Learn More",
+    "viewAll": "View All",
+    "downloadAll": "Download All Materials",
+    "viewSuccessCases": "View Success Cases"
+  },
+  "exclusive": {
+    "badge": "Exclusive Content",
+    "title": "Ready for",
+    "titleHighlight": "exclusive",
+    "titleEnd": "?",
+    "description": "Access exclusive materials and accelerate your digital transformation journey with AI",
+    "scheduleDiagnostic": "Schedule Diagnostic",
+    "viewAllMaterials": "View All Materials"
+  }
+}
+

@@ -74,7 +74,7 @@ const ClientLogos: React.FC = () => {
   ];
 
   return (
-    <section className="py-8 sm:py-10 md:py-12 px-4 sm:px-6 md:px-8 bg-gradient-to-br from-white via-blue-50/20 to-brand-blue/5 dark:bg-gradient-to-br dark:from-gray-800 dark:via-blue-900/10 dark:to-gray-900">
+    <section className="py-8 sm:py-10 md:py-12 px-4 sm:px-6 md:px-8 bg-gradient-to-br from-white via-blue-50/20 to-brand-blue/5 dark:bg-gray-900">
       <div className="container mx-auto max-w-6xl">
         <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-8 sm:mb-10 md:mb-12 text-center text-gray-800 dark:text-gray-200 px-4 sm:px-0">
           Empresas que confiam na nossa solução

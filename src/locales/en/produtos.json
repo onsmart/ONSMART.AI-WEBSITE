@@ -1,0 +1,304 @@
+{
+  "hero": {
+    "title": "IBM Ecosystem - Realize the promise of AI with watsonx",
+    "subtitle": "Make your company prioritize AI and accelerate internal business results"
+  },
+  "certifications": {
+    "title": "Certifications and Compliance",
+    "description": "Our products meet the highest industry standards for security and compliance, ensuring the protection of your data and operations.",
+    "sectionTitle": "Certifications",
+    "ibmSection": {
+      "title": "IBM Professional Certifications",
+      "description": "Official IBM credentials that validate expertise in enterprise AI technologies and advanced technical capabilities"
+    },
+    "items": {
+      "watsonxOrchestrateBuild": {
+        "title": "IBM watsonx Orchestrate Build an AI Assistant",
+        "description": "Official certification for building AI assistants with watsonx"
+      },
+      "watsonxAssistantSales": {
+        "title": "watsonx Assistant Technical Sales Intermediate",
+        "description": "Intermediate certification in technical sales of watsonx assistants"
+      },
+      "watsonxOrchestrateSales": {
+        "title": "watsonx Orchestrate Technical Sales Intermediate",
+        "description": "Intermediate certification in technical sales of watsonx orchestration"
+      },
+      "watsonxAgenticAI": {
+        "title": "watsonx Agentic AI Bootcamp - Level 2",
+        "description": "Advanced agentic AI bootcamp with watsonx"
+      },
+      "watsonxAssistantFoundation": {
+        "title": "watsonx Assistant Sales Foundation",
+        "description": "Foundation certification in sales of watsonx assistants"
+      },
+      "watsonxOrchestrateFoundation": {
+        "title": "watsonx Orchestrate Sales Foundation",
+        "description": "Foundation certification in sales of watsonx orchestration"
+      },
+      "deepLearningSpecialist": {
+        "title": "Advanced Deep Learning Specialist",
+        "description": "Advanced specialization in deep learning focusing on complex neural networks and modern architectures"
+      },
+      "generativeAI": {
+        "title": "Generative AI and LLMs: Architecture and Data Preparation",
+        "description": "Certification in generative AI architecture and data preparation for large language models"
+      },
+      "machineLearningPython": {
+        "title": "Machine Learning with Python",
+        "description": "Machine learning certification using Python for predictive model development"
+      },
+      "aiEngineering": {
+        "title": "IBM AI Engineering Professional Certificate (V2)",
+        "description": "IBM AI engineering professional certification, updated version with best practices"
+      },
+      "computerVision": {
+        "title": "Computer Vision and Image Processing Essentials",
+        "description": "Fundamentals of computer vision and image processing for AI applications"
+      },
+      "deepLearningKeras": {
+        "title": "Deep Learning Essentials with Keras",
+        "description": "Deep learning essentials using the Keras framework for neural network development"
+      },
+      "neuralNetworks": {
+        "title": "Introduction to Neural Networks with PyTorch",
+        "description": "Introduction to neural networks using the PyTorch framework for AI model development"
+      }
+    }
+  },
+  "products": {
+    "title": "Our Products",
+    "aiProductivity": {
+      "title": "AI Productivity",
+      "description": "Reinvent the way you work with AI assistants.",
+      "categories": {
+        "assistants": {
+          "title": "AI Assistants",
+          "items": {
+            "watsonxCodeAssistant": {
+              "name": "watsonx Code Assistant™",
+              "description": "Reinvent the way you work with AI assistants for development",
+              "features": {
+                "title": "Key Features",
+                "items": ["Code Generation", "Bug Detection", "Performance Optimization"]
+              }
+            },
+            "watsonxOrchestrate": {
+              "name": "watsonx Orchestrate™",
+              "description": "Orchestrate AI workflows and automate business processes",
+              "features": {
+                "title": "Key Features",
+                "items": ["Workflow Automation", "System Integration", "Process Governance"]
+              }
+            },
+            "planningAnalytics": {
+              "name": "Planning Analytics",
+              "description": "Integrated enterprise planning and analytics platform",
+              "features": {
+                "title": "Key Features",
+                "items": ["Corporate Planning", "Predictive Analytics", "Real-time Collaboration"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "aiMLOps": {
+      "title": "AI/ML Ops",
+      "description": "Models, tools, and AI governance to ensure trust and scalability.",
+      "categories": {
+        "models": {
+          "title": "AI Models",
+          "items": {
+            "granite": {
+              "name": "Granite™",
+              "description": "Advanced AI models for enterprise applications with enhanced security",
+              "features": {
+                "title": "Key Features",
+                "items": ["Natural Language Processing", "Multi-modal AI", "Enterprise Security"]
+              }
+            },
+            "metaLlama": {
+              "name": "Meta Llama",
+              "description": "Advanced language models for generative AI applications",
+              "features": {
+                "title": "Key Features",
+                "items": ["Advanced Text Generation", "Context Understanding", "Model Customization"]
+              }
+            },
+            "mistral": {
+              "name": "Mistral",
+              "description": "High-performance AI models for enterprise applications",
+              "features": {
+                "title": "Key Features",
+                "items": ["Optimized Performance", "Computational Efficiency", "Deployment Flexibility"]
+              }
+            }
+          }
+        },
+        "tools": {
+          "title": "AI Tools",
+          "items": {
+            "watsonxAI": {
+              "name": "watsonx.ai™",
+              "description": "Work with AI models, tools, and governance built for business",
+              "features": {
+                "title": "Key Features",
+                "items": ["Model Training", "AI Governance", "Business Intelligence"]
+              }
+            }
+          }
+        },
+        "governance": {
+          "title": "AI Governance",
+          "items": {
+            "watsonxGovernance": {
+              "name": "watsonx.governance™",
+              "description": "Complete AI governance with transparency and accountability",
+              "features": {
+                "title": "Key Features",
+                "items": ["Model Monitoring", "Regulatory Compliance", "AI Auditing"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "dataFabric": {
+      "title": "Data Fabric",
+      "description": "Integration and optimization of corporate data for AI and analytics.",
+      "categories": {
+        "databases": {
+          "title": "Databases",
+          "items": {
+            "watsonxData": {
+              "name": "watsonx.data™",
+              "description": "Bring together all business data and optimize how it moves through systems",
+              "features": {
+                "title": "Key Features",
+                "items": ["Data Integration", "Real-time Analytics", "Cloud Native"]
+              }
+            }
+          }
+        },
+        "intelligence": {
+          "title": "Data Intelligence",
+          "items": {
+            "dataProductHub": {
+              "name": "Data Product Hub",
+              "description": "Centralized platform for managing and discovering data products",
+              "features": {
+                "title": "Key Features",
+                "items": ["Data Catalog", "Metadata Management", "Data Lineage"]
+              }
+            },
+            "knowledgeCatalog": {
+              "name": "Knowledge Catalog",
+              "description": "Intelligent data catalog with governance and discovery",
+              "features": {
+                "title": "Key Features",
+                "items": ["Data Discovery", "Metadata Governance", "Data Collaboration"]
+              }
+            },
+            "mantaDataLineage": {
+              "name": "Manta Data Lineage",
+              "description": "Automatic data lineage tracking across the organization",
+              "features": {
+                "title": "Key Features",
+                "items": ["Automatic Tracking", "Flow Visualization", "Impact of Changes"]
+              }
+            }
+          }
+        },
+        "integration": {
+          "title": "Data Integration",
+          "items": {
+            "datastage": {
+              "name": "DataStage®",
+              "description": "Enterprise data integration and transformation platform",
+              "features": {
+                "title": "Key Features",
+                "items": ["ETL Processing", "Data Quality", "Parallel Processing"]
+              }
+            },
+            "databand": {
+              "name": "Databand®",
+              "description": "Complete data observability for pipelines and workflows",
+              "features": {
+                "title": "Key Features",
+                "items": ["Pipeline Monitoring", "Anomaly Detection", "Smart Alerts"]
+              }
+            },
+            "streamsets": {
+              "name": "Streamsets",
+              "description": "Real-time data integration and streaming platform",
+              "features": {
+                "title": "Key Features",
+                "items": ["Data Streaming", "Real-time Transformation", "Performance Monitoring"]
+              }
+            }
+          }
+        },
+        "security": {
+          "title": "Data Security",
+          "items": {
+            "guardium": {
+              "name": "Guardium® Data Security Center",
+              "description": "Data security center with advanced protection and compliance",
+              "features": {
+                "title": "Key Features",
+                "items": ["Sensitive Data Protection", "Access Monitoring", "Regulatory Compliance"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "dataStorage": {
+      "title": "Data Storage",
+      "description": "Storage at edge, core, and cloud.",
+      "categories": {
+        "storage": {
+          "title": "Software-defined Storage",
+          "items": {
+            "storageCeph": {
+              "name": "Storage Ceph®",
+              "description": "Distributed and scalable storage platform for enterprise data",
+              "features": {
+                "title": "Key Features",
+                "items": ["Distributed Storage", "High Availability", "Horizontal Scalability"]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "cta": {
+    "badge": "Quick Implementation",
+    "title": "Transform",
+    "company": "your company",
+    "in": "in",
+    "days": "30 days",
+    "titleEnd": "with AI",
+    "description": "Join",
+    "descriptionEnd": "that have already multiplied their results with our",
+    "companies": "350+ companies",
+    "methodology": "LEADER methodology",
+    "stats": {
+      "roi": "Average ROI",
+      "implementation": "Implementation",
+      "companies": "Companies"
+    },
+    "button": "Secure My Spot Now",
+    "benefits": {
+      "freeSetup": "Free setup",
+      "noCommitment": "No initial commitment",
+      "guaranteedROI": "ROI guaranteed in 90 days"
+    }
+  },
+  "common": {
+    "viewMore": "View more"
+  }
+}
+

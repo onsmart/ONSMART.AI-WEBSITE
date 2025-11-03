@@ -1,0 +1,61 @@
+{
+  "hero": {
+    "badge": "AI Models",
+    "title": "Granite™",
+    "subtitle": "Modelos de IA avançados para aplicações empresariais com segurança aprimorada e performance excepcional."
+  },
+  "statsTop": {
+    "availability": "Disponibilidade",
+    "speed": "Mais rápido que concorrentes",
+    "security": "Conformidade de segurança"
+  },
+  "cta": {
+    "title": "Potencialize sua IA hoje",
+    "subtitle": "Junte-se às empresas que já transformaram seus negócios com Granite™."
+  },
+  "features": {
+    "title": "Principais Recursos",
+    "nlp": {
+      "title": "Processamento de Linguagem Natural",
+      "desc": "Compreensão avançada de texto e linguagem humana"
+    },
+    "multimodal": {
+      "title": "IA Multi-modal",
+      "desc": "Processamento de texto, imagem, áudio e vídeo"
+    },
+    "security": {
+      "title": "Segurança Empresarial",
+      "desc": "Proteção de dados e conformidade com regulamentações"
+    },
+    "scalability": {
+      "title": "Escalabilidade Avançada",
+      "desc": "Suporte a milhões de requisições simultâneas"
+    }
+  },
+  "advanced": {
+    "title": "Recursos Avançados",
+    "subtitle": "Descubra como o Granite™ pode revolucionar suas aplicações de IA",
+    "specializedModels": "Modelos Especializados",
+    "specializedModelsDesc": "Modelos otimizados para diferentes domínios: saúde, finanças, jurídico e mais.",
+    "governance": "Governança de IA",
+    "governanceDesc": "Controle total sobre decisões de IA com rastreabilidade completa.",
+    "personalization": "Personalização Avançada",
+    "personalizationDesc": "Adapte os modelos às necessidades específicas da sua empresa.",
+    "realtime": "Inferência em Tempo Real",
+    "realtimeDesc": "Respostas instantâneas para aplicações críticas de tempo real.",
+    "finetune": "Fine-tuning Automático",
+    "finetuneDesc": "Otimização automática dos modelos baseada nos seus dados.",
+    "api": "API Enterprise",
+    "apiDesc": "Integração fácil com sistemas existentes via APIs robustas."
+  },
+  "numbers": {
+    "title": "Números Impressionantes",
+    "subtitle": "Veja como o Granite™ está revolucionando a IA empresarial",
+    "availableModels": "Modelos Disponíveis",
+    "accuracy": "Precisão Média",
+    "activeEnterprises": "Empresas Ativas",
+    "availableModelsDesc": "Para diferentes casos de uso",
+    "accuracyDesc": "Em tarefas complexas",
+    "activeEnterprisesDesc": "Usando a plataforma"
+  }
+}

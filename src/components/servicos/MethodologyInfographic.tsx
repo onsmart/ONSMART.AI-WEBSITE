@@ -60,7 +60,7 @@ const MethodologyInfographic = () => {
   ];
 
   return (
-    <div className="py-12 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
+    <div className="py-12 bg-gradient-to-br from-gray-50 to-blue-50 dark:bg-gray-900">
       <div className="container mx-auto max-w-6xl px-4">
         <h3 className="text-2xl font-bold text-center mb-8">Nossa Metodologia Comprovada</h3>
         

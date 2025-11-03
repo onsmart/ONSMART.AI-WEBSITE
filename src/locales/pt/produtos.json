@@ -1,0 +1,304 @@
+{
+  "hero": {
+    "title": "Ecossistema IBM - Realize a promessa da IA com watsonx",
+    "subtitle": "Faça com que sua empresa priorize a IA e acelere os resultados de negócios internamente"
+  },
+  "certifications": {
+    "title": "Certificações e Conformidade",
+    "description": "Nossos produtos atendem aos mais altos padrões de segurança e conformidade da indústria, garantindo a proteção dos seus dados e operações.",
+    "sectionTitle": "Certificações",
+    "ibmSection": {
+      "title": "IBM Professional Certifications",
+      "description": "Credenciais oficiais IBM que validam expertise em tecnologias de IA empresarial e capacitação técnica avançada"
+    },
+    "items": {
+      "watsonxOrchestrateBuild": {
+        "title": "IBM watsonx Orchestrate Build an AI Assistant",
+        "description": "Certificação oficial para construção de assistentes de IA com watsonx"
+      },
+      "watsonxAssistantSales": {
+        "title": "watsonx Assistant Technical Sales Intermediate",
+        "description": "Certificação intermediária em vendas técnicas de assistentes watsonx"
+      },
+      "watsonxOrchestrateSales": {
+        "title": "watsonx Orchestrate Technical Sales Intermediate",
+        "description": "Certificação intermediária em vendas técnicas de orquestração watsonx"
+      },
+      "watsonxAgenticAI": {
+        "title": "watsonx Agentic AI Bootcamp - Level 2",
+        "description": "Bootcamp avançado de IA agentiva com watsonx"
+      },
+      "watsonxAssistantFoundation": {
+        "title": "watsonx Assistant Sales Foundation",
+        "description": "Certificação de fundação em vendas de assistentes watsonx"
+      },
+      "watsonxOrchestrateFoundation": {
+        "title": "watsonx Orchestrate Sales Foundation",
+        "description": "Certificação de fundação em vendas de orquestração watsonx"
+      },
+      "deepLearningSpecialist": {
+        "title": "Advanced Deep Learning Specialist",
+        "description": "Especialização avançada em deep learning com foco em redes neurais complexas e arquiteturas modernas"
+      },
+      "generativeAI": {
+        "title": "Generative AI and LLMs: Arquitecture and Data Preparation",
+        "description": "Certificação em arquitetura de IA generativa e preparação de dados para modelos de linguagem grandes"
+      },
+      "machineLearningPython": {
+        "title": "Machine Learning with Python",
+        "description": "Certificação em machine learning utilizando Python para desenvolvimento de modelos preditivos"
+      },
+      "aiEngineering": {
+        "title": "IBM AI Engineering Professional Certificate (V2)",
+        "description": "Certificação profissional em engenharia de IA da IBM, versão atualizada com as melhores práticas"
+      },
+      "computerVision": {
+        "title": "Computer Vision and Image Processing Essentials",
+        "description": "Fundamentos de visão computacional e processamento de imagens para aplicações de IA"
+      },
+      "deepLearningKeras": {
+        "title": "Deep Learning Essentials with Keras",
+        "description": "Essenciais de deep learning utilizando o framework Keras para desenvolvimento de redes neurais"
+      },
+      "neuralNetworks": {
+        "title": "Introduction to Neural Networks with PyTorch",
+        "description": "Introdução às redes neurais utilizando o framework PyTorch para desenvolvimento de modelos de IA"
+      }
+    }
+  },
+  "products": {
+    "title": "Nossos Produtos",
+    "aiProductivity": {
+      "title": "AI Productivity",
+      "description": "Reinvente a forma de trabalhar com assistentes de IA.",
+      "categories": {
+        "assistants": {
+          "title": "AI Assistants",
+          "items": {
+            "watsonxCodeAssistant": {
+              "name": "watsonx Code Assistant™",
+              "description": "Reinvente a forma de trabalhar com assistentes de IA para desenvolvimento",
+              "features": {
+                "title": "Principais Recursos",
+                "items": ["Geração de Código", "Detecção de Bugs", "Otimização de Performance"]
+              }
+            },
+            "watsonxOrchestrate": {
+              "name": "watsonx Orchestrate™",
+              "description": "Orquestre fluxos de trabalho de IA e automatize processos empresariais",
+              "features": {
+                "title": "Principais Recursos",
+                "items": ["Automação de Fluxos", "Integração de Sistemas", "Governança de Processos"]
+              }
+            },
+            "planningAnalytics": {
+              "name": "Planning Analytics",
+              "description": "Plataforma de planejamento e análise empresarial integrada",
+              "features": {
+                "title": "Principais Recursos",
+                "items": ["Planejamento Corporativo", "Análise Preditiva", "Colaboração em Tempo Real"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "aiMLOps": {
+      "title": "AI/ML Ops",
+      "description": "Modelos, ferramentas e governança de IA para garantir confiança e escalabilidade.",
+      "categories": {
+        "models": {
+          "title": "AI Models",
+          "items": {
+            "granite": {
+              "name": "Granite™",
+              "description": "Modelos de IA avançados para aplicações empresariais com segurança aprimorada",
+              "features": {
+                "title": "Principais Recursos",
+                "items": ["Processamento de Linguagem Natural", "IA Multi-modal", "Segurança Empresarial"]
+              }
+            },
+            "metaLlama": {
+              "name": "Meta Llama",
+              "description": "Modelos de linguagem avançados para aplicações de IA generativa",
+              "features": {
+                "title": "Principais Recursos",
+                "items": ["Geração de Texto Avançada", "Compreensão de Contexto", "Personalização de Modelos"]
+              }
+            },
+            "mistral": {
+              "name": "Mistral",
+              "description": "Modelos de IA de alta performance para aplicações empresariais",
+              "features": {
+                "title": "Principais Recursos",
+                "items": ["Performance Otimizada", "Eficiência Computacional", "Flexibilidade de Deployment"]
+              }
+            }
+          }
+        },
+        "tools": {
+          "title": "AI Tools",
+          "items": {
+            "watsonxAI": {
+              "name": "watsonx.ai™",
+              "description": "Trabalhe com modelos, ferramentas e governança de IA criados para negócios",
+              "features": {
+                "title": "Principais Recursos",
+                "items": ["Treinamento de Modelos", "Governança de IA", "Inteligência Empresarial"]
+              }
+            }
+          }
+        },
+        "governance": {
+          "title": "AI Governance",
+          "items": {
+            "watsonxGovernance": {
+              "name": "watsonx.governance™",
+              "description": "Governança completa de IA com transparência e responsabilidade",
+              "features": {
+                "title": "Principais Recursos",
+                "items": ["Monitoramento de Modelos", "Conformidade Regulatória", "Auditoria de IA"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "dataFabric": {
+      "title": "Data Fabric",
+      "description": "Integração e otimização dos dados corporativos para IA e análises.",
+      "categories": {
+        "databases": {
+          "title": "Databases",
+          "items": {
+            "watsonxData": {
+              "name": "watsonx.data™",
+              "description": "Reúna todos os dados de negócios e otimize como eles se movem pelos sistemas",
+              "features": {
+                "title": "Principais Recursos",
+                "items": ["Integração de Dados", "Analytics em Tempo Real", "Cloud Nativo"]
+              }
+            }
+          }
+        },
+        "intelligence": {
+          "title": "Data Intelligence",
+          "items": {
+            "dataProductHub": {
+              "name": "Data Product Hub",
+              "description": "Plataforma centralizada para gerenciar e descobrir produtos de dados",
+              "features": {
+                "title": "Principais Recursos",
+                "items": ["Catálogo de Dados", "Gerenciamento de Metadados", "Linhagem de Dados"]
+              }
+            },
+            "knowledgeCatalog": {
+              "name": "Knowledge Catalog",
+              "description": "Catálogo inteligente de dados com governança e descoberta",
+              "features": {
+                "title": "Principais Recursos",
+                "items": ["Descoberta de Dados", "Governança de Metadados", "Colaboração de Dados"]
+              }
+            },
+            "mantaDataLineage": {
+              "name": "Manta Data Lineage",
+              "description": "Rastreamento automático de linhagem de dados em toda a organização",
+              "features": {
+                "title": "Principais Recursos",
+                "items": ["Rastreamento Automático", "Visualização de Fluxo", "Impacto de Mudanças"]
+              }
+            }
+          }
+        },
+        "integration": {
+          "title": "Data Integration",
+          "items": {
+            "datastage": {
+              "name": "DataStage®",
+              "description": "Plataforma empresarial de integração e transformação de dados",
+              "features": {
+                "title": "Principais Recursos",
+                "items": ["Processamento ETL", "Qualidade de Dados", "Processamento Paralelo"]
+              }
+            },
+            "databand": {
+              "name": "Databand®",
+              "description": "Observabilidade completa de dados para pipelines e workflows",
+              "features": {
+                "title": "Principais Recursos",
+                "items": ["Monitoramento de Pipelines", "Detecção de Anomalias", "Alertas Inteligentes"]
+              }
+            },
+            "streamsets": {
+              "name": "Streamsets",
+              "description": "Plataforma de integração de dados em tempo real e streaming",
+              "features": {
+                "title": "Principais Recursos",
+                "items": ["Streaming de Dados", "Transformação em Tempo Real", "Monitoramento de Performance"]
+              }
+            }
+          }
+        },
+        "security": {
+          "title": "Data Security",
+          "items": {
+            "guardium": {
+              "name": "Guardium® Data Security Center",
+              "description": "Centro de segurança de dados com proteção avançada e conformidade",
+              "features": {
+                "title": "Principais Recursos",
+                "items": ["Proteção de Dados Sensíveis", "Monitoramento de Acesso", "Conformidade Regulatória"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "dataStorage": {
+      "title": "Data Storage",
+      "description": "Armazenamento em borda, núcleo e nuvem.",
+      "categories": {
+        "storage": {
+          "title": "Software-defined Storage",
+          "items": {
+            "storageCeph": {
+              "name": "Storage Ceph®",
+              "description": "Plataforma de armazenamento distribuído e escalável para dados empresariais",
+              "features": {
+                "title": "Principais Recursos",
+                "items": ["Armazenamento Distribuído", "Alta Disponibilidade", "Escalabilidade Horizontal"]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "cta": {
+    "badge": "Implementação Rápida",
+    "title": "Transforme",
+    "company": "sua empresa",
+    "in": "em",
+    "days": "30 dias",
+    "titleEnd": "com IA",
+    "description": "Junte-se às",
+    "descriptionEnd": "que já multiplicaram seus resultados com nossa",
+    "companies": "350+ empresas",
+    "methodology": "metodologia LÍDER",
+    "stats": {
+      "roi": "ROI Médio",
+      "implementation": "Implementação",
+      "companies": "Empresas"
+    },
+    "button": "Garantir Minha Vaga Agora",
+    "benefits": {
+      "freeSetup": "Setup gratuito",
+      "noCommitment": "Sem compromisso inicial",
+      "guaranteedROI": "ROI garantido em 90 dias"
+    }
+  },
+  "common": {
+    "viewMore": "Ver mais"
+  }
+}
+

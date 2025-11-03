@@ -1,0 +1,149 @@
+{
+  "seo": {
+    "title": "Contenido Gratuito - Artículos, E-books y Recursos de IA | onsmartAI",
+    "description": "Accede a nuestra biblioteca gratuita de contenido sobre IA: artículos, e-books, videos, plantillas y calculadoras para acelerar tu transformación digital."
+  },
+  "hero": {
+    "title": "Contenido Gratuito",
+    "subtitle": "Recursos exclusivos para acelerar tu transformación con IA",
+    "description": "Accede a artículos, e-books, videos, plantillas y herramientas desarrolladas por nuestros especialistas en IA."
+  },
+  "categories": {
+    "artigos": "Artículos y Guías",
+    "videos": "Videos",
+    "ebooks": "E-books",
+    "templates": "Plantillas",
+    "checklists": "Listas de Verificación",
+    "calculadoras": "Calculadoras"
+  },
+  "filters": {
+    "all": "Todos",
+    "recent": "Más Recientes",
+    "popular": "Más Populares",
+    "featured": "Destacados"
+  },
+  "content": {
+    "readMore": "Leer Más",
+    "download": "Descargar",
+    "watch": "Ver",
+    "downloadNow": "Descargar Ahora",
+    "watchNow": "Ver Ahora",
+    "readArticle": "Leer Artículo",
+    "viewTemplate": "Ver Plantilla",
+    "useCalculator": "Usar Calculadora",
+    "downloadChecklist": "Descargar Lista"
+  },
+  "stats": {
+    "articles": "Artículos",
+    "videos": "Videos",
+    "downloads": "Descargas",
+    "users": "Usuarios"
+  },
+  "cta": {
+    "title": "¿Listo para Transformar tu Empresa?",
+    "subtitle": "Habla con nuestros especialistas y descubre cómo la IA puede acelerar tus resultados",
+    "button": "Hablar con Especialista"
+  },
+  "newsletter": {
+    "title": "Recibe Contenido Exclusivo",
+    "subtitle": "Regístrate y recibe nuevos artículos, e-books y recursos directamente en tu email",
+    "placeholder": "Tu mejor email",
+    "button": "Registrarse",
+    "success": "¡Registro exitoso!",
+    "error": "Error al registrarse. Inténtalo de nuevo."
+  },
+  "modal": {
+    "close": "Cerrar",
+    "download": "Descargar",
+    "share": "Compartir"
+  },
+  "hero": {
+    "badge": "Contenido Especializado",
+    "title": "Aprende sobre",
+    "titleHighlight": "IA",
+    "titleEnd": "con Especialistas",
+    "description": "Accede a <span>guías prácticas</span>, e-books exclusivos y webinars con casos reales de <span>transformación digital</span>",
+    "stats": {
+      "contents": "Contenidos",
+      "ebooks": "E-books",
+      "videos": "Videos",
+      "tools": "Herramientas"
+    }
+  },
+  "filters": {
+    "title": "Filtrar por Categoría",
+    "showing": "Mostrando",
+    "of": "de",
+    "contents": "contenidos",
+    "in": "en"
+  },
+  "loading": {
+    "title": "Cargando Contenido",
+    "description": "Buscando artículos, videos y e-books especializados..."
+  },
+  "error": {
+    "title": "Error al cargar contenido",
+    "description": "Intenta nuevamente más tarde.",
+    "button": "Intentar Nuevamente"
+  },
+  "empty": {
+    "title": "No se encontró contenido",
+    "description1": "No hay contenido disponible en este momento.",
+    "description2": "No hay contenido en la categoría \"{category}\"."
+  },
+  "actions": {
+    "download": "Descargar",
+    "watch": "Ver",
+    "access": "Acceder",
+    "start": "Iniciar",
+    "use": "Usar",
+    "viewMore": "Mostrar Más",
+    "viewLess": "Mostrar Menos",
+    "remaining": "restantes"
+  },
+  "contentTypes": {
+    "pdf": "PDF",
+    "video": "Video",
+    "webinar": "Webinar",
+    "template": "Plantilla",
+    "checklist": "Lista de Verificación",
+    "calculator": "Calculadora",
+    "course": "Curso",
+    "case": "Caso",
+    "infographic": "Infográfico",
+    "guide": "Guía",
+    "article": "Artículo"
+  },
+  "newsletterSection": {
+    "badge": "Boletín Semanal",
+    "title": "Recibe contenido <span>exclusivo</span>",
+    "titleHighlight": "exclusivo",
+    "subtitle": "Cada semana enviamos <span>insights</span>, <span>casos</span> y <span>noticias</span> sobre IA directamente a tu email",
+    "placeholder": "Tu mejor email",
+    "button": "Suscribirse Gratis",
+    "benefits": {
+      "free": "✓ 100% gratuito",
+      "noSpam": "✓ Sin spam",
+      "cancel": "✓ Cancela cuando quieras"
+    }
+  },
+  "ctaSection": {
+    "badge": "Consultoría Especializada",
+    "title": "¿Listo para <span>implementar</span>?",
+    "titleHighlight": "implementar",
+    "subtitle": "Nuestro equipo puede ayudarte a <span>aplicar</span> todo este conocimiento en tu empresa con resultados garantizados",
+    "button1": "Hablar con Especialista",
+    "button2": "Diagnóstico Gratuito",
+    "benefits": {
+      "free": "✓ Consultoría gratuita",
+      "response": "✓ Respuesta en 24h",
+      "noCommitment": "✓ Sin compromiso"
+    }
+  },
+  "videoModal": {
+    "channel": "onsmarttech",
+    "official": "Canal Oficial",
+    "watchOnYouTube": "Ver en YouTube"
+  }
+}
+

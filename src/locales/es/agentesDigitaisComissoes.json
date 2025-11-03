@@ -1,0 +1,106 @@
+{
+  "seo": {
+    "title": "Comisiones Agentes Digitales onsmartAI - Tabla de Comisiones y Ganancias",
+    "description": "Conoce la tabla de comisiones del programa de Agentes Digitales onsmartAI. Gana de R$ 5.000 a R$ 50.000+ por referencia + ingresos recurrentes.",
+    "keywords": "comisiones agente digital, tabla comisiones, ganancias referencia, ingresos recurrentes, programa afiliados"
+  },
+  "hero": {
+    "badge": "Tabla de Comisiones",
+    "title": "Comisiones de los Agentes Digitales",
+    "subtitle": "Descubre cuánto puedes ganar refiriendo empresas a onsmartAI",
+    "buttons": {
+      "becomeAgent": "Convertirse en Agente",
+      "viewProgram": "Ver Programa Completo"
+    }
+  },
+  "commissions": {
+    "title": "Estructura de Comisiones",
+    "subtitle": "Cuanto mayor sea el valor del contrato, mayor será tu comisión",
+    "basic": {
+      "title": "Contratos Básicos",
+      "description": "R$ 5.000 a R$ 25.000/mes",
+      "percentage": "10%",
+      "note": "Comisión sobre el valor del primer año",
+      "examples": {
+        "5000": "R$ 5.000/mes:",
+        "5000Value": "R$ 6.000",
+        "15000": "R$ 15.000/mes:",
+        "15000Value": "R$ 18.000",
+        "25000": "R$ 25.000/mes:",
+        "25000Value": "R$ 30.000"
+      }
+    },
+    "medium": {
+      "title": "Contratos Medianos",
+      "description": "R$ 25.000 a R$ 50.000/mes",
+      "percentage": "15%",
+      "note": "Comisión sobre el valor del primer año",
+      "examples": {
+        "25000": "R$ 25.000/mes:",
+        "25000Value": "R$ 45.000",
+        "35000": "R$ 35.000/mes:",
+        "35000Value": "R$ 63.000",
+        "50000": "R$ 50.000/mes:",
+        "50000Value": "R$ 90.000"
+      }
+    },
+    "enterprise": {
+      "title": "Contratos Enterprise",
+      "description": "R$ 50.000+/mes",
+      "percentage": "25%",
+      "note": "Comisión sobre el valor del primer año",
+      "examples": {
+        "50000": "R$ 50.000/mes:",
+        "50000Value": "R$ 150.000",
+        "100000": "R$ 100.000/mes:",
+        "100000Value": "R$ 300.000",
+        "200000": "R$ 200.000/mes:",
+        "200000Value": "R$ 600.000"
+      }
+    }
+  },
+  "recurring": {
+    "title": "Ingresos Recurrentes Garantizados",
+    "description": "Además de la comisión inicial, ganas 2% de todo lo que el cliente pague mensualmente durante 12 meses.",
+    "examples": {
+      "10000": {
+        "title": "Cliente R$ 10.000/mes",
+        "description": "R$ 200/mes por 12 meses = R$ 2.400 adicional"
+      },
+      "50000": {
+        "title": "Cliente R$ 50.000/mes",
+        "description": "R$ 1.000/mes por 12 meses = R$ 12.000 adicional"
+      },
+      "100000": {
+        "title": "Cliente R$ 100.000/mes",
+        "description": "R$ 2.000/mes por 12 meses = R$ 24.000 adicional"
+      }
+    },
+    "realExample": {
+      "title": "Ejemplo Real",
+      "client": "Cliente R$ 30.000/mes",
+      "tier": "15% tier",
+      "initial": "Comisión inicial:",
+      "recurring": "Ingresos recurrentes (12x):",
+      "total": "Total en el primer año:"
+    }
+  },
+  "calculator": {
+    "title": "Calcula tus Ganancias",
+    "cardTitle": "Simulador de Comisiones",
+    "cardDescription": "Ingresa el valor mensual del contrato para ver tu comisión",
+    "label": "Valor mensual del contrato (R$)",
+    "placeholder": "Ej: 25000",
+    "button": "Calcular Comisión",
+    "helper": "Completa el valor arriba para ver tu comisión estimada"
+  },
+  "cta": {
+    "title": "¿Listo para Empezar a Ganar?",
+    "description": "Regístrate gratis y recibe tu enlace exclusivo para comenzar a referir clientes hoy mismo.",
+    "buttons": {
+      "signup": "Registrarse Ahora",
+      "contact": "Hacer Preguntas"
+    }
+  }
+}
+

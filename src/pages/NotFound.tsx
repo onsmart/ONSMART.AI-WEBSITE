@@ -3,9 +3,11 @@ import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Home, ArrowLeft, Search } from "lucide-react";
+import { useTranslation } from 'react-i18next';
 
 const NotFound = () => {
   const location = useLocation();
+  const { t } = useTranslation(['notFound', 'common']);
 
   useEffect(() => {
     console.error(
@@ -14,12 +16,12 @@ const NotFound = () => {
     );
     
     // SEO: Update document title for 404 page
-    document.title = "Página não encontrada - onsmartAI";
+    document.title = t('seo.title');
     
     // SEO: Add meta description for 404 page
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Página não encontrada. Explore nossos serviços de Agentes de IA.');
+      metaDescription.setAttribute('content', t('seo.description'));
     }
 
     // Add noindex meta tag for 404 pages to prevent indexing
@@ -77,7 +79,7 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-white to-gray-50 dark:bg-gray-900 px-4">
       <div className="text-center max-w-2xl mx-auto">
         {/* Accessible heading structure */}
         <h1 className="text-6xl md:text-8xl font-bold text-brand-black mb-4" aria-label="Erro 404">

@@ -9,7 +9,7 @@ import ResultsFooter from "./results/ResultsFooter";
 
 const ResultsVisuals = () => {
   return (
-    <section className="py-24 px-4 md:px-6 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
+    <section className="py-24 px-4 md:px-6 bg-gradient-to-b from-gray-50 to-white dark:bg-gray-900">
       <div className="container mx-auto max-w-6xl">
         <ResultsHeader />
 

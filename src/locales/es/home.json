@@ -1,0 +1,212 @@
+{
+  "hero": {
+    "badge": "Metodología LÍDER",
+    "titleStart": "Transforma tu empresa en una",
+    "typewriterTexts": [
+      "Potencia de IA",
+      "Máquina de Resultados",
+      "Líder de Mercado",
+      "Empresa del Futuro"
+    ],
+    "titleEnd": "en",
+    "days": "30 días",
+    "subtitle": "Únete a las <strong>{{count}}+ empresas</strong> que aumentaron <strong>productividad en 420%</strong> con nuestra <strong>metodología exclusiva</strong> de Agentes de IA.",
+    "stats": {
+      "companies": "{{count}}+ empresas transformadas",
+      "increase": "{{percent}}% aumento promedio",
+      "implementation": "{{days}} días implementación"
+    },
+    "cta": {
+      "primary": "Comenzar Transformación Ahora",
+      "primaryMobile": "Comenzar Ahora",
+      "secondary": "Ver Metodología LÍDER"
+    },
+    "trust": {
+      "freeDiagnostic": "Diagnóstico gratuito",
+      "noCommitment": "Sin compromiso",
+      "results": "Resultados en 30 días"
+    }
+  },
+  "features": {
+    "title": "Nuestras Soluciones",
+    "description": "Agentes de IA personalizados para tu empresa"
+  },
+  "testimonials": {
+    "badge": "Testimonios",
+    "title": "Lo que dicen nuestros",
+    "titleHighlight": "clientes",
+    "items": [
+      {
+        "name": "Carlos Silva",
+        "position": "CTO",
+        "company": "TechCorp",
+        "sector": "Tecnología",
+        "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=3&w=64&h=64&q=80",
+        "rating": 5,
+        "text": "La implementación de los Agentes de IA en nuestra empresa elevó la productividad del equipo de desarrollo en un 280%. Los procesos que antes tomaban días ahora se completan en horas."
+      },
+      {
+        "name": "Ana Ferreira",
+        "position": "CEO",
+        "company": "HealthPlus",
+        "sector": "Salud",
+        "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=3&w=64&h=64&q=80",
+        "rating": 5,
+        "text": "Después de 3 meses con la solución VIBE ENTERPRISE, conseguimos reducir nuestros costos operativos en un 35% y mejorar significativamente la atención a los pacientes."
+      },
+      {
+        "name": "Roberto Mendes",
+        "position": "Director de Innovación",
+        "company": "FinanceGroup",
+        "sector": "Finanzas",
+        "avatar": "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=3&w=64&h=64&q=80",
+        "rating": 5,
+        "text": "Los Agentes de IA transformaron nuestro análisis de riesgo. Ahora procesamos 10x más datos con mayor precisión y cumplimiento normativo."
+      },
+      {
+        "name": "Marcela Santos",
+        "position": "Directora de Operaciones",
+        "company": "EduTech Brasil",
+        "sector": "Educación",
+        "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=3&w=64&h=64&q=80",
+        "rating": 5,
+        "text": "Los resultados con la implementación del sistema de IA fueron sorprendentes. Conseguimos personalizar el aprendizaje para cada alumno y aumentamos el compromiso en un 45%."
+      },
+      {
+        "name": "Ricardo Oliveira",
+        "position": "Gerente de Cadena de Suministro",
+        "company": "Mega Varejo",
+        "sector": "Retail",
+        "avatar": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=3&w=64&h=64&q=80",
+        "rating": 5,
+        "text": "La plataforma de IA para previsión de demanda redujo nuestro desperdicio en un 40% y optimizó toda la cadena de suministro. Una inversión que se pagó en menos de 6 meses."
+      },
+      {
+        "name": "Patricia Mendonça",
+        "position": "Directora de Marketing",
+        "company": "AgriTech",
+        "sector": "Agronegocios",
+        "avatar": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=3&w=64&h=64&q=80",
+        "rating": 5,
+        "text": "Con la plataforma de IA, conseguimos optimizar los ciclos de siembra y cosecha, resultando en un aumento del 22% en la productividad de nuestras granjas asociadas."
+      }
+    ]
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Preguntas",
+    "titleHighlight": "frecuentes",
+    "items": [
+      {
+        "question": "¿Cómo se integran los Agentes de IA con los sistemas existentes?",
+        "answer": "Utilizamos conectores preconstruidos y APIs para integración con sistemas como SAP, Salesforce y Microsoft 365. El proceso lleva de 2 a 4 semanas con soporte completo de nuestro equipo."
+      },
+      {
+        "question": "¿Cuál es el tiempo promedio de implementación?",
+        "answer": "De 4 a 8 semanas, incluyendo diagnóstico, configuración, entrenamiento y lanzamiento. Para empresas más grandes, puede llevar hasta 12 semanas."
+      },
+      {
+        "question": "¿Cómo se calcula el ROI de la implementación?",
+        "answer": "Consideramos reducción de costos, aumento de productividad, reducción de errores y mejora en la experiencia del cliente. ROI promedio superior al 300% anual con punto de equilibrio en 3-6 meses."
+      },
+      {
+        "question": "¿Se requiere conocimiento técnico para administrar?",
+        "answer": "No. La plataforma tiene interfaces intuitivas para usuarios de negocio e incluye entrenamiento completo. También ofrecemos el servicio totalmente gestionado."
+      }
+    ],
+    "cta": {
+      "text": "Habla con un experto"
+    }
+  },
+  "videoAbout": {
+    "badge": "Pioneros en IA Empresarial",
+    "title": "Conoce",
+    "subtitle": {
+      "start": "Somos pioneros",
+      "end": "en la transformación empresarial a través de la inteligencia artificial"
+    },
+    "imageAlt": "Equipo onsmart AI - Pioneros en IA",
+    "mission": {
+      "title": "Nuestra Misión",
+      "description": "Democratizar la inteligencia artificial empresarial, ofreciendo soluciones que generan resultados medibles y transformación real."
+    },
+    "results": {
+      "title": "Resultados Comprobados",
+      "companies": {
+        "count": "350",
+        "text": "empresas transformadas"
+      },
+      "roi": {
+        "value": "420",
+        "text": "ROI promedio comprobado"
+      },
+      "implementation": {
+        "days": "30",
+        "unit": "días",
+        "text": "para implementación completa"
+      }
+    },
+    "pioneers": {
+      "title": "Por qué Somos Pioneros",
+      "description": "Desde 2020, lideramos la revolución de la IA en Brasil, desarrollando metodologías propias y soluciones innovadoras que establecen nuevos estándares de excelencia."
+    }
+  },
+  "lider": {
+    "badge": "Nuestra metodología",
+    "title": "Modelo",
+    "description": "Framework estructurado para implementar IA empresarial",
+    "pillars": [
+      {
+        "name": "Laboral",
+        "description": "IA como fuerza de trabajo"
+      },
+      {
+        "name": "Inversión",
+        "description": "Capacitación del equipo"
+      },
+      {
+        "name": "Desarrollo",
+        "description": "Evolución continua"
+      },
+      {
+        "name": "Estructuración",
+        "description": "Sistemas modulares"
+      },
+      {
+        "name": "Reconocimiento",
+        "description": "Interfaces intuitivas"
+      },
+      {
+        "name": "Ejecución",
+        "description": "Implementación estratégica"
+      }
+    ]
+  },
+  "roi": {
+    "title": "Calcula tu",
+    "subtitle": "Descubre el impacto financiero de la IA en tu empresa",
+    "calculating": "Calculando...",
+    "calculateButton": "Calcular ROI",
+    "fields": {
+      "employees": "Empleados",
+      "averageSalary": "Salario Promedio",
+      "automationRate": "Tasa de Automatización",
+      "manualHours": "Horas Manuales/Día",
+      "hoursUnit": "h"
+    },
+    "results": {
+      "monthlySavings": "Ahorro Mensual",
+      "annualROI": "ROI Anual",
+      "payback": "Retorno",
+      "paybackUnit": "m",
+      "annualSavings": "Ahorro Anual",
+      "productivity": "Productividad",
+      "cta": {
+        "consultancy": "Solicitar Consultoría",
+        "diagnostic": "Diagnóstico Gratuito"
+      },
+      "recalculate": "Recalcular"
+    }
+  }
+}
+

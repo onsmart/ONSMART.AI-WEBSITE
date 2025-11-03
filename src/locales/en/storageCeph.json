@@ -1,0 +1,52 @@
+{
+  "hero": {
+    "badge": "Software-defined Storage",
+    "title": "Storage Ceph®",
+    "subtitle": "Distributed and scalable storage platform for enterprise data."
+  },
+  "statsTop": {
+    "distributed": "Distributed Storage",
+    "availability": "High Availability",
+    "scalability": "Horizontal Scalability"
+  },
+  "cta": {
+    "requestDemo": "Request Demo",
+    "title": "Scale your storage with confidence",
+    "subtitle": "High performance, resilience and linear growth."
+  },
+  "features": {
+    "title": "Key Features",
+    "object": {
+      "title": "Object Storage",
+      "desc": "S3 compatible for modern applications"
+    },
+    "block": {
+      "title": "Block Storage",
+      "desc": "Low latency for critical workloads"
+    },
+    "file": {
+      "title": "File Storage",
+      "desc": "POSIX access for legacy applications"
+    }
+  },
+  "advanced": {
+    "title": "Advanced Capabilities",
+    "subtitle": "Reliability and performance at scale",
+    "replication": "Replication & Erasure Coding",
+    "replicationDesc": "Data protection with space efficiency",
+    "automation": "Automation & Self-healing",
+    "automationDesc": "Automatic rebalancing and healing",
+    "security": "Security",
+    "securityDesc": "Encryption, RBAC and auditing"
+  },
+  "numbers": {
+    "title": "In Numbers",
+    "subtitle": "Storage ready for any scale",
+    "capacity": "Capacity",
+    "clusters": "Active clusters",
+    "iops": "Sustained IOPS",
+    "capacityDesc": "Expandable per node",
+    "clustersDesc": "In production",
+    "iopsDesc": "With low latency"
+  }
+}

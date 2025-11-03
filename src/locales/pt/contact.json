@@ -1,0 +1,25 @@
+{
+  "title": "Entre em Contato",
+  "description": "Preencha o formulário abaixo e nossa equipe entrará em contato",
+  "form": {
+    "name": "Nome completo",
+    "email": "E-mail",
+    "phone": "Telefone",
+    "company": "Empresa",
+    "position": "Cargo",
+    "message": "Mensagem",
+    "interestArea": "Área de interesse",
+    "submit": "Enviar Mensagem",
+    "sending": "Enviando...",
+    "success": "Mensagem enviada com sucesso!",
+    "error": "Erro ao enviar mensagem. Tente novamente."
+  },
+  "validation": {
+    "nameRequired": "Nome é obrigatório",
+    "emailRequired": "E-mail é obrigatório",
+    "emailInvalid": "E-mail inválido",
+    "phoneRequired": "Telefone é obrigatório",
+    "messageRequired": "Mensagem é obrigatória"
+  }
+}
+

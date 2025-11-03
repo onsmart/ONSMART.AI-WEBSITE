@@ -1,0 +1,177 @@
+{
+  "hero": {
+    "title": "AI Agents - Proprietary Solutions",
+    "subtitle": "Custom AI agents and platforms developed specifically to transform your business"
+  },
+  "stats": {
+    "companies": "Companies Served",
+    "successRate": "Success Rate",
+    "implementation": "Average Implementation"
+  },
+  "categories": {
+    "title": "Our Product Categories",
+    "subtitle": "Complete solutions developed internally to meet all your company's AI needs"
+  },
+  "products": {
+    "agentBuilder": {
+      "name": "OnSmart Agent Builder",
+      "description": "No-code platform to create custom AI agents for your company",
+      "category": "AI Agents",
+      "features": [
+        "No-Code Interface",
+        "Pre-configured Templates",
+        "API Integration",
+        "Personalized Training"
+      ],
+      "benefits": [
+        "10x faster development",
+        "No programming required",
+        "Deploy in 24h"
+      ],
+      "price": "Starting from $500/month"
+    },
+    "analytics": {
+      "name": "OnSmart Analytics",
+      "description": "Complete suite of predictive analytics and business intelligence with AI",
+      "category": "Analytics",
+      "features": [
+        "Predictive Analytics",
+        "Intelligent Dashboards",
+        "Automatic Alerts",
+        "Multi-source Integration"
+      ],
+      "benefits": [
+        "Real-time insights",
+        "Accurate predictions",
+        "Measurable ROI"
+      ],
+      "price": "Starting from $700/month"
+    },
+    "automation": {
+      "name": "OnSmart Automation",
+      "description": "Intelligent automation of business processes with generative AI",
+      "category": "Automation",
+      "features": [
+        "Intelligent RPA",
+        "Document Processing",
+        "Adaptive Workflows",
+        "Advanced OCR"
+      ],
+      "benefits": [
+        "80% reduction in manual tasks",
+        "99% accuracy",
+        "Total scalability"
+      ],
+      "price": "Starting from $800/month"
+    },
+    "customerAI": {
+      "name": "OnSmart Customer AI",
+      "description": "Advanced conversational agents for customer service and sales",
+      "category": "Customer Service",
+      "features": [
+        "Intelligent Chatbots",
+        "Sentiment Analysis",
+        "Automatic Scalability",
+        "CRM Integration"
+      ],
+      "benefits": [
+        "24/7 customer service",
+        "+40% satisfaction",
+        "+60% conversion"
+      ],
+      "price": "Starting from $360/month"
+    },
+    "vision": {
+      "name": "OnSmart Vision",
+      "description": "Computer vision platform for image and video analysis",
+      "category": "Computer Vision",
+      "features": [
+        "Object Recognition",
+        "Facial Analysis",
+        "Anomaly Detection",
+        "Real-time Processing"
+      ],
+      "benefits": [
+        "98% accuracy",
+        "Instant analysis",
+        "Cost reduction"
+      ],
+      "price": "Starting from $1,000/month"
+    },
+    "brain": {
+      "name": "OnSmart Brain",
+      "description": "Proprietary AI models trained specifically for your business",
+      "category": "AI Models",
+      "features": [
+        "Custom Models",
+        "Advanced Fine-tuning",
+        "Data Governance",
+        "Secure Deployment"
+      ],
+      "benefits": [
+        "Superior performance",
+        "Proprietary data",
+        "Total compliance"
+      ],
+      "price": "Contact us"
+    }
+  },
+  "categoryNames": {
+    "agentes": "AI Agents",
+    "analytics": "Analytics",
+    "automacao": "Automation",
+    "atendimento": "Customer Service",
+    "visao": "Computer Vision",
+    "modelos": "AI Models"
+  },
+  "features": {
+    "title": "Main Features",
+    "titleBenefits": "Benefits"
+  },
+  "price": {
+    "from": "Starting from"
+  },
+  "buttons": {
+    "viewDetails": "View Details",
+    "requestDemo": "Request Demo"
+  },
+  "whyChoose": {
+    "title": "Why Choose Our Products?",
+    "subtitle": "We develop our own solutions focused on Brazilian reality and your business's specific needs"
+  },
+  "benefits": {
+    "national": {
+      "title": "100% National",
+      "description": "Developed in Brazil for Brazilian companies"
+    },
+    "security": {
+      "title": "Total Security",
+      "description": "LGPD compliant and secure infrastructure"
+    },
+    "implementation": {
+      "title": "Fast Implementation",
+      "description": "Deploy in up to 30 business days"
+    },
+    "support": {
+      "title": "Specialized Support",
+      "description": "Dedicated team and 24/7 support"
+    }
+  },
+  "cta": {
+    "badge": "LAST 12 SPOTS - June 2025",
+    "title": "Transform your company with our AI products",
+    "description": "Join the 500+ companies that have multiplied their results with our proprietary solutions. Implement custom AI agents in 30 days.",
+    "button": "Request Free Demonstration",
+    "stats": {
+      "roi": "Average ROI in 6 months",
+      "guarantee": "Results Guarantee",
+      "implementation": "Complete Implementation"
+    },
+    "benefits": {
+      "freeSetup": "Free demo",
+      "noCommitment": "No initial commitment",
+      "guaranteedROI": "ROI guaranteed in 90 days"
+    }
+  }
+}
+

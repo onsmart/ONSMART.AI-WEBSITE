@@ -1,0 +1,32 @@
+{
+  "hero": {
+    "badge": "Pioneira Omnichannel de IA",
+    "title": "Sonia Assistente IA",
+    "subtitle": "A primeira assistente de IA omnichannel do Brasil, pioneira em prospecção por voz. Com tecnologia bidirecional, multilíngue e simultaneidade, melhora a cada interação para revolucionar vendas e atendimento."
+  },
+  "stats": {
+    "companies": "Empresas",
+    "success": "Sucesso",
+    "implementation": "Implementação"
+  },
+  "features": {
+    "voiceProspecting": {
+      "title": "Prospecção por Voz",
+      "description": "Ligação ativa com compreensão de contexto e agendamento automático"
+    },
+    "omnichannel": {
+      "title": "Omnichannel Real",
+      "description": "WhatsApp, Web, Telefone e E-mail em um único fluxo"
+    },
+    "learning": {
+      "title": "Simultaneidade & Aprendizado",
+      "description": "Atende milhares de clientes simultaneamente e melhora a cada interação"
+    }
+  },
+  "cta": {
+    "title": "Seja pioneiro com a Sonia",
+    "subtitle": "Junte-se às empresas que já revolucionaram seus negócios com a primeira assistente omnichannel do Brasil.",
+    "talkToSonia": "Falar com a Sonia",
+    "viewOthers": "Ver Outros Produtos"
+  }
+}

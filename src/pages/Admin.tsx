@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import ContentManager from '@/components/admin/ContentManager';
@@ -8,16 +9,18 @@ import BlogManager from '@/components/admin/BlogManager';
 import { Shield, FileText, Briefcase, BookOpen } from 'lucide-react';
 
 const Admin = () => {
+  const { t } = useTranslation(['admin', 'common']);
+  
   return (
     <div className="min-h-screen bg-gray-50 py-8">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-2">
             <Shield className="h-8 w-8 text-brand-blue" />
-            <h1 className="text-3xl font-bold text-gray-900">Painel Administrativo</h1>
+            <h1 className="text-3xl font-bold text-gray-900">{t('title')}</h1>
           </div>
           <p className="text-gray-600">
-            Gerencie conteúdos, cases de sucesso e posts do blog
+            {t('subtitle')}
           </p>
         </div>
 
@@ -25,24 +28,24 @@ const Admin = () => {
           <TabsList className="grid w-full grid-cols-3">
             <TabsTrigger value="content" className="flex items-center gap-2">
               <FileText className="h-4 w-4" />
-              Conteúdos
+              {t('tabs.content')}
             </TabsTrigger>
             <TabsTrigger value="cases" className="flex items-center gap-2">
               <Briefcase className="h-4 w-4" />
-              Cases de Sucesso
+              {t('tabs.cases')}
             </TabsTrigger>
             <TabsTrigger value="blog" className="flex items-center gap-2">
               <BookOpen className="h-4 w-4" />
-              Blog
+              {t('tabs.blog')}
             </TabsTrigger>
           </TabsList>
 
           <TabsContent value="content">
             <Card>
               <CardHeader>
-                <CardTitle>Gerenciar Conteúdos</CardTitle>
+                <CardTitle>{t('sections.content.title')}</CardTitle>
                 <CardDescription>
-                  Adicione, edite e gerencie e-books, artigos, vídeos e outros materiais
+                  {t('sections.content.description')}
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -54,9 +57,9 @@ const Admin = () => {
           <TabsContent value="cases">
             <Card>
               <CardHeader>
-                <CardTitle>Gerenciar Cases de Sucesso</CardTitle>
+                <CardTitle>{t('sections.cases.title')}</CardTitle>
                 <CardDescription>
-                  Adicione e edite estudos de caso por setor
+                  {t('sections.cases.description')}
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -68,9 +71,9 @@ const Admin = () => {
           <TabsContent value="blog">
             <Card>
               <CardHeader>
-                <CardTitle>Gerenciar Blog</CardTitle>
+                <CardTitle>{t('sections.blog.title')}</CardTitle>
                 <CardDescription>
-                  Crie e publique artigos para o blog
+                  {t('sections.blog.description')}
                 </CardDescription>
               </CardHeader>
               <CardContent>

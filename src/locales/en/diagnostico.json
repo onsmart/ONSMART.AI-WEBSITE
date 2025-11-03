@@ -1,0 +1,194 @@
+{
+  "seo": {
+    "title": "Free AI Diagnostic - Personalized Analysis | onsmartAI",
+    "description": "Request your free AI diagnostic and discover how Artificial Intelligence can transform your company. Personalized analysis in 45 minutes."
+  },
+  "hero": {
+    "badge": "AI Diagnostic",
+    "title": "Discover How Much Your Company Can",
+    "titleHighlight": "Save with AI",
+    "alerts": {
+      "financial": {
+        "label": "FINANCIAL ALERT:",
+        "message": "Your company may be losing $50,000+ per month in operational costs that AI could eliminate immediately."
+      },
+      "competitor": {
+        "message": "Similar companies to yours already save",
+        "highlight": "420% more",
+        "end": "with our LEADER methodology. Don't let your competitors get ahead!"
+      }
+    },
+    "completeDiagnostic": {
+      "title": "COMPLETE DIAGNOSTIC",
+      "subtitle": "What you get in the free 45-minute diagnostic",
+      "items": {
+        "analysis": {
+          "title": "Complete Analysis",
+          "description": "Detailed assessment of your processes"
+        },
+        "savings": {
+          "title": "Savings Calculation",
+          "description": "Exact projection of savings potential"
+        },
+        "roadmap": {
+          "title": "Personalized Roadmap",
+          "description": "Customized implementation plan"
+        },
+        "roi": {
+          "title": "ROI Projection",
+          "description": "Return on investment in 12 months"
+        }
+      }
+    },
+    "stats": {
+      "free": {
+        "label": "100% Free",
+        "description": "No costs or commitments"
+      },
+      "time": {
+        "label": "45 Minutes",
+        "description": "Complete and detailed analysis"
+      },
+      "roi": {
+        "label": "420% ROI",
+        "description": "Proven average return"
+      }
+    }
+  },
+  "success": {
+    "title": "Diagnostic Scheduled!",
+    "message": "✓ Request received!",
+    "responseTime": "Our team will contact you within",
+    "responseTimeValue": "24 hours",
+    "responseTimeEnd": "to schedule your diagnostic.",
+    "diagnosticTime": "Personalized diagnostic in 45 minutes",
+    "freeGuarantee": "100% free and no commitment",
+    "scheduleAnother": "Schedule Another Diagnostic",
+    "backToHome": "Back to Home"
+  },
+  "form": {
+    "badge": "Schedule Diagnostic",
+    "title": "Secure Your",
+    "titleHighlight": "Free Spot",
+    "subtitle": "Discover the cost-saving potential of AI in your company",
+    "description": "Fill out the form below and receive within",
+    "descriptionHighlight": "24 hours",
+    "descriptionEnd": ": confirmed appointment, preparatory material and personalized checklist.",
+    "socialProof": {
+      "diagnostics": {
+        "value": "2,847",
+        "label": "Diagnostics performed"
+      },
+      "satisfaction": {
+        "value": "4.9/5",
+        "label": "Average satisfaction"
+      },
+      "value": {
+        "value": "$2,500",
+        "label": "Free value"
+      }
+    },
+    "bonus": {
+      "title": "When requesting the diagnostic, you will receive:",
+      "items": {
+        "contact": "Contact from our team within 24 hours",
+        "schedule": "45-minute session scheduling",
+        "analysis": "100% free personalized analysis",
+        "report": "Report with identified opportunities"
+      }
+    },
+    "name": {
+      "label": "Full Name",
+      "placeholder": "Enter your full name"
+    },
+    "email": {
+      "label": "Professional Email",
+      "placeholder": "your@company.com"
+    },
+    "phone": {
+      "label": "Phone/WhatsApp",
+      "placeholder": "(11) 99999-9999"
+    },
+    "company": {
+      "label": "Company Name",
+      "placeholder": "Your company name"
+    },
+    "employees": {
+      "label": "Number of Employees",
+      "placeholder": "Select company size",
+      "options": {
+        "1-10": "1-10 employees",
+        "11-50": "11-50 employees",
+        "51-200": "51-200 employees",
+        "201-500": "201-500 employees",
+        "500+": "More than 500 employees"
+      }
+    },
+    "sector": {
+      "label": "Company Sector",
+      "placeholder": "Select the sector",
+      "options": {
+        "saude": "Healthcare",
+        "contabilidade": "Accounting",
+        "advocacia": "Advocacy",
+        "varejo": "Retail",
+        "industria": "Industry",
+        "servicos": "Services",
+        "tecnologia": "Technology",
+        "financeiro": "Financial",
+        "educacao": "Education",
+        "outro": "Other"
+      }
+    },
+    "currentChallenges": {
+      "label": "Company's Main Challenges",
+      "placeholder": "Describe the main challenges your company faces and where you believe AI could help..."
+    },
+    "submit": "Request Free Diagnostic",
+    "sending": "Sending Request...",
+    "required": "Required field"
+  },
+  "benefits": {
+    "sectionTitle": "What You Will Receive",
+    "title": "Complete",
+    "titleHighlight": "Analysis",
+    "items": {
+      "opportunities": {
+        "title": "Opportunity Identification",
+        "description": "Specific areas where AI can generate higher ROI"
+      },
+      "roiProjection": {
+        "title": "ROI Projection",
+        "description": "Detailed return on investment calculations"
+      },
+      "roadmap": {
+        "title": "Personalized Roadmap",
+        "description": "Implementation plan with timeline"
+      }
+    }
+  },
+  "guarantee": {
+    "badge": "Guaranteed Trust",
+    "title": "350+ Companies Served",
+    "stats": {
+      "response": {
+        "value": "24h",
+        "label": "Response"
+      },
+      "satisfaction": {
+        "value": "98%",
+        "label": "Satisfaction"
+      }
+    },
+    "testimonial": {
+      "quote": "Diagnostic revealed opportunities we never imagined. 380% ROI in 6 months.",
+      "author": "CEO, Logistics Company"
+    }
+  },
+  "cta": {
+    "title": "Ready to Discover AI Potential?",
+    "subtitle": "Request your free diagnostic and see how Artificial Intelligence can transform your company.",
+    "button": "Request Free Diagnostic"
+  }
+}
+

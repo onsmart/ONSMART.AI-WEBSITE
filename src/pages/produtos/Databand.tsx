@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { CheckCircle, ArrowLeft, AlertTriangle, Eye, Shield, Users, Zap, Send } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 // Hook para contador animado
 const useCountUp = (end: number, duration: number = 2000) => {
@@ -45,6 +46,7 @@ const useCountUp = (end: number, duration: number = 2000) => {
 
 export default function Databand() {
   const navigate = useNavigate();
+  const { t } = useTranslation(["databand", "common"]);
   
   // Contadores animados
   const detectionCount = useCountUp(99, 1500);
@@ -67,17 +69,17 @@ export default function Databand() {
                 <div className="p-3 sm:p-4 rounded-full bg-blue-50">
                   <img 
                     src="https://images-onsmart.vercel.app/onsmart.ai/databand.png" 
-                    alt="Databand" 
+                    alt={t('databand:hero.title')} 
                     className="w-12 h-12 sm:w-16 sm:h-16 object-contain scale-150"
                   />
                 </div>
                 <div>
-                  <Badge variant="outline" className="mb-2">Data Observability</Badge>
-                  <h1 className="text-4xl font-bold text-gray-900">Databand</h1>
+                  <Badge variant="outline" className="mb-2">{t('databand:hero.badge')}</Badge>
+                  <h1 className="text-4xl font-bold text-gray-900">{t('databand:hero.title')}</h1>
                 </div>
               </div>
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                Plataforma de observabilidade de dados para monitoramento e qualidade de pipelines de dados.
+                {t('databand:hero.subtitle')}
               </p>
               
               {/* Stats */}
@@ -86,19 +88,19 @@ export default function Databand() {
                   <div className="text-2xl font-bold text-blue-600 transition-all duration-300">
                     {detectionCount.count}.9%
                   </div>
-                  <div className="text-sm text-gray-600">Detecção de Problemas</div>
+                  <div className="text-sm text-gray-600">{t('databand:statsTop.detection')}</div>
                 </div>
                 <div className="text-center" ref={reductionCount.ref}>
                   <div className="text-2xl font-bold text-green-600 transition-all duration-300">
                     {reductionCount.count}%
                   </div>
-                  <div className="text-sm text-gray-600">Redução de Tempo</div>
+                  <div className="text-sm text-gray-600">{t('databand:statsTop.reduction')}</div>
                 </div>
                 <div className="text-center" ref={monitoringCount.ref}>
                   <div className="text-2xl font-bold text-purple-600 transition-all duration-300">
                     {monitoringCount.count}/7
                   </div>
-                  <div className="text-sm text-gray-600">Monitoramento</div>
+                  <div className="text-sm text-gray-600">{t('databand:statsTop.monitoring')}</div>
                 </div>
               </div>
 
@@ -108,40 +110,40 @@ export default function Databand() {
                 onClick={() => navigate('/contato')}
               >
                 <Send className="mr-2 h-5 w-5" />
-                Solicitar Demonstração
+                {t('cta.requestDemo')}
               </Button>
             </div>
 
             <div className="lg:w-1/2">
               <div className="bg-white rounded-2xl shadow-xl p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Principais Recursos</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">{t('databand:features.title')}</h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Monitoramento de Pipelines</h4>
-                      <p className="text-gray-600">Detecção automática de problemas em pipelines de dados</p>
+                      <h4 className="font-semibold text-gray-900">{t('databand:features.monitoring.title')}</h4>
+                      <p className="text-gray-600">{t('databand:features.monitoring.desc')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Alertas Inteligentes</h4>
-                      <p className="text-gray-600">Notificações proativas sobre problemas de qualidade</p>
+                      <h4 className="font-semibold text-gray-900">{t('databand:features.alerts.title')}</h4>
+                      <p className="text-gray-600">{t('databand:features.alerts.desc')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Análise de Impacto</h4>
-                      <p className="text-gray-600">Avaliação do impacto de problemas nos dados downstream</p>
+                      <h4 className="font-semibold text-gray-900">{t('databand:features.impact.title')}</h4>
+                      <p className="text-gray-600">{t('databand:features.impact.desc')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Debugging Avançado</h4>
-                      <p className="text-gray-600">Ferramentas para investigação e correção de problemas</p>
+                      <h4 className="font-semibold text-gray-900">{t('databand:features.debugging.title')}</h4>
+                      <p className="text-gray-600">{t('databand:features.debugging.desc')}</p>
                     </div>
                   </div>
                 </div>
@@ -155,9 +157,9 @@ export default function Databand() {
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Recursos Avançados</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('databand:advanced.title')}</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Descubra como o Databand pode revolucionar sua observabilidade de dados
+              {t('databand:advanced.subtitle')}
             </p>
           </div>
 
@@ -167,11 +169,11 @@ export default function Databand() {
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <AlertTriangle className="w-6 h-6 text-blue-600" />
                 </div>
-                <CardTitle>Detecção de Anomalias</CardTitle>
+                <CardTitle>{t('databand:advanced.anomalyDetection.title')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Identificação automática de padrões anômalos em dados e pipelines.
+                  {t('databand:advanced.anomalyDetection.desc')}
                 </p>
               </CardContent>
             </Card>
@@ -181,11 +183,11 @@ export default function Databand() {
                 <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
                   <Eye className="w-6 h-6 text-green-600" />
                 </div>
-                <CardTitle>Visibilidade Completa</CardTitle>
+                <CardTitle>{t('databand:advanced.visibility.title')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Visualização detalhada de todos os aspectos dos pipelines de dados.
+                  {t('databand:advanced.visibility.desc')}
                 </p>
               </CardContent>
             </Card>
@@ -195,11 +197,11 @@ export default function Databand() {
                 <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                   <Shield className="w-6 h-6 text-purple-600" />
                 </div>
-                <CardTitle>Qualidade de Dados</CardTitle>
+                <CardTitle>{t('databand:advanced.quality.title')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Monitoramento contínuo da qualidade e integridade dos dados.
+                  {t('databand:advanced.quality.desc')}
                 </p>
               </CardContent>
             </Card>
@@ -209,11 +211,11 @@ export default function Databand() {
                 <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
                   <Users className="w-6 h-6 text-orange-600" />
                 </div>
-                <CardTitle>Colaboração em Equipe</CardTitle>
+                <CardTitle>{t('databand:advanced.collaboration.title')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Ferramentas para trabalho colaborativo na resolução de problemas.
+                  {t('databand:advanced.collaboration.desc')}
                 </p>
               </CardContent>
             </Card>
@@ -223,11 +225,11 @@ export default function Databand() {
                 <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
                   <Zap className="w-6 h-6 text-red-600" />
                 </div>
-                <CardTitle>Alertas em Tempo Real</CardTitle>
+                <CardTitle>{t('databand:advanced.realtimeAlerts.title')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Notificações instantâneas sobre problemas críticos nos dados.
+                  {t('databand:advanced.realtimeAlerts.desc')}
                 </p>
               </CardContent>
             </Card>
@@ -237,11 +239,11 @@ export default function Databand() {
                 <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
                   <Send className="w-6 h-6 text-indigo-600" />
                 </div>
-                <CardTitle>Integração Universal</CardTitle>
+                <CardTitle>{t('databand:advanced.integration.title')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Conectores para todas as principais ferramentas de dados e ETL.
+                  {t('databand:advanced.integration.desc')}
                 </p>
               </CardContent>
             </Card>
@@ -253,9 +255,9 @@ export default function Databand() {
       <section className="py-16 px-4 bg-gradient-to-r from-blue-50 to-purple-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Números Impressionantes</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('databand:numbers.title')}</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Veja como o Databand está revolucionando a observabilidade de dados
+              {t('databand:numbers.subtitle')}
             </p>
           </div>
 
@@ -264,24 +266,24 @@ export default function Databand() {
               <div className="text-4xl font-bold text-blue-600 mb-2 transition-all duration-300">
                 {pipelinesCount.count}+
               </div>
-              <div className="text-lg font-semibold text-gray-900 mb-2">Pipelines Monitorados</div>
-              <div className="text-gray-600">Em produção ativa</div>
+              <div className="text-lg font-semibold text-gray-900 mb-2">{t('databand:numbers.pipelines')}</div>
+              <div className="text-gray-600">{t('databand:numbers.pipelinesDesc')}</div>
             </div>
 
             <div className="text-center bg-white rounded-xl p-8 shadow-lg" ref={accuracyCount.ref}>
               <div className="text-4xl font-bold text-green-600 mb-2 transition-all duration-300">
                 {accuracyCount.count}%
               </div>
-              <div className="text-lg font-semibold text-gray-900 mb-2">Precisão de Detecção</div>
-              <div className="text-gray-600">De problemas de dados</div>
+              <div className="text-lg font-semibold text-gray-900 mb-2">{t('databand:numbers.accuracy')}</div>
+              <div className="text-gray-600">{t('databand:numbers.accuracyDesc')}</div>
             </div>
 
             <div className="text-center bg-white rounded-xl p-8 shadow-lg" ref={enterpriseCount.ref}>
               <div className="text-4xl font-bold text-purple-600 mb-2 transition-all duration-300">
                 {enterpriseCount.count}+
               </div>
-              <div className="text-lg font-semibold text-gray-900 mb-2">Empresas Ativas</div>
-              <div className="text-gray-600">Usando a plataforma</div>
+              <div className="text-lg font-semibold text-gray-900 mb-2">{t('databand:numbers.enterprises')}</div>
+              <div className="text-gray-600">{t('databand:numbers.enterprisesDesc')}</div>
             </div>
           </div>
         </div>
@@ -290,11 +292,9 @@ export default function Databand() {
       {/* CTA Section */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-            Transforme sua Observabilidade de Dados
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">{t('databand:cta.title')}</h2>
           <p className="text-xl mb-8 text-gray-600">
-            Junte-se às empresas que já transformaram seus negócios com Databand.
+            {t('databand:cta.subtitle')}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -304,7 +304,7 @@ export default function Databand() {
               onClick={() => navigate('/contato')}
             >
               <Send className="mr-2 h-5 w-5" />
-              Solicitar Demonstração
+              {t('cta.requestDemo')}
             </Button>
             <Button 
               variant="outline"
@@ -312,7 +312,7 @@ export default function Databand() {
               className="font-medium px-8 py-6 text-lg rounded-xl"
               onClick={() => navigate('/produtos')}
             >
-              Ver Outros Produtos
+              {t('cta.viewOthers')}
             </Button>
           </div>
         </div>

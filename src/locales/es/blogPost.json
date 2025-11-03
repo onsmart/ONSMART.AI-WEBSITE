@@ -1,0 +1,24 @@
+{
+  "seo": {
+    "title": "Cómo Implementar Agentes de IA en tu Empresa en 30 Días | Blog onsmartAI",
+    "description": "Aprende cómo implementar Agentes de IA en tu empresa en 30 días con nuestra metodología LÍDER comprobada.",
+    "keywords": "implementación ia, agentes ia, metodología líder, automatización empresarial"
+  },
+  "backButton": "Volver al Blog",
+  "share": "Compartir",
+  "readTime": "de lectura",
+  "related": {
+    "title": "Artículos Relacionados",
+    "article1": {
+      "title": "5 Errores Comunes en la Implementación de IA",
+      "description": "Evita los principales errores que pueden comprometer tu proyecto de IA empresarial.",
+      "link": "Leer artículo →"
+    },
+    "article2": {
+      "title": "ROI en Proyectos de IA: Cómo Calcular",
+      "description": "Aprende a calcular y presentar el retorno sobre inversión en IA.",
+      "link": "Leer artículo →"
+    }
+  }
+}
+

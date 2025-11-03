@@ -1,0 +1,28 @@
+{
+  "seo": {
+    "title": "Registro Revendedor onsmartAI - Aplicar al Programa",
+    "description": "Postula al programa de revendedores onsmartAI. Completa el formulario y nuestro equipo se pondrá en contacto para evaluar tu candidatura.",
+    "keywords": "registro revendedor, candidatura asociación, formulario revendedor, aplicar programa"
+  },
+  "header": {
+    "badge": "Candidatura para Revendedor",
+    "title": "Registro de Revendedor Enterprise",
+    "subtitle": "Completa el formulario a continuación y nuestro equipo evaluará tu candidatura para vender IA a empresas de R$ 50M-1B"
+  },
+  "submit": {
+    "processing": "Enviando Candidatura...",
+    "button": "Enviar Candidatura Enterprise",
+    "helper": "Nuestro equipo especializado se pondrá en contacto en un máximo de 24 horas para evaluar tu candidatura"
+  },
+  "toast": {
+    "error": {
+      "title": "Error al enviar",
+      "description": "Ocurrió un error al enviar tu candidatura. Intenta nuevamente."
+    }
+  },
+  "success": {
+    "title": "¡Candidatura enviada con éxito!",
+    "description": "Nuestro equipo se pondrá en contacto en un máximo de 24 horas."
+  }
+}
+

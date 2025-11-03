@@ -1,0 +1,62 @@
+{
+  "hero": {
+    "badge": "Integración de Datos",
+    "title": "DataStage®",
+    "subtitle": "Plataforma empresarial de integración y transformación de datos con rendimiento excepcional."
+  },
+  "statsTop": {
+    "speed": "Más rápido que ETL tradicional",
+    "availability": "Disponibilidad garantizada",
+    "compliance": "Cumplimiento de datos"
+  },
+  "cta": {
+    "requestDemo": "Solicitar Demostración",
+    "title": "Transforma tu integración de datos hoy",
+    "subtitle": "Únete a las empresas que ya revolucionaron su integración de datos con DataStage®."
+  },
+  "features": {
+    "title": "Características Clave",
+    "etl": {
+      "title": "Procesamiento ETL",
+      "desc": "Extracción, transformación y carga optimizados"
+    },
+    "quality": {
+      "title": "Calidad de Datos",
+      "desc": "Validación y limpieza automática de datos"
+    },
+    "parallel": {
+      "title": "Procesamiento Paralelo",
+      "desc": "Ejecución distribuida para máximo rendimiento"
+    },
+    "orchestration": {
+      "title": "Orquestación Inteligente",
+      "desc": "Programación y monitoreo de flujos de trabajo"
+    }
+  },
+  "advanced": {
+    "title": "Características Avanzadas",
+    "subtitle": "Descubre cómo DataStage® puede revolucionar tu integración de datos",
+    "designer": "Diseñador Visual",
+    "designerDesc": "Interfaz para crear pipelines sin código",
+    "security": "Seguridad Avanzada",
+    "securityDesc": "Encriptación, acceso y auditoría",
+    "team": "Colaboración en Equipo",
+    "teamDesc": "Versionado y compartición con control",
+    "monitoring": "Monitoreo en Tiempo Real",
+    "monitoringDesc": "Sigue el progreso y rendimiento de los jobs",
+    "autoscale": "Auto-escalado",
+    "autoscaleDesc": "Escalabilidad bajo demanda",
+    "connectors": "Conectores Nativos",
+    "connectorsDesc": "Integración con 100+ fuentes de datos"
+  },
+  "numbers": {
+    "title": "Números Impresionantes",
+    "subtitle": "Mira cómo DataStage® está revolucionando la integración de datos",
+    "jobs": "Jobs Procesados",
+    "companies": "Empresas Activas",
+    "uptime": "Uptime Garantizado",
+    "jobsDesc": "Diariamente",
+    "companiesDesc": "Usando la plataforma",
+    "uptimeDesc": "Disponibilidad continua"
+  }
+}

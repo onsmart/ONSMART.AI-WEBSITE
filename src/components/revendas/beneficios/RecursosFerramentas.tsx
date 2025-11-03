@@ -8,7 +8,7 @@ const RecursosFerramentas = () => {
     <section className="py-16 px-4 md:px-6 bg-white dark:bg-gray-900">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-gray-100">
             🛠️ Recursos Enterprise
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300">
@@ -17,10 +17,10 @@ const RecursosFerramentas = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          <Card className="text-center">
+          <Card className="text-center bg-white dark:bg-gray-800">
             <CardHeader>
               <Users className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-              <CardTitle>Material Enterprise</CardTitle>
+              <CardTitle className="dark:text-gray-100">Material Enterprise</CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="text-left space-y-2 text-sm text-gray-600 dark:text-gray-300">
@@ -33,10 +33,10 @@ const RecursosFerramentas = () => {
             </CardContent>
           </Card>
 
-          <Card className="text-center">
+          <Card className="text-center bg-white dark:bg-gray-800">
             <CardHeader>
               <Shield className="h-12 w-12 text-green-600 mx-auto mb-4" />
-              <CardTitle>Proteção de Territorio</CardTitle>
+              <CardTitle className="dark:text-gray-100">Proteção de Territorio</CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="text-left space-y-2 text-sm text-gray-600 dark:text-gray-300">
@@ -49,10 +49,10 @@ const RecursosFerramentas = () => {
             </CardContent>
           </Card>
 
-          <Card className="text-center">
+          <Card className="text-center bg-white dark:bg-gray-800">
             <CardHeader>
               <Trophy className="h-12 w-12 text-purple-600 mx-auto mb-4" />
-              <CardTitle>Programas de Incentivo</CardTitle>
+              <CardTitle className="dark:text-gray-100">Programas de Incentivo</CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="text-left space-y-2 text-sm text-gray-600 dark:text-gray-300">

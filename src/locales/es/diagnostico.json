@@ -1,0 +1,194 @@
+{
+  "seo": {
+    "title": "Diagnóstico Gratuito de IA - Análisis Personalizado | onsmartAI",
+    "description": "Solicita tu diagnóstico gratuito de IA y descubre cómo la Inteligencia Artificial puede transformar tu empresa. Análisis personalizado en 45 minutos."
+  },
+  "hero": {
+    "badge": "Diagnóstico de IA",
+    "title": "Descubre Cuánto Puede Tu Empresa",
+    "titleHighlight": "Ahorrar con IA",
+    "alerts": {
+      "financial": {
+        "label": "ALERTA FINANCIERA:",
+        "message": "Tu empresa puede estar perdiendo $50,000+ al mes en costos operacionales que la IA podría eliminar inmediatamente."
+      },
+      "competitor": {
+        "message": "Empresas similares a la tuya ya ahorran",
+        "highlight": "420% más",
+        "end": "con nuestra metodología LÍDER. ¡No dejes que tus competidores se adelanten!"
+      }
+    },
+    "completeDiagnostic": {
+      "title": "DIAGNÓSTICO COMPLETO",
+      "subtitle": "Lo que recibes en el diagnóstico gratuito de 45 minutos",
+      "items": {
+        "analysis": {
+          "title": "Análisis Completo",
+          "description": "Evaluación detallada de tus procesos"
+        },
+        "savings": {
+          "title": "Cálculo de Ahorro",
+          "description": "Proyección exacta del potencial de ahorro"
+        },
+        "roadmap": {
+          "title": "Hoja de Ruta Personalizada",
+          "description": "Plan de implementación personalizado"
+        },
+        "roi": {
+          "title": "Proyección de ROI",
+          "description": "Retorno sobre inversión en 12 meses"
+        }
+      }
+    },
+    "stats": {
+      "free": {
+        "label": "100% Gratuito",
+        "description": "Sin costos ni compromisos"
+      },
+      "time": {
+        "label": "45 Minutos",
+        "description": "Análisis completo y detallado"
+      },
+      "roi": {
+        "label": "420% ROI",
+        "description": "Retorno promedio comprobado"
+      }
+    }
+  },
+  "success": {
+    "title": "¡Diagnóstico Agendado!",
+    "message": "✓ ¡Solicitud recibida!",
+    "responseTime": "Nuestro equipo se pondrá en contacto en",
+    "responseTimeValue": "24 horas",
+    "responseTimeEnd": "para agendar tu diagnóstico.",
+    "diagnosticTime": "Diagnóstico personalizado en 45 minutos",
+    "freeGuarantee": "100% gratuito y sin compromiso",
+    "scheduleAnother": "Agendar Otro Diagnóstico",
+    "backToHome": "Volver al Inicio"
+  },
+  "form": {
+    "badge": "Agendar Diagnóstico",
+    "title": "Asegura Tu",
+    "titleHighlight": "Cupo Gratuito",
+    "subtitle": "Descubre el potencial de ahorro de IA en tu empresa",
+    "description": "Completa el formulario a continuación y recibe en",
+    "descriptionHighlight": "24 horas",
+    "descriptionEnd": ": cita confirmada, material preparatorio y lista personalizada.",
+    "socialProof": {
+      "diagnostics": {
+        "value": "2.847",
+        "label": "Diagnósticos realizados"
+      },
+      "satisfaction": {
+        "value": "4.9/5",
+        "label": "Satisfacción promedio"
+      },
+      "value": {
+        "value": "$2.500",
+        "label": "Valor gratuito"
+      }
+    },
+    "bonus": {
+      "title": "Al solicitar el diagnóstico, recibirás:",
+      "items": {
+        "contact": "Contacto de nuestro equipo en 24 horas",
+        "schedule": "Agendamiento de sesión de 45 minutos",
+        "analysis": "Análisis personalizado 100% gratuito",
+        "report": "Informe con oportunidades identificadas"
+      }
+    },
+    "name": {
+      "label": "Nombre Completo",
+      "placeholder": "Ingresa tu nombre completo"
+    },
+    "email": {
+      "label": "Email Profesional",
+      "placeholder": "tu@empresa.com"
+    },
+    "phone": {
+      "label": "Teléfono/WhatsApp",
+      "placeholder": "(11) 99999-9999"
+    },
+    "company": {
+      "label": "Nombre de la Empresa",
+      "placeholder": "Nombre de tu empresa"
+    },
+    "employees": {
+      "label": "Número de Empleados",
+      "placeholder": "Selecciona el tamaño de la empresa",
+      "options": {
+        "1-10": "1-10 empleados",
+        "11-50": "11-50 empleados",
+        "51-200": "51-200 empleados",
+        "201-500": "201-500 empleados",
+        "500+": "Más de 500 empleados"
+      }
+    },
+    "sector": {
+      "label": "Sector de la Empresa",
+      "placeholder": "Selecciona el sector",
+      "options": {
+        "saude": "Salud",
+        "contabilidade": "Contabilidad",
+        "advocacia": "Abogacía",
+        "varejo": "Retail",
+        "industria": "Industria",
+        "servicos": "Servicios",
+        "tecnologia": "Tecnología",
+        "financeiro": "Financiero",
+        "educacao": "Educación",
+        "outro": "Otro"
+      }
+    },
+    "currentChallenges": {
+      "label": "Principales Desafíos de la Empresa",
+      "placeholder": "Describe los principales desafíos que enfrenta tu empresa y dónde crees que la IA podría ayudar..."
+    },
+    "submit": "Solicitar Diagnóstico Gratuito",
+    "sending": "Enviando Solicitud...",
+    "required": "Campo obligatorio"
+  },
+  "benefits": {
+    "sectionTitle": "Lo Que Recibirás",
+    "title": "Análisis",
+    "titleHighlight": "Completo",
+    "items": {
+      "opportunities": {
+        "title": "Identificación de Oportunidades",
+        "description": "Áreas específicas donde la IA puede generar mayor ROI"
+      },
+      "roiProjection": {
+        "title": "Proyección de ROI",
+        "description": "Cálculos detallados de retorno sobre inversión"
+      },
+      "roadmap": {
+        "title": "Hoja de Ruta Personalizada",
+        "description": "Plan de implementación con cronograma"
+      }
+    }
+  },
+  "guarantee": {
+    "badge": "Confianza Garantizada",
+    "title": "350+ Empresas Atendidas",
+    "stats": {
+      "response": {
+        "value": "24h",
+        "label": "Respuesta"
+      },
+      "satisfaction": {
+        "value": "98%",
+        "label": "Satisfacción"
+      }
+    },
+    "testimonial": {
+      "quote": "El diagnóstico reveló oportunidades que no imaginábamos. ROI del 380% en 6 meses.",
+      "author": "CEO, Empresa de Logística"
+    }
+  },
+  "cta": {
+    "title": "¿Listo para Descubrir el Potencial de la IA?",
+    "subtitle": "Solicita tu diagnóstico gratuito y ve cómo la Inteligencia Artificial puede transformar tu empresa.",
+    "button": "Solicitar Diagnóstico Gratuito"
+  }
+}
+

@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { toast } from 'sonner';
+import i18n from '@/i18n/config';
 import { CheckCircle, AlertCircle, Info, XCircle, Zap, Target, TrendingUp } from 'lucide-react';
 
 interface ContextualToastOptions {
@@ -12,6 +13,9 @@ interface ContextualToastOptions {
   };
   duration?: number;
 }
+
+// Helper para obter traduções quando necessário (fora de contexto React)
+const getT = () => i18n.getFixedT(null, 'common');
 
 export const contextualToast = {
   success: (options: ContextualToastOptions) => {
@@ -64,22 +68,24 @@ export const contextualToast = {
 
   // Contextualized toasts for business scenarios
   formSubmitted: (formType: string, nextStep?: string) => {
+    const t = getT();
     contextualToast.success({
-      title: "Formulário enviado com sucesso!",
-      description: nextStep || "Nossa equipe entrará em contato em breve.",
+      title: t('toast.formSubmitted'),
+      description: nextStep || t('toast.formSubmittedDescription'),
       action: nextStep ? {
-        label: "Próximo passo",
+        label: t('toast.nextStep'),
         onClick: () => window.location.href = '/diagnostico'
       } : undefined,
     });
   },
 
   diagnosticScheduled: () => {
+    const t = getT();
     contextualToast.success({
-      title: "Diagnóstico agendado!",
-      description: "Você receberá um e-mail de confirmação em instantes.",
+      title: t('toast.diagnosticScheduled'),
+      description: t('toast.diagnosticScheduledDescription'),
       action: {
-        label: "Ver calendário",
+        label: t('toast.viewCalendar'),
         onClick: () => window.open('https://calendly.com/onsmart-ai', '_blank')
       },
     });

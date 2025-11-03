@@ -1,0 +1,116 @@
+{
+  "seo": {
+    "title": "Blog - Artigos sobre IA e Transformação Digital | onsmartAI",
+    "description": "Acesse nosso blog com artigos exclusivos sobre Inteligência Artificial, transformação digital e inovação empresarial. Dicas práticas e insights de especialistas."
+  },
+  "hero": {
+    "title": "Blog OnSmartAI",
+    "subtitle": "Artigos exclusivos sobre IA e Transformação Digital",
+    "description": "Descubra insights valiosos, dicas práticas e tendências do mercado de Inteligência Artificial para acelerar a transformação da sua empresa."
+  },
+  "filters": {
+    "all": "Todos os Artigos",
+    "ia": "Inteligência Artificial",
+    "transformacao": "Transformação Digital",
+    "negocios": "Negócios",
+    "tecnologia": "Tecnologia"
+  },
+  "categories": {
+    "recentes": "Artigos Recentes",
+    "tendencias": "Tendências em IA",
+    "casos": "Cases de Sucesso",
+    "implementacao": "Guias de Implementação",
+    "futuro": "Futuro da IA"
+  },
+  "search": {
+    "placeholder": "Buscar artigos...",
+    "noResults": "Nenhum artigo encontrado",
+    "results": "artigos encontrados"
+  },
+  "article": {
+    "readMore": "Ler mais",
+    "readTime": "min de leitura",
+    "publishedOn": "Publicado em",
+    "author": "Por",
+    "category": "Categoria",
+    "tags": "Tags"
+  },
+  "cta": {
+    "title": "Quer Receber Nossos Artigos?",
+    "subtitle": "Inscreva-se em nossa newsletter e receba os melhores conteúdos sobre IA diretamente no seu email.",
+    "button": "Inscrever-se",
+    "placeholder": "Seu melhor email",
+    "success": "Inscrição realizada com sucesso!"
+  },
+  "pagination": {
+    "previous": "Anterior",
+    "next": "Próximo",
+    "page": "Página",
+    "of": "de"
+  },
+  "empty": {
+    "title": "Nenhum artigo encontrado",
+    "description": "Tente ajustar os filtros ou fazer uma nova busca.",
+    "button": "Ver Todos os Artigos"
+  },
+  "ctaSection": {
+    "badge": "Conteúdo Especializado",
+    "title": "Pronto para implementar",
+    "titleHighlight": "estratégias",
+    "titleEnd": "?",
+    "subtitle": "Transforme conhecimento em ação com nossos serviços especializados em IA empresarial",
+    "button1": "Agendar Consultoria Gratuita",
+    "button2": "Ver Casos de Sucesso"
+  },
+  "newsletterSection": {
+    "title": "Não Perca Nenhum Insight",
+    "subtitle": "Receba nossos artigos mais recentes direto no seu email",
+    "placeholder": "Seu melhor email",
+    "button": "Inscrever-se"
+  },
+  "posts": {
+    "agentes-ia-produtividade-empresarial": {
+      "title": "Como os Agentes de IA estão revolucionando a produtividade corporativa",
+      "excerpt": "Descubra como empresas estão aumentando sua eficiência em 200% com implementação estratégica de agentes de IA.",
+      "category": "tendencias",
+      "content": "<p>A inteligência artificial não é mais uma tecnologia do futuro - ela está transformando empresas hoje. Agentes de IA estão sendo implementados em organizações de todos os tamanhos, gerando resultados impressionantes de produtividade e eficiência.</p><h2>O que são Agentes de IA?</h2><p>Agentes de IA são sistemas autônomos capazes de realizar tarefas complexas, tomar decisões baseadas em dados e aprender continuamente. Diferentemente de chatbots simples, esses agentes podem interagir com múltiplos sistemas e executar workflows completos.</p><h2>Casos de Uso Transformadores</h2><ul><li>Automação de processos administrativos</li><li>Análise preditiva de vendas</li><li>Atendimento ao cliente 24/7</li><li>Gestão inteligente de recursos</li></ul><h2>Resultados Mensuráveis</h2><p>Empresas que implementaram agentes de IA relatam aumentos médios de 200% na produtividade, redução de 60% em tarefas repetitivas e melhoria de 85% na satisfação dos funcionários.</p>"
+    },
+    "implementacao-agentes-ia-passo-passo": {
+      "title": "Guia Completo: Implementando Agentes de IA em sua Empresa",
+      "excerpt": "Um roadmap prático para implementar agentes de IA, desde o planejamento até a medição de resultados.",
+      "category": "implementacao",
+      "content": "<p>A implementação de Agentes de Inteligência Artificial pode parecer complexa, mas com a metodologia certa, é possível transformar sua empresa em apenas 30 dias.</p><h2>O que são Agentes de IA?</h2><p>Agentes de IA são sistemas autônomos capazes de tomar decisões e executar tarefas específicas sem intervenção humana constante. Eles funcionam como uma força de trabalho digital que complementa suas equipes humanas.</p><h2>Metodologia LÍDER</h2><p>Nossa metodologia proprietária LÍDER garante uma implementação estruturada:</p><ul><li><strong>L</strong> - {{LIDER_L}}</li><li><strong>Í</strong> - {{LIDER_Í}}</li><li><strong>D</strong> - {{LIDER_D}}</li><li><strong>E</strong> - {{LIDER_E}}</li><li><strong>R</strong> - {{LIDER_R}}</li></ul><h2>Casos de Sucesso</h2><p>Empresas que implementaram nossa metodologia viram aumentos de produtividade de até 420% em processos automatizados.</p>"
+    },
+    "case-sucesso-financeira-agentes-ia": {
+      "title": "Case de Sucesso: Como a FinTech Brasil economizou R$ 2 milhões com Agentes de IA",
+      "excerpt": "História completa de transformação: processos, desafios, soluções e resultados mensuráveis.",
+      "category": "casos",
+      "content": "<p>A FinTech Brasil enfrentava desafios críticos de escalabilidade. Com o crescimento acelerado, processos manuais se tornaram gargalos operacionais.</p><h2>O Desafio</h2><p>Análise manual de crédito consumia 4 horas por processo, limitando a capacidade de crescimento.</p><h2>A Solução</h2><p>Implementação de agentes de IA para análise automática de risco, processamento de documentos e tomada de decisão.</p><h2>Resultados</h2><ul><li>Redução de 4 horas para 15 minutos no processo de análise</li><li>Economia anual de R$ 2 milhões</li><li>Aumento de 300% na capacidade de processamento</li></ul>"
+    },
+    "futuro-trabalho-agentes-ia-2024": {
+      "title": "O Futuro do Trabalho: Como os Agentes de IA vão transformar carreiras em 2024",
+      "excerpt": "Análise das tendências emergentes e como profissionais podem se preparar para a revolução da IA.",
+      "category": "futuro",
+      "content": "<p>O mercado de trabalho está passando por uma transformação sem precedentes. Agentes de IA não estão apenas automatizando tarefas - estão criando novas oportunidades.</p><h2>Novas Profissões Emergentes</h2><p>Especialistas em prompt engineering, treinadores de IA e orquestradores de agentes são algumas das profissões mais demandadas.</p><h2>Habilidades do Futuro</h2><ul><li>Colaboração humano-IA</li><li>Pensamento crítico amplificado</li><li>Gestão de sistemas inteligentes</li></ul><h2>Como se Preparar</h2><p>Investimento em aprendizado contínuo e desenvolvimento de habilidades complementares à IA.</p>"
+    },
+    "agentes-ia-atendimento-cliente-24h": {
+      "title": "Agentes de IA para Atendimento ao Cliente: Disponibilidade 24/7 com Qualidade Humana",
+      "excerpt": "Como implementar atendimento automatizado que mantém a qualidade e satisfação do cliente.",
+      "category": "implementacao",
+      "content": "<p>O atendimento ao cliente evoluiu dramaticamente com agentes de IA capazes de fornecer suporte 24/7 mantendo qualidade humana.</p><h2>Benefícios Imediatos</h2><ul><li>Disponibilidade 24 horas por dia</li><li>Respostas consistentes e precisas</li><li>Redução de 70% no tempo de espera</li><li>Escalabilidade ilimitada</li></ul><h2>Implementação Estratégica</h2><p>A chave está na integração inteligente entre agentes de IA e atendentes humanos, criando uma experiência híbrida otimizada.</p>"
+    },
+    "roi-agentes-ia-calculo-retorno-investimento": {
+      "title": "Calculando o ROI de Agentes de IA: Métricas e Metodologias Comprovadas",
+      "excerpt": "Framework completo para medir e maximizar o retorno do investimento em agentes de IA.",
+      "category": "tendencias",
+      "content": "<p>Medir o ROI de agentes de IA vai além de métricas tradicionais. É necessário considerar benefícios tangíveis e intangíveis.</p><h2>Métricas Principais</h2><ul><li>Redução de custos operacionais</li><li>Aumento de produtividade</li><li>Melhoria na qualidade</li><li>Satisfação do cliente</li></ul><h2>Framework de Cálculo</h2><p>Metodologia estruturada para quantificar benefícios e calcular payback period realista.</p>"
+    }
+  },
+  "liderDescriptions": {
+    "L": "Levantamento de processos",
+    "Í": "Identificação de oportunidades",
+    "D": "Desenvolvimento dos agentes",
+    "E": "Execução e implementação",
+    "R": "Refinamento contínuo"
+  }
+}

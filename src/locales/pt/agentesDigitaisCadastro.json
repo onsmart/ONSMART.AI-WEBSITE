@@ -1,0 +1,22 @@
+{
+  "seo": {
+    "title": "Cadastro Agente Digital onsmartAI - Torne-se um Indicador",
+    "description": "Cadastre-se gratuitamente como Agente Digital onsmartAI. Receba seu link exclusivo e comece a ganhar comissões indicando clientes hoje mesmo.",
+    "keywords": "cadastro agente digital, link indicação, programa afiliados, renda extra"
+  },
+  "header": {
+    "badge": "Cadastro de Agente Digital",
+    "title": "Torne-se um Agente Digital",
+    "subtitle": "Cadastro 100% gratuito. Comece a ganhar comissões indicando empresas para a onsmartAI"
+  },
+  "submit": {
+    "processing": "Processando Cadastro...",
+    "button": "Finalizar Cadastro",
+    "helper": "Você receberá seu link exclusivo por email em alguns minutos"
+  },
+  "toast": {
+    "title": "Cadastro Realizado!",
+    "description": "Bem-vindo ao programa! Você receberá seu link exclusivo por email em alguns minutos."
+  }
+}
+

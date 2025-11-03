@@ -1,0 +1,54 @@
+{
+  "seo": {
+    "title": "Sistema de Agentes IA para WhatsApp - onsmart.AI",
+    "description": "Dashboard completo para gestionar múltiplos agentes de IA especializados en atención de ventas vía WhatsApp. Automatización inteligente, enrutamiento automático y analytics en tiempo real."
+  },
+  "dashboard": {
+    "title": "Dashboard Agentes IA - WhatsApp",
+    "subtitle": "Sistema de atención automatizada para ventas",
+    "status": {
+      "online": "Sistema En Línea",
+      "offline": "Sistema Fuera de Línea"
+    },
+    "alert": {
+      "title": "El sistema WhatsApp no está configurado",
+      "description": "El sistema WhatsApp no está configurado. Accede a la",
+      "link": "configuración",
+      "linkEnd": "para activar los agentes."
+    },
+    "loading": "Inicializando Agentes de IA...",
+    "tabs": {
+      "agents": "Agentes",
+      "conversations": "Conversaciones",
+      "analytics": "Analytics",
+      "tests": "Pruebas"
+    },
+    "metrics": {
+      "totalConversations": "Total de Conversaciones",
+      "agentsOnline": "Agentes En Línea",
+      "avgResponseTime": "Tiempo Promedio de Respuesta",
+      "conversionRate": "Tasa de Conversión"
+    },
+    "tests": {
+      "title": "Pruebas Rápidas",
+      "subtitle": "Prueba los agentes con mensajes preconfigurados",
+      "screening": {
+        "title": "Prueba de Triage:",
+        "message": "¡Hola! Me gustaría saber más sobre los Agentes de IA de onsmart."
+      },
+      "commercial": {
+        "title": "Prueba Comercial:",
+        "message": "¿Cuál es el precio de los Agentes de IA? Me gustaría una propuesta."
+      },
+      "technical": {
+        "title": "Prueba Técnica:",
+        "message": "¿Cómo funciona la implementación? Necesito integrar con mi sistema."
+      },
+      "demo": {
+        "title": "Prueba Demo:",
+        "message": "Me gustaría agendar una demostración de los Agentes de IA."
+      }
+    }
+  }
+}
+

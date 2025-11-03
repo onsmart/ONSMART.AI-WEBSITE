@@ -1,0 +1,62 @@
+{
+  "hero": {
+    "badge": "AI Models",
+    "title": "Mistral",
+    "subtitle": "State-of-the-art language models for generative AI applications with exceptional performance."
+  },
+  "statsTop": {
+    "parameters": "Parameters",
+    "efficiency": "More efficient",
+    "opensource": "Open Source"
+  },
+  "cta": {
+    "requestDemo": "Request Demo",
+    "title": "Power your AI with Mistral",
+    "subtitle": "Join the companies that already transformed their business with Mistral."
+  },
+  "features": {
+    "title": "Key Features",
+    "nlp": {
+      "title": "Natural Language Processing",
+      "desc": "Advanced understanding of text and human language"
+    },
+    "generation": {
+      "title": "Content Generation",
+      "desc": "Creation of text, code and creative content"
+    },
+    "efficiency": {
+      "title": "Computational Efficiency",
+      "desc": "Optimized for performance and low resource usage"
+    },
+    "flexibility": {
+      "title": "Total Flexibility",
+      "desc": "Open-source model with full control"
+    }
+  },
+  "advanced": {
+    "title": "Advanced Features",
+    "subtitle": "Discover how Mistral can revolutionize your AI applications",
+    "architecture": "Advanced Architecture",
+    "architectureDesc": "Sliding Window Attention for efficient processing",
+    "performance": "Optimized Performance",
+    "performanceDesc": "Superior speed and efficiency",
+    "community": "Active Community",
+    "communityDesc": "Open-source community support",
+    "security": "Security & Privacy",
+    "securityDesc": "Full control over data and deployment",
+    "finetune": "Custom Fine‑tuning",
+    "finetuneDesc": "Adaptation for domains and use cases",
+    "integration": "Simple Integration",
+    "integrationDesc": "APIs and tools for quick integration"
+  },
+  "numbers": {
+    "title": "Impressive Numbers",
+    "subtitle": "See how Mistral is revolutionizing generative AI",
+    "downloads": "Downloads",
+    "companies": "Active Companies",
+    "accuracy": "Accuracy",
+    "downloadsDesc": "Of the model",
+    "companiesDesc": "Using the model",
+    "accuracyDesc": "On language tasks"
+  }
+}

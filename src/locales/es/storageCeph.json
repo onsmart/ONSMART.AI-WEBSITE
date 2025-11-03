@@ -1,0 +1,52 @@
+{
+  "hero": {
+    "badge": "Almacenamiento Definido por Software",
+    "title": "Storage Ceph®",
+    "subtitle": "Plataforma de almacenamiento distribuida y escalable para datos empresariales."
+  },
+  "statsTop": {
+    "distributed": "Almacenamiento Distribuido",
+    "availability": "Alta Disponibilidad",
+    "scalability": "Escalabilidad Horizontal"
+  },
+  "cta": {
+    "requestDemo": "Solicitar Demostración",
+    "title": "Escala tu almacenamiento con confianza",
+    "subtitle": "Alto rendimiento, resiliencia y crecimiento lineal."
+  },
+  "features": {
+    "title": "Características Clave",
+    "object": {
+      "title": "Almacenamiento de Objetos",
+      "desc": "Compatible con S3 para aplicaciones modernas"
+    },
+    "block": {
+      "title": "Almacenamiento en Bloques",
+      "desc": "Baja latencia para cargas críticas"
+    },
+    "file": {
+      "title": "Almacenamiento de Archivos",
+      "desc": "Acceso POSIX para aplicaciones legadas"
+    }
+  },
+  "advanced": {
+    "title": "Capacidades Avanzadas",
+    "subtitle": "Confiabilidad y rendimiento a escala",
+    "replication": "Replicación y Erasure Coding",
+    "replicationDesc": "Protección de datos con eficiencia de espacio",
+    "automation": "Automatización y Auto-recuperación",
+    "automationDesc": "Rebalanceo y healing automáticos",
+    "security": "Seguridad",
+    "securityDesc": "Encriptación, RBAC y auditoría"
+  },
+  "numbers": {
+    "title": "En Números",
+    "subtitle": "Almacenamiento listo para cualquier escala",
+    "capacity": "Capacidad",
+    "clusters": "Clusters activos",
+    "iops": "IOPS sostenido",
+    "capacityDesc": "Expandible por nodo",
+    "clustersDesc": "En producción",
+    "iopsDesc": "Con baja latencia"
+  }
+}

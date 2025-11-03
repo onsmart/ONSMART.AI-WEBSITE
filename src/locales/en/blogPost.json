@@ -1,0 +1,24 @@
+{
+  "seo": {
+    "title": "How to Implement AI Agents in Your Company in 30 Days | onsmartAI Blog",
+    "description": "Learn how to implement AI Agents in your company in 30 days with our proven LÍDER methodology.",
+    "keywords": "ai implementation, ai agents, líder methodology, business automation"
+  },
+  "backButton": "Back to Blog",
+  "share": "Share",
+  "readTime": "read",
+  "related": {
+    "title": "Related Articles",
+    "article1": {
+      "title": "5 Common Mistakes in AI Implementation",
+      "description": "Avoid the main mistakes that can compromise your enterprise AI project.",
+      "link": "Read article →"
+    },
+    "article2": {
+      "title": "ROI in AI Projects: How to Calculate",
+      "description": "Learn to calculate and present return on investment in AI.",
+      "link": "Read article →"
+    }
+  }
+}
+

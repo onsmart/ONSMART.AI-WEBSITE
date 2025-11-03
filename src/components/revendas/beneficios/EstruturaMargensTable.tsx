@@ -8,7 +8,7 @@ const EstruturaMargensTable = () => {
     <section className="py-16 px-4 md:px-6 bg-gray-50 dark:bg-gray-800">
       <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-gray-100">
             📊 Estrutura de Margens Enterprise
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300">
@@ -16,42 +16,42 @@ const EstruturaMargensTable = () => {
           </p>
         </div>
 
-        <Card>
+        <Card className="bg-white dark:bg-gray-800">
           <CardContent className="p-8">
             <div className="overflow-x-auto">
               <table className="w-full">
-                <thead className="border-b">
+                <thead className="border-b dark:border-gray-700">
                   <tr>
-                    <th className="text-left py-4">Nível de Revenda</th>
-                    <th className="text-left py-4">Volume Anual</th>
-                    <th className="text-left py-4">Margem Base</th>
-                    <th className="text-left py-4">Bonificação</th>
+                    <th className="text-left py-4 dark:text-gray-100">Nível de Revenda</th>
+                    <th className="text-left py-4 dark:text-gray-100">Volume Anual</th>
+                    <th className="text-left py-4 dark:text-gray-100">Margem Base</th>
+                    <th className="text-left py-4 dark:text-gray-100">Bonificação</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="border-b">
+                  <tr className="border-b dark:border-gray-700">
                     <td className="py-4"><Badge variant="outline">Iniciante</Badge></td>
-                    <td className="py-4">R$ 1M - R$ 2M</td>
+                    <td className="py-4 dark:text-gray-300">R$ 1M - R$ 2M</td>
                     <td className="py-4 font-semibold text-green-600">25%</td>
-                    <td className="py-4">1%</td>
+                    <td className="py-4 dark:text-gray-300">1%</td>
                   </tr>
-                  <tr className="border-b">
+                  <tr className="border-b dark:border-gray-700">
                     <td className="py-4"><Badge className="bg-gray-400">Especialista</Badge></td>
-                    <td className="py-4">R$ 2M - R$ 3M</td>
+                    <td className="py-4 dark:text-gray-300">R$ 2M - R$ 3M</td>
                     <td className="py-4 font-semibold text-green-600">28%</td>
-                    <td className="py-4">2%</td>
+                    <td className="py-4 dark:text-gray-300">2%</td>
                   </tr>
-                  <tr className="border-b">
+                  <tr className="border-b dark:border-gray-700">
                     <td className="py-4"><Badge className="bg-yellow-500">Enterprise</Badge></td>
-                    <td className="py-4">R$ 3M - R$ 5M</td>
+                    <td className="py-4 dark:text-gray-300">R$ 3M - R$ 5M</td>
                     <td className="py-4 font-semibold text-green-600">32%</td>
-                    <td className="py-4">3%</td>
+                    <td className="py-4 dark:text-gray-300">3%</td>
                   </tr>
                   <tr>
                     <td className="py-4"><Badge className="bg-purple-600">Strategic</Badge></td>
-                    <td className="py-4">R$ 5M+</td>
+                    <td className="py-4 dark:text-gray-300">R$ 5M+</td>
                     <td className="py-4 font-semibold text-green-600">35%</td>
-                    <td className="py-4">5%</td>
+                    <td className="py-4 dark:text-gray-300">5%</td>
                   </tr>
                 </tbody>
               </table>

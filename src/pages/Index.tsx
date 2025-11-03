@@ -1,5 +1,6 @@
 import React, { Suspense, lazy, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { LoadingSkeleton } from "@/components/ui/loading-skeleton";
 import UnifiedSEO from "@/components/shared/UnifiedSEO";
 import { useConversionMetrics } from "@/hooks/useConversionMetrics";
@@ -25,6 +26,7 @@ const ComponentFallback = () => (
 
 const Index = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation(['index', 'common']);
   const { trackFunnelStep } = useConversionMetrics();
 
 
@@ -53,12 +55,12 @@ const Index = () => {
       <UnifiedSEO 
         pageType="service"
         pageData={{
-          title: "onsmartAI - Agentes de IA para Transformação Empresarial",
-          description: "Transforme sua empresa com Agentes de IA e aumente a produtividade em até 420%. Metodologia LÍDER comprovada, implementação em 30 dias e ROI garantido."
+          title: t('seo.title'),
+          description: t('seo.description')
         }}
       />
       
-      <div className="min-h-screen relative bg-white">
+      <div className="min-h-screen relative bg-white dark:bg-gray-900">
         {/* Essential content only - minimal approach */}
         <div className="relative" style={{ zIndex: 10 }}>
           <HeroSection 

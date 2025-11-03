@@ -4,9 +4,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { CheckCircle, ArrowRight, HeadphonesIcon, MessageSquare, Clock, Smile, BarChart3, Zap, Shield, Bot } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 export default function AtendimentoInteligente() {
   const navigate = useNavigate();
+  const { t } = useTranslation(['solucoes', 'common']);
 
   const scrollToForm = () => {
     const formSelectors = [
@@ -40,23 +42,23 @@ export default function AtendimentoInteligente() {
   const features = [
     {
       icon: MessageSquare,
-      title: "Chatbots Multicanal",
-      description: "Atendimento integrado em WhatsApp, website, redes sociais e telefone"
+      title: t('solucoes:atendimentoInteligente.features.multichannelChatbots.title'),
+      description: t('solucoes:atendimentoInteligente.features.multichannelChatbots.description')
     },
     {
       icon: Bot,
-      title: "IA Conversacional",
-      description: "Entende contexto, resolve problemas complexos e aprende continuamente"
+      title: t('solucoes:atendimentoInteligente.features.conversationalAI.title'),
+      description: t('solucoes:atendimentoInteligente.features.conversationalAI.description')
     },
     {
       icon: BarChart3,
-      title: "Analytics de Atendimento",
-      description: "Insights detalhados sobre satisfação, tempo de resposta e resolução"
+      title: t('solucoes:atendimentoInteligente.features.realTimeAnalytics.title'),
+      description: t('solucoes:atendimentoInteligente.features.realTimeAnalytics.description')
     },
     {
       icon: Clock,
-      title: "Disponibilidade 24/7",
-      description: "Atendimento contínuo sem pausas, feriados ou horário comercial"
+      title: t('solucoes:atendimentoInteligente.benefits.availability.title'),
+      description: t('solucoes:atendimentoInteligente.benefits.availability.description')
     }
   ];
 
@@ -238,11 +240,10 @@ export default function AtendimentoInteligente() {
         <div className="max-w-4xl mx-auto text-center">
           <MessageSquare className="h-12 w-12 text-white mx-auto mb-6" />
           <h2 className="text-3xl font-bold text-white mb-4">
-            Pronto para Revolucionar seu Atendimento?
+            {t('solucoes:atendimentoInteligente.cta.title')}
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Agende uma demonstração e veja como nossa IA conversacional pode melhorar 
-            a satisfação dos seus clientes em 95%.
+            {t('solucoes:atendimentoInteligente.cta.subtitle')}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -251,7 +252,7 @@ export default function AtendimentoInteligente() {
               onClick={scrollToForm}
               className="bg-white text-green-500 hover:bg-gray-100 font-medium px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all"
             >
-              Agendar Demonstração
+              {t('solucoes:atendimentoInteligente.cta.button')}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button 
@@ -260,7 +261,7 @@ export default function AtendimentoInteligente() {
               onClick={() => navigate('/agentes-ia')}
               className="border-white text-white bg-white/10 hover:bg-white/20 font-medium px-8 py-6 text-lg rounded-xl transition-all"
             >
-              Ver Outras Soluções
+              {t('cta.viewOthers')}
             </Button>
           </div>
         </div>

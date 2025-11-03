@@ -1,0 +1,64 @@
+{
+  "seo": {
+    "title": "Free AI Tools - Calculators and Simulators | onsmartAI",
+    "description": "Access free tools to evaluate AI potential in your company: ROI calculator, digital maturity assessor and productivity simulators."
+  },
+  "hero": {
+    "badge": "Specialized Tools",
+    "title": "Free Tools",
+    "titleHighlight": "",
+    "description": "Access free tools to evaluate AI potential in your company and accelerate your digital transformation journey",
+    "startNow": "Start Now",
+    "viewDemo": "View Demo"
+  },
+  "specialized": {
+    "title": "Specialized Tools",
+    "description": "Use our free tools to evaluate and plan AI implementation in your company"
+  },
+  "buttons": {
+    "useTool": "Use Tool",
+    "learnMore": "Learn More",
+    "download": "Download",
+    "accessTool": "Access Tool"
+  },
+  "expertise": {
+    "badge": "Proven Expertise",
+    "title": "Developed by",
+    "titleHighlight": "Specialists",
+    "description": "Our tools are developed by AI specialists with years of experience in business digital transformation",
+    "knowOtherResources": "Learn About Other Resources",
+    "viewSuccessCases": "View Success Cases"
+  },
+  "tools": {
+    "roiCalculator": {
+      "title": "AI ROI Calculator",
+      "description": "Calculate the potential return on investment of AI implementation in your company",
+      "category": "Financial Analysis"
+    },
+    "digitalMaturity": {
+      "title": "Digital Maturity Assessor",
+      "description": "Discover your company's digital maturity level and improvement areas",
+      "category": "Diagnosis"
+    },
+    "automationPlanner": {
+      "title": "Automation Planner",
+      "description": "Identify which processes in your company can be automated with AI",
+      "category": "Planning"
+    },
+    "productivitySimulator": {
+      "title": "Productivity Simulator",
+      "description": "Simulate productivity gains with AI agent implementation",
+      "category": "Simulation"
+    }
+  },
+  "buttons": {
+    "useTool": "Use Tool",
+    "learnMore": "Learn More",
+    "download": "Download"
+  },
+  "cta": {
+    "title": "Ready to Implement AI?",
+    "subtitle": "Talk to our specialists and transform your company with AI",
+    "button": "Talk to Specialist"
+  }
+}

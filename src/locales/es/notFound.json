@@ -1,0 +1,43 @@
+{
+  "seo": {
+    "title": "Página no encontrada - onsmartAI",
+    "description": "Página no encontrada. Explora nuestros servicios de Agentes de IA."
+  },
+  "hero": {
+    "title": "Página no encontrada",
+    "subtitle": "¡Ups! La página que buscas no existe.",
+    "description": "Pero no te preocupes, tenemos muchas otras páginas interesantes para que explores."
+  },
+  "buttons": {
+    "goHome": "Ir al Inicio",
+    "goBack": "Volver",
+    "search": "Buscar"
+  },
+  "suggestions": {
+    "title": "Páginas que pueden interesarte:",
+    "links": [
+      {
+        "title": "Nuestros Productos",
+        "description": "Descubre nuestros Agentes de IA",
+        "url": "/produtos"
+      },
+      {
+        "title": "Planes y Precios",
+        "description": "Ve nuestros planes disponibles",
+        "url": "/planos"
+      },
+      {
+        "title": "Contacto",
+        "description": "Ponte en contacto",
+        "url": "/contato"
+      },
+      {
+        "title": "Sobre Nosotros",
+        "description": "Conoce nuestra historia",
+        "url": "/sobre"
+      }
+    ]
+  }
+}
+
+

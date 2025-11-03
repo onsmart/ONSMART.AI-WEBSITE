@@ -1,0 +1,72 @@
+{
+  "seo": {
+    "title": "Materiais Gratuitos de IA - E-books e Guias | onsmartAI",
+    "description": "Baixe gratuitamente nossos e-books, guias e templates sobre Inteligência Artificial empresarial. Conteúdo especializado para acelerar sua jornada com IA."
+  },
+  "materials": {
+    "completeGuide": {
+      "title": "Guia Completo de IA para Empresas",
+      "description": "Um guia abrangente sobre como implementar Inteligência Artificial na sua empresa",
+      "pages": "45 páginas"
+    },
+    "implementationChecklist": {
+      "title": "Checklist de Implementação de Agentes",
+      "description": "Lista completa de verificação para implementar agentes de IA com sucesso",
+      "pages": "12 páginas"
+    },
+    "roiTemplate": {
+      "title": "Template de ROI para IA",
+      "description": "Planilha para calcular o retorno sobre investimento em projetos de IA",
+      "pages": "Template Excel"
+    },
+    "leaderMethodology": {
+      "title": "Metodologia LÍDER",
+      "description": "E-book completo sobre nossa metodologia proprietária de implementação",
+      "pages": "67 páginas"
+    }
+  },
+  "buttons": {
+    "download": "Baixar Agora",
+    "learnMore": "Saiba mais",
+    "viewAll": "Ver Todos"
+  },
+  "stats": {
+    "downloads": "Downloads",
+    "users": "Usuários",
+    "materials": "Materiais"
+  },
+  "cta": {
+    "title": "Pronto para Transformar sua Empresa?",
+    "subtitle": "Fale com nossos especialistas e descubra como a IA pode acelerar seus resultados",
+    "button": "Falar com Especialista"
+  },
+  "hero": {
+    "badge": "Recursos Gratuitos",
+    "title": "Materiais",
+    "titleHighlight": "Gratuitos",
+    "description": "Baixe gratuitamente nossos e-books, guias e templates especializados em Inteligência Artificial empresarial",
+    "downloadAll": "Baixar Todos os Materiais",
+    "viewSuccessCases": "Ver Casos de Sucesso"
+  },
+  "specialized": {
+    "title": "Conteúdo Especializado",
+    "description": "Materiais desenvolvidos por especialistas em IA para acelerar sua jornada de transformação digital"
+  },
+  "buttons": {
+    "download": "Baixar Agora",
+    "learnMore": "Saiba mais",
+    "viewAll": "Ver Todos",
+    "downloadAll": "Baixar Todos os Materiais",
+    "viewSuccessCases": "Ver Casos de Sucesso"
+  },
+  "exclusive": {
+    "badge": "Conteúdo Exclusivo",
+    "title": "Pronto para",
+    "titleHighlight": "exclusivo",
+    "titleEnd": "?",
+    "description": "Acesse materiais exclusivos e acelere sua jornada de transformação digital com IA",
+    "scheduleDiagnostic": "Agendar Diagnóstico",
+    "viewAllMaterials": "Ver Todos os Materiais"
+  }
+}
+

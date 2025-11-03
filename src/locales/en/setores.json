@@ -1,0 +1,414 @@
+{
+  "hero": {
+    "title": "Specialized Sectors",
+    "subtitle": "Customized AI solutions for each market segment",
+    "description": "We transform companies from all sectors with AI implementations specific to their unique needs and challenges."
+  },
+  "sections": {
+    "sectors": {
+      "title": "Our Sectors",
+      "subtitle": "Discover specialized solutions for each area"
+    },
+    "benefits": {
+      "title": "Why choose specialized solutions?",
+      "subtitle": "Each sector has its unique particularities and challenges"
+    },
+    "cta": {
+      "title": "Ready to transform your sector?",
+      "subtitle": "Discover how AI can revolutionize your field of activity"
+    }
+  },
+  "benefits": {
+    "specialized": {
+      "title": "Sector Specialization",
+      "description": "Deep knowledge of each sector's particularities"
+    },
+    "compliance": {
+      "title": "Regulatory Compliance",
+      "description": "Solutions that respect specific regulations for each area"
+    },
+    "integration": {
+      "title": "Native Integration",
+      "description": "Specific connectors and APIs for sector tools"
+    },
+    "roi": {
+      "title": "Proven ROI",
+      "description": "Measurable results based on real sector cases"
+    }
+  },
+  "buttons": {
+    "learnMore": "Learn More",
+    "requestQuote": "Request Quote",
+    "freeDiagnostic": "Free Diagnostic"
+  },
+  "chartTitles": {
+    "legalAutomation": "Legal Automation",
+    "creditAnalysis": "Credit Analysis",
+    "salesGrowth": "Sales Growth",
+    "healthAnalytics": "Health Analytics",
+    "realEstateInsights": "Real Estate Insights",
+    "retailOptimization": "Retail Optimization",
+    "telecomAnalytics": "Telecom Analytics",
+    "industrialEfficiency": "Industrial Efficiency",
+    "sectorResults": "Sector Results"
+  },
+  "stats": {
+    "sectors": {
+      "value": "8 Sectors",
+      "description": "Specialized solutions"
+    },
+    "roi": {
+      "value": "420% ROI",
+      "description": "Average proven return"
+    },
+    "companies": {
+      "value": "350+ Companies",
+      "description": "Transformed clients"
+    }
+  },
+  "guarantees": {
+    "consulting": "✓ Free consultation",
+    "responseTime": "✓ Response within 24h",
+    "noCommitment": "✓ No commitment"
+  },
+  "sectors": {
+    "advocacia": {
+      "name": "Advocacy",
+      "description": "Automate legal processes and optimize service with AI specialized in law",
+      "heroTitle": "Modernize Your Law Firm with AI",
+      "heroSubtitle": "Automate legal research, petition generation and customer service with our specialized solution for lawyers",
+      "solutions": {
+        "assistente": {
+          "title": "Legal Research Assistant",
+          "description": "AI that performs automated research in jurisprudence and doctrines",
+          "benefits": [
+            "80% reduction in research time",
+            "Access to complete jurisprudence database",
+            "Automatic suggestions for legal arguments"
+          ]
+        },
+        "gerador": {
+          "title": "Intelligent Petition Generator",
+          "description": "System that creates personalized petitions based on models and context",
+          "benefits": [
+            "Petition creation in minutes",
+            "Guaranteed standardization and quality",
+            "Always updated template library"
+          ]
+        },
+        "prazos": {
+          "title": "Automated Deadline Control",
+          "description": "Intelligent monitoring of all procedural deadlines with alerts",
+          "benefits": [
+            "Zero loss of procedural deadlines",
+            "Personalized automatic alerts",
+            "Synchronization with electronic courts"
+          ]
+        }
+      }
+    },
+    "bancos": {
+      "name": "Banking",
+      "description": "Revolutionize banking service and credit analysis with advanced AI",
+      "heroTitle": "Transform Your Bank with Next-Generation AI",
+      "heroSubtitle": "Automate credit analysis, customer service and fraud detection with our advanced banking solution",
+      "solutions": {
+        "credito": {
+          "title": "AI Credit Analysis",
+          "description": "Intelligent system that evaluates risk and approves credit in real time",
+          "benefits": [
+            "Credit approval in less than 5 minutes",
+            "60% reduction in defaults",
+            "Automatic analysis of 200+ variables"
+          ]
+        },
+        "assistente": {
+          "title": "Virtual Banking Assistant",
+          "description": "Specialized chatbot that resolves 90% of banking demands",
+          "benefits": [
+            "24/7 service for all customers",
+            "Instant resolution of basic queries",
+            "70% reduction in human service queue"
+          ]
+        },
+        "antifraude": {
+          "title": "Intelligent Anti-Fraud System",
+          "description": "AI that detects and prevents fraud in real time",
+          "benefits": [
+            "99.5% accuracy in fraud detection",
+            "80% reduction in financial losses",
+            "Automatic blocking of suspicious transactions"
+          ]
+        }
+      }
+    },
+    "telecomunicacoes": {
+      "name": "Telecommunications",
+      "description": "Optimize networks and service with AI specialized in telecommunications",
+      "heroTitle": "Revolutionize Your Telecommunications with AI",
+      "heroSubtitle": "Optimize networks, automate technical support and improve customer experience with our specialized AI",
+      "solutions": {
+        "suporte": {
+          "title": "Technical Support Assistant",
+          "description": "AI that automatically resolves 80% of common technical problems",
+          "benefits": [
+            "Instant resolution of basic problems",
+            "75% reduction in calls to human support",
+            "Automatic diagnosis of network problems"
+          ]
+        },
+        "otimizador": {
+          "title": "Intelligent Network Optimizer",
+          "description": "System that monitors and optimizes network performance in real time",
+          "benefits": [
+            "40% improvement in signal quality",
+            "60% reduction in service interruptions",
+            "Automatic optimization based on demand"
+          ]
+        },
+        "preditor": {
+          "title": "Failure Predictor",
+          "description": "AI that identifies and prevents failures before they affect customers",
+          "benefits": [
+            "Prevention of 85% of network failures",
+            "Automated predictive maintenance",
+            "70% reduction in downtime"
+          ]
+        }
+      }
+    },
+    "varejo": {
+      "name": "Retail",
+      "description": "Maximize sales and customer experience with personalized AI for retail",
+      "heroTitle": "Transform Your Retail with Personalized AI",
+      "heroSubtitle": "Increase conversions, optimize inventory and personalize experiences with our complete retail solution",
+      "solutions": {
+        "personalizador": {
+          "title": "Experience Personalizer",
+          "description": "AI that creates unique experiences for each customer based on behavior",
+          "benefits": [
+            "200% increase in conversion",
+            "Real-time personalization",
+            "95% accuracy recommendations"
+          ]
+        },
+        "precos": {
+          "title": "Dynamic Price Optimizer",
+          "description": "System that automatically adjusts prices to maximize sales and profit",
+          "benefits": [
+            "35% increase in profit margin",
+            "Automatically competitive prices",
+            "Optimization based on real demand"
+          ]
+        },
+        "comportamento": {
+          "title": "Behavior Analyst",
+          "description": "AI that maps customer journey and identifies sales opportunities",
+          "benefits": [
+            "Deep insights into customers",
+            "Purchase pattern identification",
+            "300% more effective campaigns"
+          ]
+        }
+      }
+    },
+    "industria": {
+      "name": "Industry",
+      "description": "Optimize production and industrial maintenance with advanced AI",
+      "heroTitle": "Revolutionize Your Industry with AI 4.0",
+      "heroSubtitle": "Automate processes, prevent failures and optimize production with our intelligent industrial solution",
+      "solutions": {
+        "manutencao": {
+          "title": "Predictive Maintenance AI",
+          "description": "System that predicts equipment failures before they happen",
+          "benefits": [
+            "70% reduction in unplanned shutdowns",
+            "40% savings in maintenance costs",
+            "25% increase in equipment lifespan"
+          ]
+        },
+        "qualidade": {
+          "title": "Automatic Quality Control",
+          "description": "AI that detects defects and anomalies in real time",
+          "benefits": [
+            "99.8% defect detection",
+            "90% reduction in rejected products",
+            "24/7 quality control"
+          ]
+        },
+        "producao": {
+          "title": "Production Optimizer",
+          "description": "System that maximizes efficiency and minimizes waste",
+          "benefits": [
+            "30% increase in productivity",
+            "25% reduction in energy consumption",
+            "Automatic resource optimization"
+          ]
+        }
+      }
+    },
+    "saude": {
+      "name": "Healthcare",
+      "description": "Transform the healthcare system with AI specialized in medicine",
+      "heroTitle": "Revolutionize Healthcare with Medical AI",
+      "heroSubtitle": "Automate diagnoses, optimize treatments and improve results with our healthcare specialized AI",
+      "solutions": {
+        "diagnostico": {
+          "title": "Medical Diagnosis AI",
+          "description": "System that assists doctors in accurate and fast diagnoses",
+          "benefits": [
+            "40% increase in diagnostic accuracy",
+            "60% reduction in diagnosis time",
+            "Early detection of critical diseases"
+          ]
+        },
+        "exames": {
+          "title": "Intelligent Exam Analyzer",
+          "description": "AI that interprets medical exams and suggests diagnoses",
+          "benefits": [
+            "Exam analysis in minutes",
+            "99% anomaly identification",
+            "Automated medical reports"
+          ]
+        },
+        "medicina": {
+          "title": "Personalized Medicine System",
+          "description": "AI that personalizes treatments based on patient genetic profile",
+          "benefits": [
+            "70% more effective treatments",
+            "50% reduction in side effects",
+            "Precision medicine for each patient"
+          ]
+        }
+      }
+    },
+    "comercio": {
+      "name": "Commerce",
+      "description": "Optimize sales, inventory and customer service with personalized AI",
+      "heroTitle": "Transform Your Commerce with Intelligent AI",
+      "heroSubtitle": "Automate sales, optimize inventory and improve customer service with AI solutions specialized for commerce",
+      "solutions": {
+        "estoque": {
+          "title": "Intelligent Inventory Management",
+          "description": "AI that predicts demand and optimizes inventory levels automatically",
+          "benefits": [
+            "40% reduction in inventory costs",
+            "90% accuracy in demand forecasting",
+            "Complete automation of replenishment"
+          ]
+        },
+        "vendas": {
+          "title": "Virtual Sales Assistant",
+          "description": "AI that serves customers and makes sales 24/7",
+          "benefits": [
+            "24-hour available service",
+            "60% increase in sales",
+            "Automatic lead qualification"
+          ]
+        },
+        "analise": {
+          "title": "Predictive Sales Analysis",
+          "description": "System that analyzes patterns and predicts sales trends",
+          "benefits": [
+            "85% accuracy in sales forecasting",
+            "Opportunity identification",
+            "Marketing campaign optimization"
+          ]
+        }
+      }
+    },
+    "setor-imobiliario": {
+      "name": "Real Estate",
+      "description": "Intelligent management of properties, leads and real estate documentation",
+      "heroTitle": "Revolutionize Real Estate with AI",
+      "heroSubtitle": "Automate property management, qualify leads and optimize processes with AI specialized in real estate",
+      "solutions": {
+        "propriedades": {
+          "title": "Intelligent Property Management",
+          "description": "AI that manages inventory and optimizes property presentations",
+          "benefits": [
+            "Automated management of 1000+ properties",
+            "Personalized presentations per client",
+            "Market-based price optimization"
+          ]
+        },
+        "leads": {
+          "title": "Automatic Lead Qualification",
+          "description": "System that qualifies and segments customers automatically",
+          "benefits": [
+            "Real-time lead qualification",
+            "Automatic segmentation by profile",
+            "70% increase in conversion"
+          ]
+        },
+        "mercado": {
+          "title": "Predictive Market Analysis",
+          "description": "AI that analyzes trends and predicts market values",
+          "benefits": [
+            "Real-time market analysis",
+            "90% accuracy in value forecasting",
+            "Strategic insights for investments"
+          ]
+        }
+      }
+    }
+  },
+  "dynamic": {
+    "whatsIncluded": {
+      "title": "What's Included",
+      "subtitle": "Everything you need to transform your {{sector}} sector"
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "subtitle": "Structured process to guarantee results in the {{sector}} sector",
+      "steps": {
+        "analise": {
+          "title": "Initial Analysis",
+          "description": "We evaluate your current processes and identify improvement opportunities"
+        },
+        "implementacao": {
+          "title": "Implementation",
+          "description": "We develop and implement personalized AI solutions for your sector"
+        },
+        "otimizacao": {
+          "title": "Optimization",
+          "description": "We continuously monitor and optimize to ensure maximum efficiency"
+        }
+      }
+    },
+    "plans": {
+      "title": "Our Plans",
+      "subtitle": "Personalized solutions for the {{sector}} sector",
+      "description": "Complete and personalized solution",
+      "basic": {
+        "title": "Basic",
+        "features": {
+          "analise": "Complete initial analysis",
+          "implementacao": "Basic implementation",
+          "suporte": "30 days support"
+        }
+      },
+      "professional": {
+        "title": "Professional",
+        "features": {
+          "analise": "Complete and detailed analysis",
+          "implementacao": "Advanced implementation",
+          "suporte": "90 days support"
+        }
+      },
+      "enterprise": {
+        "title": "Enterprise",
+        "features": {
+          "analise": "Complete enterprise analysis",
+          "implementacao": "Enterprise implementation",
+          "suporte": "Continuous support"
+        }
+      },
+      "requestQuote": "Request Quote"
+    },
+    "cta": {
+      "title": "Transform the {{sector}} sector with Artificial Intelligence",
+      "subtitle": "Schedule a free diagnostic and discover how AI can revolutionize your results."
+    }
+  }
+}

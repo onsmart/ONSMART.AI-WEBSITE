@@ -1,0 +1,149 @@
+{
+  "seo": {
+    "title": "Free Content - Articles, E-books and AI Resources | onsmartAI",
+    "description": "Access our free content library about AI: articles, e-books, videos, templates and calculators to accelerate your digital transformation."
+  },
+  "hero": {
+    "title": "Free Content",
+    "subtitle": "Exclusive resources to accelerate your AI transformation",
+    "description": "Access articles, e-books, videos, templates and tools developed by our AI specialists."
+  },
+  "categories": {
+    "artigos": "Articles & Guides",
+    "videos": "Videos",
+    "ebooks": "E-books",
+    "templates": "Templates",
+    "checklists": "Checklists",
+    "calculadoras": "Calculators"
+  },
+  "filters": {
+    "all": "All",
+    "recent": "Most Recent",
+    "popular": "Most Popular",
+    "featured": "Featured"
+  },
+  "content": {
+    "readMore": "Read More",
+    "download": "Download",
+    "watch": "Watch",
+    "downloadNow": "Download Now",
+    "watchNow": "Watch Now",
+    "readArticle": "Read Article",
+    "viewTemplate": "View Template",
+    "useCalculator": "Use Calculator",
+    "downloadChecklist": "Download Checklist"
+  },
+  "stats": {
+    "articles": "Articles",
+    "videos": "Videos",
+    "downloads": "Downloads",
+    "users": "Users"
+  },
+  "cta": {
+    "title": "Ready to Transform Your Company?",
+    "subtitle": "Talk to our specialists and discover how AI can accelerate your results",
+    "button": "Talk to Specialist"
+  },
+  "newsletter": {
+    "title": "Receive Exclusive Content",
+    "subtitle": "Sign up and receive new articles, e-books and resources directly to your email",
+    "placeholder": "Your best email",
+    "button": "Sign Up",
+    "success": "Registration successful!",
+    "error": "Error registering. Please try again."
+  },
+  "modal": {
+    "close": "Close",
+    "download": "Download",
+    "share": "Share"
+  },
+  "hero": {
+    "badge": "Specialized Content",
+    "title": "Learn about",
+    "titleHighlight": "AI",
+    "titleEnd": "with Experts",
+    "description": "Access <span>practical guides</span>, exclusive e-books and webinars with real <span>digital transformation</span> cases",
+    "stats": {
+      "contents": "Contents",
+      "ebooks": "E-books",
+      "videos": "Videos",
+      "tools": "Tools"
+    }
+  },
+  "filters": {
+    "title": "Filter by Category",
+    "showing": "Showing",
+    "of": "of",
+    "contents": "contents",
+    "in": "in"
+  },
+  "loading": {
+    "title": "Loading Content",
+    "description": "Searching for specialized articles, videos and e-books..."
+  },
+  "error": {
+    "title": "Error loading content",
+    "description": "Please try again later.",
+    "button": "Try Again"
+  },
+  "empty": {
+    "title": "No content found",
+    "description1": "No content available at the moment.",
+    "description2": "No content in category \"{category}\"."
+  },
+  "actions": {
+    "download": "Download",
+    "watch": "Watch",
+    "access": "Access",
+    "start": "Start",
+    "use": "Use",
+    "viewMore": "Show More",
+    "viewLess": "Show Less",
+    "remaining": "remaining"
+  },
+  "contentTypes": {
+    "pdf": "PDF",
+    "video": "Video",
+    "webinar": "Webinar",
+    "template": "Template",
+    "checklist": "Checklist",
+    "calculator": "Calculator",
+    "course": "Course",
+    "case": "Case",
+    "infographic": "Infographic",
+    "guide": "Guide",
+    "article": "Article"
+  },
+  "newsletterSection": {
+    "badge": "Weekly Newsletter",
+    "title": "Receive <span>exclusive</span> content",
+    "titleHighlight": "exclusive",
+    "subtitle": "Every week we send <span>insights</span>, <span>cases</span> and <span>news</span> about AI directly to your email",
+    "placeholder": "Your best email",
+    "button": "Subscribe Free",
+    "benefits": {
+      "free": "✓ 100% free",
+      "noSpam": "✓ No spam",
+      "cancel": "✓ Cancel anytime"
+    }
+  },
+  "ctaSection": {
+    "badge": "Specialized Consulting",
+    "title": "Ready to <span>implement</span>?",
+    "titleHighlight": "implement",
+    "subtitle": "Our team can help you <span>apply</span> all this knowledge in your company with guaranteed results",
+    "button1": "Talk to Specialist",
+    "button2": "Free Diagnosis",
+    "benefits": {
+      "free": "✓ Free consultation",
+      "response": "✓ Response in 24h",
+      "noCommitment": "✓ No commitment"
+    }
+  },
+  "videoModal": {
+    "channel": "onsmarttech",
+    "official": "Official Channel",
+    "watchOnYouTube": "Watch on YouTube"
+  }
+}
+

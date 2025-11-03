@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/sheet";
 import MobileMenuItems from "./MobileMenuItems";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 interface MobileMenuProps {
   isActive: (path: string) => boolean;
@@ -16,6 +17,7 @@ interface MobileMenuProps {
 }
 
 const MobileMenu: React.FC<MobileMenuProps> = ({ isActive, isActivePrefix }) => {
+  const { t } = useTranslation('navigation');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   
   const handleClose = () => setIsMenuOpen(false);
@@ -45,7 +47,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isActive, isActivePrefix }) => 
       </SheetTrigger>
       <SheetContent className="w-[280px] h-screen max-h-screen overflow-y-auto bg-white animate-in slide-in-from-right duration-300">
         <SheetHeader className="mb-2">
-          <SheetTitle className="sr-only">Menu de navegação</SheetTitle>
+          <SheetTitle className="sr-only">{t('menu.navigationMenuTitle')}</SheetTitle>
         </SheetHeader>
         <div className="px-4 pt-16 animate-in fade-in-0 slide-in-from-bottom-4 duration-500 delay-300">
           <MobileMenuItems 

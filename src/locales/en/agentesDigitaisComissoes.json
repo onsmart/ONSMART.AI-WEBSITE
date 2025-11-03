@@ -1,0 +1,106 @@
+{
+  "seo": {
+    "title": "Digital Agents Commissions onsmartAI - Commission Table and Earnings",
+    "description": "Discover the commission table of the onsmartAI Digital Agents program. Earn from R$ 5,000 to R$ 50,000+ per referral + recurring income.",
+    "keywords": "digital agent commissions, commission table, referral earnings, recurring income, affiliate program"
+  },
+  "hero": {
+    "badge": "Commission Table",
+    "title": "Digital Agents Commissions",
+    "subtitle": "Discover how much you can earn by referring companies to onsmartAI",
+    "buttons": {
+      "becomeAgent": "Become an Agent",
+      "viewProgram": "View Full Program"
+    }
+  },
+  "commissions": {
+    "title": "Commission Structure",
+    "subtitle": "The higher the contract value, the higher your commission",
+    "basic": {
+      "title": "Basic Contracts",
+      "description": "R$ 5,000 to R$ 25,000/month",
+      "percentage": "10%",
+      "note": "Commission on first year value",
+      "examples": {
+        "5000": "R$ 5,000/month:",
+        "5000Value": "R$ 6,000",
+        "15000": "R$ 15,000/month:",
+        "15000Value": "R$ 18,000",
+        "25000": "R$ 25,000/month:",
+        "25000Value": "R$ 30,000"
+      }
+    },
+    "medium": {
+      "title": "Medium Contracts",
+      "description": "R$ 25,000 to R$ 50,000/month",
+      "percentage": "15%",
+      "note": "Commission on first year value",
+      "examples": {
+        "25000": "R$ 25,000/month:",
+        "25000Value": "R$ 45,000",
+        "35000": "R$ 35,000/month:",
+        "35000Value": "R$ 63,000",
+        "50000": "R$ 50,000/month:",
+        "50000Value": "R$ 90,000"
+      }
+    },
+    "enterprise": {
+      "title": "Enterprise Contracts",
+      "description": "R$ 50,000+/month",
+      "percentage": "25%",
+      "note": "Commission on first year value",
+      "examples": {
+        "50000": "R$ 50,000/month:",
+        "50000Value": "R$ 150,000",
+        "100000": "R$ 100,000/month:",
+        "100000Value": "R$ 300,000",
+        "200000": "R$ 200,000/month:",
+        "200000Value": "R$ 600,000"
+      }
+    }
+  },
+  "recurring": {
+    "title": "Guaranteed Recurring Income",
+    "description": "In addition to the initial commission, you earn 2% of everything the client pays monthly for 12 months.",
+    "examples": {
+      "10000": {
+        "title": "Client R$ 10,000/month",
+        "description": "R$ 200/month for 12 months = R$ 2,400 additional"
+      },
+      "50000": {
+        "title": "Client R$ 50,000/month",
+        "description": "R$ 1,000/month for 12 months = R$ 12,000 additional"
+      },
+      "100000": {
+        "title": "Client R$ 100,000/month",
+        "description": "R$ 2,000/month for 12 months = R$ 24,000 additional"
+      }
+    },
+    "realExample": {
+      "title": "Real Example",
+      "client": "Client R$ 30,000/month",
+      "tier": "15% tier",
+      "initial": "Initial commission:",
+      "recurring": "Recurring income (12x):",
+      "total": "Total in first year:"
+    }
+  },
+  "calculator": {
+    "title": "Calculate Your Earnings",
+    "cardTitle": "Commission Simulator",
+    "cardDescription": "Enter the monthly contract value to see your commission",
+    "label": "Monthly contract value (R$)",
+    "placeholder": "Ex: 25000",
+    "button": "Calculate Commission",
+    "helper": "Fill in the value above to see your estimated commission"
+  },
+  "cta": {
+    "title": "Ready to Start Earning?",
+    "description": "Sign up for free and receive your exclusive link to start referring clients today.",
+    "buttons": {
+      "signup": "Sign Up Now",
+      "contact": "Ask Questions"
+    }
+  }
+}
+

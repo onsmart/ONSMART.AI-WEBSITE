@@ -1,0 +1,72 @@
+{
+  "seo": {
+    "title": "IA Básico - Curso Introdutório de Inteligência Artificial | onsmartAI University",
+    "description": "Aprenda os fundamentos da Inteligência Artificial com nosso curso IA Básico. Conceitos essenciais para iniciantes em IA empresarial.",
+    "keywords": "curso ia basico, inteligencia artificial iniciantes, fundamentos ia, aprender ia, curso gratuito ia"
+  },
+  "hero": {
+    "badge": "onsmartAI University",
+    "title": "IA Básico",
+    "subtitle": "Aprenda os fundamentos da Inteligência Artificial e como ela pode transformar sua empresa",
+    "buttons": {
+      "startCourse": "Começar Curso",
+      "downloadMaterial": "Material PDF"
+    }
+  },
+  "curriculum": {
+    "title": "Módulos do",
+    "titleHighlight": "Curso",
+    "modules": {
+      "1": {
+        "title": "O que é Inteligência Artificial?",
+        "description": "Conceitos fundamentais, história e aplicações práticas da IA no mundo empresarial.",
+        "items": [
+          "Definições e conceitos básicos",
+          "História da IA",
+          "Tipos de IA (Narrow, General, Super)"
+        ]
+      },
+      "2": {
+        "title": "Machine Learning Essencial",
+        "description": "Entenda como as máquinas aprendem e tomam decisões automatizadas.",
+        "items": [
+          "Tipos de aprendizado (supervisionado, não supervisionado)",
+          "Algoritmos básicos",
+          "Exemplos práticos empresariais"
+        ]
+      },
+      "3": {
+        "title": "IA na Prática Empresarial",
+        "description": "Como implementar IA na sua empresa de forma prática e eficiente.",
+        "items": [
+          "Casos de uso por setor",
+          "ROI e métricas de sucesso",
+          "Primeiros passos para implementação"
+        ]
+      }
+    }
+  },
+  "sidebar": {
+    "courseInfo": {
+      "title": "Informações do Curso",
+      "duration": "Duração",
+      "durationValue": "2 horas",
+      "level": "Nível",
+      "levelValue": "Iniciante",
+      "format": "Formato",
+      "formatValue": "Vídeo + Material",
+      "certificate": "Certificado",
+      "certificateValue": "Sim"
+    },
+    "whatYouWillLearn": {
+      "title": "O que você aprenderá",
+      "items": [
+        "Conceitos fundamentais de IA",
+        "Como a IA pode ajudar sua empresa",
+        "Identificar oportunidades de automação",
+        "Calcular ROI de projetos de IA"
+      ]
+    }
+  }
+}
+

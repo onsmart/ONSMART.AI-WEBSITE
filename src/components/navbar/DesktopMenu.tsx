@@ -19,6 +19,7 @@ import {
   isSetoresActive,
   isProdutosActive,
 } from "./utils/menuUtils";
+import { useTranslation } from "react-i18next";
 
 interface DesktopMenuProps {
   isActive: (path: string) => boolean;
@@ -27,6 +28,7 @@ interface DesktopMenuProps {
 }
 
 const DesktopMenu: React.FC<DesktopMenuProps> = ({ isActive, isActivePrefix, handleContatoClick }) => {
+  const { t } = useTranslation('navigation');
   const {
     location,
     servicosOpen,
@@ -46,14 +48,14 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({ isActive, isActivePrefix, han
       <NavigationMenuList className="gap-1">
         <NavMenuItem
           icon={Home}
-          label="Início"
+          label={t('menu.home')}
           isActive={isHomeActive(location.pathname)}
           onClick={(e) => navigateTo("/")}
         />
         
         <DropdownMenuItem
           icon={Package}
-          label="Produtos"
+          label={t('menu.products')}
           isActive={isProdutosActive(location.pathname)}
           isOpen={produtosOpen}
           onOpenChange={setProdutosOpen}
@@ -67,7 +69,7 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({ isActive, isActivePrefix, han
         
         <DropdownMenuItem
           icon={Briefcase}
-          label="Serviços"
+          label={t('menu.services')}
           isActive={isServicosActive(location.pathname)}
           isOpen={servicosOpen}
           onOpenChange={setServicosOpen}
@@ -81,7 +83,7 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({ isActive, isActivePrefix, han
         
         <DropdownMenuItem
           icon={BookOpen}
-          label="Conteúdo"
+          label={t('menu.content')}
           isActive={isConteudoActive(location.pathname)}
           isOpen={conteudoOpen}
           onOpenChange={setConteudoOpen}
@@ -95,7 +97,7 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({ isActive, isActivePrefix, han
         
         <DropdownMenuItem
           icon={Building}
-          label="Setores"
+          label={t('menu.sectors')}
           isActive={isSetoresActive(location.pathname)}
           isOpen={setoresOpen}
           onOpenChange={setSetoresOpen}
@@ -109,7 +111,7 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({ isActive, isActivePrefix, han
         
         <NavMenuItem
           icon={Mail}
-          label="Contato"
+          label={t('menu.contact')}
           isActive={isContatoActive(location.pathname)}
           onClick={handleContatoClick}
         />

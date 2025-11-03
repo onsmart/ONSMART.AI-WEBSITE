@@ -1,0 +1,203 @@
+{
+  "seo": {
+    "title": "Contato - Fale Conosco | onsmartAI",
+    "description": "Entre em contato com a onsmartAI. Nossa equipe de especialistas em IA está pronta para ajudar sua empresa a transformar processos com inteligência artificial."
+  },
+  "hero": {
+    "badge": "Fale Conosco",
+    "title": "Transforme Sua Empresa com IA em 30 Dias",
+    "titleHighlight": "IA em 30 Dias",
+    "subtitle": "Nossa equipe de especialistas em IA está pronta para ajudar sua empresa",
+    "description": "Transforme sua empresa com soluções de Inteligência Artificial personalizadas. Entre em contato e descubra como podemos acelerar seus resultados.",
+    "alert": {
+      "title": "ALERTA:",
+      "message": "Sua concorrência já está usando IA para aumentar produtividade em",
+      "productivity": "420%",
+      "andMessage": "e reduzir custos operacionais drasticamente."
+    },
+    "leader": {
+      "methodology": "metodologia LÍDER",
+      "message": "já transformou",
+      "companies": "350+ empresas",
+      "results": "com resultados comprovados em apenas 30 dias. Não deixe sua empresa ficar para trás!"
+    },
+    "benefits": {
+      "title": "BENEFÍCIOS EXCLUSIVOS",
+      "subtitle": "O que você recebe ao entrar em contato hoje",
+      "items": {
+        "diagnostic": {
+          "title": "Diagnóstico Empresarial",
+          "description": "Análise completa e gratuita da sua empresa"
+        },
+        "roi": {
+          "title": "Projeção de ROI",
+          "description": "Cálculo personalizado do retorno sobre investimento"
+        },
+        "implementation": {
+          "title": "Plano de Implementação",
+          "description": "Roadmap detalhado para 30 dias"
+        },
+        "consulting": {
+          "title": "Consultoria Estratégica",
+          "description": "Sessão gratuita sem compromisso"
+        }
+      }
+    }
+  },
+  "success": {
+    "title": "Mensagem Enviada com Sucesso!",
+    "message": "✓ Recebemos sua mensagem!",
+    "responseTime": "Nossa equipe responderá em até",
+    "responseTimeValue": "2 horas úteis",
+    "responseTimeEnd": "com uma proposta personalizada.",
+    "emailConfirmation": "Confirmação enviada para seu email",
+    "responseTimeLabel": "Tempo de resposta: até 2 horas úteis",
+    "sendAnother": "Enviar Outra Mensagem",
+    "backToHome": "Voltar ao Início"
+  },
+  "form": {
+    "title": "Formulário de Contato",
+    "subtitle": "Preencha o formulário abaixo e nossa equipe entrará em contato em até 2 horas úteis",
+    "diagnosticTitle": "Garanta Seu",
+    "diagnosticHighlight": "Diagnóstico Gratuito",
+    "discoverPotential": "Descubra o potencial de economia da IA na sua empresa",
+    "fillFormDescription": "Preencha o formulário abaixo e receba em até",
+    "fillFormDescriptionValue": "2 horas úteis",
+    "fillFormDescriptionEnd": ": análise personalizada, projeção de ROI e plano de implementação detalhado.",
+    "bonus": {
+      "title": "BÔNUS EXCLUSIVO ao enviar hoje:",
+      "items": {
+        "diagnostic": {
+          "title": "Diagnóstico IA",
+          "value": "personalizado (valor R$ 2.500)"
+        },
+        "roi": {
+          "title": "Projeção ROI",
+          "description": "detalhada da sua empresa"
+        },
+        "roadmap": {
+          "title": "Roadmap 30 dias",
+          "description": "para implementação"
+        },
+        "consulting": {
+          "title": "Consultoria estratégica",
+          "description": "de 1 hora gratuita"
+        }
+      }
+    },
+    "trust": {
+      "secure": "Dados 100% seguros",
+      "noSpam": "Sem spam",
+      "responseTime": "Resposta em 2h"
+    },
+    "lastCompanies": "Últimas 48 horas:",
+    "companiesRequested": "empresas solicitaram diagnóstico",
+    "name": {
+      "label": "Nome Completo",
+      "placeholder": "Digite seu nome completo"
+    },
+    "email": {
+      "label": "E-mail",
+      "placeholder": "seu@email.com"
+    },
+    "phone": {
+      "label": "Telefone/WhatsApp",
+      "placeholder": "(11) 99999-9999"
+    },
+    "company": {
+      "label": "Empresa",
+      "placeholder": "Nome da sua empresa"
+    },
+    "subject": {
+      "label": "Assunto",
+      "placeholder": "Selecione o assunto",
+      "options": {
+        "consultoria": "Consultoria em IA",
+        "implementacao": "Implementação de Soluções",
+        "suporte": "Suporte Técnico",
+        "parceria": "Parceria Comercial",
+        "outros": "Outros"
+      }
+    },
+    "message": {
+      "label": "Como podemos ajudar?",
+      "placeholder": "Ex: Quero automatizar atendimento ao cliente, reduzir custos operacionais, aumentar produtividade da equipe..."
+    },
+    "submit": "SOLICITAR DIAGNÓSTICO GRATUITO",
+    "sending": "Enviando Solicitação...",
+    "required": "Campo obrigatório",
+    "invalidEmail": "E-mail inválido",
+    "minLength": "Mínimo de 10 caracteres",
+    "socialProof": {
+      "companies": "Empresas atendidas",
+      "satisfaction": "Satisfação média",
+      "responseTime": "Tempo resposta"
+    }
+  },
+  "info": {
+    "title": "Informações de Contato",
+    "contactTitle": "Fale Conosco",
+    "subtitle": "Outras formas de nos encontrar",
+    "location": {
+      "badge": "Nossa Localização",
+      "title": "Visite nosso Escritório",
+      "loading": "Carregando mapa...",
+      "address": "Rua Arizona, 1349",
+      "neighborhood": "Berrini",
+      "city": "São Paulo - SP"
+    },
+    "contactInfo": {
+      "email": {
+        "label": "Email",
+        "value": "atendimento.ai@onsmart.com.br"
+      },
+      "phone": {
+        "label": "Telefone",
+        "value": "+55 11 99666-9247"
+      },
+      "hours": {
+        "label": "Horário",
+        "value": "Segunda à Sexta, 9h às 18h"
+      },
+      "address": {
+        "label": "Endereço",
+        "value": "Rua Arizona, 1349",
+        "city": "São Paulo - SP"
+      }
+    },
+    "email": {
+      "label": "E-mail",
+      "value": "contato@onsmartai.com",
+      "description": "Respondemos em até 2 horas úteis"
+    },
+    "phone": {
+      "label": "Telefone/WhatsApp",
+      "value": "(11) 99999-9999",
+      "description": "Atendimento de segunda a sexta, 9h às 18h"
+    },
+    "address": {
+      "label": "Endereço",
+      "value": "São Paulo, SP - Brasil",
+      "description": "Atendimento presencial sob agendamento"
+    },
+    "hours": {
+      "label": "Horário de Atendimento",
+      "value": "Segunda a Sexta: 9h às 18h",
+      "description": "Sábado: 9h às 12h"
+    }
+  },
+  "cta": {
+    "title": "Pronto para Transformar sua Empresa?",
+    "subtitle": "Nossa equipe de especialistas está pronta para ajudar você a implementar soluções de IA que realmente funcionam.",
+    "button": "Falar com Especialista"
+  },
+  "guarantee": {
+    "badge": "Resposta Garantida",
+    "title": "Nossa Garantia",
+    "message": "Respondemos todos os contatos em até",
+    "value": "2 horas úteis",
+    "subtitle": "Respondemos todos os contatos em até",
+    "subtitleValue": "2 horas úteis",
+    "subtitleEnd": "ou oferecemos uma consultoria gratuita de 30 minutos."
+  }
+}

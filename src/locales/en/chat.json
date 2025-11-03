@@ -1,0 +1,41 @@
+{
+  "welcome": "Hello! I'm Sonia, AI assistant from onsmart AI. I'm here to answer your questions about our corporate AI Agents. How can I help you today?",
+  "placeholder": "Type your message...",
+  "button": {
+    "send": "Send",
+    "close": "Close",
+    "minimize": "Minimize",
+    "reset": "New Conversation",
+    "voice": "Voice Mode",
+    "text": "Text Mode",
+    "openChat": "Open chat with Sonia"
+  },
+  "header": {
+    "title": "Sonia",
+    "subtitle": "AI Assistant",
+    "switchToVoice": "Switch to voice",
+    "switchToText": "Switch to text",
+    "newConversation": "New conversation",
+    "minimize": "Minimize",
+    "close": "Close"
+  },
+  "typing": "Sonia is typing...",
+  "error": "Sorry, I'm experiencing technical difficulties at the moment. But I can help you! Our sales team can answer all your questions about our AI Agents. Would you like me to connect you with them?",
+  "tooltip": {
+    "talkToSonia": "Talk to Sonia"
+  },
+  "suggestions": {
+    "title": "Quick suggestions:"
+  },
+  "conversationStarter": {
+    "howItWorks": "How does sales automation work?",
+    "pricing": "How much does it cost to implement AI?",
+    "demo": "I want to schedule a demonstration",
+    "timeline": "What is the implementation timeline?",
+    "problems": "What problems does AI solve?"
+  },
+  "audio": {
+    "notSupported": "Your browser does not support the audio element."
+  }
+}
+

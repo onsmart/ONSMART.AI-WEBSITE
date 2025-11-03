@@ -1,0 +1,56 @@
+{
+  "seo": {
+    "title": "Glosario de IA - Términos y Definiciones | onsmartAI",
+    "description": "Accede a nuestro glosario completo de términos de Inteligencia Artificial. Definiciones claras y objetivas para entender mejor el mundo de la IA empresarial."
+  },
+  "hero": {
+    "title": "Glosario de IA",
+    "subtitle": "Términos y definiciones esenciales",
+    "description": "Aprende los principales conceptos de Inteligencia Artificial con definiciones claras y objetivas."
+  },
+  "search": {
+    "placeholder": "Buscar términos...",
+    "noResults": "Ningún término encontrado"
+  },
+  "terms": {
+    "aiAgents": {
+      "termo": "Agentes de IA",
+      "definicao": "Sistemas autónomos que pueden tomar decisiones y ejecutar tareas específicas usando inteligencia artificial, sin necesidad de intervención humana constante."
+    },
+    "machineLearning": {
+      "termo": "Machine Learning",
+      "definicao": "Subcampo de la IA que permite que los sistemas aprendan y mejoren automáticamente a través de la experiencia, sin ser explícitamente programados."
+    },
+    "nlp": {
+      "termo": "Procesamiento de Lenguaje Natural (NLP)",
+      "definicao": "Área de la IA que se concentra en la interacción entre computadoras y lenguaje humano, permitiendo que las máquinas entiendan y respondan en lenguaje natural."
+    },
+    "rpa": {
+      "termo": "Automatización Robótica de Procesos (RPA)",
+      "definicao": "Tecnología que usa software para automatizar tareas de negocio rutinarias y repetitivas, imitando acciones humanas."
+    },
+    "deepLearning": {
+      "termo": "Deep Learning",
+      "definicao": "Subconjunto del machine learning que usa redes neuronales con múltiples capas para analizar datos de forma similar al cerebro humano."
+    },
+    "api": {
+      "termo": "API",
+      "definicao": "Interfaz de Programación de Aplicaciones - conjunto de protocolos que permite la comunicación entre diferentes softwares y sistemas."
+    },
+    "bigData": {
+      "termo": "Big Data",
+      "definicao": "Conjuntos de datos extremadamente grandes y complejos que requieren herramientas especializadas para procesamiento y análisis."
+    },
+    "roi": {
+      "termo": "ROI (Return on Investment)",
+      "definicao": "Métrica que mide la eficiencia de una inversión, calculando el retorno obtenido en relación al valor invertido."
+    }
+  },
+  "cta": {
+    "title": "¿Listo para Implementar IA?",
+    "subtitle": "Habla con nuestros especialistas y transforma tu empresa con IA",
+    "button": "Hablar con Especialista"
+  }
+}
+
+

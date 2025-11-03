@@ -1,15 +1,18 @@
 import React from 'react';
 import UnifiedSEO from '@/components/shared/UnifiedSEO';
 import { Users, Target, Award, TrendingUp, Heart, Lightbulb, Shield, Rocket } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Sobre = () => {
+  const { t } = useTranslation(['sobre', 'common']);
+  
   return (
     <>
       <UnifiedSEO 
         pageType="page"
         pageData={{
-          title: "Sobre a onsmart AI - Nossa História e Missão",
-          description: "Conheça a onsmart AI: especialistas em Inteligência Artificial empresarial com foco em resultados reais e transformação digital sustentável."
+          title: t('sobre:hero.title') + " - Nossa História e Missão",
+          description: t('sobre:hero.seoDescription')
         }}
       />
       
@@ -25,15 +28,14 @@ const Sobre = () => {
             <div className="text-center">
               <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-brand-blue/10 border border-brand-blue/20">
                 <Users className="h-4 w-4 text-brand-blue" />
-                <span className="text-sm font-semibold text-brand-blue">Nossa História</span>
+                <span className="text-sm font-semibold text-brand-blue">{t('sobre:hero.badge')}</span>
               </div>
               <h1 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white leading-tight">
-                Transformando o Futuro com{' '}
-                <span className="text-brand-blue">Inteligência Artificial</span>
+                {t('sobre:hero.title')}{' '}
+                <span className="text-brand-blue">{t('sobre:hero.titleHighlight')}</span>
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto">
-                Somos especialistas em Inteligência Artificial empresarial, dedicados a democratizar o acesso à IA 
-                e transformar negócios através de soluções inovadoras e resultados mensuráveis.
+                {t('sobre:hero.description')}
               </p>
             </div>
           </div>

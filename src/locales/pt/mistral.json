@@ -1,0 +1,62 @@
+{
+  "hero": {
+    "badge": "AI Models",
+    "title": "Mistral",
+    "subtitle": "Modelos de linguagem de última geração para aplicações de IA generativa com performance excepcional."
+  },
+  "statsTop": {
+    "parameters": "Parâmetros",
+    "efficiency": "Mais eficiente",
+    "opensource": "Open Source"
+  },
+  "cta": {
+    "requestDemo": "Solicitar Demonstração",
+    "title": "Potencialize sua IA com Mistral",
+    "subtitle": "Junte-se às empresas que já transformaram seus negócios com Mistral."
+  },
+  "features": {
+    "title": "Principais Recursos",
+    "nlp": {
+      "title": "Processamento de Linguagem Natural",
+      "desc": "Compreensão avançada de texto e linguagem humana"
+    },
+    "generation": {
+      "title": "Geração de Conteúdo",
+      "desc": "Criação de texto, código e conteúdo criativo"
+    },
+    "efficiency": {
+      "title": "Eficiência Computacional",
+      "desc": "Otimizado para performance e baixo consumo de recursos"
+    },
+    "flexibility": {
+      "title": "Flexibilidade Total",
+      "desc": "Modelo open source com controle completo"
+    }
+  },
+  "advanced": {
+    "title": "Recursos Avançados",
+    "subtitle": "Descubra como o Mistral pode revolucionar suas aplicações de IA",
+    "architecture": "Arquitetura Avançada",
+    "architectureDesc": "Sliding Window Attention para processamento eficiente",
+    "performance": "Performance Otimizada",
+    "performanceDesc": "Velocidade e eficiência superiores",
+    "community": "Comunidade Ativa",
+    "communityDesc": "Suporte da comunidade open source",
+    "security": "Segurança e Privacidade",
+    "securityDesc": "Controle total sobre dados e implantação",
+    "finetune": "Fine‑tuning Personalizado",
+    "finetuneDesc": "Adaptação para domínios e casos de uso",
+    "integration": "Integração Simples",
+    "integrationDesc": "APIs e ferramentas para integração rápida"
+  },
+  "numbers": {
+    "title": "Números Impressionantes",
+    "subtitle": "Veja como o Mistral está revolucionando a IA generativa",
+    "downloads": "Downloads",
+    "companies": "Empresas Ativas",
+    "accuracy": "Precisão",
+    "downloadsDesc": "Do modelo",
+    "companiesDesc": "Usando o modelo",
+    "accuracyDesc": "Em tarefas de linguagem"
+  }
+}

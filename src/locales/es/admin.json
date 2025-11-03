@@ -1,0 +1,24 @@
+{
+  "title": "Panel Administrativo",
+  "subtitle": "Gestiona contenidos, casos de éxito y publicaciones del blog",
+  "tabs": {
+    "content": "Contenidos",
+    "cases": "Casos de Éxito",
+    "blog": "Blog"
+  },
+  "sections": {
+    "content": {
+      "title": "Gestionar Contenidos",
+      "description": "Añade, edita y gestiona e-books, artículos, videos y otros materiales"
+    },
+    "cases": {
+      "title": "Gestionar Casos de Éxito",
+      "description": "Añade y edita estudios de caso por sector"
+    },
+    "blog": {
+      "title": "Gestionar Blog",
+      "description": "Crea y publica artículos del blog"
+    }
+  }
+}
+

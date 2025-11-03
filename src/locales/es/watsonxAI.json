@@ -1,0 +1,52 @@
+{
+  "hero": {
+    "badge": "Herramientas de IA",
+    "title": "watsonx.ai™",
+    "subtitle": "Trabaja con modelos, herramientas y gobernanza de IA creados para negocio."
+  },
+  "statsTop": {
+    "implementation": "Implementaciones exitosas",
+    "compliance": "Cumplimiento",
+    "roi": "Incremento promedio de ROI"
+  },
+  "cta": {
+    "requestDemo": "Solicitar Demostración",
+    "title": "Acelera tus proyectos de IA",
+    "subtitle": "Plataforma completa para entrenar, evaluar, gobernar y operar modelos en producción."
+  },
+  "features": {
+    "title": "Características Clave",
+    "training": {
+      "title": "Entrenamiento de Modelos",
+      "desc": "Creación, ajuste fino y evaluación con pipelines reproducibles"
+    },
+    "governance": {
+      "title": "Gobernanza de IA",
+      "desc": "Trazabilidad, políticas y cumplimiento end‑to‑end"
+    },
+    "business": {
+      "title": "Inteligencia de Negocio",
+      "desc": "Integración con datos corporativos y herramientas analíticas"
+    }
+  },
+  "advanced": {
+    "title": "Capacidades Avanzadas",
+    "subtitle": "Todo lo necesario para llevar la IA del laboratorio a producción",
+    "catalog": "Catálogo de Modelos",
+    "catalogDesc": "Modelos propios y de terceros listos para usar",
+    "evaluation": "Evaluación Continua",
+    "evaluationDesc": "Métricas, pruebas A/B y monitoreo en producción",
+    "deployment": "Despliegue Flexible",
+    "deploymentDesc": "Cloud, on‑prem o híbrido con escalabilidad empresarial"
+  },
+  "numbers": {
+    "title": "Números que Importan",
+    "subtitle": "Resultados reales con gobernanza y rendimiento",
+    "models": "Modelos en catálogo",
+    "companies": "Empresas usuarias",
+    "uptime": "Disponibilidad",
+    "modelsDesc": "Creciendo cada mes",
+    "companiesDesc": "En múltiples sectores",
+    "uptimeDesc": "Infraestructura confiable"
+  }
+}

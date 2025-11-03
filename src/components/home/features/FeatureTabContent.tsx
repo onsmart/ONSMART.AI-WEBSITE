@@ -98,7 +98,7 @@ const AnimatedMetric: React.FC<{
   }
 
   return (
-    <div className={`group flex items-center gap-2 p-2 rounded-lg transition-all duration-700 hover:bg-white/50 hover:scale-105 ${
+    <div className={`group flex items-center gap-2 p-2 rounded-lg transition-all duration-700 hover:bg-white/50 dark:hover:bg-gray-700/50 hover:scale-105 ${
       isVisible ? 'opacity-100 transform translate-y-0 translate-x-0' : 'opacity-0 transform translate-y-4 translate-x-2'
     }`}>
       <div className={`p-1.5 rounded-full transition-all duration-500 ${
@@ -154,7 +154,7 @@ const FeatureTabContent: React.FC<FeatureTabContentProps> = ({
         
         {/* Cards estilo HeroSection */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          <div className="group bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-500 border border-gray-200/50 hover:border-green-300/50 animate-in slide-in-from-left-5 duration-700 delay-300 overflow-hidden relative">
+          <div className="group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-500 border border-gray-200/50 dark:border-gray-700/50 hover:border-green-300/50 animate-in slide-in-from-left-5 duration-700 delay-300 overflow-hidden relative">
             {/* Efeito de brilho animado */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-100/20 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
             
@@ -165,23 +165,23 @@ const FeatureTabContent: React.FC<FeatureTabContentProps> = ({
               
               <div className="text-center mb-6 animate-in fade-in-0 duration-500 delay-500">
                 <h4 className="text-lg font-bold text-green-600 mb-2 group-hover:text-green-700 transition-colors">Principais Benefícios</h4>
-                <p className="text-sm text-gray-600 group-hover:text-gray-700 transition-colors">Vantagens comprovadas da implementação</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors">Vantagens comprovadas da implementação</p>
               </div>
               
               <ul className="space-y-3">
                 {benefits.map((benefit, idx) => (
-                  <li key={idx} className="flex items-start gap-3 p-3 rounded-lg bg-green-50/50 hover:bg-green-100/70 transition-all duration-300 animate-in slide-in-from-left-3 duration-500 hover:scale-[1.02] hover:shadow-sm group/item" style={{ animationDelay: `${600 + idx * 150}ms` }}>
+                  <li key={idx} className="flex items-start gap-3 p-3 rounded-lg bg-green-50/50 dark:bg-green-900/20 hover:bg-green-100/70 dark:hover:bg-green-900/30 transition-all duration-300 animate-in slide-in-from-left-3 duration-500 hover:scale-[1.02] hover:shadow-sm group/item" style={{ animationDelay: `${600 + idx * 150}ms` }}>
                     <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover/item:bg-green-200 group-hover/item:scale-110 transition-all duration-300">
                       <ArrowRight className="h-3 w-3 text-green-600 group-hover/item:translate-x-0.5 transition-transform duration-300" />
                     </div>
-                    <span className="text-sm text-gray-700 leading-relaxed font-medium group-hover/item:text-gray-800 transition-colors">{benefit}</span>
+                    <span className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed font-medium group-hover/item:text-gray-800 dark:group-hover/item:text-gray-200 transition-colors">{benefit}</span>
                   </li>
                 ))}
               </ul>
             </div>
           </div>
           
-          <div className="group bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-500 border border-gray-200/50 hover:border-brand-blue/50 animate-in slide-in-from-right-5 duration-700 delay-400 overflow-hidden relative">
+          <div className="group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-500 border border-gray-200/50 dark:border-gray-700/50 hover:border-brand-blue/50 animate-in slide-in-from-right-5 duration-700 delay-400 overflow-hidden relative">
             {/* Efeito de brilho animado */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-brand-blue/10 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
             
@@ -192,11 +192,11 @@ const FeatureTabContent: React.FC<FeatureTabContentProps> = ({
               
               <div className="text-center mb-6 animate-in fade-in-0 duration-500 delay-600">
                 <h4 className="text-lg font-bold text-brand-blue mb-2 group-hover:text-blue-700 transition-colors">Impacto no Seu Negócio</h4>
-                <p className="text-sm text-gray-600 group-hover:text-gray-700 transition-colors">Resultados mensuráveis e comprovados</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors">Resultados mensuráveis e comprovados</p>
               </div>
               
               <div className="grid grid-cols-2 gap-4">
-                <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-4 rounded-lg border border-green-200/50 text-center hover:shadow-md hover:scale-105 transition-all duration-300 animate-in zoom-in-50 duration-500 delay-700 group/metric overflow-hidden relative">
+                <div className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-gray-700 dark:to-gray-800 p-4 rounded-lg border border-green-200/50 dark:border-gray-600/50 text-center hover:shadow-md hover:scale-105 transition-all duration-300 animate-in zoom-in-50 duration-500 delay-700 group/metric overflow-hidden relative">
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/metric:translate-x-full transition-transform duration-700"></div>
                   <TrendingUp className="h-8 w-8 text-green-600 mx-auto mb-2 group-hover/metric:scale-110 group-hover/metric:rotate-12 transition-all duration-300 relative z-10" />
                   <AnimatedMetric 
@@ -205,10 +205,10 @@ const FeatureTabContent: React.FC<FeatureTabContentProps> = ({
                     icon={TrendingUp}
                     label=""
                   />
-                  <div className="text-xs text-gray-600 mt-1 relative z-10">Produtividade</div>
+                  <div className="text-xs text-gray-600 dark:text-gray-400 mt-1 relative z-10">Produtividade</div>
                 </div>
                 
-                <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-4 rounded-lg border border-blue-200/50 text-center hover:shadow-md hover:scale-105 transition-all duration-300 animate-in zoom-in-50 duration-500 delay-800 group/metric overflow-hidden relative">
+                <div className="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-gray-700 dark:to-gray-800 p-4 rounded-lg border border-blue-200/50 dark:border-gray-600/50 text-center hover:shadow-md hover:scale-105 transition-all duration-300 animate-in zoom-in-50 duration-500 delay-800 group/metric overflow-hidden relative">
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/metric:translate-x-full transition-transform duration-700"></div>
                   <DollarSign className="h-8 w-8 text-blue-600 mx-auto mb-2 group-hover/metric:scale-110 group-hover/metric:rotate-12 transition-all duration-300 relative z-10" />
                   <AnimatedMetric 
@@ -217,10 +217,10 @@ const FeatureTabContent: React.FC<FeatureTabContentProps> = ({
                     icon={DollarSign}
                     label=""
                   />
-                  <div className="text-xs text-gray-600 mt-1 relative z-10">Redução de Custos</div>
+                  <div className="text-xs text-gray-600 dark:text-gray-400 mt-1 relative z-10">Redução de Custos</div>
                 </div>
                 
-                <div className="bg-gradient-to-br from-orange-50 to-red-50 p-4 rounded-lg border border-orange-200/50 text-center hover:shadow-md hover:scale-105 transition-all duration-300 animate-in zoom-in-50 duration-500 delay-900 group/metric overflow-hidden relative">
+                <div className="bg-gradient-to-br from-orange-50 to-red-50 dark:from-gray-700 dark:to-gray-800 p-4 rounded-lg border border-orange-200/50 dark:border-gray-600/50 text-center hover:shadow-md hover:scale-105 transition-all duration-300 animate-in zoom-in-50 duration-500 delay-900 group/metric overflow-hidden relative">
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/metric:translate-x-full transition-transform duration-700"></div>
                   <Clock className="h-8 w-8 text-orange-600 mx-auto mb-2 group-hover/metric:scale-110 group-hover/metric:rotate-12 transition-all duration-300 relative z-10" />
                   <AnimatedMetric 
@@ -229,10 +229,10 @@ const FeatureTabContent: React.FC<FeatureTabContentProps> = ({
                     icon={Clock}
                     label=""
                   />
-                  <div className="text-xs text-gray-600 mt-1 relative z-10">Implementação</div>
+                  <div className="text-xs text-gray-600 dark:text-gray-400 mt-1 relative z-10">Implementação</div>
                 </div>
                 
-                <div className="bg-gradient-to-br from-purple-50 to-violet-50 p-4 rounded-lg border border-purple-200/50 text-center hover:shadow-md hover:scale-105 transition-all duration-300 animate-in zoom-in-50 duration-500 delay-1000 group/metric overflow-hidden relative">
+                <div className="bg-gradient-to-br from-purple-50 to-violet-50 dark:from-gray-700 dark:to-gray-800 p-4 rounded-lg border border-purple-200/50 dark:border-gray-600/50 text-center hover:shadow-md hover:scale-105 transition-all duration-300 animate-in zoom-in-50 duration-500 delay-1000 group/metric overflow-hidden relative">
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/metric:translate-x-full transition-transform duration-700"></div>
                   <Target className="h-8 w-8 text-purple-600 mx-auto mb-2 group-hover/metric:scale-110 group-hover/metric:rotate-12 transition-all duration-300 relative z-10" />
                   <AnimatedMetric 
@@ -241,7 +241,7 @@ const FeatureTabContent: React.FC<FeatureTabContentProps> = ({
                     icon={Target}
                     label=""
                   />
-                  <div className="text-xs text-gray-600 mt-1 relative z-10">ROI Esperado</div>
+                  <div className="text-xs text-gray-600 dark:text-gray-400 mt-1 relative z-10">ROI Esperado</div>
                 </div>
               </div>
             </div>

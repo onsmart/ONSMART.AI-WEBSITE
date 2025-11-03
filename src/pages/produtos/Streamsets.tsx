@@ -4,9 +4,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { CheckCircle, ArrowLeft, Zap, Database, Shield, Users, Clock, Send } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 export default function Streamsets() {
   const navigate = useNavigate();
+  const { t } = useTranslation('streamsets');
 
   // Hook para contador animado
   const useCountUp = (end: number, duration: number = 2000) => {
@@ -69,17 +71,17 @@ export default function Streamsets() {
                 <div className="p-3 sm:p-4 rounded-full bg-blue-50">
                   <img 
                     src="https://images-onsmart.vercel.app/onsmart.ai/Streamsets.png" 
-                    alt="Streamsets" 
+                    alt={t('hero.title')} 
                     className="w-12 h-12 sm:w-16 sm:h-16 object-contain scale-150"
                   />
                 </div>
                 <div>
-                  <Badge variant="outline" className="mb-2">Data Integration</Badge>
-                  <h1 className="text-4xl font-bold text-gray-900">Streamsets</h1>
+                  <Badge variant="outline" className="mb-2">{t('hero.badge')}</Badge>
+                  <h1 className="text-4xl font-bold text-gray-900">{t('hero.title')}</h1>
                 </div>
               </div>
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                Plataforma de integração de dados em tempo real para pipelines de dados modernos e escaláveis.
+                {t('hero.subtitle')}
               </p>
               
               {/* Stats */}
@@ -88,19 +90,19 @@ export default function Streamsets() {
                   <div className="text-2xl font-bold text-blue-600 transition-all duration-300">
                     {connectorsCount.count}+
                   </div>
-                  <div className="text-sm text-gray-600">Conectores</div>
+                  <div className="text-sm text-gray-600">{t('statsTop.streaming')}</div>
                 </div>
                 <div className="text-center" ref={speedCount.ref}>
                   <div className="text-2xl font-bold text-green-600 transition-all duration-300">
                     {speedCount.count}x
                   </div>
-                  <div className="text-sm text-gray-600">Mais rápido</div>
+                  <div className="text-sm text-gray-600">{t('statsTop.realtime')}</div>
                 </div>
                 <div className="text-center" ref={availabilityCount.ref}>
                   <div className="text-2xl font-bold text-purple-600 transition-all duration-300">
                     {availabilityCount.count}.9%
                   </div>
-                  <div className="text-sm text-gray-600">Disponibilidade</div>
+                  <div className="text-sm text-gray-600">{t('statsTop.monitoring')}</div>
                 </div>
               </div>
 
@@ -110,40 +112,33 @@ export default function Streamsets() {
                 onClick={() => navigate('/contato')}
               >
                 <Send className="mr-2 h-5 w-5" />
-                Solicitar Demonstração
+                {t('cta.requestDemo')}
               </Button>
             </div>
 
             <div className="lg:w-1/2">
               <div className="bg-white rounded-2xl shadow-xl p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Principais Recursos</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">{t('features.title')}</h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Integração em Tempo Real</h4>
-                      <p className="text-gray-600">Processamento de dados em tempo real com latência mínima</p>
+                      <h4 className="font-semibold text-gray-900">{t('features.pipelines.title')}</h4>
+                      <p className="text-gray-600">{t('features.pipelines.desc')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Conectores Universais</h4>
-                      <p className="text-gray-600">Suporte a mais de 100 fontes e destinos de dados</p>
+                      <h4 className="font-semibold text-gray-900">{t('features.transform.title')}</h4>
+                      <p className="text-gray-600">{t('features.transform.desc')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Pipeline Designer</h4>
-                      <p className="text-gray-600">Interface visual intuitiva para criação de pipelines</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-gray-900">Monitoramento Avançado</h4>
-                      <p className="text-gray-600">Observabilidade completa de pipelines e performance</p>
+                      <h4 className="font-semibold text-gray-900">{t('features.observe.title')}</h4>
+                      <p className="text-gray-600">{t('features.observe.desc')}</p>
                     </div>
                   </div>
                 </div>
@@ -157,9 +152,9 @@ export default function Streamsets() {
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Recursos Avançados</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('advanced.title')}</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Descubra como o Streamsets pode revolucionar sua integração de dados
+              {t('advanced.subtitle')}
             </p>
           </div>
 
@@ -169,11 +164,11 @@ export default function Streamsets() {
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <Zap className="w-6 h-6 text-blue-600" />
                 </div>
-                <CardTitle>Processamento em Tempo Real</CardTitle>
+                <CardTitle>{t('advanced.connectors')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Capacidade de processar dados em tempo real com latência sub-milissegundo.
+                  {t('advanced.connectorsDesc')}
                 </p>
               </CardContent>
             </Card>
@@ -183,11 +178,11 @@ export default function Streamsets() {
                 <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
                   <Database className="w-6 h-6 text-green-600" />
                 </div>
-                <CardTitle>Conectores Nativos</CardTitle>
+                <CardTitle>{t('advanced.resilience')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Conectores nativos para todas as principais fontes de dados empresariais.
+                  {t('advanced.resilienceDesc')}
                 </p>
               </CardContent>
             </Card>
@@ -197,53 +192,11 @@ export default function Streamsets() {
                 <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                   <Shield className="w-6 h-6 text-purple-600" />
                 </div>
-                <CardTitle>Segurança Empresarial</CardTitle>
+                <CardTitle>{t('advanced.security')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Criptografia, autenticação e controles de acesso avançados.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
-                  <Users className="w-6 h-6 text-orange-600" />
-                </div>
-                <CardTitle>Colaboração em Equipe</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Ferramentas para trabalho colaborativo e controle de versão.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
-                  <Clock className="w-6 h-6 text-red-600" />
-                </div>
-                <CardTitle>Escalabilidade Automática</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Escalabilidade automática baseada na demanda e carga de trabalho.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
-                  <Send className="w-6 h-6 text-indigo-600" />
-                </div>
-                <CardTitle>Deployment Flexível</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Suporte a deployment on-premises, cloud e híbrido.
+                  {t('advanced.securityDesc')}
                 </p>
               </CardContent>
             </Card>
@@ -255,9 +208,9 @@ export default function Streamsets() {
       <section className="py-16 px-4 bg-gradient-to-r from-blue-50 to-purple-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Números Impressionantes</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('numbers.title')}</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Veja como o Streamsets está revolucionando a integração de dados
+              {t('numbers.subtitle')}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -265,22 +218,22 @@ export default function Streamsets() {
               <div className="text-4xl font-bold text-blue-600 mb-2 transition-all duration-300">
                 {pipelinesCount.count}+
               </div>
-              <div className="text-lg font-semibold text-gray-900 mb-2">Pipelines Ativos</div>
-              <div className="text-gray-600">Em produção</div>
+              <div className="text-lg font-semibold text-gray-900 mb-2">{t('numbers.pipelines')}</div>
+              <div className="text-gray-600">{t('numbers.pipelinesDesc')}</div>
             </div>
             <div className="text-center bg-white rounded-xl p-8 shadow-lg" ref={enterpriseCount.ref}>
               <div className="text-4xl font-bold text-green-600 mb-2 transition-all duration-300">
                 {enterpriseCount.count}+
               </div>
-              <div className="text-lg font-semibold text-gray-900 mb-2">Empresas Ativas</div>
-              <div className="text-gray-600">Usando a plataforma</div>
+              <div className="text-lg font-semibold text-gray-900 mb-2">{t('numbers.throughput')}</div>
+              <div className="text-gray-600">{t('numbers.throughputDesc')}</div>
             </div>
             <div className="text-center bg-white rounded-xl p-8 shadow-lg" ref={throughputCount.ref}>
               <div className="text-4xl font-bold text-purple-600 mb-2 transition-all duration-300">
                 {throughputCount.count}K
               </div>
-              <div className="text-lg font-semibold text-gray-900 mb-2">Mensagens/seg</div>
-              <div className="text-gray-600">Throughput médio</div>
+              <div className="text-lg font-semibold text-gray-900 mb-2">{t('numbers.latency')}</div>
+              <div className="text-gray-600">{t('numbers.latencyDesc')}</div>
             </div>
           </div>
         </div>
@@ -290,10 +243,10 @@ export default function Streamsets() {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-            Transforme sua Integração de Dados
+            {t('cta.title')}
           </h2>
           <p className="text-xl mb-8 text-gray-600">
-            Junte-se às empresas que já transformaram seus negócios com Streamsets.
+            {t('cta.subtitle')}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -303,7 +256,7 @@ export default function Streamsets() {
               onClick={() => navigate('/contato')}
             >
               <Send className="mr-2 h-5 w-5" />
-              Solicitar Demonstração
+              {t('cta.requestDemo')}
             </Button>
             <Button 
               variant="outline"
@@ -311,7 +264,7 @@ export default function Streamsets() {
               className="font-medium px-8 py-6 text-lg rounded-xl"
               onClick={() => navigate('/produtos')}
             >
-              Ver Outros Produtos
+              {t('cta.viewOthers')}
             </Button>
           </div>
         </div>

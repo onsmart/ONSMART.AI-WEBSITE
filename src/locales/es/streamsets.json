@@ -1,0 +1,52 @@
+{
+  "hero": {
+    "badge": "Integración de Datos",
+    "title": "Streamsets",
+    "subtitle": "Plataforma de integración de datos en tiempo real y streaming con monitoreo y transformación eficientes."
+  },
+  "statsTop": {
+    "streaming": "Streaming de Datos",
+    "realtime": "Transformación en Tiempo Real",
+    "monitoring": "Monitoreo de Rendimiento"
+  },
+  "cta": {
+    "requestDemo": "Solicitar Demostración",
+    "title": "Lleva tus pipelines al tiempo real",
+    "subtitle": "Construye y monitorea flujos de datos de alto rendimiento."
+  },
+  "features": {
+    "title": "Características Clave",
+    "pipelines": {
+      "title": "Pipelines Visuales",
+      "desc": "Crea flujos de streaming con interfaz low-code"
+    },
+    "transform": {
+      "title": "Transformación On-the-fly",
+      "desc": "Enriquece y transforma datos mientras fluyen"
+    },
+    "observe": {
+      "title": "Observabilidad",
+      "desc": "Métricas, alertas y troubleshooting en tiempo real"
+    }
+  },
+  "advanced": {
+    "title": "Capacidades Avanzadas",
+    "subtitle": "Escala y confiabilidad para streaming de datos",
+    "connectors": "Conectores Listos",
+    "connectorsDesc": "Integraciones con Kafka, storages en la nube y bases de datos",
+    "resilience": "Resiliencia",
+    "resilienceDesc": "Tolerancia a fallas y recuperación automática",
+    "security": "Seguridad",
+    "securityDesc": "Encriptación, enmascaramiento y control de acceso"
+  },
+  "numbers": {
+    "title": "Resultados en Tiempo Real",
+    "subtitle": "Pipelines robustos con visibilidad total",
+    "throughput": "Eventos/segundo",
+    "latency": "Latencia promedio",
+    "pipelines": "Pipelines activos",
+    "throughputDesc": "Procesamiento sostenido",
+    "latencyDesc": "De extremo a extremo",
+    "pipelinesDesc": "En producción"
+  }
+}

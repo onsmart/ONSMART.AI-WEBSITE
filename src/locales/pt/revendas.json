@@ -1,0 +1,85 @@
+{
+  "seo": {
+    "title": "Seja uma Revenda onsmartAI - Programa de Parceria Comercial",
+    "description": "Torne-se um parceiro comercial da onsmartAI. Revenda soluções de IA empresarial com suporte completo, treinamento e margens atrativas. Programa exclusivo para empresas."
+  },
+  "hero": {
+    "badge": "Programa de Revendas",
+    "title": "Seja uma Revenda onsmartAI",
+    "subtitle": "Transforme sua empresa em uma potência comercial de IA",
+    "description": "Junte-se ao programa de revendas mais lucrativo do mercado de IA. Suporte completo, treinamento especializado e margens de até 40%."
+  },
+  "benefits": {
+    "title": "Por que ser uma Revenda onsmartAI?",
+    "items": [
+      {
+        "title": "Margens Atraentes",
+        "description": "Até 40% de margem de lucro em cada venda",
+        "icon": "TrendingUp"
+      },
+      {
+        "title": "Suporte Completo",
+        "description": "Treinamento, marketing e suporte técnico inclusos",
+        "icon": "Users"
+      },
+      {
+        "title": "Produtos Premiados",
+        "description": "Soluções de IA reconhecidas no mercado",
+        "icon": "Award"
+      },
+      {
+        "title": "Crescimento Garantido",
+        "description": "Aumente sua receita com o mercado em expansão",
+        "icon": "ShoppingCart"
+      }
+    ]
+  },
+  "requirements": {
+    "title": "Requisitos para se tornar uma Revenda",
+    "items": [
+      "Empresa legalmente constituída",
+      "Experiência em vendas B2B",
+      "Equipe técnica qualificada",
+      "Capacidade de investimento inicial",
+      "Compromisso com metas de vendas"
+    ]
+  },
+  "process": {
+    "title": "Como Funciona",
+    "steps": [
+      {
+        "step": "1",
+        "title": "Cadastro",
+        "description": "Preencha o formulário de interesse"
+      },
+      {
+        "step": "2",
+        "title": "Avaliação",
+        "description": "Nossa equipe analisa seu perfil"
+      },
+      {
+        "step": "3",
+        "title": "Treinamento",
+        "description": "Capacitação completa da equipe"
+      },
+      {
+        "step": "4",
+        "title": "Lançamento",
+        "description": "Início das vendas com suporte total"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Pronto para ser uma Revenda?",
+    "subtitle": "Junte-se ao programa mais lucrativo do mercado de IA",
+    "button": "Quero ser uma Revenda",
+    "secondaryButton": "Falar com Especialista"
+  },
+  "contact": {
+    "title": "Fale com Nossa Equipe",
+    "description": "Tire suas dúvidas sobre o programa de revendas",
+    "phone": "(11) 99999-9999",
+    "email": "revendas@onsmart.ai"
+  }
+}
+

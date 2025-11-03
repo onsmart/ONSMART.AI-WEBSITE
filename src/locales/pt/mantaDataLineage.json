@@ -1,0 +1,73 @@
+{
+  "hero": {
+    "badge": "Data Governance",
+    "title": "Manta Data Lineage",
+    "subtitle": "Plataforma de linhagem de dados para rastreabilidade completa e governança de dados empresariais."
+  },
+  "statsTop": {
+    "traceability": "Rastreabilidade",
+    "connectors": "Conectores",
+    "monitoring": "Monitoramento"
+  },
+  "features": {
+    "title": "Principais Recursos",
+    "lineage": {
+      "title": "Linhagem Automática",
+      "desc": "Descoberta automática de linhagem de dados em tempo real"
+    },
+    "governance": {
+      "title": "Governança de Dados",
+      "desc": "Controle total sobre qualidade e conformidade dos dados"
+    },
+    "impact": {
+      "title": "Impacto de Mudanças",
+      "desc": "Análise de impacto de mudanças em pipelines de dados"
+    },
+    "documentation": {
+      "title": "Documentação Automática",
+      "desc": "Geração automática de documentação de dados"
+    }
+  },
+  "advanced": {
+    "title": "Recursos Avançados",
+    "subtitle": "Descubra como o Manta Data Lineage pode revolucionar sua governança de dados",
+    "detailed": {
+      "title": "Linhagem Detalhada",
+      "desc": "Rastreamento completo da origem e transformação de cada campo de dados."
+    },
+    "discovery": {
+      "title": "Descoberta Automática",
+      "desc": "Identificação automática de relacionamentos e dependências entre dados."
+    },
+    "compliance": {
+      "title": "Conformidade Regulatória",
+      "desc": "Suporte a regulamentações como GDPR, SOX e outras normas de compliance."
+    },
+    "collaboration": {
+      "title": "Colaboração em Equipe",
+      "desc": "Ferramentas colaborativas para análise e documentação de dados."
+    },
+    "impactAnalysis": {
+      "title": "Análise de Impacto",
+      "desc": "Simulação de mudanças para avaliar impacto em sistemas downstream."
+    },
+    "integration": {
+      "title": "Integração Universal",
+      "desc": "Conectores para mais de 50 fontes de dados e ferramentas ETL."
+    }
+  },
+  "numbers": {
+    "title": "Números Impressionantes",
+    "subtitle": "Veja como o Manta Data Lineage está revolucionando a governança de dados",
+    "dataSources": "Fontes de Dados",
+    "dataSourcesDesc": "Conectadas",
+    "enterprises": "Empresas Ativas",
+    "enterprisesDesc": "Usando a plataforma",
+    "accuracy": "Precisão",
+    "accuracyDesc": "Na linhagem de dados"
+  },
+  "cta": {
+    "title": "Transforme sua Governança de Dados",
+    "subtitle": "Junte-se às empresas que já transformaram seus negócios com Manta Data Lineage."
+  }
+}

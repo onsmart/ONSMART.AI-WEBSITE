@@ -1,0 +1,91 @@
+{
+  "button": {
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "submit": "Enviar",
+    "send": "Enviar",
+    "close": "Fechar",
+    "confirm": "Confirmar",
+    "back": "Voltar",
+    "next": "Próximo",
+    "previous": "Anterior",
+    "learnMore": "Saiba mais",
+    "contact": "Fale com Especialista",
+    "schedule": "Agendar Reunião",
+    "start": "Começar",
+    "continue": "Continuar",
+    "finish": "Finalizar",
+    "retry": "Tentar novamente",
+    "reload": "Recarregar",
+    "viewMore": "Ver mais"
+  },
+  "label": {
+    "name": "Nome",
+    "email": "E-mail",
+    "phone": "Telefone",
+    "company": "Empresa",
+    "message": "Mensagem",
+    "required": "Obrigatório",
+    "optional": "Opcional"
+  },
+  "message": {
+    "loading": "Carregando...",
+    "error": "Erro ao carregar",
+    "success": "Sucesso",
+    "noData": "Nenhum dado disponível",
+    "tryAgain": "Tente novamente",
+    "somethingWrong": "Algo deu errado"
+  },
+  "validation": {
+    "required": "Este campo é obrigatório",
+    "emailInvalid": "E-mail inválido",
+    "phoneInvalid": "Telefone inválido",
+    "minLength": "Mínimo de {{min}} caracteres",
+    "maxLength": "Máximo de {{max}} caracteres"
+  },
+  "cta": {
+    "requestDemo": "Solicitar Demonstração",
+    "viewOthers": "Ver Outros Produtos",
+    "learnMore": "Saiba mais",
+    "contact": "Fale com Especialista",
+    "schedule": "Agendar Reunião",
+    "requestQuote": "Solicitar Orçamento",
+    "freeDiagnostic": "Diagnóstico Gratuito"
+  },
+  "sections": {
+    "title": "Título",
+    "subtitle": "Subtítulo",
+    "description": "Descrição",
+    "features": "Principais Recursos",
+    "advancedFeatures": "Recursos Avançados",
+    "keyFeatures": "Funcionalidades Principais"
+  },
+  "language": {
+    "selectLanguage": "Selecionar idioma",
+    "portuguese": "Português",
+    "english": "English",
+    "spanish": "Español"
+  },
+  "toast": {
+    "formSubmitted": "Formulário enviado com sucesso!",
+    "formSubmittedDescription": "Nossa equipe entrará em contato em breve.",
+    "nextStep": "Próximo passo",
+    "diagnosticScheduled": "Diagnóstico agendado!",
+    "diagnosticScheduledDescription": "Você receberá um e-mail de confirmação em instantes.",
+    "viewCalendar": "Ver calendário"
+  },
+  "diagnostic": {
+    "likert": {
+      "stronglyDisagree": "Discordo totalmente",
+      "disagree": "Discordo",
+      "neutral": "Neutro",
+      "agree": "Concordo",
+      "stronglyAgree": "Concordo totalmente"
+    }
+  },
+  "theme": {
+    "switchToDark": "Alternar para tema escuro",
+    "switchToLight": "Alternar para tema claro"
+  }
+}
+

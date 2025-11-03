@@ -6,64 +6,39 @@ import { Badge } from "@/components/ui/badge";
 import { Check, Star, Zap, Crown, Users } from "lucide-react";
 import { useNavigate } from 'react-router-dom';
 import UnifiedSEO from '@/components/shared/UnifiedSEO';
+import { useTranslation } from 'react-i18next';
 
 const Planos = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation(['planos', 'common']);
 
   const plans = [
     {
-      name: "Starter",
-      description: "Ideal para pequenas empresas que querem começar",
-      price: "R$ 2.997",
-      period: "/mês",
+      name: t('plans.starter.name'),
+      description: t('plans.starter.description'),
+      price: t('plans.starter.price'),
+      period: t('plans.starter.period'),
       icon: Zap,
       popular: false,
-      features: [
-        "Até 3 Agentes de IA",
-        "Implementação básica",
-        "Suporte por email",
-        "Dashboard básico",
-        "Integração com 1 sistema",
-        "Relatórios mensais"
-      ]
+      features: t('plans.starter.features', { returnObjects: true }) as string[]
     },
     {
-      name: "Business",
-      description: "Para empresas em crescimento que precisam escalar",
-      price: "R$ 7.997",
-      period: "/mês",
+      name: t('plans.business.name'),
+      description: t('plans.business.description'),
+      price: t('plans.business.price'),
+      period: t('plans.business.period'),
       icon: Star,
       popular: true,
-      features: [
-        "Até 10 Agentes de IA",
-        "Implementação completa",
-        "Suporte prioritário",
-        "Dashboard avançado",
-        "Integração com até 5 sistemas",
-        "Relatórios semanais",
-        "Treinamento da equipe",
-        "Customizações básicas"
-      ]
+      features: t('plans.business.features', { returnObjects: true }) as string[]
     },
     {
-      name: "Enterprise",
-      description: "Solução completa para grandes organizações",
-      price: "Sob consulta",
-      period: "",
+      name: t('plans.enterprise.name'),
+      description: t('plans.enterprise.description'),
+      price: t('plans.enterprise.price'),
+      period: t('plans.enterprise.period'),
       icon: Crown,
       popular: false,
-      features: [
-        "Agentes de IA ilimitados",
-        "Implementação personalizada",
-        "Suporte 24/7 dedicado",
-        "Dashboard white-label",
-        "Integrações ilimitadas",
-        "Relatórios em tempo real",
-        "Treinamento completo",
-        "Desenvolvimento customizado",
-        "SLA garantido",
-        "Gerente de conta dedicado"
-      ]
+      features: t('plans.enterprise.features', { returnObjects: true }) as string[]
     }
   ];
 
@@ -78,26 +53,25 @@ const Planos = () => {
   return (
     <>
       <UnifiedSEO 
-        title="Planos e Preços - Agentes de IA para Empresas | onsmartAI"
-        description="Conheça nossos planos de Agentes de IA empresarial. Desde o Starter até Enterprise, temos a solução ideal para transformar sua empresa com IA."
+        title={t('seo.title')}
+        description={t('seo.description')}
         keywords="planos ia, preços agentes ia, planos empresariais, investimento ia, agentes inteligencia artificial"
       />
       
-      <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
+      <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:bg-gray-900">
         {/* Hero Section */}
         <section className="py-16 md:py-24 px-4 md:px-6">
           <div className="container mx-auto max-w-6xl text-center">
             <div className="inline-block text-sm font-semibold mb-6 py-1 px-3 rounded-full bg-brand-blue/10 text-brand-blue">
-              Planos e Preços
+              {t('hero.title')}
             </div>
             
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-brand-black to-brand-blue text-transparent bg-clip-text">
-              Escolha o plano ideal para sua empresa
+              {t('hero.subtitle')}
             </h1>
             
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-12">
-              Transforme sua organização com <strong>Agentes de IA</strong> como nova força de trabalho. 
-              Planos flexíveis para empresas de todos os tamanhos.
+              {t('hero.description')}
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 mb-16">
@@ -106,7 +80,7 @@ const Planos = () => {
                 onClick={handleDiagnosticoClick}
                 className="bg-brand-black hover:bg-brand-black/90 text-white font-medium"
               >
-                Diagnóstico Gratuito
+                {t('buttons.requestDemo')}
               </Button>
               <Button 
                 size="lg" 
@@ -114,7 +88,7 @@ const Planos = () => {
                 onClick={handleContactClick}
                 className="border-brand-black text-brand-black hover:bg-brand-black/5"
               >
-                Falar com Especialista
+                {t('buttons.contactSales')}
               </Button>
             </div>
           </div>
@@ -129,13 +103,13 @@ const Planos = () => {
                 return (
                   <Card 
                     key={index} 
-                    className={`relative overflow-hidden transition-all duration-300 hover:shadow-xl ${
+                    className={`relative overflow-hidden transition-all duration-300 hover:shadow-xl bg-white dark:bg-gray-800 ${
                       plan.popular ? 'border-2 border-brand-blue shadow-lg scale-105' : 'hover:scale-105'
                     }`}
                   >
                     {plan.popular && (
                       <Badge className="absolute top-4 right-4 bg-brand-blue text-white">
-                        Mais Popular
+                        {t('badges.popular')}
                       </Badge>
                     )}
                     
@@ -143,7 +117,7 @@ const Planos = () => {
                       <div className="w-16 h-16 mx-auto mb-4 bg-brand-blue/10 rounded-full flex items-center justify-center">
                         <IconComponent className="h-8 w-8 text-brand-blue" />
                       </div>
-                      <CardTitle className="text-2xl font-bold">{plan.name}</CardTitle>
+                      <CardTitle className="text-2xl font-bold dark:text-gray-100">{plan.name}</CardTitle>
                       <CardDescription className="text-gray-600 dark:text-gray-400">
                         {plan.description}
                       </CardDescription>
@@ -172,9 +146,9 @@ const Planos = () => {
                             ? 'bg-brand-blue hover:bg-brand-blue/90 text-white' 
                             : 'bg-brand-black hover:bg-brand-black/90 text-white'
                         }`}
-                        onClick={plan.name === 'Enterprise' ? handleContactClick : handleDiagnosticoClick}
+                        onClick={plan.name === t('plans.enterprise.name') ? handleContactClick : handleDiagnosticoClick}
                       >
-                        {plan.name === 'Enterprise' ? 'Solicitar Orçamento' : 'Começar Agora'}
+                        {plan.name === t('plans.enterprise.name') ? t('buttons.contactSales') : t('buttons.getStarted')}
                       </Button>
                     </CardFooter>
                   </Card>
@@ -185,14 +159,14 @@ const Planos = () => {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-16 px-4 md:px-6 bg-white/50 dark:bg-gray-800/50">
+        <section className="py-16 px-4 md:px-6 bg-white/50 dark:bg-gray-900">
           <div className="container mx-auto max-w-4xl">
-            <h2 className="text-3xl font-bold text-center mb-12">Perguntas Frequentes</h2>
+            <h2 className="text-3xl font-bold text-center mb-12 dark:text-gray-100">Perguntas Frequentes</h2>
             
             <div className="space-y-6">
-              <Card>
+              <Card className="bg-white dark:bg-gray-800">
                 <CardHeader>
-                  <CardTitle className="text-lg">Como funciona a implementação?</CardTitle>
+                  <CardTitle className="text-lg dark:text-gray-100">Como funciona a implementação?</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 dark:text-gray-400">

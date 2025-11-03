@@ -1,0 +1,62 @@
+{
+  "hero": {
+    "badge": "Orquestación de IA",
+    "title": "watsonx Orchestrate™",
+    "subtitle": "Orquesta flujos de trabajo de IA complejos con automatización inteligente e integración perfecta."
+  },
+  "statsTop": {
+    "reduction": "Reducción del tiempo de orquestación",
+    "automation": "Automatización continua",
+    "efficiency": "Eficiencia operativa"
+  },
+  "cta": {
+    "requestDemo": "Solicitar Demostración",
+    "title": "Potencia tu orquestación hoy",
+    "subtitle": "Transforma tus procesos con watsonx Orchestrate™."
+  },
+  "features": {
+    "title": "Características Clave",
+    "flows": {
+      "title": "Orquestación de Flujos",
+      "desc": "Automatiza procesos complejos de IA con facilidad"
+    },
+    "integration": {
+      "title": "Integración Multiplataforma",
+      "desc": "Conecta diferentes sistemas y herramientas de IA"
+    },
+    "monitoring": {
+      "title": "Monitoreo Inteligente",
+      "desc": "Sigue el rendimiento y optimiza flujos en tiempo real"
+    },
+    "continuous": {
+      "title": "Automatización Continua",
+      "desc": "Ejecuta flujos 24/7 sin intervención manual"
+    }
+  },
+  "advanced": {
+    "title": "Características Avanzadas",
+    "subtitle": "Optimiza, monitorea y escala tus workflows de IA",
+    "smart": "Automatización Inteligente",
+    "smartDesc": "Tareas repetitivas con IA y reglas",
+    "security": "Seguridad Empresarial",
+    "securityDesc": "Controles de acceso y encriptación",
+    "realtime": "Ejecución en Tiempo Real",
+    "realtimeDesc": "Workflows con baja latencia",
+    "multiplaform": "Integración Multiplataforma",
+    "multiplaformDesc": "Conectores para herramientas y sistemas",
+    "monitor": "Monitoreo Avanzado",
+    "monitorDesc": "Dashboards y métricas de ejecución",
+    "api": "API Empresarial",
+    "apiDesc": "Integración mediante APIs robustas"
+  },
+  "numbers": {
+    "title": "Números Impresionantes",
+    "subtitle": "Orquestación real a escala",
+    "workflows": "Workflows Activos",
+    "companies": "Empresas Activas",
+    "performance": "Rendimiento",
+    "workflowsDesc": "Orquestados",
+    "companiesDesc": "Usando la plataforma",
+    "performanceDesc": "Operacional"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "badge": "AI Assistants",
+    "title": "AI Code Assistant",
+    "subtitle": "Reinvente a forma de trabalhar com agentes de IA inteligentes que revolucionam o desenvolvimento de software."
+  },
+  "statsTop": {
+    "devTime": "Redução no tempo de desenvolvimento",
+    "bugAccuracy": "Precisão na detecção de bugs",
+    "productivity": "Aumento na produtividade"
+  },
+  "features": {
+    "title": "Principais Recursos",
+    "generation": {
+      "title": "Geração Inteligente de Código",
+      "desc": "Crie código de alta qualidade automaticamente com base em especificações naturais"
+    },
+    "bugDetection": {
+      "title": "Detecção Avançada de Bugs",
+      "desc": "Identifique e corrija problemas antes que cheguem à produção"
+    },
+    "performance": {
+      "title": "Otimização de Performance",
+      "desc": "Melhore automaticamente a eficiência e velocidade do seu código"
+    },
+    "refactor": {
+      "title": "Refatoração Inteligente",
+      "desc": "Mantenha seu código limpo e organizado com sugestões automáticas"
+    }
+  },
+  "advanced": {
+    "title": "Recursos Avançados",
+    "subtitle": "Descubra como o AI Code Assistant pode transformar seu fluxo de desenvolvimento",
+    "realtime": {
+      "title": "Análise de Código em Tempo Real",
+      "desc": "Receba feedback instantâneo sobre qualidade, performance e boas práticas enquanto codifica."
+    },
+    "security": {
+      "title": "Segurança Integrada",
+      "desc": "Detecção automática de vulnerabilidades e implementação de práticas de segurança."
+    },
+    "collab": {
+      "title": "Colaboração Inteligente",
+      "desc": "Facilite a colaboração entre equipes com sugestões contextualizadas e documentação automática."
+    },
+    "debug": {
+      "title": "Debugging Inteligente",
+      "desc": "Identifique e resolva problemas rapidamente com análise inteligente de logs e stack traces."
+    },
+    "tests": {
+      "title": "Testes Automatizados",
+      "desc": "Gere testes unitários e de integração automaticamente com alta cobertura."
+    },
+    "deploy": {
+      "title": "Deploy Otimizado",
+      "desc": "Automatize o processo de deploy com verificações de qualidade e rollback inteligente."
+    }
+  },
+  "numbers": {
+    "title": "Números Impressionantes",
+    "subtitle": "Veja como o AI Code Assistant está revolucionando o desenvolvimento de software",
+    "projects": "Projetos Otimizados",
+    "projectsDesc": "Com IA assistiva",
+    "developers": "Desenvolvedores Ativos",
+    "developersDesc": "Usando a plataforma",
+    "bugs": "Bugs Detectados",
+    "bugsDesc": "Antes da produção"
+  },
+  "cta": {
+    "title": "Transforme seu desenvolvimento hoje",
+    "subtitle": "Junte-se às empresas que já aumentaram sua produtividade em 300% com AI Code Assistant."
+  }
+}
+
+

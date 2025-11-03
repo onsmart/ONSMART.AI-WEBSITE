@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { CheckCircle, ArrowLeft, Star, Shield, Users, Clock, Send } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 // Hook para contador animado
 const useCountUp = (end: number, duration: number = 2000) => {
@@ -45,6 +46,7 @@ const useCountUp = (end: number, duration: number = 2000) => {
 
 export default function Granite() {
   const navigate = useNavigate();
+  const { t } = useTranslation('granite');
   
   // Contadores animados
   const availabilityCount = useCountUp(99, 1500);
@@ -67,17 +69,17 @@ export default function Granite() {
                 <div className="p-3 sm:p-4 rounded-full bg-blue-50">
                   <img 
                     src="https://images-onsmart.vercel.app/onsmart.ai/Granite.png" 
-                    alt="Granite" 
+                    alt={t('hero.title')} 
                     className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
                   />
                 </div>
                 <div>
-                  <Badge variant="outline" className="mb-2">AI Models</Badge>
-                  <h1 className="text-4xl font-bold text-gray-900">Granite™</h1>
+                  <Badge variant="outline" className="mb-2">{t('hero.badge')}</Badge>
+                  <h1 className="text-4xl font-bold text-gray-900">{t('hero.title')}</h1>
                 </div>
               </div>
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                Modelos de IA avançados para aplicações empresariais com segurança aprimorada e performance excepcional.
+                {t('hero.subtitle')}
               </p>
               
               {/* Stats */}
@@ -86,19 +88,19 @@ export default function Granite() {
                   <div className="text-2xl font-bold text-blue-600 transition-all duration-300">
                     {availabilityCount.count}.9%
                   </div>
-                  <div className="text-sm text-gray-600">Disponibilidade</div>
+                  <div className="text-sm text-gray-600">{t('statsTop.availability')}</div>
                 </div>
                 <div className="text-center" ref={speedCount.ref}>
                   <div className="text-2xl font-bold text-green-600 transition-all duration-300">
                     {speedCount.count}x
                   </div>
-                  <div className="text-sm text-gray-600">Mais rápido que concorrentes</div>
+                  <div className="text-sm text-gray-600">{t('statsTop.speed')}</div>
                 </div>
                 <div className="text-center" ref={securityCount.ref}>
                   <div className="text-2xl font-bold text-purple-600 transition-all duration-300">
                     {securityCount.count}%
                   </div>
-                  <div className="text-sm text-gray-600">Conformidade de segurança</div>
+                  <div className="text-sm text-gray-600">{t('statsTop.security')}</div>
                 </div>
               </div>
 
@@ -108,40 +110,40 @@ export default function Granite() {
                 onClick={() => navigate('/contato')}
               >
                 <Send className="mr-2 h-5 w-5" />
-                Solicitar Demonstração
+                {t('cta.requestDemo')}
               </Button>
             </div>
 
             <div className="lg:w-1/2">
               <div className="bg-white rounded-2xl shadow-xl p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Principais Recursos</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">{t('features.title')}</h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Processamento de Linguagem Natural</h4>
-                      <p className="text-gray-600">Compreensão avançada de texto e linguagem humana</p>
+                      <h4 className="font-semibold text-gray-900">{t('features.nlp.title')}</h4>
+                      <p className="text-gray-600">{t('features.nlp.desc')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">IA Multi-modal</h4>
-                      <p className="text-gray-600">Processamento de texto, imagem, áudio e vídeo</p>
+                      <h4 className="font-semibold text-gray-900">{t('features.multimodal.title')}</h4>
+                      <p className="text-gray-600">{t('features.multimodal.desc')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Segurança Empresarial</h4>
-                      <p className="text-gray-600">Proteção de dados e conformidade com regulamentações</p>
+                      <h4 className="font-semibold text-gray-900">{t('features.security.title')}</h4>
+                      <p className="text-gray-600">{t('features.security.desc')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Escalabilidade Avançada</h4>
-                      <p className="text-gray-600">Suporte a milhões de requisições simultâneas</p>
+                      <h4 className="font-semibold text-gray-900">{t('features.scalability.title')}</h4>
+                      <p className="text-gray-600">{t('features.scalability.desc')}</p>
                     </div>
                   </div>
                 </div>
@@ -155,9 +157,9 @@ export default function Granite() {
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Recursos Avançados</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('advanced.title')}</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Descubra como o Granite™ pode revolucionar suas aplicações de IA
+              {t('advanced.subtitle')}
             </p>
           </div>
 
@@ -167,11 +169,11 @@ export default function Granite() {
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <Star className="w-6 h-6 text-blue-600" />
                 </div>
-                <CardTitle>Modelos Especializados</CardTitle>
+                <CardTitle>{t('advanced.specializedModels')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Modelos otimizados para diferentes domínios: saúde, finanças, jurídico e mais.
+                  {t('advanced.specializedModelsDesc')}
                 </p>
               </CardContent>
             </Card>
@@ -181,11 +183,11 @@ export default function Granite() {
                 <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
                   <Shield className="w-6 h-6 text-green-600" />
                 </div>
-                <CardTitle>Governança de IA</CardTitle>
+                <CardTitle>{t('advanced.governance')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Controle total sobre decisões de IA com rastreabilidade completa.
+                  {t('advanced.governanceDesc')}
                 </p>
               </CardContent>
             </Card>
@@ -195,11 +197,11 @@ export default function Granite() {
                 <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                   <Users className="w-6 h-6 text-purple-600" />
                 </div>
-                <CardTitle>Personalização Avançada</CardTitle>
+                <CardTitle>{t('advanced.personalization')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Adapte os modelos às necessidades específicas da sua empresa.
+                  {t('advanced.personalizationDesc')}
                 </p>
               </CardContent>
             </Card>
@@ -209,11 +211,11 @@ export default function Granite() {
                 <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
                   <Clock className="w-6 h-6 text-orange-600" />
                 </div>
-                <CardTitle>Inferência em Tempo Real</CardTitle>
+                <CardTitle>{t('advanced.realtime')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Respostas instantâneas para aplicações críticas de tempo real.
+                  {t('advanced.realtimeDesc')}
                 </p>
               </CardContent>
             </Card>
@@ -223,11 +225,11 @@ export default function Granite() {
                 <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
                   <CheckCircle className="w-6 h-6 text-red-600" />
                 </div>
-                <CardTitle>Fine-tuning Automático</CardTitle>
+                <CardTitle>{t('advanced.finetune')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Otimização automática dos modelos baseada nos seus dados.
+                  {t('advanced.finetuneDesc')}
                 </p>
               </CardContent>
             </Card>
@@ -237,11 +239,11 @@ export default function Granite() {
                 <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
                   <Send className="w-6 h-6 text-indigo-600" />
                 </div>
-                <CardTitle>API Enterprise</CardTitle>
+                <CardTitle>{t('advanced.api')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Integração fácil com sistemas existentes via APIs robustas.
+                  {t('advanced.apiDesc')}
                 </p>
               </CardContent>
             </Card>
@@ -253,9 +255,9 @@ export default function Granite() {
       <section className="py-16 px-4 bg-gradient-to-r from-blue-50 to-purple-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Números Impressionantes</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('numbers.title')}</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Veja como o Granite™ está revolucionando a IA empresarial
+              {t('numbers.subtitle')}
             </p>
           </div>
 
@@ -264,24 +266,24 @@ export default function Granite() {
               <div className="text-4xl font-bold text-blue-600 mb-2 transition-all duration-300">
                 {modelsCount.count}+
               </div>
-              <div className="text-lg font-semibold text-gray-900 mb-2">Modelos Disponíveis</div>
-              <div className="text-gray-600">Para diferentes casos de uso</div>
+              <div className="text-lg font-semibold text-gray-900 mb-2">{t('numbers.availableModels')}</div>
+              <div className="text-gray-600">{t('numbers.availableModelsDesc')}</div>
             </div>
 
             <div className="text-center bg-white rounded-xl p-8 shadow-lg" ref={accuracyCount.ref}>
               <div className="text-4xl font-bold text-green-600 mb-2 transition-all duration-300">
                 {accuracyCount.count}%
               </div>
-              <div className="text-lg font-semibold text-gray-900 mb-2">Precisão Média</div>
-              <div className="text-gray-600">Em tarefas complexas</div>
+              <div className="text-lg font-semibold text-gray-900 mb-2">{t('numbers.accuracy')}</div>
+              <div className="text-gray-600">{t('numbers.accuracyDesc')}</div>
             </div>
 
             <div className="text-center bg-white rounded-xl p-8 shadow-lg" ref={enterpriseCount.ref}>
               <div className="text-4xl font-bold text-purple-600 mb-2 transition-all duration-300">
                 {enterpriseCount.count}+
               </div>
-              <div className="text-lg font-semibold text-gray-900 mb-2">Empresas Ativas</div>
-              <div className="text-gray-600">Usando a plataforma</div>
+              <div className="text-lg font-semibold text-gray-900 mb-2">{t('numbers.activeEnterprises')}</div>
+              <div className="text-gray-600">{t('numbers.activeEnterprisesDesc')}</div>
             </div>
           </div>
         </div>
@@ -291,10 +293,10 @@ export default function Granite() {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-            Potencialize sua IA hoje
+            {t('cta.title')}
           </h2>
           <p className="text-xl mb-8 text-gray-600">
-            Junte-se às empresas que já transformaram seus negócios com Granite™.
+            {t('cta.subtitle')}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -304,7 +306,7 @@ export default function Granite() {
               onClick={() => navigate('/contato')}
             >
               <Send className="mr-2 h-5 w-5" />
-              Solicitar Demonstração
+              {t('cta.requestDemo')}
             </Button>
             <Button 
               variant="outline"
@@ -312,7 +314,7 @@ export default function Granite() {
               className="font-medium px-8 py-6 text-lg rounded-xl"
               onClick={() => navigate('/produtos')}
             >
-              Ver Outros Produtos
+              {t('cta.viewOthers')}
             </Button>
           </div>
         </div>

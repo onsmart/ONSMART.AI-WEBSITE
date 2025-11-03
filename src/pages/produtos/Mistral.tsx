@@ -4,9 +4,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { CheckCircle, ArrowLeft, Brain, Zap, Users, Shield, Star, Send } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 export default function Mistral() {
   const navigate = useNavigate();
+  const { t } = useTranslation('mistral');
 
   // Hook para contador animado
   const useCountUp = (end: number, duration: number = 2000) => {
@@ -69,17 +71,17 @@ export default function Mistral() {
                 <div className="p-3 sm:p-4 rounded-full bg-blue-50">
                   <img 
                     src="https://images-onsmart.vercel.app/onsmart.ai/mistral.png" 
-                    alt="Mistral" 
+                    alt={t('hero.title')} 
                     className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
                   />
                 </div>
                 <div>
-                  <Badge variant="outline" className="mb-2">AI Models</Badge>
-                  <h1 className="text-4xl font-bold text-gray-900">Mistral</h1>
+                  <Badge variant="outline" className="mb-2">{t('hero.badge')}</Badge>
+                  <h1 className="text-4xl font-bold text-gray-900">{t('hero.title')}</h1>
                 </div>
               </div>
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                Modelos de linguagem de última geração para aplicações de IA generativa com performance excepcional.
+                {t('hero.subtitle')}
               </p>
               
               {/* Stats */}
@@ -88,19 +90,19 @@ export default function Mistral() {
                   <div className="text-2xl font-bold text-blue-600 transition-all duration-300">
                     {parametersCount.count}B
                   </div>
-                  <div className="text-sm text-gray-600">Parâmetros</div>
+                  <div className="text-sm text-gray-600">{t('statsTop.parameters')}</div>
                 </div>
                 <div className="text-center" ref={efficiencyCount.ref}>
                   <div className="text-2xl font-bold text-green-600 transition-all duration-300">
                     {efficiencyCount.count}%
                   </div>
-                  <div className="text-sm text-gray-600">Mais eficiente</div>
+                  <div className="text-sm text-gray-600">{t('statsTop.efficiency')}</div>
                 </div>
                 <div className="text-center" ref={opensourceCount.ref}>
                   <div className="text-2xl font-bold text-purple-600 transition-all duration-300">
                     {opensourceCount.count}%
                   </div>
-                  <div className="text-sm text-gray-600">Open Source</div>
+                  <div className="text-sm text-gray-600">{t('statsTop.opensource')}</div>
                 </div>
               </div>
 
@@ -110,40 +112,40 @@ export default function Mistral() {
                 onClick={() => navigate('/contato')}
               >
                 <Send className="mr-2 h-5 w-5" />
-                Solicitar Demonstração
+                {t('cta.requestDemo')}
               </Button>
             </div>
 
             <div className="lg:w-1/2">
               <div className="bg-white rounded-2xl shadow-xl p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Principais Recursos</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">{t('features.title')}</h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Processamento de Linguagem Natural</h4>
-                      <p className="text-gray-600">Compreensão avançada de texto e linguagem humana</p>
+                      <h4 className="font-semibold text-gray-900">{t('features.nlp.title')}</h4>
+                      <p className="text-gray-600">{t('features.nlp.desc')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Geração de Conteúdo</h4>
-                      <p className="text-gray-600">Criação de texto, código e conteúdo criativo</p>
+                      <h4 className="font-semibold text-gray-900">{t('features.generation.title')}</h4>
+                      <p className="text-gray-600">{t('features.generation.desc')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Eficiência Computacional</h4>
-                      <p className="text-gray-600">Otimizado para performance e baixo consumo de recursos</p>
+                      <h4 className="font-semibold text-gray-900">{t('features.efficiency.title')}</h4>
+                      <p className="text-gray-600">{t('features.efficiency.desc')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Flexibilidade Total</h4>
-                      <p className="text-gray-600">Modelo open source com controle completo</p>
+                      <h4 className="font-semibold text-gray-900">{t('features.flexibility.title')}</h4>
+                      <p className="text-gray-600">{t('features.flexibility.desc')}</p>
                     </div>
                   </div>
                 </div>
@@ -157,9 +159,9 @@ export default function Mistral() {
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Recursos Avançados</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('advanced.title')}</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Descubra como o Mistral pode revolucionar suas aplicações de IA
+              {t('advanced.subtitle')}
             </p>
           </div>
 
@@ -169,11 +171,11 @@ export default function Mistral() {
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <Brain className="w-6 h-6 text-blue-600" />
                 </div>
-                <CardTitle>Arquitetura Avançada</CardTitle>
+                <CardTitle>{t('advanced.architecture')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Arquitetura Sliding Window Attention para processamento eficiente.
+                  {t('advanced.architectureDesc')}
                 </p>
               </CardContent>
             </Card>
@@ -183,11 +185,11 @@ export default function Mistral() {
                 <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
                   <Zap className="w-6 h-6 text-green-600" />
                 </div>
-                <CardTitle>Performance Otimizada</CardTitle>
+                <CardTitle>{t('advanced.performance')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Velocidade e eficiência superiores em comparação com modelos similares.
+                  {t('advanced.performanceDesc')}
                 </p>
               </CardContent>
             </Card>
@@ -197,11 +199,11 @@ export default function Mistral() {
                 <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                   <Users className="w-6 h-6 text-purple-600" />
                 </div>
-                <CardTitle>Comunidade Ativa</CardTitle>
+                <CardTitle>{t('advanced.community')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Suporte da comunidade open source para desenvolvimento contínuo.
+                  {t('advanced.communityDesc')}
                 </p>
               </CardContent>
             </Card>
@@ -211,11 +213,11 @@ export default function Mistral() {
                 <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
                   <Shield className="w-6 h-6 text-orange-600" />
                 </div>
-                <CardTitle>Segurança e Privacidade</CardTitle>
+                <CardTitle>{t('advanced.security')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Controle total sobre dados e implementação segura.
+                  {t('advanced.securityDesc')}
                 </p>
               </CardContent>
             </Card>
@@ -225,11 +227,11 @@ export default function Mistral() {
                 <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
                   <Star className="w-6 h-6 text-red-600" />
                 </div>
-                <CardTitle>Fine-tuning Personalizado</CardTitle>
+                <CardTitle>{t('advanced.finetune')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Adaptação do modelo para domínios e casos de uso específicos.
+                  {t('advanced.finetuneDesc')}
                 </p>
               </CardContent>
             </Card>
@@ -239,11 +241,11 @@ export default function Mistral() {
                 <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
                   <Send className="w-6 h-6 text-indigo-600" />
                 </div>
-                <CardTitle>Integração Simples</CardTitle>
+                <CardTitle>{t('advanced.integration')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  APIs e ferramentas para integração rápida com sistemas existentes.
+                  {t('advanced.integrationDesc')}
                 </p>
               </CardContent>
             </Card>
@@ -255,9 +257,9 @@ export default function Mistral() {
       <section className="py-16 px-4 bg-gradient-to-r from-blue-50 to-purple-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Números Impressionantes</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('numbers.title')}</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Veja como o Mistral está revolucionando a IA generativa
+              {t('numbers.subtitle')}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -265,22 +267,22 @@ export default function Mistral() {
               <div className="text-4xl font-bold text-blue-600 mb-2 transition-all duration-300">
                 {downloadsCount.count.toLocaleString()}+
               </div>
-              <div className="text-lg font-semibold text-gray-900 mb-2">Downloads</div>
-              <div className="text-gray-600">Do modelo</div>
+              <div className="text-lg font-semibold text-gray-900 mb-2">{t('numbers.downloads')}</div>
+              <div className="text-gray-600">{t('numbers.downloadsDesc')}</div>
             </div>
             <div className="text-center bg-white rounded-xl p-8 shadow-lg" ref={enterpriseCount.ref}>
               <div className="text-4xl font-bold text-green-600 mb-2 transition-all duration-300">
                 {enterpriseCount.count}+
               </div>
-              <div className="text-lg font-semibold text-gray-900 mb-2">Empresas Ativas</div>
-              <div className="text-gray-600">Usando o modelo</div>
+              <div className="text-lg font-semibold text-gray-900 mb-2">{t('numbers.companies')}</div>
+              <div className="text-gray-600">{t('numbers.companiesDesc')}</div>
             </div>
             <div className="text-center bg-white rounded-xl p-8 shadow-lg" ref={accuracyCount.ref}>
               <div className="text-4xl font-bold text-purple-600 mb-2 transition-all duration-300">
                 {accuracyCount.count}%
               </div>
-              <div className="text-lg font-semibold text-gray-900 mb-2">Precisão</div>
-              <div className="text-gray-600">Em tarefas de linguagem</div>
+              <div className="text-lg font-semibold text-gray-900 mb-2">{t('numbers.accuracy')}</div>
+              <div className="text-gray-600">{t('numbers.accuracyDesc')}</div>
             </div>
           </div>
         </div>
@@ -290,10 +292,10 @@ export default function Mistral() {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-            Potencialize sua IA com Mistral
+            {t('cta.title')}
           </h2>
           <p className="text-xl mb-8 text-gray-600">
-            Junte-se às empresas que já transformaram seus negócios com Mistral.
+            {t('cta.subtitle')}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -303,7 +305,7 @@ export default function Mistral() {
               onClick={() => navigate('/contato')}
             >
               <Send className="mr-2 h-5 w-5" />
-              Solicitar Demonstração
+              {t('cta.requestDemo')}
             </Button>
             <Button 
               variant="outline"
@@ -311,7 +313,7 @@ export default function Mistral() {
               className="font-medium px-8 py-6 text-lg rounded-xl"
               onClick={() => navigate('/produtos')}
             >
-              Ver Outros Produtos
+              {t('cta.viewOthers')}
             </Button>
           </div>
         </div>

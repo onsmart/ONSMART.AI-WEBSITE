@@ -1,0 +1,62 @@
+{
+  "hero": {
+    "badge": "Data Integration",
+    "title": "DataStage®",
+    "subtitle": "Enterprise data integration and transformation platform with exceptional performance."
+  },
+  "statsTop": {
+    "speed": "Faster than traditional ETL",
+    "availability": "Guaranteed availability",
+    "compliance": "Data compliance"
+  },
+  "cta": {
+    "requestDemo": "Request Demo",
+    "title": "Transform your data integration today",
+    "subtitle": "Join the companies that already revolutionized data integration with DataStage®."
+  },
+  "features": {
+    "title": "Key Features",
+    "etl": {
+      "title": "ETL Processing",
+      "desc": "Optimized extract, transform and load operations"
+    },
+    "quality": {
+      "title": "Data Quality",
+      "desc": "Automatic data validation and cleansing"
+    },
+    "parallel": {
+      "title": "Parallel Processing",
+      "desc": "Distributed execution for maximum performance"
+    },
+    "orchestration": {
+      "title": "Smart Orchestration",
+      "desc": "Workflow scheduling and monitoring"
+    }
+  },
+  "advanced": {
+    "title": "Advanced Features",
+    "subtitle": "Discover how DataStage® can revolutionize your data integration",
+    "designer": "Visual Designer",
+    "designerDesc": "Interface to create pipelines without code",
+    "security": "Advanced Security",
+    "securityDesc": "Encryption, access and auditing",
+    "team": "Team Collaboration",
+    "teamDesc": "Versioning and sharing with control",
+    "monitoring": "Real-time Monitoring",
+    "monitoringDesc": "Track job progress and performance",
+    "autoscale": "Auto-scaling",
+    "autoscaleDesc": "Demand-based scalability",
+    "connectors": "Native Connectors",
+    "connectorsDesc": "Integration with 100+ data sources"
+  },
+  "numbers": {
+    "title": "Impressive Numbers",
+    "subtitle": "See how DataStage® is revolutionizing data integration",
+    "jobs": "Processed Jobs",
+    "companies": "Active Companies",
+    "uptime": "Guaranteed Uptime",
+    "jobsDesc": "Daily",
+    "companiesDesc": "Using the platform",
+    "uptimeDesc": "Continuous availability"
+  }
+}

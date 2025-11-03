@@ -1,0 +1,52 @@
+{
+  "hero": {
+    "badge": "Data Intelligence",
+    "title": "Knowledge Catalog",
+    "subtitle": "Smart data catalog with governance and discovery to accelerate analytics and AI."
+  },
+  "statsTop": {
+    "discovery": "Discovery",
+    "governance": "Governance",
+    "collaboration": "Collaboration"
+  },
+  "cta": {
+    "requestDemo": "Request Demo",
+    "title": "Organize and govern your data",
+    "subtitle": "Catalog, policies and collaboration at enterprise scale."
+  },
+  "features": {
+    "title": "Key Features",
+    "discovery": {
+      "title": "Data Discovery",
+      "desc": "Semantic search, classification and recommendations"
+    },
+    "governance": {
+      "title": "Metadata Governance",
+      "desc": "Policies, quality and integrated lineage"
+    },
+    "collaboration": {
+      "title": "Data Collaboration",
+      "desc": "Workflows, approvals and team annotations"
+    }
+  },
+  "advanced": {
+    "title": "Advanced Capabilities",
+    "subtitle": "Scale, security and productivity for data",
+    "automation": "Metadata Automation",
+    "automationDesc": "Automatic collection and enrichment of metadata",
+    "classifications": "Classifications & PII",
+    "classificationsDesc": "Sensitive data detection and automatic labeling",
+    "integrations": "Broad Integrations",
+    "integrationsDesc": "Connectors for lakes, warehouses and BI tools"
+  },
+  "numbers": {
+    "title": "Impact in Numbers",
+    "subtitle": "Accelerated productivity and compliance",
+    "assets": "Cataloged assets",
+    "teams": "Teams collaborating",
+    "policies": "Policies applied",
+    "assetsDesc": "With complete metadata",
+    "teamsDesc": "Using trusted data",
+    "policiesDesc": "Active and auditable"
+  }
+}

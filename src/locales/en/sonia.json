@@ -1,0 +1,32 @@
+{
+  "hero": {
+    "badge": "AI Omnichannel Pioneer",
+    "title": "Sonia AI Assistant",
+    "subtitle": "Brazil's first omnichannel AI assistant, pioneer in voice prospecting. With bidirectional technology, multilingual support and concurrency, it gets better with every interaction to transform sales and support."
+  },
+  "stats": {
+    "companies": "Companies",
+    "success": "Success",
+    "implementation": "Implementation"
+  },
+  "features": {
+    "voiceProspecting": {
+      "title": "Voice Prospecting",
+      "description": "Outbound calls with context understanding and automatic scheduling"
+    },
+    "omnichannel": {
+      "title": "True Omnichannel",
+      "description": "WhatsApp, Web, Phone and Email in a single flow"
+    },
+    "learning": {
+      "title": "Concurrency & Learning",
+      "description": "Handles thousands of customers simultaneously and improves with each interaction"
+    }
+  },
+  "cta": {
+    "title": "Be a pioneer with Sonia",
+    "subtitle": "Join the companies that have already revolutionized their business with the first omnichannel assistant in Brazil.",
+    "talkToSonia": "Talk to Sonia",
+    "viewOthers": "View Other Products"
+  }
+}

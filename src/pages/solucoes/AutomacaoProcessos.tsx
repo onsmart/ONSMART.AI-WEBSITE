@@ -4,9 +4,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { CheckCircle, ArrowRight, Workflow, Cpu, Zap, Clock, Target, Shield, BarChart3, Settings } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 export default function AutomacaoProcessos() {
   const navigate = useNavigate();
+  const { t } = useTranslation(['solucoes', 'common']);
 
   const scrollToForm = () => {
     const formSelectors = ['form', '[data-testid="contact-form"]', '.contact-form', '#contact-form'];
@@ -24,20 +26,24 @@ export default function AutomacaoProcessos() {
   };
 
   const features = [
-    { icon: Cpu, title: "RPA + IA Cognitiva", description: "Combinação de automação robótica com inteligência artificial para processos complexos" },
-    { icon: Clock, title: "Operação 24/7", description: "Processamento contínuo de documentos e workflows sem interrupções" },
-    { icon: Settings, title: "Workflows Inteligentes", description: "Fluxos adaptativos que aprendem e se otimizam automaticamente" },
-    { icon: BarChart3, title: "Redução de Custos", description: "Diminuição significativa de custos operacionais e erros humanos" }
+    { icon: Cpu, title: t('solucoes:automacaoProcessos.features.rpaAI.title'), description: t('solucoes:automacaoProcessos.features.rpaAI.description') },
+    { icon: Clock, title: t('solucoes:automacaoProcessos.features.operation24x7.title'), description: t('solucoes:automacaoProcessos.features.operation24x7.description') },
+    { icon: Settings, title: t('solucoes:automacaoProcessos.features.intelligentWorkflows.title'), description: t('solucoes:automacaoProcessos.features.intelligentWorkflows.description') },
+    { icon: BarChart3, title: t('solucoes:automacaoProcessos.features.costReduction.title'), description: t('solucoes:automacaoProcessos.features.costReduction.description') }
   ];
 
-  const benefits = ["RPA + IA cognitiva integrada", "Processamento 24/7 contínuo", "Workflows inteligentes adaptativos", "60% de redução de custos", "500% de aumento na eficiência", "99% de precisão no processamento"];
-  const stats = [{ label: "Eficiência", value: "+500%", icon: Zap }, { label: "Redução Custos", value: "-60%", icon: Target }, { label: "Precisão", value: "99%", icon: CheckCircle }];
+  const benefits = t('solucoes:automacaoProcessos.benefits', { returnObjects: true }) as string[];
+  const stats = [
+    { label: t('solucoes:automacaoProcessos.stats.efficiency'), value: "+500%", icon: Zap }, 
+    { label: t('solucoes:automacaoProcessos.stats.costReduction'), value: "-60%", icon: Target }, 
+    { label: t('solucoes:automacaoProcessos.stats.precision'), value: "99%", icon: CheckCircle }
+  ];
 
   const useCases = [
-    { title: "Processamento de Documentos", description: "Extração e processamento automático de dados de faturas, contratos e documentos fiscais." },
-    { title: "Workflows Administrativos", description: "Automação de processos de aprovação, solicitações e fluxos burocráticos internos." },
-    { title: "Conciliação Financeira", description: "Reconciliação automática de contas, pagamentos e movimentações financeiras." },
-    { title: "Compliance Automatizado", description: "Verificação automática de conformidade regulatória e geração de relatórios." }
+    { title: t('solucoes:automacaoProcessos.useCases.documentProcessing.title'), description: t('solucoes:automacaoProcessos.useCases.documentProcessing.description') },
+    { title: t('solucoes:automacaoProcessos.useCases.administrativeWorkflows.title'), description: t('solucoes:automacaoProcessos.useCases.administrativeWorkflows.description') },
+    { title: t('solucoes:automacaoProcessos.useCases.financialReconciliation.title'), description: t('solucoes:automacaoProcessos.useCases.financialReconciliation.description') },
+    { title: t('solucoes:automacaoProcessos.useCases.automatedCompliance.title'), description: t('solucoes:automacaoProcessos.useCases.automatedCompliance.description') }
   ];
 
   return (
@@ -151,14 +157,14 @@ export default function AutomacaoProcessos() {
       <section className="py-16 px-4 bg-gradient-to-r from-red-500 to-red-600">
         <div className="max-w-4xl mx-auto text-center">
           <Workflow className="h-12 w-12 text-white mx-auto mb-6" />
-          <h2 className="text-3xl font-bold text-white mb-4">Pronto para Automatizar seus Processos?</h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">Agende uma demonstração e veja como nossa RPA inteligente pode reduzir seus custos operacionais em 60%.</p>
+          <h2 className="text-3xl font-bold text-white mb-4">{t('solucoes:automacaoProcessos.cta.title')}</h2>
+          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">{t('solucoes:automacaoProcessos.cta.subtitle')}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" onClick={scrollToForm} className="bg-white text-red-500 hover:bg-gray-100 font-medium px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all">
-              Agendar Demonstração<ArrowRight className="ml-2 h-5 w-5" />
+              {t('solucoes:automacaoProcessos.cta.button')}<ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button size="lg" variant="outline" onClick={() => navigate('/agentes-ia')} className="border-white text-white bg-white/10 hover:bg-white/20 font-medium px-8 py-6 text-lg rounded-xl transition-all">
-              Ver Outras Soluções
+              {t('cta.viewOthers')}
             </Button>
           </div>
         </div>

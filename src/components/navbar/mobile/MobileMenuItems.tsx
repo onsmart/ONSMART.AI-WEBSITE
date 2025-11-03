@@ -1,5 +1,6 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Home, Package, Briefcase, Mail, BookOpen, Building } from "lucide-react";
 import MobileMenuItem from "./MobileMenuItem";
 import MobileDiagnosticoButton from "./MobileDiagnosticoButton";
@@ -30,6 +31,7 @@ const MobileMenuItems: React.FC<MobileMenuItemsProps> = ({
   isActivePrefix,
   onClose 
 }) => {
+  const { t } = useTranslation('navigation');
   const location = useLocation();
   const navigate = useNavigate();
   
@@ -57,7 +59,7 @@ const MobileMenuItems: React.FC<MobileMenuItemsProps> = ({
         onClick={() => handleNavigate("/")}
       >
         <Home className={cn("h-4 w-4 mr-2 transition-all duration-200", isHomeActiveState ? "text-white" : "text-brand-blue")} />
-        <span className="font-medium">Início</span>
+        <span className="font-medium">{t('menu.home')}</span>
       </div>
       
       {/* Produtos - Submenu simples */}
@@ -77,37 +79,37 @@ const MobileMenuItems: React.FC<MobileMenuItemsProps> = ({
           >
             <div className="flex items-center">
               <Package className={cn("h-4 w-4 mr-2", isProdutosActiveState ? "text-white" : "text-brand-blue")} />
-              <span className="font-medium">Produtos</span>
+              <span className="font-medium">{t('menu.products')}</span>
             </div>
           </AccordionTrigger>
           <AccordionContent className="pt-2 pb-0 animate-in slide-in-from-top-2 duration-300">
             <div className="border-t border-gray-200 dark:border-gray-800 pt-2 mt-2">
               <h4 className="px-8 py-1 text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide animate-in fade-in-0 duration-200 delay-100">
-                Nossos Produtos
+                {t('menu.ourProducts')}
               </h4>
               <button 
                 type="button"
                 className="w-full text-left px-8 py-2 text-sm rounded-md hover:bg-brand-blue/10 cursor-pointer transition-all duration-200 hover:translate-x-1 animate-in slide-in-from-left-2 duration-300 delay-200"
                 onClick={() => handleNavigate("/agentes-ia")}
               >
-                <div className="font-medium">Agentes de IA</div>
-                <div className="text-xs text-gray-500">Soluções proprietárias de IA</div>
+                <div className="font-medium">{t('menu.aiAgents')}</div>
+                <div className="text-xs text-gray-500">{t('menu.proprietaryAISolutions')}</div>
               </button>
               <button 
                 type="button"
                 className="w-full text-left px-8 py-2 text-sm rounded-md hover:bg-brand-blue/10 cursor-pointer transition-all duration-200 hover:translate-x-1 animate-in slide-in-from-left-2 duration-300 delay-300"
                 onClick={() => handleNavigate("/ecossistema-ibm")}
               >
-                <div className="font-medium">Ecossistema IBM</div>
-                <div className="text-xs text-gray-500">Watson X e Cloud Pak</div>
+                <div className="font-medium">{t('menu.ibmEcosystem')}</div>
+                <div className="text-xs text-gray-500">{t('menu.watsonXCloudPak')}</div>
               </button>
               <button 
                 type="button"
                 className="w-full text-left px-8 py-2 text-sm rounded-md hover:bg-brand-blue/10 cursor-pointer transition-all duration-200 hover:translate-x-1 animate-in slide-in-from-left-2 duration-300 delay-400"
                 onClick={() => handleNavigate("/produtos/sonia-assistente-ia")}
               >
-                <div className="font-medium">Sonia Assistente IA</div>
-                <div className="text-xs text-gray-500">Assistente de IA Especializada</div>
+                <div className="font-medium">{t('menu.soniaAssistant')}</div>
+                <div className="text-xs text-gray-500">{t('menu.specializedAIAssistant')}</div>
               </button>
             </div>
           </AccordionContent>
@@ -131,7 +133,7 @@ const MobileMenuItems: React.FC<MobileMenuItemsProps> = ({
           >
             <div className="flex items-center">
               <Briefcase className={cn("h-4 w-4 mr-2", isServicosActiveState ? "text-white" : "text-brand-blue")} />
-              <span className="font-medium">Serviços</span>
+              <span className="font-medium">{t('menu.services')}</span>
             </div>
           </AccordionTrigger>
           <AccordionContent className="pt-2 pb-0">
@@ -141,36 +143,36 @@ const MobileMenuItems: React.FC<MobileMenuItemsProps> = ({
                 className="w-full text-left px-8 py-2 text-sm rounded-md hover:bg-brand-blue/10 cursor-pointer border-b border-gray-100 dark:border-gray-700"
                 onClick={() => handleNavigate("/servicos")}
               >
-                <div className="font-medium text-brand-blue">Ver Todos os Serviços</div>
-                <div className="text-xs text-gray-500">Explore nossa gama completa</div>
+                <div className="font-medium text-brand-blue">{t('menu.viewAllServices')}</div>
+                <div className="text-xs text-gray-500">{t('menu.exploreFullRange')}</div>
               </button>
               
               <h4 className="px-8 py-2 pt-3 text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide">
-                Principais Serviços
+                {t('menu.mainServices')}
               </h4>
               <button 
                 type="button"
                 className="w-full text-left px-8 py-2 text-sm rounded-md hover:bg-brand-blue/10 cursor-pointer"
                 onClick={() => handleNavigate("/diagnostico")}
               >
-                <div className="font-medium">Diagnóstico de IA</div>
-                <div className="text-xs text-gray-500">Avaliação gratuita em 15 min</div>
+                <div className="font-medium">{t('menu.aiDiagnostic')}</div>
+                <div className="text-xs text-gray-500">{t('menu.freeEvaluation15min')}</div>
               </button>
               <button 
                 type="button"
                 className="w-full text-left px-8 py-2 text-sm rounded-md hover:bg-brand-blue/10 cursor-pointer"
                 onClick={() => handleNavigate("/consultoria")}
               >
-                <div className="font-medium">Consultoria Especializada</div>
-                <div className="text-xs text-gray-500">Estratégia personalizada</div>
+                <div className="font-medium">{t('menu.specializedConsulting')}</div>
+                <div className="text-xs text-gray-500">{t('menu.personalizedStrategy')}</div>
               </button>
               <button 
                 type="button"
                 className="w-full text-left px-8 py-2 text-sm rounded-md hover:bg-brand-blue/10 cursor-pointer"
                 onClick={() => handleNavigate("/implementacao")}
               >
-                <div className="font-medium">Implementação</div>
-                <div className="text-xs text-gray-500">Deploy completo em 30 dias</div>
+                <div className="font-medium">{t('menu.implementation')}</div>
+                <div className="text-xs text-gray-500">{t('menu.fullDeploy30days')}</div>
               </button>
             </div>
           </AccordionContent>
@@ -194,7 +196,7 @@ const MobileMenuItems: React.FC<MobileMenuItemsProps> = ({
           >
             <div className="flex items-center">
               <BookOpen className={cn("h-4 w-4 mr-2", isConteudoActiveState ? "text-white" : "text-brand-blue")} />
-              <span className="font-medium">Conteúdo</span>
+              <span className="font-medium">{t('menu.content')}</span>
             </div>
           </AccordionTrigger>
           <AccordionContent className="pt-2 pb-0">
@@ -204,56 +206,56 @@ const MobileMenuItems: React.FC<MobileMenuItemsProps> = ({
                 className="w-full text-left px-8 py-2 text-sm rounded-md hover:bg-brand-blue/10 cursor-pointer border-b border-gray-100 dark:border-gray-700"
                 onClick={() => handleNavigate("/conteudo")}
               >
-                <div className="font-medium text-brand-blue">Central de Conteúdo</div>
-                <div className="text-xs text-gray-500">Hub completo de conhecimento</div>
+                <div className="font-medium text-brand-blue">{t('menu.contentHub')}</div>
+                <div className="text-xs text-gray-500">{t('menu.completeKnowledgeHub')}</div>
               </button>
               
               <h4 className="px-8 py-2 pt-3 text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide">
-                Materiais
+                {t('menu.materials')}
               </h4>
               <button 
                 type="button"
                 className="w-full text-left px-8 py-2 text-sm rounded-md hover:bg-brand-blue/10 cursor-pointer"
                 onClick={() => handleNavigate("/blog")}
               >
-                <div className="font-medium">Blog</div>
-                <div className="text-xs text-gray-500">Artigos e insights</div>
+                <div className="font-medium">{t('menu.blog')}</div>
+                <div className="text-xs text-gray-500">{t('menu.articlesInsights')}</div>
               </button>
               <button 
                 type="button"
                 className="w-full text-left px-8 py-2 text-sm rounded-md hover:bg-brand-blue/10 cursor-pointer"
                 onClick={() => handleNavigate("/materiais-gratuitos")}
               >
-                <div className="font-medium">Materiais Gratuitos</div>
-                <div className="text-xs text-gray-500">E-books e whitepapers</div>
+                <div className="font-medium">{t('menu.freeMaterials')}</div>
+                <div className="text-xs text-gray-500">{t('menu.ebooksWhitepapers')}</div>
               </button>
               <button 
                 type="button"
                 className="w-full text-left px-8 py-2 text-sm rounded-md hover:bg-brand-blue/10 cursor-pointer"
                 onClick={() => handleNavigate("/ferramentas-gratuitas")}
               >
-                <div className="font-medium">Ferramentas Gratuitas</div>
-                <div className="text-xs text-gray-500">Calculadoras e templates</div>
+                <div className="font-medium">{t('menu.freeTools')}</div>
+                <div className="text-xs text-gray-500">{t('menu.calculatorsTemplates')}</div>
               </button>
               
               <h4 className="px-8 py-2 pt-3 text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide">
-                University
+                {t('menu.university')}
               </h4>
               <button 
                 type="button"
                 className="w-full text-left px-8 py-2 text-sm rounded-md hover:bg-brand-blue/10 cursor-pointer"
                 onClick={() => handleNavigate("/university/ia-basico")}
               >
-                <div className="font-medium">IA Básico</div>
-                <div className="text-xs text-gray-500">Fundamentos de IA</div>
+                <div className="font-medium">{t('menu.basicAI')}</div>
+                <div className="text-xs text-gray-500">{t('menu.aiFundamentals')}</div>
               </button>
               <button 
                 type="button"
                 className="w-full text-left px-8 py-2 text-sm rounded-md hover:bg-brand-blue/10 cursor-pointer"
                 onClick={() => handleNavigate("/university/agentes-ia")}
               >
-                <div className="font-medium">Agentes de IA</div>
-                <div className="text-xs text-gray-500">Curso especializado</div>
+                <div className="font-medium">{t('menu.aiAgentsCourse')}</div>
+                <div className="text-xs text-gray-500">{t('menu.specializedCourse')}</div>
               </button>
             </div>
           </AccordionContent>
@@ -277,7 +279,7 @@ const MobileMenuItems: React.FC<MobileMenuItemsProps> = ({
           >
             <div className="flex items-center">
               <Building className={cn("h-4 w-4 mr-2", isSetoresActiveState ? "text-white" : "text-brand-blue")} />
-              <span className="font-medium">Setores</span>
+              <span className="font-medium">{t('menu.sectors')}</span>
             </div>
           </AccordionTrigger>
           <AccordionContent className="pt-2 pb-0">
@@ -287,44 +289,44 @@ const MobileMenuItems: React.FC<MobileMenuItemsProps> = ({
                 className="w-full text-left px-8 py-2 text-sm rounded-md hover:bg-brand-blue/10 cursor-pointer border-b border-gray-100 dark:border-gray-700"
                 onClick={() => handleNavigate("/setores")}
               >
-                <div className="font-medium text-brand-blue">Ver Todos os Setores</div>
-                <div className="text-xs text-gray-500">Soluções especializadas</div>
+                <div className="font-medium text-brand-blue">{t('menu.viewAllSectors')}</div>
+                <div className="text-xs text-gray-500">{t('menu.specializedSolutions')}</div>
               </button>
               
               <h4 className="px-8 py-2 pt-3 text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide">
-                Principais Setores
+                {t('menu.mainSectors')}
               </h4>
               <button 
                 type="button"
                 className="w-full text-left px-8 py-2 text-sm rounded-md hover:bg-brand-blue/10 cursor-pointer"
                 onClick={() => handleNavigate("/setores/financeiro")}
               >
-                <div className="font-medium">Financeiro</div>
-                <div className="text-xs text-gray-500">Bancos e fintechs</div>
+                <div className="font-medium">{t('menu.financial')}</div>
+                <div className="text-xs text-gray-500">{t('menu.banksFintechs')}</div>
               </button>
               <button 
                 type="button"
                 className="w-full text-left px-8 py-2 text-sm rounded-md hover:bg-brand-blue/10 cursor-pointer"
                 onClick={() => handleNavigate("/setores/saude")}
               >
-                <div className="font-medium">Saúde</div>
-                <div className="text-xs text-gray-500">Hospitais e clínicas</div>
+                <div className="font-medium">{t('menu.health')}</div>
+                <div className="text-xs text-gray-500">{t('menu.hospitalsClinics')}</div>
               </button>
               <button 
                 type="button"
                 className="w-full text-left px-8 py-2 text-sm rounded-md hover:bg-brand-blue/10 cursor-pointer"
                 onClick={() => handleNavigate("/setores/tecnologia")}
               >
-                <div className="font-medium">Tecnologia</div>
-                <div className="text-xs text-gray-500">Startups e big techs</div>
+                <div className="font-medium">{t('menu.technology')}</div>
+                <div className="text-xs text-gray-500">{t('menu.startupsBigTechs')}</div>
               </button>
               <button 
                 type="button"
                 className="w-full text-left px-8 py-2 text-sm rounded-md hover:bg-brand-blue/10 cursor-pointer"
                 onClick={() => handleNavigate("/setores/educacao")}
               >
-                <div className="font-medium">Educação</div>
-                <div className="text-xs text-gray-500">Escolas e universidades</div>
+                <div className="font-medium">{t('menu.education')}</div>
+                <div className="text-xs text-gray-500">{t('menu.schoolsUniversities')}</div>
               </button>
             </div>
           </AccordionContent>
@@ -339,7 +341,7 @@ const MobileMenuItems: React.FC<MobileMenuItemsProps> = ({
         onClick={() => handleNavigate("/contato")}
       >
         <Mail className={cn("h-4 w-4 mr-2 transition-all duration-200", isContatoActiveState ? "text-white" : "text-brand-blue")} />
-        <span className="font-medium">Contato</span>
+        <span className="font-medium">{t('menu.contact')}</span>
       </div>
       
       {/* Botão de Agendar Diagnóstico no menu mobile */}

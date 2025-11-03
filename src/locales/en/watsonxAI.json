@@ -1,0 +1,52 @@
+{
+  "hero": {
+    "badge": "AI Tools",
+    "title": "watsonx.ai™",
+    "subtitle": "Work with AI models, tools and governance purpose‑built for business."
+  },
+  "statsTop": {
+    "implementation": "Successful implementations",
+    "compliance": "Compliance",
+    "roi": "Average ROI uplift"
+  },
+  "cta": {
+    "requestDemo": "Request Demo",
+    "title": "Accelerate your AI projects",
+    "subtitle": "A complete platform to train, evaluate, govern and operate models in production."
+  },
+  "features": {
+    "title": "Key Features",
+    "training": {
+      "title": "Model Training",
+      "desc": "Creation, fine‑tuning and evaluation with reproducible pipelines"
+    },
+    "governance": {
+      "title": "AI Governance",
+      "desc": "Tracking, policies and end‑to‑end compliance"
+    },
+    "business": {
+      "title": "Business Intelligence",
+      "desc": "Integration with enterprise data and analytics tools"
+    }
+  },
+  "advanced": {
+    "title": "Advanced Capabilities",
+    "subtitle": "Everything you need to move AI from lab to production",
+    "catalog": "Model Catalog",
+    "catalogDesc": "Proprietary and third‑party models ready to use",
+    "evaluation": "Continuous Evaluation",
+    "evaluationDesc": "Metrics, A/B tests and production monitoring",
+    "deployment": "Flexible Deployment",
+    "deploymentDesc": "Cloud, on‑prem or hybrid with enterprise scalability"
+  },
+  "numbers": {
+    "title": "Numbers that Matter",
+    "subtitle": "Real results with governance and performance",
+    "models": "Models in catalog",
+    "companies": "Companies using",
+    "uptime": "Uptime",
+    "modelsDesc": "Growing every month",
+    "companiesDesc": "Across multiple sectors",
+    "uptimeDesc": "Reliable infrastructure"
+  }
+}

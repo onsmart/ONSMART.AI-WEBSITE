@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "badge": "AI Development",
+    "title": "watsonx Code Assistant",
+    "subtitle": "Assistente de IA especializado em desenvolvimento de código para acelerar a produtividade dos desenvolvedores."
+  },
+  "statsTop": {
+    "productivity": "Mais produtividade",
+    "availability": "Disponibilidade",
+    "languages": "Linguagens suportadas"
+  },
+  "features": {
+    "title": "Principais Recursos",
+    "generation": {
+      "title": "Geração de Código Inteligente",
+      "desc": "Criação automática de código baseado em descrições em linguagem natural"
+    },
+    "debugging": {
+      "title": "Debugging Avançado",
+      "desc": "Identificação e correção automática de bugs e problemas de código"
+    },
+    "refactor": {
+      "title": "Refatoração Inteligente",
+      "desc": "Melhoria automática da qualidade e estrutura do código"
+    },
+    "docs": {
+      "title": "Documentação Automática",
+      "desc": "Geração automática de documentação técnica e comentários"
+    }
+  },
+  "advanced": {
+    "title": "Recursos Avançados",
+    "subtitle": "Descubra como o watsonx Code Assistant pode revolucionar seu desenvolvimento",
+    "autocomplete": {
+      "title": "Autocompletar Inteligente",
+      "desc": "Sugestões contextuais de código baseadas no padrão do projeto."
+    },
+    "testing": {
+      "title": "Testes Automáticos",
+      "desc": "Geração automática de testes unitários e de integração."
+    },
+    "collab": {
+      "title": "Colaboração em Equipe",
+      "desc": "Compartilhamento de conhecimento e padrões entre desenvolvedores."
+    },
+    "security": {
+      "title": "Segurança de Código",
+      "desc": "Detecção automática de vulnerabilidades e práticas inseguras."
+    },
+    "performance": {
+      "title": "Análise de Performance",
+      "desc": "Otimização automática de código para melhor performance."
+    },
+    "ide": {
+      "title": "Integração IDE",
+      "desc": "Integração nativa com principais IDEs e editores de código."
+    }
+  },
+  "numbers": {
+    "title": "Números Impressionantes",
+    "subtitle": "Veja como o watsonx Code Assistant está transformando o desenvolvimento de software",
+    "projects": "Projetos Concluídos",
+    "projectsDesc": "Com sucesso em empresas globais",
+    "developers": "Desenvolvedores Ativos",
+    "developersDesc": "Usando a plataforma diariamente",
+    "accuracy": "Precisão do Código",
+    "accuracyDesc": "Gerado automaticamente"
+  },
+  "cta": {
+    "title": "Acelere seu Desenvolvimento com IA",
+    "subtitle": "Junte-se aos desenvolvedores que já transformaram sua produtividade com watsonx Code Assistant."
+  }
+}
+
+

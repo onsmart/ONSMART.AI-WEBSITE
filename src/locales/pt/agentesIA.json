@@ -1,0 +1,176 @@
+{
+  "hero": {
+    "title": {
+      "texts": [
+        "Agentes de IA Proprietários",
+        "Tecnologia 100% Brasileira",
+        "IA Corporativa Avançada",
+        "Automação Inteligente"
+      ]
+    },
+    "subtitle": "Soluções de IA desenvolvidas com base nas principais demandas do mercado brasileiro",
+    "stats": {
+      "companies": "Empresas",
+      "success": "Sucesso",
+      "implementation": "Implementação"
+    }
+  },
+  "categories": {
+    "title": "Categorias de Soluções de IA",
+    "subtitle": "Desenvolvemos soluções baseadas nas principais demandas do mercado brasileiro de IA corporativa",
+    "items": {
+      "vendas": {
+        "name": "Automação de Vendas",
+        "description": "SDRs virtuais e qualificação de leads automatizada",
+        "detailedDescription": "Transforme seu processo de vendas com agentes de IA que trabalham 24/7. Nossos SDRs virtuais qualificam leads, fazem follow-ups inteligentes, integram com CRM e agendam reuniões automaticamente. Aumente sua taxa de conversão em até 300% com prospecção inteligente.",
+        "benefits": ["Prospecção 24/7", "Qualificação inteligente", "Integração CRM nativa", "ROI comprovado"],
+        "stats": {
+          "conversion": "+300%",
+          "leads": "10x mais",
+          "time": "80% menos tempo"
+        },
+        "statsLabels": {
+          "conversion": "Conversão",
+          "leads": "Leads",
+          "time": "Tempo"
+        }
+      },
+      "atendimento": {
+        "name": "Atendimento Inteligente",
+        "description": "Chatbots multicanal e assistentes virtuais",
+        "detailedDescription": "Revolucione o atendimento ao cliente com IA conversacional avançada. Chatbots que entendem contexto, resolvem problemas complexos e aprendem continuamente. Suporte multicanal (WhatsApp, web, telefone) com processamento otimizado para português brasileiro.",
+        "benefits": ["Atendimento multicanal", "Resolução inteligente", "Aprendizado contínuo", "Satisfação +95%"],
+        "stats": {
+          "satisfaction": "+95%",
+          "response": "Resposta instantânea",
+          "resolution": "85% resolução"
+        },
+        "statsLabels": {
+          "satisfaction": "Satisfação",
+          "response": "Resposta",
+          "resolution": "Resolução"
+        }
+      },
+      "rh": {
+        "name": "RH Inteligente",
+        "description": "Recrutamento automatizado e analytics de workforce",
+        "detailedDescription": "Potencialize seu RH com IA preditiva. Automatize recrutamento, faça screening inteligente de candidatos, preveja turnover e otimize engajamento. Analytics avançada para decisões estratégicas de pessoas com base em dados reais.",
+        "benefits": ["Recrutamento automatizado", "Screening inteligente", "Analytics preditiva", "Retenção +40%"],
+        "stats": {
+          "hiring": "70% mais rápido",
+          "accuracy": "90% precisão",
+          "retention": "+40% retenção"
+        },
+        "statsLabels": {
+          "hiring": "Contratação",
+          "accuracy": "Precisão",
+          "retention": "Retenção"
+        }
+      },
+      "analytics": {
+        "name": "BI & Analytics",
+        "description": "Business Intelligence preditivo e tempo real",
+        "detailedDescription": "Transforme dados em insights acionáveis com IA avançada. Analytics preditiva, processamento em tempo real, detecção de anomalias e forecasting inteligente. Dashboards dinâmicos que revelam oportunidades ocultas no seu negócio.",
+        "benefits": ["Analytics preditiva", "Tempo real", "Detecção de anomalias", "Insights acionáveis"],
+        "stats": {
+          "accuracy": "95% precisão",
+          "speed": "Tempo real",
+          "insights": "Insights únicos"
+        },
+        "statsLabels": {
+          "accuracy": "Precisão",
+          "speed": "Velocidade",
+          "insights": "Insights"
+        }
+      },
+      "processos": {
+        "name": "Automação de Processos",
+        "description": "RPA inteligente com IA avançada",
+        "detailedDescription": "Automatize processos complexos combinando RPA tradicional com IA cognitiva. Processamento de documentos, workflows administrativos, aprovações inteligentes e operações 24/7. Reduza custos operacionais em até 60% com automação inteligente.",
+        "benefits": ["RPA + IA cognitiva", "Processamento 24/7", "Workflows inteligentes", "60% redução custos"],
+        "stats": {
+          "efficiency": "+500%",
+          "cost": "-60% custos",
+          "accuracy": "99% precisão"
+        },
+        "statsLabels": {
+          "efficiency": "Eficiência",
+          "cost": "Custo",
+          "accuracy": "Precisão"
+        }
+      },
+      "voz": {
+        "name": "Voz & Linguagem",
+        "description": "NLP otimizado para português brasileiro",
+        "detailedDescription": "Domine a comunicação por voz com IA especializada em português. Interfaces conversacionais, transcrição inteligente, análise de sentimento e roteamento automático. Tecnologia 100% otimizada para sotaques e expressões brasileiras.",
+        "benefits": ["Português otimizado", "Interfaces por voz", "Análise sentimento", "Transcrição inteligente"],
+        "stats": {
+          "accuracy": "98% precisão",
+          "languages": "PT-BR nativo",
+          "processing": "Tempo real"
+        },
+        "statsLabels": {
+          "accuracy": "Precisão",
+          "languages": "Idioma",
+          "processing": "Processamento"
+        }
+      }
+    },
+    "buttons": {
+      "scheduleMeeting": "Marcar Reunião",
+      "viewDetails": "Ver Detalhes"
+    },
+    "results": "Resultados Comprovados"
+  },
+  "features": {
+    "title": "Características das Nossas",
+    "titleHighlight": "Soluções",
+    "subtitle": "Desenvolvidas com base em demandas reais do mercado brasileiro e tendências globais de IA corporativa",
+    "items": {
+      "portuguese": {
+        "title": "Português Otimizado",
+        "description": "NLP especializado para o mercado brasileiro"
+      },
+      "integration": {
+        "title": "Integração Nativa",
+        "description": "Conecta com CRMs e sistemas existentes"
+      },
+      "availability": {
+        "title": "Disponibilidade 24/7",
+        "description": "Operação contínua e resposta instantânea"
+      },
+      "analytics": {
+        "title": "Analytics Avançada",
+        "description": "Insights preditivos e análise em tempo real"
+      }
+    }
+  },
+  "cta": {
+    "badge": "SOLUÇÕES BASEADAS EM DEMANDA REAL DE MERCADO",
+    "title": "Implemente",
+    "titleHighlight": "IA",
+    "titleEnd": "com foco em resultados reais",
+    "description": "Nossas soluções são desenvolvidas com base nas principais tendências e demandas verificadas do mercado brasileiro de IA corporativa.",
+    "proofCards": {
+      "sales": {
+        "title": "Vendas",
+        "subtitle": "Automação Comprovada"
+      },
+      "support": {
+        "title": "Atendimento",
+        "subtitle": "Disponibilidade Total"
+      },
+      "processes": {
+        "title": "Processos",
+        "subtitle": "Automação Inteligente"
+      }
+    },
+    "button": "Solicitar Demonstração Gratuita",
+    "benefits": {
+      "consulting": "Consultoria especializada",
+      "demand": "Soluções baseadas em demanda real",
+      "results": "Implementação orientada a resultados"
+    }
+  }
+}
+

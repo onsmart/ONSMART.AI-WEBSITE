@@ -1,0 +1,212 @@
+{
+  "hero": {
+    "badge": "LEADER Methodology",
+    "titleStart": "Transform your company into an",
+    "typewriterTexts": [
+      "AI Powerhouse",
+      "Results Machine",
+      "Market Leader",
+      "Future Company"
+    ],
+    "titleEnd": "in",
+    "days": "30 days",
+    "subtitle": "Join <strong>{{count}}+ companies</strong> that increased <strong>productivity by 420%</strong> with our <strong>exclusive methodology</strong> of AI Agents.",
+    "stats": {
+      "companies": "{{count}}+ companies transformed",
+      "increase": "{{percent}}% average increase",
+      "implementation": "{{days}} days implementation"
+    },
+    "cta": {
+      "primary": "Start Transformation Now",
+      "primaryMobile": "Start Now",
+      "secondary": "See LEADER Methodology"
+    },
+    "trust": {
+      "freeDiagnostic": "Free diagnostic",
+      "noCommitment": "No commitment",
+      "results": "Results in 30 days"
+    }
+  },
+  "features": {
+    "title": "Our Solutions",
+    "description": "Custom AI Agents for your company"
+  },
+  "testimonials": {
+    "badge": "Testimonials",
+    "title": "What our",
+    "titleHighlight": "clients say",
+    "items": [
+      {
+        "name": "Carlos Silva",
+        "position": "CTO",
+        "company": "TechCorp",
+        "sector": "Technology",
+        "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=3&w=64&h=64&q=80",
+        "rating": 5,
+        "text": "The implementation of AI Agents in our company increased the development team's productivity by 280%. Processes that used to take days are now completed in hours."
+      },
+      {
+        "name": "Ana Ferreira",
+        "position": "CEO",
+        "company": "HealthPlus",
+        "sector": "Healthcare",
+        "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=3&w=64&h=64&q=80",
+        "rating": 5,
+        "text": "After 3 months with the VIBE ENTERPRISE solution, we managed to reduce our operational costs by 35% and significantly improve patient care."
+      },
+      {
+        "name": "Roberto Mendes",
+        "position": "Innovation Director",
+        "company": "FinanceGroup",
+        "sector": "Finance",
+        "avatar": "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=3&w=64&h=64&q=80",
+        "rating": 5,
+        "text": "AI Agents transformed our risk analysis. We now process 10x more data with greater precision and regulatory compliance."
+      },
+      {
+        "name": "Marcela Santos",
+        "position": "Operations Director",
+        "company": "EduTech Brasil",
+        "sector": "Education",
+        "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=3&w=64&h=64&q=80",
+        "rating": 5,
+        "text": "The results with the AI system implementation were surprising. We managed to personalize learning for each student and increased engagement by 45%."
+      },
+      {
+        "name": "Ricardo Oliveira",
+        "position": "Supply Chain Manager",
+        "company": "Mega Varejo",
+        "sector": "Retail",
+        "avatar": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=3&w=64&h=64&q=80",
+        "rating": 5,
+        "text": "The AI platform for demand forecasting reduced our waste by 40% and optimized the entire supply chain. An investment that paid for itself in less than 6 months."
+      },
+      {
+        "name": "Patricia Mendonça",
+        "position": "Marketing Director",
+        "company": "AgriTech",
+        "sector": "Agribusiness",
+        "avatar": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=3&w=64&h=64&q=80",
+        "rating": 5,
+        "text": "With the AI platform, we managed to optimize planting and harvesting cycles, resulting in a 22% increase in productivity at our partner farms."
+      }
+    ]
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Frequently",
+    "titleHighlight": "asked questions",
+    "items": [
+      {
+        "question": "How do AI Agents integrate with existing systems?",
+        "answer": "We use pre-built connectors and APIs for integration with systems like SAP, Salesforce and Microsoft 365. The process takes 2 to 4 weeks with full support from our team."
+      },
+      {
+        "question": "What is the average implementation time?",
+        "answer": "4 to 8 weeks, including diagnosis, configuration, training and launch. For larger companies, it can take up to 12 weeks."
+      },
+      {
+        "question": "How is ROI calculated for implementation?",
+        "answer": "We consider cost reduction, productivity increase, error reduction and improved customer experience. Average ROI above 300% per year with break-even in 3-6 months."
+      },
+      {
+        "question": "Is technical knowledge required to manage?",
+        "answer": "No. The platform has intuitive interfaces for business users and includes complete training. We also offer fully managed service."
+      }
+    ],
+    "cta": {
+      "text": "Talk to an expert"
+    }
+  },
+  "videoAbout": {
+    "badge": "Pioneers in Enterprise AI",
+    "title": "Meet",
+    "subtitle": {
+      "start": "We are pioneers",
+      "end": "in business transformation through artificial intelligence"
+    },
+    "imageAlt": "onsmart AI Team - Pioneers in AI",
+    "mission": {
+      "title": "Our Mission",
+      "description": "Democratize enterprise artificial intelligence, offering solutions that generate measurable results and real transformation."
+    },
+    "results": {
+      "title": "Proven Results",
+      "companies": {
+        "count": "350",
+        "text": "companies transformed"
+      },
+      "roi": {
+        "value": "420",
+        "text": "proven average ROI"
+      },
+      "implementation": {
+        "days": "30",
+        "unit": "days",
+        "text": "for complete implementation"
+      }
+    },
+    "pioneers": {
+      "title": "Why We Are Pioneers",
+      "description": "Since 2020, we have led the AI revolution in Brazil, developing our own methodologies and innovative solutions that establish new standards of excellence."
+    }
+  },
+  "lider": {
+    "badge": "Our methodology",
+    "title": "LEADER Model",
+    "description": "Structured framework for implementing enterprise AI",
+    "pillars": [
+      {
+        "name": "Labor",
+        "description": "AI as workforce"
+      },
+      {
+        "name": "Investment",
+        "description": "Team training"
+      },
+      {
+        "name": "Development",
+        "description": "Continuous evolution"
+      },
+      {
+        "name": "Structuring",
+        "description": "Modular systems"
+      },
+      {
+        "name": "Recognition",
+        "description": "Intuitive interfaces"
+      },
+      {
+        "name": "Execution",
+        "description": "Strategic implementation"
+      }
+    ]
+  },
+  "roi": {
+    "title": "Calculate your",
+    "subtitle": "Discover the financial impact of AI on your company",
+    "calculating": "Calculating...",
+    "calculateButton": "Calculate ROI",
+    "fields": {
+      "employees": "Employees",
+      "averageSalary": "Average Salary",
+      "automationRate": "Automation Rate",
+      "manualHours": "Manual Hours/Day",
+      "hoursUnit": "h"
+    },
+    "results": {
+      "monthlySavings": "Monthly Savings",
+      "annualROI": "Annual ROI",
+      "payback": "Payback",
+      "paybackUnit": "m",
+      "annualSavings": "Annual Savings",
+      "productivity": "Productivity",
+      "cta": {
+        "consultancy": "Request Consultancy",
+        "diagnostic": "Free Diagnostic"
+      },
+      "recalculate": "Recalculate"
+    }
+  }
+}
+

@@ -1,0 +1,128 @@
+{
+  "seo": {
+    "title": "Agentes Digitais onsmartAI - Programa de Indicação com Comissões",
+    "description": "Torne-se um Agente Digital onsmartAI e ganhe comissões indicando clientes. Programa simples, comissões atrativas e suporte completo para seus indicados."
+  },
+  "hero": {
+    "badge": "Programa de Agentes Digitais",
+    "title": "Programa de Agentes Digitais",
+    "subtitle": "Indique empresas para a onsmartAI e ganhe comissões atrativas por cada cliente que fechar negócio",
+    "buttons": {
+      "becomeAgent": "Tornar-se Agente",
+      "viewCommissions": "Ver Comissões"
+    }
+  },
+  "benefits": {
+    "title": "Por que ser um Agente Digital?",
+    "items": [
+      {
+        "title": "Comissões Atrativas",
+        "description": "Ganhe até 15% de comissão por cada venda realizada",
+        "icon": "DollarSign"
+      },
+      {
+        "title": "Renda Recorrente",
+        "description": "Receba comissões mensais enquanto seus clientes permanecem ativos",
+        "icon": "TrendingUp"
+      },
+      {
+        "title": "Suporte Completo",
+        "description": "Nossa equipe cuida de todo o processo de vendas",
+        "icon": "Users"
+      },
+      {
+        "title": "Flexibilidade Total",
+        "description": "Trabalhe no seu ritmo, sem metas obrigatórias",
+        "icon": "UserCheck"
+      }
+    ]
+  },
+  "howItWorks": {
+    "title": "Como Funciona",
+    "steps": [
+      {
+        "step": "1",
+        "title": "Cadastre-se",
+        "description": "Preencha o formulário e torne-se um agente"
+      },
+      {
+        "step": "2",
+        "title": "Indique Clientes",
+        "description": "Envie leads qualificados para nossa equipe"
+      },
+      {
+        "step": "3",
+        "title": "Acompanhe Vendas",
+        "description": "Monitore o progresso das suas indicações"
+      },
+      {
+        "step": "4",
+        "title": "Receba Comissões",
+        "description": "Ganhe comissões por cada venda realizada"
+      }
+    ]
+  },
+  "commissions": {
+    "title": "Tabela de Comissões",
+    "description": "Quanto mais você vende, mais você ganha",
+    "levels": [
+      {
+        "level": "Iniciante",
+        "sales": "1-5 vendas",
+        "commission": "10%",
+        "description": "Para começar sua jornada"
+      },
+      {
+        "level": "Intermediário",
+        "sales": "6-15 vendas",
+        "commission": "12%",
+        "description": "Para agentes em crescimento"
+      },
+      {
+        "level": "Avançado",
+        "sales": "16-30 vendas",
+        "commission": "15%",
+        "description": "Para agentes experientes"
+      },
+      {
+        "level": "Master",
+        "sales": "30+ vendas",
+        "commission": "20%",
+        "description": "Para agentes de elite"
+      }
+    ]
+  },
+  "requirements": {
+    "title": "Requisitos para ser um Agente",
+    "items": [
+      "Maior de 18 anos",
+      "CPF válido",
+      "Conta bancária",
+      "Conhecimento básico em vendas",
+      "Disponibilidade para indicar clientes"
+    ]
+  },
+  "cta": {
+    "title": "Pronto para Começar?",
+    "subtitle": "Junte-se ao programa de agentes digitais mais lucrativo do mercado",
+    "button": "Tornar-se Agente Agora",
+    "secondaryButton": "Falar com Especialista"
+  },
+  "testimonials": {
+    "title": "O que nossos Agentes dizem",
+    "items": [
+      {
+        "name": "Maria Silva",
+        "role": "Agente Digital",
+        "testimonial": "Em 3 meses já ganhei mais de R$ 15.000 em comissões. O programa é muito simples e a onsmartAI cuida de tudo."
+      },
+      {
+        "name": "João Santos",
+        "role": "Agente Digital",
+        "testimonial": "A flexibilidade é incrível. Posso trabalhar no meu ritmo e ainda assim ter uma renda excelente."
+      }
+    ]
+  }
+}
+
+

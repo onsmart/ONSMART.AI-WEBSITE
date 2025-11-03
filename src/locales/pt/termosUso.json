@@ -1,0 +1,71 @@
+{
+  "seo": {
+    "title": "Termos de Uso - onsmartAI",
+    "description": "Termos de uso da onsmartAI. Conheça as condições para utilização de nossos serviços de Agentes de IA empresarial.",
+    "keywords": "termos de uso, condições de uso, serviços ia, onsmartAI, agentes ia"
+  },
+  "title": "Termos de Uso",
+  "lastUpdate": "Última atualização:",
+  "sections": {
+    "1": {
+      "title": "1. Aceitação dos Termos",
+      "content": "Ao acessar e usar o site da onsmartAI e nossos serviços, você aceita e concorda em cumprir estes Termos de Uso. Se você não concordar com qualquer parte destes termos, não deve usar nossos serviços."
+    },
+    "2": {
+      "title": "2. Sobre a onsmartAI",
+      "content": "A onsmartAI é uma empresa especializada em transformação empresarial através de Agentes de Inteligência Artificial, oferecendo consultoria, implementação e suporte para organizações que desejam aumentar sua produtividade e eficiência operacional."
+    },
+    "3": {
+      "title": "3. Serviços Oferecidos",
+      "content": "Nossos serviços incluem, mas não se limitam a:",
+      "items": [
+        "Consultoria estratégica em IA empresarial",
+        "Desenvolvimento e implementação de Agentes de IA",
+        "Metodologia LÍDER para transformação empresarial",
+        "Suporte técnico e manutenção",
+        "Treinamento e capacitação de equipes",
+        "Diagnóstico gratuito de potencial de IA"
+      ]
+    },
+    "4": {
+      "title": "4. Uso Aceitável",
+      "content": "Você concorda em usar nossos serviços apenas para fins legais e de acordo com:",
+      "items": [
+        "Todas as leis e regulamentações aplicáveis",
+        "Estes Termos de Uso",
+        "Nossa Política de Privacidade",
+        "Quaisquer diretrizes adicionais fornecidas"
+      ]
+    },
+    "5": {
+      "title": "5. Propriedade Intelectual",
+      "content": "Todo o conteúdo do site, incluindo textos, gráficos, logos, ícones, imagens, clipes de áudio, downloads digitais e software, é propriedade da onsmartAI ou de seus fornecedores de conteúdo e é protegido por leis de direitos autorais."
+    },
+    "6": {
+      "title": "6. Limitação de Responsabilidade",
+      "content": "A onsmartAI não será responsável por quaisquer danos diretos, indiretos, incidentais, especiais ou consequenciais resultantes do uso ou incapacidade de usar nossos serviços, mesmo que tenhamos sido avisados da possibilidade de tais danos."
+    },
+    "7": {
+      "title": "7. Modificações dos Termos",
+      "content": "Reservamo-nos o direito de modificar estes Termos de Uso a qualquer momento. As modificações entrarão em vigor imediatamente após sua publicação no site. É sua responsabilidade revisar periodicamente estes termos."
+    },
+    "8": {
+      "title": "8. Rescisão",
+      "content": "Podemos rescindir ou suspender seu acesso aos nossos serviços imediatamente, sem aviso prévio, por qualquer motivo, incluindo, sem limitação, se você violar estes Termos de Uso."
+    },
+    "9": {
+      "title": "9. Lei Aplicável",
+      "content": "Estes Termos de Uso são regidos pelas leis da República Federativa do Brasil. Qualquer disputa será resolvida nos tribunais competentes do Brasil."
+    },
+    "10": {
+      "title": "10. Contato",
+      "content": "Se você tiver dúvidas sobre estes Termos de Uso, entre em contato conosco:",
+      "contact": {
+        "email": "Email:",
+        "phone": "Telefone:",
+        "whatsapp": "WhatsApp:"
+      }
+    }
+  }
+}
+

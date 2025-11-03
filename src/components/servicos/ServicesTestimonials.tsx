@@ -99,7 +99,7 @@ const ServicesTestimonials: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 px-4 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900">
+    <section className="py-16 px-4 bg-gradient-to-b from-gray-50 to-white dark:bg-gray-900">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12 animate-fade-in">
           <div className="inline-flex items-center justify-center p-2 bg-primary/10 rounded-full mb-4">

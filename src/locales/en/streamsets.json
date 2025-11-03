@@ -1,0 +1,52 @@
+{
+  "hero": {
+    "badge": "Data Integration",
+    "title": "Streamsets",
+    "subtitle": "Real-time and streaming data integration platform with efficient monitoring and transformation."
+  },
+  "statsTop": {
+    "streaming": "Data Streaming",
+    "realtime": "Real-time Transformation",
+    "monitoring": "Performance Monitoring"
+  },
+  "cta": {
+    "requestDemo": "Request Demo",
+    "title": "Bring your pipelines to real time",
+    "subtitle": "Build and monitor high‑performance data flows."
+  },
+  "features": {
+    "title": "Key Features",
+    "pipelines": {
+      "title": "Visual Pipelines",
+      "desc": "Create streaming flows with a low-code interface"
+    },
+    "transform": {
+      "title": "On-the-fly Transformation",
+      "desc": "Enrich and transform data as it flows"
+    },
+    "observe": {
+      "title": "Observability",
+      "desc": "Metrics, alerts and troubleshooting in real time"
+    }
+  },
+  "advanced": {
+    "title": "Advanced Capabilities",
+    "subtitle": "Scale and reliability for data streaming",
+    "connectors": "Built-in Connectors",
+    "connectorsDesc": "Integrations with Kafka, cloud storages and databases",
+    "resilience": "Resilience",
+    "resilienceDesc": "Fault tolerance and automatic recovery",
+    "security": "Security",
+    "securityDesc": "Encryption, masking and access control"
+  },
+  "numbers": {
+    "title": "Real-time Results",
+    "subtitle": "Robust pipelines with full visibility",
+    "throughput": "Events/second",
+    "latency": "Average latency",
+    "pipelines": "Active pipelines",
+    "throughputDesc": "Sustained processing",
+    "latencyDesc": "End-to-end",
+    "pipelinesDesc": "In production"
+  }
+}

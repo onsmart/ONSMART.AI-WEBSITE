@@ -5,14 +5,17 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { DollarSign, TrendingUp, Calculator, UserCheck, ArrowRight, CheckCircle } from 'lucide-react';
 import UnifiedSEO from '@/components/shared/UnifiedSEO';
+import { useTranslation } from 'react-i18next';
 
 const AgentesDigitaisComissoes = () => {
+  const { t } = useTranslation(['agentesDigitaisComissoes', 'common']);
+  
   return (
     <>
       <UnifiedSEO 
-        title="Comissões Agentes Digitais onsmartAI - Tabela de Comissões e Ganhos"
-        description="Conheça a tabela de comissões do programa de Agentes Digitais onsmartAI. Ganhe de R$ 5.000 a R$ 50.000+ por indicação + renda recorrente."
-        keywords="comissões agente digital, tabela comissões, ganhos indicação, renda recorrente, programa afiliados"
+        title={t('seo.title')}
+        description={t('seo.description')}
+        keywords={t('seo.keywords')}
         pageType="service"
       />
       
@@ -20,29 +23,29 @@ const AgentesDigitaisComissoes = () => {
         {/* Hero Section */}
         <section className="py-20 px-4 md:px-6">
           <div className="container mx-auto max-w-6xl text-center">
-            <div className="inline-flex items-center gap-2 bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 px-4 py-2 rounded-full text-sm font-medium mb-6">
               <DollarSign className="h-4 w-4" />
-              Tabela de Comissões
+              {t('hero.badge')}
             </div>
             
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
-              Comissões dos Agentes Digitais
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-green-600 to-emerald-600 dark:from-green-400 dark:to-emerald-400 bg-clip-text text-transparent">
+              {t('hero.title')}
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
-              Descubra quanto você pode ganhar indicando empresas para a onsmartAI
+              {t('hero.subtitle')}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-green-600 hover:bg-green-700">
                 <Link to="/agentes-digitais/cadastro">
                   <UserCheck className="mr-2 h-5 w-5" />
-                  Tornar-se Agente
+                  {t('hero.buttons.becomeAgent')}
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg">
                 <Link to="/agentes-digitais">
-                  Ver Programa Completo
+                  {t('hero.buttons.viewProgram')}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
@@ -54,91 +57,91 @@ const AgentesDigitaisComissoes = () => {
         <section className="py-16 px-4 md:px-6 bg-white dark:bg-gray-900">
           <div className="container mx-auto max-w-6xl">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Estrutura de Comissões
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-gray-100">
+                {t('commissions.title')}
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-300">
-                Quanto maior o valor do contrato, maior sua comissão
+                {t('commissions.subtitle')}
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-              <Card className="border-l-4 border-l-green-500">
+              <Card className="border-l-4 border-l-green-500 dark:bg-gray-800 dark:border-l-green-400 dark:border-gray-700">
                 <CardHeader>
-                  <CardTitle className="text-xl">Contratos Básicos</CardTitle>
-                  <CardDescription>R$ 5.000 a R$ 25.000/mês</CardDescription>
+                  <CardTitle className="text-xl dark:text-gray-100">{t('commissions.basic.title')}</CardTitle>
+                  <CardDescription className="dark:text-gray-300">{t('commissions.basic.description')}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-3xl font-bold text-green-600 mb-2">10%</div>
+                  <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">{t('commissions.basic.percentage')}</div>
                   <p className="text-gray-600 dark:text-gray-300 mb-4">
-                    Comissão sobre o valor do primeiro ano
+                    {t('commissions.basic.note')}
                   </p>
                   <div className="space-y-2 text-sm">
-                    <div className="flex justify-between">
-                      <span>R$ 5.000/mês:</span>
-                      <span className="font-semibold">R$ 6.000</span>
+                    <div className="flex justify-between dark:text-gray-200">
+                      <span>{t('commissions.basic.examples.5000')}</span>
+                      <span className="font-semibold">{t('commissions.basic.examples.5000Value')}</span>
                     </div>
-                    <div className="flex justify-between">
-                      <span>R$ 15.000/mês:</span>
-                      <span className="font-semibold">R$ 18.000</span>
+                    <div className="flex justify-between dark:text-gray-200">
+                      <span>{t('commissions.basic.examples.15000')}</span>
+                      <span className="font-semibold">{t('commissions.basic.examples.15000Value')}</span>
                     </div>
-                    <div className="flex justify-between">
-                      <span>R$ 25.000/mês:</span>
-                      <span className="font-semibold">R$ 30.000</span>
+                    <div className="flex justify-between dark:text-gray-200">
+                      <span>{t('commissions.basic.examples.25000')}</span>
+                      <span className="font-semibold">{t('commissions.basic.examples.25000Value')}</span>
                     </div>
                   </div>
                 </CardContent>
               </Card>
 
-              <Card className="border-l-4 border-l-blue-500">
+              <Card className="border-l-4 border-l-blue-500 dark:bg-gray-800 dark:border-l-blue-400 dark:border-gray-700">
                 <CardHeader>
-                  <CardTitle className="text-xl">Contratos Médios</CardTitle>
-                  <CardDescription>R$ 25.000 a R$ 50.000/mês</CardDescription>
+                  <CardTitle className="text-xl dark:text-gray-100">{t('commissions.medium.title')}</CardTitle>
+                  <CardDescription className="dark:text-gray-300">{t('commissions.medium.description')}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-3xl font-bold text-blue-600 mb-2">15%</div>
+                  <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">{t('commissions.medium.percentage')}</div>
                   <p className="text-gray-600 dark:text-gray-300 mb-4">
-                    Comissão sobre o valor do primeiro ano
+                    {t('commissions.medium.note')}
                   </p>
                   <div className="space-y-2 text-sm">
-                    <div className="flex justify-between">
-                      <span>R$ 25.000/mês:</span>
-                      <span className="font-semibold">R$ 45.000</span>
+                    <div className="flex justify-between dark:text-gray-200">
+                      <span>{t('commissions.medium.examples.25000')}</span>
+                      <span className="font-semibold">{t('commissions.medium.examples.25000Value')}</span>
                     </div>
-                    <div className="flex justify-between">
-                      <span>R$ 35.000/mês:</span>
-                      <span className="font-semibold">R$ 63.000</span>
+                    <div className="flex justify-between dark:text-gray-200">
+                      <span>{t('commissions.medium.examples.35000')}</span>
+                      <span className="font-semibold">{t('commissions.medium.examples.35000Value')}</span>
                     </div>
-                    <div className="flex justify-between">
-                      <span>R$ 50.000/mês:</span>
-                      <span className="font-semibold">R$ 90.000</span>
+                    <div className="flex justify-between dark:text-gray-200">
+                      <span>{t('commissions.medium.examples.50000')}</span>
+                      <span className="font-semibold">{t('commissions.medium.examples.50000Value')}</span>
                     </div>
                   </div>
                 </CardContent>
               </Card>
 
-              <Card className="border-l-4 border-l-purple-500">
+              <Card className="border-l-4 border-l-purple-500 dark:bg-gray-800 dark:border-l-purple-400 dark:border-gray-700">
                 <CardHeader>
-                  <CardTitle className="text-xl">Contratos Enterprise</CardTitle>
-                  <CardDescription>R$ 50.000+/mês</CardDescription>
+                  <CardTitle className="text-xl dark:text-gray-100">{t('commissions.enterprise.title')}</CardTitle>
+                  <CardDescription className="dark:text-gray-300">{t('commissions.enterprise.description')}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-3xl font-bold text-purple-600 mb-2">25%</div>
+                  <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">{t('commissions.enterprise.percentage')}</div>
                   <p className="text-gray-600 dark:text-gray-300 mb-4">
-                    Comissão sobre o valor do primeiro ano
+                    {t('commissions.enterprise.note')}
                   </p>
                   <div className="space-y-2 text-sm">
-                    <div className="flex justify-between">
-                      <span>R$ 50.000/mês:</span>
-                      <span className="font-semibold">R$ 150.000</span>
+                    <div className="flex justify-between dark:text-gray-200">
+                      <span>{t('commissions.enterprise.examples.50000')}</span>
+                      <span className="font-semibold">{t('commissions.enterprise.examples.50000Value')}</span>
                     </div>
-                    <div className="flex justify-between">
-                      <span>R$ 100.000/mês:</span>
-                      <span className="font-semibold">R$ 300.000</span>
+                    <div className="flex justify-between dark:text-gray-200">
+                      <span>{t('commissions.enterprise.examples.100000')}</span>
+                      <span className="font-semibold">{t('commissions.enterprise.examples.100000Value')}</span>
                     </div>
-                    <div className="flex justify-between">
-                      <span>R$ 200.000/mês:</span>
-                      <span className="font-semibold">R$ 600.000</span>
+                    <div className="flex justify-between dark:text-gray-200">
+                      <span>{t('commissions.enterprise.examples.200000')}</span>
+                      <span className="font-semibold">{t('commissions.enterprise.examples.200000Value')}</span>
                     </div>
                   </div>
                 </CardContent>
@@ -152,61 +155,61 @@ const AgentesDigitaisComissoes = () => {
           <div className="container mx-auto max-w-6xl">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  Renda Recorrente Garantida
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 dark:text-gray-100">
+                  {t('recurring.title')}
                 </h2>
                 <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-                  Além da comissão inicial, você ganha 2% de tudo que o cliente pagar mensalmente durante 12 meses.
+                  {t('recurring.description')}
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
+                    <CheckCircle className="h-6 w-6 text-green-600 dark:text-green-400 mt-1 flex-shrink-0" />
                     <div>
-                      <h3 className="font-semibold">Cliente R$ 10.000/mês</h3>
-                      <p className="text-gray-600 dark:text-gray-300">R$ 200/mês por 12 meses = R$ 2.400 adicional</p>
+                      <h3 className="font-semibold dark:text-gray-100">{t('recurring.examples.10000.title')}</h3>
+                      <p className="text-gray-600 dark:text-gray-300">{t('recurring.examples.10000.description')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
+                    <CheckCircle className="h-6 w-6 text-green-600 dark:text-green-400 mt-1 flex-shrink-0" />
                     <div>
-                      <h3 className="font-semibold">Cliente R$ 50.000/mês</h3>
-                      <p className="text-gray-600 dark:text-gray-300">R$ 1.000/mês por 12 meses = R$ 12.000 adicional</p>
+                      <h3 className="font-semibold dark:text-gray-100">{t('recurring.examples.50000.title')}</h3>
+                      <p className="text-gray-600 dark:text-gray-300">{t('recurring.examples.50000.description')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
+                    <CheckCircle className="h-6 w-6 text-green-600 dark:text-green-400 mt-1 flex-shrink-0" />
                     <div>
-                      <h3 className="font-semibold">Cliente R$ 100.000/mês</h3>
-                      <p className="text-gray-600 dark:text-gray-300">R$ 2.000/mês por 12 meses = R$ 24.000 adicional</p>
+                      <h3 className="font-semibold dark:text-gray-100">{t('recurring.examples.100000.title')}</h3>
+                      <p className="text-gray-600 dark:text-gray-300">{t('recurring.examples.100000.description')}</p>
                     </div>
                   </div>
                 </div>
               </div>
               
-              <Card className="bg-gradient-to-br from-green-100 to-emerald-100 dark:from-gray-800 dark:to-gray-700">
+              <Card className="bg-gradient-to-br from-green-100 to-emerald-100 dark:from-gray-800 dark:to-gray-700 dark:border-gray-600">
                 <CardHeader>
-                  <TrendingUp className="h-10 w-10 text-green-600 mb-2" />
-                  <CardTitle>Exemplo Real</CardTitle>
+                  <TrendingUp className="h-10 w-10 text-green-600 dark:text-green-400 mb-2" />
+                  <CardTitle className="dark:text-gray-100">{t('recurring.realExample.title')}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3">
-                    <div className="flex justify-between items-center">
-                      <span>Cliente R$ 30.000/mês</span>
-                      <span className="font-semibold">15% tier</span>
+                    <div className="flex justify-between items-center dark:text-gray-200">
+                      <span>{t('recurring.realExample.client')}</span>
+                      <span className="font-semibold">{t('recurring.realExample.tier')}</span>
                     </div>
                     <hr className="border-gray-300 dark:border-gray-600" />
-                    <div className="flex justify-between items-center">
-                      <span>Comissão inicial:</span>
-                      <span className="font-bold text-green-600">R$ 54.000</span>
+                    <div className="flex justify-between items-center dark:text-gray-200">
+                      <span>{t('recurring.realExample.initial')}</span>
+                      <span className="font-bold text-green-600 dark:text-green-400">R$ 54.000</span>
                     </div>
-                    <div className="flex justify-between items-center">
-                      <span>Renda recorrente (12x):</span>
-                      <span className="font-bold text-green-600">R$ 7.200</span>
+                    <div className="flex justify-between items-center dark:text-gray-200">
+                      <span>{t('recurring.realExample.recurring')}</span>
+                      <span className="font-bold text-green-600 dark:text-green-400">R$ 7.200</span>
                     </div>
                     <hr className="border-gray-300 dark:border-gray-600" />
-                    <div className="flex justify-between items-center text-lg">
-                      <span className="font-semibold">Total no primeiro ano:</span>
-                      <span className="font-bold text-green-600">R$ 61.200</span>
+                    <div className="flex justify-between items-center text-lg dark:text-gray-200">
+                      <span className="font-semibold">{t('recurring.realExample.total')}</span>
+                      <span className="font-bold text-green-600 dark:text-green-400">R$ 61.200</span>
                     </div>
                   </div>
                 </CardContent>
@@ -218,33 +221,33 @@ const AgentesDigitaisComissoes = () => {
         {/* Calculadora Simples */}
         <section className="py-16 px-4 md:px-6 bg-white dark:bg-gray-900">
           <div className="container mx-auto max-w-4xl text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8">
-              Calcule seus Ganhos
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 dark:text-gray-100">
+              {t('calculator.title')}
             </h2>
-            <Card className="max-w-2xl mx-auto">
+            <Card className="max-w-2xl mx-auto dark:bg-gray-800 dark:border-gray-700">
               <CardHeader>
-                <Calculator className="h-10 w-10 text-green-600 mx-auto mb-2" />
-                <CardTitle>Simulador de Comissões</CardTitle>
-                <CardDescription>
-                  Digite o valor mensal do contrato para ver sua comissão
+                <Calculator className="h-10 w-10 text-green-600 dark:text-green-400 mx-auto mb-2" />
+                <CardTitle className="dark:text-gray-100">{t('calculator.cardTitle')}</CardTitle>
+                <CardDescription className="dark:text-gray-300">
+                  {t('calculator.cardDescription')}
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium mb-2">Valor mensal do contrato (R$)</label>
+                    <label className="block text-sm font-medium mb-2 dark:text-gray-200">{t('calculator.label')}</label>
                     <input 
                       type="number" 
-                      placeholder="Ex: 25000"
-                      className="w-full p-3 border rounded-lg text-center text-lg"
+                      placeholder={t('calculator.placeholder')}
+                      className="w-full p-3 border rounded-lg text-center text-lg dark:bg-gray-800 dark:border-gray-700 dark:text-gray-100 dark:placeholder:text-gray-400"
                     />
                   </div>
                   <Button className="w-full bg-green-600 hover:bg-green-700">
-                    Calcular Comissão
+                    {t('calculator.button')}
                   </Button>
                   <div className="mt-4 p-4 bg-green-50 dark:bg-green-900/20 rounded-lg">
                     <p className="text-sm text-gray-600 dark:text-gray-300">
-                      Preencha o valor acima para ver sua comissão estimada
+                      {t('calculator.helper')}
                     </p>
                   </div>
                 </div>
@@ -257,21 +260,21 @@ const AgentesDigitaisComissoes = () => {
         <section className="py-20 px-4 md:px-6 bg-gradient-to-r from-green-600 to-emerald-600 text-white">
           <div className="container mx-auto max-w-4xl text-center">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Pronto para Começar a Ganhar?
+              {t('cta.title')}
             </h2>
             <p className="text-xl mb-8 opacity-90">
-              Cadastre-se gratuitamente e receba seu link exclusivo para começar a indicar clientes hoje mesmo.
+              {t('cta.description')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" variant="secondary">
                 <Link to="/agentes-digitais/cadastro">
                   <UserCheck className="mr-2 h-5 w-5" />
-                  Cadastrar-se Agora
+                  {t('cta.buttons.signup')}
                 </Link>
               </Button>
               <Button asChild size="lg" className="bg-white text-green-600 hover:bg-gray-100 border-2 border-white hover:border-gray-100">
                 <Link to="/contato">
-                  Tirar Dúvidas
+                  {t('cta.buttons.contact')}
                 </Link>
               </Button>
             </div>

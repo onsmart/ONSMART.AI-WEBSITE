@@ -1,0 +1,52 @@
+{
+  "hero": {
+    "badge": "Our Story",
+    "title": "Transforming the Future with",
+    "titleHighlight": "Artificial Intelligence",
+    "description": "We are specialists in enterprise Artificial Intelligence, dedicated to democratizing access to AI and transforming businesses through innovative solutions and measurable results.",
+    "seoDescription": "Meet onsmart AI: specialists in enterprise Artificial Intelligence focused on real results and sustainable digital transformation."
+  },
+  "mission": {
+    "title": "Our Mission",
+    "description": "Democratize access to Artificial Intelligence for companies of all sizes, offering practical solutions and measurable results that transform businesses and create real value."
+  },
+  "vision": {
+    "title": "Our Vision",
+    "description": "To be the reference in enterprise AI in Brazil, recognized for technical excellence, constant innovation and the positive impact we generate in the digital transformation of organizations."
+  },
+  "values": {
+    "title": "Our Values",
+    "innovation": {
+      "title": "Innovation",
+      "description": "We always seek the most advanced technologies and creative solutions to solve our clients' challenges."
+    },
+    "excellence": {
+      "title": "Excellence",
+      "description": "Commitment to maximum quality in each project, from planning to final delivery."
+    },
+    "transparency": {
+      "title": "Transparency",
+      "description": "Clear and honest communication at all stages of the process, ensuring total transparency for our clients."
+    },
+    "results": {
+      "title": "Results",
+      "description": "Focus on delivering real and measurable value, with clear success metrics and proven ROI."
+    }
+  },
+  "team": {
+    "title": "Our Team",
+    "subtitle": "Experts passionate about AI and digital transformation",
+    "description": "Our team is made up of highly qualified professionals, with extensive experience in AI, machine learning and enterprise digital transformation."
+  },
+  "stats": {
+    "clients": "Clients Served",
+    "projects": "Projects Completed",
+    "satisfaction": "Satisfaction",
+    "years": "Years of Experience"
+  },
+  "cta": {
+    "title": "Ready to transform your business?",
+    "subtitle": "Let's talk about how AI can revolutionize your company",
+    "button": "Talk to Specialist"
+  }
+}

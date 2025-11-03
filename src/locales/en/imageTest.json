@@ -1,0 +1,28 @@
+{
+  "title": "Image Loading Test",
+  "subtitle": "Checking if CMS images are loading correctly",
+  "loading": {
+    "title": "Loading image tests...",
+    "error": "Error"
+  },
+  "instructions": {
+    "title": "Test Instructions",
+    "items": {
+      "1": "Check browser console for debug logs",
+      "2": "Test valid URLs: Should load normally",
+      "3": "Test invalid URLs: Should show error and fallback",
+      "4": "Test empty URLs: Should show \"No image\"",
+      "5": "Use \"Open URL\" button to manually test URLs"
+    }
+  },
+  "testArticles": {
+    "1": "Test 1 - Valid image",
+    "2": "Test 2 - Valid image",
+    "3": "Test 3 - Invalid URL",
+    "4": "Test 4 - No image"
+  },
+  "errors": {
+    "unknown": "Unknown error"
+  }
+}
+

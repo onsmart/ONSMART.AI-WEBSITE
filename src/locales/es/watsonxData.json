@@ -1,0 +1,62 @@
+{
+  "hero": {
+    "badge": "Bases de Datos",
+    "title": "watsonx.data™",
+    "subtitle": "Reúne todos los datos comerciales y optimiza cómo se mueven por los sistemas con inteligencia avanzada."
+  },
+  "statsTop": {
+    "speed": "Más rápido que soluciones tradicionales",
+    "availability": "Disponibilidad garantizada",
+    "compliance": "Cumplimiento de datos"
+  },
+  "cta": {
+    "requestDemo": "Solicitar Demostración",
+    "title": "Transforma tus datos hoy",
+    "subtitle": "Únete a las empresas que ya revolucionaron su estrategia de datos con watsonx.data™."
+  },
+  "features": {
+    "title": "Características Clave",
+    "integration": {
+      "title": "Integración de Datos",
+      "desc": "Conecta y unifica datos de múltiples fuentes"
+    },
+    "realtime": {
+      "title": "Analítica en Tiempo Real",
+      "desc": "Procesamiento y análisis de datos en tiempo real"
+    },
+    "cloud": {
+      "title": "Cloud Nativo",
+      "desc": "Arquitectura nativa de nube con escalabilidad automática"
+    },
+    "governance": {
+      "title": "Gobernanza de Datos",
+      "desc": "Control total sobre la calidad y seguridad de los datos"
+    }
+  },
+  "advanced": {
+    "title": "Características Avanzadas",
+    "subtitle": "Descubre cómo watsonx.data™ puede revolucionar tu estrategia de datos",
+    "lake": "Data Lake",
+    "lakeDesc": "Almacena y procesa grandes volúmenes de datos",
+    "security": "Seguridad Avanzada",
+    "securityDesc": "Encriptación, acceso y auditoría completa",
+    "collab": "Colaboración de Datos",
+    "collabDesc": "Comparte y colabora con control granular",
+    "stream": "Procesamiento en Tiempo Real",
+    "streamDesc": "Streaming de datos con latencia ultra baja",
+    "autoscale": "Auto-escalado",
+    "autoscaleDesc": "Escalabilidad automática bajo demanda",
+    "api": "APIs RESTful",
+    "apiDesc": "Integración mediante APIs estandarizadas"
+  },
+  "numbers": {
+    "title": "Números Impresionantes",
+    "subtitle": "Mira cómo watsonx.data™ está revolucionando la gestión de datos",
+    "datasets": "Datasets procesados",
+    "accuracy": "Precisión de datos",
+    "companies": "Empresas activas",
+    "datasetsDesc": "En tiempo real",
+    "accuracyDesc": "Garantizado por IA",
+    "companiesDesc": "Usando la plataforma"
+  }
+}

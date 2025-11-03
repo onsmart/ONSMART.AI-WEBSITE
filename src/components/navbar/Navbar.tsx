@@ -9,8 +9,12 @@ import MobileMenu from "./mobile";
 import Logo from "./Logo";
 import { Calendar } from "lucide-react";
 import { scrollToElement, scrollToForm } from "@/utils/scrollUtils";
+import LanguageSwitcher from "@/components/shared/LanguageSwitcher";
+import ThemeToggle from "@/components/shared/ThemeToggle";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
+  const { t } = useTranslation('navigation');
   const location = useLocation();
   const navigate = useNavigate();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -84,32 +88,32 @@ const Navbar = () => {
   return (
     <>
       {/* Skip Links for Accessibility */}
-      <div className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-[200] focus:bg-white focus:p-4 focus:border focus:shadow-lg">
+      <div className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-[200] focus:bg-white dark:focus:bg-gray-900 focus:p-4 focus:border focus:shadow-lg">
         <a 
           href="#main-content" 
           className="skip-link bg-brand-blue text-white px-4 py-2 rounded mr-4 hover:bg-brand-blue/90 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:ring-offset-2"
         >
-          Pular para o conteúdo principal
+          {t('menu.skipToContent')}
         </a>
         <a 
           href="#navigation" 
           className="skip-link bg-brand-blue text-white px-4 py-2 rounded mr-4 hover:bg-brand-blue/90 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:ring-offset-2"
         >
-          Pular para a navegação
+          {t('menu.skipToNavigation')}
         </a>
         <a 
           href="#footer" 
           className="skip-link bg-brand-blue text-white px-4 py-2 rounded hover:bg-brand-blue/90 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:ring-offset-2"
         >
-          Pular para o rodapé
+          {t('menu.skipToFooter')}
         </a>
       </div>
 
       <div 
         id="navigation"
-        className="fixed top-0 z-[100] w-full bg-white shadow-lg py-0 border-b border-gray-200"
+        className="fixed top-0 z-[100] w-full bg-white dark:bg-gray-900 shadow-lg py-0 border-b border-gray-200 dark:border-gray-800"
         role="banner"
-        aria-label="Navegação principal"
+        aria-label={t('menu.navigationLabel')}
       >
         <div className="container mx-auto flex items-center justify-between px-2 sm:px-4 md:px-6 py-2.5">
           <Logo />
@@ -130,15 +134,20 @@ const Navbar = () => {
           />
           
           {/* CTA and Mobile Menu */}
-          <div className="flex items-center gap-2 sm:gap-4 md:gap-6">
+          <div className="flex items-center gap-2">
+            {/* Theme Toggle - Alternar tema claro/escuro - OCULTO TEMPORARIAMENTE */}
+            {/* <ThemeToggle /> */}
+            
+            {/* Language Switcher - Seletor de idioma (apenas ícone, discreto) */}
+            <LanguageSwitcher />
+            
             <Button 
-              className="hidden lg:flex bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg shadow-lg border-2 border-orange-500 hover:border-orange-400 transition-all duration-300 ml-2 sm:ml-4 hover:scale-105 text-sm sm:text-base px-3 sm:px-4 py-2"
+              className="hidden md:flex bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg shadow-lg border-2 border-orange-500 hover:border-orange-400 transition-all duration-300 ml-4 hover:scale-105"
               onClick={handleDiagnosticoClick}
-              aria-label="Agendar diagnóstico gratuito de IA"
+              aria-label={t('menu.scheduleDiagnosticAria')}
             >
-              <Calendar className="h-4 w-4 mr-1 sm:mr-2" />
-              <span className="hidden xl:inline">Agendar Diagnóstico</span>
-              <span className="xl:hidden">Agendar</span>
+              <Calendar className="h-4 w-4 mr-2" />
+              {t('menu.scheduleDiagnostic')}
             </Button>
             
             <MobileMenu isActive={isActive} isActivePrefix={isActivePrefix} />

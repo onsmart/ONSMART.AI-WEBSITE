@@ -1,0 +1,54 @@
+{
+  "hero": {
+    "badge": "Gobernanza de IA",
+    "title": "watsonx.governance™",
+    "subtitle": "Gobernanza de IA completa con transparencia, cumplimiento y responsabilidad."
+  },
+  "statsTop": {
+    "monitoring": "Monitoreo de Modelos",
+    "compliance": "Cumplimiento Regulatorio",
+    "audit": "Auditoría de IA"
+  },
+  "cta": {
+    "requestDemo": "Solicitar Demostración",
+    "title": "Implemente gobernanza de IA efectiva",
+    "subtitle": "Controle riesgos y asegure cumplimiento en todo el ciclo de vida."
+  },
+  "features": {
+    "title": "Características Clave",
+    "risk": {
+      "title": "Gestión de Riesgos",
+      "desc": "Evaluación de riesgo de modelos y políticas de mitigación"
+    },
+    "lineage": {
+      "title": "Linaje y Proveniencia",
+      "desc": "Trazabilidad de datos, modelos y artefactos"
+    },
+    "policies": {
+      "title": "Políticas y Controles",
+      "desc": "Reglas, checkpoints y aprobaciones de gobernanza"
+    }
+  },
+  "advanced": {
+    "title": "Capacidades Avanzadas",
+    "subtitle": "Transparencia y control end-to-end",
+    "catalog": "Catálogo de Modelos",
+    "catalogDesc": "Registro central de versiones, responsables y SLAs",
+    "monitoring": "Monitoreo Continuo",
+    "monitoringDesc": "Métricas, drift y alertas proactivas",
+    "explain": "Explainability",
+    "explainDesc": "Reportes de explicabilidad e impacto",
+    "audit": "Auditoría Completa",
+    "auditDesc": "Trazas auditables para cumplimiento"
+  },
+  "numbers": {
+    "title": "Números que Importan",
+    "subtitle": "Cumplimiento y confiabilidad medibles",
+    "models": "Modelos monitoreados",
+    "incidents": "Incidentes prevenidos",
+    "reports": "Reportes generados",
+    "modelsDesc": "En producción",
+    "incidentsDesc": "Por políticas activas",
+    "reportsDesc": "Para auditoría"
+  }
+}

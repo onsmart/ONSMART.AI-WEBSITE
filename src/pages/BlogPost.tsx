@@ -1,57 +1,120 @@
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowLeft, Calendar, User, Clock, Share2 } from 'lucide-react';
 import UnifiedSEO from '@/components/shared/UnifiedSEO';
+import { blogPosts } from '@/components/blog/data/blogData';
 
 const BlogPost = () => {
-  const { slug } = useParams();
+  const { slug } = useParams<{ slug: string }>();
+  const { t, i18n } = useTranslation(['blogPost', 'blog', 'common']);
 
-  // Mock data - em um projeto real, isso viria de uma API ou CMS
-  const post = {
-    title: "Como Implementar Agentes de IA na sua Empresa em 30 Dias",
-    content: `
-      <p>A implementação de Agentes de Inteligência Artificial pode parecer complexa, mas com a metodologia certa, é possível transformar sua empresa em apenas 30 dias.</p>
+  // Buscar o artigo pelo slug
+  const article = blogPosts.find(post => post.slug === slug);
+
+  // Obter traduções do artigo
+  const translatedPost = useMemo(() => {
+    if (!article || !slug) return null;
+
+    const translations = t(`blog:posts.${slug}`, { returnObjects: true }) as any;
+    
+    if (translations && typeof translations === 'object' && translations.title) {
+      // Processar o conteúdo para manter as letras LÍDER hardcoded
+      let processedContent = translations.content || article.content;
       
-      <h2>O que são Agentes de IA?</h2>
-      <p>Agentes de IA são sistemas autônomos capazes de tomar decisões e executar tarefas específicas sem intervenção humana constante. Eles funcionam como uma força de trabalho digital que complementa suas equipes humanas.</p>
+      // Manter as letras L, Í, D, E, R hardcoded com português hardcoded + tradução
+      // Formato: L - [PT hardcoded] - [tradução atual]
+      const ptDescriptions = {
+        L: "Levantamento de processos",
+        Í: "Identificação de oportunidades",
+        D: "Desenvolvimento dos agentes",
+        E: "Execução e implementação",
+        R: "Refinamento contínuo"
+      };
       
-      <h2>Metodologia LÍDER</h2>
-      <p>Nossa metodologia proprietária LÍDER garante uma implementação estruturada:</p>
-      <ul>
-        <li><strong>L</strong> - Levantamento de processos</li>
-        <li><strong>Í</strong> - Identificação de oportunidades</li>
-        <li><strong>D</strong> - Desenvolvimento dos agentes</li>
-        <li><strong>E</strong> - Execução e implementação</li>
-        <li><strong>R</strong> - Refinamento contínuo</li>
-      </ul>
+      const currentLanguageDescriptions = {
+        L: t('blog:liderDescriptions.L'),
+        Í: t('blog:liderDescriptions.Í'),
+        D: t('blog:liderDescriptions.D'),
+        E: t('blog:liderDescriptions.E'),
+        R: t('blog:liderDescriptions.R')
+      };
       
-      <h2>Casos de Sucesso</h2>
-      <p>Empresas que implementaram nossa metodologia viram aumentos de produtividade de até 420% em processos automatizados.</p>
-    `,
-    author: "onsmartAI Team",
-    date: "2024-01-15",
-    readTime: "5 min",
-    category: "Implementação"
-  };
+      // Em português, mostrar apenas PT hardcoded, nos outros idiomas mostrar PT + tradução
+      if (i18n.language === 'pt') {
+        processedContent = processedContent.replace(/{{LIDER_L}}/g, ptDescriptions.L);
+        processedContent = processedContent.replace(/{{LIDER_Í}}/g, ptDescriptions.Í);
+        processedContent = processedContent.replace(/{{LIDER_D}}/g, ptDescriptions.D);
+        processedContent = processedContent.replace(/{{LIDER_E}}/g, ptDescriptions.E);
+        processedContent = processedContent.replace(/{{LIDER_R}}/g, ptDescriptions.R);
+      } else {
+        processedContent = processedContent.replace(/{{LIDER_L}}/g, `${ptDescriptions.L} - ${currentLanguageDescriptions.L}`);
+        processedContent = processedContent.replace(/{{LIDER_Í}}/g, `${ptDescriptions.Í} - ${currentLanguageDescriptions.Í}`);
+        processedContent = processedContent.replace(/{{LIDER_D}}/g, `${ptDescriptions.D} - ${currentLanguageDescriptions.D}`);
+        processedContent = processedContent.replace(/{{LIDER_E}}/g, `${ptDescriptions.E} - ${currentLanguageDescriptions.E}`);
+        processedContent = processedContent.replace(/{{LIDER_R}}/g, `${ptDescriptions.R} - ${currentLanguageDescriptions.R}`);
+      }
+
+      return {
+        title: translations.title || article.title,
+        excerpt: translations.excerpt || article.excerpt,
+        content: processedContent,
+        category: translations.category || article.category,
+        author: article.author,
+        date: article.date,
+        readTime: article.readTime
+      };
+    }
+
+    // Fallback para artigo original se não houver tradução
+    return {
+      title: article.title,
+      excerpt: article.excerpt,
+      content: article.content,
+      category: article.category,
+      author: article.author,
+      date: article.date,
+      readTime: article.readTime
+    };
+  }, [article, slug, t]);
+
+  if (!article || !translatedPost) {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:bg-gray-900">
+        <div className="container mx-auto max-w-4xl px-4 py-16">
+          <Button asChild variant="ghost" className="mb-8">
+            <Link to="/blog">
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              {t('backButton')}
+            </Link>
+          </Button>
+          <div className="text-center py-16">
+            <h1 className="text-2xl font-bold mb-4">{t('empty.title', { ns: 'blog' })}</h1>
+            <p className="text-gray-600">{t('empty.description', { ns: 'blog' })}</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>
       <UnifiedSEO 
-        title={`${post.title} | Blog onsmartAI`}
-        description="Aprenda como implementar Agentes de IA na sua empresa em 30 dias com nossa metodologia LÍDER comprovada."
-        keywords="implementação ia, agentes ia, metodologia líder, automação empresarial"
+        title={`${translatedPost.title} | Blog OnSmartAI`}
+        description={t('seo.description')}
+        keywords={t('seo.keywords')}
       />
       
-      <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
+      <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:bg-gray-900">
         <div className="container mx-auto max-w-4xl px-4 py-16">
           {/* Back Button */}
           <Button asChild variant="ghost" className="mb-8">
             <Link to="/blog">
               <ArrowLeft className="mr-2 h-4 w-4" />
-              Voltar ao Blog
+              {t('backButton')}
             </Link>
           </Button>
 
@@ -61,64 +124,64 @@ const BlogPost = () => {
               <div className="flex items-center gap-4 mb-6 text-sm text-gray-600 dark:text-gray-400">
                 <div className="flex items-center gap-1">
                   <Calendar className="h-4 w-4" />
-                  {new Date(post.date).toLocaleDateString('pt-BR')}
+                  {new Date(translatedPost.date).toLocaleDateString(i18n.language === 'pt' ? 'pt-BR' : i18n.language === 'es' ? 'es-ES' : 'en-US')}
                 </div>
                 <div className="flex items-center gap-1">
                   <User className="h-4 w-4" />
-                  {post.author}
+                  {translatedPost.author}
                 </div>
                 <div className="flex items-center gap-1">
                   <Clock className="h-4 w-4" />
-                  {post.readTime} de leitura
+                  {translatedPost.readTime} {t('readTime')}
                 </div>
               </div>
 
               <h1 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">
-                {post.title}
+                {translatedPost.title}
               </h1>
 
               <div className="flex items-center justify-between mb-8 pb-6 border-b border-gray-200 dark:border-gray-700">
                 <span className="inline-block bg-brand-blue/10 text-brand-blue px-3 py-1 rounded-full text-sm font-medium">
-                  {post.category}
+                  {t(`blog:categories.${translatedPost.category}`) || translatedPost.category}
                 </span>
                 <Button variant="outline" size="sm">
                   <Share2 className="mr-2 h-4 w-4" />
-                  Compartilhar
+                  {t('share')}
                 </Button>
               </div>
 
               {/* Article Content */}
               <div 
                 className="prose prose-lg max-w-none dark:prose-invert prose-headings:text-gray-900 dark:prose-headings:text-white prose-p:text-gray-700 dark:prose-p:text-gray-300"
-                dangerouslySetInnerHTML={{ __html: post.content }}
+                dangerouslySetInnerHTML={{ __html: translatedPost.content }}
               />
             </div>
           </article>
 
           {/* Related Articles */}
           <section className="mt-16">
-            <h2 className="text-2xl font-bold mb-8">Artigos Relacionados</h2>
+            <h2 className="text-2xl font-bold mb-8">{t('related.title')}</h2>
             <div className="grid md:grid-cols-2 gap-6">
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <h3 className="font-semibold mb-2">5 Erros Comuns na Implementação de IA</h3>
+                  <h3 className="font-semibold mb-2">{t('related.article1.title')}</h3>
                   <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
-                    Evite os principais erros que podem comprometer seu projeto de IA empresarial.
+                    {t('related.article1.description')}
                   </p>
                   <Link to="/blog/erros-implementacao-ia" className="text-brand-blue hover:underline text-sm font-medium">
-                    Ler artigo →
+                    {t('related.article1.link')}
                   </Link>
                 </CardContent>
               </Card>
 
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <h3 className="font-semibold mb-2">ROI em Projetos de IA: Como Calcular</h3>
+                  <h3 className="font-semibold mb-2">{t('related.article2.title')}</h3>
                   <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
-                    Aprenda a calcular e apresentar o retorno sobre investimento em IA.
+                    {t('related.article2.description')}
                   </p>
                   <Link to="/blog/roi-projetos-ia" className="text-brand-blue hover:underline text-sm font-medium">
-                    Ler artigo →
+                    {t('related.article2.link')}
                   </Link>
                 </CardContent>
               </Card>

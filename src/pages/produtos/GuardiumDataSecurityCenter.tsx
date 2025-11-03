@@ -4,9 +4,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { CheckCircle, ArrowLeft, Shield, Eye, Lock, Users, Zap, Send } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function GuardiumDataSecurityCenter() {
   const navigate = useNavigate();
+  const { t } = useTranslation(["guardiumDataSecurityCenter", "common"]);
 
   // Hook para contador animado
   const useCountUp = (end: number, duration: number = 2000) => {
@@ -69,17 +71,17 @@ export default function GuardiumDataSecurityCenter() {
                 <div className="p-3 sm:p-4 rounded-full bg-blue-50">
                   <img 
                     src="https://images-onsmart.vercel.app/onsmart.ai/guardium.png" 
-                    alt="Guardium Data Security Center" 
+                    alt={t('guardiumDataSecurityCenter:hero.title')} 
                     className="w-12 h-12 sm:w-16 sm:h-16 object-contain scale-150"
                   />
                 </div>
                 <div>
-                  <Badge variant="outline" className="mb-2">Data Security</Badge>
-                  <h1 className="text-4xl font-bold text-gray-900">Guardium Data Security Center</h1>
+                  <Badge variant="outline" className="mb-2">{t('guardiumDataSecurityCenter:hero.badge')}</Badge>
+                  <h1 className="text-4xl font-bold text-gray-900">{t('guardiumDataSecurityCenter:hero.title')}</h1>
                 </div>
               </div>
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                Plataforma de segurança de dados para proteção, monitoramento e conformidade regulatória.
+                {t('guardiumDataSecurityCenter:hero.subtitle')}
               </p>
               
               {/* Stats */}
@@ -88,19 +90,19 @@ export default function GuardiumDataSecurityCenter() {
                   <div className="text-2xl font-bold text-blue-600 transition-all duration-300">
                     {coverageCount.count}%
                   </div>
-                  <div className="text-sm text-gray-600">Cobertura de Dados</div>
+                  <div className="text-sm text-gray-600">{t('guardiumDataSecurityCenter:statsTop.coverage')}</div>
                 </div>
                 <div className="text-center" ref={monitoringCount.ref}>
                   <div className="text-2xl font-bold text-green-600 transition-all duration-300">
                     {monitoringCount.count}/7
                   </div>
-                  <div className="text-sm text-gray-600">Monitoramento</div>
+                  <div className="text-sm text-gray-600">{t('guardiumDataSecurityCenter:statsTop.monitoring')}</div>
                 </div>
                 <div className="text-center" ref={complianceCount.ref}>
                   <div className="text-2xl font-bold text-purple-600 transition-all duration-300">
                     {complianceCount.count}+
                   </div>
-                  <div className="text-sm text-gray-600">Conformidades</div>
+                  <div className="text-sm text-gray-600">{t('guardiumDataSecurityCenter:statsTop.compliance')}</div>
                 </div>
               </div>
 
@@ -110,40 +112,40 @@ export default function GuardiumDataSecurityCenter() {
                 onClick={() => navigate('/contato')}
               >
                 <Send className="mr-2 h-5 w-5" />
-                Solicitar Demonstração
+                {t('cta.requestDemo')}
               </Button>
             </div>
 
             <div className="lg:w-1/2">
               <div className="bg-white rounded-2xl shadow-xl p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Principais Recursos</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">{t('guardiumDataSecurityCenter:features.title')}</h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Proteção de Dados</h4>
-                      <p className="text-gray-600">Criptografia e mascaramento avançado de dados sensíveis</p>
+                      <h4 className="font-semibold text-gray-900">{t('guardiumDataSecurityCenter:features.protection.title')}</h4>
+                      <p className="text-gray-600">{t('guardiumDataSecurityCenter:features.protection.desc')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Monitoramento de Acesso</h4>
-                      <p className="text-gray-600">Rastreamento completo de acesso e atividades de dados</p>
+                      <h4 className="font-semibold text-gray-900">{t('guardiumDataSecurityCenter:features.monitoring.title')}</h4>
+                      <p className="text-gray-600">{t('guardiumDataSecurityCenter:features.monitoring.desc')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Conformidade Regulatória</h4>
-                      <p className="text-gray-600">Suporte a GDPR, SOX, PCI-DSS e outras regulamentações</p>
+                      <h4 className="font-semibold text-gray-900">{t('guardiumDataSecurityCenter:features.compliance.title')}</h4>
+                      <p className="text-gray-600">{t('guardiumDataSecurityCenter:features.compliance.desc')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900">Detecção de Ameaças</h4>
-                      <p className="text-gray-600">Identificação automática de atividades suspeitas</p>
+                      <h4 className="font-semibold text-gray-900">{t('guardiumDataSecurityCenter:features.threatDetection.title')}</h4>
+                      <p className="text-gray-600">{t('guardiumDataSecurityCenter:features.threatDetection.desc')}</p>
                     </div>
                   </div>
                 </div>
@@ -157,9 +159,9 @@ export default function GuardiumDataSecurityCenter() {
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Recursos Avançados</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('guardiumDataSecurityCenter:advanced.title')}</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Descubra como o Guardium Data Security Center pode revolucionar sua segurança de dados
+              {t('guardiumDataSecurityCenter:advanced.subtitle')}
             </p>
           </div>
 
@@ -169,11 +171,11 @@ export default function GuardiumDataSecurityCenter() {
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <Shield className="w-6 h-6 text-blue-600" />
                 </div>
-                <CardTitle>Proteção Avançada</CardTitle>
+                <CardTitle>{t('guardiumDataSecurityCenter:advanced.advancedProtection.title')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Criptografia, mascaramento e tokenização de dados sensíveis.
+                  {t('guardiumDataSecurityCenter:advanced.advancedProtection.desc')}
                 </p>
               </CardContent>
             </Card>
@@ -183,11 +185,11 @@ export default function GuardiumDataSecurityCenter() {
                 <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
                   <Eye className="w-6 h-6 text-green-600" />
                 </div>
-                <CardTitle>Monitoramento em Tempo Real</CardTitle>
+                <CardTitle>{t('guardiumDataSecurityCenter:advanced.realtimeMonitoring.title')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Vigilância contínua de todas as atividades de acesso a dados.
+                  {t('guardiumDataSecurityCenter:advanced.realtimeMonitoring.desc')}
                 </p>
               </CardContent>
             </Card>
@@ -197,11 +199,11 @@ export default function GuardiumDataSecurityCenter() {
                 <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                   <Lock className="w-6 h-6 text-purple-600" />
                 </div>
-                <CardTitle>Controle de Acesso</CardTitle>
+                <CardTitle>{t('guardiumDataSecurityCenter:advanced.accessControl.title')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Políticas granulares de acesso e autenticação multifator.
+                  {t('guardiumDataSecurityCenter:advanced.accessControl.desc')}
                 </p>
               </CardContent>
             </Card>
@@ -211,11 +213,11 @@ export default function GuardiumDataSecurityCenter() {
                 <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
                   <Users className="w-6 h-6 text-orange-600" />
                 </div>
-                <CardTitle>Governança de Dados</CardTitle>
+                <CardTitle>{t('guardiumDataSecurityCenter:advanced.governance.title')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Políticas de governança e classificação automática de dados.
+                  {t('guardiumDataSecurityCenter:advanced.governance.desc')}
                 </p>
               </CardContent>
             </Card>
@@ -225,11 +227,11 @@ export default function GuardiumDataSecurityCenter() {
                 <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
                   <Zap className="w-6 h-6 text-red-600" />
                 </div>
-                <CardTitle>Alertas Inteligentes</CardTitle>
+                <CardTitle>{t('guardiumDataSecurityCenter:advanced.alerts.title')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Notificações proativas sobre violações e atividades suspeitas.
+                  {t('guardiumDataSecurityCenter:advanced.alerts.desc')}
                 </p>
               </CardContent>
             </Card>
@@ -239,11 +241,11 @@ export default function GuardiumDataSecurityCenter() {
                 <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
                   <Send className="w-6 h-6 text-indigo-600" />
                 </div>
-                <CardTitle>Relatórios de Conformidade</CardTitle>
+                <CardTitle>{t('guardiumDataSecurityCenter:advanced.reports.title')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Relatórios automatizados para auditorias e conformidade.
+                  {t('guardiumDataSecurityCenter:advanced.reports.desc')}
                 </p>
               </CardContent>
             </Card>
@@ -255,9 +257,9 @@ export default function GuardiumDataSecurityCenter() {
       <section className="py-16 px-4 bg-gradient-to-r from-blue-50 to-purple-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Números Impressionantes</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('guardiumDataSecurityCenter:numbers.title')}</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Veja como o Guardium Data Security Center está protegendo dados em todo o mundo
+              {t('guardiumDataSecurityCenter:numbers.subtitle')}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -265,22 +267,22 @@ export default function GuardiumDataSecurityCenter() {
               <div className="text-4xl font-bold text-blue-600 mb-2 transition-all duration-300">
                 {threatsCount.count}+
               </div>
-              <div className="text-lg font-semibold text-gray-900 mb-2">Ameaças Detectadas</div>
-              <div className="text-gray-600">Diariamente</div>
+              <div className="text-lg font-semibold text-gray-900 mb-2">{t('guardiumDataSecurityCenter:numbers.threats')}</div>
+              <div className="text-gray-600">{t('guardiumDataSecurityCenter:numbers.threatsDesc')}</div>
             </div>
             <div className="text-center bg-white rounded-xl p-8 shadow-lg" ref={enterpriseCount.ref}>
               <div className="text-4xl font-bold text-green-600 mb-2 transition-all duration-300">
                 {enterpriseCount.count}+
               </div>
-              <div className="text-lg font-semibold text-gray-900 mb-2">Empresas Protegidas</div>
-              <div className="text-gray-600">Em todo o mundo</div>
+              <div className="text-lg font-semibold text-gray-900 mb-2">{t('guardiumDataSecurityCenter:numbers.enterprises')}</div>
+              <div className="text-gray-600">{t('guardiumDataSecurityCenter:numbers.enterprisesDesc')}</div>
             </div>
             <div className="text-center bg-white rounded-xl p-8 shadow-lg" ref={uptimeCount.ref}>
               <div className="text-4xl font-bold text-purple-600 mb-2 transition-all duration-300">
                 {uptimeCount.count}%
               </div>
-              <div className="text-lg font-semibold text-gray-900 mb-2">Disponibilidade</div>
-              <div className="text-gray-600">Monitoramento contínuo</div>
+              <div className="text-lg font-semibold text-gray-900 mb-2">{t('guardiumDataSecurityCenter:numbers.uptime')}</div>
+              <div className="text-gray-600">{t('guardiumDataSecurityCenter:numbers.uptimeDesc')}</div>
             </div>
           </div>
         </div>
@@ -289,11 +291,9 @@ export default function GuardiumDataSecurityCenter() {
       {/* CTA Section */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-            Transforme sua Segurança de Dados
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">{t('guardiumDataSecurityCenter:cta.title')}</h2>
           <p className="text-xl mb-8 text-gray-600">
-            Junte-se às empresas que já transformaram seus negócios com Guardium Data Security Center.
+            {t('guardiumDataSecurityCenter:cta.subtitle')}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -303,7 +303,7 @@ export default function GuardiumDataSecurityCenter() {
               onClick={() => navigate('/contato')}
             >
               <Send className="mr-2 h-5 w-5" />
-              Solicitar Demonstração
+              {t('cta.requestDemo')}
             </Button>
             <Button 
               variant="outline"
@@ -311,7 +311,7 @@ export default function GuardiumDataSecurityCenter() {
               className="font-medium px-8 py-6 text-lg rounded-xl"
               onClick={() => navigate('/produtos')}
             >
-              Ver Outros Produtos
+              {t('guardiumDataSecurityCenter:cta.viewOthers')}
             </Button>
           </div>
         </div>

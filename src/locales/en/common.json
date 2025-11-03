@@ -1,0 +1,91 @@
+{
+  "button": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "send": "Send",
+    "close": "Close",
+    "confirm": "Confirm",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "learnMore": "Learn More",
+    "contact": "Talk to Expert",
+    "schedule": "Schedule Meeting",
+    "start": "Start",
+    "continue": "Continue",
+    "finish": "Finish",
+    "retry": "Try Again",
+    "reload": "Reload",
+    "viewMore": "View more"
+  },
+  "label": {
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "company": "Company",
+    "message": "Message",
+    "required": "Required",
+    "optional": "Optional"
+  },
+  "message": {
+    "loading": "Loading...",
+    "error": "Error loading",
+    "success": "Success",
+    "noData": "No data available",
+    "tryAgain": "Try again",
+    "somethingWrong": "Something went wrong"
+  },
+  "validation": {
+    "required": "This field is required",
+    "emailInvalid": "Invalid email",
+    "phoneInvalid": "Invalid phone",
+    "minLength": "Minimum {{min}} characters",
+    "maxLength": "Maximum {{max}} characters"
+  },
+  "cta": {
+    "requestDemo": "Request Demo",
+    "viewOthers": "View Other Products",
+    "learnMore": "Learn More",
+    "contact": "Talk to Expert",
+    "schedule": "Schedule Meeting",
+    "requestQuote": "Request Quote",
+    "freeDiagnostic": "Free Diagnostic"
+  },
+  "sections": {
+    "title": "Title",
+    "subtitle": "Subtitle",
+    "description": "Description",
+    "features": "Key Features",
+    "advancedFeatures": "Advanced Features",
+    "keyFeatures": "Main Features"
+  },
+  "language": {
+    "selectLanguage": "Select language",
+    "portuguese": "Português",
+    "english": "English",
+    "spanish": "Español"
+  },
+  "toast": {
+    "formSubmitted": "Form submitted successfully!",
+    "formSubmittedDescription": "Our team will contact you soon.",
+    "nextStep": "Next step",
+    "diagnosticScheduled": "Diagnostic scheduled!",
+    "diagnosticScheduledDescription": "You will receive a confirmation email shortly.",
+    "viewCalendar": "View calendar"
+  },
+  "diagnostic": {
+    "likert": {
+      "stronglyDisagree": "Strongly disagree",
+      "disagree": "Disagree",
+      "neutral": "Neutral",
+      "agree": "Agree",
+      "stronglyAgree": "Strongly agree"
+    }
+  },
+  "theme": {
+    "switchToDark": "Switch to dark theme",
+    "switchToLight": "Switch to light theme"
+  }
+}
+

@@ -1,0 +1,64 @@
+{
+  "seo": {
+    "title": "Herramientas Gratuitas de IA - Calculadoras y Simuladores | onsmartAI",
+    "description": "Accede a herramientas gratuitas para evaluar el potencial de IA en tu empresa: calculadora de ROI, evaluador de madurez digital y simuladores de productividad."
+  },
+  "hero": {
+    "badge": "Herramientas Especializadas",
+    "title": "Herramientas",
+    "titleHighlight": "Gratuitas",
+    "description": "Accede a herramientas gratuitas para evaluar el potencial de IA en tu empresa y acelerar tu viaje de transformación digital",
+    "startNow": "Comenzar Ahora",
+    "viewDemo": "Ver Demostración"
+  },
+  "specialized": {
+    "title": "Herramientas Especializadas",
+    "description": "Utiliza nuestras herramientas gratuitas para evaluar y planificar la implementación de IA en tu empresa"
+  },
+  "buttons": {
+    "useTool": "Usar Herramienta",
+    "learnMore": "Saber Más",
+    "download": "Descargar",
+    "accessTool": "Acceder a Herramienta"
+  },
+  "expertise": {
+    "badge": "Experiencia Comprobada",
+    "title": "Desarrollado por",
+    "titleHighlight": "Especialistas",
+    "description": "Nuestras herramientas son desarrolladas por especialistas en IA con años de experiencia en transformación digital empresarial",
+    "knowOtherResources": "Conocer Otros Recursos",
+    "viewSuccessCases": "Ver Casos de Éxito"
+  },
+  "tools": {
+    "roiCalculator": {
+      "title": "Calculadora de ROI de IA",
+      "description": "Calcula el retorno potencial de inversión de la implementación de IA en tu empresa",
+      "category": "Análisis Financiero"
+    },
+    "digitalMaturity": {
+      "title": "Evaluador de Madurez Digital",
+      "description": "Descubre el nivel de madurez digital de tu empresa y áreas de mejora",
+      "category": "Diagnóstico"
+    },
+    "automationPlanner": {
+      "title": "Planificador de Automatización",
+      "description": "Identifica qué procesos de tu empresa pueden ser automatizados con IA",
+      "category": "Planificación"
+    },
+    "productivitySimulator": {
+      "title": "Simulador de Productividad",
+      "description": "Simula las ganancias de productividad con la implementación de agentes de IA",
+      "category": "Simulación"
+    }
+  },
+  "buttons": {
+    "useTool": "Usar Herramienta",
+    "learnMore": "Saber Más",
+    "download": "Descargar"
+  },
+  "cta": {
+    "title": "¿Listo para Implementar IA?",
+    "subtitle": "Habla con nuestros especialistas y transforma tu empresa con IA",
+    "button": "Hablar con Especialista"
+  }
+}
