@@ -64,7 +64,7 @@ const DropdownMenuItem: React.FC<DropdownMenuItemProps> = ({
           <DropdownMenuTrigger asChild>
             <button
               className={cn(
-                "flex items-center px-4 py-2 rounded-md transition-all duration-200 font-medium",
+                "flex items-center px-1.5 sm:px-2 md:px-2.5 py-2 rounded-md transition-all duration-200 font-medium text-sm md:text-base whitespace-nowrap",
                 isActive && !isOpen 
                   ? "text-brand-blue" 
                   : "text-gray-700 hover:text-brand-blue",

@@ -8,9 +8,18 @@
 /* Estilos específicos legados do App.css que ainda são necessários */
 
 /* Global styles for site-wide consistency */
+html {
+  /* Força scrollbar sempre visível para prevenir layout shift */
+  overflow-y: scroll;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   scroll-behavior: smooth;
+  /* Previne shift layout quando scrollbar aparece/desaparece */
+  scrollbar-gutter: stable;
+  /* Garante que o body não mude de tamanho */
+  min-height: 100vh;
 }
 
 .logo {

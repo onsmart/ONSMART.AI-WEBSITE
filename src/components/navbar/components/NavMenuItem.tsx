@@ -23,7 +23,7 @@ const NavMenuItem: React.FC<NavMenuItemProps> = ({ icon: Icon, label, isActive, 
       <button 
         onClick={handleClick}
         className={cn(
-          "px-4 py-2 rounded-md transition-all duration-200 font-medium",
+          "px-1.5 sm:px-2 md:px-2.5 py-2 rounded-md transition-all duration-200 font-medium text-sm md:text-base whitespace-nowrap",
           isActive 
             ? "text-brand-blue" 
             : "text-gray-700 hover:text-brand-blue"
