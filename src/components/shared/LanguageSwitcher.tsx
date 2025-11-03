@@ -86,8 +86,7 @@ const LanguageSwitcher: React.FC = () => {
             className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors font-medium text-gray-700 dark:text-gray-300 text-xs sm:text-sm md:text-base"
             aria-label={t('language.selectLanguage')}
           >
-            <Globe className="h-3 w-3 sm:h-4 sm:w-4 text-gray-600 dark:text-gray-400 flex-shrink-0" />
-            <span className="hidden sm:inline whitespace-nowrap">{currentLanguage.displayName}</span>
+            <Globe className="h-4 w-4 text-gray-600 dark:text-gray-400 flex-shrink-0" />
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent 

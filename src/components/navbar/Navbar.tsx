@@ -116,13 +116,13 @@ const Navbar = () => {
       >
         <div className="w-full flex items-center justify-between px-3 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-2.5 gap-4 md:gap-6 lg:gap-8">
           {/* Logo - Esquerda */}
-          <div className="flex-shrink-0 mr-2 sm:mr-4 md:mr-6 lg:mr-8">
+          <div className="flex-shrink-0 mr-3 sm:mr-5 md:mr-7 lg:mr-9">
             <Logo />
           </div>
           
           {/* Desktop Navigation - Centro */}
           <div className="flex-1 flex justify-center min-w-0 overflow-hidden">
-            <div className="max-w-full mx-auto px-4 lg:px-6 xl:px-8">
+            <div className="max-w-full mx-auto px-3 sm:px-4 md:px-5 lg:px-6">
               <DesktopMenu 
                 isActive={isActive} 
                 isActivePrefix={isActivePrefix}
@@ -132,7 +132,7 @@ const Navbar = () => {
           </div>
           
           {/* CTA and Mobile Menu - Direita */}
-          <div className="flex items-center justify-end gap-1 sm:gap-2 flex-shrink-0 ml-4 sm:ml-6 md:ml-8 lg:ml-10 xl:ml-12">
+          <div className="flex items-center justify-end gap-2 sm:gap-3 flex-shrink-0 ml-3 sm:ml-5 md:ml-7 lg:ml-9">
             {/* Theme Toggle - Alternar tema claro/escuro - OCULTO TEMPORARIAMENTE */}
             {/* <ThemeToggle /> */}
             
