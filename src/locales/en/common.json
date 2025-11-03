@@ -48,7 +48,9 @@
     "viewOthers": "View Other Products",
     "learnMore": "Learn More",
     "contact": "Talk to Expert",
-    "schedule": "Schedule Meeting"
+    "schedule": "Schedule Meeting",
+    "requestQuote": "Request Quote",
+    "freeDiagnostic": "Free Diagnostic"
   },
   "sections": {
     "title": "Title",
@@ -80,6 +82,10 @@
       "agree": "Agree",
       "stronglyAgree": "Strongly agree"
     }
+  },
+  "theme": {
+    "switchToDark": "Switch to dark theme",
+    "switchToLight": "Switch to light theme"
   }
 }
 

@@ -4,9 +4,45 @@
     "description": "Get in touch with onsmartAI. Our team of AI specialists is ready to help your company transform processes with artificial intelligence."
   },
   "hero": {
-    "title": "Get in Touch",
+    "badge": "Get in Touch",
+    "title": "Transform Your Company with AI in 30 Days",
+    "titleHighlight": "AI in 30 Days",
     "subtitle": "Our team of AI specialists is ready to help your company",
-    "description": "Transform your company with personalized Artificial Intelligence solutions. Get in touch and discover how we can accelerate your results."
+    "description": "Transform your company with personalized Artificial Intelligence solutions. Get in touch and discover how we can accelerate your results.",
+    "alert": {
+      "title": "ALERT:",
+      "message": "Your competition is already using AI to increase productivity by",
+      "productivity": "420%",
+      "andMessage": "and drastically reduce operational costs."
+    },
+    "leader": {
+      "methodology": "LEADER methodology",
+      "message": "has already transformed",
+      "companies": "350+ companies",
+      "results": "with proven results in just 30 days. Don't let your company fall behind!"
+    },
+    "benefits": {
+      "title": "EXCLUSIVE BENEFITS",
+      "subtitle": "What you receive when contacting us today",
+      "items": {
+        "diagnostic": {
+          "title": "Business Diagnostic",
+          "description": "Complete and free analysis of your company"
+        },
+        "roi": {
+          "title": "ROI Projection",
+          "description": "Personalized calculation of return on investment"
+        },
+        "implementation": {
+          "title": "Implementation Plan",
+          "description": "Detailed roadmap for 30 days"
+        },
+        "consulting": {
+          "title": "Strategic Consulting",
+          "description": "Free session with no commitment"
+        }
+      }
+    }
   },
   "success": {
     "title": "Message Sent Successfully!",
@@ -20,8 +56,42 @@
     "backToHome": "Back to Home"
   },
   "form": {
-    "title": "Get in Touch",
+    "title": "Contact Form",
     "subtitle": "Fill out the form below and our team will contact you within 2 business hours",
+    "diagnosticTitle": "Secure Your",
+    "diagnosticHighlight": "Free Diagnostic",
+    "discoverPotential": "Discover the cost-saving potential of AI in your company",
+    "fillFormDescription": "Fill out the form below and receive within",
+    "fillFormDescriptionValue": "2 business hours",
+    "fillFormDescriptionEnd": ": personalized analysis, ROI projection and detailed implementation plan.",
+    "bonus": {
+      "title": "EXCLUSIVE BONUS when submitting today:",
+      "items": {
+        "diagnostic": {
+          "title": "AI Diagnostic",
+          "value": "personalized (value $2,500)"
+        },
+        "roi": {
+          "title": "ROI Projection",
+          "description": "detailed for your company"
+        },
+        "roadmap": {
+          "title": "30-day Roadmap",
+          "description": "for implementation"
+        },
+        "consulting": {
+          "title": "Strategic consulting",
+          "description": "1-hour free session"
+        }
+      }
+    },
+    "trust": {
+      "secure": "100% secure data",
+      "noSpam": "No spam",
+      "responseTime": "Response in 2h"
+    },
+    "lastCompanies": "Last 48 hours:",
+    "companiesRequested": "companies requested diagnostic",
     "name": {
       "label": "Full Name",
       "placeholder": "Enter your full name"
@@ -66,7 +136,35 @@
   },
   "info": {
     "title": "Contact Information",
+    "contactTitle": "Get in Touch",
     "subtitle": "Other ways to reach us",
+    "location": {
+      "badge": "Our Location",
+      "title": "Visit our Office",
+      "loading": "Loading map...",
+      "address": "Arizona Street, 1349",
+      "neighborhood": "Berrini",
+      "city": "São Paulo - SP"
+    },
+    "contactInfo": {
+      "email": {
+        "label": "Email",
+        "value": "atendimento.ai@onsmart.com.br"
+      },
+      "phone": {
+        "label": "Phone",
+        "value": "+55 11 99666-9247"
+      },
+      "hours": {
+        "label": "Hours",
+        "value": "Monday to Friday, 9am to 6pm"
+      },
+      "address": {
+        "label": "Address",
+        "value": "Arizona Street, 1349",
+        "city": "São Paulo - SP"
+      }
+    },
     "email": {
       "label": "E-mail",
       "value": "contato@onsmartai.com",
@@ -94,7 +192,10 @@
     "button": "Talk to Specialist"
   },
   "guarantee": {
+    "badge": "Guaranteed Response",
     "title": "Our Guarantee",
+    "message": "We respond to all contacts within",
+    "value": "2 business hours",
     "subtitle": "We respond to all contacts within",
     "subtitleValue": "2 business hours",
     "subtitleEnd": "or we offer a free 30-minute consultation."

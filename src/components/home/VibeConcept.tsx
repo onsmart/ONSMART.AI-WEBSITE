@@ -4,13 +4,13 @@ import { Network, Layers, Zap, Building2, Users } from "lucide-react";
 
 const VibeConcept = () => {
   return (
-    <section id="vibe-concept" className="py-20 px-4 md:px-6 bg-white dark:bg-gray-800/50">
+    <section id="vibe-concept" className="py-20 px-4 md:px-6 bg-white dark:bg-gray-900">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <div className="inline-block text-sm font-semibold mb-3 py-1 px-3 rounded-full bg-primary/10 text-primary">
             Abordagem Revolucionária
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-red-600">Conceito VIBE ENTERPRISE</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-red-600 dark:text-red-400">Conceito VIBE ENTERPRISE</h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
             Uma abordagem revolucionária criada pela onsmartAI para transformar fundamentalmente as organizações através da integração 
             holística de Agentes de Inteligência Artificial como uma nova classe de força de trabalho digital.
@@ -33,7 +33,7 @@ const VibeConcept = () => {
               </p>
               
               <div className="bg-primary/5 p-6 rounded-xl border border-primary/10">
-                <h3 className="text-xl font-bold mb-3 text-primary">Objetivo Principal</h3>
+                <h3 className="text-xl font-bold mb-3 text-primary dark:text-blue-400">Objetivo Principal</h3>
                 <p className="text-gray-700 dark:text-gray-300">
                   Criar uma infraestrutura cognitiva distribuída que permeia toda a empresa, conectando 
                   silos de informação, otimizando processos e ampliando as capacidades humanas através de uma 

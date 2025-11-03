@@ -558,12 +558,12 @@ const Conteudo = () => {
       <UnifiedSEO 
         pageType="service"
         pageData={{
-          title: "Conteúdo Especializado em IA - Guias, E-books e Webinars | onsmartAI",
-          description: "Acesse conteúdos exclusivos sobre IA: guias práticos, e-books, webinars e cases de sucesso. Aprenda como transformar sua empresa com inteligência artificial."
+        title: t('seo.title'),
+        description: t('seo.description')
         }}
       />
 
-      <div className="min-h-screen bg-gradient-to-br from-white via-blue-50/20 to-brand-blue/5 relative overflow-hidden">
+      <div className="min-h-screen bg-gradient-to-br from-white via-blue-50/20 to-brand-blue/5 dark:from-gray-900 dark:via-gray-900 dark:to-gray-900 relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-1/4 left-1/4 w-16 h-16 bg-gradient-to-br from-brand-blue to-blue-600 rounded-full mix-blend-multiply filter blur-2xl opacity-15 animate-pulse"></div>
@@ -578,56 +578,56 @@ const Conteudo = () => {
                 {/* Badge */}
                 <div className="inline-flex items-center gap-2 bg-gradient-to-r from-brand-blue/10 to-brand-blue/5 text-brand-blue px-3 py-1.5 rounded-full text-sm font-semibold mb-4 border border-brand-blue/20">
                   <BookOpen className="h-3 w-3" />
-                  Conteúdo Especializado
+                  {t('hero.badge')}
                 </div>
                 
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-                  Aprenda sobre <span className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">IA</span> com Especialistas
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+                  {t('hero.title')} <span className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">{t('hero.titleHighlight')}</span> {t('hero.titleEnd')}
                 </h1>
-                <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto mb-8">
-                  Acesse <span className="font-bold text-brand-blue">guias práticos</span>, e-books exclusivos e webinars com cases reais de <span className="font-bold text-brand-blue">transformação digital</span>
-                </p>
+                <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8" dangerouslySetInnerHTML={{
+                  __html: t('hero.description').replace(/<span>/g, '<span class="font-bold text-brand-blue">').replace(/<\/span>/g, '</span>')
+                }} />
                 
                 {/* Stats */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto">
-                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-md border border-gray-200/50">
+                  <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 shadow-md border border-gray-200/50 dark:border-gray-700/50">
                     <div className="flex items-center justify-center gap-2 mb-2">
                       <div className="w-8 h-8 bg-gradient-to-br from-brand-blue to-blue-600 rounded-lg flex items-center justify-center">
                         <FileText className="h-4 w-4 text-white" />
                       </div>
-                      <span className="font-bold text-gray-900">{stats.total}+</span>
+                      <span className="font-bold text-gray-900 dark:text-gray-100">{stats.total}+</span>
                     </div>
-                    <p className="text-xs text-gray-600">Conteúdos</p>
+                    <p className="text-xs text-gray-600 dark:text-gray-400">{t('hero.stats.contents')}</p>
                   </div>
                   
-                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-md border border-gray-200/50">
+                  <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 shadow-md border border-gray-200/50 dark:border-gray-700/50">
                     <div className="flex items-center justify-center gap-2 mb-2">
                       <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center">
                         <BookOpen className="h-4 w-4 text-white" />
                       </div>
-                      <span className="font-bold text-gray-900">{stats.ebooks}+</span>
+                      <span className="font-bold text-gray-900 dark:text-gray-100">{stats.ebooks}+</span>
                     </div>
-                    <p className="text-xs text-gray-600">E-books</p>
+                    <p className="text-xs text-gray-600 dark:text-gray-400">{t('hero.stats.ebooks')}</p>
                   </div>
                   
-                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-md border border-gray-200/50">
+                  <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 shadow-md border border-gray-200/50 dark:border-gray-700/50">
                     <div className="flex items-center justify-center gap-2 mb-2">
                       <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-violet-600 rounded-lg flex items-center justify-center">
                         <Play className="h-4 w-4 text-white" />
                       </div>
-                      <span className="font-bold text-gray-900">{stats.videos}+</span>
+                      <span className="font-bold text-gray-900 dark:text-gray-100">{stats.videos}+</span>
                     </div>
-                    <p className="text-xs text-gray-600">Vídeos</p>
+                    <p className="text-xs text-gray-600 dark:text-gray-400">{t('hero.stats.videos')}</p>
                   </div>
 
-                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-md border border-gray-200/50">
+                  <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 shadow-md border border-gray-200/50 dark:border-gray-700/50">
                     <div className="flex items-center justify-center gap-2 mb-2">
                       <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-600 rounded-lg flex items-center justify-center">
                         <Calculator className="h-4 w-4 text-white" />
                       </div>
-                      <span className="font-bold text-gray-900">{stats.calculadoras}+</span>
+                      <span className="font-bold text-gray-900 dark:text-gray-100">{stats.calculadoras}+</span>
                     </div>
-                    <p className="text-xs text-gray-600">Ferramentas</p>
+                    <p className="text-xs text-gray-600 dark:text-gray-400">{t('hero.stats.tools')}</p>
                   </div>
                 </div>
               </div>
@@ -638,15 +638,15 @@ const Conteudo = () => {
           <section className="py-8">
             <div className="container mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
               <div className="text-center mb-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  Filtre por Categoria
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">
+                  {t('filters.title')}
             </h3>
-                <p className="text-sm text-gray-600">
-                  Mostrando <span className="font-semibold text-brand-blue">{filteredContent.length}</span> de <span className="font-semibold text-gray-900">{contentData.length}</span> conteúdos
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  {t('filters.showing')} <span className="font-semibold text-brand-blue">{filteredContent.length}</span> {t('filters.of')} <span className="font-semibold text-gray-900 dark:text-gray-100">{contentData.length}</span> {t('filters.contents')}
                   {selectedCategory !== 'all' && (
                     <span className="ml-2">
-                      em <span className="font-semibold text-brand-blue">
-                        {contentCategories.find(c => c.id === selectedCategory)?.name}
+                      {t('filters.in')} <span className="font-semibold text-brand-blue">
+                        {t(`categories.${selectedCategory}`)}
                       </span>
                     </span>
                   )}
@@ -661,13 +661,13 @@ const Conteudo = () => {
                     className={`flex items-center gap-2 px-3 py-2 sm:px-4 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 ${
                       selectedCategory === category.id
                         ? 'bg-gradient-to-r from-brand-blue to-blue-600 text-white shadow-md scale-105'
-                        : 'bg-white/80 backdrop-blur-sm text-gray-700 hover:bg-brand-blue/10 hover:text-brand-blue border border-gray-200/50 hover:scale-105'
+                        : 'bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm text-gray-700 dark:text-gray-300 hover:bg-brand-blue/10 dark:hover:bg-brand-blue/20 hover:text-brand-blue border border-gray-200/50 dark:border-gray-700/50 hover:scale-105'
                     }`}
                   >
                     <category.icon className="h-3 w-3 sm:h-4 sm:w-4" />
-                    <span className="hidden sm:inline">{category.name}</span>
+                    <span className="hidden sm:inline">{t(`categories.${category.id}`)}</span>
                     <span className="sm:hidden">
-                      {category.name.split(' ')[0]}
+                      {t(`categories.${category.id}`).split(' ')[0]}
                     </span>
                     {category.id !== 'all' && (
                       <span className="ml-1 text-xs opacity-75 bg-white/20 px-1.5 py-0.5 rounded-full">
@@ -694,8 +694,8 @@ const Conteudo = () => {
                     
                     {/* Texto de carregamento */}
                     <div className="text-center">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-2">Carregando Conteúdo</h3>
-                      <p className="text-sm text-gray-600 mb-4">Buscando artigos, vídeos e e-books especializados...</p>
+                      <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">{t('loading.title')}</h3>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">{t('loading.description')}</p>
                       
                       {/* Indicador de progresso animado */}
                       <div className="flex justify-center space-x-1">
@@ -710,25 +710,25 @@ const Conteudo = () => {
                 <div className="text-center py-12">
                   <div className="text-red-500 mb-4">
                     <FileText className="h-12 w-12 mx-auto mb-2" />
-                    <p className="text-lg font-semibold">Erro ao carregar conteúdo</p>
-                    <p className="text-sm text-gray-600 mt-2">{error}</p>
+                    <p className="text-lg font-semibold">{t('error.title')}</p>
+                    <p className="text-sm text-gray-600 mt-2">{error || t('error.description')}</p>
                   </div>
                   <Button 
                     onClick={loadAllContent}
                     className="bg-gradient-to-r from-brand-blue to-blue-600 hover:from-blue-600 hover:to-brand-blue text-white"
                   >
-                    Tentar Novamente
+                    {t('error.button')}
                   </Button>
                 </div>
               ) : filteredContent.length === 0 ? (
                 <div className="text-center py-12">
                   <div className="text-gray-500 mb-4">
                     <FileText className="h-12 w-12 mx-auto mb-2" />
-                    <p className="text-lg font-semibold">Nenhum conteúdo encontrado</p>
+                    <p className="text-lg font-semibold">{t('empty.title')}</p>
                     <p className="text-sm text-gray-600 mt-2">
                       {selectedCategory === 'all' 
-                        ? 'Não há conteúdo disponível no momento.' 
-                        : `Não há conteúdo na categoria "${contentCategories.find(c => c.id === selectedCategory)?.name}".`
+                        ? t('empty.description1')
+                        : t('empty.description2', { category: t(`categories.${selectedCategory}`) })
                       }
                     </p>
                   </div>
@@ -788,13 +788,13 @@ const Conteudo = () => {
                       </div>
                     </div>
                     
-                    <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-brand-blue transition-colors leading-tight">
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3 group-hover:text-brand-blue transition-colors leading-tight">
                       {content.title}
                     </h3>
                     
                     {/* Descrição para e-books */}
                     {content.type === 'ebook' && content.description && (
-                      <p className="text-sm text-gray-600 mb-4 leading-relaxed line-clamp-2">
+                      <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 leading-relaxed line-clamp-2">
                         {content.description}
                       </p>
                     )}
@@ -802,11 +802,11 @@ const Conteudo = () => {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center text-brand-blue text-sm font-medium group-hover:gap-2 transition-all">
                         <span>
-                          {content.type === 'ebook' || content.type === 'template' || content.type === 'checklist' ? 'Download' :
-                           content.type === 'video' || content.type === 'webinar' ? 'Assistir' :
-                           content.type === 'calculadora' ? 'Usar' :
-                           content.type === 'curso' ? 'Iniciar' :
-                           'Acessar'}
+                          {content.type === 'ebook' || content.type === 'template' || content.type === 'checklist' ? t('actions.download') :
+                           content.type === 'video' || content.type === 'webinar' ? t('actions.watch') :
+                           content.type === 'calculadora' ? t('actions.use') :
+                           content.type === 'curso' ? t('actions.start') :
+                           t('actions.access')}
                         </span>
                         <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
                       </div>
@@ -824,17 +824,17 @@ const Conteudo = () => {
                         {content.type === 'guia' && <Lightbulb className="h-3 w-3" />}
                         {content.type === 'artigo' && <FileText className="h-3 w-3" />}
                         <span>
-                          {content.type === 'ebook' ? 'PDF' :
-                           content.type === 'video' ? 'Vídeo' :
-                           content.type === 'webinar' ? 'Webinar' :
-                           content.type === 'template' ? 'Template' :
-                           content.type === 'checklist' ? 'Checklist' :
-                           content.type === 'calculadora' ? 'Calculadora' :
-                           content.type === 'curso' ? 'Curso' :
-                           content.type === 'case' ? 'Case' :
-                           content.type === 'infografico' ? 'Infográfico' :
-                           content.type === 'guia' ? 'Guia' :
-                           'Artigo'}
+                          {content.type === 'ebook' ? t('contentTypes.pdf') :
+                           content.type === 'video' ? t('contentTypes.video') :
+                           content.type === 'webinar' ? t('contentTypes.webinar') :
+                           content.type === 'template' ? t('contentTypes.template') :
+                           content.type === 'checklist' ? t('contentTypes.checklist') :
+                           content.type === 'calculadora' ? t('contentTypes.calculator') :
+                           content.type === 'curso' ? t('contentTypes.course') :
+                           content.type === 'case' ? t('contentTypes.case') :
+                           content.type === 'infografico' ? t('contentTypes.infographic') :
+                           content.type === 'guia' ? t('contentTypes.guide') :
+                           t('contentTypes.article')}
                         </span>
                       </div>
                     </div>
@@ -852,12 +852,8 @@ const Conteudo = () => {
                     onClick={() => setShowAll(!showAll)}
                     className="bg-gradient-to-r from-brand-blue to-blue-600 hover:from-blue-600 hover:to-brand-blue text-white px-8 py-3"
                   >
-                    {showAll ? 'Mostrar Menos' : 
-                      selectedCategory === 'artigos' ? 
-                        `Mostrar Mais (${contentData.filter(c => c.type === 'artigo').length - 3} restantes)` :
-                      selectedCategory === 'ebooks' ? 
-                        `Mostrar Mais (${contentData.filter(c => c.type === 'ebook').length - 3} restantes)` :
-                        `Mostrar Mais (${contentData.filter(c => c.type === 'video').length - 3} restantes)`
+                    {showAll ? t('actions.viewLess') : 
+                      `${t('actions.viewMore')} (${selectedCategory === 'artigos' ? contentData.filter(c => c.type === 'artigo').length - 3 : selectedCategory === 'ebooks' ? contentData.filter(c => c.type === 'ebook').length - 3 : contentData.filter(c => c.type === 'video').length - 3} ${t('actions.remaining')})`
                     }
                   </Button>
                 </div>
@@ -866,49 +862,49 @@ const Conteudo = () => {
           </section>
 
           {/* Newsletter Section */}
-          <section className="py-16 bg-gradient-to-r from-gray-50 to-blue-50/30">
+          <section className="py-16 bg-gradient-to-r from-gray-50 to-blue-50/30 dark:from-gray-900 dark:to-gray-900">
             <div className="container mx-auto max-w-4xl px-4 sm:px-6 md:px-8 text-center">
-              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-gray-200/50">
+              <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-gray-200/50 dark:border-gray-700/50">
                 <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500/10 to-violet-500/5 text-purple-600 px-3 py-1.5 rounded-full text-sm font-semibold mb-4 border border-purple-500/20">
                   <Calendar className="h-3 w-3" />
-                  Newsletter Semanal
+                  {t('newsletterSection.badge')}
                 </div>
                 
-                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-                  Receba conteúdo <span className="bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 bg-clip-text text-transparent">exclusivo</span>
-                </h2>
-                <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-                  Toda semana enviamos <span className="font-bold text-brand-blue">insights</span>, <span className="font-bold text-brand-blue">cases</span> e <span className="font-bold text-brand-blue">novidades</span> sobre IA direto no seu e-mail
-                </p>
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4" dangerouslySetInnerHTML={{
+                  __html: t('newsletterSection.title').replace(/<span>/g, '<span class="bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 bg-clip-text text-transparent">').replace(/<\/span>/g, '</span>')
+                }} />
+                <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto" dangerouslySetInnerHTML={{
+                  __html: t('newsletterSection.subtitle').replace(/<span>/g, '<span class="font-bold text-brand-blue">').replace(/<\/span>/g, '</span>')
+                }} />
                 
                 <div className="flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto mb-6">
                   <input
                     type="email"
-                    placeholder="Seu melhor e-mail"
-                    className="flex-1 px-4 py-3 rounded-xl border border-gray-300 focus:border-brand-blue focus:ring-brand-blue focus:outline-none"
+                    placeholder={t('newsletterSection.placeholder')}
+                    className="flex-1 px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-brand-blue focus:ring-brand-blue focus:outline-none"
                   />
                   <Button 
                     className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-600 text-white font-semibold py-3 px-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
                   >
                     <div className="flex items-center gap-2">
                       <Calendar className="h-4 w-4" />
-                      Assinar Grátis
+                      {t('newsletterSection.button')}
                     </div>
                   </Button>
                 </div>
                 
-                <div className="flex flex-wrap justify-center items-center gap-4 text-xs text-gray-500">
+                <div className="flex flex-wrap justify-center items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
                   <div className="flex items-center gap-1">
                     <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span>✓ 100% gratuito</span>
+                    <span>{t('newsletterSection.benefits.free')}</span>
                   </div>
                   <div className="flex items-center gap-1">
                     <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                    <span>✓ Sem spam</span>
+                    <span>{t('newsletterSection.benefits.noSpam')}</span>
                   </div>
                   <div className="flex items-center gap-1">
                     <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                    <span>✓ Cancele quando quiser</span>
+                    <span>{t('newsletterSection.benefits.cancel')}</span>
                   </div>
                 </div>
               </div>
@@ -918,18 +914,18 @@ const Conteudo = () => {
           {/* CTA Section */}
           <section className="py-16">
             <div className="container mx-auto max-w-4xl px-4 sm:px-6 md:px-8 text-center">
-              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-gray-200/50">
+              <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-gray-200/50 dark:border-gray-700/50">
                 <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500/10 to-emerald-500/5 text-green-600 px-3 py-1.5 rounded-full text-sm font-semibold mb-4 border border-green-500/20">
                   <CheckCircle className="h-3 w-3" />
-                  Consultoria Especializada
+                  {t('ctaSection.badge')}
                 </div>
                 
-                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-                  Pronto para <span className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">implementar</span>?
-                </h2>
-                <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-                  Nossa equipe pode ajudar você a <span className="font-bold text-brand-blue">aplicar</span> todo esse conhecimento na sua empresa com resultados garantidos
-                </p>
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4" dangerouslySetInnerHTML={{
+                  __html: t('ctaSection.title').replace(/<span>/g, '<span class="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">').replace(/<\/span>/g, '</span>')
+                }} />
+                <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto" dangerouslySetInnerHTML={{
+                  __html: t('ctaSection.subtitle').replace(/<span>/g, '<span class="font-bold text-brand-blue">').replace(/<\/span>/g, '</span>')
+                }} />
                 
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
                   <Button 
@@ -938,7 +934,7 @@ const Conteudo = () => {
                   >
                     <div className="flex items-center gap-2">
                       <Users className="h-4 w-4" />
-                      Falar com Especialista
+                      {t('ctaSection.button1')}
                       <ArrowRight className="h-4 w-4" />
                     </div>
                   </Button>
@@ -950,7 +946,7 @@ const Conteudo = () => {
                   >
                     <div className="flex items-center gap-2">
                       <CheckCircle className="h-4 w-4" />
-                      Diagnóstico Gratuito
+                      {t('ctaSection.button2')}
                     </div>
                   </Button>
                 </div>
@@ -958,15 +954,15 @@ const Conteudo = () => {
                 <div className="flex flex-wrap justify-center items-center gap-4 mt-6 text-xs text-gray-500">
                   <div className="flex items-center gap-1">
                     <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span>✓ Consultoria gratuita</span>
+                    <span>{t('ctaSection.benefits.free')}</span>
                   </div>
                   <div className="flex items-center gap-1">
                     <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                    <span>✓ Resposta em 24h</span>
+                    <span>{t('ctaSection.benefits.response')}</span>
                   </div>
                   <div className="flex items-center gap-1">
                     <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                    <span>✓ Sem compromisso</span>
+                    <span>{t('ctaSection.benefits.noCommitment')}</span>
                   </div>
                 </div>
               </div>
@@ -982,7 +978,7 @@ const Conteudo = () => {
           onClick={closeVideoModal}
         >
           <div 
-            className="relative w-full max-w-6xl bg-white rounded-2xl overflow-hidden shadow-2xl"
+            className="relative w-full max-w-6xl bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header do Modal */}
@@ -992,8 +988,8 @@ const Conteudo = () => {
                   <Play className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-white text-lg">onsmarttech</h3>
-                  <p className="text-white/80 text-sm">Canal Oficial</p>
+                  <h3 className="font-bold text-white text-lg">{t('videoModal.channel')}</h3>
+                  <p className="text-white/80 text-sm">{t('videoModal.official')}</p>
                 </div>
               </div>
               <button
@@ -1019,19 +1015,19 @@ const Conteudo = () => {
             </div>
 
             {/* Informações do Vídeo */}
-            <div className="p-6 bg-gray-50">
-              <h4 className="font-bold text-gray-900 text-lg mb-2 line-clamp-2">{selectedVideo.title}</h4>
-              <p className="text-gray-600 text-sm mb-4 line-clamp-3">{selectedVideo.description}</p>
+            <div className="p-6 bg-gray-50 dark:bg-gray-900">
+              <h4 className="font-bold text-gray-900 dark:text-gray-100 text-lg mb-2 line-clamp-2">{selectedVideo.title}</h4>
+              <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-3">{selectedVideo.description}</p>
               
               {/* Footer do Modal */}
-              <div className="flex items-center justify-between pt-4 border-t border-gray-200">
+              <div className="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center">
                     <Play className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900">onsmarttech</p>
-                    <p className="text-xs text-gray-500">Canal Oficial</p>
+                    <p className="font-semibold text-gray-900 dark:text-gray-100">{t('videoModal.channel')}</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">{t('videoModal.official')}</p>
                   </div>
                 </div>
                 <button
@@ -1039,7 +1035,7 @@ const Conteudo = () => {
                   className="px-6 py-2 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-lg transition-colors flex items-center space-x-2"
                 >
                   <Play className="w-4 h-4" />
-                  <span>Assistir no YouTube</span>
+                  <span>{t('videoModal.watchOnYouTube')}</span>
                 </button>
               </div>
             </div>

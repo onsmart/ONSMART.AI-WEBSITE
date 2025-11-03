@@ -50,7 +50,7 @@ export default function NossosProdutos() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:bg-gray-900">
       {/* Hero Section */}
       <section className="relative py-24 md:py-32 overflow-hidden hero-pattern-bg -mt-8">
         {/* Background Image */}
@@ -99,11 +99,11 @@ export default function NossosProdutos() {
       </section>
 
       {/* Categories Section */}
-      <section className="py-16 px-4 bg-white">
+      <section className="py-16 px-4 bg-white dark:bg-gray-900">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('categories.title')}</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">{t('categories.title')}</h2>
+            <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               {t('categories.subtitle')}
             </p>
           </div>
@@ -112,13 +112,13 @@ export default function NossosProdutos() {
             {Object.keys(categoriesIcons).map((categoryId) => {
               const IconComponent = categoriesIcons[categoryId as keyof typeof categoriesIcons];
               return (
-                <div key={categoryId} className="group p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all duration-300 cursor-pointer">
+                <div key={categoryId} className="group p-6 bg-gray-50 dark:bg-gray-800 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300 cursor-pointer">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-12 h-12 bg-brand-blue rounded-lg flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform duration-300">
                       <IconComponent className="h-6 w-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900 group-hover:text-brand-blue transition-colors">
+                      <h3 className="font-semibold text-gray-900 dark:text-gray-100 group-hover:text-brand-blue transition-colors">
                         {t(`categoryNames.${categoryId}`)}
                       </h3>
                     </div>
@@ -141,20 +141,20 @@ export default function NossosProdutos() {
               const IconComponent = produto.icon;
               const productData = t(`products.${produto.id}`, { returnObjects: true }) as any;
               return (
-                <Card key={produto.id} className="hover:shadow-xl transition-all duration-300 group border-2 hover:border-brand-blue/30">
+                <Card key={produto.id} className="hover:shadow-xl transition-all duration-300 group border-2 hover:border-brand-blue/30 bg-white dark:bg-gray-800">
                   <CardHeader className="pb-4">
                     <div className="flex items-center gap-4 mb-4">
                       <div className="w-12 h-12 bg-brand-blue rounded-lg flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform duration-300">
                         <IconComponent className="h-6 w-6 text-white" />
                       </div>
                       <div className="flex-1">
-                        <CardTitle className="text-xl group-hover:text-brand-blue transition-colors">
+                        <CardTitle className="text-xl dark:text-gray-100 group-hover:text-brand-blue transition-colors">
                           {productData.name}
                         </CardTitle>
                         <Badge variant="outline" className="mt-1">{productData.category}</Badge>
                       </div>
                     </div>
-                    <CardDescription className="text-gray-600 leading-relaxed">
+                    <CardDescription className="text-gray-600 dark:text-gray-300 leading-relaxed">
                       {productData.description}
                     </CardDescription>
                   </CardHeader>
@@ -162,12 +162,12 @@ export default function NossosProdutos() {
                   <CardContent className="space-y-6">
                     {/* Features */}
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-3">{t('features.title')}</h4>
+                      <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-3">{t('features.title')}</h4>
                       <ul className="space-y-2">
                         {productData.features.map((feature: string, idx: number) => (
                           <li key={idx} className="flex items-start gap-2">
                             <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                            <span className="text-sm text-gray-600">{feature}</span>
+                            <span className="text-sm text-gray-600 dark:text-gray-300">{feature}</span>
                           </li>
                         ))}
                       </ul>
@@ -175,12 +175,12 @@ export default function NossosProdutos() {
 
                     {/* Benefits */}
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-3">{t('features.titleBenefits')}</h4>
+                      <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-3">{t('features.titleBenefits')}</h4>
                       <ul className="space-y-2">
                         {productData.benefits.map((benefit: string, idx: number) => (
                           <li key={idx} className="flex items-start gap-2">
                             <Zap className="w-4 h-4 text-brand-blue mt-0.5 flex-shrink-0" />
-                            <span className="text-sm text-gray-600">{benefit}</span>
+                            <span className="text-sm text-gray-600 dark:text-gray-300">{benefit}</span>
                           </li>
                         ))}
                       </ul>
@@ -190,7 +190,7 @@ export default function NossosProdutos() {
                     <div className="pt-4 border-t border-gray-200">
                       <div className="flex items-center justify-between mb-4">
                         <div>
-                          <div className="text-sm text-gray-500">{t('price.from')}</div>
+                          <div className="text-sm text-gray-500 dark:text-gray-400">{t('price.from')}</div>
                           <div className="text-lg font-bold text-brand-blue">{productData.price}</div>
                         </div>
                       </div>
@@ -221,11 +221,11 @@ export default function NossosProdutos() {
       </section>
 
       {/* Why Choose Our Products */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('whyChoose.title')}</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">{t('whyChoose.title')}</h2>
+            <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               {t('whyChoose.subtitle')}
             </p>
           </div>
@@ -235,32 +235,32 @@ export default function NossosProdutos() {
               <div className="w-16 h-16 bg-brand-blue rounded-full flex items-center justify-center mx-auto mb-4">
                 <Cpu className="h-8 w-8 text-white" />
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2">{t('benefits.national.title')}</h3>
-              <p className="text-gray-600 text-sm">{t('benefits.national.description')}</p>
+              <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">{t('benefits.national.title')}</h3>
+              <p className="text-gray-600 dark:text-gray-300 text-sm">{t('benefits.national.description')}</p>
             </div>
             
             <div className="text-center">
               <div className="w-16 h-16 bg-brand-blue rounded-full flex items-center justify-center mx-auto mb-4">
                 <Shield className="h-8 w-8 text-white" />
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2">{t('benefits.security.title')}</h3>
-              <p className="text-gray-600 text-sm">{t('benefits.security.description')}</p>
+              <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">{t('benefits.security.title')}</h3>
+              <p className="text-gray-600 dark:text-gray-300 text-sm">{t('benefits.security.description')}</p>
             </div>
             
             <div className="text-center">
               <div className="w-16 h-16 bg-brand-blue rounded-full flex items-center justify-center mx-auto mb-4">
                 <Zap className="h-8 w-8 text-white" />
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2">{t('benefits.implementation.title')}</h3>
-              <p className="text-gray-600 text-sm">{t('benefits.implementation.description')}</p>
+              <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">{t('benefits.implementation.title')}</h3>
+              <p className="text-gray-600 dark:text-gray-300 text-sm">{t('benefits.implementation.description')}</p>
             </div>
             
             <div className="text-center">
               <div className="w-16 h-16 bg-brand-blue rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="h-8 w-8 text-white" />
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2">{t('benefits.support.title')}</h3>
-              <p className="text-gray-600 text-sm">{t('benefits.support.description')}</p>
+              <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">{t('benefits.support.title')}</h3>
+              <p className="text-gray-600 dark:text-gray-300 text-sm">{t('benefits.support.description')}</p>
             </div>
           </div>
         </div>
@@ -273,29 +273,29 @@ export default function NossosProdutos() {
             <Clock className="h-4 w-4" />
             {t('cta.badge')}
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-gray-100">
             {t('cta.title')}
           </h2>
-          <p className="text-xl mb-8 text-gray-600">
+          <p className="text-xl mb-8 text-gray-600 dark:text-gray-300">
             {t('cta.description')}
           </p>
           
           {/* Social proof cards */}
           <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto mb-8">
-            <div className="bg-white/90 backdrop-blur-sm rounded-lg p-4 shadow-lg border border-brand-blue/20">
+            <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg p-4 shadow-lg border border-brand-blue/20 dark:border-gray-700">
               <Star className="h-6 w-6 text-yellow-500 mx-auto mb-2" />
               <div className="text-2xl font-bold text-brand-blue">650%</div>
-              <div className="text-xs text-gray-600">{t('cta.stats.roi')}</div>
+              <div className="text-xs text-gray-600 dark:text-gray-300">{t('cta.stats.roi')}</div>
             </div>
-            <div className="bg-white/90 backdrop-blur-sm rounded-lg p-4 shadow-lg border border-brand-blue/20">
+            <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg p-4 shadow-lg border border-brand-blue/20 dark:border-gray-700">
               <Shield className="h-6 w-6 text-green-500 mx-auto mb-2" />
               <div className="text-2xl font-bold text-brand-blue">90 dias</div>
-              <div className="text-xs text-gray-600">{t('cta.stats.guarantee')}</div>
+              <div className="text-xs text-gray-600 dark:text-gray-300">{t('cta.stats.guarantee')}</div>
             </div>
-            <div className="bg-white/90 backdrop-blur-sm rounded-lg p-4 shadow-lg border border-brand-blue/20">
+            <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg p-4 shadow-lg border border-brand-blue/20 dark:border-gray-700">
               <Clock className="h-6 w-6 text-blue-500 mx-auto mb-2" />
               <div className="text-2xl font-bold text-brand-blue">30 dias</div>
-              <div className="text-xs text-gray-600">{t('cta.stats.implementation')}</div>
+              <div className="text-xs text-gray-600 dark:text-gray-300">{t('cta.stats.implementation')}</div>
             </div>
           </div>
           
@@ -315,7 +315,7 @@ export default function NossosProdutos() {
           </div>
           
           {/* Benefits */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center text-sm text-gray-600">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center text-sm text-gray-600 dark:text-gray-300">
             <div className="flex items-center">
               <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
               <span>{t('cta.benefits.freeSetup')}</span>

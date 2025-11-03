@@ -37,7 +37,7 @@
     }
   },
   "buttons": {
-    "learnMore": "Saiba Mais",
+    "learnMore": "Saiba mais",
     "requestQuote": "Solicitar Orçamento",
     "freeDiagnostic": "Diagnóstico Gratuito"
   },
@@ -51,5 +51,364 @@
     "telecomAnalytics": "Análise de Telecomunicações",
     "industrialEfficiency": "Eficiência Industrial",
     "sectorResults": "Resultados do Setor"
+  },
+  "stats": {
+    "sectors": {
+      "value": "8 Setores",
+      "description": "Soluções especializadas"
+    },
+    "roi": {
+      "value": "420% ROI",
+      "description": "Retorno médio comprovado"
+    },
+    "companies": {
+      "value": "350+ Empresas",
+      "description": "Clientes transformados"
+    }
+  },
+  "guarantees": {
+    "consulting": "✓ Consultoria gratuita",
+    "responseTime": "✓ Resposta em 24h",
+    "noCommitment": "✓ Sem compromisso"
+  },
+  "sectors": {
+    "advocacia": {
+      "name": "Advocacia",
+      "description": "Automatize processos jurídicos e otimize atendimento com IA especializada em direito",
+      "heroTitle": "Modernize Seu Escritório de Advocacia com IA",
+      "heroSubtitle": "Automatize pesquisas jurídicas, geração de petições e atendimento ao cliente com nossa solução especializada para advogados",
+      "solutions": {
+        "assistente": {
+          "title": "Assistente de Pesquisa Jurídica",
+          "description": "IA que realiza pesquisas automatizadas em jurisprudências e doutrinas",
+          "benefits": [
+            "Redução de 80% no tempo de pesquisa",
+            "Acesso a base completa de jurisprudências",
+            "Sugestões automáticas de argumentos jurídicos"
+          ]
+        },
+        "gerador": {
+          "title": "Gerador de Petições Inteligente",
+          "description": "Sistema que cria petições personalizadas baseado em modelos e contexto",
+          "benefits": [
+            "Criação de petições em minutos",
+            "Padronização e qualidade garantida",
+            "Biblioteca de modelos sempre atualizada"
+          ]
+        },
+        "prazos": {
+          "title": "Controle de Prazos Automatizado",
+          "description": "Monitoramento inteligente de todos os prazos processuais com alertas",
+          "benefits": [
+            "Zero perda de prazos processuais",
+            "Alertas automáticos personalizados",
+            "Sincronização com tribunais eletrônicos"
+          ]
+        }
+      }
+    },
+    "bancos": {
+      "name": "Bancos",
+      "description": "Revolucione atendimento bancário e análise de crédito com IA avançada",
+      "heroTitle": "Transforme Seu Banco com IA de Nova Geração",
+      "heroSubtitle": "Automatize análise de crédito, atendimento ao cliente e detecção de fraudes com nossa solução bancária avançada",
+      "solutions": {
+        "credito": {
+          "title": "IA de Análise de Crédito",
+          "description": "Sistema inteligente que avalia risco e aprova crédito em tempo real",
+          "benefits": [
+            "Aprovação de crédito em menos de 5 minutos",
+            "Redução de 60% na inadimplência",
+            "Análise de 200+ variáveis automaticamente"
+          ]
+        },
+        "assistente": {
+          "title": "Assistente Bancário Virtual",
+          "description": "Chatbot especializado que resolve 90% das demandas bancárias",
+          "benefits": [
+            "Atendimento 24/7 para todos os clientes",
+            "Resolução instantânea de consultas básicas",
+            "Redução de 70% na fila de atendimento humano"
+          ]
+        },
+        "antifraude": {
+          "title": "Sistema Antifraude Inteligente",
+          "description": "IA que detecta e previne fraudes em tempo real",
+          "benefits": [
+            "Detecção de fraudes com 99.5% de precisão",
+            "Redução de 80% em perdas financeiras",
+            "Bloqueio automático de transações suspeitas"
+          ]
+        }
+      }
+    },
+    "telecomunicacoes": {
+      "name": "Telecomunicações",
+      "description": "Otimize redes e atendimento com IA especializada em telecomunicações",
+      "heroTitle": "Revolucione Suas Telecomunicações com IA",
+      "heroSubtitle": "Otimize redes, automatize suporte técnico e melhore experiência do cliente com nossa IA especializada",
+      "solutions": {
+        "suporte": {
+          "title": "Assistente de Suporte Técnico",
+          "description": "IA que resolve automaticamente 80% dos problemas técnicos comuns",
+          "benefits": [
+            "Resolução instantânea de problemas básicos",
+            "Redução de 75% em chamados para suporte humano",
+            "Diagnóstico automático de problemas de rede"
+          ]
+        },
+        "otimizador": {
+          "title": "Otimizador de Rede Inteligente",
+          "description": "Sistema que monitora e otimiza performance da rede em tempo real",
+          "benefits": [
+            "Melhoria de 40% na qualidade do sinal",
+            "Redução de 60% em interrupções de serviço",
+            "Otimização automática baseada em demanda"
+          ]
+        },
+        "preditor": {
+          "title": "Preditor de Falhas",
+          "description": "IA que identifica e previne falhas antes que afetem os clientes",
+          "benefits": [
+            "Prevenção de 85% das falhas de rede",
+            "Manutenção preditiva automatizada",
+            "Redução de 70% no tempo de inatividade"
+          ]
+        }
+      }
+    },
+    "varejo": {
+      "name": "Varejo",
+      "description": "Maximize vendas e experiência do cliente com IA personalizada para varejo",
+      "heroTitle": "Transforme Seu Varejo com IA Personalizada",
+      "heroSubtitle": "Aumente conversões, otimize estoque e personalize experiências com nossa solução completa para varejo",
+      "solutions": {
+        "personalizador": {
+          "title": "Personalizador de Experiência",
+          "description": "IA que cria experiências únicas para cada cliente baseado em comportamento",
+          "benefits": [
+            "Aumento de 200% na conversão",
+            "Personalização em tempo real",
+            "Recomendações com 95% de precisão"
+          ]
+        },
+        "precos": {
+          "title": "Otimizador de Preços Dinâmico",
+          "description": "Sistema que ajusta preços automaticamente para maximizar vendas e lucro",
+          "benefits": [
+            "Aumento de 35% na margem de lucro",
+            "Preços competitivos automaticamente",
+            "Otimização baseada em demanda real"
+          ]
+        },
+        "comportamento": {
+          "title": "Analista de Comportamento",
+          "description": "IA que mapeia jornada do cliente e identifica oportunidades de venda",
+          "benefits": [
+            "Insights profundos sobre clientes",
+            "Identificação de padrões de compra",
+            "Campanhas 300% mais efetivas"
+          ]
+        }
+      }
+    },
+    "industria": {
+      "name": "Indústria",
+      "description": "Otimize produção e manutenção industrial com IA avançada",
+      "heroTitle": "Revolucione Sua Indústria com IA 4.0",
+      "heroSubtitle": "Automatize processos, previna falhas e otimize produção com nossa solução industrial inteligente",
+      "solutions": {
+        "manutencao": {
+          "title": "Manutenção Preditiva IA",
+          "description": "Sistema que prevê falhas de equipamentos antes que aconteçam",
+          "benefits": [
+            "Redução de 70% em paradas não programadas",
+            "Economia de 40% em custos de manutenção",
+            "Aumento de 25% na vida útil dos equipamentos"
+          ]
+        },
+        "qualidade": {
+          "title": "Controle de Qualidade Automático",
+          "description": "IA que detecta defeitos e anomalias em tempo real",
+          "benefits": [
+            "Detecção de 99.8% dos defeitos",
+            "Redução de 90% em produtos rejeitados",
+            "Controle de qualidade 24/7"
+          ]
+        },
+        "producao": {
+          "title": "Otimizador de Produção",
+          "description": "Sistema que maximiza eficiência e minimiza desperdícios",
+          "benefits": [
+            "Aumento de 30% na produtividade",
+            "Redução de 25% no consumo de energia",
+            "Otimização automática de recursos"
+          ]
+        }
+      }
+    },
+    "saude": {
+      "name": "Saúde",
+      "description": "Transforme o sistema de saúde com IA especializada em medicina",
+      "heroTitle": "Revolucione o Sistema de Saúde com IA Médica",
+      "heroSubtitle": "Automatize diagnósticos, otimize tratamentos e melhore resultados com nossa IA especializada em saúde",
+      "solutions": {
+        "diagnostico": {
+          "title": "IA de Diagnóstico Médico",
+          "description": "Sistema que auxilia médicos em diagnósticos precisos e rápidos",
+          "benefits": [
+            "Aumento de 40% na precisão diagnóstica",
+            "Redução de 60% no tempo de diagnóstico",
+            "Detecção precoce de doenças críticas"
+          ]
+        },
+        "exames": {
+          "title": "Analisador de Exames Inteligente",
+          "description": "IA que interpreta exames médicos e sugere diagnósticos",
+          "benefits": [
+            "Análise de exames em minutos",
+            "Identificação de 99% das anomalias",
+            "Relatórios médicos automatizados"
+          ]
+        },
+        "medicina": {
+          "title": "Sistema de Medicina Personalizada",
+          "description": "IA que personaliza tratamentos baseado no perfil genético do paciente",
+          "benefits": [
+            "Tratamentos 70% mais eficazes",
+            "Redução de 50% em efeitos colaterais",
+            "Medicina de precisão para cada paciente"
+          ]
+        }
+      }
+    },
+    "comercio": {
+      "name": "Comércio",
+      "description": "Otimize vendas, estoque e atendimento ao cliente com IA personalizada",
+      "heroTitle": "Transforme Seu Comércio com IA Inteligente",
+      "heroSubtitle": "Automatize vendas, otimize estoque e melhore o atendimento ao cliente com soluções de IA especializadas para o comércio",
+      "solutions": {
+        "estoque": {
+          "title": "Gestão Inteligente de Estoque",
+          "description": "IA que prevê demanda e otimiza níveis de estoque automaticamente",
+          "benefits": [
+            "Redução de 40% no custo de estoque",
+            "Previsão de demanda com 90% de precisão",
+            "Automação completa de reposição"
+          ]
+        },
+        "vendas": {
+          "title": "Assistente de Vendas Virtual",
+          "description": "IA que atende clientes e realiza vendas 24/7",
+          "benefits": [
+            "Atendimento disponível 24 horas",
+            "Aumento de 60% nas vendas",
+            "Qualificação automática de leads"
+          ]
+        },
+        "analise": {
+          "title": "Análise Preditiva de Vendas",
+          "description": "Sistema que analisa padrões e prevê tendências de vendas",
+          "benefits": [
+            "Previsão de vendas com 85% de precisão",
+            "Identificação de oportunidades",
+            "Otimização de campanhas de marketing"
+          ]
+        }
+      }
+    },
+    "setor-imobiliario": {
+      "name": "Setor Imobiliário",
+      "description": "Gestão inteligente de propriedades, leads e documentação imobiliária",
+      "heroTitle": "Revolucione o Setor Imobiliário com IA",
+      "heroSubtitle": "Automatize gestão de propriedades, qualifique leads e otimize processos com IA especializada em imóveis",
+      "solutions": {
+        "propriedades": {
+          "title": "Gestão Inteligente de Propriedades",
+          "description": "IA que gerencia inventário e otimiza apresentações de imóveis",
+          "benefits": [
+            "Gestão automatizada de 1000+ propriedades",
+            "Apresentações personalizadas por cliente",
+            "Otimização de preços baseada em mercado"
+          ]
+        },
+        "leads": {
+          "title": "Qualificação Automática de Leads",
+          "description": "Sistema que qualifica e segmenta clientes automaticamente",
+          "benefits": [
+            "Qualificação de leads em tempo real",
+            "Segmentação automática por perfil",
+            "Aumento de 70% na conversão"
+          ]
+        },
+        "mercado": {
+          "title": "Análise Preditiva de Mercado",
+          "description": "IA que analisa tendências e prevê valores de mercado",
+          "benefits": [
+            "Análise de mercado em tempo real",
+            "Previsão de valores com 90% de precisão",
+            "Insights estratégicos para investimentos"
+          ]
+        }
+      }
+    }
+  },
+  "dynamic": {
+    "whatsIncluded": {
+      "title": "O que está incluído",
+      "subtitle": "Tudo o que você precisa para transformar o setor de {{sector}}"
+    },
+    "howItWorks": {
+      "title": "Como Funciona",
+      "subtitle": "Processo estruturado para garantir resultados no setor de {{sector}}",
+      "steps": {
+        "analise": {
+          "title": "Análise Inicial",
+          "description": "Avaliamos seus processos atuais e identificamos oportunidades de melhoria"
+        },
+        "implementacao": {
+          "title": "Implementação",
+          "description": "Desenvolvemos e implementamos soluções de IA personalizadas para seu setor"
+        },
+        "otimizacao": {
+          "title": "Otimização",
+          "description": "Monitoramos e otimizamos continuamente para garantir máxima eficiência"
+        }
+      }
+    },
+    "plans": {
+      "title": "Nossos Planos",
+      "subtitle": "Soluções personalizadas para o setor de {{sector}}",
+      "description": "Solução completa e personalizada",
+      "basic": {
+        "title": "Básico",
+        "features": {
+          "analise": "Análise inicial completa",
+          "implementacao": "Implementação básica",
+          "suporte": "Suporte por 30 dias"
+        }
+      },
+      "professional": {
+        "title": "Profissional",
+        "features": {
+          "analise": "Análise completa e detalhada",
+          "implementacao": "Implementação avançada",
+          "suporte": "Suporte por 90 dias"
+        }
+      },
+      "enterprise": {
+        "title": "Enterprise",
+        "features": {
+          "analise": "Análise enterprise completa",
+          "implementacao": "Implementação enterprise",
+          "suporte": "Suporte contínuo"
+        }
+      },
+      "requestQuote": "Solicitar Orçamento"
+    },
+    "cta": {
+      "title": "Transforme o setor de {{sector}} com Inteligência Artificial",
+      "subtitle": "Agende um diagnóstico gratuito e descubra como a IA pode revolucionar seus resultados."
+    }
   }
 }

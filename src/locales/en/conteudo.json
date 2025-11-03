@@ -56,6 +56,94 @@
     "close": "Close",
     "download": "Download",
     "share": "Share"
+  },
+  "hero": {
+    "badge": "Specialized Content",
+    "title": "Learn about",
+    "titleHighlight": "AI",
+    "titleEnd": "with Experts",
+    "description": "Access <span>practical guides</span>, exclusive e-books and webinars with real <span>digital transformation</span> cases",
+    "stats": {
+      "contents": "Contents",
+      "ebooks": "E-books",
+      "videos": "Videos",
+      "tools": "Tools"
+    }
+  },
+  "filters": {
+    "title": "Filter by Category",
+    "showing": "Showing",
+    "of": "of",
+    "contents": "contents",
+    "in": "in"
+  },
+  "loading": {
+    "title": "Loading Content",
+    "description": "Searching for specialized articles, videos and e-books..."
+  },
+  "error": {
+    "title": "Error loading content",
+    "description": "Please try again later.",
+    "button": "Try Again"
+  },
+  "empty": {
+    "title": "No content found",
+    "description1": "No content available at the moment.",
+    "description2": "No content in category \"{category}\"."
+  },
+  "actions": {
+    "download": "Download",
+    "watch": "Watch",
+    "access": "Access",
+    "start": "Start",
+    "use": "Use",
+    "viewMore": "Show More",
+    "viewLess": "Show Less",
+    "remaining": "remaining"
+  },
+  "contentTypes": {
+    "pdf": "PDF",
+    "video": "Video",
+    "webinar": "Webinar",
+    "template": "Template",
+    "checklist": "Checklist",
+    "calculator": "Calculator",
+    "course": "Course",
+    "case": "Case",
+    "infographic": "Infographic",
+    "guide": "Guide",
+    "article": "Article"
+  },
+  "newsletterSection": {
+    "badge": "Weekly Newsletter",
+    "title": "Receive <span>exclusive</span> content",
+    "titleHighlight": "exclusive",
+    "subtitle": "Every week we send <span>insights</span>, <span>cases</span> and <span>news</span> about AI directly to your email",
+    "placeholder": "Your best email",
+    "button": "Subscribe Free",
+    "benefits": {
+      "free": "✓ 100% free",
+      "noSpam": "✓ No spam",
+      "cancel": "✓ Cancel anytime"
+    }
+  },
+  "ctaSection": {
+    "badge": "Specialized Consulting",
+    "title": "Ready to <span>implement</span>?",
+    "titleHighlight": "implement",
+    "subtitle": "Our team can help you <span>apply</span> all this knowledge in your company with guaranteed results",
+    "button1": "Talk to Specialist",
+    "button2": "Free Diagnosis",
+    "benefits": {
+      "free": "✓ Free consultation",
+      "response": "✓ Response in 24h",
+      "noCommitment": "✓ No commitment"
+    }
+  },
+  "videoModal": {
+    "channel": "onsmarttech",
+    "official": "Official Channel",
+    "watchOnYouTube": "Watch on YouTube"
   }
 }
 

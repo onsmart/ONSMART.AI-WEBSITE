@@ -81,7 +81,7 @@ const RevendasCadastro = () => {
           </form>
 
           {success && (
-            <div className="flex flex-col items-center justify-center bg-green-100 border border-green-400 text-green-800 px-6 py-4 rounded-lg mt-8 shadow animate-fade-in">
+            <div className="flex flex-col items-center justify-center bg-green-100 dark:bg-green-900/30 border border-green-400 dark:border-green-700 text-green-800 dark:text-green-300 px-6 py-4 rounded-lg mt-8 shadow animate-fade-in">
               <svg className="w-8 h-8 mb-2 text-green-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
               <span className="font-bold text-lg">{t('success.title')}</span>
               <span className="text-sm mt-1">{t('success.description')}</span>

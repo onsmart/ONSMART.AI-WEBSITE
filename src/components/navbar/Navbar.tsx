@@ -9,6 +9,7 @@ import Logo from "./Logo";
 import { Calendar } from "lucide-react";
 import { scrollToElement, scrollToForm } from "@/utils/scrollUtils";
 import LanguageSwitcher from "@/components/shared/LanguageSwitcher";
+import ThemeToggle from "@/components/shared/ThemeToggle";
 import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
@@ -86,7 +87,7 @@ const Navbar = () => {
   return (
     <>
       {/* Skip Links for Accessibility */}
-      <div className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-[200] focus:bg-white focus:p-4 focus:border focus:shadow-lg">
+      <div className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-[200] focus:bg-white dark:focus:bg-gray-900 focus:p-4 focus:border focus:shadow-lg">
         <a 
           href="#main-content" 
           className="skip-link bg-brand-blue text-white px-4 py-2 rounded mr-4 hover:bg-brand-blue/90 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:ring-offset-2"
@@ -109,7 +110,7 @@ const Navbar = () => {
 
       <div 
         id="navigation"
-        className="fixed top-0 z-[100] w-full bg-white shadow-lg py-0 border-b border-gray-200"
+        className="fixed top-0 z-[100] w-full bg-white dark:bg-gray-900 shadow-lg py-0 border-b border-gray-200 dark:border-gray-800"
         role="banner"
         aria-label={t('menu.navigationLabel')}
       >
@@ -124,8 +125,11 @@ const Navbar = () => {
           />
           
           {/* CTA and Mobile Menu */}
-          <div className="flex items-center gap-4">
-            {/* Language Switcher - Seletor de idioma */}
+          <div className="flex items-center gap-2">
+            {/* Theme Toggle - Alternar tema claro/escuro - OCULTO TEMPORARIAMENTE */}
+            {/* <ThemeToggle /> */}
+            
+            {/* Language Switcher - Seletor de idioma (apenas ícone, discreto) */}
             <LanguageSwitcher />
             
             <Button 

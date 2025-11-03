@@ -44,6 +44,34 @@
     "title": "¿Listo para Transformar tu Empresa?",
     "subtitle": "Habla con nuestros especialistas y descubre cómo la IA puede acelerar tus resultados",
     "button": "Hablar con Especialista"
+  },
+  "hero": {
+    "badge": "Recursos Gratuitos",
+    "title": "Materiales",
+    "titleHighlight": "Gratuitos",
+    "description": "Descarga gratuitamente nuestros e-books, guías y plantillas especializadas en Inteligencia Artificial empresarial",
+    "downloadAll": "Descargar Todos los Materiales",
+    "viewSuccessCases": "Ver Casos de Éxito"
+  },
+  "specialized": {
+    "title": "Contenido Especializado",
+    "description": "Materiales desarrollados por especialistas en IA para acelerar tu viaje de transformación digital"
+  },
+  "buttons": {
+    "download": "Descargar Ahora",
+    "learnMore": "Saber Más",
+    "viewAll": "Ver Todos",
+    "downloadAll": "Descargar Todos los Materiales",
+    "viewSuccessCases": "Ver Casos de Éxito"
+  },
+  "exclusive": {
+    "badge": "Contenido Exclusivo",
+    "title": "¿Listo para",
+    "titleHighlight": "exclusivo",
+    "titleEnd": "?",
+    "description": "Accede a materiales exclusivos y acelera tu viaje de transformación digital con IA",
+    "scheduleDiagnostic": "Agendar Diagnóstico",
+    "viewAllMaterials": "Ver Todos los Materiales"
   }
 }
 

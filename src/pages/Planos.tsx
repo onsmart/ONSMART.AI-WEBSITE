@@ -58,7 +58,7 @@ const Planos = () => {
         keywords="planos ia, preços agentes ia, planos empresariais, investimento ia, agentes inteligencia artificial"
       />
       
-      <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
+      <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:bg-gray-900">
         {/* Hero Section */}
         <section className="py-16 md:py-24 px-4 md:px-6">
           <div className="container mx-auto max-w-6xl text-center">
@@ -103,7 +103,7 @@ const Planos = () => {
                 return (
                   <Card 
                     key={index} 
-                    className={`relative overflow-hidden transition-all duration-300 hover:shadow-xl ${
+                    className={`relative overflow-hidden transition-all duration-300 hover:shadow-xl bg-white dark:bg-gray-800 ${
                       plan.popular ? 'border-2 border-brand-blue shadow-lg scale-105' : 'hover:scale-105'
                     }`}
                   >
@@ -117,7 +117,7 @@ const Planos = () => {
                       <div className="w-16 h-16 mx-auto mb-4 bg-brand-blue/10 rounded-full flex items-center justify-center">
                         <IconComponent className="h-8 w-8 text-brand-blue" />
                       </div>
-                      <CardTitle className="text-2xl font-bold">{plan.name}</CardTitle>
+                      <CardTitle className="text-2xl font-bold dark:text-gray-100">{plan.name}</CardTitle>
                       <CardDescription className="text-gray-600 dark:text-gray-400">
                         {plan.description}
                       </CardDescription>
@@ -159,14 +159,14 @@ const Planos = () => {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-16 px-4 md:px-6 bg-white/50 dark:bg-gray-800/50">
+        <section className="py-16 px-4 md:px-6 bg-white/50 dark:bg-gray-900">
           <div className="container mx-auto max-w-4xl">
-            <h2 className="text-3xl font-bold text-center mb-12">Perguntas Frequentes</h2>
+            <h2 className="text-3xl font-bold text-center mb-12 dark:text-gray-100">Perguntas Frequentes</h2>
             
             <div className="space-y-6">
-              <Card>
+              <Card className="bg-white dark:bg-gray-800">
                 <CardHeader>
-                  <CardTitle className="text-lg">Como funciona a implementação?</CardTitle>
+                  <CardTitle className="text-lg dark:text-gray-100">Como funciona a implementação?</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 dark:text-gray-400">

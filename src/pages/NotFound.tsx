@@ -79,7 +79,7 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-white to-gray-50 dark:bg-gray-900 px-4">
       <div className="text-center max-w-2xl mx-auto">
         {/* Accessible heading structure */}
         <h1 className="text-6xl md:text-8xl font-bold text-brand-black mb-4" aria-label="Erro 404">

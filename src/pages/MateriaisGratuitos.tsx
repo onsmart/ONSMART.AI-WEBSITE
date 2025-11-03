@@ -4,9 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Download, FileText, Book, Users } from "lucide-react";
 import UnifiedSEO from "@/components/shared/UnifiedSEO";
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
 const MateriaisGratuitos = () => {
   const { t } = useTranslation(['materiaisGratuitos', 'common']);
+  const navigate = useNavigate();
   
   const materiais = [
     {
@@ -40,7 +42,7 @@ const MateriaisGratuitos = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50/30">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50/30 dark:from-gray-900 dark:via-gray-900 dark:to-gray-900">
       <UnifiedSEO 
         title={t('seo.title')}
         description={t('seo.description')}
@@ -58,19 +60,19 @@ const MateriaisGratuitos = () => {
         <div className="max-w-4xl mx-auto text-center relative z-10">
           {/* Animated badge */}
           <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-brand-blue/10 to-blue-600/10 rounded-full border border-brand-blue/20 mb-6">
-            <span className="text-brand-blue font-medium text-sm">Recursos Gratuitos</span>
+            <span className="text-brand-blue font-medium text-sm">{t('hero.badge')}</span>
           </div>
           
           {/* Main title with gradient */}
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Materiais{" "}
+            {t('hero.title')}{" "}
             <span className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">
-              Gratuitos
+              {t('hero.titleHighlight')}
             </span>
           </h1>
           
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Baixe gratuitamente nossos e-books, guias e templates especializados em Inteligência Artificial empresarial
+            {t('hero.description')}
           </p>
           
           {/* CTA buttons */}
@@ -80,14 +82,14 @@ const MateriaisGratuitos = () => {
               className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue hover:from-blue-600 hover:via-brand-blue hover:to-blue-600 text-white px-8 py-3"
             >
               <Download className="mr-2 h-5 w-5" />
-              Baixar Todos os Materiais
+              {t('hero.downloadAll')}
             </Button>
             <Button 
               variant="outline" 
               size="lg"
               className="border-2 border-brand-blue text-brand-blue hover:bg-gradient-to-r hover:from-brand-blue hover:via-blue-600 hover:to-brand-blue hover:text-white hover:border-transparent px-8 py-3"
             >
-              Ver Casos de Sucesso
+              {t('hero.viewSuccessCases')}
             </Button>
           </div>
         </div>
@@ -97,11 +99,11 @@ const MateriaisGratuitos = () => {
       <section className="py-20 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Conteúdo Especializado
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+              {t('specialized.title')}
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Materiais desenvolvidos por especialistas em IA para acelerar sua jornada de transformação digital
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              {t('specialized.description')}
             </p>
           </div>
           
@@ -109,14 +111,14 @@ const MateriaisGratuitos = () => {
             {materiais.map((material, index) => {
               const IconComponent = material.icon;
               return (
-                <Card key={index} className="group hover:shadow-2xl transition-all duration-300 border-0 bg-white/80 backdrop-blur-sm">
+                <Card key={index} className="group hover:shadow-2xl transition-all duration-300 border-0 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm">
                   <CardHeader className="pb-4">
                     <div className="flex items-center gap-4 mb-4">
                       <div className="p-3 bg-gradient-to-br from-brand-blue/10 to-blue-600/10 rounded-lg group-hover:scale-110 transition-transform duration-300">
                         <IconComponent className="h-8 w-8 text-brand-blue" />
                       </div>
                       <div>
-                        <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-brand-blue transition-colors">
+                        <CardTitle className="text-xl font-bold text-gray-900 dark:text-gray-100 group-hover:text-brand-blue transition-colors">
                           {material.title}
                         </CardTitle>
                         <p className="text-sm text-gray-500 mt-1">{material.pages}</p>
@@ -131,7 +133,7 @@ const MateriaisGratuitos = () => {
                       className="w-full bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue hover:from-blue-600 hover:via-brand-blue hover:to-blue-600 text-white"
                     >
                       <Download className="mr-2 h-4 w-4" />
-                      Baixar Agora
+                      {t('buttons.download')}
                     </Button>
                   </CardContent>
                 </Card>
@@ -142,7 +144,7 @@ const MateriaisGratuitos = () => {
       </section>
 
       {/* Enhanced CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-gray-900 via-brand-black to-gray-900 relative overflow-hidden">
+      <section className="py-20 px-4 bg-gray-900 dark:bg-gray-900 relative overflow-hidden">
         {/* SVG Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -158,20 +160,20 @@ const MateriaisGratuitos = () => {
         <div className="max-w-4xl mx-auto text-center relative z-10">
           {/* Animated badge */}
           <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-brand-blue/20 to-blue-600/20 rounded-full border border-brand-blue/30 mb-6">
-            <span className="text-brand-blue font-medium text-sm">Conteúdo Exclusivo</span>
+            <span className="text-brand-blue font-medium text-sm">{t('exclusive.badge')}</span>
           </div>
           
           {/* Main title with gradient */}
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Pronto para{" "}
+            {t('exclusive.title')}{" "}
             <span className="bg-gradient-to-r from-brand-blue via-blue-400 to-brand-blue bg-clip-text text-transparent">
-              exclusivo
+              {t('exclusive.titleHighlight')}
             </span>
-            ?
+            {t('exclusive.titleEnd')}
           </h2>
           
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Acesse materiais exclusivos e acelere sua jornada de transformação digital com IA
+            {t('exclusive.description')}
           </p>
           
           {/* CTA buttons */}
@@ -179,16 +181,17 @@ const MateriaisGratuitos = () => {
             <Button 
               size="lg" 
               className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue hover:from-blue-600 hover:via-brand-blue hover:to-blue-600 text-white px-8 py-3"
+              onClick={() => navigate('/diagnostico')}
             >
               <Users className="mr-2 h-5 w-5" />
-              Agendar Diagnóstico
+              {t('exclusive.scheduleDiagnostic')}
             </Button>
             <Button 
               variant="outline" 
               size="lg"
               className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-gray-900 px-8 py-3"
             >
-              Ver Todos os Materiais
+              {t('exclusive.viewAllMaterials')}
             </Button>
           </div>
         </div>

@@ -6,12 +6,12 @@ import { Checkbox } from '@/components/ui/checkbox';
 
 const TermosCondicoesForm = () => {
   return (
-    <Card>
+    <Card className="dark:bg-gray-800 dark:border-gray-700">
       <CardContent className="pt-6 space-y-4">
         <div className="flex items-start space-x-2">
           <Checkbox id="termos" required />
           <div className="space-y-1 leading-none">
-            <Label htmlFor="termos" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+            <Label htmlFor="termos" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 dark:text-gray-200">
               Aceito os termos e condições do programa de Agentes Digitais *
             </Label>
             <p className="text-xs text-gray-600 dark:text-gray-400">
@@ -23,7 +23,7 @@ const TermosCondicoesForm = () => {
         <div className="flex items-start space-x-2">
           <Checkbox id="marketing" />
           <div className="space-y-1 leading-none">
-            <Label htmlFor="marketing" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+            <Label htmlFor="marketing" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 dark:text-gray-200">
               Aceito receber materiais de apoio e novidades por email
             </Label>
             <p className="text-xs text-gray-600 dark:text-gray-400">

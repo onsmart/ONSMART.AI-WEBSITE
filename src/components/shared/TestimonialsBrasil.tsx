@@ -87,7 +87,7 @@ const TestimonialsBrasil: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 px-4 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
+    <section className="py-16 px-4 bg-gradient-to-b from-white to-gray-50 dark:bg-gray-900">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-brand-black to-brand-blue bg-clip-text text-transparent">

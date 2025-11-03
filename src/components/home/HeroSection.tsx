@@ -74,9 +74,9 @@ const HeroSection = ({ handleContactClick, handleLearnMoreClick }: HeroSectionPr
   };
 
   return (
-    <section className="relative py-8 sm:py-12 md:py-16 lg:py-20 overflow-hidden bg-white min-h-[70vh] sm:min-h-[75vh] md:min-h-[80vh] flex items-center" id="hero-section">
+    <section className="relative py-8 sm:py-12 md:py-16 lg:py-20 overflow-hidden bg-white dark:bg-gray-900 min-h-[70vh] sm:min-h-[75vh] md:min-h-[80vh] flex items-center" id="hero-section">
       
-      {/* Grid Background with cursor effect */}
+      {/* Grid Background with cursor effect - works in both light and dark mode */}
       <div 
         className="absolute inset-0 pointer-events-none"
         style={{ 
@@ -87,6 +87,22 @@ const HeroSection = ({ handleContactClick, handleLearnMoreClick }: HeroSectionPr
           `,
           backgroundSize: '30px 30px',
           opacity: 0.3,
+          maskImage: 'radial-gradient(circle 250px at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, black 40%, rgba(0,0,0,0.7) 70%, rgba(0,0,0,0.3) 85%, transparent 100%)',
+          WebkitMaskImage: 'radial-gradient(circle 250px at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, black 40%, rgba(0,0,0,0.7) 70%, rgba(0,0,0,0.3) 85%, transparent 100%)'
+        }}
+      ></div>
+      
+      {/* Dark mode grid overlay */}
+      <div 
+        className="absolute inset-0 pointer-events-none hidden dark:block"
+        style={{ 
+          zIndex: 1,
+          backgroundImage: `
+            linear-gradient(to right, #4b5563 1px, transparent 1px),
+            linear-gradient(to bottom, #4b5563 1px, transparent 1px)
+          `,
+          backgroundSize: '30px 30px',
+          opacity: 0.2,
           maskImage: 'radial-gradient(circle 250px at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, black 40%, rgba(0,0,0,0.7) 70%, rgba(0,0,0,0.3) 85%, transparent 100%)',
           WebkitMaskImage: 'radial-gradient(circle 250px at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, black 40%, rgba(0,0,0,0.7) 70%, rgba(0,0,0,0.3) 85%, transparent 100%)'
         }}
@@ -104,8 +120,8 @@ const HeroSection = ({ handleContactClick, handleLearnMoreClick }: HeroSectionPr
           </div>
           
           {/* Headline principal - Hero (maior que outras seções) */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 text-gray-900 leading-tight px-2 sm:px-0">
-            <div className="mb-2 sm:mb-3">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 text-gray-900 dark:text-gray-100 leading-tight px-2 sm:px-0">
+            <div className="mb-2 sm:mb-3 text-gray-600 dark:text-gray-300">
               {t('hero.titleStart')}
             </div>
             <div className="mb-2 sm:mb-3">
@@ -117,7 +133,7 @@ const HeroSection = ({ handleContactClick, handleLearnMoreClick }: HeroSectionPr
                 pauseTime={2000}
               />
             </div>
-            <div className="text-gray-900">
+            <div className="text-gray-900 dark:text-gray-100">
               {t('hero.titleEnd')} <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">{t('hero.days')}</span>
             </div>
           </h1>
@@ -125,12 +141,12 @@ const HeroSection = ({ handleContactClick, handleLearnMoreClick }: HeroSectionPr
           {/* Subheadline compacto */}
           {/* Usamos dangerouslySetInnerHTML porque o JSON tem tags <strong> */}
           <p 
-            className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto mb-8 sm:mb-10 leading-relaxed px-4 sm:px-2 md:px-0"
+            className="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto mb-8 sm:mb-10 leading-relaxed px-4 sm:px-2 md:px-0"
             dangerouslySetInnerHTML={{ __html: t('hero.subtitle', { count: 350 }) }}
           />
 
           {/* Stats minimalistas */}
-          <div className="flex flex-wrap justify-center gap-6 sm:gap-8 max-w-3xl mx-auto mb-8 sm:mb-10 text-sm sm:text-base text-gray-600">
+          <div className="flex flex-wrap justify-center gap-6 sm:gap-8 max-w-3xl mx-auto mb-8 sm:mb-10 text-sm sm:text-base text-gray-600 dark:text-gray-300">
             <div className="text-center">
               <span className="font-bold text-brand-blue">350+</span> {t('hero.stats.companies', { count: 350 })}
             </div>
@@ -183,7 +199,7 @@ const HeroSection = ({ handleContactClick, handleLearnMoreClick }: HeroSectionPr
           </div>
 
           {/* Trust indicators minimalistas */}
-          <div className="text-sm sm:text-base text-gray-500 space-x-4 sm:space-x-6">
+          <div className="text-sm sm:text-base text-gray-500 dark:text-gray-400 space-x-4 sm:space-x-6">
             <span>{t('hero.trust.freeDiagnostic')}</span>
             <span>•</span>
             <span>{t('hero.trust.noCommitment')}</span>

@@ -23,7 +23,7 @@ const Diagnostico = () => {
             description: t('seo.description')
           }}
         />
-        <div className="min-h-screen bg-gradient-to-br from-white via-blue-50/20 to-brand-blue/5 relative overflow-hidden">
+        <div className="min-h-screen bg-gradient-to-br from-white via-blue-50/20 to-brand-blue/5 dark:from-gray-900 dark:via-gray-900 dark:to-gray-900 relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-1/4 left-1/4 w-16 h-16 bg-gradient-to-br from-brand-blue to-blue-600 rounded-full mix-blend-multiply filter blur-2xl opacity-15 animate-pulse"></div>
@@ -31,11 +31,11 @@ const Diagnostico = () => {
         </div>
         
         <div className="relative z-10 flex items-center justify-center min-h-screen p-4">
-          <div className="bg-white/80 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-gray-200/50 max-w-md w-full text-center">
+          <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-gray-200/50 dark:border-gray-700/50 max-w-md w-full text-center">
             <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse">
               <Calendar className="h-10 w-10 text-white" />
             </div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">
               <span className="bg-gradient-to-r from-green-600 via-green-500 to-green-600 bg-clip-text text-transparent">
                 {t('success.title')}
               </span>
@@ -46,14 +46,14 @@ const Diagnostico = () => {
                 {t('success.responseTime')} <span className="font-bold text-brand-blue">{t('success.responseTimeValue')}</span> {t('success.responseTimeEnd')}
               </p>
             </div>
-            <div className="text-sm text-gray-600 mb-6 space-y-2">
+              <div className="text-sm text-gray-600 mb-6 space-y-2">
               <div className="flex items-center justify-center gap-2">
                 <Calendar className="h-4 w-4 text-brand-blue" />
-                <span>Diagnóstico personalizado em 45 minutos</span>
+                <span>{t('success.diagnosticTime')}</span>
               </div>
               <div className="flex items-center justify-center gap-2">
                 <CheckCircle className="h-4 w-4 text-green-500" />
-                <span>100% gratuito e sem compromisso</span>
+                <span>{t('success.freeGuarantee')}</span>
               </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -62,14 +62,14 @@ const Diagnostico = () => {
                 className="bg-gradient-to-r from-brand-blue to-blue-600 hover:from-blue-600 hover:to-brand-blue text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300"
               >
                 <Calendar className="h-4 w-4 mr-2" />
-                Agendar Outro Diagnóstico
+                {t('success.scheduleAnother')}
               </Button>
               <Button 
                 onClick={() => window.location.href = '/'}
                 variant="outline"
                 className="border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white px-6 py-3 rounded-xl transition-all duration-300"
               >
-                Voltar ao Início
+                {t('success.backToHome')}
               </Button>
             </div>
           </div>
@@ -103,32 +103,32 @@ const Diagnostico = () => {
               {/* Badge */}
               <div className="inline-flex items-center gap-2 bg-gradient-to-r from-brand-blue/10 to-brand-blue/5 text-brand-blue px-3 py-1.5 rounded-full text-sm font-semibold mb-4 border border-brand-blue/20">
                 <Search className="h-3 w-3" />
-                Diagnóstico de IA
+                {t('hero.badge')}
               </div>
               
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                Descubra Quanto Sua Empresa Pode <span className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">Economizar com IA</span>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-6">
+                {t('hero.title')} <span className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">{t('hero.titleHighlight')}</span>
               </h1>
               
               {/* AIDA - Atenção + Interesse */}
               <div className="max-w-3xl mx-auto space-y-6 mb-10">
                 <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg">
-                  <p className="text-base sm:text-lg text-gray-800 leading-relaxed">
-                    <span className="font-bold text-red-600">ALERTA FINANCEIRO:</span> Sua empresa pode estar perdendo R$ 50.000+ por mês em custos operacionais que a IA poderia eliminar imediatamente.
+                  <p className="text-base sm:text-lg text-gray-800 dark:text-gray-300 leading-relaxed">
+                    <span className="font-bold text-red-600">{t('hero.alerts.financial.label')}</span> {t('hero.alerts.financial.message')}
                   </p>
                 </div>
                 <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
-                  <p className="text-base sm:text-lg text-gray-800 leading-relaxed">
-                    Empresas similares à sua já economizam <span className="font-bold text-brand-blue">420% mais</span> com nossa metodologia LÍDER. Não deixe seus concorrentes saírem na frente!
+                  <p className="text-base sm:text-lg text-gray-800 dark:text-gray-300 leading-relaxed">
+                    {t('hero.alerts.competitor.message')} <span className="font-bold text-brand-blue">{t('hero.alerts.competitor.highlight')}</span> {t('hero.alerts.competitor.end')}
                   </p>
                 </div>
               </div>
 
               {/* AIDA - Desejo */}
-              <div className="bg-white border border-green-300 rounded-xl p-6 max-w-3xl mx-auto mb-6 shadow-sm">
+              <div className="bg-white dark:bg-gray-800 border border-green-300 dark:border-green-600 rounded-xl p-6 max-w-3xl mx-auto mb-6 shadow-sm">
                 <div className="text-center mb-4">
-                  <h3 className="text-xl font-bold text-green-700 mb-2">DIAGNÓSTICO COMPLETO</h3>
-                  <p className="text-sm text-gray-600">O que você recebe no diagnóstico gratuito de 45 minutos</p>
+                  <h3 className="text-xl font-bold text-green-700 mb-2">{t('hero.completeDiagnostic.title')}</h3>
+                  <p className="text-sm text-gray-600">{t('hero.completeDiagnostic.subtitle')}</p>
                 </div>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="flex items-start gap-3 p-3 bg-green-50 rounded-lg">
@@ -136,8 +136,8 @@ const Diagnostico = () => {
                       <span className="text-white text-xs font-bold">1</span>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 text-sm">Análise Completa</h4>
-                      <p className="text-xs text-gray-600">Avaliação detalhada dos seus processos</p>
+                      <h4 className="font-semibold text-gray-900 dark:text-gray-100 text-sm">{t('hero.completeDiagnostic.items.analysis.title')}</h4>
+                      <p className="text-xs text-gray-600">{t('hero.completeDiagnostic.items.analysis.description')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3 p-3 bg-green-50 rounded-lg">
@@ -145,8 +145,8 @@ const Diagnostico = () => {
                       <span className="text-white text-xs font-bold">2</span>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 text-sm">Cálculo de Economia</h4>
-                      <p className="text-xs text-gray-600">Projeção exata do potencial de economia</p>
+                      <h4 className="font-semibold text-gray-900 dark:text-gray-100 text-sm">{t('hero.completeDiagnostic.items.savings.title')}</h4>
+                      <p className="text-xs text-gray-600">{t('hero.completeDiagnostic.items.savings.description')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3 p-3 bg-green-50 rounded-lg">
@@ -154,8 +154,8 @@ const Diagnostico = () => {
                       <span className="text-white text-xs font-bold">3</span>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 text-sm">Roadmap Personalizado</h4>
-                      <p className="text-xs text-gray-600">Plano de implementação customizado</p>
+                      <h4 className="font-semibold text-gray-900 dark:text-gray-100 text-sm">{t('hero.completeDiagnostic.items.roadmap.title')}</h4>
+                      <p className="text-xs text-gray-600">{t('hero.completeDiagnostic.items.roadmap.description')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3 p-3 bg-green-50 rounded-lg">
@@ -163,8 +163,8 @@ const Diagnostico = () => {
                       <span className="text-white text-xs font-bold">4</span>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 text-sm">Projeção de ROI</h4>
-                      <p className="text-xs text-gray-600">Retorno sobre investimento em 12 meses</p>
+                      <h4 className="font-semibold text-gray-900 dark:text-gray-100 text-sm">{t('hero.completeDiagnostic.items.roi.title')}</h4>
+                      <p className="text-xs text-gray-600">{t('hero.completeDiagnostic.items.roi.description')}</p>
                     </div>
                   </div>
                 </div>
@@ -173,34 +173,34 @@ const Diagnostico = () => {
               
               {/* Stats */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
-                <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-md border border-gray-200/50">
+                <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 shadow-md border border-gray-200/50 dark:border-gray-700/50">
                   <div className="flex items-center justify-center gap-2 mb-2">
                     <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center">
                       <CheckCircle className="h-4 w-4 text-white" />
                     </div>
-                    <span className="font-bold text-gray-900">100% Gratuito</span>
+                    <span className="font-bold text-gray-900 dark:text-gray-100">{t('hero.stats.free.label')}</span>
                   </div>
-                  <p className="text-xs text-gray-600">Sem custos ou compromissos</p>
+                  <p className="text-xs text-gray-600">{t('hero.stats.free.description')}</p>
                 </div>
                 
-                <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-md border border-gray-200/50">
+                <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 shadow-md border border-gray-200/50 dark:border-gray-700/50">
                   <div className="flex items-center justify-center gap-2 mb-2">
                     <div className="w-8 h-8 bg-gradient-to-br from-brand-blue to-blue-600 rounded-lg flex items-center justify-center">
                       <Clock className="h-4 w-4 text-white" />
                     </div>
-                    <span className="font-bold text-gray-900">45 Minutos</span>
+                    <span className="font-bold text-gray-900 dark:text-gray-100">{t('hero.stats.time.label')}</span>
                   </div>
-                  <p className="text-xs text-gray-600">Análise completa e detalhada</p>
+                  <p className="text-xs text-gray-600">{t('hero.stats.time.description')}</p>
                 </div>
                 
-                <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-md border border-gray-200/50">
+                <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 shadow-md border border-gray-200/50 dark:border-gray-700/50">
                   <div className="flex items-center justify-center gap-2 mb-2">
                     <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-violet-600 rounded-lg flex items-center justify-center">
                       <TrendingUp className="h-4 w-4 text-white" />
                     </div>
-                    <span className="font-bold text-gray-900">420% ROI</span>
+                    <span className="font-bold text-gray-900 dark:text-gray-100">{t('hero.stats.roi.label')}</span>
                   </div>
-                  <p className="text-xs text-gray-600">Retorno médio comprovado</p>
+                  <p className="text-xs text-gray-600">{t('hero.stats.roi.description')}</p>
                 </div>
               </div>
             </div>
@@ -218,10 +218,10 @@ const Diagnostico = () => {
                   <div className="mb-6">
                     <div className="inline-flex items-center gap-2 bg-gradient-to-r from-brand-blue/10 to-brand-blue/5 text-brand-blue px-3 py-1.5 rounded-full text-sm font-semibold mb-3 border border-brand-blue/20">
                       <Search className="h-3 w-3" />
-                      O Que Você Receberá
+                      {t('benefits.sectionTitle')}
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-4">
-                      Análise <span className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">Completa</span>
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-4">
+                      {t('benefits.title')} <span className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">{t('benefits.titleHighlight')}</span>
                     </h3>
                   </div>
                   
@@ -231,8 +231,8 @@ const Diagnostico = () => {
                         <Search className="h-4 w-4 text-white" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-gray-900 text-sm mb-1">Identificação de Oportunidades</h4>
-                        <p className="text-xs text-gray-600">Áreas específicas onde a IA pode gerar maior ROI</p>
+                        <h4 className="font-semibold text-gray-900 dark:text-gray-100 text-sm mb-1">{t('benefits.items.opportunities.title')}</h4>
+                        <p className="text-xs text-gray-600">{t('benefits.items.opportunities.description')}</p>
                       </div>
                     </div>
                     
@@ -241,8 +241,8 @@ const Diagnostico = () => {
                         <TrendingUp className="h-4 w-4 text-white" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-gray-900 text-sm mb-1">Projeção de ROI</h4>
-                        <p className="text-xs text-gray-600">Cálculos detalhados de retorno sobre investimento</p>
+                        <h4 className="font-semibold text-gray-900 dark:text-gray-100 text-sm mb-1">{t('benefits.items.roiProjection.title')}</h4>
+                        <p className="text-xs text-gray-600">{t('benefits.items.roiProjection.description')}</p>
                       </div>
                     </div>
                     
@@ -251,8 +251,8 @@ const Diagnostico = () => {
                         <Calendar className="h-4 w-4 text-white" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-gray-900 text-sm mb-1">Roadmap Personalizado</h4>
-                        <p className="text-xs text-gray-600">Plano de implementação com cronograma</p>
+                        <h4 className="font-semibold text-gray-900 dark:text-gray-100 text-sm mb-1">{t('benefits.items.roadmap.title')}</h4>
+                        <p className="text-xs text-gray-600">{t('benefits.items.roadmap.description')}</p>
                       </div>
                     </div>
                   </div>
@@ -263,23 +263,23 @@ const Diagnostico = () => {
                   <div className="text-center mb-4">
                     <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500/10 to-emerald-500/5 text-green-600 px-3 py-1.5 rounded-full text-sm font-semibold mb-3 border border-green-500/20">
                       <Shield className="h-3 w-3" />
-                      Confiança Garantida
+                      {t('guarantee.badge')}
                     </div>
                     <h3 className="text-lg font-bold text-gray-900">
                       <span className="bg-gradient-to-r from-green-600 via-green-500 to-green-600 bg-clip-text text-transparent">
                         350+
-                      </span> Empresas Atendidas
+                      </span> {t('guarantee.title')}
                     </h3>
                   </div>
                   
                   <div className="grid grid-cols-2 gap-3 text-center">
                     <div className="p-3 bg-gradient-to-r from-gray-50 to-blue-50/30 rounded-lg">
-                      <div className="font-bold text-brand-blue">24h</div>
-                      <div className="text-xs text-gray-600">Resposta</div>
+                      <div className="font-bold text-brand-blue">{t('guarantee.stats.response.value')}</div>
+                      <div className="text-xs text-gray-600">{t('guarantee.stats.response.label')}</div>
                     </div>
                     <div className="p-3 bg-gradient-to-r from-gray-50 to-green-50/30 rounded-lg">
-                      <div className="font-bold text-green-600">98%</div>
-                      <div className="text-xs text-gray-600">Satisfação</div>
+                      <div className="font-bold text-green-600">{t('guarantee.stats.satisfaction.value')}</div>
+                      <div className="text-xs text-gray-600">{t('guarantee.stats.satisfaction.label')}</div>
                     </div>
                   </div>
                   
@@ -292,9 +292,9 @@ const Diagnostico = () => {
                       <Star className="h-4 w-4 text-yellow-500 fill-current" />
                     </div>
                     <p className="text-xs text-gray-700 text-center italic">
-                      "Diagnóstico revelou oportunidades que não imaginávamos. ROI de 380% em 6 meses."
+                      "{t('guarantee.testimonial.quote')}"
                     </p>
-                    <p className="text-xs text-gray-500 text-center mt-1">- CEO, Empresa de Logística</p>
+                    <p className="text-xs text-gray-500 text-center mt-1">- {t('guarantee.testimonial.author')}</p>
                   </div>
                 </div>
               </div>
@@ -305,17 +305,17 @@ const Diagnostico = () => {
                   <div className="mb-6">
                     <div className="inline-flex items-center gap-2 bg-gradient-to-r from-brand-blue/10 to-brand-blue/5 text-brand-blue px-3 py-1.5 rounded-full text-sm font-semibold mb-4 border border-brand-blue/20">
                       <Calendar className="h-3 w-3" />
-                      Agendar Diagnóstico
+                      {t('form.badge')}
                     </div>
-                    <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
-                      Garanta Sua <span className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">Vaga Gratuita</span>
+                    <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-3">
+                      {t('form.title')} <span className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">{t('form.titleHighlight')}</span>
                     </h2>
                     <div className="space-y-3 mb-6">
-                      <p className="text-gray-800 text-sm sm:text-base font-semibold">
-                        Descubra o potencial de economia da IA na sua empresa
+                      <p className="text-gray-800 dark:text-gray-300 text-sm sm:text-base font-semibold">
+                        {t('form.subtitle')}
                       </p>
                       <p className="text-gray-600 text-sm leading-relaxed">
-                        Preencha o formulário abaixo e receba em até <span className="font-bold text-green-600">24 horas</span>: agendamento confirmado, material preparatório e checklist personalizado.
+                        {t('form.description')} <span className="font-bold text-green-600">{t('form.descriptionHighlight')}</span> {t('form.descriptionEnd')}
                       </p>
                     </div>
                     
@@ -323,16 +323,16 @@ const Diagnostico = () => {
                     <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
                       <div className="grid grid-cols-3 gap-4 text-center">
                         <div>
-                          <div className="text-lg font-bold text-blue-600">2.847</div>
-                          <div className="text-xs text-gray-600">Diagnósticos realizados</div>
+                          <div className="text-lg font-bold text-blue-600">{t('form.socialProof.diagnostics.value')}</div>
+                          <div className="text-xs text-gray-600">{t('form.socialProof.diagnostics.label')}</div>
                         </div>
                         <div>
-                          <div className="text-lg font-bold text-blue-600">4.9/5</div>
-                          <div className="text-xs text-gray-600">Satisfação média</div>
+                          <div className="text-lg font-bold text-blue-600">{t('form.socialProof.satisfaction.value')}</div>
+                          <div className="text-xs text-gray-600">{t('form.socialProof.satisfaction.label')}</div>
                         </div>
                         <div>
-                          <div className="text-lg font-bold text-blue-600">R$ 2.500</div>
-                          <div className="text-xs text-gray-600">Valor gratuito</div>
+                          <div className="text-lg font-bold text-blue-600">{t('form.socialProof.value.value')}</div>
+                          <div className="text-xs text-gray-600">{t('form.socialProof.value.label')}</div>
                         </div>
                       </div>
                     </div>
@@ -342,7 +342,7 @@ const Diagnostico = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                          Nome Completo *
+                          {t('form.name.label')} *
                         </label>
                         <Input
                           id="name"
@@ -350,10 +350,10 @@ const Diagnostico = () => {
                           name="name"
                           required
                           className="w-full border-gray-300 focus:border-brand-blue focus:ring-brand-blue rounded-lg"
-                          placeholder="Seu nome completo"
+                          placeholder={t('form.name.placeholder')}
                         />
                         <ValidationError
-                          prefix="Nome"
+                          prefix={t('form.name.label')}
                           field="name"
                           errors={state.errors}
                           className="text-red-500 text-sm mt-1"
@@ -361,7 +361,7 @@ const Diagnostico = () => {
                       </div>
                       <div>
                         <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                          Email Profissional *
+                          {t('form.email.label')} *
                         </label>
                         <Input
                           id="email"
@@ -369,10 +369,10 @@ const Diagnostico = () => {
                           name="email"
                           required
                           className="w-full border-gray-300 focus:border-brand-blue focus:ring-brand-blue rounded-lg"
-                          placeholder="seu@empresa.com"
+                          placeholder={t('form.email.placeholder')}
                         />
                         <ValidationError
-                          prefix="Email"
+                          prefix={t('form.email.label')}
                           field="email"
                           errors={state.errors}
                           className="text-red-500 text-sm mt-1"
@@ -383,7 +383,7 @@ const Diagnostico = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
-                          Empresa *
+                          {t('form.company.label')} *
                         </label>
                         <Input
                           id="company"
@@ -391,12 +391,12 @@ const Diagnostico = () => {
                           name="company"
                           required
                           className="w-full border-gray-300 focus:border-brand-blue focus:ring-brand-blue rounded-lg"
-                          placeholder="Nome da sua empresa"
+                          placeholder={t('form.company.placeholder')}
                         />
                       </div>
                       <div>
                         <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                          Telefone *
+                          {t('form.phone.label')} *
                         </label>
                         <Input
                           id="phone"
@@ -404,7 +404,7 @@ const Diagnostico = () => {
                           name="phone"
                           required
                           className="w-full border-gray-300 focus:border-brand-blue focus:ring-brand-blue rounded-lg"
-                          placeholder="(11) 99999-9999"
+                          placeholder={t('form.phone.placeholder')}
                         />
                       </div>
                     </div>
@@ -412,7 +412,7 @@ const Diagnostico = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label htmlFor="sector" className="block text-sm font-medium text-gray-700 mb-2">
-                          Setor da Empresa *
+                          {t('form.sector.label')} *
                         </label>
                         <input type="hidden" name="sector" id="sector" />
                         <Select onValueChange={(value) => {
@@ -420,25 +420,25 @@ const Diagnostico = () => {
                           if (hiddenInput) hiddenInput.value = value;
                         }}>
                           <SelectTrigger className="w-full border-gray-300 focus:border-brand-blue focus:ring-brand-blue rounded-lg">
-                            <SelectValue placeholder="Selecione o setor" />
+                            <SelectValue placeholder={t('form.sector.placeholder')} />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="saude">Saúde</SelectItem>
-                            <SelectItem value="contabilidade">Contabilidade</SelectItem>
-                            <SelectItem value="advocacia">Advocacia</SelectItem>
-                            <SelectItem value="varejo">Varejo</SelectItem>
-                            <SelectItem value="industria">Indústria</SelectItem>
-                            <SelectItem value="servicos">Serviços</SelectItem>
-                            <SelectItem value="tecnologia">Tecnologia</SelectItem>
-                            <SelectItem value="financeiro">Financeiro</SelectItem>
-                            <SelectItem value="educacao">Educação</SelectItem>
-                            <SelectItem value="outro">Outro</SelectItem>
+                            <SelectItem value="saude">{t('form.sector.options.saude')}</SelectItem>
+                            <SelectItem value="contabilidade">{t('form.sector.options.contabilidade')}</SelectItem>
+                            <SelectItem value="advocacia">{t('form.sector.options.advocacia')}</SelectItem>
+                            <SelectItem value="varejo">{t('form.sector.options.varejo')}</SelectItem>
+                            <SelectItem value="industria">{t('form.sector.options.industria')}</SelectItem>
+                            <SelectItem value="servicos">{t('form.sector.options.servicos')}</SelectItem>
+                            <SelectItem value="tecnologia">{t('form.sector.options.tecnologia')}</SelectItem>
+                            <SelectItem value="financeiro">{t('form.sector.options.financeiro')}</SelectItem>
+                            <SelectItem value="educacao">{t('form.sector.options.educacao')}</SelectItem>
+                            <SelectItem value="outro">{t('form.sector.options.outro')}</SelectItem>
                           </SelectContent>
                         </Select>
                       </div>
                       <div>
                         <label htmlFor="employees" className="block text-sm font-medium text-gray-700 mb-2">
-                          Número de Funcionários *
+                          {t('form.employees.label')} *
                         </label>
                         <input type="hidden" name="employees" id="employees" />
                         <Select onValueChange={(value) => {
@@ -446,14 +446,14 @@ const Diagnostico = () => {
                           if (hiddenInput) hiddenInput.value = value;
                         }}>
                           <SelectTrigger className="w-full border-gray-300 focus:border-brand-blue focus:ring-brand-blue rounded-lg">
-                            <SelectValue placeholder="Selecione o porte" />
+                            <SelectValue placeholder={t('form.employees.placeholder')} />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="1-10">1-10 funcionários</SelectItem>
-                            <SelectItem value="11-50">11-50 funcionários</SelectItem>
-                            <SelectItem value="51-200">51-200 funcionários</SelectItem>
-                            <SelectItem value="201-500">201-500 funcionários</SelectItem>
-                            <SelectItem value="500+">Mais de 500 funcionários</SelectItem>
+                            <SelectItem value="1-10">{t('form.employees.options.1-10')}</SelectItem>
+                            <SelectItem value="11-50">{t('form.employees.options.11-50')}</SelectItem>
+                            <SelectItem value="51-200">{t('form.employees.options.51-200')}</SelectItem>
+                            <SelectItem value="201-500">{t('form.employees.options.201-500')}</SelectItem>
+                            <SelectItem value="500+">{t('form.employees.options.500+')}</SelectItem>
                           </SelectContent>
                         </Select>
                       </div>
@@ -461,7 +461,7 @@ const Diagnostico = () => {
                     
                     <div>
                       <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                        Principais Desafios da Empresa *
+                        {t('form.currentChallenges.label')} *
                       </label>
                       <Textarea
                         id="message"
@@ -469,10 +469,10 @@ const Diagnostico = () => {
                         required
                         rows={4}
                         className="w-full border-gray-300 focus:border-brand-blue focus:ring-brand-blue resize-none rounded-lg"
-                        placeholder="Descreva os principais desafios que sua empresa enfrenta e onde acredita que a IA poderia ajudar..."
+                        placeholder={t('form.currentChallenges.placeholder')}
                       />
                       <ValidationError
-                        prefix="Mensagem"
+                        prefix={t('form.currentChallenges.label')}
                         field="message"
                         errors={state.errors}
                         className="text-red-500 text-sm mt-1"
@@ -483,12 +483,12 @@ const Diagnostico = () => {
                       <div className="flex items-start gap-3">
                         <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                         <div className="text-sm text-gray-600">
-                          <p className="font-medium text-gray-900 mb-1">Ao solicitar o diagnóstico, você receberá:</p>
+                          <p className="font-medium text-gray-900 dark:text-gray-100 mb-1">{t('form.bonus.title')}</p>
                           <ul className="space-y-1 text-xs">
-                            <li>• Contato da nossa equipe em até 24 horas</li>
-                            <li>• Agendamento de sessão de 45 minutos</li>
-                            <li>• Análise personalizada 100% gratuita</li>
-                            <li>• Relatório com oportunidades identificadas</li>
+                            <li>• {t('form.bonus.items.contact')}</li>
+                            <li>• {t('form.bonus.items.schedule')}</li>
+                            <li>• {t('form.bonus.items.analysis')}</li>
+                            <li>• {t('form.bonus.items.report')}</li>
                           </ul>
                         </div>
                       </div>
@@ -502,12 +502,12 @@ const Diagnostico = () => {
                       {state.submitting ? (
                         <div className="flex items-center justify-center gap-2">
                           <div className="animate-spin h-5 w-5 border-2 border-white border-t-transparent rounded-full"></div>
-                          Enviando Solicitação...
+                          {t('form.sending')}
                         </div>
                       ) : (
                         <div className="flex items-center justify-center gap-2">
                           <Calendar className="h-5 w-5" />
-                          Solicitar Diagnóstico Gratuito
+                          {t('form.submit')}
                           <ArrowRight className="h-4 w-4 ml-1" />
                         </div>
                       )}

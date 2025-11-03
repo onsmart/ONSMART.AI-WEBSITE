@@ -4,9 +4,45 @@
     "description": "Entre em contato com a onsmartAI. Nossa equipe de especialistas em IA está pronta para ajudar sua empresa a transformar processos com inteligência artificial."
   },
   "hero": {
-    "title": "Fale Conosco",
+    "badge": "Fale Conosco",
+    "title": "Transforme Sua Empresa com IA em 30 Dias",
+    "titleHighlight": "IA em 30 Dias",
     "subtitle": "Nossa equipe de especialistas em IA está pronta para ajudar sua empresa",
-    "description": "Transforme sua empresa com soluções de Inteligência Artificial personalizadas. Entre em contato e descubra como podemos acelerar seus resultados."
+    "description": "Transforme sua empresa com soluções de Inteligência Artificial personalizadas. Entre em contato e descubra como podemos acelerar seus resultados.",
+    "alert": {
+      "title": "ALERTA:",
+      "message": "Sua concorrência já está usando IA para aumentar produtividade em",
+      "productivity": "420%",
+      "andMessage": "e reduzir custos operacionais drasticamente."
+    },
+    "leader": {
+      "methodology": "metodologia LÍDER",
+      "message": "já transformou",
+      "companies": "350+ empresas",
+      "results": "com resultados comprovados em apenas 30 dias. Não deixe sua empresa ficar para trás!"
+    },
+    "benefits": {
+      "title": "BENEFÍCIOS EXCLUSIVOS",
+      "subtitle": "O que você recebe ao entrar em contato hoje",
+      "items": {
+        "diagnostic": {
+          "title": "Diagnóstico Empresarial",
+          "description": "Análise completa e gratuita da sua empresa"
+        },
+        "roi": {
+          "title": "Projeção de ROI",
+          "description": "Cálculo personalizado do retorno sobre investimento"
+        },
+        "implementation": {
+          "title": "Plano de Implementação",
+          "description": "Roadmap detalhado para 30 dias"
+        },
+        "consulting": {
+          "title": "Consultoria Estratégica",
+          "description": "Sessão gratuita sem compromisso"
+        }
+      }
+    }
   },
   "success": {
     "title": "Mensagem Enviada com Sucesso!",
@@ -28,6 +64,34 @@
     "fillFormDescription": "Preencha o formulário abaixo e receba em até",
     "fillFormDescriptionValue": "2 horas úteis",
     "fillFormDescriptionEnd": ": análise personalizada, projeção de ROI e plano de implementação detalhado.",
+    "bonus": {
+      "title": "BÔNUS EXCLUSIVO ao enviar hoje:",
+      "items": {
+        "diagnostic": {
+          "title": "Diagnóstico IA",
+          "value": "personalizado (valor R$ 2.500)"
+        },
+        "roi": {
+          "title": "Projeção ROI",
+          "description": "detalhada da sua empresa"
+        },
+        "roadmap": {
+          "title": "Roadmap 30 dias",
+          "description": "para implementação"
+        },
+        "consulting": {
+          "title": "Consultoria estratégica",
+          "description": "de 1 hora gratuita"
+        }
+      }
+    },
+    "trust": {
+      "secure": "Dados 100% seguros",
+      "noSpam": "Sem spam",
+      "responseTime": "Resposta em 2h"
+    },
+    "lastCompanies": "Últimas 48 horas:",
+    "companiesRequested": "empresas solicitaram diagnóstico",
     "name": {
       "label": "Nome Completo",
       "placeholder": "Digite seu nome completo"
@@ -72,7 +136,35 @@
   },
   "info": {
     "title": "Informações de Contato",
+    "contactTitle": "Fale Conosco",
     "subtitle": "Outras formas de nos encontrar",
+    "location": {
+      "badge": "Nossa Localização",
+      "title": "Visite nosso Escritório",
+      "loading": "Carregando mapa...",
+      "address": "Rua Arizona, 1349",
+      "neighborhood": "Berrini",
+      "city": "São Paulo - SP"
+    },
+    "contactInfo": {
+      "email": {
+        "label": "Email",
+        "value": "atendimento.ai@onsmart.com.br"
+      },
+      "phone": {
+        "label": "Telefone",
+        "value": "+55 11 99666-9247"
+      },
+      "hours": {
+        "label": "Horário",
+        "value": "Segunda à Sexta, 9h às 18h"
+      },
+      "address": {
+        "label": "Endereço",
+        "value": "Rua Arizona, 1349",
+        "city": "São Paulo - SP"
+      }
+    },
     "email": {
       "label": "E-mail",
       "value": "contato@onsmartai.com",
@@ -100,7 +192,10 @@
     "button": "Falar com Especialista"
   },
   "guarantee": {
+    "badge": "Resposta Garantida",
     "title": "Nossa Garantia",
+    "message": "Respondemos todos os contatos em até",
+    "value": "2 horas úteis",
     "subtitle": "Respondemos todos os contatos em até",
     "subtitleValue": "2 horas úteis",
     "subtitleEnd": "ou oferecemos uma consultoria gratuita de 30 minutos."

@@ -3,11 +3,6 @@
     "title": "Materiais Gratuitos de IA - E-books e Guias | onsmartAI",
     "description": "Baixe gratuitamente nossos e-books, guias e templates sobre Inteligência Artificial empresarial. Conteúdo especializado para acelerar sua jornada com IA."
   },
-  "hero": {
-    "title": "Materiais Gratuitos",
-    "subtitle": "E-books, guias e templates especializados",
-    "description": "Baixe gratuitamente nossos materiais exclusivos sobre IA empresarial e acelere sua transformação digital."
-  },
   "materials": {
     "completeGuide": {
       "title": "Guia Completo de IA para Empresas",
@@ -32,7 +27,7 @@
   },
   "buttons": {
     "download": "Baixar Agora",
-    "learnMore": "Saiba Mais",
+    "learnMore": "Saiba mais",
     "viewAll": "Ver Todos"
   },
   "stats": {
@@ -44,6 +39,34 @@
     "title": "Pronto para Transformar sua Empresa?",
     "subtitle": "Fale com nossos especialistas e descubra como a IA pode acelerar seus resultados",
     "button": "Falar com Especialista"
+  },
+  "hero": {
+    "badge": "Recursos Gratuitos",
+    "title": "Materiais",
+    "titleHighlight": "Gratuitos",
+    "description": "Baixe gratuitamente nossos e-books, guias e templates especializados em Inteligência Artificial empresarial",
+    "downloadAll": "Baixar Todos os Materiais",
+    "viewSuccessCases": "Ver Casos de Sucesso"
+  },
+  "specialized": {
+    "title": "Conteúdo Especializado",
+    "description": "Materiais desenvolvidos por especialistas em IA para acelerar sua jornada de transformação digital"
+  },
+  "buttons": {
+    "download": "Baixar Agora",
+    "learnMore": "Saiba mais",
+    "viewAll": "Ver Todos",
+    "downloadAll": "Baixar Todos os Materiais",
+    "viewSuccessCases": "Ver Casos de Sucesso"
+  },
+  "exclusive": {
+    "badge": "Conteúdo Exclusivo",
+    "title": "Pronto para",
+    "titleHighlight": "exclusivo",
+    "titleEnd": "?",
+    "description": "Acesse materiais exclusivos e acelere sua jornada de transformação digital com IA",
+    "scheduleDiagnostic": "Agendar Diagnóstico",
+    "viewAllMaterials": "Ver Todos os Materiais"
   }
 }
 

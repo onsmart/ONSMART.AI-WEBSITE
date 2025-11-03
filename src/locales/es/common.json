@@ -48,7 +48,9 @@
     "viewOthers": "Ver Otros Productos",
     "learnMore": "Saber más",
     "contact": "Hablar con Especialista",
-    "schedule": "Agendar Reunión"
+    "schedule": "Agendar Reunión",
+    "requestQuote": "Solicitar Cotización",
+    "freeDiagnostic": "Diagnóstico Gratuito"
   },
   "sections": {
     "title": "Título",
@@ -80,6 +82,10 @@
       "agree": "De acuerdo",
       "stronglyAgree": "Totalmente de acuerdo"
     }
+  },
+  "theme": {
+    "switchToDark": "Cambiar a tema oscuro",
+    "switchToLight": "Cambiar a tema claro"
   }
 }
 

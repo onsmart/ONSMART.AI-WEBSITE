@@ -19,7 +19,7 @@ const AgentesDigitais = () => {
         pageType="service"
       />
       
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
+      <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-100 dark:bg-gray-900">
         {/* Hero Section */}
         <section className="py-20 px-4 md:px-6">
           <div className="container mx-auto max-w-6xl text-center">
@@ -57,7 +57,7 @@ const AgentesDigitais = () => {
         <section className="py-16 px-4 md:px-6 bg-white dark:bg-gray-900">
           <div className="container mx-auto max-w-6xl">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-gray-100">
                 Como Funciona o Programa
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
@@ -70,7 +70,7 @@ const AgentesDigitais = () => {
                 <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold text-purple-600">1</span>
                 </div>
-                <h3 className="font-semibold mb-2">Cadastre-se</h3>
+                <h3 className="font-semibold mb-2 dark:text-gray-100">Cadastre-se</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-300">
                   Faça seu cadastro gratuito e receba seu link exclusivo de indicação
                 </p>
@@ -80,7 +80,7 @@ const AgentesDigitais = () => {
                 <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold text-blue-600">2</span>
                 </div>
-                <h3 className="font-semibold mb-2">Indique Empresas</h3>
+                <h3 className="font-semibold mb-2 dark:text-gray-100">Indique Empresas</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-300">
                   Compartilhe seu link com empresas que podem se beneficiar da IA
                 </p>
@@ -90,7 +90,7 @@ const AgentesDigitais = () => {
                 <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold text-green-600">3</span>
                 </div>
-                <h3 className="font-semibold mb-2">Acompanhe</h3>
+                <h3 className="font-semibold mb-2 dark:text-gray-100">Acompanhe</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-300">
                   Nossa equipe faz todo o trabalho de vendas e implementação
                 </p>
@@ -100,7 +100,7 @@ const AgentesDigitais = () => {
                 <div className="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold text-yellow-600">4</span>
                 </div>
-                <h3 className="font-semibold mb-2">Receba</h3>
+                <h3 className="font-semibold mb-2 dark:text-gray-100">Receba</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-300">
                   Ganhe sua comissão quando o cliente fechar contrato conosco
                 </p>
@@ -113,7 +113,7 @@ const AgentesDigitais = () => {
         <section className="py-16 px-4 md:px-6 bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto max-w-6xl">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-gray-100">
                 Por que ser um Agente Digital?
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-300">
@@ -122,11 +122,11 @@ const AgentesDigitais = () => {
             </div>
 
             <div className="grid md:grid-cols-3 gap-8 mb-12">
-              <Card className="border-l-4 border-l-purple-500">
+              <Card className="border-l-4 border-l-purple-500 bg-white dark:bg-gray-800">
                 <CardHeader>
                   <DollarSign className="h-10 w-10 text-purple-600 mb-2" />
-                  <CardTitle>Comissões Atrativas</CardTitle>
-                  <CardDescription>10% a 25% por indicação</CardDescription>
+                  <CardTitle className="dark:text-gray-100">Comissões Atrativas</CardTitle>
+                  <CardDescription className="dark:text-gray-300">10% a 25% por indicação</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 dark:text-gray-300">
@@ -135,11 +135,11 @@ const AgentesDigitais = () => {
                 </CardContent>
               </Card>
 
-              <Card className="border-l-4 border-l-blue-500">
+              <Card className="border-l-4 border-l-blue-500 bg-white dark:bg-gray-800">
                 <CardHeader>
                   <TrendingUp className="h-10 w-10 text-blue-600 mb-2" />
-                  <CardTitle>Renda Recorrente</CardTitle>
-                  <CardDescription>Ganhos mensais</CardDescription>
+                  <CardTitle className="dark:text-gray-100">Renda Recorrente</CardTitle>
+                  <CardDescription className="dark:text-gray-300">Ganhos mensais</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 dark:text-gray-300">
@@ -148,11 +148,11 @@ const AgentesDigitais = () => {
                 </CardContent>
               </Card>
 
-              <Card className="border-l-4 border-l-green-500">
+              <Card className="border-l-4 border-l-green-500 bg-white dark:bg-gray-800">
                 <CardHeader>
                   <Users className="h-10 w-10 text-green-600 mb-2" />
-                  <CardTitle>Suporte Total</CardTitle>
-                  <CardDescription>Sem trabalho de vendas</CardDescription>
+                  <CardTitle className="dark:text-gray-100">Suporte Total</CardTitle>
+                  <CardDescription className="dark:text-gray-300">Sem trabalho de vendas</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 dark:text-gray-300">
@@ -169,35 +169,35 @@ const AgentesDigitais = () => {
           <div className="container mx-auto max-w-6xl">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 dark:text-gray-100">
                   Perfil Ideal de Agente Digital
                 </h2>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
                     <div>
-                      <h3 className="font-semibold">Profissionais de TI</h3>
+                      <h3 className="font-semibold dark:text-gray-100">Profissionais de TI</h3>
                       <p className="text-gray-600 dark:text-gray-300">Desenvolvedores, analistas, consultores</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
                     <div>
-                      <h3 className="font-semibold">Empresários e Executivos</h3>
+                      <h3 className="font-semibold dark:text-gray-100">Empresários e Executivos</h3>
                       <p className="text-gray-600 dark:text-gray-300">Com network empresarial ativo</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
                     <div>
-                      <h3 className="font-semibold">Vendedores Experientes</h3>
+                      <h3 className="font-semibold dark:text-gray-100">Vendedores Experientes</h3>
                       <p className="text-gray-600 dark:text-gray-300">Que conhecem o mercado B2B</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
                     <div>
-                      <h3 className="font-semibold">Influenciadores Digitais</h3>
+                      <h3 className="font-semibold dark:text-gray-100">Influenciadores Digitais</h3>
                       <p className="text-gray-600 dark:text-gray-300">Com audiência empresarial</p>
                     </div>
                   </div>
@@ -205,27 +205,27 @@ const AgentesDigitais = () => {
               </div>
               
               <div className="bg-gradient-to-br from-purple-100 to-indigo-100 dark:from-gray-800 dark:to-gray-700 p-8 rounded-lg">
-                <h3 className="text-2xl font-bold mb-6">Requisitos Simples</h3>
+                <h3 className="text-2xl font-bold mb-6 dark:text-gray-100">Requisitos Simples</h3>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 text-green-600" />
-                    <span>Maior de 18 anos</span>
+                    <span className="dark:text-gray-300">Maior de 18 anos</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 text-green-600" />
-                    <span>CPF ou CNPJ válido</span>
+                    <span className="dark:text-gray-300">CPF ou CNPJ válido</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 text-green-600" />
-                    <span>Conhecimento básico sobre IA</span>
+                    <span className="dark:text-gray-300">Conhecimento básico sobre IA</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 text-green-600" />
-                    <span>Network de empresas</span>
+                    <span className="dark:text-gray-300">Network de empresas</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 text-green-600" />
-                    <span>Conta bancária para recebimentos</span>
+                    <span className="dark:text-gray-300">Conta bancária para recebimentos</span>
                   </li>
                 </ul>
               </div>
@@ -237,7 +237,7 @@ const AgentesDigitais = () => {
         <section className="py-16 px-4 md:px-6 bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto max-w-6xl">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-gray-100">
                 O que dizem nossos Agentes
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-300">
@@ -246,7 +246,7 @@ const AgentesDigitais = () => {
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              <Card>
+              <Card className="bg-white dark:bg-gray-800">
                 <CardContent className="pt-6">
                   <div className="flex items-center gap-1 mb-4">
                     {[...Array(5)].map((_, i) => (
@@ -256,12 +256,12 @@ const AgentesDigitais = () => {
                   <p className="text-gray-600 dark:text-gray-300 mb-4">
                     "Já ganhei R$ 45.000 em comissões indicando apenas 3 clientes. O processo é simples e a onsmartAI realmente entrega resultados."
                   </p>
-                  <div className="font-semibold">Carlos Silva</div>
-                  <div className="text-sm text-gray-500">Consultor de TI - São Paulo</div>
+                  <div className="font-semibold dark:text-gray-100">Carlos Silva</div>
+                  <div className="text-sm text-gray-500 dark:text-gray-400">Consultor de TI - São Paulo</div>
                 </CardContent>
               </Card>
 
-              <Card>
+              <Card className="bg-white dark:bg-gray-800">
                 <CardContent className="pt-6">
                   <div className="flex items-center gap-1 mb-4">
                     {[...Array(5)].map((_, i) => (
@@ -271,12 +271,12 @@ const AgentesDigitais = () => {
                   <p className="text-gray-600 dark:text-gray-300 mb-4">
                     "A renda recorrente é o melhor. Todo mês recebo das empresas que indiquei. Já são R$ 8.000 mensais fixos!"
                   </p>
-                  <div className="font-semibold">Ana Costa</div>
-                  <div className="text-sm text-gray-500">Empresária - Rio de Janeiro</div>
+                  <div className="font-semibold dark:text-gray-100">Ana Costa</div>
+                  <div className="text-sm text-gray-500 dark:text-gray-400">Empresária - Rio de Janeiro</div>
                 </CardContent>
               </Card>
 
-              <Card>
+              <Card className="bg-white dark:bg-gray-800">
                 <CardContent className="pt-6">
                   <div className="flex items-center gap-1 mb-4">
                     {[...Array(5)].map((_, i) => (
@@ -286,8 +286,8 @@ const AgentesDigitais = () => {
                   <p className="text-gray-600 dark:text-gray-300 mb-4">
                     "Suporte incrível! Eles fazem todo o trabalho pesado. Eu só indico e acompanho os pagamentos chegando."
                   </p>
-                  <div className="font-semibold">Roberto Santos</div>
-                  <div className="text-sm text-gray-500">Desenvolvedor - Belo Horizonte</div>
+                  <div className="font-semibold dark:text-gray-100">Roberto Santos</div>
+                  <div className="text-sm text-gray-500 dark:text-gray-400">Desenvolvedor - Belo Horizonte</div>
                 </CardContent>
               </Card>
             </div>

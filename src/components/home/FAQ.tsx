@@ -18,13 +18,13 @@ const FAQ = () => {
   }>;
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-white">
+    <section className="py-12 sm:py-16 md:py-20 bg-white dark:bg-gray-900">
       <div className="container mx-auto max-w-5xl px-4 sm:px-6 md:px-8">
         <div className="text-center mb-8 sm:mb-12">
           <div className="text-brand-blue text-sm sm:text-base font-medium mb-4 sm:mb-6">
             {t('faq.badge')}
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-gray-900">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-gray-900 dark:text-gray-100">
             {t('faq.title')} <span className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">{t('faq.titleHighlight')}</span>
           </h2>
         </div>

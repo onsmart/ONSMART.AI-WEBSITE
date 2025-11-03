@@ -4,7 +4,7 @@
     "description": "Access our blog with exclusive articles about Artificial Intelligence, digital transformation and business innovation. Practical tips and expert insights."
   },
   "hero": {
-    "title": "onsmartAI Blog",
+    "title": "OnSmartAI Blog",
     "subtitle": "Exclusive articles about AI and Digital Transformation",
     "description": "Discover valuable insights, practical tips and Artificial Intelligence market trends to accelerate your company's transformation."
   },
@@ -14,6 +14,13 @@
     "transformacao": "Digital Transformation",
     "negocios": "Business",
     "tecnologia": "Technology"
+  },
+  "categories": {
+    "recentes": "Recent Articles",
+    "tendencias": "AI Trends",
+    "casos": "Success Cases",
+    "implementacao": "Implementation Guides",
+    "futuro": "Future of AI"
   },
   "search": {
     "placeholder": "Search articles...",
@@ -45,5 +52,65 @@
     "title": "No articles found",
     "description": "Try adjusting the filters or doing a new search.",
     "button": "View All Articles"
+  },
+  "ctaSection": {
+    "badge": "Specialized Content",
+    "title": "Ready to implement",
+    "titleHighlight": "strategies",
+    "titleEnd": "?",
+    "subtitle": "Transform knowledge into action with our specialized enterprise AI services",
+    "button1": "Schedule Free Consultation",
+    "button2": "View Success Cases"
+  },
+  "newsletterSection": {
+    "title": "Don't Miss Any Insight",
+    "subtitle": "Receive our latest articles directly in your email",
+    "placeholder": "Your best email",
+    "button": "Subscribe"
+  },
+  "posts": {
+    "agentes-ia-produtividade-empresarial": {
+      "title": "How AI Agents are Revolutionizing Corporate Productivity",
+      "excerpt": "Discover how companies are increasing their efficiency by 200% with strategic AI agent implementation.",
+      "category": "tendencias",
+      "content": "<p>Artificial intelligence is no longer a technology of the future - it is transforming companies today. AI Agents are being implemented in organizations of all sizes, generating impressive productivity and efficiency results.</p><h2>What are AI Agents?</h2><p>AI Agents are autonomous systems capable of performing complex tasks, making data-driven decisions and continuously learning. Unlike simple chatbots, these agents can interact with multiple systems and execute complete workflows.</p><h2>Transformative Use Cases</h2><ul><li>Administrative process automation</li><li>Predictive sales analysis</li><li>24/7 customer service</li><li>Intelligent resource management</li></ul><h2>Measurable Results</h2><p>Companies that implemented AI agents report average productivity increases of 200%, 60% reduction in repetitive tasks and 85% improvement in employee satisfaction.</p>"
+    },
+    "implementacao-agentes-ia-passo-passo": {
+      "title": "Complete Guide: Implementing AI Agents in Your Company",
+      "excerpt": "A practical roadmap to implement AI agents, from planning to measuring results.",
+      "category": "implementacao",
+      "content": "<p>The implementation of Artificial Intelligence Agents may seem complex, but with the right methodology, it is possible to transform your company in just 30 days.</p><h2>What are AI Agents?</h2><p>AI Agents are autonomous systems capable of making decisions and executing specific tasks without constant human intervention. They function as a digital workforce that complements your human teams.</p><h2>LÍDER Methodology</h2><p>Our proprietary LÍDER methodology ensures a structured implementation:</p><ul><li><strong>L</strong> - {{LIDER_L}}</li><li><strong>Í</strong> - {{LIDER_Í}}</li><li><strong>D</strong> - {{LIDER_D}}</li><li><strong>E</strong> - {{LIDER_E}}</li><li><strong>R</strong> - {{LIDER_R}}</li></ul><h2>Success Stories</h2><p>Companies that implemented our methodology saw productivity increases of up to 420% in automated processes.</p>"
+    },
+    "case-sucesso-financeira-agentes-ia": {
+      "title": "Success Case: How FinTech Brazil Saved R$ 2 Million with AI Agents",
+      "excerpt": "Complete transformation story: processes, challenges, solutions and measurable results.",
+      "category": "casos",
+      "content": "<p>FinTech Brazil faced critical scalability challenges. With accelerated growth, manual processes became operational bottlenecks.</p><h2>The Challenge</h2><p>Manual credit analysis consumed 4 hours per process, limiting growth capacity.</p><h2>The Solution</h2><p>Implementation of AI agents for automatic risk analysis, document processing and decision making.</p><h2>Results</h2><ul><li>Reduction from 4 hours to 15 minutes in the analysis process</li><li>Annual savings of R$ 2 million</li><li>300% increase in processing capacity</li></ul>"
+    },
+    "futuro-trabalho-agentes-ia-2024": {
+      "title": "The Future of Work: How AI Agents Will Transform Careers in 2024",
+      "excerpt": "Analysis of emerging trends and how professionals can prepare for the AI revolution.",
+      "category": "futuro",
+      "content": "<p>The job market is undergoing an unprecedented transformation. AI Agents are not just automating tasks - they are creating new opportunities.</p><h2>Emerging New Professions</h2><p>Prompt engineering specialists, AI trainers and agent orchestrators are some of the most in-demand professions.</p><h2>Future Skills</h2><ul><li>Human-AI collaboration</li><li>Amplified critical thinking</li><li>Intelligent system management</li></ul><h2>How to Prepare</h2><p>Investment in continuous learning and development of skills complementary to AI.</p>"
+    },
+    "agentes-ia-atendimento-cliente-24h": {
+      "title": "AI Agents for Customer Service: 24/7 Availability with Human Quality",
+      "excerpt": "How to implement automated service that maintains customer quality and satisfaction.",
+      "category": "implementacao",
+      "content": "<p>Customer service has evolved dramatically with AI agents capable of providing 24/7 support while maintaining human quality.</p><h2>Immediate Benefits</h2><ul><li>24-hour availability</li><li>Consistent and accurate responses</li><li>70% reduction in wait time</li><li>Unlimited scalability</li></ul><h2>Strategic Implementation</h2><p>The key is in the intelligent integration between AI agents and human attendants, creating an optimized hybrid experience.</p>"
+    },
+    "roi-agentes-ia-calculo-retorno-investimento": {
+      "title": "Calculating ROI of AI Agents: Proven Metrics and Methodologies",
+      "excerpt": "Complete framework to measure and maximize return on investment in AI agents.",
+      "category": "tendencias",
+      "content": "<p>Measuring ROI of AI agents goes beyond traditional metrics. It is necessary to consider tangible and intangible benefits.</p><h2>Main Metrics</h2><ul><li>Operational cost reduction</li><li>Productivity increase</li><li>Quality improvement</li><li>Customer satisfaction</li></ul><h2>Calculation Framework</h2><p>Structured methodology to quantify benefits and calculate realistic payback period.</p>"
+    }
+  },
+  "liderDescriptions": {
+    "L": "Process survey",
+    "Í": "Opportunity identification",
+    "D": "Agent development",
+    "E": "Execution and implementation",
+    "R": "Continuous refinement"
   }
 }

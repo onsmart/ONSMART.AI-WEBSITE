@@ -18,19 +18,19 @@ const Setores: React.FC = () => {
     navigate(`/setores/${slug}`);
   };
 
-  // Mapeamento de ícones para os setores
-  const getSectorIcon = (sectorName: string) => {
+  // Mapeamento de ícones para os setores (usa ID do setor)
+  const getSectorIcon = (sectorId: string) => {
     const iconMap: Record<string, React.ComponentType<any>> = {
-      'Advocacia': Scale,
-      'Bancos': Banknote,
-      'Comércio': ShoppingBag,
-      'Indústria': Factory,
-      'Saúde': Stethoscope,
-      'Telecomunicações': Phone,
-      'Varejo': Package,
-      'Setor Imobiliário': Home
+      'advocacia': Scale,
+      'bancos': Banknote,
+      'comercio': ShoppingBag,
+      'industria': Factory,
+      'saude': Stethoscope,
+      'telecomunicacoes': Phone,
+      'varejo': Package,
+      'setor-imobiliario': Home
     };
-    return iconMap[sectorName] || Building2;
+    return iconMap[sectorId] || Building2;
   };
 
   const handleDiagnosticoClick = () => {
@@ -79,9 +79,9 @@ const Setores: React.FC = () => {
                       <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-brand-blue to-blue-600 rounded-lg flex items-center justify-center">
                         <Building2 className="h-3 w-3 sm:h-4 sm:w-4 text-white" />
                       </div>
-                      <span className="font-bold text-gray-900 text-sm sm:text-base">8 Setores</span>
+                      <span className="font-bold text-gray-900 text-sm sm:text-base">{t('setores:stats.sectors.value')}</span>
                     </div>
-                    <p className="text-xs text-gray-600">Soluções especializadas</p>
+                    <p className="text-xs text-gray-600">{t('setores:stats.sectors.description')}</p>
                   </div>
                   
                   <div className="bg-white/80 backdrop-blur-sm rounded-xl p-3 sm:p-4 shadow-md border border-gray-200/50">
@@ -89,9 +89,9 @@ const Setores: React.FC = () => {
                       <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center">
                         <TrendingUp className="h-3 w-3 sm:h-4 sm:w-4 text-white" />
                       </div>
-                      <span className="font-bold text-gray-900 text-sm sm:text-base">420% ROI</span>
+                      <span className="font-bold text-gray-900 text-sm sm:text-base">{t('setores:stats.roi.value')}</span>
                     </div>
-                    <p className="text-xs text-gray-600">Retorno médio comprovado</p>
+                    <p className="text-xs text-gray-600">{t('setores:stats.roi.description')}</p>
                   </div>
                   
                   <div className="bg-white/80 backdrop-blur-sm rounded-xl p-3 sm:p-4 shadow-md border border-gray-200/50">
@@ -99,9 +99,9 @@ const Setores: React.FC = () => {
                       <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-purple-500 to-violet-600 rounded-lg flex items-center justify-center">
                         <Building2 className="h-3 w-3 sm:h-4 sm:w-4 text-white" />
                       </div>
-                      <span className="font-bold text-gray-900 text-sm sm:text-base">350+ Empresas</span>
+                      <span className="font-bold text-gray-900 text-sm sm:text-base">{t('setores:stats.companies.value')}</span>
                     </div>
-                    <p className="text-xs text-gray-600">Clientes transformados</p>
+                    <p className="text-xs text-gray-600">{t('setores:stats.companies.description')}</p>
                   </div>
                 </div>
               </div>
@@ -113,7 +113,7 @@ const Setores: React.FC = () => {
             <div className="container mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
                 {sectorsData.map((sector) => {
-                  const IconComponent = getSectorIcon(sector.name);
+                  const IconComponent = getSectorIcon(sector.id);
                   return (
                     <div 
                       key={sector.id}
@@ -125,11 +125,11 @@ const Setores: React.FC = () => {
                       </div>
                       
                       <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3 group-hover:text-brand-blue transition-colors">
-                        {sector.name}
+                        {t(`setores:sectors.${sector.id}.name`, { defaultValue: sector.name })}
                       </h3>
                       
                       <p className="text-xs sm:text-sm text-gray-600 mb-3 sm:mb-4 leading-relaxed">
-                        {sector.description}
+                        {t(`setores:sectors.${sector.id}.description`, { defaultValue: sector.description })}
                       </p>
                       
                       <div className="flex items-center text-brand-blue text-xs sm:text-sm font-medium group-hover:gap-2 transition-all">
@@ -186,15 +186,15 @@ const Setores: React.FC = () => {
                 <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-4 mt-4 sm:mt-6 text-xs text-gray-500">
                   <div className="flex items-center gap-1">
                     <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span>✓ Consultoria gratuita</span>
+                    <span>{t('setores:guarantees.consulting')}</span>
                   </div>
                   <div className="flex items-center gap-1">
                     <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                    <span>✓ Resposta em 24h</span>
+                    <span>{t('setores:guarantees.responseTime')}</span>
                   </div>
                   <div className="flex items-center gap-1">
                     <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                    <span>✓ Sem compromisso</span>
+                    <span>{t('setores:guarantees.noCommitment')}</span>
                   </div>
                 </div>
               </div>

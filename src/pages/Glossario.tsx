@@ -58,15 +58,15 @@ const Glossario = () => {
         keywords="glossário ia, termos inteligencia artificial, definições ia, machine learning conceitos, vocabulário ia"
       />
       
-      <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+      <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-900">
         {/* Hero Section */}
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h1 className="text-4xl md:text-5xl font-bold text-brand-black mb-6">
+              <h1 className="text-4xl md:text-5xl font-bold text-brand-black dark:text-gray-100 mb-6">
                 {t('hero.title')}
               </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
                 {t('hero.description')}
               </p>
             </div>
@@ -74,13 +74,13 @@ const Glossario = () => {
             {/* Search Bar */}
             <div className="max-w-2xl mx-auto mb-12">
               <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500 h-5 w-5" />
                 <Input
                   type="text"
                   placeholder={t('search.placeholder')}
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10 py-3 text-lg"
+                  className="pl-10 py-3 text-lg bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400"
                 />
               </div>
             </div>
@@ -92,15 +92,15 @@ const Glossario = () => {
           <div className="container mx-auto px-4">
             <div className="grid gap-6">
               {termosFiltrados.map((item, index) => (
-                <Card key={index} className="hover:shadow-lg transition-shadow">
+                <Card key={index} className="hover:shadow-lg transition-shadow bg-white dark:bg-gray-800">
                   <CardHeader>
-                    <CardTitle className="flex items-center gap-3 text-xl text-brand-blue">
+                    <CardTitle className="flex items-center gap-3 text-xl text-brand-blue dark:text-brand-blue">
                       <BookOpen className="h-5 w-5" />
                       {item.termo}
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                       {item.definicao}
                     </p>
                   </CardContent>
@@ -109,7 +109,7 @@ const Glossario = () => {
               
               {termosFiltrados.length === 0 && (
                 <div className="text-center py-12">
-                  <p className="text-gray-500 text-lg">
+                  <p className="text-gray-500 dark:text-gray-400 text-lg">
                     Nenhum termo encontrado para "{searchTerm}"
                   </p>
                 </div>

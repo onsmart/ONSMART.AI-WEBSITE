@@ -92,6 +92,21 @@ const SectorDynamic: React.FC = () => {
 
   const config = getSectorConfig(sector.slug);
 
+  // Helper para obter chave de tradução da solução baseado no índice
+  const getSolutionKey = (sectorId: string, index: number): string => {
+    const solutionKeys: Record<string, string[]> = {
+      'advocacia': ['assistente', 'gerador', 'prazos'],
+      'bancos': ['credito', 'assistente', 'antifraude'],
+      'telecomunicacoes': ['suporte', 'otimizador', 'preditor'],
+      'varejo': ['personalizador', 'precos', 'comportamento'],
+      'industria': ['manutencao', 'qualidade', 'producao'],
+      'saude': ['diagnostico', 'exames', 'medicina'],
+      'comercio': ['estoque', 'vendas', 'analise'],
+      'setor-imobiliario': ['propriedades', 'leads', 'mercado']
+    };
+    return solutionKeys[sectorId]?.[index] || `solution${index}`;
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
       {/* Hero Section */}
@@ -103,15 +118,17 @@ const SectorDynamic: React.FC = () => {
                 <div className="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center">
                   {config.icon}
                 </div>
-                <span className="text-blue-600 font-semibold text-lg">{sector.name}</span>
+                <span className="text-blue-600 font-semibold text-lg">
+                  {t(`setores:sectors.${sector.id}.name`, { defaultValue: sector.name })}
+                </span>
               </div>
               
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-                {sector.heroTitle}
+                {t(`setores:sectors.${sector.id}.heroTitle`, { defaultValue: sector.heroTitle })}
               </h1>
               
               <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-                {sector.heroSubtitle}
+                {t(`setores:sectors.${sector.id}.heroSubtitle`, { defaultValue: sector.heroSubtitle })}
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
@@ -119,7 +136,7 @@ const SectorDynamic: React.FC = () => {
                   onClick={handleContactClick}
                   className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg"
                 >
-                  Solicitar Orçamento
+                  {t('setores:buttons.requestQuote')}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
                 
@@ -128,7 +145,7 @@ const SectorDynamic: React.FC = () => {
                   onClick={handleDiagnosticoClick}
                   className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 hover:border-blue-700 px-8 py-3 text-lg font-medium bg-white"
                 >
-                  Diagnóstico Gratuito
+                  {t('setores:buttons.freeDiagnostic')}
                 </Button>
               </div>
             </div>
@@ -145,32 +162,39 @@ const SectorDynamic: React.FC = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              O que está incluído
+              {t('setores:dynamic.whatsIncluded.title')}
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300">
-              Tudo o que você precisa para transformar seu {sector.name}
+              {t('setores:dynamic.whatsIncluded.subtitle', { 
+                sector: t(`setores:sectors.${sector.id}.name`, { defaultValue: sector.name })
+              })}
             </p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            {sector.solutions.map((solution, index) => (
-              <div key={index} className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-                  {solution.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">
-                  {solution.description}
-                </p>
-                <ul className="space-y-2">
-                  {solution.benefits.slice(0, 3).map((benefit, idx) => (
-                    <li key={idx} className="flex items-start gap-2">
-                      <CheckCircle className="h-4 w-4 text-green-500 mt-1 flex-shrink-0" />
-                      <span className="text-sm text-gray-600 dark:text-gray-300">{benefit}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+            {sector.solutions.map((solution, index) => {
+              const solutionKey = getSolutionKey(sector.id, index);
+              const solutionTranslation = t(`setores:sectors.${sector.id}.solutions.${solutionKey}`, { returnObjects: true }) as any;
+              
+              return (
+                <div key={index} className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                    {solutionTranslation?.title || solution.title}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 mb-4">
+                    {solutionTranslation?.description || solution.description}
+                  </p>
+                  <ul className="space-y-2">
+                    {(solutionTranslation?.benefits || solution.benefits).slice(0, 3).map((benefit: string, idx: number) => (
+                      <li key={idx} className="flex items-start gap-2">
+                        <CheckCircle className="h-4 w-4 text-green-500 mt-1 flex-shrink-0" />
+                        <span className="text-sm text-gray-600 dark:text-gray-300">{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -180,10 +204,12 @@ const SectorDynamic: React.FC = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Como Funciona
+              {t('setores:dynamic.howItWorks.title')}
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300">
-              Processo estruturado para garantir resultados em {sector.name}
+              {t('setores:dynamic.howItWorks.subtitle', { 
+                sector: t(`setores:sectors.${sector.id}.name`, { defaultValue: sector.name })
+              })}
             </p>
           </div>
           
@@ -193,10 +219,10 @@ const SectorDynamic: React.FC = () => {
                 1
               </div>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-                Análise Inicial
+                {t('setores:dynamic.howItWorks.steps.analise.title')}
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
-                Avaliamos seus processos atuais e identificamos oportunidades de melhoria
+                {t('setores:dynamic.howItWorks.steps.analise.description')}
               </p>
             </div>
             
@@ -205,10 +231,10 @@ const SectorDynamic: React.FC = () => {
                 2
               </div>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-                Implementação
+                {t('setores:dynamic.howItWorks.steps.implementacao.title')}
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
-                Desenvolvemos e implementamos soluções de IA personalizadas para seu setor
+                {t('setores:dynamic.howItWorks.steps.implementacao.description')}
               </p>
             </div>
             
@@ -217,10 +243,10 @@ const SectorDynamic: React.FC = () => {
                 3
               </div>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-                Otimização
+                {t('setores:dynamic.howItWorks.steps.otimizacao.title')}
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
-                Monitoramos e otimizamos continuamente para garantir máxima eficiência
+                {t('setores:dynamic.howItWorks.steps.otimizacao.description')}
               </p>
             </div>
           </div>
@@ -232,10 +258,12 @@ const SectorDynamic: React.FC = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Nossos Planos
+              {t('setores:dynamic.plans.title')}
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300">
-              Soluções personalizadas para {sector.name}
+              {t('setores:dynamic.plans.subtitle', { 
+                sector: t(`setores:sectors.${sector.id}.name`, { defaultValue: sector.name })
+              })}
             </p>
           </div>
           
@@ -243,25 +271,25 @@ const SectorDynamic: React.FC = () => {
             <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
               <div className="text-center mb-6">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                  Básico
+                  {t('setores:dynamic.plans.basic.title')}
                 </h3>
                 <div className="text-lg text-gray-600 dark:text-gray-300 mb-2">
-                  Solução completa e personalizada
+                  {t('setores:dynamic.plans.description')}
                 </div>
               </div>
               
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-4 w-4 text-green-500 mt-1 flex-shrink-0" />
-                  <span className="text-sm text-gray-600 dark:text-gray-300">Análise inicial completa</span>
+                  <span className="text-sm text-gray-600 dark:text-gray-300">{t('setores:dynamic.plans.basic.features.analise')}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-4 w-4 text-green-500 mt-1 flex-shrink-0" />
-                  <span className="text-sm text-gray-600 dark:text-gray-300">Implementação básica</span>
+                  <span className="text-sm text-gray-600 dark:text-gray-300">{t('setores:dynamic.plans.basic.features.implementacao')}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-4 w-4 text-green-500 mt-1 flex-shrink-0" />
-                  <span className="text-sm text-gray-600 dark:text-gray-300">Suporte por 30 dias</span>
+                  <span className="text-sm text-gray-600 dark:text-gray-300">{t('setores:dynamic.plans.basic.features.suporte')}</span>
                 </li>
               </ul>
               
@@ -269,32 +297,32 @@ const SectorDynamic: React.FC = () => {
                 onClick={handleContactClick}
                 className="w-full bg-gray-600 hover:bg-gray-700 text-white"
               >
-                Solicitar Orçamento
+                {t('setores:dynamic.plans.requestQuote')}
               </Button>
             </div>
 
             <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg ring-2 ring-blue-600">
               <div className="text-center mb-6">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                  Profissional
+                  {t('setores:dynamic.plans.professional.title')}
                 </h3>
                 <div className="text-lg text-gray-600 dark:text-gray-300 mb-2">
-                  Solução completa e personalizada
+                  {t('setores:dynamic.plans.description')}
                 </div>
               </div>
               
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-4 w-4 text-green-500 mt-1 flex-shrink-0" />
-                  <span className="text-sm text-gray-600 dark:text-gray-300">Análise completa e detalhada</span>
+                  <span className="text-sm text-gray-600 dark:text-gray-300">{t('setores:dynamic.plans.professional.features.analise')}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-4 w-4 text-green-500 mt-1 flex-shrink-0" />
-                  <span className="text-sm text-gray-600 dark:text-gray-300">Implementação avançada</span>
+                  <span className="text-sm text-gray-600 dark:text-gray-300">{t('setores:dynamic.plans.professional.features.implementacao')}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-4 w-4 text-green-500 mt-1 flex-shrink-0" />
-                  <span className="text-sm text-gray-600 dark:text-gray-300">Suporte por 90 dias</span>
+                  <span className="text-sm text-gray-600 dark:text-gray-300">{t('setores:dynamic.plans.professional.features.suporte')}</span>
                 </li>
               </ul>
               
@@ -302,32 +330,32 @@ const SectorDynamic: React.FC = () => {
                 onClick={handleContactClick}
                 className="w-full bg-blue-600 hover:bg-blue-700 text-white"
               >
-                Solicitar Orçamento
+                {t('setores:dynamic.plans.requestQuote')}
               </Button>
             </div>
 
             <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
               <div className="text-center mb-6">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                  Enterprise
+                  {t('setores:dynamic.plans.enterprise.title')}
                 </h3>
                 <div className="text-lg text-gray-600 dark:text-gray-300 mb-2">
-                  Solução completa e personalizada
+                  {t('setores:dynamic.plans.description')}
                 </div>
               </div>
               
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-4 w-4 text-green-500 mt-1 flex-shrink-0" />
-                  <span className="text-sm text-gray-600 dark:text-gray-300">Análise enterprise completa</span>
+                  <span className="text-sm text-gray-600 dark:text-gray-300">{t('setores:dynamic.plans.enterprise.features.analise')}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-4 w-4 text-green-500 mt-1 flex-shrink-0" />
-                  <span className="text-sm text-gray-600 dark:text-gray-300">Implementação enterprise</span>
+                  <span className="text-sm text-gray-600 dark:text-gray-300">{t('setores:dynamic.plans.enterprise.features.implementacao')}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-4 w-4 text-green-500 mt-1 flex-shrink-0" />
-                  <span className="text-sm text-gray-600 dark:text-gray-300">Suporte contínuo</span>
+                  <span className="text-sm text-gray-600 dark:text-gray-300">{t('setores:dynamic.plans.enterprise.features.suporte')}</span>
                 </li>
               </ul>
               
@@ -335,7 +363,7 @@ const SectorDynamic: React.FC = () => {
                 onClick={handleContactClick}
                 className="w-full bg-gray-600 hover:bg-gray-700 text-white"
               >
-                Solicitar Orçamento
+                {t('setores:dynamic.plans.requestQuote')}
               </Button>
             </div>
           </div>
@@ -346,10 +374,12 @@ const SectorDynamic: React.FC = () => {
       <section className="py-16 px-4 md:px-6 bg-blue-600">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Transforme {sector.name} com Inteligência Artificial
+            {t('setores:dynamic.cta.title', { 
+              sector: t(`setores:sectors.${sector.id}.name`, { defaultValue: sector.name })
+            })}
           </h2>
           <p className="text-xl text-blue-100 mb-8">
-            Agende um diagnóstico gratuito e descubra como a IA pode revolucionar seus resultados.
+            {t('setores:dynamic.cta.subtitle')}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -357,7 +387,7 @@ const SectorDynamic: React.FC = () => {
               onClick={handleContactClick}
               className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 text-lg"
             >
-              Solicitar Orçamento
+              {t('setores:dynamic.plans.requestQuote')}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             
@@ -366,7 +396,7 @@ const SectorDynamic: React.FC = () => {
               onClick={handleDiagnosticoClick}
               className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 text-lg font-medium bg-transparent"
             >
-              Diagnóstico Gratuito
+              {t('setores:buttons.freeDiagnostic')}
             </Button>
           </div>
         </div>

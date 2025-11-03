@@ -163,7 +163,7 @@ export default function Produtos() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-900 dark:to-gray-900">
       {/* Hero Section */}
       <section className="relative py-12 sm:py-16 md:py-24 lg:py-32 overflow-hidden hero-pattern-bg -mt-8">
                 {/* Background Image - direct loading for maximum speed */}
@@ -202,11 +202,11 @@ export default function Produtos() {
 
 
       {/* Certifications Section */}
-      <section className="py-12 sm:py-16 px-4 bg-white">
+      <section className="py-12 sm:py-16 px-4 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">{t('certifications.title')}</h2>
-            <p className="text-sm sm:text-base text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-3 sm:mb-4">{t('certifications.title')}</h2>
+            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               {t('certifications.description')}
             </p>
           </div>
@@ -214,26 +214,26 @@ export default function Produtos() {
           <div className="flex flex-col lg:flex-row items-start justify-center gap-8 sm:gap-12 max-w-7xl mx-auto">
             {/* Produtos - Lado Esquerdo */}
             <div className="lg:w-1/2 space-y-6 sm:space-y-8">
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6 text-center lg:text-left">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 sm:mb-6 text-center lg:text-left">
                 {t('products.title')}
               </h3>
               
               {/* AI Productivity */}
               <div className="space-y-3 sm:space-y-4">
                 <div className="mb-3 sm:mb-4 ml-3 sm:ml-6">
-                  <h4 className="text-base sm:text-lg font-semibold text-gray-800">{t('products.aiProductivity.title')}</h4>
-                  <p className="text-xs sm:text-sm text-gray-600">{t('products.aiProductivity.description')}</p>
+                  <h4 className="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-100">{t('products.aiProductivity.title')}</h4>
+                  <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300">{t('products.aiProductivity.description')}</p>
                 </div>
                 
                 {/* AI Assistants */}
                 <div className="ml-3 sm:ml-6 space-y-2 sm:space-y-3">
-                  <h5 className="text-sm sm:text-md font-medium text-gray-700">{t('products.aiProductivity.categories.assistants.title')}</h5>
+                  <h5 className="text-sm sm:text-md font-medium text-gray-700 dark:text-gray-200">{t('products.aiProductivity.categories.assistants.title')}</h5>
                   
                   {/* watsonx Code Assistant™ */}
-                  <Card className="hover:shadow-lg transition-shadow">
+                  <Card className="hover:shadow-lg transition-shadow bg-white dark:bg-gray-800">
                     <CardHeader className="pb-3 sm:pb-4">
                       <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
-                        <div className="p-2 sm:p-3 rounded-full bg-white shadow-sm border border-gray-100 flex items-center justify-center">
+                        <div className="p-2 sm:p-3 rounded-full bg-white dark:bg-gray-700 shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center">
                           <img 
                             src="https://images-onsmart.vercel.app/onsmart.ai/ai-code-assistant.png" 
                             alt="watsonx Code Assistant" 
@@ -241,20 +241,20 @@ export default function Produtos() {
                           />
                         </div>
                         <div>
-                          <CardTitle className="text-lg sm:text-xl">{t('products.aiProductivity.categories.assistants.items.watsonxCodeAssistant.name')}</CardTitle>
+                          <CardTitle className="text-lg sm:text-xl dark:text-gray-100">{t('products.aiProductivity.categories.assistants.items.watsonxCodeAssistant.name')}</CardTitle>
                           <Badge variant="outline" className="mt-1 text-xs">{t('products.aiProductivity.categories.assistants.title')}</Badge>
                         </div>
                       </div>
-                      <CardDescription className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                      <CardDescription className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
                         {t('products.aiProductivity.categories.assistants.items.watsonxCodeAssistant.description')}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-3 sm:space-y-4">
                       <div>
-                        <h4 className="text-sm sm:text-base font-semibold text-gray-900 mb-2">{t('products.aiProductivity.categories.assistants.items.watsonxCodeAssistant.features.title')}</h4>
+                        <h4 className="text-sm sm:text-base font-semibold text-gray-900 dark:text-gray-100 mb-2">{t('products.aiProductivity.categories.assistants.items.watsonxCodeAssistant.features.title')}</h4>
                         <ul className="space-y-1">
                           {(t('products.aiProductivity.categories.assistants.items.watsonxCodeAssistant.features.items', { returnObjects: true }) as string[]).map((feature, idx) => (
-                            <li key={idx} className="flex items-center text-xs sm:text-sm text-gray-600">
+                            <li key={idx} className="flex items-center text-xs sm:text-sm text-gray-600 dark:text-gray-300">
                               <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-green-500 mr-2 flex-shrink-0" />
                               {feature}
                             </li>
@@ -275,10 +275,10 @@ export default function Produtos() {
                   </Card>
 
                   {/* watsonx Orchestrate™ */}
-                  <Card className="hover:shadow-lg transition-shadow">
+                  <Card className="hover:shadow-lg transition-shadow bg-white dark:bg-gray-800">
                     <CardHeader className="pb-4">
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="p-3 rounded-full bg-white shadow-sm border border-gray-100 flex items-center justify-center">
+                        <div className="p-3 rounded-full bg-white dark:bg-gray-700 shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center">
                           <img 
                             src="https://images-onsmart.vercel.app/onsmart.ai/watsonx.png" 
                             alt="watsonx Orchestrate" 
@@ -286,20 +286,20 @@ export default function Produtos() {
                           />
                         </div>
                         <div>
-                          <CardTitle className="text-xl">{t('products.aiProductivity.categories.assistants.items.watsonxOrchestrate.name')}</CardTitle>
+                          <CardTitle className="text-xl dark:text-gray-100">{t('products.aiProductivity.categories.assistants.items.watsonxOrchestrate.name')}</CardTitle>
                           <Badge variant="outline" className="mt-1">{t('products.aiProductivity.categories.assistants.title')}</Badge>
                         </div>
                       </div>
-                      <CardDescription className="text-gray-600 leading-relaxed">
+                      <CardDescription className="text-gray-600 dark:text-gray-300 leading-relaxed">
                         {t('products.aiProductivity.categories.assistants.items.watsonxOrchestrate.description')}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">{t('products.aiProductivity.categories.assistants.items.watsonxOrchestrate.features.title')}</h4>
+                        <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">{t('products.aiProductivity.categories.assistants.items.watsonxOrchestrate.features.title')}</h4>
                         <ul className="space-y-1">
                           {(t('products.aiProductivity.categories.assistants.items.watsonxOrchestrate.features.items', { returnObjects: true }) as string[]).map((feature, idx) => (
-                            <li key={idx} className="flex items-center text-sm text-gray-600">
+                            <li key={idx} className="flex items-center text-sm text-gray-600 dark:text-gray-300">
                               <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
                               {feature}
                             </li>
@@ -320,10 +320,10 @@ export default function Produtos() {
                   </Card>
 
                   {/* Planning Analytics */}
-                  <Card className="hover:shadow-lg transition-shadow">
+                  <Card className="hover:shadow-lg transition-shadow bg-white dark:bg-gray-800">
                     <CardHeader className="pb-4">
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="p-3 rounded-full bg-white shadow-sm border border-gray-100 flex items-center justify-center">
+                        <div className="p-3 rounded-full bg-white dark:bg-gray-700 shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center">
                                                     <img
                             src="https://images-onsmart.vercel.app/onsmart.ai/planning analytics.png"
                             alt="Planning Analytics"
@@ -331,20 +331,20 @@ export default function Produtos() {
                           />
                         </div>
                         <div>
-                          <CardTitle className="text-xl">{t('products.aiProductivity.categories.assistants.items.planningAnalytics.name')}</CardTitle>
+                          <CardTitle className="text-xl dark:text-gray-100">{t('products.aiProductivity.categories.assistants.items.planningAnalytics.name')}</CardTitle>
                           <Badge variant="outline" className="mt-1">{t('products.aiProductivity.categories.assistants.title')}</Badge>
                         </div>
                       </div>
-                      <CardDescription className="text-gray-600 leading-relaxed">
+                      <CardDescription className="text-gray-600 dark:text-gray-300 leading-relaxed">
                         {t('products.aiProductivity.categories.assistants.items.planningAnalytics.description')}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">{t('products.aiProductivity.categories.assistants.items.planningAnalytics.features.title')}</h4>
+                        <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">{t('products.aiProductivity.categories.assistants.items.planningAnalytics.features.title')}</h4>
                         <ul className="space-y-1">
                           {(t('products.aiProductivity.categories.assistants.items.planningAnalytics.features.items', { returnObjects: true }) as string[]).map((feature, idx) => (
-                            <li key={idx} className="flex items-center text-sm text-gray-600">
+                            <li key={idx} className="flex items-center text-sm text-gray-600 dark:text-gray-300">
                               <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
                               {feature}
                             </li>
@@ -369,19 +369,19 @@ export default function Produtos() {
               {/* AI/ML Ops */}
               <div className="space-y-4">
                 <div className="mb-4 ml-6">
-                  <h4 className="text-lg font-semibold text-gray-800">{t('products.aiMLOps.title')}</h4>
-                  <p className="text-sm text-gray-600">{t('products.aiMLOps.description')}</p>
+                  <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-100">{t('products.aiMLOps.title')}</h4>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">{t('products.aiMLOps.description')}</p>
                 </div>
                 
                 {/* AI Models */}
                 <div className="ml-6 space-y-3">
-                  <h5 className="text-md font-medium text-gray-700">{t('products.aiMLOps.categories.models.title')}</h5>
+                  <h5 className="text-md font-medium text-gray-700 dark:text-gray-200">{t('products.aiMLOps.categories.models.title')}</h5>
                   
                   {/* Granite™ */}
-                  <Card className="hover:shadow-lg transition-shadow">
+                  <Card className="hover:shadow-lg transition-shadow bg-white dark:bg-gray-800">
                     <CardHeader className="pb-4">
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="p-3 rounded-full bg-white shadow-sm border border-gray-100 flex items-center justify-center">
+                        <div className="p-3 rounded-full bg-white dark:bg-gray-700 shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center">
                           <img 
                             src="https://images-onsmart.vercel.app/onsmart.ai/Granite.png" 
                             alt="Granite" 
@@ -389,20 +389,20 @@ export default function Produtos() {
                           />
                         </div>
                         <div>
-                          <CardTitle className="text-xl">{t('products.aiMLOps.categories.models.items.granite.name')}</CardTitle>
+                          <CardTitle className="text-xl dark:text-gray-100">{t('products.aiMLOps.categories.models.items.granite.name')}</CardTitle>
                           <Badge variant="outline" className="mt-1">{t('products.aiMLOps.categories.models.title')}</Badge>
                         </div>
                       </div>
-                      <CardDescription className="text-gray-600 leading-relaxed">
+                      <CardDescription className="text-gray-600 dark:text-gray-300 leading-relaxed">
                         {t('products.aiMLOps.categories.models.items.granite.description')}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">{t('products.aiMLOps.categories.models.items.granite.features.title')}</h4>
+                        <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">{t('products.aiMLOps.categories.models.items.granite.features.title')}</h4>
                         <ul className="space-y-1">
                           {(t('products.aiMLOps.categories.models.items.granite.features.items', { returnObjects: true }) as string[]).map((feature, idx) => (
-                            <li key={idx} className="flex items-center text-sm text-gray-600">
+                            <li key={idx} className="flex items-center text-sm text-gray-600 dark:text-gray-300">
                               <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
                               {feature}
                             </li>
@@ -423,10 +423,10 @@ export default function Produtos() {
                   </Card>
 
                   {/* Meta Llama */}
-                  <Card className="hover:shadow-lg transition-shadow">
+                  <Card className="hover:shadow-lg transition-shadow bg-white dark:bg-gray-800">
                     <CardHeader className="pb-4">
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="p-3 rounded-full bg-white shadow-sm border border-gray-100 flex items-center justify-center">
+                        <div className="p-3 rounded-full bg-white dark:bg-gray-700 shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center">
                           <img 
                             src="https://images-onsmart.vercel.app/onsmart.ai/meta.png" 
                             alt="Meta Llama" 
@@ -434,20 +434,20 @@ export default function Produtos() {
                           />
                         </div>
                         <div>
-                          <CardTitle className="text-xl">{t('products.aiMLOps.categories.models.items.metaLlama.name')}</CardTitle>
+                          <CardTitle className="text-xl dark:text-gray-100">{t('products.aiMLOps.categories.models.items.metaLlama.name')}</CardTitle>
                           <Badge variant="outline" className="mt-1">{t('products.aiMLOps.categories.models.title')}</Badge>
                         </div>
                       </div>
-                      <CardDescription className="text-gray-600 leading-relaxed">
+                      <CardDescription className="text-gray-600 dark:text-gray-300 leading-relaxed">
                         {t('products.aiMLOps.categories.models.items.metaLlama.description')}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">{t('products.aiMLOps.categories.models.items.metaLlama.features.title')}</h4>
+                        <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">{t('products.aiMLOps.categories.models.items.metaLlama.features.title')}</h4>
                         <ul className="space-y-1">
                           {(t('products.aiMLOps.categories.models.items.metaLlama.features.items', { returnObjects: true }) as string[]).map((feature, idx) => (
-                            <li key={idx} className="flex items-center text-sm text-gray-600">
+                            <li key={idx} className="flex items-center text-sm text-gray-600 dark:text-gray-300">
                               <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
                               {feature}
                             </li>
@@ -468,10 +468,10 @@ export default function Produtos() {
                   </Card>
 
                   {/* Mistral */}
-                  <Card className="hover:shadow-lg transition-shadow">
+                  <Card className="hover:shadow-lg transition-shadow bg-white dark:bg-gray-800">
                     <CardHeader className="pb-4">
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="p-3 rounded-full bg-white shadow-sm border border-gray-100 flex items-center justify-center">
+                        <div className="p-3 rounded-full bg-white dark:bg-gray-700 shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center">
                           <img 
                             src="https://images-onsmart.vercel.app/onsmart.ai/mistral.png" 
                             alt="Mistral" 
@@ -479,20 +479,20 @@ export default function Produtos() {
                           />
                         </div>
                         <div>
-                          <CardTitle className="text-xl">{t('products.aiMLOps.categories.models.items.mistral.name')}</CardTitle>
+                          <CardTitle className="text-xl dark:text-gray-100">{t('products.aiMLOps.categories.models.items.mistral.name')}</CardTitle>
                           <Badge variant="outline" className="mt-1">{t('products.aiMLOps.categories.models.title')}</Badge>
                         </div>
                       </div>
-                      <CardDescription className="text-gray-600 leading-relaxed">
+                      <CardDescription className="text-gray-600 dark:text-gray-300 leading-relaxed">
                         {t('products.aiMLOps.categories.models.items.mistral.description')}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">{t('products.aiMLOps.categories.models.items.mistral.features.title')}</h4>
+                        <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">{t('products.aiMLOps.categories.models.items.mistral.features.title')}</h4>
                         <ul className="space-y-1">
                           {(t('products.aiMLOps.categories.models.items.mistral.features.items', { returnObjects: true }) as string[]).map((feature, idx) => (
-                            <li key={idx} className="flex items-center text-sm text-gray-600">
+                            <li key={idx} className="flex items-center text-sm text-gray-600 dark:text-gray-300">
                               <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
                               {feature}
                             </li>
@@ -515,13 +515,13 @@ export default function Produtos() {
 
                 {/* AI Tools */}
                 <div className="ml-6 space-y-3">
-                  <h5 className="text-md font-medium text-gray-700">{t('products.aiMLOps.categories.tools.title')}</h5>
+                  <h5 className="text-md font-medium text-gray-700 dark:text-gray-200">{t('products.aiMLOps.categories.tools.title')}</h5>
                   
                   {/* watsonx.ai™ */}
-                  <Card className="hover:shadow-lg transition-shadow">
+                  <Card className="hover:shadow-lg transition-shadow bg-white dark:bg-gray-800">
                     <CardHeader className="pb-4">
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="p-3 rounded-full bg-white shadow-sm border border-gray-100 flex items-center justify-center">
+                        <div className="p-3 rounded-full bg-white dark:bg-gray-700 shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center">
                           <img 
                             src="https://images-onsmart.vercel.app/onsmart.ai/watsonx.png" 
                             alt="watsonx.ai" 
@@ -532,20 +532,20 @@ export default function Produtos() {
                           />
                         </div>
                         <div>
-                          <CardTitle className="text-xl">{t('products.aiMLOps.categories.tools.items.watsonxAI.name')}</CardTitle>
+                          <CardTitle className="text-xl dark:text-gray-100">{t('products.aiMLOps.categories.tools.items.watsonxAI.name')}</CardTitle>
                           <Badge variant="outline" className="mt-1">{t('products.aiMLOps.categories.tools.title')}</Badge>
                         </div>
                       </div>
-                      <CardDescription className="text-gray-600 leading-relaxed">
+                      <CardDescription className="text-gray-600 dark:text-gray-300 leading-relaxed">
                         {t('products.aiMLOps.categories.tools.items.watsonxAI.description')}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">{t('products.aiMLOps.categories.tools.items.watsonxAI.features.title')}</h4>
+                        <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">{t('products.aiMLOps.categories.tools.items.watsonxAI.features.title')}</h4>
                         <ul className="space-y-1">
                           {(t('products.aiMLOps.categories.tools.items.watsonxAI.features.items', { returnObjects: true }) as string[]).map((feature, idx) => (
-                            <li key={idx} className="flex items-center text-sm text-gray-600">
+                            <li key={idx} className="flex items-center text-sm text-gray-600 dark:text-gray-300">
                               <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
                               {feature}
                             </li>
@@ -568,13 +568,13 @@ export default function Produtos() {
 
                 {/* AI Governance */}
                 <div className="ml-6 space-y-3">
-                  <h5 className="text-md font-medium text-gray-700">{t('products.aiMLOps.categories.governance.title')}</h5>
+                  <h5 className="text-md font-medium text-gray-700 dark:text-gray-200">{t('products.aiMLOps.categories.governance.title')}</h5>
                   
                   {/* watsonx.governance™ */}
-                  <Card className="hover:shadow-lg transition-shadow">
+                  <Card className="hover:shadow-lg transition-shadow bg-white dark:bg-gray-800">
                     <CardHeader className="pb-4">
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="p-3 rounded-full bg-white shadow-sm border border-gray-100 flex items-center justify-center">
+                        <div className="p-3 rounded-full bg-white dark:bg-gray-700 shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center">
                           <img 
                             src="https://images-onsmart.vercel.app/onsmart.ai/watsonx.png" 
                             alt="watsonx.governance" 
@@ -582,20 +582,20 @@ export default function Produtos() {
                           />
                         </div>
                         <div>
-                          <CardTitle className="text-xl">{t('products.aiMLOps.categories.governance.items.watsonxGovernance.name')}</CardTitle>
+                          <CardTitle className="text-xl dark:text-gray-100">{t('products.aiMLOps.categories.governance.items.watsonxGovernance.name')}</CardTitle>
                           <Badge variant="outline" className="mt-1">{t('products.aiMLOps.categories.governance.title')}</Badge>
                         </div>
                       </div>
-                      <CardDescription className="text-gray-600 leading-relaxed">
+                      <CardDescription className="text-gray-600 dark:text-gray-300 leading-relaxed">
                         {t('products.aiMLOps.categories.governance.items.watsonxGovernance.description')}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">{t('products.aiMLOps.categories.governance.items.watsonxGovernance.features.title')}</h4>
+                        <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">{t('products.aiMLOps.categories.governance.items.watsonxGovernance.features.title')}</h4>
                         <ul className="space-y-1">
                           {(t('products.aiMLOps.categories.governance.items.watsonxGovernance.features.items', { returnObjects: true }) as string[]).map((feature, idx) => (
-                            <li key={idx} className="flex items-center text-sm text-gray-600">
+                            <li key={idx} className="flex items-center text-sm text-gray-600 dark:text-gray-300">
                               <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
                               {feature}
                             </li>
@@ -620,19 +620,19 @@ export default function Produtos() {
               {/* Data Fabric */}
               <div className="space-y-4">
                 <div className="mb-4 ml-6">
-                  <h4 className="text-lg font-semibold text-gray-800">{t('products.dataFabric.title')}</h4>
-                  <p className="text-sm text-gray-600">{t('products.dataFabric.description')}</p>
+                  <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-100">{t('products.dataFabric.title')}</h4>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">{t('products.dataFabric.description')}</p>
                 </div>
                 
                 {/* Databases */}
                 <div className="ml-6 space-y-3">
-                  <h5 className="text-md font-medium text-gray-700">{t('products.dataFabric.categories.databases.title')}</h5>
+                  <h5 className="text-md font-medium text-gray-700 dark:text-gray-200">{t('products.dataFabric.categories.databases.title')}</h5>
                   
                   {/* watsonx.data™ */}
-                  <Card className="hover:shadow-lg transition-shadow">
+                  <Card className="hover:shadow-lg transition-shadow bg-white dark:bg-gray-800">
                     <CardHeader className="pb-4">
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="p-3 rounded-full bg-white shadow-sm border border-gray-100 flex items-center justify-center">
+                        <div className="p-3 rounded-full bg-white dark:bg-gray-700 shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center">
                           <img 
                             src="https://images-onsmart.vercel.app/onsmart.ai/watsonx.png" 
                             alt="watsonx.data" 
@@ -640,20 +640,20 @@ export default function Produtos() {
                           />
                         </div>
                         <div>
-                          <CardTitle className="text-xl">{t('products.dataFabric.categories.databases.items.watsonxData.name')}</CardTitle>
+                          <CardTitle className="text-xl dark:text-gray-100">{t('products.dataFabric.categories.databases.items.watsonxData.name')}</CardTitle>
                           <Badge variant="outline" className="mt-1">{t('products.dataFabric.categories.databases.title')}</Badge>
                         </div>
                       </div>
-                      <CardDescription className="text-gray-600 leading-relaxed">
+                      <CardDescription className="text-gray-600 dark:text-gray-300 leading-relaxed">
                         {t('products.dataFabric.categories.databases.items.watsonxData.description')}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">{t('products.dataFabric.categories.databases.items.watsonxData.features.title')}</h4>
+                        <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">{t('products.dataFabric.categories.databases.items.watsonxData.features.title')}</h4>
                         <ul className="space-y-1">
                           {(t('products.dataFabric.categories.databases.items.watsonxData.features.items', { returnObjects: true }) as string[]).map((feature, idx) => (
-                            <li key={idx} className="flex items-center text-sm text-gray-600">
+                            <li key={idx} className="flex items-center text-sm text-gray-600 dark:text-gray-300">
                               <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
                               {feature}
                             </li>
@@ -676,13 +676,13 @@ export default function Produtos() {
 
                 {/* Data Intelligence */}
                 <div className="ml-6 space-y-3">
-                  <h5 className="text-md font-medium text-gray-700">{t('products.dataFabric.categories.intelligence.title')}</h5>
+                  <h5 className="text-md font-medium text-gray-700 dark:text-gray-200">{t('products.dataFabric.categories.intelligence.title')}</h5>
                   
                   {/* Data Product Hub */}
-                  <Card className="hover:shadow-lg transition-shadow">
+                  <Card className="hover:shadow-lg transition-shadow bg-white dark:bg-gray-800">
                     <CardHeader className="pb-4">
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="p-3 rounded-full bg-white shadow-sm border border-gray-100 flex items-center justify-center">
+                        <div className="p-3 rounded-full bg-white dark:bg-gray-700 shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center">
                           <img 
                             src="https://images-onsmart.vercel.app/onsmart.ai/data-product-hub.png" 
                             alt="Data Product Hub" 
@@ -690,20 +690,20 @@ export default function Produtos() {
                           />
                         </div>
                         <div>
-                          <CardTitle className="text-xl">{t('products.dataFabric.categories.intelligence.items.dataProductHub.name')}</CardTitle>
+                          <CardTitle className="text-xl dark:text-gray-100">{t('products.dataFabric.categories.intelligence.items.dataProductHub.name')}</CardTitle>
                           <Badge variant="outline" className="mt-1">{t('products.dataFabric.categories.intelligence.title')}</Badge>
                         </div>
                       </div>
-                      <CardDescription className="text-gray-600 leading-relaxed">
+                      <CardDescription className="text-gray-600 dark:text-gray-300 leading-relaxed">
                         {t('products.dataFabric.categories.intelligence.items.dataProductHub.description')}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">{t('products.dataFabric.categories.intelligence.items.dataProductHub.features.title')}</h4>
+                        <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">{t('products.dataFabric.categories.intelligence.items.dataProductHub.features.title')}</h4>
                         <ul className="space-y-1">
                           {(t('products.dataFabric.categories.intelligence.items.dataProductHub.features.items', { returnObjects: true }) as string[]).map((feature, idx) => (
-                            <li key={idx} className="flex items-center text-sm text-gray-600">
+                            <li key={idx} className="flex items-center text-sm text-gray-600 dark:text-gray-300">
                               <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
                               {feature}
                             </li>
@@ -724,10 +724,10 @@ export default function Produtos() {
                   </Card>
 
                   {/* Knowledge Catalog */}
-                  <Card className="hover:shadow-lg transition-shadow">
+                  <Card className="hover:shadow-lg transition-shadow bg-white dark:bg-gray-800">
                     <CardHeader className="pb-4">
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="p-3 rounded-full bg-white shadow-sm border border-gray-100 flex items-center justify-center">
+                        <div className="p-3 rounded-full bg-white dark:bg-gray-700 shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center">
                                                     <img
                             src="https://images-onsmart.vercel.app/onsmart.ai/knowledge.png"
                             alt="Knowledge Catalog"
@@ -735,20 +735,20 @@ export default function Produtos() {
                           />
                         </div>
                         <div>
-                          <CardTitle className="text-xl">{t('products.dataFabric.categories.intelligence.items.knowledgeCatalog.name')}</CardTitle>
+                          <CardTitle className="text-xl dark:text-gray-100">{t('products.dataFabric.categories.intelligence.items.knowledgeCatalog.name')}</CardTitle>
                           <Badge variant="outline" className="mt-1">{t('products.dataFabric.categories.intelligence.title')}</Badge>
                         </div>
                       </div>
-                      <CardDescription className="text-gray-600 leading-relaxed">
+                      <CardDescription className="text-gray-600 dark:text-gray-300 leading-relaxed">
                         {t('products.dataFabric.categories.intelligence.items.knowledgeCatalog.description')}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">{t('products.dataFabric.categories.intelligence.items.knowledgeCatalog.features.title')}</h4>
+                        <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">{t('products.dataFabric.categories.intelligence.items.knowledgeCatalog.features.title')}</h4>
                         <ul className="space-y-1">
                           {(t('products.dataFabric.categories.intelligence.items.knowledgeCatalog.features.items', { returnObjects: true }) as string[]).map((feature, idx) => (
-                            <li key={idx} className="flex items-center text-sm text-gray-600">
+                            <li key={idx} className="flex items-center text-sm text-gray-600 dark:text-gray-300">
                               <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
                               {feature}
                             </li>
@@ -769,10 +769,10 @@ export default function Produtos() {
                   </Card>
 
                   {/* Manta Data Lineage */}
-                  <Card className="hover:shadow-lg transition-shadow">
+                  <Card className="hover:shadow-lg transition-shadow bg-white dark:bg-gray-800">
                     <CardHeader className="pb-4">
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="p-3 rounded-full bg-white shadow-sm border border-gray-100 flex items-center justify-center">
+                        <div className="p-3 rounded-full bg-white dark:bg-gray-700 shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center">
                           <img 
                             src="https://images-onsmart.vercel.app/onsmart.ai/manta.png" 
                             alt="Manta Data Lineage" 
@@ -780,20 +780,20 @@ export default function Produtos() {
                           />
                         </div>
                         <div>
-                          <CardTitle className="text-xl">{t('products.dataFabric.categories.intelligence.items.mantaDataLineage.name')}</CardTitle>
+                          <CardTitle className="text-xl dark:text-gray-100">{t('products.dataFabric.categories.intelligence.items.mantaDataLineage.name')}</CardTitle>
                           <Badge variant="outline" className="mt-1">{t('products.dataFabric.categories.intelligence.title')}</Badge>
                         </div>
                       </div>
-                      <CardDescription className="text-gray-600 leading-relaxed">
+                      <CardDescription className="text-gray-600 dark:text-gray-300 leading-relaxed">
                         {t('products.dataFabric.categories.intelligence.items.mantaDataLineage.description')}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">{t('products.dataFabric.categories.intelligence.items.mantaDataLineage.features.title')}</h4>
+                        <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">{t('products.dataFabric.categories.intelligence.items.mantaDataLineage.features.title')}</h4>
                         <ul className="space-y-1">
                           {(t('products.dataFabric.categories.intelligence.items.mantaDataLineage.features.items', { returnObjects: true }) as string[]).map((feature, idx) => (
-                            <li key={idx} className="flex items-center text-sm text-gray-600">
+                            <li key={idx} className="flex items-center text-sm text-gray-600 dark:text-gray-300">
                               <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
                               {feature}
                             </li>
@@ -816,13 +816,13 @@ export default function Produtos() {
 
                 {/* Data Integration */}
                 <div className="ml-6 space-y-3">
-                  <h5 className="text-md font-medium text-gray-700">{t('products.dataFabric.categories.integration.title')}</h5>
+                  <h5 className="text-md font-medium text-gray-700 dark:text-gray-200">{t('products.dataFabric.categories.integration.title')}</h5>
                   
                   {/* DataStage® */}
-                  <Card className="hover:shadow-lg transition-shadow">
+                  <Card className="hover:shadow-lg transition-shadow bg-white dark:bg-gray-800">
                     <CardHeader className="pb-4">
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="p-3 rounded-full bg-white shadow-sm border border-gray-100 flex items-center justify-center">
+                        <div className="p-3 rounded-full bg-white dark:bg-gray-700 shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center">
                           <img 
                             src="https://images-onsmart.vercel.app/onsmart.ai/DataStage.png" 
                             alt="DataStage" 
@@ -830,20 +830,20 @@ export default function Produtos() {
                           />
                         </div>
                         <div>
-                          <CardTitle className="text-xl">{t('products.dataFabric.categories.integration.items.datastage.name')}</CardTitle>
+                          <CardTitle className="text-xl dark:text-gray-100">{t('products.dataFabric.categories.integration.items.datastage.name')}</CardTitle>
                           <Badge variant="outline" className="mt-1">{t('products.dataFabric.categories.integration.title')}</Badge>
                         </div>
                       </div>
-                      <CardDescription className="text-gray-600 leading-relaxed">
+                      <CardDescription className="text-gray-600 dark:text-gray-300 leading-relaxed">
                         {t('products.dataFabric.categories.integration.items.datastage.description')}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">{t('products.dataFabric.categories.integration.items.datastage.features.title')}</h4>
+                        <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">{t('products.dataFabric.categories.integration.items.datastage.features.title')}</h4>
                         <ul className="space-y-1">
                           {(t('products.dataFabric.categories.integration.items.datastage.features.items', { returnObjects: true }) as string[]).map((feature, idx) => (
-                            <li key={idx} className="flex items-center text-sm text-gray-600">
+                            <li key={idx} className="flex items-center text-sm text-gray-600 dark:text-gray-300">
                               <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
                               {feature}
                             </li>
@@ -864,10 +864,10 @@ export default function Produtos() {
                   </Card>
 
                   {/* Databand® */}
-                  <Card className="hover:shadow-lg transition-shadow">
+                  <Card className="hover:shadow-lg transition-shadow bg-white dark:bg-gray-800">
                     <CardHeader className="pb-4">
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="p-3 rounded-full bg-white shadow-sm border border-gray-100 flex items-center justify-center">
+                        <div className="p-3 rounded-full bg-white dark:bg-gray-700 shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center">
                           <img 
                             src="https://images-onsmart.vercel.app/onsmart.ai/databand.png" 
                             alt="Databand" 
@@ -875,20 +875,20 @@ export default function Produtos() {
                           />
                         </div>
                         <div>
-                          <CardTitle className="text-xl">{t('products.dataFabric.categories.integration.items.databand.name')}</CardTitle>
+                          <CardTitle className="text-xl dark:text-gray-100">{t('products.dataFabric.categories.integration.items.databand.name')}</CardTitle>
                           <Badge variant="outline" className="mt-1">{t('products.dataFabric.categories.integration.title')}</Badge>
                         </div>
                       </div>
-                      <CardDescription className="text-gray-600 leading-relaxed">
+                      <CardDescription className="text-gray-600 dark:text-gray-300 leading-relaxed">
                         {t('products.dataFabric.categories.integration.items.databand.description')}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">{t('products.dataFabric.categories.integration.items.databand.features.title')}</h4>
+                        <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">{t('products.dataFabric.categories.integration.items.databand.features.title')}</h4>
                         <ul className="space-y-1">
                           {(t('products.dataFabric.categories.integration.items.databand.features.items', { returnObjects: true }) as string[]).map((feature, idx) => (
-                            <li key={idx} className="flex items-center text-sm text-gray-600">
+                            <li key={idx} className="flex items-center text-sm text-gray-600 dark:text-gray-300">
                               <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
                               {feature}
                             </li>
@@ -909,10 +909,10 @@ export default function Produtos() {
                   </Card>
 
                   {/* Streamsets */}
-                  <Card className="hover:shadow-lg transition-shadow">
+                  <Card className="hover:shadow-lg transition-shadow bg-white dark:bg-gray-800">
                     <CardHeader className="pb-4">
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="p-3 rounded-full bg-white shadow-sm border border-gray-100 flex items-center justify-center">
+                        <div className="p-3 rounded-full bg-white dark:bg-gray-700 shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center">
                           <img 
                             src="https://images-onsmart.vercel.app/onsmart.ai/Streamsets.png" 
                             alt="Streamsets" 
@@ -920,20 +920,20 @@ export default function Produtos() {
                           />
                         </div>
                         <div>
-                          <CardTitle className="text-xl">{t('products.dataFabric.categories.integration.items.streamsets.name')}</CardTitle>
+                          <CardTitle className="text-xl dark:text-gray-100">{t('products.dataFabric.categories.integration.items.streamsets.name')}</CardTitle>
                           <Badge variant="outline" className="mt-1">{t('products.dataFabric.categories.integration.title')}</Badge>
                         </div>
                       </div>
-                      <CardDescription className="text-gray-600 leading-relaxed">
+                      <CardDescription className="text-gray-600 dark:text-gray-300 leading-relaxed">
                         {t('products.dataFabric.categories.integration.items.streamsets.description')}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">{t('products.dataFabric.categories.integration.items.streamsets.features.title')}</h4>
+                        <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">{t('products.dataFabric.categories.integration.items.streamsets.features.title')}</h4>
                         <ul className="space-y-1">
                           {(t('products.dataFabric.categories.integration.items.streamsets.features.items', { returnObjects: true }) as string[]).map((feature, idx) => (
-                            <li key={idx} className="flex items-center text-sm text-gray-600">
+                            <li key={idx} className="flex items-center text-sm text-gray-600 dark:text-gray-300">
                               <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
                               {feature}
                             </li>
@@ -956,13 +956,13 @@ export default function Produtos() {
 
                 {/* Data Security */}
                 <div className="ml-6 space-y-3">
-                  <h5 className="text-md font-medium text-gray-700">{t('products.dataFabric.categories.security.title')}</h5>
+                  <h5 className="text-md font-medium text-gray-700 dark:text-gray-200">{t('products.dataFabric.categories.security.title')}</h5>
                   
                   {/* Guardium® Data Security Center */}
-                  <Card className="hover:shadow-lg transition-shadow">
+                  <Card className="hover:shadow-lg transition-shadow bg-white dark:bg-gray-800">
                     <CardHeader className="pb-4">
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="p-3 rounded-full bg-white shadow-sm border border-gray-100 flex items-center justify-center">
+                        <div className="p-3 rounded-full bg-white dark:bg-gray-700 shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center">
                           <img 
                             src="https://images-onsmart.vercel.app/onsmart.ai/guardium.png" 
                             alt="Guardium Data Security Center" 
@@ -970,20 +970,20 @@ export default function Produtos() {
                           />
                         </div>
                         <div>
-                          <CardTitle className="text-xl">{t('products.dataFabric.categories.security.items.guardium.name')}</CardTitle>
+                          <CardTitle className="text-xl dark:text-gray-100">{t('products.dataFabric.categories.security.items.guardium.name')}</CardTitle>
                           <Badge variant="outline" className="mt-1">{t('products.dataFabric.categories.security.title')}</Badge>
                         </div>
                       </div>
-                      <CardDescription className="text-gray-600 leading-relaxed">
+                      <CardDescription className="text-gray-600 dark:text-gray-300 leading-relaxed">
                         {t('products.dataFabric.categories.security.items.guardium.description')}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">{t('products.dataFabric.categories.security.items.guardium.features.title')}</h4>
+                        <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">{t('products.dataFabric.categories.security.items.guardium.features.title')}</h4>
                         <ul className="space-y-1">
                           {(t('products.dataFabric.categories.security.items.guardium.features.items', { returnObjects: true }) as string[]).map((feature, idx) => (
-                            <li key={idx} className="flex items-center text-sm text-gray-600">
+                            <li key={idx} className="flex items-center text-sm text-gray-600 dark:text-gray-300">
                               <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
                               {feature}
                             </li>
@@ -1008,19 +1008,19 @@ export default function Produtos() {
               {/* Data Storage */}
               <div className="space-y-4">
                 <div className="mb-4 ml-6">
-                  <h4 className="text-lg font-semibold text-gray-800">{t('products.dataStorage.title')}</h4>
-                  <p className="text-sm text-gray-600">{t('products.dataStorage.description')}</p>
+                  <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-100">{t('products.dataStorage.title')}</h4>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">{t('products.dataStorage.description')}</p>
                 </div>
                 
                 {/* Software-defined Storage */}
                 <div className="ml-6 space-y-3">
-                  <h5 className="text-md font-medium text-gray-700">{t('products.dataStorage.categories.storage.title')}</h5>
+                  <h5 className="text-md font-medium text-gray-700 dark:text-gray-200">{t('products.dataStorage.categories.storage.title')}</h5>
                   
                   {/* Storage Ceph® */}
-                  <Card className="hover:shadow-lg transition-shadow">
+                  <Card className="hover:shadow-lg transition-shadow bg-white dark:bg-gray-800">
                     <CardHeader className="pb-4">
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="p-3 rounded-full bg-white shadow-sm border border-gray-100 flex items-center justify-center">
+                        <div className="p-3 rounded-full bg-white dark:bg-gray-700 shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center">
                           <img 
                             src="https://images-onsmart.vercel.app/onsmart.ai/storage.png" 
                             alt="Storage Ceph" 
@@ -1028,20 +1028,20 @@ export default function Produtos() {
                           />
                         </div>
                         <div>
-                          <CardTitle className="text-xl">{t('products.dataStorage.categories.storage.items.storageCeph.name')}</CardTitle>
+                          <CardTitle className="text-xl dark:text-gray-100">{t('products.dataStorage.categories.storage.items.storageCeph.name')}</CardTitle>
                           <Badge variant="outline" className="mt-1">{t('products.dataStorage.categories.storage.title')}</Badge>
                         </div>
                       </div>
-                      <CardDescription className="text-gray-600 leading-relaxed">
+                      <CardDescription className="text-gray-600 dark:text-gray-300 leading-relaxed">
                         {t('products.dataStorage.categories.storage.items.storageCeph.description')}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2">{t('products.dataStorage.categories.storage.items.storageCeph.features.title')}</h4>
+                        <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">{t('products.dataStorage.categories.storage.items.storageCeph.features.title')}</h4>
                         <ul className="space-y-1">
                           {(t('products.dataStorage.categories.storage.items.storageCeph.features.items', { returnObjects: true }) as string[]).map((feature, idx) => (
-                            <li key={idx} className="flex items-center text-sm text-gray-600">
+                            <li key={idx} className="flex items-center text-sm text-gray-600 dark:text-gray-300">
                               <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
                               {feature}
                             </li>
@@ -1066,14 +1066,14 @@ export default function Produtos() {
 
             {/* Certificações - Lado Direito */}
             <div className="lg:w-1/2 space-y-4 sm:space-y-6">
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6 text-center lg:text-left">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 sm:mb-6 text-center lg:text-left">
                 <span className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">{t('certifications.sectionTitle')}</span>
               </h3>
               
               {/* IBM Certifications */}
               <div className="mb-4 sm:mb-6">
-                <h4 className="text-base sm:text-lg font-semibold text-gray-800 mb-2">{t('certifications.ibmSection.title')}</h4>
-                <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4">
+                <h4 className="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-100 mb-2">{t('certifications.ibmSection.title')}</h4>
+                <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4">
                   {t('certifications.ibmSection.description')}
                 </p>
               </div>
@@ -1081,7 +1081,7 @@ export default function Produtos() {
               <div className="space-y-4">
                 
                 <div className="grid grid-cols-1 gap-3 sm:gap-4">
-                  <Card className="hover:shadow-lg transition-shadow">
+                  <Card className="hover:shadow-lg transition-shadow bg-white dark:bg-gray-800">
                     <CardHeader className="pb-3 sm:pb-4">
                       <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
                         <div className="p-2 sm:p-4 rounded-full bg-gray-50">
@@ -1099,10 +1099,10 @@ export default function Produtos() {
                     </CardHeader>
                   </Card>
 
-                  <Card className="hover:shadow-lg transition-shadow">
+                  <Card className="hover:shadow-lg transition-shadow bg-white dark:bg-gray-800">
                     <CardHeader className="pb-4">
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="p-4 rounded-full bg-gray-50">
+                        <div className="p-4 rounded-full bg-gray-50 dark:bg-gray-700">
                           <img 
                             src="https://images-onsmart.vercel.app/onsmart.ai/ibm-logo.png" 
                             alt="Certificações IBM" 
@@ -1110,17 +1110,17 @@ export default function Produtos() {
                           />
                         </div>
                         <div className="flex-1">
-                          <CardTitle className="text-lg">{t('certifications.items.watsonxAssistantSales.title')}</CardTitle>
-                          <CardDescription>{t('certifications.items.watsonxAssistantSales.description')}</CardDescription>
+                          <CardTitle className="text-lg dark:text-gray-100">{t('certifications.items.watsonxAssistantSales.title')}</CardTitle>
+                          <CardDescription className="dark:text-gray-300">{t('certifications.items.watsonxAssistantSales.description')}</CardDescription>
                         </div>
                       </div>
                     </CardHeader>
                   </Card>
 
-                  <Card className="hover:shadow-lg transition-shadow">
+                  <Card className="hover:shadow-lg transition-shadow bg-white dark:bg-gray-800">
                     <CardHeader className="pb-4">
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="p-4 rounded-full bg-gray-50">
+                        <div className="p-4 rounded-full bg-gray-50 dark:bg-gray-700">
                           <img 
                             src="https://images-onsmart.vercel.app/onsmart.ai/ibm-logo.png" 
                             alt="Certificações IBM" 
@@ -1128,17 +1128,17 @@ export default function Produtos() {
                           />
                         </div>
                         <div className="flex-1">
-                          <CardTitle className="text-lg">{t('certifications.items.watsonxOrchestrateSales.title')}</CardTitle>
-                          <CardDescription>{t('certifications.items.watsonxOrchestrateSales.description')}</CardDescription>
+                          <CardTitle className="text-lg dark:text-gray-100">{t('certifications.items.watsonxOrchestrateSales.title')}</CardTitle>
+                          <CardDescription className="dark:text-gray-300">{t('certifications.items.watsonxOrchestrateSales.description')}</CardDescription>
                         </div>
                       </div>
                     </CardHeader>
                   </Card>
 
-                  <Card className="hover:shadow-lg transition-shadow">
+                  <Card className="hover:shadow-lg transition-shadow bg-white dark:bg-gray-800">
                     <CardHeader className="pb-4">
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="p-4 rounded-full bg-gray-50">
+                        <div className="p-4 rounded-full bg-gray-50 dark:bg-gray-700">
                           <img 
                             src="https://images-onsmart.vercel.app/onsmart.ai/ibm-logo.png" 
                             alt="Certificações IBM" 
@@ -1146,17 +1146,17 @@ export default function Produtos() {
                           />
                         </div>
                         <div className="flex-1">
-                          <CardTitle className="text-lg">{t('certifications.items.watsonxAgenticAI.title')}</CardTitle>
-                          <CardDescription>{t('certifications.items.watsonxAgenticAI.description')}</CardDescription>
+                          <CardTitle className="text-lg dark:text-gray-100">{t('certifications.items.watsonxAgenticAI.title')}</CardTitle>
+                          <CardDescription className="dark:text-gray-300">{t('certifications.items.watsonxAgenticAI.description')}</CardDescription>
                         </div>
                       </div>
                     </CardHeader>
                   </Card>
 
-                  <Card className="hover:shadow-lg transition-shadow">
+                  <Card className="hover:shadow-lg transition-shadow bg-white dark:bg-gray-800">
                     <CardHeader className="pb-4">
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="p-4 rounded-full bg-gray-50">
+                        <div className="p-4 rounded-full bg-gray-50 dark:bg-gray-700">
                           <img 
                             src="https://images-onsmart.vercel.app/onsmart.ai/ibm-logo.png" 
                             alt="Certificações IBM" 
@@ -1164,17 +1164,17 @@ export default function Produtos() {
                           />
                         </div>
                         <div className="flex-1">
-                          <CardTitle className="text-lg">{t('certifications.items.watsonxAssistantFoundation.title')}</CardTitle>
-                          <CardDescription>{t('certifications.items.watsonxAssistantFoundation.description')}</CardDescription>
+                          <CardTitle className="text-lg dark:text-gray-100">{t('certifications.items.watsonxAssistantFoundation.title')}</CardTitle>
+                          <CardDescription className="dark:text-gray-300">{t('certifications.items.watsonxAssistantFoundation.description')}</CardDescription>
                         </div>
                       </div>
                     </CardHeader>
                   </Card>
 
-                  <Card className="hover:shadow-lg transition-shadow">
+                  <Card className="hover:shadow-lg transition-shadow bg-white dark:bg-gray-800">
                     <CardHeader className="pb-4">
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="p-4 rounded-full bg-gray-50">
+                        <div className="p-4 rounded-full bg-gray-50 dark:bg-gray-700">
                           <img 
                             src="https://images-onsmart.vercel.app/onsmart.ai/ibm-logo.png" 
                             alt="Certificações IBM" 
@@ -1182,17 +1182,17 @@ export default function Produtos() {
                           />
                         </div>
                         <div className="flex-1">
-                          <CardTitle className="text-lg">{t('certifications.items.watsonxOrchestrateFoundation.title')}</CardTitle>
-                          <CardDescription>{t('certifications.items.watsonxOrchestrateFoundation.description')}</CardDescription>
+                          <CardTitle className="text-lg dark:text-gray-100">{t('certifications.items.watsonxOrchestrateFoundation.title')}</CardTitle>
+                          <CardDescription className="dark:text-gray-300">{t('certifications.items.watsonxOrchestrateFoundation.description')}</CardDescription>
                         </div>
                       </div>
                     </CardHeader>
                   </Card>
 
-                  <Card className="hover:shadow-lg transition-shadow">
+                  <Card className="hover:shadow-lg transition-shadow bg-white dark:bg-gray-800">
                     <CardHeader className="pb-4">
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="p-4 rounded-full bg-gray-50">
+                        <div className="p-4 rounded-full bg-gray-50 dark:bg-gray-700">
                           <img 
                             src="https://images-onsmart.vercel.app/onsmart.ai/ibm-logo.png" 
                             alt="Certificações IBM" 
@@ -1200,17 +1200,17 @@ export default function Produtos() {
                           />
                         </div>
                         <div className="flex-1">
-                          <CardTitle className="text-lg">{t('certifications.items.deepLearningSpecialist.title')}</CardTitle>
-                          <CardDescription>{t('certifications.items.deepLearningSpecialist.description')}</CardDescription>
+                          <CardTitle className="text-lg dark:text-gray-100">{t('certifications.items.deepLearningSpecialist.title')}</CardTitle>
+                          <CardDescription className="dark:text-gray-300">{t('certifications.items.deepLearningSpecialist.description')}</CardDescription>
                         </div>
                       </div>
                     </CardHeader>
                   </Card>
 
-                  <Card className="hover:shadow-lg transition-shadow">
+                  <Card className="hover:shadow-lg transition-shadow bg-white dark:bg-gray-800">
                     <CardHeader className="pb-4">
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="p-4 rounded-full bg-gray-50">
+                        <div className="p-4 rounded-full bg-gray-50 dark:bg-gray-700">
                           <img 
                             src="https://images-onsmart.vercel.app/onsmart.ai/ibm-logo.png" 
                             alt="Certificações IBM" 
@@ -1218,17 +1218,17 @@ export default function Produtos() {
                           />
                         </div>
                         <div className="flex-1">
-                          <CardTitle className="text-lg">{t('certifications.items.generativeAI.title')}</CardTitle>
-                          <CardDescription>{t('certifications.items.generativeAI.description')}</CardDescription>
+                          <CardTitle className="text-lg dark:text-gray-100">{t('certifications.items.generativeAI.title')}</CardTitle>
+                          <CardDescription className="dark:text-gray-300">{t('certifications.items.generativeAI.description')}</CardDescription>
                         </div>
                       </div>
                     </CardHeader>
                   </Card>
 
-                  <Card className="hover:shadow-lg transition-shadow">
+                  <Card className="hover:shadow-lg transition-shadow bg-white dark:bg-gray-800">
                     <CardHeader className="pb-4">
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="p-4 rounded-full bg-gray-50">
+                        <div className="p-4 rounded-full bg-gray-50 dark:bg-gray-700">
                           <img 
                             src="https://images-onsmart.vercel.app/onsmart.ai/ibm-logo.png" 
                             alt="Certificações IBM" 
@@ -1236,17 +1236,17 @@ export default function Produtos() {
                           />
                         </div>
                         <div className="flex-1">
-                          <CardTitle className="text-lg">{t('certifications.items.machineLearningPython.title')}</CardTitle>
-                          <CardDescription>{t('certifications.items.machineLearningPython.description')}</CardDescription>
+                          <CardTitle className="text-lg dark:text-gray-100">{t('certifications.items.machineLearningPython.title')}</CardTitle>
+                          <CardDescription className="dark:text-gray-300">{t('certifications.items.machineLearningPython.description')}</CardDescription>
                         </div>
                       </div>
                     </CardHeader>
                   </Card>
 
-                  <Card className="hover:shadow-lg transition-shadow">
+                  <Card className="hover:shadow-lg transition-shadow bg-white dark:bg-gray-800">
                     <CardHeader className="pb-4">
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="p-4 rounded-full bg-gray-50">
+                        <div className="p-4 rounded-full bg-gray-50 dark:bg-gray-700">
                           <img 
                             src="https://images-onsmart.vercel.app/onsmart.ai/ibm-logo.png" 
                             alt="Certificações IBM" 
@@ -1254,17 +1254,17 @@ export default function Produtos() {
                           />
                         </div>
                         <div className="flex-1">
-                          <CardTitle className="text-lg">{t('certifications.items.aiEngineering.title')}</CardTitle>
-                          <CardDescription>{t('certifications.items.aiEngineering.description')}</CardDescription>
+                          <CardTitle className="text-lg dark:text-gray-100">{t('certifications.items.aiEngineering.title')}</CardTitle>
+                          <CardDescription className="dark:text-gray-300">{t('certifications.items.aiEngineering.description')}</CardDescription>
                         </div>
                       </div>
                     </CardHeader>
                   </Card>
 
-                  <Card className="hover:shadow-lg transition-shadow">
+                  <Card className="hover:shadow-lg transition-shadow bg-white dark:bg-gray-800">
                     <CardHeader className="pb-4">
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="p-4 rounded-full bg-gray-50">
+                        <div className="p-4 rounded-full bg-gray-50 dark:bg-gray-700">
                           <img 
                             src="https://images-onsmart.vercel.app/onsmart.ai/ibm-logo.png" 
                             alt="Certificações IBM" 
@@ -1272,17 +1272,17 @@ export default function Produtos() {
                           />
                         </div>
                         <div className="flex-1">
-                          <CardTitle className="text-lg">{t('certifications.items.computerVision.title')}</CardTitle>
-                          <CardDescription>{t('certifications.items.computerVision.description')}</CardDescription>
+                          <CardTitle className="text-lg dark:text-gray-100">{t('certifications.items.computerVision.title')}</CardTitle>
+                          <CardDescription className="dark:text-gray-300">{t('certifications.items.computerVision.description')}</CardDescription>
                         </div>
                       </div>
                     </CardHeader>
                   </Card>
 
-                  <Card className="hover:shadow-lg transition-shadow">
+                  <Card className="hover:shadow-lg transition-shadow bg-white dark:bg-gray-800">
                     <CardHeader className="pb-4">
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="p-4 rounded-full bg-gray-50">
+                        <div className="p-4 rounded-full bg-gray-50 dark:bg-gray-700">
                           <img 
                             src="https://images-onsmart.vercel.app/onsmart.ai/ibm-logo.png" 
                             alt="Certificações IBM" 
@@ -1290,17 +1290,17 @@ export default function Produtos() {
                           />
                         </div>
                         <div className="flex-1">
-                          <CardTitle className="text-lg">{t('certifications.items.deepLearningKeras.title')}</CardTitle>
-                          <CardDescription>{t('certifications.items.deepLearningKeras.description')}</CardDescription>
+                          <CardTitle className="text-lg dark:text-gray-100">{t('certifications.items.deepLearningKeras.title')}</CardTitle>
+                          <CardDescription className="dark:text-gray-300">{t('certifications.items.deepLearningKeras.description')}</CardDescription>
                         </div>
                       </div>
                     </CardHeader>
                   </Card>
 
-                  <Card className="hover:shadow-lg transition-shadow">
+                  <Card className="hover:shadow-lg transition-shadow bg-white dark:bg-gray-800">
                     <CardHeader className="pb-4">
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="p-4 rounded-full bg-gray-50">
+                        <div className="p-4 rounded-full bg-gray-50 dark:bg-gray-700">
                           <img 
                             src="https://images-onsmart.vercel.app/onsmart.ai/ibm-logo.png" 
                             alt="Certificações IBM" 
@@ -1308,8 +1308,8 @@ export default function Produtos() {
                           />
                         </div>
                         <div className="flex-1">
-                          <CardTitle className="text-lg">{t('certifications.items.neuralNetworks.title')}</CardTitle>
-                          <CardDescription>{t('certifications.items.neuralNetworks.description')}</CardDescription>
+                          <CardTitle className="text-lg dark:text-gray-100">{t('certifications.items.neuralNetworks.title')}</CardTitle>
+                          <CardDescription className="dark:text-gray-300">{t('certifications.items.neuralNetworks.description')}</CardDescription>
                         </div>
                       </div>
                     </CardHeader>
@@ -1322,7 +1322,7 @@ export default function Produtos() {
       </section>
 
       {/* CTA Section - Estilo Homepage */}
-      <section className="py-6 sm:py-8 md:py-12 bg-gradient-to-br from-white via-blue-50/20 to-brand-blue/5 relative overflow-hidden">
+      <section className="py-6 sm:py-8 md:py-12 bg-gradient-to-br from-white via-blue-50/20 to-brand-blue/5 dark:from-gray-900 dark:via-gray-900 dark:to-gray-900 relative overflow-hidden">
         {/* Background Pattern Clean */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-1/4 left-1/4 w-16 h-16 bg-gradient-to-br from-brand-blue to-blue-600 rounded-full mix-blend-multiply filter blur-2xl opacity-15 animate-pulse"></div>
@@ -1353,26 +1353,26 @@ export default function Produtos() {
           
           {/* Stats Cards - Estilo Homepage */}
           <div className="grid grid-cols-3 gap-2 sm:gap-4 max-w-4xl mx-auto mb-4 sm:mb-6">
-            <div className="group bg-white/80 backdrop-blur-sm rounded-xl p-3 sm:p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200/50">
+            <div className="group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-3 sm:p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200/50 dark:border-gray-700/50">
               <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-lg flex items-center justify-center mx-auto mb-2 sm:mb-3">
                 <Star className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
               </div>
-              <div className="text-sm sm:text-lg font-bold text-gray-900">420%</div>
-              <div className="text-xs text-gray-600">{t('cta.stats.roi')}</div>
+              <div className="text-sm sm:text-lg font-bold text-gray-900 dark:text-gray-100">420%</div>
+              <div className="text-xs text-gray-600 dark:text-gray-300">{t('cta.stats.roi')}</div>
             </div>
-            <div className="group bg-white/80 backdrop-blur-sm rounded-xl p-3 sm:p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200/50">
+            <div className="group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-3 sm:p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200/50 dark:border-gray-700/50">
               <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center mx-auto mb-2 sm:mb-3">
                 <Shield className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
               </div>
-              <div className="text-sm sm:text-lg font-bold text-gray-900">{t('cta.days')}</div>
-              <div className="text-xs text-gray-600">{t('cta.stats.implementation')}</div>
+              <div className="text-sm sm:text-lg font-bold text-gray-900 dark:text-gray-100">{t('cta.days')}</div>
+              <div className="text-xs text-gray-600 dark:text-gray-300">{t('cta.stats.implementation')}</div>
             </div>
-            <div className="group bg-white/80 backdrop-blur-sm rounded-xl p-3 sm:p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200/50">
+            <div className="group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-3 sm:p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200/50 dark:border-gray-700/50">
               <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-brand-blue to-blue-600 rounded-lg flex items-center justify-center mx-auto mb-2 sm:mb-3">
                 <Users className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
               </div>
-              <div className="text-sm sm:text-lg font-bold text-gray-900">350+</div>
-              <div className="text-xs text-gray-600">{t('cta.stats.companies')}</div>
+              <div className="text-sm sm:text-lg font-bold text-gray-900 dark:text-gray-100">350+</div>
+              <div className="text-xs text-gray-600 dark:text-gray-300">{t('cta.stats.companies')}</div>
             </div>
           </div>
           
@@ -1392,7 +1392,7 @@ export default function Produtos() {
           </div>
           
           {/* Benefits */}
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center text-xs sm:text-sm text-gray-600">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center text-xs sm:text-sm text-gray-600 dark:text-gray-300">
             <div className="flex items-center justify-center">
               <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 text-green-500 mr-2" />
               <span>{t('cta.benefits.freeSetup')}</span>

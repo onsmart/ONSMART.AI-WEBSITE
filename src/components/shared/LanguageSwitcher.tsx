@@ -50,12 +50,11 @@ const LanguageSwitcher: React.FC = () => {
         <Button 
           variant="ghost" 
           size="sm"
-          className="flex items-center gap-2"
+          className="flex items-center justify-center p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
           aria-label={t('language.selectLanguage')}
+          title={t(`language.${currentLanguage.nameKey}`)}
         >
-          <Globe className="h-4 w-4" />
-          <span className="hidden sm:inline">{currentLanguage.flag} {t(`language.${currentLanguage.nameKey}`)}</span>
-          <span className="sm:hidden">{currentLanguage.flag}</span>
+          <Globe className="h-4 w-4 text-gray-600 dark:text-gray-400" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">

@@ -8,7 +8,7 @@ const BeneficiosFinanceiros = () => {
     <section className="py-16 px-4 md:px-6 bg-white dark:bg-gray-900">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-gray-100">
             💰 Benefícios Financeiros
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300">
@@ -17,11 +17,11 @@ const BeneficiosFinanceiros = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <Card className="border-l-4 border-l-green-500">
+          <Card className="border-l-4 border-l-green-500 bg-white dark:bg-gray-800">
             <CardHeader>
               <DollarSign className="h-10 w-10 text-green-600 mb-2" />
-              <CardTitle>Margens Competitivas</CardTitle>
-              <CardDescription>25% a 35% de margem</CardDescription>
+              <CardTitle className="dark:text-gray-100">Margens Competitivas</CardTitle>
+              <CardDescription className="dark:text-gray-300">25% a 35% de margem</CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-gray-600 dark:text-gray-300">
@@ -30,11 +30,11 @@ const BeneficiosFinanceiros = () => {
             </CardContent>
           </Card>
 
-          <Card className="border-l-4 border-l-blue-500">
+          <Card className="border-l-4 border-l-blue-500 bg-white dark:bg-gray-800">
             <CardHeader>
               <TrendingUp className="h-10 w-10 text-blue-600 mb-2" />
-              <CardTitle>Bonificações por Meta</CardTitle>
-              <CardDescription>Até 5% adicional</CardDescription>
+              <CardTitle className="dark:text-gray-100">Bonificações por Meta</CardTitle>
+              <CardDescription className="dark:text-gray-300">Até 5% adicional</CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-gray-600 dark:text-gray-300">
@@ -43,11 +43,11 @@ const BeneficiosFinanceiros = () => {
             </CardContent>
           </Card>
 
-          <Card className="border-l-4 border-l-purple-500">
+          <Card className="border-l-4 border-l-purple-500 bg-white dark:bg-gray-800">
             <CardHeader>
               <Target className="h-10 w-10 text-purple-600 mb-2" />
-              <CardTitle>Revenue Recorrente</CardTitle>
-              <CardDescription>Participação no MRR</CardDescription>
+              <CardTitle className="dark:text-gray-100">Revenue Recorrente</CardTitle>
+              <CardDescription className="dark:text-gray-300">Participação no MRR</CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-gray-600 dark:text-gray-300">

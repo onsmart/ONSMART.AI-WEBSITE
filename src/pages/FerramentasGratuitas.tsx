@@ -4,9 +4,11 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, Calculator, CheckCircle, Target, Zap } from "lucide-react";
 import UnifiedSEO from "@/components/shared/UnifiedSEO";
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
 const FerramentasGratuitas = () => {
   const { t } = useTranslation(['ferramentasGratuitas', 'common']);
+  const navigate = useNavigate();
   
   const ferramentas = [
     {
@@ -40,7 +42,7 @@ const FerramentasGratuitas = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50/30">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50/30 dark:from-gray-900 dark:via-gray-900 dark:to-gray-900">
       <UnifiedSEO 
         title={t('seo.title')}
         description={t('seo.description')}
@@ -58,19 +60,25 @@ const FerramentasGratuitas = () => {
         <div className="max-w-4xl mx-auto text-center relative z-10">
           {/* Animated badge */}
           <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-brand-blue/10 to-blue-600/10 rounded-full border border-brand-blue/20 mb-6">
-            <span className="text-brand-blue font-medium text-sm">Ferramentas Especializadas</span>
+            <span className="text-brand-blue font-medium text-sm">{t('hero.badge')}</span>
           </div>
           
           {/* Main title with gradient */}
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Ferramentas{" "}
-            <span className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">
-              Gratuitas
-            </span>
+            {t('hero.titleHighlight') ? (
+              <>
+                {t('hero.title')}{" "}
+                <span className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">
+                  {t('hero.titleHighlight')}
+                </span>
+              </>
+            ) : (
+              t('hero.title')
+            )}
           </h1>
           
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Acesse ferramentas gratuitas para avaliar o potencial de IA na sua empresa e acelerar sua jornada de transformação digital
+            {t('hero.description')}
           </p>
           
           {/* CTA buttons */}
@@ -80,14 +88,14 @@ const FerramentasGratuitas = () => {
               className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue hover:from-blue-600 hover:via-brand-blue hover:to-blue-600 text-white px-8 py-3"
             >
               <Calculator className="mr-2 h-5 w-5" />
-              Começar Agora
+              {t('hero.startNow')}
             </Button>
             <Button 
               variant="outline" 
               size="lg"
               className="border-2 border-brand-blue text-brand-blue hover:bg-gradient-to-r hover:from-brand-blue hover:via-blue-600 hover:to-brand-blue hover:text-white hover:border-transparent px-8 py-3"
             >
-              Ver Demonstração
+              {t('hero.viewDemo')}
             </Button>
           </div>
         </div>
@@ -97,11 +105,11 @@ const FerramentasGratuitas = () => {
       <section className="py-20 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Ferramentas Especializadas
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+              {t('specialized.title')}
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Utilize nossas ferramentas gratuitas para avaliar e planejar a implementação de IA na sua empresa
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              {t('specialized.description')}
             </p>
           </div>
           
@@ -109,14 +117,14 @@ const FerramentasGratuitas = () => {
             {ferramentas.map((ferramenta, index) => {
               const IconComponent = ferramenta.icon;
               return (
-                <Card key={index} className="group hover:shadow-2xl transition-all duration-300 border-0 bg-white/80 backdrop-blur-sm">
+                <Card key={index} className="group hover:shadow-2xl transition-all duration-300 border-0 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm">
                   <CardHeader className="pb-4">
                     <div className="flex items-center gap-4 mb-4">
                       <div className="p-3 bg-gradient-to-br from-brand-blue/10 to-blue-600/10 rounded-lg group-hover:scale-110 transition-transform duration-300">
                         <IconComponent className="h-8 w-8 text-brand-blue" />
                       </div>
                       <div>
-                        <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-brand-blue transition-colors">
+                        <CardTitle className="text-xl font-bold text-gray-900 dark:text-gray-100 group-hover:text-brand-blue transition-colors">
                           {ferramenta.title}
                         </CardTitle>
                         <p className="text-sm text-gray-500 mt-1">{ferramenta.category}</p>
@@ -131,7 +139,7 @@ const FerramentasGratuitas = () => {
                       className="w-full bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue hover:from-blue-600 hover:via-brand-blue hover:to-blue-600 text-white"
                     >
                       <ExternalLink className="mr-2 h-4 w-4" />
-                      Acessar Ferramenta
+                      {t('buttons.accessTool')}
                     </Button>
                   </CardContent>
                 </Card>
@@ -142,7 +150,7 @@ const FerramentasGratuitas = () => {
       </section>
 
       {/* Enhanced Info Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-gray-900 via-brand-black to-gray-900 relative overflow-hidden">
+      <section className="py-20 px-4 bg-gray-900 dark:bg-gray-900 relative overflow-hidden">
         {/* SVG Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -158,19 +166,19 @@ const FerramentasGratuitas = () => {
         <div className="max-w-4xl mx-auto text-center relative z-10">
           {/* Animated badge */}
           <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-brand-blue/20 to-blue-600/20 rounded-full border border-brand-blue/30 mb-6">
-            <span className="text-brand-blue font-medium text-sm">Expertise Comprovada</span>
+            <span className="text-brand-blue font-medium text-sm">{t('expertise.badge')}</span>
           </div>
           
           {/* Main title with gradient */}
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Desenvolvido por{" "}
+            {t('expertise.title')}{" "}
             <span className="bg-gradient-to-r from-brand-blue via-blue-400 to-brand-blue bg-clip-text text-transparent">
-              Especialistas
+              {t('expertise.titleHighlight')}
             </span>
           </h2>
           
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Nossas ferramentas são desenvolvidas por especialistas em IA com anos de experiência em transformação digital empresarial
+            {t('expertise.description')}
           </p>
           
           {/* CTA buttons */}
@@ -180,14 +188,14 @@ const FerramentasGratuitas = () => {
               className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue hover:from-blue-600 hover:via-brand-blue hover:to-blue-600 text-white px-8 py-3"
             >
               <CheckCircle className="mr-2 h-5 w-5" />
-              Conhecer Outros Recursos
+              {t('expertise.knowOtherResources')}
             </Button>
             <Button 
               variant="outline" 
               size="lg"
               className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-gray-900 px-8 py-3"
             >
-              Ver Casos de Sucesso
+              {t('expertise.viewSuccessCases')}
             </Button>
           </div>
         </div>

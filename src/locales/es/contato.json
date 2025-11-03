@@ -4,9 +4,45 @@
     "description": "Póngase en contacto con onsmartAI. Nuestro equipo de especialistas en IA está listo para ayudar a su empresa a transformar procesos con inteligencia artificial."
   },
   "hero": {
-    "title": "Hable Con Nosotros",
+    "badge": "Hable Con Nosotros",
+    "title": "Transforme Su Empresa con IA en 30 Días",
+    "titleHighlight": "IA en 30 Días",
     "subtitle": "Nuestro equipo de especialistas en IA está listo para ayudar a su empresa",
-    "description": "Transforme su empresa con soluciones de Inteligencia Artificial personalizadas. Póngase en contacto y descubra cómo podemos acelerar sus resultados."
+    "description": "Transforme su empresa con soluciones de Inteligencia Artificial personalizadas. Póngase en contacto y descubra cómo podemos acelerar sus resultados.",
+    "alert": {
+      "title": "ALERTA:",
+      "message": "Su competencia ya está usando IA para aumentar la productividad en",
+      "productivity": "420%",
+      "andMessage": "y reducir drásticamente los costos operacionales."
+    },
+    "leader": {
+      "methodology": "metodología LÍDER",
+      "message": "ya ha transformado",
+      "companies": "350+ empresas",
+      "results": "con resultados comprobados en solo 30 días. ¡No deje que su empresa se quede atrás!"
+    },
+    "benefits": {
+      "title": "BENEFICIOS EXCLUSIVOS",
+      "subtitle": "Lo que recibe al contactarnos hoy",
+      "items": {
+        "diagnostic": {
+          "title": "Diagnóstico Empresarial",
+          "description": "Análisis completo y gratuito de su empresa"
+        },
+        "roi": {
+          "title": "Proyección de ROI",
+          "description": "Cálculo personalizado del retorno sobre inversión"
+        },
+        "implementation": {
+          "title": "Plan de Implementación",
+          "description": "Hoja de ruta detallada para 30 días"
+        },
+        "consulting": {
+          "title": "Consultoría Estratégica",
+          "description": "Sesión gratuita sin compromiso"
+        }
+      }
+    }
   },
   "success": {
     "title": "¡Mensaje Enviado con Éxito!",
@@ -20,8 +56,42 @@
     "backToHome": "Volver al Inicio"
   },
   "form": {
-    "title": "Póngase en Contacto",
+    "title": "Formulario de Contacto",
     "subtitle": "Complete el formulario a continuación y nuestro equipo se pondrá en contacto en 2 horas hábiles",
+    "diagnosticTitle": "Asegure Su",
+    "diagnosticHighlight": "Diagnóstico Gratuito",
+    "discoverPotential": "Descubra el potencial de ahorro de la IA en su empresa",
+    "fillFormDescription": "Complete el formulario a continuación y reciba en",
+    "fillFormDescriptionValue": "2 horas hábiles",
+    "fillFormDescriptionEnd": ": análisis personalizado, proyección de ROI y plan de implementación detallado.",
+    "bonus": {
+      "title": "BONO EXCLUSIVO al enviar hoy:",
+      "items": {
+        "diagnostic": {
+          "title": "Diagnóstico IA",
+          "value": "personalizado (valor R$ 2.500)"
+        },
+        "roi": {
+          "title": "Proyección ROI",
+          "description": "detallada de su empresa"
+        },
+        "roadmap": {
+          "title": "Hoja de ruta 30 días",
+          "description": "para implementación"
+        },
+        "consulting": {
+          "title": "Consultoría estratégica",
+          "description": "de 1 hora gratuita"
+        }
+      }
+    },
+    "trust": {
+      "secure": "Datos 100% seguros",
+      "noSpam": "Sin spam",
+      "responseTime": "Respuesta en 2h"
+    },
+    "lastCompanies": "Últimas 48 horas:",
+    "companiesRequested": "empresas solicitaron diagnóstico",
     "name": {
       "label": "Nombre Completo",
       "placeholder": "Ingrese su nombre completo"
@@ -66,7 +136,35 @@
   },
   "info": {
     "title": "Información de Contacto",
+    "contactTitle": "Hable Con Nosotros",
     "subtitle": "Otras formas de contactarnos",
+    "location": {
+      "badge": "Nuestra Ubicación",
+      "title": "Visite Nuestra Oficina",
+      "loading": "Cargando mapa...",
+      "address": "Calle Arizona, 1349",
+      "neighborhood": "Berrini",
+      "city": "São Paulo - SP"
+    },
+    "contactInfo": {
+      "email": {
+        "label": "Email",
+        "value": "atendimento.ai@onsmart.com.br"
+      },
+      "phone": {
+        "label": "Teléfono",
+        "value": "+55 11 99666-9247"
+      },
+      "hours": {
+        "label": "Horario",
+        "value": "Lunes a Viernes, 9h a 18h"
+      },
+      "address": {
+        "label": "Dirección",
+        "value": "Calle Arizona, 1349",
+        "city": "São Paulo - SP"
+      }
+    },
     "email": {
       "label": "E-mail",
       "value": "contato@onsmartai.com",
@@ -94,7 +192,10 @@
     "button": "Hablar con Especialista"
   },
   "guarantee": {
+    "badge": "Respuesta Garantizada",
     "title": "Nuestra Garantía",
+    "message": "Respondemos todos los contactos en hasta",
+    "value": "2 horas hábiles",
     "subtitle": "Respondemos todos los contactos en hasta",
     "subtitleValue": "2 horas hábiles",
     "subtitleEnd": "o ofrecemos una consultoría gratuita de 30 minutos."

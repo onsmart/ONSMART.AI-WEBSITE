@@ -149,7 +149,7 @@ const NewsletterSignup = () => {
                   htmlFor="terms" 
                   className="text-xs text-muted-foreground leading-tight cursor-pointer"
                 >
-                  Aceito receber emails com conteúdos, novidades e ofertas da onsmartAI. Posso cancelar a qualquer momento.
+                  Aceito receber emails com conteúdos, novidades e ofertas da OnSmartAI. Posso cancelar a qualquer momento.
                 </label>
               </div>
               

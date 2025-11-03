@@ -60,7 +60,7 @@ const Index = () => {
         }}
       />
       
-      <div className="min-h-screen relative bg-white">
+      <div className="min-h-screen relative bg-white dark:bg-gray-900">
         {/* Essential content only - minimal approach */}
         <div className="relative" style={{ zIndex: 10 }}>
           <HeroSection 

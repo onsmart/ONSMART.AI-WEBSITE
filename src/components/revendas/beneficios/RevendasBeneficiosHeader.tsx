@@ -10,7 +10,7 @@ const RevendasBeneficiosHeader = () => {
           Benefícios Exclusivos
         </Badge>
         
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-green-600 to-emerald-600 dark:from-green-400 dark:to-emerald-400 bg-clip-text text-transparent">
           Benefícios do Programa de Revendas
         </h1>
         

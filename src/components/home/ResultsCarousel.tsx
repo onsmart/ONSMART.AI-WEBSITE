@@ -178,7 +178,7 @@ const ResultsCarousel = () => {
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
         >
-          <div className={`group bg-white/80 backdrop-blur-sm rounded-xl p-6 sm:p-8 shadow-md hover:shadow-xl transition-all duration-500 border border-gray-200/50 hover:border-${currentResult.color}-300/50 transform ${isAnimating ? 'scale-95 opacity-0' : 'scale-100 opacity-100'} min-h-[320px] relative overflow-hidden animate-in slide-in-from-bottom-5 duration-700`}>
+          <div className={`group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-6 sm:p-8 shadow-md hover:shadow-xl transition-all duration-500 border border-gray-200/50 dark:border-gray-700/50 hover:border-${currentResult.color}-300/50 transform ${isAnimating ? 'scale-95 opacity-0' : 'scale-100 opacity-100'} min-h-[320px] relative overflow-hidden animate-in slide-in-from-bottom-5 duration-700`}>
             
             {/* Efeito de brilho animado */}
             <div className={`absolute inset-0 bg-gradient-to-r from-transparent via-${currentResult.color}-100/20 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out`}></div>
@@ -208,7 +208,7 @@ const ResultsCarousel = () => {
                 </div>
 
                 <div className="flex items-center gap-4 pt-2 animate-in slide-in-from-left-3 duration-500 delay-400">
-                  <div className={`group/metric bg-gradient-to-br ${currentResult.lightBg} to-white p-4 rounded-xl border border-${currentResult.color}-200/50 flex-shrink-0 hover:shadow-md hover:scale-105 transition-all duration-300 min-w-[140px]`}>
+                  <div className={`group/metric bg-gradient-to-br ${currentResult.lightBg} dark:bg-gray-700 to-white dark:to-gray-800 p-4 rounded-xl border border-${currentResult.color}-200/50 dark:border-gray-600/50 flex-shrink-0 hover:shadow-md hover:scale-105 transition-all duration-300 min-w-[140px]`}>
                     <div className="text-center">
                       <div className={`text-2xl font-bold ${currentResult.textColor} leading-tight mb-1 group-hover/metric:scale-110 transition-transform`}>
                         {currentResult.percentage}
@@ -221,8 +221,8 @@ const ResultsCarousel = () => {
                   
                   <ArrowRight className={`h-5 w-5 ${currentResult.textColor} flex-shrink-0 group-hover:translate-x-1 transition-transform duration-300`} />
                   
-                  <div className="bg-gray-50/80 p-4 rounded-xl border border-gray-200/50 text-center flex-shrink-0 hover:bg-gray-100/80 transition-colors duration-300">
-                    <div className="text-xs text-gray-500 font-medium mb-1">Implementação</div>
+                  <div className="bg-gray-50/80 dark:bg-gray-700/80 p-4 rounded-xl border border-gray-200/50 dark:border-gray-600/50 text-center flex-shrink-0 hover:bg-gray-100/80 dark:hover:bg-gray-700 transition-colors duration-300">
+                    <div className="text-xs text-gray-500 dark:text-gray-400 font-medium mb-1">Implementação</div>
                     <div className="text-lg font-bold text-gray-900 dark:text-white">30 dias</div>
                   </div>
                 </div>
@@ -261,7 +261,7 @@ const ResultsCarousel = () => {
 
         {/* Navigation Dots - Melhorados */}
         <div className="flex justify-center mt-8 animate-in fade-in-0 duration-500 delay-500">
-          <div className="flex gap-3 bg-white/60 backdrop-blur-sm p-3 rounded-full border border-gray-200/50 shadow-lg">
+          <div className="flex gap-3 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm p-3 rounded-full border border-gray-200/50 dark:border-gray-700/50 shadow-lg">
             {results.map((result, index) => (
               <button
                 key={index}

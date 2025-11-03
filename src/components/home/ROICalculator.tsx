@@ -115,20 +115,20 @@ const ROICalculator: React.FC = () => {
   };
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-white">
+    <section className="py-12 sm:py-16 md:py-20 bg-white dark:bg-gray-900">
       <div className="container mx-auto max-w-4xl px-4 sm:px-6 md:px-8">
         <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-gray-900">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-gray-900 dark:text-gray-100">
             {t('roi.title')} <span className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">ROI</span>
           </h2>
-          <p className="text-gray-600 text-base sm:text-lg md:text-xl max-w-2xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-300 text-base sm:text-lg md:text-xl max-w-2xl mx-auto">
             {t('roi.subtitle')}
           </p>
         </div>
         
         {/* Calculadora Minimalista */}
         <div className="max-w-xl mx-auto">
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
             
             {/* Estado: Calculando */}
             {isCalculating && (
@@ -143,7 +143,7 @@ const ROICalculator: React.FC = () => {
               <div className="p-6">
                 {/* Resultado Principal */}
                 <div className="text-center mb-6">
-                  <p className="text-sm text-gray-600 mb-2">{t('roi.results.monthlySavings')}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">{t('roi.results.monthlySavings')}</p>
                   <p className="text-3xl font-bold text-brand-blue mb-4">
                     {formatCurrency(monthlySavings)}
                   </p>
@@ -151,20 +151,20 @@ const ROICalculator: React.FC = () => {
 
                 {/* Métricas Simples */}
                 <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div className="text-center p-3 bg-gray-50 rounded-lg">
-                    <p className="text-xs text-gray-600 mb-1">{t('roi.results.annualROI')}</p>
+                  <div className="text-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                    <p className="text-xs text-gray-600 dark:text-gray-300 mb-1">{t('roi.results.annualROI')}</p>
                     <p className="text-lg font-bold text-brand-blue">{animatedValues.roi}%</p>
                   </div>
-                  <div className="text-center p-3 bg-gray-50 rounded-lg">
-                    <p className="text-xs text-gray-600 mb-1">{t('roi.results.payback')}</p>
+                  <div className="text-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                    <p className="text-xs text-gray-600 dark:text-gray-300 mb-1">{t('roi.results.payback')}</p>
                     <p className="text-lg font-bold text-brand-blue">{animatedValues.payback.toFixed(1)}{t('roi.results.paybackUnit')}</p>
                   </div>
-                  <div className="text-center p-3 bg-gray-50 rounded-lg">
-                    <p className="text-xs text-gray-600 mb-1">{t('roi.results.annualSavings')}</p>
+                  <div className="text-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                    <p className="text-xs text-gray-600 dark:text-gray-300 mb-1">{t('roi.results.annualSavings')}</p>
                     <p className="text-sm font-bold text-brand-blue">{formatCurrency(animatedValues.savings)}</p>
                   </div>
-                  <div className="text-center p-3 bg-gray-50 rounded-lg">
-                    <p className="text-xs text-gray-600 mb-1">{t('roi.results.productivity')}</p>
+                  <div className="text-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                    <p className="text-xs text-gray-600 dark:text-gray-300 mb-1">{t('roi.results.productivity')}</p>
                     <p className="text-lg font-bold text-brand-blue">+{animatedValues.productivity}%</p>
                   </div>
                 </div>
@@ -209,7 +209,7 @@ const ROICalculator: React.FC = () => {
                 <div className="space-y-4 mb-6">
                   {/* Funcionários */}
                   <div className="space-y-2">
-                    <Label className="text-sm font-medium text-gray-700">{t('roi.fields.employees')}</Label>
+                    <Label className="text-sm font-medium text-gray-700 dark:text-gray-300">{t('roi.fields.employees')}</Label>
                     <div className="text-center">
                       <div className="text-xl font-bold text-brand-blue mb-1">{employees}</div>
                       <Slider
@@ -223,7 +223,7 @@ const ROICalculator: React.FC = () => {
 
                   {/* Salário */}
                   <div className="space-y-2">
-                    <Label className="text-sm font-medium text-gray-700">{t('roi.fields.averageSalary')}</Label>
+                    <Label className="text-sm font-medium text-gray-700 dark:text-gray-300">{t('roi.fields.averageSalary')}</Label>
                     <div className="text-center">
                       <div className="text-xl font-bold text-brand-blue mb-1">{formatCurrency(averageSalary)}</div>
                       <Slider
@@ -237,7 +237,7 @@ const ROICalculator: React.FC = () => {
 
                   {/* Automação */}
                   <div className="space-y-2">
-                    <Label className="text-sm font-medium text-gray-700">{t('roi.fields.automationRate')}</Label>
+                    <Label className="text-sm font-medium text-gray-700 dark:text-gray-300">{t('roi.fields.automationRate')}</Label>
                     <div className="text-center">
                       <div className="text-xl font-bold text-brand-blue mb-1">{automationRate}%</div>
                       <Slider
@@ -251,7 +251,7 @@ const ROICalculator: React.FC = () => {
 
                   {/* Horas */}
                   <div className="space-y-2">
-                    <Label className="text-sm font-medium text-gray-700">{t('roi.fields.manualHours')}</Label>
+                    <Label className="text-sm font-medium text-gray-700 dark:text-gray-300">{t('roi.fields.manualHours')}</Label>
                     <div className="text-center">
                       <div className="text-xl font-bold text-brand-blue mb-1">{manualHours}{t('roi.fields.hoursUnit')}</div>
                       <Slider

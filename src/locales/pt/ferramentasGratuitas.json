@@ -4,9 +4,30 @@
     "description": "Acesse ferramentas gratuitas para avaliar o potencial de IA na sua empresa: calculadora de ROI, avaliador de maturidade digital e simuladores de produtividade."
   },
   "hero": {
-    "title": "Ferramentas Gratuitas",
-    "subtitle": "Avalie o potencial de IA na sua empresa",
-    "description": "Use nossas ferramentas gratuitas para calcular ROI, avaliar maturidade digital e simular ganhos de produtividade com IA."
+    "badge": "Ferramentas Especializadas",
+    "title": "Ferramentas",
+    "titleHighlight": "Gratuitas",
+    "description": "Acesse ferramentas gratuitas para avaliar o potencial de IA na sua empresa e acelerar sua jornada de transformação digital",
+    "startNow": "Começar Agora",
+    "viewDemo": "Ver Demonstração"
+  },
+  "specialized": {
+    "title": "Ferramentas Especializadas",
+    "description": "Utilize nossas ferramentas gratuitas para avaliar e planejar a implementação de IA na sua empresa"
+  },
+  "buttons": {
+    "useTool": "Usar Ferramenta",
+    "learnMore": "Saiba mais",
+    "download": "Baixar",
+    "accessTool": "Acessar Ferramenta"
+  },
+  "expertise": {
+    "badge": "Expertise Comprovada",
+    "title": "Desenvolvido por",
+    "titleHighlight": "Especialistas",
+    "description": "Nossas ferramentas são desenvolvidas por especialistas em IA com anos de experiência em transformação digital empresarial",
+    "knowOtherResources": "Conhecer Outros Recursos",
+    "viewSuccessCases": "Ver Casos de Sucesso"
   },
   "tools": {
     "roiCalculator": {
@@ -29,11 +50,6 @@
       "description": "Simule o ganho de produtividade com a implementação de agentes de IA",
       "category": "Simulação"
     }
-  },
-  "buttons": {
-    "useTool": "Usar Ferramenta",
-    "learnMore": "Saiba Mais",
-    "download": "Baixar"
   },
   "cta": {
     "title": "Pronto para Implementar IA?",

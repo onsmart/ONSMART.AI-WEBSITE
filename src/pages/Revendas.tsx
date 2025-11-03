@@ -19,7 +19,7 @@ const Revendas = () => {
         pageType="service"
       />
       
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:bg-gray-900">
         {/* Hero Section */}
         <section className="py-20 px-4 md:px-6">
           <div className="container mx-auto max-w-6xl text-center">
@@ -57,7 +57,7 @@ const Revendas = () => {
         <section className="py-16 px-4 md:px-6 bg-white dark:bg-gray-900">
           <div className="container mx-auto max-w-6xl">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-gray-100">
                 Por que ser uma Revenda onsmartAI?
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
@@ -66,10 +66,10 @@ const Revendas = () => {
             </div>
 
             <div className="grid md:grid-cols-3 gap-8 mb-12">
-              <Card className="border-l-4 border-l-blue-500">
+              <Card className="border-l-4 border-l-blue-500 bg-white dark:bg-gray-800">
                 <CardHeader>
                   <TrendingUp className="h-10 w-10 text-blue-600 mb-2" />
-                  <CardTitle>Mercado em Crescimento</CardTitle>
+                  <CardTitle className="dark:text-gray-100">Mercado em Crescimento</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 dark:text-gray-300">
@@ -78,10 +78,10 @@ const Revendas = () => {
                 </CardContent>
               </Card>
 
-              <Card className="border-l-4 border-l-green-500">
+              <Card className="border-l-4 border-l-green-500 bg-white dark:bg-gray-800">
                 <CardHeader>
                   <Award className="h-10 w-10 text-green-600 mb-2" />
-                  <CardTitle>ROI Comprovado</CardTitle>
+                  <CardTitle className="dark:text-gray-100">ROI Comprovado</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 dark:text-gray-300">
@@ -90,10 +90,10 @@ const Revendas = () => {
                 </CardContent>
               </Card>
 
-              <Card className="border-l-4 border-l-purple-500">
+              <Card className="border-l-4 border-l-purple-500 bg-white dark:bg-gray-800">
                 <CardHeader>
                   <Users className="h-10 w-10 text-purple-600 mb-2" />
-                  <CardTitle>Suporte Enterprise</CardTitle>
+                  <CardTitle className="dark:text-gray-100">Suporte Enterprise</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 dark:text-gray-300">
@@ -110,28 +110,28 @@ const Revendas = () => {
           <div className="container mx-auto max-w-6xl">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 dark:text-gray-100">
                   Perfil Ideal de Revenda
                 </h2>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
                     <div>
-                      <h3 className="font-semibold">Integradoras e VAR</h3>
+                      <h3 className="font-semibold dark:text-gray-100">Integradoras e VAR</h3>
                       <p className="text-gray-600 dark:text-gray-300">Com relacionamento em empresas de médio-grande porte</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
                     <div>
-                      <h3 className="font-semibold">Consultorias Especializadas</h3>
+                      <h3 className="font-semibold dark:text-gray-100">Consultorias Especializadas</h3>
                       <p className="text-gray-600 dark:text-gray-300">Focadas em transformação digital e processos empresariais</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
                     <div>
-                      <h3 className="font-semibold">Distribuidores Enterprise</h3>
+                      <h3 className="font-semibold dark:text-gray-100">Distribuidores Enterprise</h3>
                       <p className="text-gray-600 dark:text-gray-300">Com portfolio em empresas R$ 50M+ de todos os setores</p>
                     </div>
                   </div>
@@ -139,27 +139,27 @@ const Revendas = () => {
               </div>
               
               <div className="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg">
-                <h3 className="text-2xl font-bold mb-6">Requisitos para Parceria</h3>
+                <h3 className="text-2xl font-bold mb-6 dark:text-gray-100">Requisitos para Parceria</h3>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 text-green-600" />
-                    <span>Empresa estabelecida há mais de 2 anos</span>
+                    <span className="dark:text-gray-300">Empresa estabelecida há mais de 2 anos</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 text-green-600" />
-                    <span>Equipe comercial B2B experiente</span>
+                    <span className="dark:text-gray-300">Equipe comercial B2B experiente</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 text-green-600" />
-                    <span>Portfolio com empresas R$ 50M+ faturamento</span>
+                    <span className="dark:text-gray-300">Portfolio com empresas R$ 50M+ faturamento</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 text-green-600" />
-                    <span>Relacionamento em múltiplos setores</span>
+                    <span className="dark:text-gray-300">Relacionamento em múltiplos setores</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 text-green-600" />
-                    <span>Compromisso com meta anual de R$ 1M+</span>
+                    <span className="dark:text-gray-300">Compromisso com meta anual de R$ 1M+</span>
                   </li>
                 </ul>
               </div>
@@ -171,7 +171,7 @@ const Revendas = () => {
         <section className="py-16 px-4 md:px-6 bg-white dark:bg-gray-900">
           <div className="container mx-auto max-w-6xl">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-gray-100">
                 Nosso Cliente Ideal
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-300">
@@ -180,54 +180,54 @@ const Revendas = () => {
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              <Card className="border-l-4 border-l-blue-500">
+              <Card className="border-l-4 border-l-blue-500 bg-white dark:bg-gray-800">
                 <CardHeader>
-                  <CardTitle>Perfil Financeiro</CardTitle>
+                  <CardTitle className="dark:text-gray-100">Perfil Financeiro</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                    <span><strong>Faturamento:</strong> R$ 50 milhões a R$ 1 bilhão/ano</span>
+                    <span className="dark:text-gray-300"><strong className="dark:text-gray-100">Faturamento:</strong> R$ 50 milhões a R$ 1 bilhão/ano</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                    <span><strong>Funcionários:</strong> 200 a 5.000 colaboradores</span>
+                    <span className="dark:text-gray-300"><strong className="dark:text-gray-100">Funcionários:</strong> 200 a 5.000 colaboradores</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                    <span><strong>Maturidade:</strong> Processos estruturados e complexos</span>
+                    <span className="dark:text-gray-300"><strong className="dark:text-gray-100">Maturidade:</strong> Processos estruturados e complexos</span>
                   </div>
                 </CardContent>
               </Card>
 
-              <Card className="border-l-4 border-l-green-500">
+              <Card className="border-l-4 border-l-green-500 bg-white dark:bg-gray-800">
                 <CardHeader>
-                  <CardTitle>Setores de Atuação</CardTitle>
+                  <CardTitle className="dark:text-gray-100">Setores de Atuação</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span>Manufatura e Indústria</span>
+                    <span className="dark:text-gray-300">Manufatura e Indústria</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span>Serviços Financeiros</span>
+                    <span className="dark:text-gray-300">Serviços Financeiros</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span>Saúde e Hospitalares</span>
+                    <span className="dark:text-gray-300">Saúde e Hospitalares</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span>Varejo e E-commerce</span>
+                    <span className="dark:text-gray-300">Varejo e E-commerce</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span>Logística e Supply Chain</span>
+                    <span className="dark:text-gray-300">Logística e Supply Chain</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span>E muito mais...</span>
+                    <span className="dark:text-gray-300">E muito mais...</span>
                   </div>
                 </CardContent>
               </Card>

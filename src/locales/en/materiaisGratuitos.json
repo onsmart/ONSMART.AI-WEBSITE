@@ -44,6 +44,34 @@
     "title": "Ready to Transform Your Company?",
     "subtitle": "Talk to our specialists and discover how AI can accelerate your results",
     "button": "Talk to Specialist"
+  },
+  "hero": {
+    "badge": "Free Resources",
+    "title": "Materials",
+    "titleHighlight": "Free",
+    "description": "Download our e-books, guides and specialized templates on business Artificial Intelligence for free",
+    "downloadAll": "Download All Materials",
+    "viewSuccessCases": "View Success Cases"
+  },
+  "specialized": {
+    "title": "Specialized Content",
+    "description": "Materials developed by AI specialists to accelerate your digital transformation journey"
+  },
+  "buttons": {
+    "download": "Download Now",
+    "learnMore": "Learn More",
+    "viewAll": "View All",
+    "downloadAll": "Download All Materials",
+    "viewSuccessCases": "View Success Cases"
+  },
+  "exclusive": {
+    "badge": "Exclusive Content",
+    "title": "Ready for",
+    "titleHighlight": "exclusive",
+    "titleEnd": "?",
+    "description": "Access exclusive materials and accelerate your digital transformation journey with AI",
+    "scheduleDiagnostic": "Schedule Diagnostic",
+    "viewAllMaterials": "View All Materials"
   }
 }
 

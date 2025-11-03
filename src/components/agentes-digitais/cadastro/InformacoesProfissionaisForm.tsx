@@ -9,80 +9,85 @@ import { Briefcase } from 'lucide-react';
 
 const InformacoesProfissionaisForm = () => {
   return (
-    <Card>
+    <Card className="dark:bg-gray-800 dark:border-gray-700">
       <CardHeader>
-        <CardTitle className="flex items-center gap-2">
-          <Briefcase className="h-5 w-5 text-blue-600" />
+        <CardTitle className="flex items-center gap-2 dark:text-gray-100">
+          <Briefcase className="h-5 w-5 text-blue-600 dark:text-blue-400" />
           Informações Profissionais
         </CardTitle>
-        <CardDescription>
+        <CardDescription className="dark:text-gray-300">
           Conte-nos sobre sua experiência e rede de contatos
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="grid md:grid-cols-2 gap-4">
           <div>
-            <Label htmlFor="profissao">Profissão/Área de Atuação *</Label>
+            <Label htmlFor="profissao" className="dark:text-gray-200">Profissão/Área de Atuação *</Label>
             <Select required>
-              <SelectTrigger>
+              <SelectTrigger className="dark:bg-gray-800 dark:border-gray-700 dark:text-gray-100">
                 <SelectValue placeholder="Selecione sua área" />
               </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="ti">Tecnologia da Informação</SelectItem>
-                <SelectItem value="vendas">Vendas/Comercial</SelectItem>
-                <SelectItem value="consultoria">Consultoria</SelectItem>
-                <SelectItem value="marketing">Marketing Digital</SelectItem>
-                <SelectItem value="empresario">Empresário</SelectItem>
-                <SelectItem value="executivo">Executivo</SelectItem>
-                <SelectItem value="freelancer">Freelancer</SelectItem>
-                <SelectItem value="outros">Outros</SelectItem>
+              <SelectContent className="dark:bg-gray-800 dark:border-gray-700">
+                <SelectItem value="ti" className="dark:text-gray-100">Tecnologia da Informação</SelectItem>
+                <SelectItem value="vendas" className="dark:text-gray-100">Vendas/Comercial</SelectItem>
+                <SelectItem value="consultoria" className="dark:text-gray-100">Consultoria</SelectItem>
+                <SelectItem value="marketing" className="dark:text-gray-100">Marketing Digital</SelectItem>
+                <SelectItem value="empresario" className="dark:text-gray-100">Empresário</SelectItem>
+                <SelectItem value="executivo" className="dark:text-gray-100">Executivo</SelectItem>
+                <SelectItem value="freelancer" className="dark:text-gray-100">Freelancer</SelectItem>
+                <SelectItem value="outros" className="dark:text-gray-100">Outros</SelectItem>
               </SelectContent>
             </Select>
           </div>
           <div>
-            <Label htmlFor="experiencia">Experiência em Vendas *</Label>
+            <Label htmlFor="experiencia" className="dark:text-gray-200">Experiência em Vendas *</Label>
             <Select required>
-              <SelectTrigger>
+              <SelectTrigger className="dark:bg-gray-800 dark:border-gray-700 dark:text-gray-100">
                 <SelectValue placeholder="Selecione" />
               </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="iniciante">Iniciante (menos de 1 ano)</SelectItem>
-                <SelectItem value="intermediario">Intermediário (1-3 anos)</SelectItem>
-                <SelectItem value="experiente">Experiente (3-5 anos)</SelectItem>
-                <SelectItem value="expert">Expert (5+ anos)</SelectItem>
+              <SelectContent className="dark:bg-gray-800 dark:border-gray-700">
+                <SelectItem value="iniciante" className="dark:text-gray-100">Iniciante (menos de 1 ano)</SelectItem>
+                <SelectItem value="intermediario" className="dark:text-gray-100">Intermediário (1-3 anos)</SelectItem>
+                <SelectItem value="experiente" className="dark:text-gray-100">Experiente (3-5 anos)</SelectItem>
+                <SelectItem value="expert" className="dark:text-gray-100">Expert (5+ anos)</SelectItem>
               </SelectContent>
             </Select>
           </div>
         </div>
 
         <div>
-          <Label htmlFor="network">Tamanho da sua Rede de Contatos Empresariais *</Label>
+          <Label htmlFor="network" className="dark:text-gray-200">Tamanho da sua Rede de Contatos Empresariais *</Label>
           <Select required>
-            <SelectTrigger>
+            <SelectTrigger className="dark:bg-gray-800 dark:border-gray-700 dark:text-gray-100">
               <SelectValue placeholder="Quantas empresas você conhece?" />
             </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="pequena">Pequena (1-20 empresas)</SelectItem>
-              <SelectItem value="media">Média (21-50 empresas)</SelectItem>
-              <SelectItem value="grande">Grande (51-100 empresas)</SelectItem>
-              <SelectItem value="muito-grande">Muito Grande (100+ empresas)</SelectItem>
+            <SelectContent className="dark:bg-gray-800 dark:border-gray-700">
+              <SelectItem value="pequena" className="dark:text-gray-100">Pequena (1-20 empresas)</SelectItem>
+              <SelectItem value="media" className="dark:text-gray-100">Média (21-50 empresas)</SelectItem>
+              <SelectItem value="grande" className="dark:text-gray-100">Grande (51-100 empresas)</SelectItem>
+              <SelectItem value="muito-grande" className="dark:text-gray-100">Muito Grande (100+ empresas)</SelectItem>
             </SelectContent>
           </Select>
         </div>
 
         <div>
-          <Label htmlFor="sobre">Conte mais sobre você *</Label>
+          <Label htmlFor="sobre" className="dark:text-gray-200">Conte mais sobre você *</Label>
           <Textarea 
             id="sobre" 
             placeholder="Descreva sua experiência, rede de contatos, motivação para ser um Agente Digital..."
             rows={4}
             required 
+            className="dark:bg-gray-800 dark:border-gray-700 dark:text-gray-100 dark:placeholder:text-gray-400"
           />
         </div>
 
         <div>
-          <Label htmlFor="linkedin">LinkedIn (Opcional)</Label>
-          <Input id="linkedin" placeholder="https://linkedin.com/in/seuperfil" />
+          <Label htmlFor="linkedin" className="dark:text-gray-200">LinkedIn (Opcional)</Label>
+          <Input 
+            id="linkedin" 
+            placeholder="https://linkedin.com/in/seuperfil" 
+            className="dark:bg-gray-800 dark:border-gray-700 dark:text-gray-100 dark:placeholder:text-gray-400"
+          />
         </div>
       </CardContent>
     </Card>

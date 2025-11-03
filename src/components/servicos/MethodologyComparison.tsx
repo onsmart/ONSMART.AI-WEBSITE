@@ -36,7 +36,7 @@ const MethodologyComparison = () => {
   ];
 
   return (
-    <div className="py-12 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800">
+    <div className="py-12 bg-gradient-to-r from-blue-50 to-purple-50 dark:bg-gray-900">
       <div className="container mx-auto max-w-6xl px-4">
         <div className="text-center mb-12">
           <h3 className="text-3xl font-bold mb-4">Por Que Nossa Metodologia é Diferente?</h3>

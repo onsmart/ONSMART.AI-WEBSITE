@@ -10,7 +10,7 @@ interface SetoresDropdownProps {
 }
 
 const SetoresDropdown: React.FC<SetoresDropdownProps> = ({ onMenuItemClick }) => {
-  const { t } = useTranslation('navigation');
+  const { t } = useTranslation(['navigation', 'setores']);
   const navigate = useNavigate();
 
   const handleSectorClick = (sectorSlug: string) => {
@@ -33,7 +33,7 @@ const SetoresDropdown: React.FC<SetoresDropdownProps> = ({ onMenuItemClick }) =>
               onClick={() => handleSectorClick(sector.slug)}
               className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue rounded-md transition-colors"
             >
-              {sector.name}
+              {t(`setores:sectors.${sector.id}.name`, { defaultValue: sector.name })}
             </button>
           ))}
           <hr className="my-2 border-gray-200" />

@@ -227,7 +227,7 @@ export default function NossosProdutos() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Hero Section */}
       <section className="relative py-8 sm:py-12 md:py-16 overflow-hidden hero-pattern-bg -mt-8">
         {/* Background Image */}
@@ -246,7 +246,7 @@ export default function NossosProdutos() {
           <div className="text-center animate-fade-in max-w-4xl mx-auto">
             {/* Headline principal com animação */}
             <div className="mb-4 sm:mb-6">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-3 sm:mb-4">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100 leading-tight mb-3 sm:mb-4">
                 <TypewriterText 
                   texts={t('hero.title.texts', { returnObjects: true }) as string[]}
                   className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent"
@@ -258,7 +258,7 @@ export default function NossosProdutos() {
             </div>
             
             {/* Subheadline compacta */}
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-6 sm:mb-8 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-6 sm:mb-8 leading-relaxed">
               {t('hero.subtitle')}
             </p>
 
@@ -266,7 +266,7 @@ export default function NossosProdutos() {
             <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 mb-4 sm:mb-6">
               <div className="text-center">
                 <div className="text-xl sm:text-2xl font-bold text-brand-blue mb-1">500+</div>
-                <div className="text-xs sm:text-sm text-gray-600">{t('hero.stats.companies')}</div>
+                <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-300">{t('hero.stats.companies')}</div>
               </div>
               <div className="text-center">
                 <div className="text-xl sm:text-2xl font-bold text-brand-blue mb-1">98%</div>
@@ -282,11 +282,11 @@ export default function NossosProdutos() {
       </section>
 
       {/* Categories Carousel Section */}
-      <section className="py-6 sm:py-8 px-4 bg-white">
+      <section className="py-6 sm:py-8 px-4 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-6 sm:mb-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2 sm:mb-3">{t('categories.title')}</h2>
-            <p className="text-sm sm:text-base text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2 sm:mb-3">{t('categories.title')}</h2>
+            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               {t('categories.subtitle')}
             </p>
           </div>
@@ -315,7 +315,7 @@ export default function NossosProdutos() {
                                 <IconComponent className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
                               </div>
                               <div>
-                                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-1">
+                                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-1">
                                   {category.name}
                                 </h3>
                                 <Badge variant="outline" className={`${category.color} border-0 text-xs sm:text-sm`}>
@@ -324,7 +324,7 @@ export default function NossosProdutos() {
                               </div>
                             </div>
                             
-                            <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+                            <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
                               {category.detailedDescription}
                             </p>
 
@@ -333,7 +333,7 @@ export default function NossosProdutos() {
                               {category.benefits.map((benefit, idx) => (
                                 <div key={idx} className="flex items-center gap-2">
                                   <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-green-500 flex-shrink-0" />
-                                  <span className="text-xs text-gray-600">{benefit}</span>
+                                  <span className="text-xs text-gray-600 dark:text-gray-300">{benefit}</span>
                                 </div>
                               ))}
                             </div>
@@ -370,15 +370,15 @@ export default function NossosProdutos() {
 
                           {/* Right Stats */}
                           <div className="space-y-3 sm:space-y-4">
-                            <div className="bg-white rounded-xl p-3 sm:p-4 shadow-md border border-gray-100">
-                              <h4 className="text-sm sm:text-base font-semibold text-gray-900 mb-2 sm:mb-3 flex items-center gap-2">
+                            <div className="bg-white dark:bg-gray-800 rounded-xl p-3 sm:p-4 shadow-md border border-gray-100 dark:border-gray-700">
+                              <h4 className="text-sm sm:text-base font-semibold text-gray-900 dark:text-gray-100 mb-2 sm:mb-3 flex items-center gap-2">
                                 <Target className="h-3 w-3 sm:h-4 sm:w-4 text-brand-blue" />
                                 {t('categories.results')}
                               </h4>
                               <div className="grid grid-cols-1 gap-2">
                                 {Object.entries(category.stats).map(([key, value], idx) => (
                                   <div key={idx} className="flex items-center justify-between p-2 bg-white rounded-md">
-                                    <span className="text-xs text-gray-600">
+                                    <span className="text-xs text-gray-600 dark:text-gray-300">
                                       {category.statsLabels[key] || key}
                                     </span>
                                     <span className="text-xs font-semibold text-brand-blue">{value}</span>
@@ -418,11 +418,11 @@ export default function NossosProdutos() {
 
 
       {/* Why Choose Our Products */}
-      <section className="py-12 sm:py-16 px-4 bg-white">
+      <section className="py-12 sm:py-16 px-4 bg-white dark:bg-gray-900">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">{t('features.title')} <span className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">{t('features.titleHighlight')}</span></h2>
-            <p className="text-sm sm:text-base text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-3 sm:mb-4">{t('features.title')} <span className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">{t('features.titleHighlight')}</span></h2>
+            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               {t('features.subtitle')}
             </p>
           </div>
@@ -432,32 +432,32 @@ export default function NossosProdutos() {
               <div className="w-12 h-12 sm:w-16 sm:h-16 bg-brand-blue rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
                 <MessageSquare className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">{t('features.items.portuguese.title')}</h3>
-              <p className="text-gray-600 text-xs sm:text-sm">{t('features.items.portuguese.description')}</p>
+              <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2 text-sm sm:text-base">{t('features.items.portuguese.title')}</h3>
+              <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm">{t('features.items.portuguese.description')}</p>
             </div>
             
             <div className="text-center">
               <div className="w-12 h-12 sm:w-16 sm:h-16 bg-brand-blue rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
                 <Database className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">{t('features.items.integration.title')}</h3>
-              <p className="text-gray-600 text-xs sm:text-sm">{t('features.items.integration.description')}</p>
+              <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2 text-sm sm:text-base">{t('features.items.integration.title')}</h3>
+              <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm">{t('features.items.integration.description')}</p>
             </div>
             
             <div className="text-center">
               <div className="w-12 h-12 sm:w-16 sm:h-16 bg-brand-blue rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
                 <Clock className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">{t('features.items.availability.title')}</h3>
-              <p className="text-gray-600 text-xs sm:text-sm">{t('features.items.availability.description')}</p>
+              <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2 text-sm sm:text-base">{t('features.items.availability.title')}</h3>
+              <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm">{t('features.items.availability.description')}</p>
             </div>
             
             <div className="text-center">
               <div className="w-12 h-12 sm:w-16 sm:h-16 bg-brand-blue rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
                 <TrendingUp className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">{t('features.items.analytics.title')}</h3>
-              <p className="text-gray-600 text-xs sm:text-sm">{t('features.items.analytics.description')}</p>
+              <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2 text-sm sm:text-base">{t('features.items.analytics.title')}</h3>
+              <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm">{t('features.items.analytics.description')}</p>
             </div>
           </div>
         </div>
@@ -470,29 +470,29 @@ export default function NossosProdutos() {
             <Bot className="h-3 w-3 sm:h-4 sm:w-4" />
             {t('cta.badge')}
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-gray-900">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-gray-900 dark:text-gray-100">
             {t('cta.title')} <span className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">{t('cta.titleHighlight')}</span> {t('cta.titleEnd')}
           </h2>
-          <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 text-gray-600">
+          <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 text-gray-600 dark:text-gray-300">
             {t('cta.description')}
           </p>
           
           {/* Social proof cards */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 max-w-3xl mx-auto mb-6 sm:mb-8">
-            <div className="bg-white/90 backdrop-blur-sm rounded-lg p-3 sm:p-4 shadow-lg border border-brand-blue/20">
+            <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg p-3 sm:p-4 shadow-lg border border-brand-blue/20 dark:border-gray-700">
               <TrendingUp className="h-5 w-5 sm:h-6 sm:w-6 text-blue-500 mx-auto mb-2" />
               <div className="text-base sm:text-lg font-bold text-brand-blue">{t('cta.proofCards.sales.title')}</div>
-              <div className="text-xs text-gray-600">{t('cta.proofCards.sales.subtitle')}</div>
+              <div className="text-xs text-gray-600 dark:text-gray-300">{t('cta.proofCards.sales.subtitle')}</div>
             </div>
-            <div className="bg-white/90 backdrop-blur-sm rounded-lg p-3 sm:p-4 shadow-lg border border-brand-blue/20">
+            <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg p-3 sm:p-4 shadow-lg border border-brand-blue/20 dark:border-gray-700">
               <HeadphonesIcon className="h-5 w-5 sm:h-6 sm:w-6 text-green-500 mx-auto mb-2" />
               <div className="text-base sm:text-lg font-bold text-brand-blue">{t('cta.proofCards.support.title')}</div>
-              <div className="text-xs text-gray-600">{t('cta.proofCards.support.subtitle')}</div>
+              <div className="text-xs text-gray-600 dark:text-gray-300">{t('cta.proofCards.support.subtitle')}</div>
             </div>
-            <div className="bg-white/90 backdrop-blur-sm rounded-lg p-3 sm:p-4 shadow-lg border border-brand-blue/20">
+            <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg p-3 sm:p-4 shadow-lg border border-brand-blue/20 dark:border-gray-700">
               <Workflow className="h-5 w-5 sm:h-6 sm:w-6 text-red-500 mx-auto mb-2" />
               <div className="text-base sm:text-lg font-bold text-brand-blue">{t('cta.proofCards.processes.title')}</div>
-              <div className="text-xs text-gray-600">{t('cta.proofCards.processes.subtitle')}</div>
+              <div className="text-xs text-gray-600 dark:text-gray-300">{t('cta.proofCards.processes.subtitle')}</div>
             </div>
           </div>
           
@@ -512,7 +512,7 @@ export default function NossosProdutos() {
           </div>
           
           {/* Benefits */}
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center text-xs sm:text-sm text-gray-600">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center text-xs sm:text-sm text-gray-600 dark:text-gray-300">
             <div className="flex items-center justify-center">
               <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 text-green-500 mr-2" />
               <span>{t('cta.benefits.consulting')}</span>

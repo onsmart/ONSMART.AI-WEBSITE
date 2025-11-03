@@ -4,9 +4,30 @@
     "description": "Access free tools to evaluate AI potential in your company: ROI calculator, digital maturity assessor and productivity simulators."
   },
   "hero": {
+    "badge": "Specialized Tools",
     "title": "Free Tools",
-    "subtitle": "Evaluate AI potential in your company",
-    "description": "Use our free tools to calculate ROI, assess digital maturity and simulate productivity gains with AI."
+    "titleHighlight": "",
+    "description": "Access free tools to evaluate AI potential in your company and accelerate your digital transformation journey",
+    "startNow": "Start Now",
+    "viewDemo": "View Demo"
+  },
+  "specialized": {
+    "title": "Specialized Tools",
+    "description": "Use our free tools to evaluate and plan AI implementation in your company"
+  },
+  "buttons": {
+    "useTool": "Use Tool",
+    "learnMore": "Learn More",
+    "download": "Download",
+    "accessTool": "Access Tool"
+  },
+  "expertise": {
+    "badge": "Proven Expertise",
+    "title": "Developed by",
+    "titleHighlight": "Specialists",
+    "description": "Our tools are developed by AI specialists with years of experience in business digital transformation",
+    "knowOtherResources": "Learn About Other Resources",
+    "viewSuccessCases": "View Success Cases"
   },
   "tools": {
     "roiCalculator": {

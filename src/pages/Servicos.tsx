@@ -30,14 +30,14 @@ const Servicos = () => {
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-white via-blue-50/20 to-brand-blue/5 relative overflow-hidden">
+      <div className="min-h-screen bg-gradient-to-br from-white via-blue-50/20 to-brand-blue/5 dark:from-gray-900 dark:via-gray-900 dark:to-gray-900 relative overflow-hidden">
         <div className="relative z-10 flex items-center justify-center min-h-screen p-4">
-          <div className="bg-white/80 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-gray-200/50 max-w-md w-full text-center">
+          <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-gray-200/50 dark:border-gray-700/50 max-w-md w-full text-center">
             <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse">
               <CheckCircle className="h-10 w-10 text-white" />
             </div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('submitted.title')}</h2>
-            <p className="text-gray-600 mb-6">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">{t('submitted.title')}</h2>
+            <p className="text-gray-600 dark:text-gray-300 mb-6">
               {t('submitted.description')}
             </p>
             <Button 
@@ -53,7 +53,7 @@ const Servicos = () => {
   }
 
   return (
-    <div className="min-h-screen relative bg-white">
+    <div className="min-h-screen relative bg-white dark:bg-gray-900">
       <UnifiedSEO 
         pageType="service"
         pageData={{
@@ -86,7 +86,7 @@ const Servicos = () => {
 
             {/* Stats Cards estilo HeroSection */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto mb-8">
-              <div className="group bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200/50">
+              <div className="group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200/50 dark:border-gray-700/50">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-brand-blue mb-1">350+</div>
                   <div className="text-xs text-gray-600 font-medium mb-2">{t('stats.companies')}</div>
@@ -94,7 +94,7 @@ const Servicos = () => {
                 </div>
               </div>
 
-              <div className="group bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200/50">
+              <div className="group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200/50 dark:border-gray-700/50">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-green-600 mb-1">420%</div>
                   <div className="text-xs text-gray-600 font-medium mb-2">{t('stats.productivity')}</div>
@@ -102,7 +102,7 @@ const Servicos = () => {
                 </div>
               </div>
 
-              <div className="group bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200/50">
+              <div className="group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200/50 dark:border-gray-700/50">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-purple-600 mb-1">30</div>
                   <div className="text-xs text-gray-600 font-medium mb-2">{t('stats.days')}</div>
@@ -136,7 +136,7 @@ const Servicos = () => {
             
             {/* Cards estilo HeroSection */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
-              <div className="group bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200/50">
+              <div className="group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200/50 dark:border-gray-700/50">
                 <div className="w-10 h-10 bg-gradient-to-br from-brand-blue to-blue-600 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
                   <Target className="h-5 w-5 text-white" />
                 </div>
@@ -147,7 +147,7 @@ const Servicos = () => {
                 </div>
               </div>
               
-              <div className="group bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200/50">
+              <div className="group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200/50 dark:border-gray-700/50">
                 <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
                   <Users className="h-5 w-5 text-white" />
                 </div>
@@ -158,7 +158,7 @@ const Servicos = () => {
                 </div>
               </div>
               
-              <div className="group bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200/50">
+              <div className="group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200/50 dark:border-gray-700/50">
                 <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-violet-600 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
                   <Zap className="h-5 w-5 text-white" />
                 </div>
@@ -169,7 +169,7 @@ const Servicos = () => {
                 </div>
               </div>
               
-              <div className="group bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200/50">
+              <div className="group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200/50 dark:border-gray-700/50">
                 <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
                   <Shield className="h-5 w-5 text-white" />
                 </div>
@@ -217,14 +217,14 @@ const Servicos = () => {
                   analise: 'analise-dados'
                 };
                 return (
-                  <Card key={serviceKey} className="group hover:shadow-lg transition-all duration-300 border-0 bg-white/80 backdrop-blur-sm h-full">
+                  <Card key={serviceKey} className="group hover:shadow-lg transition-all duration-300 border-0 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm h-full">
                     <CardContent className="p-6 h-full flex flex-col">
                       <div className="text-center flex-1 flex flex-col">
                         <div className={`inline-flex items-center justify-center w-12 h-12 rounded-lg mb-4 ${serviceColors[index]} bg-opacity-10`}>
                           <IconComponent className={`h-6 w-6 ${serviceColors[index]}`} />
                         </div>
                         
-                        <h3 className="text-xl font-bold text-gray-900 mb-3">{serviceData.title}</h3>
+                        <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">{serviceData.title}</h3>
                         <p className="text-gray-600 mb-6 leading-relaxed flex-1 min-h-[120px]">{serviceData.description}</p>
                         
                         <div className="space-y-2 mb-6">
@@ -239,11 +239,11 @@ const Servicos = () => {
                         <div className="flex justify-between items-center mb-6 text-sm">
                           <div>
                             <div className="text-gray-500">{t('services.labels.investment')}</div>
-                            <div className="font-semibold text-gray-900">{serviceData.price}</div>
+                            <div className="font-semibold text-gray-900 dark:text-gray-100">{serviceData.price}</div>
                           </div>
                           <div>
                             <div className="text-gray-500">{t('services.labels.duration')}</div>
-                            <div className="font-semibold text-gray-900">{serviceData.duration}</div>
+                            <div className="font-semibold text-gray-900 dark:text-gray-100">{serviceData.duration}</div>
                           </div>
                         </div>
                         
@@ -300,13 +300,13 @@ const Servicos = () => {
               </p>
             </div>
 
-            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-gray-200/50 max-w-4xl mx-auto">
+            <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-gray-200/50 dark:border-gray-700/50 max-w-4xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                 <div className="text-center">
                   <div className="w-12 h-12 bg-gradient-to-br from-brand-blue to-blue-600 rounded-lg flex items-center justify-center mx-auto mb-4">
                     <Mail className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-2">{t('contact.email')}</h3>
+                  <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">{t('contact.email')}</h3>
                   <p className="text-sm text-gray-600">contato@onsmartai.com</p>
                 </div>
 
@@ -314,7 +314,7 @@ const Servicos = () => {
                   <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center mx-auto mb-4">
                     <Phone className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-2">{t('contact.phone')}</h3>
+                  <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">{t('contact.phone')}</h3>
                   <p className="text-sm text-gray-600">+55 11 99666-9247</p>
                 </div>
 
@@ -322,7 +322,7 @@ const Servicos = () => {
                   <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-violet-600 rounded-lg flex items-center justify-center mx-auto mb-4">
                     <MapPin className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-2">{t('contact.location')}</h3>
+                  <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">{t('contact.location')}</h3>
                   <p className="text-sm text-gray-600">São Paulo - SP</p>
                 </div>
               </div>

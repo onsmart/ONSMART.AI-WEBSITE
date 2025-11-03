@@ -5,10 +5,10 @@ import { Checkbox } from '@/components/ui/checkbox';
 
 const ComprometimentoForm = () => {
   return (
-    <Card>
+    <Card className="bg-white dark:bg-gray-800">
       <CardHeader>
-        <CardTitle>Comprometimento Enterprise</CardTitle>
-        <CardDescription>
+        <CardTitle className="dark:text-gray-100">Comprometimento Enterprise</CardTitle>
+        <CardDescription className="dark:text-gray-300">
           Confirmação de dedicação ao programa de revendas
         </CardDescription>
       </CardHeader>
@@ -16,7 +16,7 @@ const ComprometimentoForm = () => {
         <div className="flex items-start space-x-2">
           <Checkbox id="dedicacao" name="compromisso_dedicacao" required />
           <div className="space-y-1 leading-none">
-            <Label htmlFor="dedicacao" className="text-sm font-medium">
+            <Label htmlFor="dedicacao" className="text-sm font-medium dark:text-gray-200">
               Comprometimento com vendas enterprise *
             </Label>
             <p className="text-xs text-gray-600 dark:text-gray-400">
@@ -28,7 +28,7 @@ const ComprometimentoForm = () => {
         <div className="flex items-start space-x-2">
           <Checkbox id="treinamento" name="compromisso_treinamento" required />
           <div className="space-y-1 leading-none">
-            <Label htmlFor="treinamento" className="text-sm font-medium">
+            <Label htmlFor="treinamento" className="text-sm font-medium dark:text-gray-200">
               Participação em treinamentos *
             </Label>
             <p className="text-xs text-gray-600 dark:text-gray-400">
@@ -40,7 +40,7 @@ const ComprometimentoForm = () => {
         <div className="flex items-start space-x-2">
           <Checkbox id="termos" name="compromisso_termos" required />
           <div className="space-y-1 leading-none">
-            <Label htmlFor="termos" className="text-sm font-medium">
+            <Label htmlFor="termos" className="text-sm font-medium dark:text-gray-200">
               Termos do programa de revendas *
             </Label>
             <p className="text-xs text-gray-600 dark:text-gray-400">
