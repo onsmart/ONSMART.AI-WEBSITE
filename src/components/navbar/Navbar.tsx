@@ -4,7 +4,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import DesktopMenu from "./DesktopMenu";
-import TabletMenu from "./TabletMenu";
 import MobileMenu from "./mobile"; 
 import Logo from "./Logo";
 import { Calendar } from "lucide-react";
@@ -115,26 +114,25 @@ const Navbar = () => {
         role="banner"
         aria-label={t('menu.navigationLabel')}
       >
-        <div className="container mx-auto flex items-center justify-between px-2 sm:px-4 md:px-6 py-2.5">
-          <Logo />
+        <div className="w-full flex items-center justify-between px-3 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-2.5 gap-4 md:gap-6 lg:gap-8">
+          {/* Logo - Esquerda */}
+          <div className="flex-shrink-0 mr-2 sm:mr-4 md:mr-6 lg:mr-8">
+            <Logo />
+          </div>
           
-          {/* Desktop Navigation */}
-          <DesktopMenu 
-            isActive={isActive} 
-            isActivePrefix={isActivePrefix}
-            handleContatoClick={handleContatoClick}
-          />
+          {/* Desktop Navigation - Centro */}
+          <div className="flex-1 flex justify-center min-w-0 overflow-hidden">
+            <div className="max-w-full mx-auto px-4 lg:px-6 xl:px-8">
+              <DesktopMenu 
+                isActive={isActive} 
+                isActivePrefix={isActivePrefix}
+                handleContatoClick={handleContatoClick}
+              />
+            </div>
+          </div>
           
-          {/* Tablet Navigation */}
-          <TabletMenu 
-            isActive={isActive} 
-            isActivePrefix={isActivePrefix}
-            handleContatoClick={handleContatoClick}
-            handleDiagnosticoClick={handleDiagnosticoClick}
-          />
-          
-          {/* CTA and Mobile Menu */}
-          <div className="flex items-center gap-2">
+          {/* CTA and Mobile Menu - Direita */}
+          <div className="flex items-center justify-end gap-1 sm:gap-2 flex-shrink-0 ml-4 sm:ml-6 md:ml-8 lg:ml-10 xl:ml-12">
             {/* Theme Toggle - Alternar tema claro/escuro - OCULTO TEMPORARIAMENTE */}
             {/* <ThemeToggle /> */}
             
@@ -142,12 +140,13 @@ const Navbar = () => {
             <LanguageSwitcher />
             
             <Button 
-              className="hidden md:flex bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg shadow-lg border-2 border-orange-500 hover:border-orange-400 transition-all duration-300 ml-4 hover:scale-105"
+              className="hidden lg:flex bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg shadow-lg border-2 border-orange-500 hover:border-orange-400 transition-all duration-300 ml-2 hover:scale-105 whitespace-nowrap"
               onClick={handleDiagnosticoClick}
               aria-label={t('menu.scheduleDiagnosticAria')}
             >
               <Calendar className="h-4 w-4 mr-2" />
-              {t('menu.scheduleDiagnostic')}
+              <span className="hidden xl:inline">{t('menu.scheduleDiagnostic')}</span>
+              <span className="xl:hidden">{t('menu.scheduleDiagnosticShort', { defaultValue: 'Agendar' })}</span>
             </Button>
             
             <MobileMenu isActive={isActive} isActivePrefix={isActivePrefix} />

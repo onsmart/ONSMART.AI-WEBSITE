@@ -37,7 +37,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isActive, isActivePrefix }) => 
   return (
     <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
       <SheetTrigger asChild>
-        <button className="lg:hidden p-1.5 group">
+        <button className="xl:hidden p-1.5 group">
           <Menu className={`h-6 w-6 text-gray-700 transition-all duration-300 ${
             isMenuOpen 
               ? 'rotate-90 scale-110' 
@@ -45,11 +45,14 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isActive, isActivePrefix }) => 
           }`} />
         </button>
       </SheetTrigger>
-      <SheetContent className="w-[280px] h-screen max-h-screen overflow-y-auto bg-white animate-in slide-in-from-right duration-300">
-        <SheetHeader className="mb-2">
+      <SheetContent 
+        side="right"
+        className="w-[280px] sm:w-[320px] md:w-[360px] h-screen max-h-screen overflow-y-auto bg-white animate-in slide-in-from-right duration-300"
+      >
+        <SheetHeader className="mb-2 px-4 sm:px-6">
           <SheetTitle className="sr-only">{t('menu.navigationMenuTitle')}</SheetTitle>
         </SheetHeader>
-        <div className="px-4 pt-16 animate-in fade-in-0 slide-in-from-bottom-4 duration-500 delay-300">
+        <div className="px-4 sm:px-6 pt-4 sm:pt-6 animate-in fade-in-0 slide-in-from-bottom-4 duration-500 delay-300">
           <MobileMenuItems 
             isActive={isActive} 
             isActivePrefix={isActivePrefix}
