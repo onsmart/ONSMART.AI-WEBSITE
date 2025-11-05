@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import DesktopMenu from "./DesktopMenu";
+import TabletMenu from "./TabletMenu";
 import MobileMenu from "./mobile"; 
 import Logo from "./Logo";
 import { Calendar } from "lucide-react";
@@ -84,6 +85,7 @@ const Navbar = () => {
     }
   }, [location.pathname]);
 
+
   return (
     <>
       {/* Skip Links for Accessibility */}
@@ -114,15 +116,22 @@ const Navbar = () => {
         role="banner"
         aria-label={t('menu.navigationLabel')}
       >
-        <div className="w-full flex items-center justify-between px-3 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-2.5 gap-4 md:gap-6 lg:gap-8">
+        <div className="w-full flex items-center justify-between px-2 sm:px-4 md:px-6 lg:px-8 xl:px-12 py-2.5 gap-2 sm:gap-3 md:gap-4">
           {/* Logo - Esquerda */}
-          <div className="flex-shrink-0 mr-2 sm:mr-4 md:mr-6 lg:mr-8">
+          <div className="flex-shrink-0">
             <Logo />
           </div>
           
           {/* Desktop Navigation - Centro */}
           <div className="flex-1 flex justify-center min-w-0 overflow-hidden">
-            <div className="max-w-full mx-auto px-4 lg:px-6 xl:px-8">
+            <div className="max-w-full mx-auto px-2 sm:px-3 md:px-4 lg:px-5">
+              {/* Menu Tablet - Aparece entre md e lg (768px - 1023px) */}
+              <TabletMenu 
+                isActive={isActive} 
+                isActivePrefix={isActivePrefix}
+                handleContatoClick={handleContatoClick}
+              />
+              {/* Menu Desktop - Aparece a partir de lg (1024px+) */}
               <DesktopMenu 
                 isActive={isActive} 
                 isActivePrefix={isActivePrefix}
@@ -132,21 +141,22 @@ const Navbar = () => {
           </div>
           
           {/* CTA and Mobile Menu - Direita */}
-          <div className="flex items-center justify-end gap-1 sm:gap-2 flex-shrink-0 ml-4 sm:ml-6 md:ml-8 lg:ml-10 xl:ml-12">
+          <div className="flex items-center justify-end gap-1.5 sm:gap-2 md:gap-2.5 flex-shrink-0">
             {/* Theme Toggle - Alternar tema claro/escuro - OCULTO TEMPORARIAMENTE */}
             {/* <ThemeToggle /> */}
             
             {/* Language Switcher - Seletor de idioma (apenas ícone, discreto) */}
             <LanguageSwitcher />
             
+            {/* Botão CTA - Ícone apenas em tablet, ícone+texto em desktop */}
             <Button 
-              className="hidden lg:flex bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg shadow-lg border-2 border-orange-500 hover:border-orange-400 transition-all duration-300 ml-2 hover:scale-105 whitespace-nowrap"
+              className="hidden md:flex bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg shadow-lg border-2 border-orange-500 hover:border-orange-400 transition-all duration-300 hover:scale-105 whitespace-nowrap"
               onClick={handleDiagnosticoClick}
               aria-label={t('menu.scheduleDiagnosticAria')}
             >
-              <Calendar className="h-4 w-4 mr-2" />
+              <Calendar className="h-4 w-4 md:mr-0 lg:mr-2 flex-shrink-0" />
+              <span className="hidden lg:inline xl:hidden">{t('menu.scheduleDiagnosticShort', { defaultValue: 'Agendar' })}</span>
               <span className="hidden xl:inline">{t('menu.scheduleDiagnostic')}</span>
-              <span className="xl:hidden">{t('menu.scheduleDiagnosticShort', { defaultValue: 'Agendar' })}</span>
             </Button>
             
             <MobileMenu isActive={isActive} isActivePrefix={isActivePrefix} />

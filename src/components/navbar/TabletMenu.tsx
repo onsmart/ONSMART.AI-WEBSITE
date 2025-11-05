@@ -17,13 +17,13 @@ import {
 } from "./utils/menuUtils";
 import { useTranslation } from "react-i18next";
 
-interface DesktopMenuProps {
+interface TabletMenuProps {
   isActive: (path: string) => boolean;
   isActivePrefix: (prefix: string) => boolean;
   handleContatoClick: () => void;
 }
 
-const DesktopMenu: React.FC<DesktopMenuProps> = ({ isActive, isActivePrefix, handleContatoClick }) => {
+const TabletMenu: React.FC<TabletMenuProps> = ({ isActive, isActivePrefix, handleContatoClick }) => {
   const { t } = useTranslation('navigation');
   const {
     location,
@@ -39,9 +39,11 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({ isActive, isActivePrefix, han
     navigateTo,
   } = useMenuState();
 
+  // Textos abreviados para tablet - usar tradução completa pois são curtos
+
   return (
-    <nav className="hidden lg:flex relative z-[90] flex max-w-max flex-1 items-center justify-center">
-      <ul className="group flex flex-1 list-none items-center justify-center gap-1.5 sm:gap-2 md:gap-2.5">
+    <nav className="hidden md:flex lg:hidden relative z-[90] flex max-w-max flex-1 items-center justify-center">
+      <ul className="group flex flex-1 list-none items-center justify-center gap-1 sm:gap-1.5">
         <NavMenuItem
           icon={Home}
           label={t('menu.home')}
@@ -116,4 +118,5 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({ isActive, isActivePrefix, han
   );
 };
 
-export default DesktopMenu;
+export default TabletMenu;
+

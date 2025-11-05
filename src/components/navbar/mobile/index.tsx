@@ -37,7 +37,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isActive, isActivePrefix }) => 
   return (
     <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
       <SheetTrigger asChild>
-        <button className="xl:hidden p-1.5 group">
+        <button className="lg:hidden p-1.5 group">
           <Menu className={`h-6 w-6 text-gray-700 transition-all duration-300 ${
             isMenuOpen 
               ? 'rotate-90 scale-110' 

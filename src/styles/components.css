@@ -105,4 +105,115 @@
   .accessible-input {
     @apply text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400;
   }
+
+  /* Remover completamente animação de parênteses nos itens da navbar - TODOS os estados */
+  /* Estilos universais para remover TODOS os pseudo-elementos dentro da navbar */
+  nav *::before,
+  nav *::after,
+  nav button::before,
+  nav button::after,
+  nav button:hover::before,
+  nav button:hover::after,
+  nav button:not(:hover)::before,
+  nav button:not(:hover)::after,
+  nav [data-radix-navigation-menu-item]::before,
+  nav [data-radix-navigation-menu-item]::after,
+  nav [data-radix-navigation-menu-item]:hover::before,
+  nav [data-radix-navigation-menu-item]:hover::after,
+  nav [data-radix-navigation-menu-item]:not(:hover)::before,
+  nav [data-radix-navigation-menu-item]:not(:hover)::after,
+  nav [data-radix-navigation-menu-item] button::before,
+  nav [data-radix-navigation-menu-item] button::after,
+  nav [data-radix-navigation-menu-item] button:hover::before,
+  nav [data-radix-navigation-menu-item] button:hover::after,
+  nav [data-radix-navigation-menu-item] button:not(:hover)::before,
+  nav [data-radix-navigation-menu-item] button:not(:hover)::after,
+  nav [data-radix-navigation-menu-trigger]::before,
+  nav [data-radix-navigation-menu-trigger]::after,
+  nav [data-radix-navigation-menu-trigger]:hover::before,
+  nav [data-radix-navigation-menu-trigger]:hover::after,
+  nav [data-radix-navigation-menu-trigger]:not(:hover)::before,
+  nav [data-radix-navigation-menu-trigger]:not(:hover)::after,
+  nav [data-radix-dropdown-menu-trigger]::before,
+  nav [data-radix-dropdown-menu-trigger]::after,
+  nav [data-radix-dropdown-menu-trigger]:hover::before,
+  nav [data-radix-dropdown-menu-trigger]:hover::after,
+  nav [data-radix-dropdown-menu-trigger]:not(:hover)::before,
+  nav [data-radix-dropdown-menu-trigger]:not(:hover)::after,
+  nav [data-radix-dropdown-menu-trigger] button::before,
+  nav [data-radix-dropdown-menu-trigger] button::after,
+  nav [data-radix-dropdown-menu-trigger] button:hover::before,
+  nav [data-radix-dropdown-menu-trigger] button:hover::after,
+  nav [data-radix-dropdown-menu-trigger] button:not(:hover)::before,
+  nav [data-radix-dropdown-menu-trigger] button:not(:hover)::after,
+  [data-radix-navigation-menu-item]::before,
+  [data-radix-navigation-menu-item]::after,
+  [data-radix-navigation-menu-item]:hover::before,
+  [data-radix-navigation-menu-item]:hover::after,
+  [data-radix-navigation-menu-item]:not(:hover)::before,
+  [data-radix-navigation-menu-item]:not(:hover)::after,
+  [data-radix-navigation-menu-item] button::before,
+  [data-radix-navigation-menu-item] button::after,
+  [data-radix-navigation-menu-item] button:hover::before,
+  [data-radix-navigation-menu-item] button:hover::after,
+  [data-radix-navigation-menu-item] button:not(:hover)::before,
+  [data-radix-navigation-menu-item] button:not(:hover)::after,
+  [data-radix-navigation-menu-trigger]::before,
+  [data-radix-navigation-menu-trigger]::after,
+  [data-radix-navigation-menu-trigger]:hover::before,
+  [data-radix-navigation-menu-trigger]:hover::after,
+  [data-radix-navigation-menu-trigger]:not(:hover)::before,
+  [data-radix-navigation-menu-trigger]:not(:hover)::after,
+  [data-radix-dropdown-menu-trigger]::before,
+  [data-radix-dropdown-menu-trigger]::after,
+  [data-radix-dropdown-menu-trigger]:hover::before,
+  [data-radix-dropdown-menu-trigger]:hover::after,
+  [data-radix-dropdown-menu-trigger]:not(:hover)::before,
+  [data-radix-dropdown-menu-trigger]:not(:hover)::after,
+  [data-radix-dropdown-menu-trigger] button::before,
+  [data-radix-dropdown-menu-trigger] button::after,
+  [data-radix-dropdown-menu-trigger] button:hover::before,
+  [data-radix-dropdown-menu-trigger] button:hover::after,
+  [data-radix-dropdown-menu-trigger] button:not(:hover)::before,
+  [data-radix-dropdown-menu-trigger] button:not(:hover)::after,
+  button[class*="nav"]::before,
+  button[class*="nav"]::after,
+  button[class*="nav"]:hover::before,
+  button[class*="nav"]:hover::after,
+  button[class*="nav"]:not(:hover)::before,
+  button[class*="nav"]:not(:hover)::after,
+  nav span::before,
+  nav span::after,
+  nav div::before,
+  nav div::after,
+  nav li::before,
+  nav li::after {
+    content: none !important;
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    pointer-events: none !important;
+  }
+
+  /* Ocultar NavigationMenuIndicator completamente - TODOS os estados */
+  [data-radix-navigation-menu-indicator],
+  nav [data-radix-navigation-menu-indicator],
+  [data-radix-navigation-menu-indicator][data-state="visible"],
+  [data-radix-navigation-menu-indicator][data-state="hidden"],
+  nav [data-radix-navigation-menu-indicator][data-state="visible"],
+  nav [data-radix-navigation-menu-indicator][data-state="hidden"],
+  [data-radix-navigation-menu-indicator] *,
+  nav [data-radix-navigation-menu-indicator] * {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    content: none !important;
+    pointer-events: none !important;
+  }
 }
