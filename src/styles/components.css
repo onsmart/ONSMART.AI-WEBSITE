@@ -105,4 +105,25 @@
   .accessible-input {
     @apply text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400;
   }
+
+  /* Remover animação de parênteses nos itens da navbar */
+  [data-radix-navigation-menu-item] button::before,
+  [data-radix-navigation-menu-item] button::after,
+  [data-radix-navigation-menu-trigger]::before,
+  [data-radix-navigation-menu-trigger]::after,
+  nav button::before,
+  nav button::after {
+    content: none !important;
+  }
+
+  /* Remover qualquer conteúdo de parênteses nos elementos da navbar */
+  nav button::before,
+  nav button::after {
+    display: none !important;
+  }
+
+  /* Ocultar NavigationMenuIndicator que pode criar efeito de parênteses */
+  [data-radix-navigation-menu-indicator] {
+    display: none !important;
+  }
 }
