@@ -8,9 +8,8 @@ import TabletMenu from "./TabletMenu";
 import MobileMenu from "./mobile"; 
 import Logo from "./Logo";
 import { Calendar } from "lucide-react";
-import { scrollToElement, scrollToForm } from "@/utils/scrollUtils";
+import { scrollToElement } from "@/utils/scrollUtils";
 import LanguageSwitcher from "@/components/shared/LanguageSwitcher";
-import ThemeToggle from "@/components/shared/ThemeToggle";
 import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
@@ -18,7 +17,6 @@ const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   
   // These functions are still needed for backward compatibility with other components
   const isActive = (path: string) => location.pathname === path;
@@ -45,22 +43,6 @@ const Navbar = () => {
     navigate("/contato");
   };
 
-  // Handle scroll to change navbar appearance
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   // Handle potential click outside to close dropdown
   useEffect(() => {

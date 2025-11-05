@@ -23,7 +23,7 @@ interface DropdownMenuItemProps {
 }
 
 const DropdownMenuItem: React.FC<DropdownMenuItemProps> = ({
-  icon: Icon,
+  icon,
   label,
   isActive,
   isOpen,
