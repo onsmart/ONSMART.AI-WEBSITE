@@ -136,3 +136,160 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+/* Remover completamente animação de parênteses na navbar - TODOS os estados */
+/* Estilos universais para remover TODOS os pseudo-elementos dentro da navbar */
+nav *::before,
+nav *::after,
+nav button::before,
+nav button::after,
+nav button:hover::before,
+nav button:hover::after,
+nav button:not(:hover)::before,
+nav button:not(:hover)::after,
+nav [data-radix-navigation-menu-item]::before,
+nav [data-radix-navigation-menu-item]::after,
+nav [data-radix-navigation-menu-item]:hover::before,
+nav [data-radix-navigation-menu-item]:hover::after,
+nav [data-radix-navigation-menu-item]:not(:hover)::before,
+nav [data-radix-navigation-menu-item]:not(:hover)::after,
+nav [data-radix-navigation-menu-item] button::before,
+nav [data-radix-navigation-menu-item] button::after,
+nav [data-radix-navigation-menu-item] button:hover::before,
+nav [data-radix-navigation-menu-item] button:hover::after,
+nav [data-radix-navigation-menu-item] button:not(:hover)::before,
+nav [data-radix-navigation-menu-item] button:not(:hover)::after,
+nav [data-radix-navigation-menu-trigger]::before,
+nav [data-radix-navigation-menu-trigger]::after,
+nav [data-radix-navigation-menu-trigger]:hover::before,
+nav [data-radix-navigation-menu-trigger]:hover::after,
+nav [data-radix-navigation-menu-trigger]:not(:hover)::before,
+nav [data-radix-navigation-menu-trigger]:not(:hover)::after,
+nav [data-radix-dropdown-menu-trigger]::before,
+nav [data-radix-dropdown-menu-trigger]::after,
+nav [data-radix-dropdown-menu-trigger]:hover::before,
+nav [data-radix-dropdown-menu-trigger]:hover::after,
+nav [data-radix-dropdown-menu-trigger]:not(:hover)::before,
+nav [data-radix-dropdown-menu-trigger]:not(:hover)::after,
+nav [data-radix-dropdown-menu-trigger] button::before,
+nav [data-radix-dropdown-menu-trigger] button::after,
+nav [data-radix-dropdown-menu-trigger] button:hover::before,
+nav [data-radix-dropdown-menu-trigger] button:hover::after,
+nav [data-radix-dropdown-menu-trigger] button:not(:hover)::before,
+nav [data-radix-dropdown-menu-trigger] button:not(:hover)::after,
+[data-radix-navigation-menu-item]::before,
+[data-radix-navigation-menu-item]::after,
+[data-radix-navigation-menu-item]:hover::before,
+[data-radix-navigation-menu-item]:hover::after,
+[data-radix-navigation-menu-item]:not(:hover)::before,
+[data-radix-navigation-menu-item]:not(:hover)::after,
+[data-radix-navigation-menu-item] button::before,
+[data-radix-navigation-menu-item] button::after,
+[data-radix-navigation-menu-item] button:hover::before,
+[data-radix-navigation-menu-item] button:hover::after,
+[data-radix-navigation-menu-item] button:not(:hover)::before,
+[data-radix-navigation-menu-item] button:not(:hover)::after,
+[data-radix-navigation-menu-trigger]::before,
+[data-radix-navigation-menu-trigger]::after,
+[data-radix-navigation-menu-trigger]:hover::before,
+[data-radix-navigation-menu-trigger]:hover::after,
+[data-radix-navigation-menu-trigger]:not(:hover)::before,
+[data-radix-navigation-menu-trigger]:not(:hover)::after,
+[data-radix-dropdown-menu-trigger]::before,
+[data-radix-dropdown-menu-trigger]::after,
+[data-radix-dropdown-menu-trigger]:hover::before,
+[data-radix-dropdown-menu-trigger]:hover::after,
+[data-radix-dropdown-menu-trigger]:not(:hover)::before,
+[data-radix-dropdown-menu-trigger]:not(:hover)::after,
+[data-radix-dropdown-menu-trigger] button::before,
+[data-radix-dropdown-menu-trigger] button::after,
+[data-radix-dropdown-menu-trigger] button:hover::before,
+[data-radix-dropdown-menu-trigger] button:hover::after,
+[data-radix-dropdown-menu-trigger] button:not(:hover)::before,
+[data-radix-dropdown-menu-trigger] button:not(:hover)::after,
+nav span::before,
+nav span::after,
+nav div::before,
+nav div::after,
+nav li::before,
+nav li::after,
+/* Capturar TODOS os possíveis elementos do Radix UI que podem criar parênteses */
+[data-radix-dropdown-menu-trigger]::before,
+[data-radix-dropdown-menu-trigger]::after,
+[data-radix-dropdown-menu-trigger] *::before,
+[data-radix-dropdown-menu-trigger] *::after,
+[data-radix-dropdown-menu-trigger] button::before,
+[data-radix-dropdown-menu-trigger] button::after,
+[data-radix-dropdown-menu-trigger] span::before,
+[data-radix-dropdown-menu-trigger] span::after,
+[data-radix-dropdown-menu-trigger] div::before,
+[data-radix-dropdown-menu-trigger] div::after,
+/* Capturar indicadores e portais do Radix UI */
+[data-radix-dropdown-menu-indicator],
+[data-radix-dropdown-menu-portal]::before,
+[data-radix-dropdown-menu-portal]::after,
+/* Capturar TODOS os elementos Radix UI por ID (radix-:r*:) */
+[id^="radix-:"]::before,
+[id^="radix-:"]::after,
+[id^="radix-:"] *::before,
+[id^="radix-:"] *::after,
+button[id^="radix-:"]::before,
+button[id^="radix-:"]::after,
+/* Classe específica para forçar remoção */
+.no-parentheses-forced::before,
+.no-parentheses-forced::after,
+button.no-parentheses-forced::before,
+button.no-parentheses-forced::after {
+  content: none !important;
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  pointer-events: none !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+}
+
+/* Ocultar NavigationMenuIndicator completamente - TODOS os estados */
+[data-radix-navigation-menu-indicator],
+nav [data-radix-navigation-menu-indicator],
+[data-radix-navigation-menu-indicator][data-state="visible"],
+[data-radix-navigation-menu-indicator][data-state="hidden"],
+nav [data-radix-navigation-menu-indicator][data-state="visible"],
+nav [data-radix-navigation-menu-indicator][data-state="hidden"],
+[data-radix-navigation-menu-indicator] *,
+nav [data-radix-navigation-menu-indicator] * {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  content: none !important;
+  pointer-events: none !important;
+}
+
+/* Desabilitar qualquer transição/animação que possa criar parênteses */
+nav button,
+nav [data-radix-navigation-menu-item],
+nav [data-radix-navigation-menu-item] button,
+nav [data-radix-dropdown-menu-trigger] button {
+  transition: color, background-color, opacity !important;
+}
+
+nav button::before,
+nav button::after,
+nav [data-radix-navigation-menu-item]::before,
+nav [data-radix-navigation-menu-item]::after,
+nav [data-radix-navigation-menu-item] button::before,
+nav [data-radix-navigation-menu-item] button::after,
+nav [data-radix-dropdown-menu-trigger] button::before,
+nav [data-radix-dropdown-menu-trigger] button::after,
+nav *::before,
+nav *::after {
+  transition: none !important;
+  animation: none !important;
+  transform: none !important;
+}

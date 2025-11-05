@@ -1,8 +1,6 @@
 
 import React from "react";
 import { cn } from "@/lib/utils";
-import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
-import { NavigationMenuItem } from "@/components/ui/navigation-menu";
 
 interface NavMenuItemProps {
   icon: React.ElementType;
@@ -19,7 +17,7 @@ const NavMenuItem: React.FC<NavMenuItemProps> = ({ icon: Icon, label, isActive, 
   };
 
   return (
-    <NavigationMenuItem>
+    <div className="relative">
       <button 
         onClick={handleClick}
         className={cn(
@@ -31,7 +29,7 @@ const NavMenuItem: React.FC<NavMenuItemProps> = ({ icon: Icon, label, isActive, 
       >
         {label}
       </button>
-    </NavigationMenuItem>
+    </div>
   );
 };
 

@@ -9,12 +9,12 @@ const Logo = () => {
         <img 
           src="/images/banner-preto.png" 
           alt="onsmart.AI Logo" 
-          className="h-8 w-auto object-contain dark:hidden" 
+          className="h-6 sm:h-7 md:h-8 w-auto object-contain dark:hidden" 
         />
         <img 
           src="/images/banner-branco.png" 
           alt="onsmart.AI Logo" 
-          className="h-8 w-auto object-contain hidden dark:block" 
+          className="h-6 sm:h-7 md:h-8 w-auto object-contain hidden dark:block" 
         />
       </div>
     </Link>

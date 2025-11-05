@@ -1,8 +1,6 @@
 
 import { cloneElement } from "react";
 import { cn } from "@/lib/utils";
-import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
-import { NavigationMenuItem } from "@/components/ui/navigation-menu";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -58,23 +56,29 @@ const DropdownMenuItem: React.FC<DropdownMenuItemProps> = ({
   };
 
   return (
-    <NavigationMenuItem>
+    <div className="relative">
       <DropdownMenu open={isOpen} onOpenChange={onOpenChange} modal={false}>
         <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
           <DropdownMenuTrigger asChild>
             <button
               className={cn(
-                "flex items-center px-2.5 sm:px-3 md:px-3.5 py-2 rounded-md transition-all duration-200 font-medium text-sm sm:text-base whitespace-nowrap",
+                "flex items-center px-1.5 sm:px-2 md:px-2.5 py-2 rounded-md transition-all duration-200 font-medium text-sm md:text-base whitespace-nowrap",
+                "no-parentheses-forced", // Classe para forçar remoção de parênteses
                 isActive && !isOpen 
                   ? "text-brand-blue" 
                   : "text-gray-700 hover:text-brand-blue",
                 isOpen && "text-brand-blue"
               )}
               onClick={handleTriggerClick}
+              style={{
+                // Forçar remoção de pseudo-elementos via inline style
+                '--before-content': 'none',
+                '--after-content': 'none'
+              } as React.CSSProperties}
             >
               {label}
               <ChevronDown className={cn(
-                "h-4 w-4 ml-1 flex-shrink-0 transition-transform duration-200",
+                "h-3.5 w-3.5 sm:h-4 sm:w-4 ml-1 flex-shrink-0 transition-transform duration-200",
                 isActive && !isOpen 
                   ? "text-brand-blue" 
                   : "text-gray-700",
@@ -94,7 +98,7 @@ const DropdownMenuItem: React.FC<DropdownMenuItemProps> = ({
           </DropdownMenuContent>
         </div>
       </DropdownMenu>
-    </NavigationMenuItem>
+    </div>
   );
 };
 

@@ -20,7 +20,7 @@ const NavigationMenu = forwardRef<
     {...props}
   >
     {children}
-    <NavigationMenuViewport />
+    {/* NavigationMenuViewport removido para evitar renderização automática de indicadores que criam parênteses */}
   </NavigationMenuPrimitive.Root>
 ))
 NavigationMenu.displayName = NavigationMenuPrimitive.Root.displayName
