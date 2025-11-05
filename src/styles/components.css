@@ -106,27 +106,6 @@
     @apply text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400;
   }
 
-<<<<<<< HEAD
-  /* Remover animação de parênteses nos itens da navbar */
-  [data-radix-navigation-menu-item] button::before,
-  [data-radix-navigation-menu-item] button::after,
-  [data-radix-navigation-menu-trigger]::before,
-  [data-radix-navigation-menu-trigger]::after,
-  nav button::before,
-  nav button::after {
-    content: none !important;
-  }
-
-  /* Remover qualquer conteúdo de parênteses nos elementos da navbar */
-  nav button::before,
-  nav button::after {
-    display: none !important;
-  }
-
-  /* Ocultar NavigationMenuIndicator que pode criar efeito de parênteses */
-  [data-radix-navigation-menu-indicator] {
-    display: none !important;
-=======
   /* Remover completamente animação de parênteses nos itens da navbar - TODOS os estados */
   /* Estilos universais para remover TODOS os pseudo-elementos dentro da navbar */
   nav *::before,
@@ -236,6 +215,5 @@
     height: 0 !important;
     content: none !important;
     pointer-events: none !important;
->>>>>>> Mateus
   }
 }
