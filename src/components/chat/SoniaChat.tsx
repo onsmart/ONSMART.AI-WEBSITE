@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Send, X, User, Minimize2, Sparkles, RefreshCw, Mic, MessageSquare } from 'lucide-react';
+import { Send, X, User, Minimize2, Maximize2, Sparkles, RefreshCw, Mic, MessageSquare } from 'lucide-react';
 import { useTranslation } from 'react-i18next'; // Hook para traduções
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -273,10 +273,15 @@ const SoniaChat: React.FC<SoniaChatProps> = ({ className = '' }) => {
             <Button
               variant="ghost"
               size="sm"
-              onClick={() => minimizeChat()}
+              onClick={() => isMinimized ? maximizeChat() : minimizeChat()}
               className="h-6 w-6 p-0 text-white hover:bg-white/20 rounded-full transition-all duration-300 hover:scale-110"
+              title={isMinimized ? t('header.maximize') : t('header.minimize')}
             >
-              <Minimize2 className="h-3 w-3" />
+              {isMinimized ? (
+                <Maximize2 className="h-3 w-3" />
+              ) : (
+                <Minimize2 className="h-3 w-3" />
+              )}
             </Button>
             <Button
               variant="ghost"

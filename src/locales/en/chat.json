@@ -17,6 +17,7 @@
     "switchToText": "Switch to text",
     "newConversation": "New conversation",
     "minimize": "Minimize",
+    "maximize": "Restore",
     "close": "Close"
   },
   "typing": "Sonia is typing...",

@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Globe } from 'lucide-react';
+import { Globe, ChevronDown } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -8,6 +8,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
 /**
  * COMPONENTE LANGUAGE SWITCHER
@@ -83,10 +84,20 @@ const LanguageSwitcher: React.FC = () => {
           <Button 
             variant="ghost" 
             size="sm"
-            className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors font-medium text-gray-700 dark:text-gray-300 text-xs sm:text-sm md:text-base"
+            className={cn(
+              "flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors font-medium text-xs sm:text-sm md:text-base whitespace-nowrap",
+              open ? "text-brand-blue dark:text-brand-blue" : "text-gray-700 dark:text-gray-300"
+            )}
             aria-label={t('language.selectLanguage')}
           >
-            <Globe className="h-4 w-4 text-gray-600 dark:text-gray-400 flex-shrink-0" />
+            <Globe className={cn(
+              "h-4 w-4 flex-shrink-0 transition-colors",
+              open ? "text-brand-blue dark:text-brand-blue" : "text-gray-600 dark:text-gray-400"
+            )} />
+            <ChevronDown className={cn(
+              "h-3.5 w-3.5 sm:h-4 sm:w-4 ml-1 flex-shrink-0 transition-transform duration-200",
+              open ? "text-brand-blue dark:text-brand-blue rotate-180" : "text-gray-700 dark:text-gray-300"
+            )} />
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent 
@@ -105,7 +116,7 @@ const LanguageSwitcher: React.FC = () => {
             }`}
           >
             <span>{lang.flag}</span>
-            <span>{lang.displayName}</span>
+            <span className="text-sm">{lang.displayName}</span>
             {i18n.language === lang.code && (
               <span className="ml-auto text-xs">✓</span>
             )}
