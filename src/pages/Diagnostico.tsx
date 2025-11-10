@@ -452,7 +452,7 @@ const Diagnostico = () => {
                       </div>
                       <div>
                       <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                      {t('form.socialProof.phone.label')} *
+                      {t('form.phone.label')} *
                       </label>
                       <Input
                         id="phone"
