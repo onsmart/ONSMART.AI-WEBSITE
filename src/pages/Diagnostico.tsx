@@ -16,7 +16,40 @@ const Diagnostico = () => {
   const [phoneWarning, setPhoneWarning] = useState<string | null>(null);
   const [nameWarning, setNameWarning] = useState<string | null>(null);
 
-  // Função para validar campo de nome (apenas letras)
+  // Função para capitalizar primeira letra de cada palavra
+  const capitalizeWords = (text: string): string => {
+    // Lista de preposições que não devem ser capitalizadas (exceto no início)
+    const prepositions = ['de', 'da', 'do', 'dos', 'das', 'e', 'em', 'na', 'no', 'nas', 'nos', 'a', 'ao', 'aos', 'as'];
+    
+    return text
+      .toLowerCase()
+      .split(/\s+/)
+      .map((word, index) => {
+        // Se for a primeira palavra, sempre capitaliza
+        if (index === 0) {
+          if (word.startsWith("'") || word.startsWith("'") || word.startsWith("-")) {
+            return word.length > 1 ? word.charAt(0) + word.charAt(1).toUpperCase() + word.slice(2) : word;
+          }
+          return word.charAt(0).toUpperCase() + word.slice(1);
+        }
+        
+        // Se não for a primeira palavra e for uma preposição, mantém minúscula
+        if (prepositions.includes(word.toLowerCase())) {
+          return word.toLowerCase();
+        }
+        
+        // Preserva palavras que começam com apóstrofo ou hífen
+        if (word.startsWith("'") || word.startsWith("'") || word.startsWith("-")) {
+          return word.length > 1 ? word.charAt(0) + word.charAt(1).toUpperCase() + word.slice(2) : word;
+        }
+        
+        // Capitaliza outras palavras
+        return word.charAt(0).toUpperCase() + word.slice(1);
+      })
+      .join(' ');
+  };
+
+  // Função para validar campo de nome (apenas letras) e capitalizar
   const allowOnlyLettersOnInput = (e: React.FormEvent<HTMLInputElement>) => {
     const el = e.currentTarget;
     const raw = el.value;
@@ -29,7 +62,12 @@ const Diagnostico = () => {
     }
     
     // sanitiza removendo números
-    el.value = raw.replace(/[^A-Za-zÀ-ÖØ-öø-ÿ''\s-]/g, '');
+    let sanitized = raw.replace(/[^A-Za-zÀ-ÖØ-öø-ÿ''\s-]/g, '');
+    
+    // Capitaliza a primeira letra de cada palavra
+    sanitized = capitalizeWords(sanitized);
+    
+    el.value = sanitized;
   };
   
   const blockDigitsOnKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
