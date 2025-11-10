@@ -79,6 +79,7 @@
         "value": "2.847",
         "label": "Diagnósticos realizados"
       },
+      
       "satisfaction": {
         "value": "4.9/5",
         "label": "Satisfação média"
@@ -99,7 +100,9 @@
     },
     "name": {
       "label": "Nome Completo",
-      "placeholder": "Digite seu nome completo"
+      "placeholder": "Digite seu nome completo",
+      "title": "Use apenas letras, espaços, apóstrofo e hífen (mín. 2 caracteres)",
+      "warning": "Apenas letras, espaços, apóstrofo e hífen são permitidos."
     },
     "email": {
       "label": "E-mail Profissional",
@@ -107,7 +110,9 @@
     },
     "phone": {
       "label": "Telefone/WhatsApp",
-      "placeholder": "(11) 99999-9999"
+      "placeholder": "(11) 99999-9999",
+      "warning": "Apenas números, espaços, parênteses e hífen são permitidos.",
+      "title": "Use o formato (11) 99999-9999"
     },
     "company": {
       "label": "Nome da Empresa",

@@ -99,7 +99,9 @@
     },
     "name": {
       "label": "Nombre Completo",
-      "placeholder": "Ingresa tu nombre completo"
+      "placeholder": "Ingresa tu nombre completo",
+      "title": "Usa solo letras, espacios, apóstrofo y guion (mín. 2 caracteres)",
+      "warning": "Solo se permiten letras, espacios, apóstrofo y guion."
     },
     "email": {
       "label": "Email Profesional",
@@ -107,7 +109,9 @@
     },
     "phone": {
       "label": "Teléfono/WhatsApp",
-      "placeholder": "(11) 99999-9999"
+      "placeholder": "(11) 99999-9999",
+      "warning": "Solo se permiten dígitos, espacios, paréntesis y guion.",
+      "title": "Usa el formato (11) 99999-9999"
     },
     "company": {
       "label": "Nombre de la Empresa",

@@ -74,20 +74,20 @@
     "description": "Fill out the form below and receive within",
     "descriptionHighlight": "24 hours",
     "descriptionEnd": ": confirmed appointment, preparatory material and personalized checklist.",
-    "socialProof": {
-      "diagnostics": {
-        "value": "2,847",
-        "label": "Diagnostics performed"
+      "socialProof": {
+        "diagnostics": {
+          "value": "2,847",
+          "label": "Diagnostics performed"
+        },
+        "satisfaction": {
+          "value": "4.9/5",
+          "label": "Average satisfaction"
+        },
+        "value": {
+          "value": "$2,500",
+          "label": "Free value"
+        }
       },
-      "satisfaction": {
-        "value": "4.9/5",
-        "label": "Average satisfaction"
-      },
-      "value": {
-        "value": "$2,500",
-        "label": "Free value"
-      }
-    },
     "bonus": {
       "title": "When requesting the diagnostic, you will receive:",
       "items": {
@@ -99,7 +99,9 @@
     },
     "name": {
       "label": "Full Name",
-      "placeholder": "Enter your full name"
+      "placeholder": "Enter your full name",
+      "title": "Use letters, spaces, apostrophe and hyphen only (min. 2 chars)",
+      "warning": "Only letters, spaces, apostrophe and hyphen are allowed."
     },
     "email": {
       "label": "Professional Email",
@@ -107,7 +109,9 @@
     },
     "phone": {
       "label": "Phone/WhatsApp",
-      "placeholder": "(11) 99999-9999"
+      "placeholder": "(11) 99999-9999",
+      "warning": "Only digits, spaces, parentheses and hyphen are allowed.",
+      "title": "Use the format (11) 99999-9999"
     },
     "company": {
       "label": "Company Name",
@@ -147,7 +151,7 @@
     "submit": "Request Free Diagnostic",
     "sending": "Sending Request...",
     "required": "Required field"
-  },
+    },
   "benefits": {
     "sectionTitle": "What You Will Receive",
     "title": "Complete",

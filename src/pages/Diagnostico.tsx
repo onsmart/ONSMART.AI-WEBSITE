@@ -12,36 +12,60 @@ import UnifiedSEO from '@/components/shared/UnifiedSEO';
 const Diagnostico = () => {
   const [state, handleSubmit] = useForm("mwprkloy");
   const { t } = useTranslation(['diagnostico', 'common']);
-  // no topo do componente
-const [phoneWarning, setPhoneWarning] = useState<string | null>(null);
+  // Estados para warnings
+  const [phoneWarning, setPhoneWarning] = useState<string | null>(null);
+  const [nameWarning, setNameWarning] = useState<string | null>(null);
 
-const handlePhoneInput = (e: React.FormEvent<HTMLInputElement>) => {
-  const el = e.currentTarget;
-  const raw = el.value;
+  // Função para validar campo de nome (apenas letras)
+  const allowOnlyLettersOnInput = (e: React.FormEvent<HTMLInputElement>) => {
+    const el = e.currentTarget;
+    const raw = el.value;
+    
+    // se o usuário digitou número, mostra aviso
+    if (/\d/.test(raw)) {
+      setNameWarning(t('form.name.warning'));
+    } else {
+      setNameWarning(null);
+    }
+    
+    // sanitiza removendo números
+    el.value = raw.replace(/[^A-Za-zÀ-ÖØ-öø-ÿ''\s-]/g, '');
+  };
+  
+  const blockDigitsOnKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (/\d/.test(e.key)) {
+      e.preventDefault();
+      setNameWarning(t('form.name.warning'));
+    }
+  };
 
-  // se o usuário digitou letra, mostra aviso
-  if (/[A-Za-z]/.test(raw)) {
-    setPhoneWarning('Apenas números, espaços, parênteses e hífen são permitidos.');
-  } else {
-    setPhoneWarning(null);
-  }
+  // Função para validar campo de telefone (apenas números)
+  const handlePhoneInput = (e: React.FormEvent<HTMLInputElement>) => {
+    const el = e.currentTarget;
+    const raw = el.value;
 
-  // sanitiza removendo letras
-  el.value = raw.replace(/[A-Za-z]/g, '');
-};
+    // se o usuário digitou letra, mostra aviso
+    if (/[A-Za-z]/.test(raw)) {
+      setPhoneWarning(t('form.phone.warning'));
+    } else {
+      setPhoneWarning(null);
+    }
 
-const blockLettersOnKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-  if (/^[A-Za-z]$/.test(e.key)) {
-    e.preventDefault();
-    setPhoneWarning('Apenas números, espaços, parênteses e hífen são permitidos.');
-  }
-};
+    // sanitiza removendo letras
+    el.value = raw.replace(/[A-Za-z]/g, '');
+  };
 
+  const blockLettersOnKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (/^[A-Za-z]$/.test(e.key)) {
+      e.preventDefault();
+      setPhoneWarning(t('form.phone.warning'));
+    }
+  };
   if (state.succeeded) {
     return (
       <>
         <UnifiedSEO 
-          pageType="page"
+          pageType="diagnostic"
           pageData={{
             title: t('seo.title'),
             description: t('seo.description')
@@ -106,7 +130,7 @@ const blockLettersOnKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
   return (
     <>
       <UnifiedSEO 
-        pageType="page"
+        pageType="diagnostic"
         pageData={{
           title: t('seo.title'),
           description: t('seo.description')
@@ -373,9 +397,17 @@ const blockLettersOnKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
                           type="text"
                           name="name"
                           required
+                          autoComplete="name"
+                          pattern="^[A-Za-zÀ-ÖØ-öø-ÿ'’\s-]{2,}$"
+                          title={t('form.name.title')}
+                          onInput={allowOnlyLettersOnInput}
+                          onKeyDown={blockDigitsOnKeyDown}
                           className="w-full border-gray-300 focus:border-brand-blue focus:ring-brand-blue rounded-lg"
                           placeholder={t('form.name.placeholder')}
                         />
+                        {nameWarning && (
+                          <p className="text-yellow-600 text-sm mt-1">{t('form.name.warning')}</p>
+                        )}
                         <ValidationError
                           prefix={t('form.name.label')}
                           field="name"
@@ -419,26 +451,26 @@ const blockLettersOnKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
                         />
                       </div>
                       <div>
-                        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                          {t('form.phone.label')} *
-                        </label>
-                        <Input
-                          id="phone"
-                          type="tel"
-                          name="phone"
-                          required
-                          inputMode="numeric"
-                          maxLength={16}
-                          pattern="^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$"
-                          title="Use o formato (11) 99999-9999"
-                          onInput={handlePhoneInput}
-                          onKeyDown={blockLettersOnKeyDown}
-                          className="w-full border-gray-300 focus:border-brand-blue focus:ring-brand-blue rounded-lg"
-                          placeholder={t('form.phone.placeholder')}
-                        />
-                        {phoneWarning && (
-                          <p className="text-yellow-600 text-sm mt-1">{phoneWarning}</p>
-                        )}
+                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                      {t('form.socialProof.phone.label')} *
+                      </label>
+                      <Input
+                        id="phone"
+                        type="tel"
+                        name="phone"
+                        required
+                        inputMode="numeric"
+                        maxLength={16}
+                        pattern="^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$"
+                        title={t('form.phone.title')}
+                        onInput={handlePhoneInput}
+                        onKeyDown={blockLettersOnKeyDown}
+                        className="w-full border-gray-300 focus:border-brand-blue focus:ring-brand-blue rounded-lg"
+                        placeholder={t('form.phone.placeholder')}
+                      />
+                      {phoneWarning && (
+                        <p className="text-yellow-600 text-sm mt-1">{t('form.phone.warning')}</p>
+                      )}
                       </div>
                     </div>
                     
