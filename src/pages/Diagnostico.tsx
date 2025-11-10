@@ -12,6 +12,30 @@ import UnifiedSEO from '@/components/shared/UnifiedSEO';
 const Diagnostico = () => {
   const [state, handleSubmit] = useForm("mwprkloy");
   const { t } = useTranslation(['diagnostico', 'common']);
+  // no topo do componente
+const [phoneWarning, setPhoneWarning] = useState<string | null>(null);
+
+const handlePhoneInput = (e: React.FormEvent<HTMLInputElement>) => {
+  const el = e.currentTarget;
+  const raw = el.value;
+
+  // se o usuário digitou letra, mostra aviso
+  if (/[A-Za-z]/.test(raw)) {
+    setPhoneWarning('Apenas números, espaços, parênteses e hífen são permitidos.');
+  } else {
+    setPhoneWarning(null);
+  }
+
+  // sanitiza removendo letras
+  el.value = raw.replace(/[A-Za-z]/g, '');
+};
+
+const blockLettersOnKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  if (/^[A-Za-z]$/.test(e.key)) {
+    e.preventDefault();
+    setPhoneWarning('Apenas números, espaços, parênteses e hífen são permitidos.');
+  }
+};
 
   if (state.succeeded) {
     return (
@@ -403,9 +427,18 @@ const Diagnostico = () => {
                           type="tel"
                           name="phone"
                           required
+                          inputMode="numeric"
+                          maxLength={16}
+                          pattern="^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$"
+                          title="Use o formato (11) 99999-9999"
+                          onInput={handlePhoneInput}
+                          onKeyDown={blockLettersOnKeyDown}
                           className="w-full border-gray-300 focus:border-brand-blue focus:ring-brand-blue rounded-lg"
                           placeholder={t('form.phone.placeholder')}
                         />
+                        {phoneWarning && (
+                          <p className="text-yellow-600 text-sm mt-1">{phoneWarning}</p>
+                        )}
                       </div>
                     </div>
                     
