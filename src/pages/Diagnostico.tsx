@@ -77,10 +77,88 @@ const Diagnostico = () => {
     }
   };
 
-  // Função para validar campo de telefone (apenas números)
+  // Função para formatar telefone automaticamente
+  const formatPhoneNumber = (value: string): string => {
+    // Remove tudo exceto números
+    const numbers = value.replace(/\D/g, '');
+    
+    if (!numbers) return '';
+    
+    // Se tiver 1-2 dígitos, está digitando o DDD
+    if (numbers.length <= 2) {
+      return `(${numbers}`;
+    }
+    
+    // Detecta tamanho do DDD (1-3 dígitos)
+    // Prioriza DDD de 2 dígitos (padrão brasileiro)
+    let dddLength = 2;
+    
+    // Se tiver 3 dígitos e o 3º for 9, é DDD de 2 + celular (ex: 119)
+    if (numbers.length === 3 && numbers[2] === '9') {
+      dddLength = 2;
+    }
+    // Se tiver 4+ dígitos e o 3º for 9, é DDD de 2 + celular
+    else if (numbers.length >= 4 && numbers[2] === '9') {
+      dddLength = 2;
+    }
+    // Se tiver 4+ dígitos e o 4º (índice 3) for 9, é DDD de 2 + celular
+    else if (numbers.length >= 4 && numbers[3] === '9') {
+      dddLength = 2;
+    }
+    // Se tiver 3 dígitos e não parece celular brasileiro, ainda pode estar no DDD
+    else if (numbers.length === 3) {
+      // Permanece como DDD de 3 dígitos
+      return `(${numbers}`;
+    }
+    // Se tiver 4-5 dígitos e não parece celular brasileiro, pode ser DDD de 3
+    else if (numbers.length >= 4 && numbers.length <= 5) {
+      // Tenta DDD de 3 se não parece padrão brasileiro
+      dddLength = 3;
+    }
+    // Com 6+ dígitos, assume DDD de 2 (padrão brasileiro)
+    else {
+      dddLength = 2;
+    }
+    
+    const ddd = numbers.slice(0, dddLength);
+    const rest = numbers.slice(dddLength);
+    
+    // Se não tem número após DDD, retorna só o DDD formatado
+    if (!rest) {
+      return `(${ddd})`;
+    }
+    
+    // Primeiro dígito após DDD determina se é celular (9) ou fixo
+    const firstDigit = rest[0];
+    const isMobile = firstDigit === '9';
+    
+    // Formata: (DDD) + espaço + número
+    let formatted = `(${ddd}) `;
+    
+    if (isMobile) {
+      // Celular: (XX) 9XXXX-XXXX ou (XXX) 9XXXX-XXXX
+      if (rest.length <= 5) {
+        formatted += rest;
+      } else {
+        formatted += `${rest.slice(0, 5)}-${rest.slice(5, 9)}`;
+      }
+    } else {
+      // Fixo: (XX) XXXX-XXXX ou (XXX) XXXX-XXXX
+      if (rest.length <= 4) {
+        formatted += rest;
+      } else {
+        formatted += `${rest.slice(0, 4)}-${rest.slice(4, 8)}`;
+      }
+    }
+    
+    return formatted;
+  };
+
+  // Função para validar campo de telefone (apenas números) e formatar
   const handlePhoneInput = (e: React.FormEvent<HTMLInputElement>) => {
     const el = e.currentTarget;
     const raw = el.value;
+    const cursorPosition = el.selectionStart || 0;
 
     // se o usuário digitou letra, mostra aviso
     if (/[A-Za-z]/.test(raw)) {
@@ -89,8 +167,42 @@ const Diagnostico = () => {
       setPhoneWarning(null);
     }
 
-    // sanitiza removendo letras
-    el.value = raw.replace(/[A-Za-z]/g, '');
+    // Remove letras primeiro
+    const withoutLetters = raw.replace(/[A-Za-z]/g, '');
+    
+    // Aplica formatação
+    const formatted = formatPhoneNumber(withoutLetters);
+    el.value = formatted;
+    
+    // Ajusta posição do cursor
+    // Calcula quantos caracteres não numéricos foram adicionados antes da posição do cursor
+    const beforeCursor = raw.slice(0, cursorPosition);
+    const numbersBeforeCursor = beforeCursor.replace(/\D/g, '').length;
+    
+    // Encontra a posição correspondente na string formatada
+    let newPosition = 0;
+    let numbersCount = 0;
+    
+    for (let i = 0; i < formatted.length; i++) {
+      if (/\d/.test(formatted[i])) {
+        numbersCount++;
+        if (numbersCount > numbersBeforeCursor) {
+          newPosition = i;
+          break;
+        }
+      }
+      if (numbersCount === numbersBeforeCursor) {
+        newPosition = i + 1;
+        break;
+      }
+    }
+    
+    // Se não encontrou, coloca no final
+    if (newPosition === 0 && numbersCount <= numbersBeforeCursor) {
+      newPosition = formatted.length;
+    }
+    
+    el.setSelectionRange(newPosition, newPosition);
   };
 
   const blockLettersOnKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -498,8 +610,8 @@ const Diagnostico = () => {
                         name="phone"
                         required
                         inputMode="numeric"
-                        maxLength={16}
-                        pattern="^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$"
+                        maxLength={17}
+                        pattern="^\(?\d{1,3}\)?\s?\d{4,5}-?\d{4}$"
                         title={t('form.phone.title')}
                         onInput={handlePhoneInput}
                         onKeyDown={blockLettersOnKeyDown}
