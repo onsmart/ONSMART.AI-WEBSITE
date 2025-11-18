@@ -1,0 +1,146 @@
+# 📱 Como Extrair e Visualizar o QR Code
+
+## Método 1: Usando o Script (Recomendado)
+
+### Windows (PowerShell):
+
+1. Execute o script:
+```powershell
+.\scripts\extrair-qrcode.ps1
+```
+
+2. Cole a resposta JSON completa quando solicitado
+3. O QR Code será salvo em `qrcode.png` e aberto automaticamente
+
+### Linux/Mac:
+
+1. Dê permissão de execução:
+```bash
+chmod +x scripts/extrair-qrcode.sh
+```
+
+2. Execute:
+```bash
+./scripts/extrair-qrcode.sh
+```
+
+3. Cole a resposta JSON completa quando solicitado
+4. O QR Code será salvo em `qrcode.png`
+
+---
+
+## Método 2: Manual (PowerShell)
+
+1. Abra o PowerShell na raiz do projeto
+
+2. Cole e execute (substitua `SUA_RESPOSTA_JSON` pela resposta completa):
+
+```powershell
+# Cole a resposta JSON aqui
+$response = @'
+SUA_RESPOSTA_JSON_AQUI
+'@
+
+# Parsear JSON
+$json = $response | ConvertFrom-Json
+
+# Extrair base64
+$base64 = $json.base64
+if (-not $base64) {
+    $base64 = $json.qrcode.base64
+}
+
+# Remover prefixo se existir
+$base64 = $base64 -replace '^data:image/png;base64,', ''
+
+# Converter e salvar
+$bytes = [Convert]::FromBase64String($base64)
+[System.IO.File]::WriteAllBytes("qrcode.png", $bytes)
+
+Write-Host "✅ QR Code salvo em qrcode.png"
+Start-Process qrcode.png
+```
+
+---
+
+## Método 3: Usando Site Online
+
+1. Copie apenas a parte do base64 (sem o prefixo `data:image/png;base64,`)
+2. Acesse: https://base64.guru/converter/decode/image
+3. Cole o base64 e clique em "Decode"
+4. Baixe a imagem gerada
+
+---
+
+## Método 4: Usando Python (se tiver instalado)
+
+```python
+import json
+import base64
+
+# Cole a resposta JSON aqui
+response = '''SUA_RESPOSTA_JSON_AQUI'''
+
+# Parsear
+data = json.loads(response)
+
+# Extrair base64
+base64_str = data.get('base64') or data.get('qrcode', {}).get('base64', '')
+
+# Remover prefixo
+if base64_str.startswith('data:image/png;base64,'):
+    base64_str = base64_str.replace('data:image/png;base64,', '')
+
+# Converter e salvar
+img_data = base64.b64decode(base64_str)
+with open('qrcode.png', 'wb') as f:
+    f.write(img_data)
+
+print("✅ QR Code salvo em qrcode.png")
+```
+
+---
+
+## Exemplo com sua Resposta
+
+Com base na sua resposta, você pode usar:
+
+### Opção A: Copiar apenas o base64
+
+Da sua resposta, copie tudo após `"base64":"` até antes do próximo `"`:
+
+```
+data:image/png;base64,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
+```
+
+### Opção B: Usar o script PowerShell
+
+Execute:
+```powershell
+.\scripts\extrair-qrcode.ps1
+```
+
+E cole toda a resposta JSON quando solicitado.
+
+---
+
+## Depois de ter o QR Code:
+
+1. Abra o arquivo `qrcode.png`
+2. Abra o WhatsApp no celular
+3. Vá em: **Menu (☰) → Aparelhos conectados → Conectar um aparelho**
+4. Escaneie o QR Code
+5. Aguarde a conexão ser estabelecida
+
+---
+
+## Verificar se conectou:
+
+Execute novamente:
+```bash
+curl -X GET "http://192.168.15.31:8080/instance/fetchInstances" \
+  -H "apikey: nsinONBASObjsbJBAJJkdopJIPAHUOBAIni"
+```
+
+O status deve mudar de `"connecting"` para `"open"` quando estiver conectado.
+

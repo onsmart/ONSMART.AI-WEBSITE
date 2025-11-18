@@ -6,7 +6,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import ContentManager from '@/components/admin/ContentManager';
 import CaseManager from '@/components/admin/CaseManager';
 import BlogManager from '@/components/admin/BlogManager';
-import { Shield, FileText, Briefcase, BookOpen } from 'lucide-react';
+import EvolutionApiConfig from '@/components/admin/EvolutionApiConfig';
+import { Shield, FileText, Briefcase, BookOpen, MessageCircle } from 'lucide-react';
 
 const Admin = () => {
   const { t } = useTranslation(['admin', 'common']);
@@ -25,7 +26,7 @@ const Admin = () => {
         </div>
 
         <Tabs defaultValue="content" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-3">
+          <TabsList className="grid w-full grid-cols-4">
             <TabsTrigger value="content" className="flex items-center gap-2">
               <FileText className="h-4 w-4" />
               {t('tabs.content')}
@@ -37,6 +38,10 @@ const Admin = () => {
             <TabsTrigger value="blog" className="flex items-center gap-2">
               <BookOpen className="h-4 w-4" />
               {t('tabs.blog')}
+            </TabsTrigger>
+            <TabsTrigger value="whatsapp" className="flex items-center gap-2">
+              <MessageCircle className="h-4 w-4" />
+              WhatsApp
             </TabsTrigger>
           </TabsList>
 
@@ -80,6 +85,10 @@ const Admin = () => {
                 <BlogManager />
               </CardContent>
             </Card>
+          </TabsContent>
+
+          <TabsContent value="whatsapp">
+            <EvolutionApiConfig />
           </TabsContent>
         </Tabs>
       </div>

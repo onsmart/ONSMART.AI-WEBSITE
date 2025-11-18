@@ -11,12 +11,14 @@ import { Calendar } from "lucide-react";
 import { scrollToElement } from "@/utils/scrollUtils";
 import LanguageSwitcher from "@/components/shared/LanguageSwitcher";
 import { useTranslation } from "react-i18next";
+import { useWhatsAppQR } from "@/contexts/WhatsAppQRContext";
 
 const Navbar = () => {
   const { t } = useTranslation('navigation');
   const location = useLocation();
   const navigate = useNavigate();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const { isQRCodeOpen } = useWhatsAppQR();
   
   // These functions are still needed for backward compatibility with other components
   const isActive = (path: string) => location.pathname === path;
@@ -94,7 +96,10 @@ const Navbar = () => {
 
       <div 
         id="navigation"
-        className="fixed top-0 z-[100] w-full bg-white dark:bg-gray-900 shadow-lg py-0 border-b border-gray-200 dark:border-gray-800"
+        className={cn(
+          "fixed top-0 z-[100] w-full bg-white dark:bg-gray-900 shadow-lg py-0 border-b border-gray-200 dark:border-gray-800 transition-opacity duration-300",
+          isQRCodeOpen && "opacity-0 pointer-events-none"
+        )}
         role="banner"
         aria-label={t('menu.navigationLabel')}
       >

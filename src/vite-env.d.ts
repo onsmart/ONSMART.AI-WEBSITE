@@ -7,6 +7,7 @@ interface ImportMetaEnv {
   readonly VITE_COMPANY_PHONE: string
   readonly VITE_COMPANY_EMAIL: string
   readonly VITE_COMPANY_NAME: string
+  readonly VITE_SONIA_PHONE: string
   readonly VITE_CALENDLY_URL: string
   readonly VITE_YOUTUBE_API_KEY: string
   readonly VITE_GOOGLE_PAGESPEED_API_KEY: string
