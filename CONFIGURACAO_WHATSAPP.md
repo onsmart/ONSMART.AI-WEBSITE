@@ -369,3 +369,4 @@ curl -X PUT "SUA_URL_API/instance/restart/SEU_NOME_INSTANCIA" \
 
 **🎉 Pronto! Seu WhatsApp está configurado e conectado!**
 
+

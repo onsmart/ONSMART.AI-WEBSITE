@@ -144,3 +144,4 @@ curl -X GET "http://192.168.15.31:8080/instance/fetchInstances" \
 
 O status deve mudar de `"connecting"` para `"open"` quando estiver conectado.
 
+

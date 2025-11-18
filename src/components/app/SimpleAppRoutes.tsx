@@ -17,7 +17,6 @@ import FerramentasGratuitas from '@/pages/FerramentasGratuitas';
 import Glossario from '@/pages/Glossario';
 import IABasico from '@/pages/university/IABasico';
 import AgentesIAUniversity from '@/pages/university/AgentesIA';
-import Admin from '@/pages/Admin';
 import EcossistemaIBM from '@/pages/EcossistemaIBM';
 import AgentesIA from '@/pages/AgentesIA';
 import Sobre from '@/pages/Sobre';
@@ -89,7 +88,6 @@ const SimpleAppRoutes: React.FC = () => {
       <Route path="/termos-uso" element={<TermosUso />} />
       <Route path="/planos" element={<Planos />} />
       <Route path="/whatsapp-agents" element={<WhatsappAgents />} />
-      <Route path="/admin" element={<Admin />} />
       <Route path="/ecossistema-ibm" element={<EcossistemaIBM />} />
       <Route path="/agentes-ia" element={<AgentesIA />} />
       <Route path="/sobre" element={<Sobre />} />

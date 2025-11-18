@@ -52,3 +52,4 @@ catch {
     Write-Host "Dica: Certifique-se de colar a resposta JSON completa" -ForegroundColor Yellow
 }
 
+

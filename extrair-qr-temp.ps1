@@ -10,3 +10,4 @@ $bytes = [Convert]::FromBase64String($base64)
 Write-Host '✅ QR Code salvo em qrcode.png' -ForegroundColor Green
 Start-Process qrcode.png
 
+
