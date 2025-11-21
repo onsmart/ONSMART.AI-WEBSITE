@@ -14,12 +14,6 @@
     },
     "api/calendly-polling.js": {
       "maxDuration": 30
-    },
-    "api/evolution-api.js": {
-      "maxDuration": 30
-    },
-    "api/evolution-webhook.js": {
-      "maxDuration": 30
     }
   }
 }

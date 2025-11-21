@@ -155,9 +155,6 @@ import esImageTest from '../locales/es/imageTest.json';
 import ptBlogPost from '../locales/pt/blogPost.json';
 import enBlogPost from '../locales/en/blogPost.json';
 import esBlogPost from '../locales/es/blogPost.json';
-import ptWhatsappAgents from '../locales/pt/whatsappAgents.json';
-import enWhatsappAgents from '../locales/en/whatsappAgents.json';
-import esWhatsappAgents from '../locales/es/whatsappAgents.json';
 import ptUniversityAgentesIA from '../locales/pt/universityAgentesIA.json';
 import enUniversityAgentesIA from '../locales/en/universityAgentesIA.json';
 import esUniversityAgentesIA from '../locales/es/universityAgentesIA.json';
@@ -216,7 +213,7 @@ i18n
     
     // Namespaces (categorias de traduções)
     // Isso permite organizar: t('common.button'), t('home.title'), etc.
-    ns: ['common', 'navigation', 'home', 'chat', 'contact', 'produtos', 'agentesIA', 'sonia', 'granite', 'metaLlama', 'watsonxAI', 'dataProductHub', 'knowledgeCatalog', 'mistral', 'watsonxData', 'dataStage', 'streamsets', 'storageCeph', 'watsonxOrchestrate', 'watsonxGovernance', 'watsonxCodeAssistant', 'aiCodeAssistant', 'mantaDataLineage', 'planningAnalytics', 'guardiumDataSecurityCenter', 'databand', 'servicos', 'setores', 'solucoes', 'sobre', 'contato', 'blog', 'diagnostico', 'planos', 'revendas', 'agentesDigitais', 'notFound', 'conteudo', 'ferramentasGratuitas', 'materiaisGratuitos', 'glossario', 'nossosProdutos', 'agentesDigitaisComissoes', 'agentesDigitaisCadastro', 'revendasCadastro', 'revendasBeneficios', 'admin', 'dockerMonitor', 'imageTest', 'blogPost', 'whatsappAgents', 'universityAgentesIA', 'universityIABasico', 'index', 'politicaPrivacidade', 'termosUso'],
+    ns: ['common', 'navigation', 'home', 'chat', 'contact', 'produtos', 'agentesIA', 'sonia', 'granite', 'metaLlama', 'watsonxAI', 'dataProductHub', 'knowledgeCatalog', 'mistral', 'watsonxData', 'dataStage', 'streamsets', 'storageCeph', 'watsonxOrchestrate', 'watsonxGovernance', 'watsonxCodeAssistant', 'aiCodeAssistant', 'mantaDataLineage', 'planningAnalytics', 'guardiumDataSecurityCenter', 'databand', 'servicos', 'setores', 'solucoes', 'sobre', 'contato', 'blog', 'diagnostico', 'planos', 'revendas', 'agentesDigitais', 'notFound', 'conteudo', 'ferramentasGratuitas', 'materiaisGratuitos', 'glossario', 'nossosProdutos', 'agentesDigitaisComissoes', 'agentesDigitaisCadastro', 'revendasCadastro', 'revendasBeneficios', 'admin', 'dockerMonitor', 'imageTest', 'blogPost', 'universityAgentesIA', 'universityIABasico', 'index', 'politicaPrivacidade', 'termosUso'],
     defaultNS: 'common',
     
     // Recursos (traduções)
@@ -272,7 +269,6 @@ i18n
         dockerMonitor: ptDockerMonitor,
         imageTest: ptImageTest,
         blogPost: ptBlogPost,
-        whatsappAgents: ptWhatsappAgents,
         universityAgentesIA: ptUniversityAgentesIA,
         universityIABasico: ptUniversityIABasico,
         index: ptIndex,
@@ -330,7 +326,6 @@ i18n
         dockerMonitor: enDockerMonitor,
         imageTest: enImageTest,
         blogPost: enBlogPost,
-        whatsappAgents: enWhatsappAgents,
         universityAgentesIA: enUniversityAgentesIA,
         universityIABasico: enUniversityIABasico,
         index: enIndex,
@@ -388,7 +383,6 @@ i18n
         dockerMonitor: esDockerMonitor,
         imageTest: esImageTest,
         blogPost: esBlogPost,
-        whatsappAgents: esWhatsappAgents,
         universityAgentesIA: esUniversityAgentesIA,
         universityIABasico: esUniversityIABasico,
         index: esIndex,

@@ -3,7 +3,7 @@ import { useState, useCallback, useEffect } from 'react';
 interface SoniaChatState {
   isOpen: boolean;
   isMinimized: boolean;
-  chatMode: 'text' | 'voice' | 'whatsapp';
+  chatMode: 'text' | 'voice';
 }
 
 interface SoniaChatActions {
@@ -12,7 +12,7 @@ interface SoniaChatActions {
   toggleChat: () => void;
   minimizeChat: () => void;
   maximizeChat: () => void;
-  setChatMode: (mode: 'text' | 'voice' | 'whatsapp') => void;
+  setChatMode: (mode: 'text' | 'voice') => void;
 }
 
 let globalChatState: SoniaChatState = {
@@ -78,7 +78,7 @@ export const useSoniaChat = (): SoniaChatState & SoniaChatActions => {
     notifyListeners();
   }, []);
 
-  const setChatMode = useCallback((mode: 'text' | 'voice' | 'whatsapp') => {
+  const setChatMode = useCallback((mode: 'text' | 'voice') => {
     console.log('🎵 setChatMode chamado:', mode);
     globalChatState.chatMode = mode;
     notifyListeners();

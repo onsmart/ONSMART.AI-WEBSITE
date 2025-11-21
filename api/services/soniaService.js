@@ -6,15 +6,15 @@ const conversationHistory = new Map();
 
 /**
  * Processa uma mensagem com a Sonia, mantendo histórico de conversa
- * @param {string} userId - Identificador único do usuário (número do WhatsApp ou ID)
+ * @param {string} userId - Identificador único do usuário
  * @param {string} message - Mensagem do usuário
  * @param {object} options - Opções adicionais
- * @param {string} options.channel - Canal de comunicação ('whatsapp' | 'web')
+ * @param {string} options.channel - Canal de comunicação ('web')
  * @param {string} options.language - Idioma ('pt' | 'en' | 'es')
  * @returns {Promise<string>} Resposta da Sonia
  */
 export async function processSoniaMessage(userId, message, options = {}) {
-  const { channel = 'whatsapp', language = 'pt' } = options;
+  const { channel = 'web', language = 'pt' } = options;
   
   // Obter histórico do usuário
   let history = conversationHistory.get(userId) || [];

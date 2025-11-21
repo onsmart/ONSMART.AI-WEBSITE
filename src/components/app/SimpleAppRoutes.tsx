@@ -11,7 +11,6 @@ import NotFound from '@/pages/NotFound';
 import PoliticaPrivacidade from '@/pages/PoliticaPrivacidade';
 import TermosUso from '@/pages/TermosUso';
 import Planos from '@/pages/Planos';
-import WhatsappAgents from '@/pages/WhatsappAgents';
 import MateriaisGratuitos from '@/pages/MateriaisGratuitos';
 import FerramentasGratuitas from '@/pages/FerramentasGratuitas';
 import Glossario from '@/pages/Glossario';
@@ -87,7 +86,6 @@ const SimpleAppRoutes: React.FC = () => {
       <Route path="/politica-privacidade" element={<PoliticaPrivacidade />} />
       <Route path="/termos-uso" element={<TermosUso />} />
       <Route path="/planos" element={<Planos />} />
-      <Route path="/whatsapp-agents" element={<WhatsappAgents />} />
       <Route path="/ecossistema-ibm" element={<EcossistemaIBM />} />
       <Route path="/agentes-ia" element={<AgentesIA />} />
       <Route path="/sobre" element={<Sobre />} />

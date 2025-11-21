@@ -287,12 +287,6 @@ export const getPageMeta = (pathname: string, title?: string, description?: stri
         description: description || "Parceiro oficial IBM para soluções de IA empresarial. Acesse o ecossistema completo de tecnologias IBM com suporte especializado.",
         keywords: keywords || "ecossistema ibm, parceiro ibm, tecnologias ibm, soluções ibm, parceiro oficial ibm"
       };
-    case '/whatsapp-agents':
-      return {
-        title: title || "onsmartai - WhatsApp Agents",
-        description: description || "Agentes inteligentes para WhatsApp Business. Automatize atendimento, vendas e suporte com IA conversacional no WhatsApp.",
-        keywords: keywords || "whatsapp agents, agentes whatsapp, ia whatsapp, automação whatsapp, chatbot whatsapp"
-      };
     case '/admin':
       return {
         title: title || "onsmartai - Admin",
