@@ -1,6 +1,8 @@
 // Webhook para receber mensagens da Evolution API
 // Este endpoint recebe mensagens do WhatsApp e processa com a Sonia
 
+import { processSoniaMessage } from './services/soniaService.js';
+
 export default async function handler(req, res) {
   // Configurar CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -79,9 +81,15 @@ export default async function handler(req, res) {
 
       console.log(`Mensagem recebida de ${cleanFrom}: ${messageText}`);
 
-      // Processar mensagem com a Sonia
-      // Chamar o serviço que integra com a OpenAI
-      const soniaResponse = await processMessageWithSonia(cleanFrom, messageText);
+      // Processar mensagem com a Sonia usando o serviço compartilhado (com histórico)
+      const soniaResponse = await processSoniaMessage(
+        cleanFrom,        // userId (número do WhatsApp)
+        messageText,      // mensagem
+        { 
+          channel: 'whatsapp', 
+          language: 'pt'  // TODO: detectar idioma do usuário se necessário
+        }
+      );
 
       if (soniaResponse) {
         // Enviar resposta via Evolution API
@@ -108,94 +116,7 @@ export default async function handler(req, res) {
   }
 }
 
-// Função para processar mensagem com a Sonia (OpenAI)
-async function processMessageWithSonia(from, message) {
-  try {
-    // Detectar URL base (Vercel ou local)
-    // No Vercel, podemos usar a URL do deployment atual
-    let baseUrl;
-    
-    // No Vercel, podemos chamar a função serverless diretamente
-    // ou usar a URL do deployment atual
-    if (process.env.VERCEL_URL) {
-      // Produção no Vercel - usar a URL do deployment atual
-      baseUrl = `https://${process.env.VERCEL_URL}`;
-    } else {
-      // Fallback - tentar usar a URL do projeto
-      // No Vercel, podemos usar a mesma função serverless
-      baseUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL 
-        ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-        : 'https://onsmart-website.vercel.app';
-    }
-    
-    // Chamar a API da OpenAI através do proxy
-    const response = await fetch(`${baseUrl}/api/openai-proxy`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        messages: [
-          {
-            role: 'system',
-            content: getSoniaSystemPrompt()
-          },
-          {
-            role: 'user',
-            content: message
-          }
-        ]
-      })
-    });
-
-    if (!response.ok) {
-      throw new Error(`OpenAI API error: ${response.status}`);
-    }
-
-    const data = await response.json();
-    return data.message || 'Desculpe, não consegui processar sua mensagem.';
-  } catch (error) {
-    console.error('Erro ao processar mensagem com Sonia:', error);
-    // Retornar resposta padrão em caso de erro
-    return 'Olá! Sou a Sonia, assistente de IA da onsmart AI. Estou com algumas dificuldades técnicas no momento, mas posso te ajudar. Como posso te auxiliar hoje?';
-  }
-}
-
-// Função para obter o prompt do sistema da Sonia
-function getSoniaSystemPrompt() {
-  return `Você é Sonia, assistente de IA da onsmart AI, uma empresa brasileira especializada em Agentes de IA corporativos.
-
-INFORMAÇÕES DA EMPRESA:
-- Nome: onsmart AI
-- Especialidade: Agentes de IA proprietários para empresas brasileiras
-- Localização: Brasil
-- Foco: Soluções de IA desenvolvidas baseadas nas principais demandas do mercado brasileiro
-
-CATEGORIAS DE SOLUÇÕES (NOSSOS PRODUTOS):
-1. Automação de Vendas - SDRs virtuais e qualificação automatizada de leads
-2. Atendimento Inteligente - Chatbots multicanal e assistentes virtuais
-3. RH Inteligente - Recrutamento automatizado e analytics de workforce
-4. BI & Analytics - Business Intelligence preditivo e em tempo real
-5. Automação de Processos - RPA inteligente com IA avançada
-6. Voz & Linguagem - NLP otimizado para português brasileiro
-
-ESTATÍSTICAS DA EMPRESA:
-- 500+ Empresas Atendidas
-- 98% Taxa de Sucesso
-- 30 dias Tempo Médio de Implementação
-
-INSTRUÇÕES DE COMPORTAMENTO:
-- Seja sempre cordial e profissional
-- Responda em português brasileiro
-- MÁXIMO 2-3 frases por resposta - seja CONCISA
-- NÃO USE EMOJIS - mantenha texto limpo e profissional
-- NÃO USE FORMATAÇÃO MARKDOWN (**, *, _, etc) - apenas texto simples
-- Foque na solução específica para a pergunta do cliente
-- Sempre termine com uma pergunta ou call-to-action
-- Se não souber algo específico, direcione para a equipe comercial
-- Use pontos simples (•) para listas quando necessário
-- Evite parágrafos longos - prefira frases curtas e diretas`;
-}
+// Função removida - agora usamos processSoniaMessage do soniaService.js
 
 // Função para enviar mensagem via Evolution API
 async function sendWhatsAppMessage(to, message) {

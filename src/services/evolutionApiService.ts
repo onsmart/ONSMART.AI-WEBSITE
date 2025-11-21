@@ -19,6 +19,7 @@ export interface InstanceStatus {
   instance: {
     instanceName: string;
     status: 'open' | 'close' | 'connecting' | 'qrcode';
+    phone?: string;
     qrcode?: {
       code: string;
       base64: string;
@@ -41,8 +42,14 @@ export interface SendMessageResponse {
 class EvolutionApiService {
   private config: EvolutionApiConfig | null = null;
 
-  async initialize(config: EvolutionApiConfig) {
-    this.config = config;
+  /**
+   * Inicializa o serviço (opcional - o serviço funciona sem isso)
+   * A API route do Vercel já tem acesso às variáveis de ambiente do backend
+   */
+  async initialize(config?: EvolutionApiConfig) {
+    if (config) {
+      this.config = config;
+    }
   }
 
   /**
@@ -70,12 +77,20 @@ class EvolutionApiService {
       if (!response.ok) {
         const error = await response.json();
         console.error('Erro ao criar instância:', error);
+        // Se a instância já existe, lançar erro específico
+        if (error.error?.includes('already in use') || error.details?.message?.includes('already in use')) {
+          throw new Error('Instância já existe');
+        }
         return false;
       }
 
       return true;
-    } catch (error) {
+    } catch (error: any) {
       console.error('Erro na criação da instância:', error);
+      // Re-lançar se for erro de instância já existente
+      if (error.message === 'Instância já existe') {
+        throw error;
+      }
       return false;
     }
   }
@@ -164,6 +179,7 @@ class EvolutionApiService {
           instance: {
             instanceName: instanceData.instance.instanceName || instance,
             status: instanceData.instance.status || instanceData.status,
+            phone: instanceData.instance.phone || instanceData.phone,
             qrcode: instanceData.instance.qrcode
           }
         };
@@ -173,6 +189,7 @@ class EvolutionApiService {
         instance: {
           instanceName: instance,
           status: instanceData.status || 'close',
+          phone: instanceData.phone,
           qrcode: instanceData.qrcode
         }
       };

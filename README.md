@@ -1,9 +1,6 @@
-🧭 Guia de Configuração e Deploy – On Smart Tech / Onsmart.AI
-🔧 Configuração inicial do Git
+🧭 Guia de Configuração e Deploy – On Smart Tech / Onsmart.AI 🔧 Configuração inicial do Git
 
-git config --global user.name onsmart-admin
-git config --global user.email maicon.nunes@onsmart.com.br
-
+git config --global user.name onsmart-admin git config --global user.email maicon.nunes@onsmart.com.br
 
 💡 Essa configuração garante que todos os commits feitos pelo time mantenham um padrão de identificação da empresa.
 
@@ -11,22 +8,17 @@ git config --global user.email maicon.nunes@onsmart.com.br
 
 Acesse o GitHub da On Smart Tech / Onsmart.AI com sua conta corporativa.
 
-Certifique-se de estar autenticado na Vercel com o mesmo e-mail corporativo.
-🔗 https://vercel.com/onsmart
+Certifique-se de estar autenticado na Vercel com o mesmo e-mail corporativo. 🔗 https://vercel.com/onsmart
 
 🌐 Estrutura dos projetos na Vercel
 
 Na Vercel, há três projetos principais sob a conta onsmart:
 
-Projeto	Descrição	Status
-onsmart.ai	Site oficial da Onsmart.AI (ativo em produção).	✅ Produção
-onsmart.tech	Site institucional da On Smart Tech (em desenvolvimento).	🧩 Desenvolvimento
-onsmart-assets	Repositório auxiliar para upload e hospedagem de imagens.	⚙️ Suporte
+Projeto Descrição Status onsmart.ai Site oficial da Onsmart.AI (ativo em produção). ✅ Produção onsmart.tech Site institucional da On Smart Tech (em desenvolvimento). 🧩 Desenvolvimento onsmart-assets Repositório auxiliar para upload e hospedagem de imagens. ⚙️ Suporte
 
 🔸 O projeto onsmart-assets é utilizado para armazenar imagens e gerar URLs públicas, evitando sobrecarga dos sites principais.
 
-🚀 Deploy e versionamento via GitHub + Vercel
-Push e Deploy automático
+🚀 Deploy e versionamento via GitHub + Vercel Push e Deploy automático
 
 Ao executar um git push no repositório correspondente (por exemplo, o do site onsmart.tech), o GitHub aciona automaticamente um deploy contínuo na Vercel.
 
@@ -49,11 +41,6 @@ Clique em Redeploy na versão desejada para restaurá-la.
 🧩 Boas práticas
 
 Sempre crie branches específicas para features (feature/nome-da-feature) e use Pull Requests para integrar com a main.
-
-
-
-
-
 
 Mantenha commits limpos e descritivos (ex: fix: corrigir carregamento de imagens na home).
 
