@@ -1,0 +1,129 @@
+===========================================
+COMANDOS PARA EXECUTAR NO SERVIDOR LINUX
+===========================================
+
+OPÇÃO 1: Executar script completo
+----------------------------------
+# Copie o arquivo remove-evolution-api-server.sh para o servidor
+# Depois execute:
+chmod +x remove-evolution-api-server.sh
+bash remove-evolution-api-server.sh
+
+
+OPÇÃO 2: Comandos individuais (copie e cole no terminal do servidor)
+---------------------------------------------------------------------
+
+# 1. Remover arquivos PNG de QR Code
+rm -f qrcode-sonia.png qrcode.png qrcode-final.png qrcode-novo.png qr.png
+
+# 2. Remover scripts do Evolution API/WhatsApp
+rm -f scripts/setup-evolution-completo.sh
+rm -f scripts/verificar-status-whatsapp.sh
+rm -f scripts/testar-whatsapp.sh
+rm -f scripts/diagnosticar-whatsapp.sh
+rm -f scripts/config-whatsapp.sh
+rm -f scripts/conectar-whatsapp.sh
+rm -f scripts/config-whatsapp.ps1
+rm -f scripts/config-webhook-alternativo.sh
+rm -f scripts/config-webhook-easy.sh
+rm -f scripts/config-webhook.ps1
+rm -f scripts/config-webhook.sh
+rm -f scripts/configurar-webhook-final.sh
+rm -f scripts/descobrir-endpoints.sh
+rm -f scripts/descobrir-webhook-endpoint.sh
+rm -f scripts/extrair-qrcode.ps1
+rm -f scripts/extrair-qrcode.sh
+rm -f scripts/gerar-qrcode.ps1
+rm -f scripts/gerar-qrcode.sh
+rm -f scripts/recriar-com-webhook-corrigido.sh
+rm -f scripts/cloudflared-service.ps1
+rm -f scripts/cloudflared-service.sh
+rm -f scripts/install-cloudflared.ps1
+rm -f scripts/install-cloudflared.sh
+rm -f scripts/start-cloudflared.ps1
+rm -f scripts/start-cloudflared.sh
+rm -f extrair-qr-temp.ps1
+
+# 3. Remover arquivos de API
+rm -f api/evolution-api.js
+rm -f api/evolution-webhook.js
+
+# 4. Remover serviços
+rm -f src/services/evolutionApiService.ts
+rm -f src/services/whatsappApiService.ts
+rm -f src/services/whatsappAgentService.ts
+rm -f src/services/realTimeWhatsappService.ts
+
+# 5. Remover componentes
+rm -f src/components/chat/WhatsAppTab.tsx
+rm -f src/components/admin/EvolutionApiConfig.tsx
+
+# 6. Remover hooks
+rm -f src/hooks/useWhatsAppService.ts
+rm -f src/hooks/useRealTimeAgents.ts
+
+# 7. Remover contextos
+rm -f src/contexts/WhatsAppQRContext.tsx
+
+# 8. Remover páginas
+rm -f src/pages/WhatsappAgents.tsx
+
+# 9. Remover pasta completa whatsapp-agents
+rm -rf src/components/whatsapp-agents/
+
+
+OPÇÃO 3: Comando único (mais rápido)
+-------------------------------------
+# Execute tudo de uma vez:
+rm -f qrcode-sonia.png qrcode.png qrcode-final.png qrcode-novo.png qr.png && \
+rm -f scripts/setup-evolution-completo.sh scripts/verificar-status-whatsapp.sh scripts/testar-whatsapp.sh scripts/diagnosticar-whatsapp.sh scripts/config-whatsapp.sh scripts/conectar-whatsapp.sh scripts/config-whatsapp.ps1 scripts/config-webhook-alternativo.sh scripts/config-webhook-easy.sh scripts/config-webhook.ps1 scripts/config-webhook.sh scripts/configurar-webhook-final.sh scripts/descobrir-endpoints.sh scripts/descobrir-webhook-endpoint.sh scripts/extrair-qrcode.ps1 scripts/extrair-qrcode.sh scripts/gerar-qrcode.ps1 scripts/gerar-qrcode.sh scripts/recriar-com-webhook-corrigido.sh scripts/cloudflared-service.ps1 scripts/cloudflared-service.sh scripts/install-cloudflared.ps1 scripts/install-cloudflared.sh scripts/start-cloudflared.ps1 scripts/start-cloudflared.sh extrair-qr-temp.ps1 && \
+rm -f api/evolution-api.js api/evolution-webhook.js && \
+rm -f src/services/evolutionApiService.ts src/services/whatsappApiService.ts src/services/whatsappAgentService.ts src/services/realTimeWhatsappService.ts && \
+rm -f src/components/chat/WhatsAppTab.tsx src/components/admin/EvolutionApiConfig.tsx && \
+rm -f src/hooks/useWhatsAppService.ts src/hooks/useRealTimeAgents.ts && \
+rm -f src/contexts/WhatsAppQRContext.tsx && \
+rm -f src/pages/WhatsappAgents.tsx && \
+rm -rf src/components/whatsapp-agents/ && \
+echo "✅ Todos os arquivos do Evolution API foram removidos!"
+
+
+OPÇÃO 4: Usando find (mais seguro, busca recursivamente)
+---------------------------------------------------------
+# Remover todos os PNGs de QR Code
+find . -type f -name "*qrcode*.png" -delete
+find . -type f -name "*qr*.png" -delete
+
+# Remover scripts relacionados
+find scripts/ -type f \( -name "*evolution*" -o -name "*whatsapp*" -o -name "*webhook*" -o -name "*qrcode*" -o -name "*cloudflared*" \) -delete
+
+# Remover arquivos de API
+find api/ -type f -name "*evolution*" -delete
+
+# Remover serviços
+find src/services/ -type f -name "*evolution*" -o -name "*whatsapp*" -delete
+
+# Remover componentes
+find src/components/ -type f -name "*WhatsApp*" -o -name "*Evolution*" -delete
+find src/components/ -type d -name "*whatsapp*" -exec rm -rf {} +
+
+# Remover hooks
+find src/hooks/ -type f -name "*whatsapp*" -delete
+
+# Remover contextos
+find src/contexts/ -type f -name "*whatsapp*" -delete
+
+# Remover páginas
+find src/pages/ -type f -name "*whatsapp*" -delete
+
+
+NOTA: Ajuste o caminho do projeto conforme necessário
+-----------------------------------------------------
+# Se o projeto estiver em outro diretório, navegue até ele primeiro:
+# cd /var/www/seu-projeto
+# ou
+# cd /home/usuario/projeto
+# ou
+# cd ~/projeto
+
+
+
