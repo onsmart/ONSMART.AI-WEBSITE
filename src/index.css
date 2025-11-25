@@ -403,3 +403,156 @@ nav [class*="lucide"]::after {
   height: unset !important;
   pointer-events: unset !important;
 }
+
+/* Regras específicas para elementos renderizados dinamicamente pelo Radix UI */
+[data-radix-dropdown-menu-trigger]::before,
+[data-radix-dropdown-menu-trigger]::after,
+[data-radix-dropdown-menu-trigger] button::before,
+[data-radix-dropdown-menu-trigger] button::after,
+[data-radix-dropdown-menu-trigger] span::before,
+[data-radix-dropdown-menu-trigger] span::after,
+[data-radix-dropdown-menu-trigger] *::before,
+[data-radix-dropdown-menu-trigger] *::after,
+/* Capturar elementos que podem ser criados durante o carregamento inicial */
+nav button[aria-haspopup]::before,
+nav button[aria-haspopup]::after,
+nav button[aria-expanded]::before,
+nav button[aria-expanded]::after,
+/* Capturar elementos com IDs dinâmicos do Radix */
+[id*="radix"]::before,
+[id*="radix"]::after,
+[id*="radix"] *::before,
+[id*="radix"] *::after,
+/* Capturar portais do Radix UI */
+[data-radix-portal]::before,
+[data-radix-portal]::after,
+[data-radix-portal] *::before,
+[data-radix-portal] *::after,
+/* Classe específica para botões do dropdown menu */
+.dropdown-menu-item-no-brackets::before,
+.dropdown-menu-item-no-brackets::after,
+button.dropdown-menu-item-no-brackets::before,
+button.dropdown-menu-item-no-brackets::after,
+/* Capturar elementos durante estados de animação */
+[data-radix-dropdown-menu-trigger][data-state="open"]::before,
+[data-radix-dropdown-menu-trigger][data-state="open"]::after,
+[data-radix-dropdown-menu-trigger][data-state="closed"]::before,
+[data-radix-dropdown-menu-trigger][data-state="closed"]::after,
+[data-radix-dropdown-menu-trigger][data-state="open"] button::before,
+[data-radix-dropdown-menu-trigger][data-state="open"] button::after,
+[data-radix-dropdown-menu-trigger][data-state="closed"] button::before,
+[data-radix-dropdown-menu-trigger][data-state="closed"] button::after {
+  content: none !important;
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  pointer-events: none !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  transition: none !important;
+  animation: none !important;
+  transform: none !important;
+}
+
+/* Remover elementos que contenham apenas parênteses como texto */
+nav *:not(svg):not([class*="lucide"]) {
+  position: relative;
+}
+
+nav *:not(svg):not([class*="lucide"])::before,
+nav *:not(svg):not([class*="lucide"])::after {
+  content: "" !important;
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  pointer-events: none !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  text-indent: -9999px !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+}
+
+/* Forçar remoção de qualquer elemento que contenha parênteses como texto visível */
+nav *:not(svg):not([class*="lucide"]) {
+  position: relative;
+}
+
+nav *:not(svg):not([class*="lucide"])::before,
+nav *:not(svg):not([class*="lucide"])::after {
+  content: "" !important;
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  pointer-events: none !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  text-indent: -9999px !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+}
+
+/* Regra específica para elementos criados durante animações do Radix UI */
+[data-radix-dropdown-menu-trigger] button,
+[data-radix-dropdown-menu-trigger] button * {
+  position: relative;
+}
+
+[data-radix-dropdown-menu-trigger] button::before,
+[data-radix-dropdown-menu-trigger] button::after,
+[data-radix-dropdown-menu-trigger] button *::before,
+[data-radix-dropdown-menu-trigger] button *::after {
+  content: none !important;
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  pointer-events: none !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  transition: none !important;
+  animation: none !important;
+  transform: none !important;
+}
+
+/* Capturar elementos durante estados de transição */
+[data-radix-dropdown-menu-trigger][data-state] button::before,
+[data-radix-dropdown-menu-trigger][data-state] button::after,
+[data-radix-dropdown-menu-trigger][data-state] button *::before,
+[data-radix-dropdown-menu-trigger][data-state] button *::after {
+  content: none !important;
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  pointer-events: none !important;
+}
+
+/* SOLUÇÃO DEFINITIVA: Esconder qualquer elemento que contenha apenas parênteses como texto */
+nav * {
+  position: relative;
+}
+
+/* Esconder elementos filhos que contenham apenas parênteses */
+nav button > *:not(svg):not([class*="lucide"]) {
+  position: relative;
+}
+
+/* Regra específica para esconder elementos com parênteses usando JavaScript via CSS */
+/* Vamos usar uma abordagem diferente - adicionar um script que remove esses elementos */
