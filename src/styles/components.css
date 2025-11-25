@@ -216,4 +216,60 @@
     content: none !important;
     pointer-events: none !important;
   }
+
+  /* Remover parênteses que aparecem após hover - regras adicionais */
+  nav button[data-state]:not(:hover)::before,
+  nav button[data-state]:not(:hover)::after,
+  nav [data-radix-dropdown-menu-trigger][data-state]:not(:hover)::before,
+  nav [data-radix-dropdown-menu-trigger][data-state]:not(:hover)::after,
+  nav [data-radix-dropdown-menu-trigger] button[data-state]:not(:hover)::before,
+  nav [data-radix-dropdown-menu-trigger] button[data-state]:not(:hover)::after,
+  nav button::before,
+  nav button::after,
+  nav span::before,
+  nav span::after,
+  nav [data-radix-dropdown-menu-trigger] span::before,
+  nav [data-radix-dropdown-menu-trigger] span::after,
+  nav > div > div::before,
+  nav > div > div::after,
+  nav > div > div > button::before,
+  nav > div > div > button::after,
+  [class*="radix"]::before,
+  [class*="radix"]::after,
+  nav [class*="radix"]::before,
+  nav [class*="radix"]::after,
+  nav *[class*="trigger"]::before,
+  nav *[class*="trigger"]::after,
+  nav *[class*="item"]::before,
+  nav *[class*="item"]::after {
+    content: none !important;
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    pointer-events: none !important;
+    font-size: 0 !important;
+    line-height: 0 !important;
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+
+  /* Garantir que nenhum texto com parênteses apareça */
+  nav button::before,
+  nav button::after {
+    content: "" !important;
+  }
+
+  /* Remover qualquer indicador visual que possa aparecer como parênteses */
+  nav [role="menuitem"]::before,
+  nav [role="menuitem"]::after,
+  nav [role="button"]::before,
+  nav [role="button"]::after {
+    content: none !important;
+    display: none !important;
+  }
 }
