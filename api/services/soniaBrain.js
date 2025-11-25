@@ -124,27 +124,91 @@ INSTRUCCIONES DE COMPORTAMIENTO:
 
 /**
  * Detecta o idioma da mensagem do usuário
- * Reutiliza lógica similar ao openaiService.ts
+ * Versão melhorada com mais palavras-chave e lógica mais robusta
  */
 function detectLanguage(message) {
-  const msg = message.toLowerCase();
+  if (!message || !message.trim()) {
+    return 'pt'; // Padrão
+  }
   
-  // Palavras-chave em inglês
-  const englishKeywords = ['hello', 'hi', 'how', 'what', 'when', 'where', 'why', 'the', 'is', 'are', 'can', 'will'];
+  const msg = message.toLowerCase().trim();
+  
+  // Palavras-chave em inglês (mais abrangente)
+  const englishKeywords = [
+    'hello', 'hi', 'hey', 'how', 'what', 'when', 'where', 'why', 'who',
+    'the', 'is', 'are', 'can', 'will', 'would', 'could', 'should',
+    'please', 'thanks', 'thank you', 'yes', 'no', 'ok', 'okay',
+    'help', 'information', 'about', 'tell me', 'explain', 'show me'
+  ];
+  
   // Palavras-chave em espanhol
-  const spanishKeywords = ['hola', 'cómo', 'qué', 'cuándo', 'dónde', 'por qué', 'es', 'son', 'puede', 'será'];
+  const spanishKeywords = [
+    'hola', 'cómo', 'qué', 'cuándo', 'dónde', 'por qué', 'quién',
+    'es', 'son', 'puede', 'será', 'puedo', 'gracias', 'por favor',
+    'sí', 'no', 'ayuda', 'información', 'sobre', 'dime', 'explica', 'muéstrame',
+    'buenos días', 'buenas tardes', 'buenas noches'
+  ];
   
+  // Palavras-chave em português (para evitar falsos positivos)
+  const portugueseKeywords = [
+    'olá', 'oi', 'como', 'o que', 'quando', 'onde', 'por que', 'quem',
+    'é', 'são', 'pode', 'será', 'obrigado', 'obrigada', 'por favor',
+    'sim', 'não', 'ajuda', 'informação', 'sobre', 'me fale', 'explique', 'mostre',
+    'bom dia', 'boa tarde', 'boa noite', 'tudo bem', 'tudo bom'
+  ];
+  
+  // Contar ocorrências
   const englishCount = englishKeywords.filter(kw => msg.includes(kw)).length;
   const spanishCount = spanishKeywords.filter(kw => msg.includes(kw)).length;
+  const portugueseCount = portugueseKeywords.filter(kw => msg.includes(kw)).length;
   
-  if (englishCount > spanishCount && englishCount > 0) {
+  // Detectar padrões específicos
+  // Inglês: palavras comuns como "the", "is", "are" no início ou meio
+  const englishPatterns = /\b(the|is|are|can|will|would|could|should|this|that|these|those)\b/i;
+  const hasEnglishPattern = englishPatterns.test(msg);
+  
+  // Espanhol: acentos e padrões específicos
+  const spanishPatterns = /[áéíóúñü¿¡]/i;
+  const hasSpanishPattern = spanishPatterns.test(msg);
+  
+  // Português: acentos e padrões específicos
+  const portuguesePatterns = /[áàâãéêíóôõúç]/i;
+  const hasPortuguesePattern = portuguesePatterns.test(msg);
+  
+  // Lógica de decisão melhorada
+  // Se tem padrão de acentos, priorizar
+  if (hasSpanishPattern && !hasPortuguesePattern) {
+    return 'es';
+  }
+  if (hasPortuguesePattern) {
+    return 'pt';
+  }
+  
+  // Se tem padrão inglês forte
+  if (hasEnglishPattern && englishCount >= 2) {
     return 'en';
   }
-  if (spanishCount > englishCount && spanishCount > 0) {
+  
+  // Comparar contagens
+  if (englishCount > spanishCount && englishCount > portugueseCount && englishCount >= 2) {
+    return 'en';
+  }
+  if (spanishCount > englishCount && spanishCount > portugueseCount && spanishCount >= 2) {
+    return 'es';
+  }
+  if (portugueseCount > 0) {
+    return 'pt';
+  }
+  
+  // Se tem pelo menos uma palavra-chave
+  if (englishCount > 0 && englishCount >= spanishCount) {
+    return 'en';
+  }
+  if (spanishCount > 0) {
     return 'es';
   }
   
-  // Padrão: português
+  // Padrão: português (mais comum no contexto brasileiro)
   return 'pt';
 }
 
@@ -289,19 +353,22 @@ export async function generateSoniaReplyFromSingleMessage(options) {
     let baseUrl;
     
     if (isServerless) {
-      // Em produção na Vercel
+      // Em produção na Vercel - tentar usar URL relativa primeiro (mais confiável)
+      // Se estiver na mesma Vercel, usar URL relativa
       baseUrl = process.env.VERCEL_URL 
         ? `https://${process.env.VERCEL_URL}`
-        : process.env.VERCEL_PROJECT_PRODUCTION_URL
-        ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
         : 'https://onsmart-website.vercel.app';
     } else {
       // Em desenvolvimento local
       baseUrl = process.env.OPENAI_API_URL || 'http://localhost:3001';
     }
 
+    const proxyUrl = `${baseUrl}/api/openai-proxy`;
+    console.log(`🔗 Chamando OpenAI proxy: ${proxyUrl}`);
+    console.log(`🌐 Idioma detectado: ${language}`);
+
     // Chamar OpenAI através do proxy
-    const response = await fetch(`${baseUrl}/api/openai-proxy`, {
+    const response = await fetch(proxyUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -313,14 +380,21 @@ export async function generateSoniaReplyFromSingleMessage(options) {
     
     if (!response.ok) {
       const errorText = await response.text();
-      console.error(`OpenAI API error: ${response.status} - ${errorText}`);
-      throw new Error(`OpenAI API error: ${response.status}`);
+      console.error(`❌ OpenAI API error: ${response.status} - ${errorText}`);
+      console.error(`❌ URL usada: ${proxyUrl}`);
+      console.error(`❌ Variáveis de ambiente:`, {
+        VERCEL: !!process.env.VERCEL,
+        VERCEL_URL: process.env.VERCEL_URL,
+        OPENAI_API_KEY: !!process.env.OPENAI_API_KEY
+      });
+      throw new Error(`OpenAI API error: ${response.status} - ${errorText.substring(0, 200)}`);
     }
     
     const data = await response.json();
     const assistantMessage = data.message;
     
     if (!assistantMessage) {
+      console.error(`❌ Resposta vazia da OpenAI. Data recebida:`, JSON.stringify(data).substring(0, 200));
       throw new Error('No response from OpenAI');
     }
     

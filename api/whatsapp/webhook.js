@@ -12,6 +12,61 @@
 import { generateSoniaReplyFromSingleMessage } from '../services/soniaBrain.js';
 import { sendWhatsAppMessage } from '../services/evolutionApi.js';
 
+// Função auxiliar para detectar idioma (mesma lógica do soniaBrain)
+function detectLanguage(message) {
+  if (!message || !message.trim()) {
+    return 'pt';
+  }
+  
+  const msg = message.toLowerCase().trim();
+  
+  const englishKeywords = [
+    'hello', 'hi', 'hey', 'how', 'what', 'when', 'where', 'why', 'who',
+    'the', 'is', 'are', 'can', 'will', 'would', 'could', 'should',
+    'please', 'thanks', 'thank you', 'yes', 'no', 'ok', 'okay'
+  ];
+  
+  const spanishKeywords = [
+    'hola', 'cómo', 'qué', 'cuándo', 'dónde', 'por qué', 'quién',
+    'es', 'son', 'puede', 'gracias', 'por favor', 'sí', 'no'
+  ];
+  
+  const portugueseKeywords = [
+    'olá', 'oi', 'como', 'o que', 'quando', 'onde', 'por que', 'quem',
+    'é', 'são', 'pode', 'obrigado', 'obrigada', 'por favor', 'sim', 'não'
+  ];
+  
+  const englishCount = englishKeywords.filter(kw => msg.includes(kw)).length;
+  const spanishCount = spanishKeywords.filter(kw => msg.includes(kw)).length;
+  const portugueseCount = portugueseKeywords.filter(kw => msg.includes(kw)).length;
+  
+  const spanishPatterns = /[áéíóúñü¿¡]/i;
+  const portuguesePatterns = /[áàâãéêíóôõúç]/i;
+  const englishPatterns = /\b(the|is|are|can|will|would|could|should)\b/i;
+  
+  if (spanishPatterns.test(msg) && !portuguesePatterns.test(msg)) {
+    return 'es';
+  }
+  if (portuguesePatterns.test(msg)) {
+    return 'pt';
+  }
+  if (englishPatterns.test(msg) && englishCount >= 2) {
+    return 'en';
+  }
+  
+  if (englishCount > spanishCount && englishCount > portugueseCount && englishCount >= 2) {
+    return 'en';
+  }
+  if (spanishCount > englishCount && spanishCount > portugueseCount && spanishCount >= 2) {
+    return 'es';
+  }
+  if (portugueseCount > 0) {
+    return 'pt';
+  }
+  
+  return 'pt'; // Padrão
+}
+
 /**
  * Handler do webhook
  * Recebe eventos da Evolution API e processa mensagens
@@ -154,13 +209,17 @@ export default async function handler(req, res) {
     console.log(`💬 Mensagem recebida de ${from}: ${messageText.substring(0, 50)}...`);
 
     // Gerar resposta da Sonia usando o mesmo "cérebro" (SEM histórico)
+    // Detectar idioma antes de chamar
+    const detectedLanguage = detectLanguage(messageText);
+    console.log(`🌐 Idioma detectado: ${detectedLanguage}`);
+    
     const reply = await generateSoniaReplyFromSingleMessage({
       message: messageText,
       channel: 'whatsapp',
-      language: undefined // Detectar automaticamente
+      language: detectedLanguage // Usar idioma detectado
     });
 
-    console.log(`🤖 Resposta da Sonia: ${reply.substring(0, 50)}...`);
+    console.log(`🤖 Resposta da Sonia (${detectedLanguage}): ${reply.substring(0, 50)}...`);
 
     // Enviar resposta via Evolution API
     await sendWhatsAppMessage(from, reply);
