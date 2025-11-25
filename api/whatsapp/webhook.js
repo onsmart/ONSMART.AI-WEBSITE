@@ -211,25 +211,42 @@ export default async function handler(req, res) {
     // Gerar resposta da Sonia usando o mesmo "cérebro" (SEM histórico)
     // Detectar idioma antes de chamar
     const detectedLanguage = detectLanguage(messageText);
-    console.log(`🌐 Idioma detectado: ${detectedLanguage}`);
+    console.log(`🌐 Idioma detectado para mensagem: ${detectedLanguage}`);
+    console.log(`📝 Texto completo: ${messageText}`);
     
-    const reply = await generateSoniaReplyFromSingleMessage({
-      message: messageText,
-      channel: 'whatsapp',
-      language: detectedLanguage // Usar idioma detectado
-    });
+    try {
+      const reply = await generateSoniaReplyFromSingleMessage({
+        message: messageText,
+        channel: 'whatsapp',
+        language: detectedLanguage // Usar idioma detectado
+      });
 
-    console.log(`🤖 Resposta da Sonia (${detectedLanguage}): ${reply.substring(0, 50)}...`);
+      console.log(`🤖 Resposta da Sonia (${detectedLanguage}): ${reply.substring(0, 100)}...`);
 
-    // Enviar resposta via Evolution API
-    await sendWhatsAppMessage(from, reply);
+      // Enviar resposta via Evolution API
+      await sendWhatsAppMessage(from, reply);
 
-    // Retornar sucesso
-    return res.status(200).json({ 
-      success: true,
-      message: 'Message processed successfully',
-      reply: reply.substring(0, 100) // Log parcial
-    });
+      // Retornar sucesso
+      return res.status(200).json({ 
+        success: true,
+        message: 'Message processed successfully',
+        language: detectedLanguage,
+        reply: reply.substring(0, 100) // Log parcial
+      });
+    } catch (error) {
+      console.error('❌ Erro ao gerar resposta da Sonia:', error);
+      console.error('❌ Stack:', error.stack);
+      
+      // Enviar mensagem de erro amigável
+      const errorMessage = `Desculpe, estou com algumas dificuldades técnicas no momento. Por favor, tente novamente em alguns instantes.`;
+      await sendWhatsAppMessage(from, errorMessage);
+      
+      return res.status(200).json({ 
+        success: false,
+        error: error.message,
+        language: detectedLanguage
+      });
+    }
 
   } catch (error) {
     console.error('❌ Erro ao processar webhook:', error);

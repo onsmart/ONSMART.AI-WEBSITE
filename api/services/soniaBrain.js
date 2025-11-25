@@ -347,25 +347,27 @@ export async function generateSoniaReplyFromSingleMessage(options) {
       }
     ];
 
-    // Determinar URL base do proxy OpenAI
-    // Em ambiente serverless (Vercel), usar URL relativa ou absoluta conforme disponível
-    const isServerless = process.env.VERCEL || process.env.VERCEL_URL;
-    let baseUrl;
+    // Determinar URL do proxy OpenAI
+    // IMPORTANTE: Na Vercel, precisamos usar URL absoluta porque estamos em uma serverless function
+    // Mas podemos construir a URL baseada no request original
+    let proxyUrl;
     
-    if (isServerless) {
-      // Em produção na Vercel - tentar usar URL relativa primeiro (mais confiável)
-      // Se estiver na mesma Vercel, usar URL relativa
-      baseUrl = process.env.VERCEL_URL 
-        ? `https://${process.env.VERCEL_URL}`
-        : 'https://onsmart-website.vercel.app';
+    // Tentar obter a URL base do request (se disponível)
+    // Em ambiente serverless, usar URL absoluta da Vercel
+    if (process.env.VERCEL_URL) {
+      // Em preview/staging
+      proxyUrl = `https://${process.env.VERCEL_URL}/api/openai-proxy`;
+    } else if (process.env.VERCEL) {
+      // Em produção - usar domínio fixo
+      proxyUrl = 'https://onsmart-website.vercel.app/api/openai-proxy';
     } else {
       // Em desenvolvimento local
-      baseUrl = process.env.OPENAI_API_URL || 'http://localhost:3001';
+      proxyUrl = process.env.OPENAI_API_URL || 'http://localhost:3001/api/openai-proxy';
     }
 
-    const proxyUrl = `${baseUrl}/api/openai-proxy`;
     console.log(`🔗 Chamando OpenAI proxy: ${proxyUrl}`);
     console.log(`🌐 Idioma detectado: ${language}`);
+    console.log(`📝 Mensagem: ${message.substring(0, 50)}...`);
 
     // Chamar OpenAI através do proxy
     const response = await fetch(proxyUrl, {
