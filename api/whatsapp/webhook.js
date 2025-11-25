@@ -33,43 +33,79 @@ export default async function handler(req, res) {
   try {
     const payload = req.body;
     
-    // Log do payload recebido (parcialmente anonimizado para debug)
-    console.log('📥 Webhook recebido:', JSON.stringify({
+    // Log completo do payload recebido (para debug - remover dados sensíveis em produção)
+    console.log('📥 Webhook recebido (payload completo):', JSON.stringify(payload, null, 2));
+    
+    // Log resumido
+    console.log('📥 Webhook recebido (resumo):', {
       event: payload.event || payload.type,
-      instance: payload.instance,
-      timestamp: payload.timestamp
-    }));
+      instance: payload.instance || payload.instanceName,
+      timestamp: payload.timestamp,
+      hasData: !!payload.data,
+      hasMessage: !!payload.message,
+      keys: Object.keys(payload)
+    });
 
     // IMPORTANTE: A estrutura abaixo é uma ESTIMATIVA
     // AJUSTAR conforme documentação oficial da Evolution API v2.x
     
     // Verificar se é um evento de mensagem recebida
     // Nome do evento pode variar: MESSAGES_UPSERT, messages.upsert, message.received, etc.
-    // CONFIRMAR o nome exato na documentação v2
     const isMessageEvent = 
       payload.event === 'MESSAGES_UPSERT' ||
       payload.event === 'messages.upsert' ||
       payload.event === 'message.received' ||
       payload.type === 'message' ||
-      payload.data?.key; // Se tiver key, provavelmente é uma mensagem
+      payload.data?.key || // Se tiver key, provavelmente é uma mensagem
+      payload.key || // Pode estar no nível raiz
+      (payload.data && Array.isArray(payload.data) && payload.data.length > 0); // Array de mensagens
 
     if (!isMessageEvent) {
       // Ignorar outros tipos de eventos
-      console.log('ℹ️ Evento ignorado (não é mensagem):', payload.event || payload.type);
+      console.log('ℹ️ Evento ignorado (não é mensagem):', payload.event || payload.type || 'unknown');
       return res.status(200).json({ success: true, message: 'Event ignored' });
     }
 
     // Extrair informações da mensagem
-    // Estrutura pode variar - AJUSTAR conforme doc oficial
-    let messageData = payload.data || payload.message || payload;
+    // Estrutura pode variar - Evolution API v2.3.6 pode enviar array ou objeto
+    let messageData;
+    
+    // Se payload.data é um array, pegar o primeiro item
+    if (Array.isArray(payload.data) && payload.data.length > 0) {
+      messageData = payload.data[0];
+    } else if (payload.data) {
+      messageData = payload.data;
+    } else if (payload.message) {
+      messageData = payload.message;
+    } else {
+      messageData = payload;
+    }
+    
+    console.log('📦 Dados da mensagem extraídos:', JSON.stringify({
+      hasKey: !!messageData.key,
+      hasMessage: !!messageData.message,
+      messageType: messageData.messageType || messageData.type,
+      keys: Object.keys(messageData)
+    }));
     
     // Verificar se é mensagem de texto (ignorar mídias por enquanto)
-    const messageType = messageData.messageType || messageData.type || messageData.message?.conversation;
+    // Verificar se é mensagem enviada por nós (fromMe: true) - ignorar
+    if (messageData.key?.fromMe === true || messageData.fromMe === true) {
+      console.log('ℹ️ Mensagem ignorada (enviada por nós):', messageData.key?.id);
+      return res.status(200).json({ success: true, message: 'Message from us ignored' });
+    }
+    
+    const messageType = messageData.messageType || messageData.type || 
+                       (messageData.message?.conversation ? 'conversation' : null) ||
+                       (messageData.message?.extendedTextMessage ? 'extendedTextMessage' : null);
+    
     const isTextMessage = 
       messageType === 'conversation' ||
       messageType === 'text' ||
-      messageData.message?.conversation ||
-      messageData.text;
+      messageType === 'extendedTextMessage' ||
+      !!messageData.message?.conversation ||
+      !!messageData.message?.extendedTextMessage?.text ||
+      !!messageData.text;
 
     if (!isTextMessage) {
       // Responder com mensagem padrão para mídias
@@ -85,21 +121,34 @@ export default async function handler(req, res) {
     const from = extractPhoneNumber(messageData);
     if (!from) {
       console.error('❌ Não foi possível extrair número do remetente');
-      return res.status(400).json({ error: 'Could not extract sender phone number' });
+      console.error('❌ Estrutura do payload:', JSON.stringify(messageData, null, 2).substring(0, 500));
+      // Retornar 200 para não causar retentativas infinitas, mas logar o erro
+      return res.status(200).json({ 
+        success: false, 
+        error: 'Could not extract sender phone number',
+        debug: 'Check logs for payload structure'
+      });
     }
 
     // Extrair texto da mensagem
-    // Estrutura pode variar - AJUSTAR conforme doc oficial
+    // Estrutura pode variar - Evolution API v2.3.6
     const messageText = 
       messageData.message?.conversation ||
+      messageData.message?.extendedTextMessage?.text ||
       messageData.text ||
       messageData.body ||
-      messageData.message?.extendedTextMessage?.text ||
-      messageData.messageText;
+      messageData.messageText ||
+      messageData.content?.text;
 
     if (!messageText || !messageText.trim()) {
       console.error('❌ Mensagem vazia ou inválida');
-      return res.status(400).json({ error: 'Empty or invalid message' });
+      console.error('❌ Estrutura do payload:', JSON.stringify(messageData, null, 2).substring(0, 500));
+      // Retornar 200 para não causar retentativas infinitas, mas logar o erro
+      return res.status(200).json({ 
+        success: false, 
+        error: 'Empty or invalid message',
+        debug: 'Check logs for payload structure'
+      });
     }
 
     console.log(`💬 Mensagem recebida de ${from}: ${messageText.substring(0, 50)}...`);
@@ -139,17 +188,53 @@ export default async function handler(req, res) {
  */
 function extractPhoneNumber(messageData) {
   // Tentar diferentes estruturas comuns
-  // IMPORTANTE: CONFIRMAR a estrutura exata na documentação v2
-  const phoneNumber = 
-    messageData.key?.remoteJid?.replace('@s.whatsapp.net', '').replace('@c.us', '') ||
-    messageData.from?.replace('@s.whatsapp.net', '').replace('@c.us', '') ||
-    messageData.remoteJid?.replace('@s.whatsapp.net', '').replace('@c.us', '') ||
-    messageData.phoneNumber ||
-    messageData.fromNumber ||
-    messageData.key?.fromMe === false ? messageData.key?.participant?.replace('@s.whatsapp.net', '') : null;
+  // Evolution API v2.3.6 pode usar diferentes formatos
+  let phoneNumber = null;
+  
+  // Tentar key.remoteJid (mais comum)
+  if (messageData.key?.remoteJid) {
+    phoneNumber = messageData.key.remoteJid
+      .replace('@s.whatsapp.net', '')
+      .replace('@c.us', '')
+      .replace('@g.us', ''); // Grupos
+  }
+  
+  // Tentar from
+  if (!phoneNumber && messageData.from) {
+    phoneNumber = messageData.from
+      .replace('@s.whatsapp.net', '')
+      .replace('@c.us', '')
+      .replace('@g.us', '');
+  }
+  
+  // Tentar remoteJid direto
+  if (!phoneNumber && messageData.remoteJid) {
+    phoneNumber = messageData.remoteJid
+      .replace('@s.whatsapp.net', '')
+      .replace('@c.us', '')
+      .replace('@g.us', '');
+  }
+  
+  // Tentar outros campos
+  if (!phoneNumber) {
+    phoneNumber = messageData.phoneNumber || 
+                  messageData.fromNumber ||
+                  messageData.number;
+  }
+  
+  // Tentar participant (para grupos)
+  if (!phoneNumber && messageData.key?.participant) {
+    phoneNumber = messageData.key.participant
+      .replace('@s.whatsapp.net', '')
+      .replace('@c.us', '');
+  }
 
   if (!phoneNumber) {
-    console.warn('⚠️ Estrutura do payload não reconhecida:', JSON.stringify(messageData).substring(0, 200));
+    console.warn('⚠️ Estrutura do payload não reconhecida para extrair número');
+    console.warn('⚠️ Keys disponíveis:', Object.keys(messageData));
+    if (messageData.key) {
+      console.warn('⚠️ Keys em messageData.key:', Object.keys(messageData.key));
+    }
   }
 
   return phoneNumber;
