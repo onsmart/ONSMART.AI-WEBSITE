@@ -9,51 +9,70 @@
  * - Eventos de mensagem: verificar nome exato do evento (ex: MESSAGES_UPSERT)
  */
 
-import { generateSoniaReplyFromSingleMessage } from '../services/soniaBrain.js';
+import { processSoniaMessage } from '../services/soniaService.js';
 import { sendWhatsAppMessage } from '../services/evolutionApi.js';
 
-// Função auxiliar para detectar idioma (mesma lógica do soniaBrain)
+// Função auxiliar para detectar idioma (melhorada, baseada em soniaBrain)
 function detectLanguage(message) {
   if (!message || !message.trim()) {
-    return 'pt';
+    return 'pt'; // Padrão
   }
   
   const msg = message.toLowerCase().trim();
   
+  // Palavras-chave em inglês (mais abrangente)
   const englishKeywords = [
     'hello', 'hi', 'hey', 'how', 'what', 'when', 'where', 'why', 'who',
     'the', 'is', 'are', 'can', 'will', 'would', 'could', 'should',
-    'please', 'thanks', 'thank you', 'yes', 'no', 'ok', 'okay'
+    'please', 'thanks', 'thank you', 'yes', 'no', 'ok', 'okay',
+    'help', 'information', 'about', 'tell me', 'explain', 'show me'
   ];
   
+  // Palavras-chave em espanhol
   const spanishKeywords = [
     'hola', 'cómo', 'qué', 'cuándo', 'dónde', 'por qué', 'quién',
-    'es', 'son', 'puede', 'gracias', 'por favor', 'sí', 'no'
+    'es', 'son', 'puede', 'será', 'puedo', 'gracias', 'por favor',
+    'sí', 'no', 'ayuda', 'información', 'sobre', 'dime', 'explica', 'muéstrame',
+    'buenos días', 'buenas tardes', 'buenas noches'
   ];
   
+  // Palavras-chave em português (para evitar falsos positivos)
   const portugueseKeywords = [
     'olá', 'oi', 'como', 'o que', 'quando', 'onde', 'por que', 'quem',
-    'é', 'são', 'pode', 'obrigado', 'obrigada', 'por favor', 'sim', 'não'
+    'é', 'são', 'pode', 'será', 'obrigado', 'obrigada', 'por favor',
+    'sim', 'não', 'ajuda', 'informação', 'sobre', 'me fale', 'explique', 'mostre',
+    'bom dia', 'boa tarde', 'boa noite', 'tudo bem', 'tudo bom'
   ];
   
+  // Contar ocorrências
   const englishCount = englishKeywords.filter(kw => msg.includes(kw)).length;
   const spanishCount = spanishKeywords.filter(kw => msg.includes(kw)).length;
   const portugueseCount = portugueseKeywords.filter(kw => msg.includes(kw)).length;
   
-  const spanishPatterns = /[áéíóúñü¿¡]/i;
-  const portuguesePatterns = /[áàâãéêíóôõúç]/i;
-  const englishPatterns = /\b(the|is|are|can|will|would|could|should)\b/i;
+  // Detectar padrões específicos
+  const englishPatterns = /\b(the|is|are|can|will|would|could|should|this|that|these|those)\b/i;
+  const hasEnglishPattern = englishPatterns.test(msg);
   
-  if (spanishPatterns.test(msg) && !portuguesePatterns.test(msg)) {
+  // Espanhol: acentos e padrões específicos
+  const spanishPatterns = /[áéíóúñü¿¡]/i;
+  const hasSpanishPattern = spanishPatterns.test(msg);
+  
+  // Português: acentos e padrões específicos
+  const portuguesePatterns = /[áàâãéêíóôõúç]/i;
+  const hasPortuguesePattern = portuguesePatterns.test(msg);
+  
+  // Lógica de decisão melhorada
+  if (hasSpanishPattern && !hasPortuguesePattern) {
     return 'es';
   }
-  if (portuguesePatterns.test(msg)) {
+  if (hasPortuguesePattern) {
     return 'pt';
   }
-  if (englishPatterns.test(msg) && englishCount >= 2) {
+  if (hasEnglishPattern && englishCount >= 2) {
     return 'en';
   }
   
+  // Comparar contagens
   if (englishCount > spanishCount && englishCount > portugueseCount && englishCount >= 2) {
     return 'en';
   }
@@ -64,7 +83,16 @@ function detectLanguage(message) {
     return 'pt';
   }
   
-  return 'pt'; // Padrão
+  // Se tem pelo menos uma palavra-chave
+  if (englishCount > 0 && englishCount >= spanishCount) {
+    return 'en';
+  }
+  if (spanishCount > 0) {
+    return 'es';
+  }
+  
+  // Padrão: português (mais comum no contexto brasileiro)
+  return 'pt';
 }
 
 /**
@@ -208,17 +236,18 @@ export default async function handler(req, res) {
 
     console.log(`💬 Mensagem recebida de ${from}: ${messageText.substring(0, 50)}...`);
 
-    // Gerar resposta da Sonia usando o mesmo "cérebro" (SEM histórico)
     // Detectar idioma antes de chamar
     const detectedLanguage = detectLanguage(messageText);
     console.log(`🌐 Idioma detectado para mensagem: ${detectedLanguage}`);
     console.log(`📝 Texto completo: ${messageText}`);
     
     try {
-      const reply = await generateSoniaReplyFromSingleMessage({
-        message: messageText,
+      // Usar processSoniaMessage que mantém histórico de conversa (igual ao webchat)
+      // O número de telefone é usado como userId para manter histórico por usuário
+      const userId = `whatsapp:${from}`;
+      const reply = await processSoniaMessage(userId, messageText, {
         channel: 'whatsapp',
-        language: detectedLanguage // Usar idioma detectado
+        language: detectedLanguage
       });
 
       console.log(`🤖 Resposta da Sonia (${detectedLanguage}): ${reply.substring(0, 100)}...`);
@@ -237,9 +266,14 @@ export default async function handler(req, res) {
       console.error('❌ Erro ao gerar resposta da Sonia:', error);
       console.error('❌ Stack:', error.stack);
       
-      // Enviar mensagem de erro amigável
-      const errorMessage = `Desculpe, estou com algumas dificuldades técnicas no momento. Por favor, tente novamente em alguns instantes.`;
-      await sendWhatsAppMessage(from, errorMessage);
+      // Enviar mensagem de erro amigável (usando fallback do soniaService)
+      // O processSoniaMessage já retorna fallback em caso de erro, mas se ainda assim falhar:
+      try {
+        const errorMessage = `Desculpe, estou com algumas dificuldades técnicas no momento. Mas posso te conectar com nossa equipe comercial. Quer agendar uma conversa?`;
+        await sendWhatsAppMessage(from, errorMessage);
+      } catch (sendError) {
+        console.error('❌ Erro ao enviar mensagem de erro:', sendError);
+      }
       
       return res.status(200).json({ 
         success: false,
