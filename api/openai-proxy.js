@@ -24,9 +24,17 @@ export default async function handler(req, res) {
     const apiKey = process.env.OPENAI_API_KEY;
     
     if (!apiKey) {
-      console.error('OpenAI API key not configured');
+      console.error('❌ [openai-proxy] OpenAI API key not configured');
       return res.status(500).json({ error: 'API key not configured' });
     }
+
+    // Log de diagnóstico (sem expor a chave completa)
+    console.log('🔑 [openai-proxy] API Key check:', {
+      configured: !!apiKey,
+      length: apiKey.length,
+      startsWith: apiKey.substring(0, 7),
+      endsWith: apiKey.substring(apiKey.length - 4)
+    });
 
     // Preparar mensagens para a API
     const apiMessages = messages || [
@@ -60,9 +68,16 @@ export default async function handler(req, res) {
 
     if (!response.ok) {
       const errorData = await response.text();
-      console.error('OpenAI API error:', response.status, errorData);
+      console.error('❌ [openai-proxy] OpenAI API error:', response.status);
+      console.error('❌ [openai-proxy] Error details:', errorData.substring(0, 500));
+      console.error('❌ [openai-proxy] API Key info:', {
+        configured: !!apiKey,
+        length: apiKey.length,
+        startsWith: apiKey.substring(0, 7)
+      });
       return res.status(response.status).json({ 
         error: 'OpenAI API error',
+        status: response.status,
         details: errorData 
       });
     }

@@ -139,11 +139,22 @@ export default async function handler(req, res) {
         })
       });
 
+      let errorDetails = null;
+      if (!testResponse.ok) {
+        try {
+          const errorText = await testResponse.text();
+          errorDetails = errorText.substring(0, 200);
+        } catch (e) {
+          errorDetails = 'Could not read error response';
+        }
+      }
+
       results.checks.openaiProxy = {
         status: testResponse.ok ? '✅ OK' : `❌ ERROR ${testResponse.status}`,
         statusCode: testResponse.status,
         url: proxyUrl,
-        accessible: testResponse.ok
+        accessible: testResponse.ok,
+        errorDetails: errorDetails
       };
     } catch (error) {
       results.checks.openaiProxy = {

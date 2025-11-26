@@ -61,8 +61,11 @@ export async function processSoniaMessage(userId, message, options = {}) {
   let proxyUrl;
   
   // Tentar obter URL base do request se disponível
+  // IMPORTANTE: Para WhatsApp (webhook externo), não confiar no host do request
+  // pois pode vir da Evolution API. Usar apenas headers específicos da Vercel.
   let baseUrl = null;
-  if (options.request) {
+  if (options.request && channel !== 'whatsapp') {
+    // Para webchat, pode usar o host do request
     const host = options.request.headers?.['host'] || 
                  options.request.headers?.['x-forwarded-host'] ||
                  options.request.headers?.['x-vercel-deployment-url'];
@@ -71,45 +74,72 @@ export async function processSoniaMessage(userId, message, options = {}) {
     if (host && !host.includes('localhost')) {
       baseUrl = `${protocol}://${host}`;
     }
+  } else if (options.request && channel === 'whatsapp') {
+    // Para WhatsApp, usar APENAS headers específicos da Vercel
+    const vercelHost = options.request.headers?.['x-forwarded-host'] ||
+                       options.request.headers?.['x-vercel-deployment-url'];
+    if (vercelHost && !vercelHost.includes('localhost')) {
+      baseUrl = `https://${vercelHost}`;
+    }
   }
   
   // Detectar ambiente e construir URL do proxy
-  // Prioridade: URL do request > VERCEL_URL (preview/staging) > domínio fixo
-  if (baseUrl) {
-    // Usar URL do request (mais confiável)
-    proxyUrl = `${baseUrl}/api/openai-proxy`;
-    console.log(`🔗 [soniaService] Usando URL do request: ${proxyUrl}`);
-  } else if (process.env.VERCEL_URL && !process.env.VERCEL_URL.includes('localhost')) {
-    // Em preview/staging - usar URL dinâmica da Vercel
-    proxyUrl = `https://${process.env.VERCEL_URL}/api/openai-proxy`;
-    console.log(`🔗 [soniaService] Usando VERCEL_URL: ${proxyUrl}`);
-  } else if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
-    // URL de produção da Vercel
-    proxyUrl = `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}/api/openai-proxy`;
-    console.log(`🔗 [soniaService] Usando VERCEL_PROJECT_PRODUCTION_URL: ${proxyUrl}`);
-  } else if (process.env.VERCEL || process.env.VERCEL_ENV) {
-    // Em produção na Vercel - tentar domínios conhecidos
-    // Tenta primeiro onsmart.ai, depois vercel.app
-    const productionDomains = [
-      'onsmart.ai',
-      'www.onsmart.ai',
-      'onsmart-website.vercel.app'
-    ];
-    
-    // Usar o primeiro domínio disponível (ou o primeiro como fallback)
-    proxyUrl = `https://${productionDomains[0]}/api/openai-proxy`;
-    console.log(`🔗 [soniaService] Usando domínio de produção: ${proxyUrl}`);
-    console.log(`🔗 [soniaService] Variáveis de ambiente:`, {
-      VERCEL: !!process.env.VERCEL,
-      VERCEL_ENV: process.env.VERCEL_ENV,
-      VERCEL_URL: process.env.VERCEL_URL,
-      VERCEL_PROJECT_PRODUCTION_URL: process.env.VERCEL_PROJECT_PRODUCTION_URL
-    });
+  // IMPORTANTE: Para WhatsApp, priorizar variáveis de ambiente da Vercel
+  // pois o request pode vir de webhook externo sem headers corretos
+  
+  if (channel === 'whatsapp') {
+    // Para WhatsApp, sempre usar variáveis de ambiente ou domínios conhecidos
+    // Não confiar no host do request (pode ser da Evolution API)
+    if (process.env.VERCEL_ENV === 'production' || (process.env.VERCEL && !process.env.VERCEL_URL)) {
+      // Em produção - usar domínios conhecidos
+      const productionDomains = [
+        'onsmart.ai',
+        'www.onsmart.ai',
+        'onsmart-website.vercel.app'
+      ];
+      proxyUrl = `https://${productionDomains[0]}/api/openai-proxy`;
+      console.log(`🔗 [soniaService] WhatsApp - Usando domínio de produção: ${proxyUrl}`);
+    } else if (process.env.VERCEL_URL && !process.env.VERCEL_URL.includes('localhost')) {
+      // Em preview/staging - usar URL dinâmica da Vercel
+      proxyUrl = `https://${process.env.VERCEL_URL}/api/openai-proxy`;
+      console.log(`🔗 [soniaService] WhatsApp - Usando VERCEL_URL: ${proxyUrl}`);
+    } else if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
+      // URL de produção da Vercel
+      proxyUrl = `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}/api/openai-proxy`;
+      console.log(`🔗 [soniaService] WhatsApp - Usando VERCEL_PROJECT_PRODUCTION_URL: ${proxyUrl}`);
+    } else {
+      // Fallback para domínio de produção
+      proxyUrl = 'https://onsmart.ai/api/openai-proxy';
+      console.log(`🔗 [soniaService] WhatsApp - Usando fallback: ${proxyUrl}`);
+    }
   } else {
-    // Em desenvolvimento local
-    proxyUrl = process.env.OPENAI_API_URL || 'http://localhost:3000/api/openai-proxy';
-    console.log(`🔗 [soniaService] Usando URL local: ${proxyUrl}`);
+    // Para webchat, pode usar URL do request se disponível
+    if (baseUrl) {
+      proxyUrl = `${baseUrl}/api/openai-proxy`;
+      console.log(`🔗 [soniaService] Webchat - Usando URL do request: ${proxyUrl}`);
+    } else if (process.env.VERCEL_URL && !process.env.VERCEL_URL.includes('localhost')) {
+      proxyUrl = `https://${process.env.VERCEL_URL}/api/openai-proxy`;
+      console.log(`🔗 [soniaService] Webchat - Usando VERCEL_URL: ${proxyUrl}`);
+    } else if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
+      proxyUrl = `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}/api/openai-proxy`;
+      console.log(`🔗 [soniaService] Webchat - Usando VERCEL_PROJECT_PRODUCTION_URL: ${proxyUrl}`);
+    } else if (process.env.VERCEL || process.env.VERCEL_ENV) {
+      proxyUrl = 'https://onsmart.ai/api/openai-proxy';
+      console.log(`🔗 [soniaService] Webchat - Usando domínio de produção: ${proxyUrl}`);
+    } else {
+      proxyUrl = process.env.OPENAI_API_URL || 'http://localhost:3000/api/openai-proxy';
+      console.log(`🔗 [soniaService] Webchat - Usando URL local: ${proxyUrl}`);
+    }
   }
+  
+  // Log de diagnóstico
+  console.log(`🔗 [soniaService] Variáveis de ambiente:`, {
+    channel: channel,
+    VERCEL: !!process.env.VERCEL,
+    VERCEL_ENV: process.env.VERCEL_ENV,
+    VERCEL_URL: process.env.VERCEL_URL,
+    VERCEL_PROJECT_PRODUCTION_URL: process.env.VERCEL_PROJECT_PRODUCTION_URL
+  });
   
   console.log(`🔗 [soniaService] URL final do proxy: ${proxyUrl}`);
   console.log(`📝 [soniaService] Mensagem: ${message.substring(0, 50)}...`);
