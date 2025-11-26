@@ -294,9 +294,20 @@ export default async function handler(req, res) {
       console.log(`✅ [webhook] Resposta da Sonia recebida (${detectedLanguage}): ${reply.substring(0, 100)}...`);
 
       // Enviar resposta via Evolution API
-      console.log(`📤 [webhook] Enviando resposta via Evolution API para ${from}...`);
-      await sendWhatsAppMessage(from, reply);
-      console.log(`✅ [webhook] Mensagem enviada com sucesso!`);
+      // Verificar se o número não é um número de teste
+      if (from && !from.includes('999999999')) {
+        console.log(`📤 [webhook] Enviando resposta via Evolution API para ${from}...`);
+        try {
+          await sendWhatsAppMessage(from, reply);
+          console.log(`✅ [webhook] Mensagem enviada com sucesso!`);
+        } catch (sendError) {
+          console.error('❌ [webhook] Erro ao enviar mensagem via Evolution API:', sendError);
+          console.error('❌ [webhook] Erro detalhes:', sendError.message);
+          // Continuar mesmo se falhar o envio (pode ser número inválido em teste)
+        }
+      } else {
+        console.log(`⚠️ [webhook] Número de teste detectado (${from}), pulando envio via Evolution API`);
+      }
 
       // Retornar sucesso
       return res.status(200).json({ 
