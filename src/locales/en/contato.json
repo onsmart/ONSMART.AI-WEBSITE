@@ -163,6 +163,11 @@
         "label": "Address",
         "value": "Arizona Street, 1349",
         "city": "São Paulo - SP"
+      },
+      "soniaWhatsApp": {
+        "label": "Sonia's WhatsApp",
+        "value": "+55 11 5093-1836",
+        "description": "Chat with our AI assistant"
       }
     },
     "email": {

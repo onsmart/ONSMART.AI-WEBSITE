@@ -215,6 +215,22 @@ const Contato = () => {
                         <p className="text-xs text-gray-500">São Paulo - SP</p>
                       </div>
                     </div>
+                    
+                    <a 
+                      href="https://wa.me/551150931836" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 rounded-lg hover:bg-gray-50/50 transition-colors cursor-pointer group"
+                    >
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                        <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 dark:text-gray-100 text-xs sm:text-sm">{t('info.contactInfo.soniaWhatsApp.label')}</h4>
+                        <p className="text-xs sm:text-sm text-gray-600">{t('info.contactInfo.soniaWhatsApp.value')}</p>
+                        <p className="text-xs text-green-600 font-medium">{t('info.contactInfo.soniaWhatsApp.description')}</p>
+                      </div>
+                    </a>
                   </div>
                 </div>
 

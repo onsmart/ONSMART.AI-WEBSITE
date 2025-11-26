@@ -163,6 +163,11 @@
         "label": "Dirección",
         "value": "Calle Arizona, 1349",
         "city": "São Paulo - SP"
+      },
+      "soniaWhatsApp": {
+        "label": "WhatsApp de Sonia",
+        "value": "+55 11 5093-1836",
+        "description": "Habla con nuestra asistente IA"
       }
     },
     "email": {

@@ -182,6 +182,16 @@ const Footer = () => {
                       <MessageCircle className="h-3 w-3 flex-shrink-0" />
                       <span className="text-xs">+55 (11) 99666-9247</span>
                     </a>
+                    <a 
+                      href="https://wa.me/551150931836" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="flex items-center gap-2 text-gray-300 hover:text-green-400 transition-colors group"
+                    >
+                      <MessageCircle className="h-3 w-3 flex-shrink-0" />
+                      <span className="text-xs">+55 (11) 5093-1836</span>
+                      <span className="text-xs text-green-400">(Sonia IA)</span>
+                    </a>
                   </div>
                 </div>
               </div>

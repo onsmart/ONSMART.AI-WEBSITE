@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import { ArrowRight, CheckCircle, Target, Users, Zap, Star, Shield, TrendingUp, Mail, Phone, MapPin } from "lucide-react";
+import { ArrowRight, CheckCircle, Target, Users, Zap, Star, Shield, TrendingUp, Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import UnifiedSEO from '@/components/shared/UnifiedSEO';
@@ -301,7 +301,7 @@ const Servicos = () => {
             </div>
 
             <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-gray-200/50 dark:border-gray-700/50 max-w-4xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                 <div className="text-center">
                   <div className="w-12 h-12 bg-gradient-to-br from-brand-blue to-blue-600 rounded-lg flex items-center justify-center mx-auto mb-4">
                     <Mail className="h-6 w-6 text-white" />
@@ -325,6 +325,20 @@ const Servicos = () => {
                   <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">{t('contact.location')}</h3>
                   <p className="text-sm text-gray-600">São Paulo - SP</p>
                 </div>
+
+                <a 
+                  href="https://wa.me/551150931836" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-center group cursor-pointer"
+                >
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                    <MessageCircle className="h-6 w-6 text-white" />
+                  </div>
+                  <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">WhatsApp da Sonia</h3>
+                  <p className="text-sm text-gray-600">+55 11 5093-1836</p>
+                  <p className="text-xs text-green-600 font-medium mt-1">Assistente IA</p>
+                </a>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
