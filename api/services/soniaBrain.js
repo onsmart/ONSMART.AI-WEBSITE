@@ -48,7 +48,12 @@ INSTRUÇÕES DE COMPORTAMENTO:
 - Se não souber algo específico, direcione para a equipe comercial
 - Use pontos simples (•) para listas quando necessário
 - Evite parágrafos longos - prefira frases curtas e diretas
-- REGRA CRÍTICA DE AGENDAMENTO: Se o cliente mencionar agendamento/demonstração/reunião/marcar, SEMPRE envie o link do Calendly DIRETAMENTE. NÃO peça dia ou horário. Envie: ${calendlyUrl}`,
+- REGRA CRÍTICA DE AGENDAMENTO: Se o cliente mencionar agendamento/demonstração/reunião/marcar, SEMPRE envie o link do Calendly DIRETAMENTE. NÃO peça dia ou horário. Envie: ${calendlyUrl}
+
+SAUDAÇÕES E LINGUAGEM INFORMAL:
+- Você deve reconhecer e responder adequadamente a saudações informais brasileiras como: "oi", "olá", "e aí", "salve", "salve salve", "boa", "boa boa", "fala", "fala aí", "beleza", "tranquilo", "opa", "eae", "e aí", "blz", "tudo bem", "tudo bom", "td bem", "td bom"
+- Quando receber uma saudação informal, responda de forma amigável e profissional, apresentando-se brevemente e perguntando como pode ajudar
+- Exemplos de respostas para saudações: "Olá! Sou a Sonia, assistente de IA da onsmart AI. Como posso ajudar você hoje?" ou "Oi! Tudo bem? Sou a Sonia. Em que posso ajudar?"`,
     
     en: `You are Sonia, AI assistant from onsmart AI, a Brazilian company specialized in corporate AI Agents.
 
@@ -154,7 +159,10 @@ function detectLanguage(message) {
     'olá', 'oi', 'como', 'o que', 'quando', 'onde', 'por que', 'quem',
     'é', 'são', 'pode', 'será', 'obrigado', 'obrigada', 'por favor',
     'sim', 'não', 'ajuda', 'informação', 'sobre', 'me fale', 'explique', 'mostre',
-    'bom dia', 'boa tarde', 'boa noite', 'tudo bem', 'tudo bom'
+    'bom dia', 'boa tarde', 'boa noite', 'tudo bem', 'tudo bom',
+    // Saudações informais
+    'salve', 'e aí', 'eae', 'fala', 'beleza', 'tranquilo', 'opa', 'blz',
+    'td bem', 'td bom', 'boa', 'fala aí', 'salve salve', 'boa boa'
   ];
   
   // Contar ocorrências
@@ -222,6 +230,7 @@ function getFallbackResponse(message, language = 'pt') {
   
   const fallbacks = {
     pt: {
+      greeting: 'Olá! Sou a Sonia, assistente de IA da onsmart AI.\nComo posso ajudar você hoje?',
       price: 'Nossos Agentes de IA são personalizados para cada empresa.\nOs investimentos variam conforme suas necessidades específicas.\n\nQuer agendar uma demonstração gratuita?',
       how: 'Nossos Agentes funcionam como assistentes virtuais inteligentes.\nEles automatizam vendas, atendimento, RH e muito mais.\n\nQual área você gostaria de automatizar?',
       schedule: `Perfeito! Você pode agendar uma reunião diretamente pelo nosso Calendly.\nAcesse: ${calendlyUrl}\n\nEm que posso ajudar mais?`,
@@ -232,6 +241,7 @@ function getFallbackResponse(message, language = 'pt') {
       default: 'Estou com algumas dificuldades técnicas no momento.\nMas posso te conectar com nossa equipe comercial.\n\nQuer agendar uma conversa?'
     },
     en: {
+      greeting: 'Hello! I\'m Sonia, AI assistant from onsmart AI.\nHow can I help you today?',
       price: 'Our AI Agents are customized for each company.\nInvestments vary according to your specific needs.\n\nWould you like to schedule a free demonstration?',
       how: 'Our Agents work as intelligent virtual assistants.\nThey automate sales, support, HR and much more.\n\nWhich area would you like to automate first?',
       schedule: `Perfect! You can schedule a meeting directly through our Calendly.\nAccess: ${calendlyUrl}\n\nHow else can I help?`,
@@ -242,6 +252,7 @@ function getFallbackResponse(message, language = 'pt') {
       default: 'I\'m experiencing some technical difficulties at the moment.\nBut I can connect you with our sales team.\n\nWould you like to schedule a conversation?'
     },
     es: {
+      greeting: '¡Hola! Soy Sonia, asistente de IA de onsmart AI.\n¿Cómo puedo ayudarte hoy?',
       price: 'Nuestros Agentes de IA están personalizados para cada empresa.\nLas inversiones varían según sus necesidades específicas.\n\n¿Quieres agendar una demostración gratuita?',
       how: 'Nuestros Agentes funcionan como asistentes virtuales inteligentes.\nAutomatizan ventas, atención, RRHH y mucho más.\n\n¿Qué área te gustaría automatizar primero?',
       schedule: `¡Perfecto! Puedes agendar una reunión directamente por nuestro Calendly.\nAccede: ${calendlyUrl}\n\n¿En qué más puedo ayudar?`,
@@ -254,6 +265,25 @@ function getFallbackResponse(message, language = 'pt') {
   };
   
   const fallback = fallbacks[language] || fallbacks.pt;
+  
+  // Detectar saudações informais (prioridade alta)
+  const informalGreetings = [
+    'oi', 'olá', 'e aí', 'eae', 'salve', 'salve salve', 'fala', 'fala aí',
+    'beleza', 'tranquilo', 'opa', 'blz', 'td bem', 'td bom', 'boa', 'boa boa',
+    'tudo bem', 'tudo bom', 'hello', 'hi', 'hey', 'hola'
+  ];
+  
+  // Se a mensagem é apenas uma saudação (curta e sem outras palavras-chave)
+  if (msg.length < 30 && informalGreetings.some(greeting => msg.includes(greeting))) {
+    // Verificar se não tem outras palavras-chave de intenção
+    const hasOtherIntent = msg.includes('preço') || msg.includes('custo') || msg.includes('valor') ||
+      msg.includes('como') || msg.includes('funciona') || msg.includes('produto') ||
+      msg.includes('agendar') || msg.includes('reunião') || msg.includes('demo');
+    
+    if (!hasOtherIntent) {
+      return fallback.greeting || fallback.default;
+    }
+  }
   
   // Detectar intenção da mensagem
   if (msg.includes('preço') || msg.includes('custo') || msg.includes('valor') || 

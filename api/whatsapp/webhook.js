@@ -100,16 +100,35 @@ function detectLanguage(message) {
  * Recebe eventos da Evolution API e processa mensagens
  */
 export default async function handler(req, res) {
+  // Log de início do webhook
+  console.log('🔔 [webhook] Webhook chamado - Method:', req.method);
+  console.log('🔔 [webhook] Headers:', {
+    'content-type': req.headers['content-type'],
+    'user-agent': req.headers['user-agent'],
+    'origin': req.headers['origin']
+  });
+  
+  // Verificar variáveis de ambiente críticas
+  const envCheck = {
+    OPENAI_API_KEY: !!process.env.OPENAI_API_KEY,
+    EVOLUTION_API_BASE_URL: !!process.env.EVOLUTION_API_BASE_URL,
+    EVOLUTION_API_APIKEY: !!process.env.EVOLUTION_API_APIKEY,
+    EVOLUTION_API_INSTANCE_ID: !!process.env.EVOLUTION_API_INSTANCE_ID
+  };
+  console.log('🔔 [webhook] Variáveis de ambiente:', envCheck);
+  
   // Configurar CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
   if (req.method === 'OPTIONS') {
+    console.log('🔔 [webhook] OPTIONS request - retornando 200');
     return res.status(200).end();
   }
 
   if (req.method !== 'POST') {
+    console.log('❌ [webhook] Method não permitido:', req.method);
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
