@@ -56,14 +56,27 @@ export async function processSoniaMessage(userId, message, options = {}) {
   }
   
   // Chamar OpenAI através do proxy
-  const baseUrl = process.env.VERCEL_URL 
-    ? `https://${process.env.VERCEL_URL}`
-    : process.env.VERCEL_PROJECT_PRODUCTION_URL
-    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : 'https://onsmart-website.vercel.app';
+  // IMPORTANTE: Na Vercel, precisamos usar URL absoluta porque estamos em uma serverless function
+  let proxyUrl;
+  
+  // Em produção na Vercel, usar domínio fixo
+  if (process.env.VERCEL) {
+    // Em produção - usar domínio fixo
+    proxyUrl = 'https://onsmart-website.vercel.app/api/openai-proxy';
+  } else if (process.env.VERCEL_URL) {
+    // Em preview/staging
+    proxyUrl = `https://${process.env.VERCEL_URL}/api/openai-proxy`;
+  } else {
+    // Em desenvolvimento local
+    proxyUrl = process.env.OPENAI_API_URL || 'http://localhost:3000/api/openai-proxy';
+  }
+  
+  console.log(`🔗 [soniaService] Chamando OpenAI proxy: ${proxyUrl}`);
+  console.log(`📝 [soniaService] Mensagem: ${message.substring(0, 50)}...`);
+  console.log(`👤 [soniaService] UserId: ${userId}`);
   
   try {
-    const response = await fetch(`${baseUrl}/api/openai-proxy`, {
+    const response = await fetch(proxyUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -74,15 +87,20 @@ export async function processSoniaMessage(userId, message, options = {}) {
     });
     
     if (!response.ok) {
-      throw new Error(`OpenAI API error: ${response.status}`);
+      const errorText = await response.text();
+      console.error(`❌ [soniaService] OpenAI API error: ${response.status} - ${errorText.substring(0, 200)}`);
+      throw new Error(`OpenAI API error: ${response.status} - ${errorText.substring(0, 200)}`);
     }
     
     const data = await response.json();
     const assistantMessage = data.message;
     
     if (!assistantMessage) {
+      console.error(`❌ [soniaService] Resposta vazia da OpenAI. Data recebida:`, JSON.stringify(data).substring(0, 200));
       throw new Error('No response from OpenAI');
     }
+    
+    console.log(`✅ [soniaService] Resposta recebida: ${assistantMessage.substring(0, 50)}...`);
     
     // Remover lembrete se foi adicionado
     if (addedReminder) {
@@ -100,8 +118,16 @@ export async function processSoniaMessage(userId, message, options = {}) {
     
     return assistantMessage;
   } catch (error) {
-    console.error('Erro ao processar mensagem com Sonia:', error);
-    return getFallbackResponse(message, language);
+    console.error('❌ [soniaService] Erro ao processar mensagem com Sonia:', error);
+    console.error('❌ [soniaService] Stack:', error.stack);
+    console.error('❌ [soniaService] UserId:', userId);
+    console.error('❌ [soniaService] Mensagem:', message.substring(0, 100));
+    console.error('❌ [soniaService] Idioma:', language);
+    
+    // Retornar fallback em caso de erro
+    const fallbackResponse = getFallbackResponse(message, language);
+    console.log(`🔄 [soniaService] Usando fallback: ${fallbackResponse.substring(0, 50)}...`);
+    return fallbackResponse;
   }
 }
 

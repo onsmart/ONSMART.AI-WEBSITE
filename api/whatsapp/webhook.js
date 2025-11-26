@@ -245,15 +245,21 @@ export default async function handler(req, res) {
       // Usar processSoniaMessage que mantém histórico de conversa (igual ao webchat)
       // O número de telefone é usado como userId para manter histórico por usuário
       const userId = `whatsapp:${from}`;
+      console.log(`🔄 [webhook] Processando mensagem com processSoniaMessage...`);
+      console.log(`🔄 [webhook] UserId: ${userId}`);
+      console.log(`🔄 [webhook] Idioma: ${detectedLanguage}`);
+      
       const reply = await processSoniaMessage(userId, messageText, {
         channel: 'whatsapp',
         language: detectedLanguage
       });
 
-      console.log(`🤖 Resposta da Sonia (${detectedLanguage}): ${reply.substring(0, 100)}...`);
+      console.log(`✅ [webhook] Resposta da Sonia recebida (${detectedLanguage}): ${reply.substring(0, 100)}...`);
 
       // Enviar resposta via Evolution API
+      console.log(`📤 [webhook] Enviando resposta via Evolution API para ${from}...`);
       await sendWhatsAppMessage(from, reply);
+      console.log(`✅ [webhook] Mensagem enviada com sucesso!`);
 
       // Retornar sucesso
       return res.status(200).json({ 
@@ -263,22 +269,28 @@ export default async function handler(req, res) {
         reply: reply.substring(0, 100) // Log parcial
       });
     } catch (error) {
-      console.error('❌ Erro ao gerar resposta da Sonia:', error);
-      console.error('❌ Stack:', error.stack);
+      console.error('❌ [webhook] Erro ao gerar resposta da Sonia:', error);
+      console.error('❌ [webhook] Stack:', error.stack);
+      console.error('❌ [webhook] Mensagem original:', messageText);
+      console.error('❌ [webhook] De:', from);
       
       // Enviar mensagem de erro amigável (usando fallback do soniaService)
       // O processSoniaMessage já retorna fallback em caso de erro, mas se ainda assim falhar:
       try {
         const errorMessage = `Desculpe, estou com algumas dificuldades técnicas no momento. Mas posso te conectar com nossa equipe comercial. Quer agendar uma conversa?`;
+        console.log(`📤 [webhook] Enviando mensagem de erro para ${from}...`);
         await sendWhatsAppMessage(from, errorMessage);
+        console.log(`✅ [webhook] Mensagem de erro enviada.`);
       } catch (sendError) {
-        console.error('❌ Erro ao enviar mensagem de erro:', sendError);
+        console.error('❌ [webhook] Erro ao enviar mensagem de erro:', sendError);
+        console.error('❌ [webhook] Stack do erro de envio:', sendError.stack);
       }
       
       return res.status(200).json({ 
         success: false,
         error: error.message,
-        language: detectedLanguage
+        language: detectedLanguage,
+        message: 'Error processed, fallback sent'
       });
     }
 
