@@ -18,7 +18,8 @@
     "newConversation": "Nova conversa",
     "minimize": "Minimizar",
     "maximize": "Restaurar",
-    "close": "Fechar"
+    "close": "Fechar",
+    "whatsapp": "Falar com Sonia no WhatsApp"
   },
   "typing": "Sonia está digitando...",
   "error": "Desculpe, estou com dificuldades técnicas no momento. Mas posso te ajudar! Nossa equipe comercial pode esclarecer todas suas dúvidas sobre nossos Agentes de IA. Gostaria que eu te conectasse com eles?",
@@ -37,6 +38,13 @@
   },
   "audio": {
     "notSupported": "Seu navegador não suporta o elemento de áudio."
+  },
+  "whatsapp": {
+    "modalTitle": "Falar com Sonia no WhatsApp",
+    "modalDescription": "Escolha uma das opções abaixo para iniciar uma conversa com a Sonia no WhatsApp",
+    "qrCodeLabel": "Escaneie o QR Code com seu WhatsApp",
+    "or": "ou",
+    "openButton": "Abrir WhatsApp"
   }
 }
 

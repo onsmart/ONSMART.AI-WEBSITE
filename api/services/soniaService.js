@@ -167,7 +167,8 @@ INSTRUÇÕES DE COMPORTAMENTO:
 - Sempre termine com uma pergunta ou call-to-action
 - Se não souber algo específico, direcione para a equipe comercial
 - Use pontos simples (•) para listas quando necessário
-- Evite parágrafos longos - prefira frases curtas e diretas`,
+- Evite parágrafos longos - prefira frases curtas e diretas
+- REGRA CRÍTICA DE AGENDAMENTO: Se o cliente mencionar agendamento/demonstração/reunião/marcar, SEMPRE envie o link do Calendly DIRETAMENTE. NÃO peça dia ou horário. Envie: ${calendlyUrl}`,
     
     en: `You are Sonia, AI assistant from onsmart AI, a Brazilian company specialized in corporate AI Agents.
 
@@ -200,7 +201,8 @@ BEHAVIOR INSTRUCTIONS:
 - Always end with a question or call-to-action
 - If you don't know something specific, direct to the sales team
 - Use simple points (•) for lists when necessary
-- Avoid long paragraphs - prefer short and direct sentences`,
+- Avoid long paragraphs - prefer short and direct sentences
+- CRITICAL SCHEDULING RULE: If the client mentions scheduling/demonstration/meeting/booking, ALWAYS send the Calendly link DIRECTLY. DO NOT ask for day or time. Send: ${calendlyUrl}`,
     
     es: `Eres Sonia, asistente de IA de onsmart AI, una empresa brasileña especializada en Agentes de IA corporativos.
 
@@ -233,7 +235,8 @@ INSTRUCCIONES DE COMPORTAMIENTO:
 - Siempre termina con una pregunta o call-to-action
 - Si no sabes algo específico, dirige al equipo comercial
 - Usa puntos simples (•) para listas cuando sea necesario
-- Evita párrafos largos - prefiere frases cortas y directas`
+- Evita párrafos largos - prefiere frases cortas y directas
+- REGLA CRÍTICA DE AGENDAMIENTO: Si el cliente menciona agendamiento/demostración/reunión/marcar, SIEMPRE envía el enlace del Calendly DIRECTAMENTE. NO pidas día u hora. Envía: ${calendlyUrl}`
   };
   
   return prompts[language] || prompts.pt;
@@ -244,7 +247,7 @@ INSTRUCCIONES DE COMPORTAMIENTO:
  */
 function getFallbackResponse(message, language = 'pt') {
   const msg = message.toLowerCase();
-  const calendlyUrl = process.env.CALENDLY_URL || 'https://calendly.com/ricardo-palomar-onsmartai/30min';
+  const calendlyUrl = process.env.CALENDLY_URL || 'https://calendly.com/ricardo-palomar-onsmartai/30min/';
   
   const fallbacks = {
     pt: {

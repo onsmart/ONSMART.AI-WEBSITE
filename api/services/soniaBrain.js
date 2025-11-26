@@ -13,7 +13,7 @@
  * problemas de importação em ambiente serverless, mantemos uma versão inline aqui
  */
 function getSystemPrompt(language = 'pt') {
-  const calendlyUrl = process.env.CALENDLY_URL || 'https://calendly.com/ricardo-palomar-onsmartai/30min';
+  const calendlyUrl = process.env.CALENDLY_URL || 'https://calendly.com/ricardo-palomar-onsmartai/30min/';
   
   const prompts = {
     pt: `Você é Sonia, assistente de IA da onsmart AI, uma empresa brasileira especializada em Agentes de IA corporativos.
@@ -48,7 +48,7 @@ INSTRUÇÕES DE COMPORTAMENTO:
 - Se não souber algo específico, direcione para a equipe comercial
 - Use pontos simples (•) para listas quando necessário
 - Evite parágrafos longos - prefira frases curtas e diretas
-- REGRA CRÍTICA: Se o cliente mencionar agendamento/demonstração/reunião, SEMPRE inclua o link do Calendly: ${calendlyUrl}`,
+- REGRA CRÍTICA DE AGENDAMENTO: Se o cliente mencionar agendamento/demonstração/reunião/marcar, SEMPRE envie o link do Calendly DIRETAMENTE. NÃO peça dia ou horário. Envie: ${calendlyUrl}`,
     
     en: `You are Sonia, AI assistant from onsmart AI, a Brazilian company specialized in corporate AI Agents.
 
@@ -82,7 +82,7 @@ BEHAVIOR INSTRUCTIONS:
 - If you don't know something specific, direct to the sales team
 - Use simple points (•) for lists when necessary
 - Avoid long paragraphs - prefer short and direct sentences
-- CRITICAL RULE: If the client mentions scheduling/demonstration/meeting, ALWAYS include the Calendly link: ${calendlyUrl}`,
+- CRITICAL SCHEDULING RULE: If the client mentions scheduling/demonstration/meeting/booking, ALWAYS send the Calendly link DIRECTLY. DO NOT ask for day or time. Send: ${calendlyUrl}`,
     
     es: `Eres Sonia, asistente de IA de onsmart AI, una empresa brasileña especializada en Agentes de IA corporativos.
 
@@ -116,7 +116,7 @@ INSTRUCCIONES DE COMPORTAMIENTO:
 - Si no sabes algo específico, dirige al equipo comercial
 - Usa puntos simples (•) para listas cuando sea necesario
 - Evita párrafos largos - prefiere frases cortas y directas
-- REGLA CRÍTICA: Si el cliente menciona agendamiento/demostración/reunión, SIEMPRE incluye el enlace del Calendly: ${calendlyUrl}`
+- REGLA CRÍTICA DE AGENDAMIENTO: Si el cliente menciona agendamiento/demostración/reunión/marcar, SIEMPRE envía el enlace del Calendly DIRECTAMENTE. NO pidas día u hora. Envía: ${calendlyUrl}`
   };
   
   return prompts[language] || prompts.pt;
@@ -218,7 +218,7 @@ function detectLanguage(message) {
  */
 function getFallbackResponse(message, language = 'pt') {
   const msg = message.toLowerCase();
-  const calendlyUrl = process.env.CALENDLY_URL || 'https://calendly.com/ricardo-palomar-onsmartai/30min';
+  const calendlyUrl = process.env.CALENDLY_URL || 'https://calendly.com/ricardo-palomar-onsmartai/30min/';
   
   const fallbacks = {
     pt: {

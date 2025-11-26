@@ -18,7 +18,8 @@
     "newConversation": "New conversation",
     "minimize": "Minimize",
     "maximize": "Restore",
-    "close": "Close"
+    "close": "Close",
+    "whatsapp": "Talk to Sonia on WhatsApp"
   },
   "typing": "Sonia is typing...",
   "error": "Sorry, I'm experiencing technical difficulties at the moment. But I can help you! Our sales team can answer all your questions about our AI Agents. Would you like me to connect you with them?",
@@ -37,6 +38,13 @@
   },
   "audio": {
     "notSupported": "Your browser does not support the audio element."
+  },
+  "whatsapp": {
+    "modalTitle": "Talk to Sonia on WhatsApp",
+    "modalDescription": "Choose one of the options below to start a conversation with Sonia on WhatsApp",
+    "qrCodeLabel": "Scan the QR Code with your WhatsApp",
+    "or": "or",
+    "openButton": "Open WhatsApp"
   }
 }
 
