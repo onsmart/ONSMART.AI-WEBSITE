@@ -146,8 +146,14 @@ export default async function handler(req, res) {
   try {
     const payload = req.body;
     
+    // Verificar se o body está vazio ou inválido
+    if (!payload || typeof payload !== 'object') {
+      console.error('❌ [webhook] Body inválido ou vazio:', payload);
+      return res.status(200).json({ success: false, error: 'Invalid payload' });
+    }
+    
     // Log completo do payload recebido (para debug - remover dados sensíveis em produção)
-    console.log('📥 Webhook recebido (payload completo):', JSON.stringify(payload, null, 2));
+    console.log('📥 [webhook] Payload recebido (completo):', JSON.stringify(payload, null, 2));
     
     // Log resumido
     console.log('📥 Webhook recebido (resumo):', {

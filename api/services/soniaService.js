@@ -202,6 +202,19 @@ export async function processSoniaMessage(userId, message, options = {}) {
  * Obtém o prompt do sistema da Sonia no idioma especificado
  */
 function getSoniaSystemPrompt(language = 'pt') {
+  // Garantir que calendlyUrl sempre tenha um valor
+  let calendlyUrl;
+  try {
+    calendlyUrl = process.env.CALENDLY_URL || 'https://calendly.com/ricardo-palomar-onsmartai/30min/';
+  } catch (e) {
+    calendlyUrl = 'https://calendly.com/ricardo-palomar-onsmartai/30min/';
+  }
+  
+  // Garantir que não seja undefined
+  if (!calendlyUrl) {
+    calendlyUrl = 'https://calendly.com/ricardo-palomar-onsmartai/30min/';
+  }
+  
   const prompts = {
     pt: `Você é Sonia, assistente de IA da onsmart AI, uma empresa brasileira especializada em Agentes de IA corporativos.
 
@@ -314,7 +327,19 @@ INSTRUCCIONES DE COMPORTAMIENTO:
  */
 function getFallbackResponse(message, language = 'pt') {
   const msg = message.toLowerCase();
-  const calendlyUrl = process.env.CALENDLY_URL || 'https://calendly.com/ricardo-palomar-onsmartai/30min/';
+  
+  // Garantir que calendlyUrl sempre tenha um valor
+  let calendlyUrl;
+  try {
+    calendlyUrl = process.env.CALENDLY_URL || 'https://calendly.com/ricardo-palomar-onsmartai/30min/';
+  } catch (e) {
+    calendlyUrl = 'https://calendly.com/ricardo-palomar-onsmartai/30min/';
+  }
+  
+  // Garantir que não seja undefined
+  if (!calendlyUrl) {
+    calendlyUrl = 'https://calendly.com/ricardo-palomar-onsmartai/30min/';
+  }
   
   const fallbacks = {
     pt: {
