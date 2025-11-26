@@ -285,18 +285,15 @@ const SoniaChat: React.FC<SoniaChatProps> = ({ className = '' }) => {
                 <MessageSquare className="h-3 w-3" />
               )}
             </Button>
-            {/* WhatsApp button temporarily hidden */}
-            {false && (
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => setIsWhatsAppModalOpen(true)}
-                className="h-6 w-6 p-0 text-white hover:bg-white/20 rounded-full transition-all duration-300 hover:scale-110"
-                title={t('header.whatsapp')}
-              >
-                <WhatsAppIcon className="h-3 w-3" />
-              </Button>
-            )}
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setIsWhatsAppModalOpen(true)}
+              className="h-6 w-6 p-0 text-white hover:bg-white/20 rounded-full transition-all duration-300 hover:scale-110"
+              title={t('header.whatsapp')}
+            >
+              <WhatsAppIcon className="h-3 w-3" />
+            </Button>
             <Button
               variant="ghost"
               size="sm"
