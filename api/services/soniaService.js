@@ -88,30 +88,11 @@ export async function processSoniaMessage(userId, message, options = {}) {
   // pois o request pode vir de webhook externo sem headers corretos
   
   if (channel === 'whatsapp') {
-    // Para WhatsApp, sempre usar variáveis de ambiente ou domínios conhecidos
+    // Para WhatsApp, SEMPRE usar o domínio de produção
     // Não confiar no host do request (pode ser da Evolution API)
-    if (process.env.VERCEL_ENV === 'production' || (process.env.VERCEL && !process.env.VERCEL_URL)) {
-      // Em produção - usar domínios conhecidos
-      const productionDomains = [
-        'onsmart.ai',
-        'www.onsmart.ai',
-        'onsmart-website.vercel.app'
-      ];
-      proxyUrl = `https://${productionDomains[0]}/api/openai-proxy`;
-      console.log(`🔗 [soniaService] WhatsApp - Usando domínio de produção: ${proxyUrl}`);
-    } else if (process.env.VERCEL_URL && !process.env.VERCEL_URL.includes('localhost')) {
-      // Em preview/staging - usar URL dinâmica da Vercel
-      proxyUrl = `https://${process.env.VERCEL_URL}/api/openai-proxy`;
-      console.log(`🔗 [soniaService] WhatsApp - Usando VERCEL_URL: ${proxyUrl}`);
-    } else if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
-      // URL de produção da Vercel
-      proxyUrl = `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}/api/openai-proxy`;
-      console.log(`🔗 [soniaService] WhatsApp - Usando VERCEL_PROJECT_PRODUCTION_URL: ${proxyUrl}`);
-    } else {
-      // Fallback para domínio de produção
-      proxyUrl = 'https://onsmart.ai/api/openai-proxy';
-      console.log(`🔗 [soniaService] WhatsApp - Usando fallback: ${proxyUrl}`);
-    }
+    // A chave da OpenAI está configurada no domínio de produção
+    proxyUrl = 'https://onsmart.ai/api/openai-proxy';
+    console.log(`🔗 [soniaService] WhatsApp - Usando domínio de produção: ${proxyUrl}`);
   } else {
     // Para webchat, pode usar URL do request se disponível
     if (baseUrl) {
@@ -146,6 +127,12 @@ export async function processSoniaMessage(userId, message, options = {}) {
   console.log(`👤 [soniaService] UserId: ${userId}`);
   
   try {
+    console.log(`🔗 [soniaService] Fazendo fetch para: ${proxyUrl}`);
+    console.log(`🔗 [soniaService] Payload:`, JSON.stringify({
+      messageCount: history.length,
+      lastMessage: history[history.length - 1]?.content?.substring(0, 50)
+    }));
+    
     const response = await fetch(proxyUrl, {
       method: 'POST',
       headers: {
@@ -156,13 +143,19 @@ export async function processSoniaMessage(userId, message, options = {}) {
       })
     });
     
+    console.log(`📡 [soniaService] Resposta recebida - Status: ${response.status} ${response.statusText}`);
+    
     if (!response.ok) {
       const errorText = await response.text();
-      console.error(`❌ [soniaService] OpenAI API error: ${response.status} - ${errorText.substring(0, 200)}`);
+      console.error(`❌ [soniaService] OpenAI API error: ${response.status}`);
+      console.error(`❌ [soniaService] Error details: ${errorText.substring(0, 500)}`);
+      console.error(`❌ [soniaService] URL usada: ${proxyUrl}`);
       throw new Error(`OpenAI API error: ${response.status} - ${errorText.substring(0, 200)}`);
     }
     
     const data = await response.json();
+    console.log(`📦 [soniaService] Data recebida:`, JSON.stringify(data).substring(0, 200));
+    
     const assistantMessage = data.message;
     
     if (!assistantMessage) {
@@ -189,10 +182,14 @@ export async function processSoniaMessage(userId, message, options = {}) {
     return assistantMessage;
   } catch (error) {
     console.error('❌ [soniaService] Erro ao processar mensagem com Sonia:', error);
+    console.error('❌ [soniaService] Error name:', error.name);
+    console.error('❌ [soniaService] Error message:', error.message);
     console.error('❌ [soniaService] Stack:', error.stack);
     console.error('❌ [soniaService] UserId:', userId);
     console.error('❌ [soniaService] Mensagem:', message.substring(0, 100));
     console.error('❌ [soniaService] Idioma:', language);
+    console.error('❌ [soniaService] Canal:', channel);
+    console.error('❌ [soniaService] URL do proxy que foi usada:', proxyUrl);
     
     // Retornar fallback em caso de erro
     const fallbackResponse = getFallbackResponse(message, language);
