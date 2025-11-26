@@ -251,7 +251,8 @@ export default async function handler(req, res) {
       
       const reply = await processSoniaMessage(userId, messageText, {
         channel: 'whatsapp',
-        language: detectedLanguage
+        language: detectedLanguage,
+        request: req // Passar request para obter URL base
       });
 
       console.log(`✅ [webhook] Resposta da Sonia recebida (${detectedLanguage}): ${reply.substring(0, 100)}...`);

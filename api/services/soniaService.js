@@ -11,6 +11,7 @@ const conversationHistory = new Map();
  * @param {object} options - Opções adicionais
  * @param {string} options.channel - Canal de comunicação ('web')
  * @param {string} options.language - Idioma ('pt' | 'en' | 'es')
+ * @param {object} options.request - Objeto request (opcional, para obter URL base)
  * @returns {Promise<string>} Resposta da Sonia
  */
 export async function processSoniaMessage(userId, message, options = {}) {
@@ -59,19 +60,58 @@ export async function processSoniaMessage(userId, message, options = {}) {
   // IMPORTANTE: Na Vercel, precisamos usar URL absoluta porque estamos em uma serverless function
   let proxyUrl;
   
-  // Em produção na Vercel, usar domínio fixo
-  if (process.env.VERCEL) {
-    // Em produção - usar domínio fixo
-    proxyUrl = 'https://onsmart-website.vercel.app/api/openai-proxy';
-  } else if (process.env.VERCEL_URL) {
-    // Em preview/staging
+  // Tentar obter URL base do request se disponível
+  let baseUrl = null;
+  if (options.request) {
+    const host = options.request.headers?.['host'] || 
+                 options.request.headers?.['x-forwarded-host'] ||
+                 options.request.headers?.['x-vercel-deployment-url'];
+    const protocol = options.request.headers?.['x-forwarded-proto'] || 
+                     (options.request.headers?.['x-forwarded-ssl'] === 'on' ? 'https' : 'https');
+    if (host && !host.includes('localhost')) {
+      baseUrl = `${protocol}://${host}`;
+    }
+  }
+  
+  // Detectar ambiente e construir URL do proxy
+  // Prioridade: URL do request > VERCEL_URL (preview/staging) > domínio fixo
+  if (baseUrl) {
+    // Usar URL do request (mais confiável)
+    proxyUrl = `${baseUrl}/api/openai-proxy`;
+    console.log(`🔗 [soniaService] Usando URL do request: ${proxyUrl}`);
+  } else if (process.env.VERCEL_URL && !process.env.VERCEL_URL.includes('localhost')) {
+    // Em preview/staging - usar URL dinâmica da Vercel
     proxyUrl = `https://${process.env.VERCEL_URL}/api/openai-proxy`;
+    console.log(`🔗 [soniaService] Usando VERCEL_URL: ${proxyUrl}`);
+  } else if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
+    // URL de produção da Vercel
+    proxyUrl = `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}/api/openai-proxy`;
+    console.log(`🔗 [soniaService] Usando VERCEL_PROJECT_PRODUCTION_URL: ${proxyUrl}`);
+  } else if (process.env.VERCEL || process.env.VERCEL_ENV) {
+    // Em produção na Vercel - tentar domínios conhecidos
+    // Tenta primeiro onsmart.ai, depois vercel.app
+    const productionDomains = [
+      'onsmart.ai',
+      'www.onsmart.ai',
+      'onsmart-website.vercel.app'
+    ];
+    
+    // Usar o primeiro domínio disponível (ou o primeiro como fallback)
+    proxyUrl = `https://${productionDomains[0]}/api/openai-proxy`;
+    console.log(`🔗 [soniaService] Usando domínio de produção: ${proxyUrl}`);
+    console.log(`🔗 [soniaService] Variáveis de ambiente:`, {
+      VERCEL: !!process.env.VERCEL,
+      VERCEL_ENV: process.env.VERCEL_ENV,
+      VERCEL_URL: process.env.VERCEL_URL,
+      VERCEL_PROJECT_PRODUCTION_URL: process.env.VERCEL_PROJECT_PRODUCTION_URL
+    });
   } else {
     // Em desenvolvimento local
     proxyUrl = process.env.OPENAI_API_URL || 'http://localhost:3000/api/openai-proxy';
+    console.log(`🔗 [soniaService] Usando URL local: ${proxyUrl}`);
   }
   
-  console.log(`🔗 [soniaService] Chamando OpenAI proxy: ${proxyUrl}`);
+  console.log(`🔗 [soniaService] URL final do proxy: ${proxyUrl}`);
   console.log(`📝 [soniaService] Mensagem: ${message.substring(0, 50)}...`);
   console.log(`👤 [soniaService] UserId: ${userId}`);
   
