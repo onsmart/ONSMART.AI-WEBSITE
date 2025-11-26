@@ -9,7 +9,7 @@
  * - Eventos de mensagem: verificar nome exato do evento (ex: MESSAGES_UPSERT)
  */
 
-import { processSoniaMessage, getConversationHistory } from '../services/soniaService.js';
+import { processSoniaMessage } from '../services/soniaService.js';
 import { sendWhatsAppMessage } from '../services/evolutionApi.js';
 
 // Função auxiliar para detectar idioma (melhorada, baseada em soniaBrain)
@@ -179,46 +179,6 @@ export default async function handler(req, res) {
       payload.key || // Pode estar no nível raiz
       (payload.data && Array.isArray(payload.data) && payload.data.length > 0); // Array de mensagens
 
-    // Verificar se é evento de novo contato ou chat (para enviar mensagem de boas-vindas proativa)
-    const isContactEvent = 
-      payload.event === 'CONTACTS_UPSERT' ||
-      payload.event === 'CHATS_UPSERT' ||
-      payload.type === 'contact' ||
-      payload.type === 'chat';
-
-    // Se for evento de novo contato/chat, tentar enviar mensagem de boas-vindas
-    if (isContactEvent && !isMessageEvent) {
-      console.log('📇 [webhook] Evento de contato/chat detectado:', payload.event || payload.type);
-      
-      // Tentar extrair número do contato
-      let phoneNumber = null;
-      if (payload.data) {
-        if (Array.isArray(payload.data) && payload.data.length > 0) {
-          phoneNumber = extractPhoneNumber(payload.data[0]);
-        } else if (typeof payload.data === 'object') {
-          phoneNumber = extractPhoneNumber(payload.data);
-        }
-      }
-      
-      if (phoneNumber && !phoneNumber.includes('999999999')) {
-        const userId = `whatsapp:${phoneNumber}`;
-        const isFirstContact = await checkIfFirstMessage(userId);
-        
-        if (isFirstContact) {
-          const welcomeMessage = getWelcomeMessage('pt'); // Padrão português para mensagem de boas-vindas
-          console.log(`👋 [webhook] Novo contato detectado! Enviando mensagem de boas-vindas para ${phoneNumber}...`);
-          try {
-            await sendWhatsAppMessage(phoneNumber, welcomeMessage);
-            console.log(`✅ [webhook] Mensagem de boas-vindas enviada para novo contato!`);
-          } catch (welcomeError) {
-            console.error('❌ [webhook] Erro ao enviar mensagem de boas-vindas para novo contato:', welcomeError);
-          }
-        }
-      }
-      
-      return res.status(200).json({ success: true, message: 'Contact event processed' });
-    }
-
     if (!isMessageEvent) {
       // Ignorar outros tipos de eventos
       console.log('ℹ️ Evento ignorado (não é mensagem):', payload.event || payload.type || 'unknown');
@@ -325,26 +285,6 @@ export default async function handler(req, res) {
       console.log(`🔄 [webhook] UserId: ${userId}`);
       console.log(`🔄 [webhook] Idioma: ${detectedLanguage}`);
       
-      // Verificar se é a primeira mensagem do usuário (ANTES de processar)
-      const isFirstMessage = await checkIfFirstMessage(userId);
-      
-      // Se for a primeira mensagem, enviar mensagem de boas-vindas PRIMEIRO
-      // Isso faz com que a mensagem de boas-vindas apareça antes da resposta à mensagem do usuário
-      if (isFirstMessage && from && !from.includes('999999999')) {
-        const welcomeMessage = getWelcomeMessage(detectedLanguage);
-        console.log(`👋 [webhook] Primeira mensagem detectada! Enviando mensagem de boas-vindas para ${from}...`);
-        try {
-          await sendWhatsAppMessage(from, welcomeMessage);
-          console.log(`✅ [webhook] Mensagem de boas-vindas enviada!`);
-          // Aguardar um pouco para garantir que a mensagem de boas-vindas seja enviada primeiro
-          await new Promise(resolve => setTimeout(resolve, 1500));
-        } catch (welcomeError) {
-          console.error('❌ [webhook] Erro ao enviar mensagem de boas-vindas:', welcomeError);
-          // Continuar mesmo se falhar o envio da mensagem de boas-vindas
-        }
-      }
-      
-      // Agora processar a mensagem do usuário e enviar a resposta
       const reply = await processSoniaMessage(userId, messageText, {
         channel: 'whatsapp',
         language: detectedLanguage,
@@ -468,34 +408,6 @@ function extractPhoneNumber(messageData) {
   }
 
   return phoneNumber;
-}
-
-/**
- * Verifica se é a primeira mensagem do usuário
- */
-async function checkIfFirstMessage(userId) {
-  try {
-    const history = getConversationHistory(userId);
-    // Se o histórico está vazio ou só tem o system prompt, é a primeira mensagem
-    return !history || history.length === 0 || (history.length === 1 && history[0].role === 'system');
-  } catch (error) {
-    console.error('❌ [webhook] Erro ao verificar primeira mensagem:', error);
-    // Em caso de erro, assumir que não é a primeira mensagem
-    return false;
-  }
-}
-
-/**
- * Retorna mensagem de boas-vindas no idioma especificado
- */
-function getWelcomeMessage(language = 'pt') {
-  const messages = {
-    pt: 'Olá! Eu sou a Sonia, assistente de IA da onsmart AI. Estou aqui para esclarecer suas dúvidas sobre nossos Agentes de IA corporativos. Como posso ajudá-lo hoje?',
-    en: 'Hello! I\'m Sonia, AI assistant from onsmart AI. I\'m here to clarify your questions about our corporate AI Agents. How can I help you today?',
-    es: '¡Hola! Soy Sonia, asistente de IA de onsmart AI. Estoy aquí para aclarar tus dudas sobre nuestros Agentes de IA corporativos. ¿Cómo puedo ayudarte hoy?'
-  };
-  
-  return messages[language] || messages.pt;
 }
 
 
