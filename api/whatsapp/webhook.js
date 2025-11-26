@@ -100,22 +100,33 @@ function detectLanguage(message) {
  * Recebe eventos da Evolution API e processa mensagens
  */
 export default async function handler(req, res) {
-  // Log de início do webhook
-  console.log('🔔 [webhook] Webhook chamado - Method:', req.method);
-  console.log('🔔 [webhook] Headers:', {
+  // Log de início do webhook - SEMPRE executar primeiro
+  console.log('='.repeat(80));
+  console.log('🔔 [webhook] ========== WEBHOOK CHAMADO ==========');
+  console.log('🔔 [webhook] Timestamp:', new Date().toISOString());
+  console.log('🔔 [webhook] Method:', req.method);
+  console.log('🔔 [webhook] URL:', req.url);
+  console.log('🔔 [webhook] Headers:', JSON.stringify({
     'content-type': req.headers['content-type'],
     'user-agent': req.headers['user-agent'],
-    'origin': req.headers['origin']
-  });
+    'origin': req.headers['origin'],
+    'host': req.headers['host'],
+    'x-forwarded-for': req.headers['x-forwarded-for']
+  }));
+  console.log('🔔 [webhook] Body presente:', !!req.body);
+  console.log('🔔 [webhook] Body keys:', req.body ? Object.keys(req.body) : 'no body');
   
   // Verificar variáveis de ambiente críticas
   const envCheck = {
     OPENAI_API_KEY: !!process.env.OPENAI_API_KEY,
     EVOLUTION_API_BASE_URL: !!process.env.EVOLUTION_API_BASE_URL,
     EVOLUTION_API_APIKEY: !!process.env.EVOLUTION_API_APIKEY,
-    EVOLUTION_API_INSTANCE_ID: !!process.env.EVOLUTION_API_INSTANCE_ID
+    EVOLUTION_API_INSTANCE_ID: !!process.env.EVOLUTION_API_INSTANCE_ID,
+    VERCEL_ENV: process.env.VERCEL_ENV,
+    VERCEL_URL: process.env.VERCEL_URL
   };
-  console.log('🔔 [webhook] Variáveis de ambiente:', envCheck);
+  console.log('🔔 [webhook] Variáveis de ambiente:', JSON.stringify(envCheck));
+  console.log('='.repeat(80));
   
   // Configurar CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
