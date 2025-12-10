@@ -7,10 +7,22 @@
  * Documentação a consultar:
  * - Webhooks: https://doc.evolution-api.com/v2/en/configuration/webhooks
  * - Eventos de mensagem: verificar nome exato do evento (ex: MESSAGES_UPSERT)
+ * 
+ * ⚠️ MUDANÇA IMPORTANTE:
+ * Este webhook NÃO envia mais mensagens via WhatsApp diretamente.
+ * Ele apenas processa mensagens recebidas e retorna a resposta no JSON.
+ * O envio de mensagens é responsabilidade do SONIA-BACKEND.
+ * 
+ * Resposta do webhook inclui:
+ * - reply: Resposta completa da Sônia para ser enviada
+ * - from: Número do remetente
+ * - shouldSend: Flag indicando se deve enviar (não é número de teste)
+ * - language: Idioma detectado
  */
 
 import { processSoniaMessage } from '../services/soniaService.js';
-import { sendWhatsAppMessage } from '../services/evolutionApi.js';
+// DESABILITADO: Envio de mensagens agora é responsabilidade do SONIA-BACKEND
+// import { sendWhatsAppMessage } from '../services/evolutionApi.js';
 
 // Função auxiliar para detectar idioma (melhorada, baseada em soniaBrain)
 function detectLanguage(message) {
@@ -231,9 +243,17 @@ export default async function handler(req, res) {
       const from = extractPhoneNumber(messageData);
       if (from) {
         const fallbackMessage = 'Olá! Por enquanto, só consigo processar mensagens de texto. Por favor, envie sua dúvida por escrito.';
-        await sendWhatsAppMessage(from, fallbackMessage);
+        // DESABILITADO: Envio de mensagens agora é responsabilidade do SONIA-BACKEND
+        // await sendWhatsAppMessage(from, fallbackMessage);
+        console.log(`⚠️ [webhook] Mensagem de mídia recebida de ${from}, mas envio desabilitado (SONIA-BACKEND responsável)`);
+        console.log(`📤 [webhook] Mensagem que seria enviada: ${fallbackMessage}`);
       }
-      return res.status(200).json({ success: true, message: 'Media message ignored' });
+      return res.status(200).json({ 
+        success: true, 
+        message: 'Media message ignored',
+        reply: 'Olá! Por enquanto, só consigo processar mensagens de texto. Por favor, envie sua dúvida por escrito.',
+        shouldSend: true // Flag para indicar que o SONIA-BACKEND deve enviar
+      });
     }
 
     // Extrair número do remetente (userId)
@@ -293,28 +313,24 @@ export default async function handler(req, res) {
 
       console.log(`✅ [webhook] Resposta da Sonia recebida (${detectedLanguage}): ${reply.substring(0, 100)}...`);
 
-      // Enviar resposta via Evolution API
+      // DESABILITADO: Envio de mensagens agora é responsabilidade do SONIA-BACKEND
+      // O webhook apenas processa e retorna a resposta, mas não envia mais via WhatsApp
       // Verificar se o número não é um número de teste
       if (from && !from.includes('999999999')) {
-        console.log(`📤 [webhook] Enviando resposta via Evolution API para ${from}...`);
-        try {
-          await sendWhatsAppMessage(from, reply);
-          console.log(`✅ [webhook] Mensagem enviada com sucesso!`);
-        } catch (sendError) {
-          console.error('❌ [webhook] Erro ao enviar mensagem via Evolution API:', sendError);
-          console.error('❌ [webhook] Erro detalhes:', sendError.message);
-          // Continuar mesmo se falhar o envio (pode ser número inválido em teste)
-        }
+        console.log(`📤 [webhook] Resposta gerada para ${from}, mas envio desabilitado (SONIA-BACKEND responsável)`);
+        console.log(`📤 [webhook] Resposta completa que seria enviada: ${reply}`);
       } else {
-        console.log(`⚠️ [webhook] Número de teste detectado (${from}), pulando envio via Evolution API`);
+        console.log(`⚠️ [webhook] Número de teste detectado (${from}), pulando processamento`);
       }
 
-      // Retornar sucesso
+      // Retornar sucesso com a resposta completa para o SONIA-BACKEND usar
       return res.status(200).json({ 
         success: true,
         message: 'Message processed successfully',
         language: detectedLanguage,
-        reply: reply.substring(0, 100) // Log parcial
+        reply: reply, // Resposta completa (não truncada) para o SONIA-BACKEND enviar
+        from: from, // Número do remetente para facilitar o envio
+        shouldSend: from && !from.includes('999999999') // Flag indicando se deve enviar
       });
     } catch (error) {
       console.error('❌ [webhook] Erro ao gerar resposta da Sonia:', error);
@@ -322,23 +338,20 @@ export default async function handler(req, res) {
       console.error('❌ [webhook] Mensagem original:', messageText);
       console.error('❌ [webhook] De:', from);
       
-      // Enviar mensagem de erro amigável (usando fallback do soniaService)
+      // DESABILITADO: Envio de mensagens de erro agora é responsabilidade do SONIA-BACKEND
       // O processSoniaMessage já retorna fallback em caso de erro, mas se ainda assim falhar:
-      try {
-        const errorMessage = `Desculpe, estou com algumas dificuldades técnicas no momento. Mas posso te conectar com nossa equipe comercial. Quer agendar uma conversa?`;
-        console.log(`📤 [webhook] Enviando mensagem de erro para ${from}...`);
-        await sendWhatsAppMessage(from, errorMessage);
-        console.log(`✅ [webhook] Mensagem de erro enviada.`);
-      } catch (sendError) {
-        console.error('❌ [webhook] Erro ao enviar mensagem de erro:', sendError);
-        console.error('❌ [webhook] Stack do erro de envio:', sendError.stack);
-      }
+      const errorMessage = `Desculpe, estou com algumas dificuldades técnicas no momento. Mas posso te conectar com nossa equipe comercial. Quer agendar uma conversa?`;
+      console.log(`⚠️ [webhook] Erro processado, mas envio de mensagem desabilitado (SONIA-BACKEND responsável)`);
+      console.log(`📤 [webhook] Mensagem de erro que seria enviada: ${errorMessage}`);
       
       return res.status(200).json({ 
         success: false,
         error: error.message,
         language: detectedLanguage,
-        message: 'Error processed, fallback sent'
+        message: 'Error processed, fallback available',
+        reply: errorMessage, // Mensagem de fallback para o SONIA-BACKEND enviar
+        from: from,
+        shouldSend: from && !from.includes('999999999')
       });
     }
 
