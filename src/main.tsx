@@ -590,49 +590,6 @@ if (import.meta.env.DEV) {
   console.log('[DEBUG]   - window.debugCheckParentheses() - Verificar elementos com parênteses');
   console.log('[DEBUG]   - window.debugInspectElement("seletor") - Inspecionar elemento específico');
   console.log('[DEBUG] ========================================');
-  
-  // Criar botão de debug na página
-  const createDebugButton = () => {
-    const button = document.createElement('button');
-    button.textContent = '🔍 Debug Parênteses';
-    button.style.cssText = `
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 99999;
-      background: #ff6b6b;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: bold;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      font-family: system-ui, -apple-system, sans-serif;
-    `;
-    button.onclick = () => {
-      console.log('[DEBUG] ========================================');
-      console.log('[DEBUG] Botão de debug clicado!');
-      console.log('[DEBUG] ========================================');
-      (window as any).debugCheckParentheses();
-    };
-    button.onmouseover = () => {
-      button.style.background = '#ff5252';
-    };
-    button.onmouseout = () => {
-      button.style.background = '#ff6b6b';
-    };
-    document.body.appendChild(button);
-    console.log('[DEBUG] Botão de debug criado no canto inferior direito');
-  };
-  
-  // Criar botão após o DOM estar pronto
-  if (document.body) {
-    createDebugButton();
-  } else {
-    window.addEventListener('load', createDebugButton);
-  }
 }
 
 // Inicializar tema antes do React renderizar para evitar flash
