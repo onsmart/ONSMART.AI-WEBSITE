@@ -415,7 +415,7 @@ export default function Produtos() {
                           className="w-full flex items-center justify-center gap-2 border-2 border-brand-blue text-brand-blue hover:bg-gradient-to-r hover:from-brand-blue hover:via-blue-600 hover:to-brand-blue hover:text-white hover:border-transparent"
                           onClick={() => navigate('/produtos/granite')}
                         >
-                          {t('common.viewMore', { ns: 'common' })}
+                          {t('common.viewMore')}
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </div>
@@ -460,7 +460,7 @@ export default function Produtos() {
                           className="w-full flex items-center justify-center gap-2 border-2 border-brand-blue text-brand-blue hover:bg-gradient-to-r hover:from-brand-blue hover:via-blue-600 hover:to-brand-blue hover:text-white hover:border-transparent"
                           onClick={() => navigate('/produtos/meta-llama')}
                         >
-                          {t('viewMore')}
+                          {t('common.viewMore')}
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </div>
@@ -505,7 +505,7 @@ export default function Produtos() {
                           className="w-full flex items-center justify-center gap-2 border-2 border-brand-blue text-brand-blue hover:bg-gradient-to-r hover:from-brand-blue hover:via-blue-600 hover:to-brand-blue hover:text-white hover:border-transparent"
                           onClick={() => navigate('/produtos/mistral')}
                         >
-                          {t('viewMore')}
+                          {t('common.viewMore')}
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </div>
@@ -558,7 +558,7 @@ export default function Produtos() {
                           className="w-full flex items-center justify-center gap-2 border-2 border-brand-blue text-brand-blue hover:bg-gradient-to-r hover:from-brand-blue hover:via-blue-600 hover:to-brand-blue hover:text-white hover:border-transparent"
                           onClick={() => navigate('/produtos/watsonx-ai')}
                         >
-                          {t('viewMore')}
+                          {t('common.viewMore')}
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </div>
@@ -608,7 +608,7 @@ export default function Produtos() {
                           className="w-full flex items-center justify-center gap-2 border-2 border-brand-blue text-brand-blue hover:bg-gradient-to-r hover:from-brand-blue hover:via-blue-600 hover:to-brand-blue hover:text-white hover:border-transparent"
                           onClick={() => navigate('/produtos/watsonx-governance')}
                         >
-                          {t('viewMore')}
+                          {t('common.viewMore')}
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </div>
@@ -716,7 +716,7 @@ export default function Produtos() {
                           className="w-full flex items-center justify-center gap-2 border-2 border-brand-blue text-brand-blue hover:bg-gradient-to-r hover:from-brand-blue hover:via-blue-600 hover:to-brand-blue hover:text-white hover:border-transparent"
                           onClick={() => navigate('/produtos/data-product-hub')}
                         >
-                          {t('viewMore')}
+                          {t('common.viewMore')}
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </div>
@@ -761,7 +761,7 @@ export default function Produtos() {
                           className="w-full flex items-center justify-center gap-2 border-2 border-brand-blue text-brand-blue hover:bg-gradient-to-r hover:from-brand-blue hover:via-blue-600 hover:to-brand-blue hover:text-white hover:border-transparent"
                           onClick={() => navigate('/produtos/knowledge-catalog')}
                         >
-                          {t('viewMore')}
+                          {t('common.viewMore')}
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </div>
@@ -806,7 +806,7 @@ export default function Produtos() {
                           className="w-full flex items-center justify-center gap-2 border-2 border-brand-blue text-brand-blue hover:bg-gradient-to-r hover:from-brand-blue hover:via-blue-600 hover:to-brand-blue hover:text-white hover:border-transparent"
                           onClick={() => navigate('/produtos/manta-data-lineage')}
                         >
-                          {t('viewMore')}
+                          {t('common.viewMore')}
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </div>
@@ -856,7 +856,7 @@ export default function Produtos() {
                           className="w-full flex items-center justify-center gap-2 border-2 border-brand-blue text-brand-blue hover:bg-gradient-to-r hover:from-brand-blue hover:via-blue-600 hover:to-brand-blue hover:text-white hover:border-transparent"
                           onClick={() => navigate('/produtos/datastage')}
                         >
-                          {t('viewMore')}
+                          {t('common.viewMore')}
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </div>
@@ -901,7 +901,7 @@ export default function Produtos() {
                           className="w-full flex items-center justify-center gap-2 border-2 border-brand-blue text-brand-blue hover:bg-gradient-to-r hover:from-brand-blue hover:via-blue-600 hover:to-brand-blue hover:text-white hover:border-transparent"
                           onClick={() => navigate('/produtos/databand')}
                         >
-                          {t('viewMore')}
+                          {t('common.viewMore')}
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </div>
@@ -946,7 +946,7 @@ export default function Produtos() {
                           className="w-full flex items-center justify-center gap-2 border-2 border-brand-blue text-brand-blue hover:bg-gradient-to-r hover:from-brand-blue hover:via-blue-600 hover:to-brand-blue hover:text-white hover:border-transparent"
                           onClick={() => navigate('/produtos/streamsets')}
                         >
-                          {t('viewMore')}
+                          {t('common.viewMore')}
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </div>
@@ -996,7 +996,7 @@ export default function Produtos() {
                           className="w-full flex items-center justify-center gap-2 border-2 border-brand-blue text-brand-blue hover:bg-gradient-to-r hover:from-brand-blue hover:via-blue-600 hover:to-brand-blue hover:text-white hover:border-transparent"
                           onClick={() => navigate('/produtos/guardium-data-security-center')}
                         >
-                          {t('viewMore')}
+                          {t('common.viewMore')}
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </div>
@@ -1054,7 +1054,7 @@ export default function Produtos() {
                           className="w-full flex items-center justify-center gap-2 border-2 border-brand-blue text-brand-blue hover:bg-gradient-to-r hover:from-brand-blue hover:via-blue-600 hover:to-brand-blue hover:text-white hover:border-transparent"
                           onClick={() => navigate('/produtos/storage-ceph')}
                         >
-                          {t('common.viewMore', { ns: 'common' })}
+                          {t('common.viewMore')}
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </div>

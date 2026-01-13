@@ -110,7 +110,7 @@ export default function WatsonXCodeAssistant() {
                 onClick={() => navigate('/contato')}
               >
                 <Send className="mr-2 h-5 w-5" />
-                {t('cta.requestDemo')}
+                {t('cta.requestDemo', { ns: 'common' })}
               </Button>
             </div>
 
@@ -292,7 +292,7 @@ export default function WatsonXCodeAssistant() {
               onClick={() => navigate('/contato')}
             >
               <Send className="mr-2 h-5 w-5" />
-              {t('cta.requestDemo')}
+              {t('cta.requestDemo', { ns: 'common' })}
             </Button>
             <Button 
               variant="outline"
@@ -300,7 +300,7 @@ export default function WatsonXCodeAssistant() {
               className="font-medium px-8 py-6 text-lg rounded-xl"
               onClick={() => navigate('/produtos')}
             >
-              {t('watsonxCodeAssistant:cta.viewOthers')}
+              {t('cta.viewOthers', { ns: 'common' })}
             </Button>
           </div>
         </div>

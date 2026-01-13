@@ -162,7 +162,7 @@ export default function SoniaAssistenteIA() {
               className="font-medium px-8 py-6 text-lg rounded-xl"
               onClick={() => navigate('/agentes-ia')}
             >
-              {t('cta.viewOthers')}
+              {t('cta.viewOthers', { ns: 'common' })}
             </Button>
           </div>
         </div>

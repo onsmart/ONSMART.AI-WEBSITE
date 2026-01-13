@@ -261,7 +261,7 @@ export default function AtendimentoInteligente() {
               onClick={() => navigate('/agentes-ia')}
               className="border-white text-white bg-white/10 hover:bg-white/20 font-medium px-8 py-6 text-lg rounded-xl transition-all"
             >
-              {t('cta.viewOthers')}
+              {t('cta.viewOthers', { ns: 'common' })}
             </Button>
           </div>
         </div>

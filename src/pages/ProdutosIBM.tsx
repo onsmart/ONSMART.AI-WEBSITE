@@ -267,7 +267,7 @@ export default function Produtos() {
                           className="w-full flex items-center justify-center gap-2"
                           onClick={() => navigate('/produtos/watsonx-code-assistant')}
                         >
-                          {t('common.viewMore', { ns: 'common' })}
+                          {t('common.viewMore')}
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </div>
@@ -312,7 +312,7 @@ export default function Produtos() {
                           className="w-full flex items-center justify-center gap-2"
                           onClick={() => navigate('/produtos/watsonx-orchestrate')}
                         >
-                          {t('common.viewMore', { ns: 'common' })}
+                          {t('common.viewMore')}
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </div>
@@ -357,7 +357,7 @@ export default function Produtos() {
                           className="w-full flex items-center justify-center gap-2"
                           onClick={() => navigate('/produtos/planning-analytics')}
                         >
-                          {t('common.viewMore', { ns: 'common' })}
+                          {t('common.viewMore')}
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </div>
@@ -413,7 +413,7 @@ export default function Produtos() {
                           className="w-full flex items-center justify-center gap-2"
                           onClick={() => navigate('/produtos/granite')}
                         >
-                          {t('viewMore')}
+                          {t('common.viewMore')}
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </div>
@@ -458,7 +458,7 @@ export default function Produtos() {
                           className="w-full flex items-center justify-center gap-2"
                           onClick={() => navigate('/produtos/meta-llama')}
                         >
-                          {t('viewMore')}
+                          {t('common.viewMore')}
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </div>
@@ -503,7 +503,7 @@ export default function Produtos() {
                           className="w-full flex items-center justify-center gap-2"
                           onClick={() => navigate('/produtos/mistral')}
                         >
-                          {t('viewMore')}
+                          {t('common.viewMore')}
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </div>
@@ -556,7 +556,7 @@ export default function Produtos() {
                           className="w-full flex items-center justify-center gap-2"
                           onClick={() => navigate('/produtos/watsonx-ai')}
                         >
-                          {t('viewMore')}
+                          {t('common.viewMore')}
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </div>
@@ -606,7 +606,7 @@ export default function Produtos() {
                           className="w-full flex items-center justify-center gap-2"
                           onClick={() => navigate('/produtos/watsonx-governance')}
                         >
-                          {t('viewMore')}
+                          {t('common.viewMore')}
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </div>
@@ -664,7 +664,7 @@ export default function Produtos() {
                           className="w-full flex items-center justify-center gap-2"
                           onClick={() => navigate('/produtos/watsonx-data')}
                         >
-                          {t('viewMore')}
+                          {t('common.viewMore')}
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </div>
@@ -714,7 +714,7 @@ export default function Produtos() {
                           className="w-full flex items-center justify-center gap-2"
                           onClick={() => navigate('/produtos/data-product-hub')}
                         >
-                          {t('viewMore')}
+                          {t('common.viewMore')}
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </div>
@@ -757,7 +757,7 @@ export default function Produtos() {
                           className="w-full flex items-center justify-center gap-2"
                           onClick={() => navigate('/produtos/knowledge-catalog')}
                         >
-                          {t('viewMore')}
+                          {t('common.viewMore')}
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </div>
@@ -800,7 +800,7 @@ export default function Produtos() {
                           className="w-full flex items-center justify-center gap-2"
                           onClick={() => navigate('/produtos/manta-data-lineage')}
                         >
-                          {t('viewMore')}
+                          {t('common.viewMore')}
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </div>
@@ -848,7 +848,7 @@ export default function Produtos() {
                           className="w-full flex items-center justify-center gap-2"
                           onClick={() => navigate('/produtos/datastage')}
                         >
-                          {t('viewMore')}
+                          {t('common.viewMore')}
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </div>
@@ -891,7 +891,7 @@ export default function Produtos() {
                           className="w-full flex items-center justify-center gap-2"
                           onClick={() => navigate('/produtos/databand')}
                         >
-                          {t('viewMore')}
+                          {t('common.viewMore')}
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </div>
@@ -934,7 +934,7 @@ export default function Produtos() {
                           className="w-full flex items-center justify-center gap-2"
                           onClick={() => navigate('/produtos/streamsets')}
                         >
-                          {t('viewMore')}
+                          {t('common.viewMore')}
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </div>
@@ -982,7 +982,7 @@ export default function Produtos() {
                           className="w-full flex items-center justify-center gap-2"
                           onClick={() => navigate('/produtos/guardium-data-security-center')}
                         >
-                          {t('viewMore')}
+                          {t('common.viewMore')}
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </div>
@@ -1038,7 +1038,7 @@ export default function Produtos() {
                           className="w-full flex items-center justify-center gap-2"
                           onClick={() => navigate('/produtos/storage-ceph')}
                         >
-                          {t('viewMore')}
+                          {t('common.viewMore')}
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </div>
