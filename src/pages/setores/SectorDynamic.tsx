@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, CheckCircle, Building2, Stethoscope, Home, ShoppingBag, Scale, Banknote, Phone, Package, Factory } from 'lucide-react';
+import { ArrowRight, Building2, Stethoscope, Home, ShoppingBag, Scale, Banknote, Phone, Package, Factory, CheckCircle } from 'lucide-react';
 import { getSectorBySlug } from '@/data/sectorsData';
 import NotFound from '@/pages/NotFound';
 import ServiceChart from '@/components/shared/ServiceChart';
@@ -24,10 +24,6 @@ const SectorDynamic: React.FC = () => {
 
   const handleContactClick = () => {
     navigate('/contato');
-  };
-
-  const handleDiagnosticoClick = () => {
-    navigate('/diagnostico');
   };
 
   // Configurações específicas por setor
@@ -92,21 +88,6 @@ const SectorDynamic: React.FC = () => {
 
   const config = getSectorConfig(sector.slug);
 
-  // Helper para obter chave de tradução da solução baseado no índice
-  const getSolutionKey = (sectorId: string, index: number): string => {
-    const solutionKeys: Record<string, string[]> = {
-      'advocacia': ['assistente', 'gerador', 'prazos'],
-      'bancos': ['credito', 'assistente', 'antifraude'],
-      'telecomunicacoes': ['suporte', 'otimizador', 'preditor'],
-      'varejo': ['personalizador', 'precos', 'comportamento'],
-      'industria': ['manutencao', 'qualidade', 'producao'],
-      'saude': ['diagnostico', 'exames', 'medicina'],
-      'comercio': ['estoque', 'vendas', 'analise'],
-      'setor-imobiliario': ['propriedades', 'leads', 'mercado']
-    };
-    return solutionKeys[sectorId]?.[index] || `solution${index}`;
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
       {/* Hero Section */}
@@ -130,24 +111,6 @@ const SectorDynamic: React.FC = () => {
               <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
                 {t(`setores:sectors.${sector.id}.heroSubtitle`, { defaultValue: sector.heroSubtitle })}
               </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  onClick={handleContactClick}
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg"
-                >
-                  {t('setores:buttons.requestQuote')}
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                
-                <Button 
-                  variant="outline"
-                  onClick={handleDiagnosticoClick}
-                  className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 hover:border-blue-700 px-8 py-3 text-lg font-medium bg-white"
-                >
-                  {t('setores:buttons.freeDiagnostic')}
-                </Button>
-              </div>
             </div>
             
             <div className="relative">
@@ -157,250 +120,198 @@ const SectorDynamic: React.FC = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-16 px-4 md:px-6 bg-gray-50 dark:bg-gray-900">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              {t('setores:dynamic.whatsIncluded.title')}
-            </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300">
-              {t('setores:dynamic.whatsIncluded.subtitle', { 
-                sector: t(`setores:sectors.${sector.id}.name`, { defaultValue: sector.name })
-              })}
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {sector.solutions.map((solution, index) => {
-              const solutionKey = getSolutionKey(sector.id, index);
-              const solutionTranslation = t(`setores:sectors.${sector.id}.solutions.${solutionKey}`, { returnObjects: true }) as any;
-              
-              return (
-                <div key={index} className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-                    {solutionTranslation?.title || solution.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">
-                    {solutionTranslation?.description || solution.description}
-                  </p>
-                  <ul className="space-y-2">
-                    {(solutionTranslation?.benefits || solution.benefits).slice(0, 3).map((benefit: string, idx: number) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <CheckCircle className="h-4 w-4 text-green-500 mt-1 flex-shrink-0" />
-                        <span className="text-sm text-gray-600 dark:text-gray-300">{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Process Section */}
+      {/* Why Adopt Section */}
       <section className="py-16 px-4 md:px-6 bg-white dark:bg-gray-800">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              {t('setores:dynamic.howItWorks.title')}
+              Por que adotar agentes de IA para {t(`setores:sectors.${sector.id}.name`, { defaultValue: sector.name })}?
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300">
-              {t('setores:dynamic.howItWorks.subtitle', { 
-                sector: t(`setores:sectors.${sector.id}.name`, { defaultValue: sector.name })
-              })}
-            </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
-                1
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-                {t('setores:dynamic.howItWorks.steps.analise.title')}
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-gray-50 dark:bg-gray-700/50 rounded-xl p-6">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+                {(() => {
+                  switch (sector.id) {
+                    case 'advocacia':
+                      return 'Automação Jurídica Inteligente';
+                    case 'bancos':
+                      return 'Transformação Digital Financeira';
+                    case 'comercio':
+                      return 'Otimização de Operações Comerciais';
+                    case 'industria':
+                      return 'Indústria 4.0 com IA';
+                    case 'saude':
+                      return 'Assistência Médica Inteligente';
+                    case 'telecomunicacoes':
+                      return 'Telecomunicações de Nova Geração';
+                    case 'varejo':
+                      return 'Varejo Inteligente e Personalizado';
+                    case 'setor-imobiliario':
+                      return 'Imobiliária Digital e Eficiente';
+                    default:
+                      return 'Automação Inteligente';
+                  }
+                })()}
               </h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                {t('setores:dynamic.howItWorks.steps.analise.description')}
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                {(() => {
+                  switch (sector.id) {
+                    case 'advocacia':
+                      return 'Agentes de IA transformam escritórios de advocacia ao automatizar pesquisas jurídicas, geração de petições e atendimento ao cliente. Eles reduzem drasticamente o tempo gasto em tarefas repetitivas, permitindo que advogados se concentrem em estratégias e casos complexos, aumentando a produtividade e a qualidade do serviço.';
+                    case 'bancos':
+                      return 'No setor bancário, agentes de IA automatizam análise de crédito, detecção de fraudes e atendimento ao cliente. Eles processam grandes volumes de transações em tempo real, identificam padrões suspeitos e oferecem recomendações personalizadas, melhorando a segurança e a experiência do cliente.';
+                    case 'comercio':
+                      return 'Agentes de IA otimizam operações comerciais através da automação de gestão de estoque, previsão de demanda e atendimento ao cliente. Eles analisam tendências de mercado, ajustam preços dinamicamente e personalizam recomendações, resultando em maior eficiência operacional e aumento de vendas.';
+                    case 'industria':
+                      return 'Na indústria, agentes de IA automatizam manutenção preditiva, controle de qualidade e otimização de produção. Eles monitoram equipamentos em tempo real, preveem falhas antes que ocorram e otimizam processos de manufatura, reduzindo custos e aumentando a eficiência produtiva.';
+                    case 'saude':
+                      return 'No setor de saúde, agentes de IA auxiliam em diagnósticos, agendamento de consultas e gestão de prontuários. Eles analisam exames médicos, identificam padrões em sintomas e automatizam processos administrativos, permitindo que profissionais de saúde foquem no cuidado ao paciente.';
+                    case 'telecomunicacoes':
+                      return 'Agentes de IA revolucionam telecomunicações ao automatizar suporte técnico, otimização de redes e análise de tráfego. Eles resolvem problemas de conectividade automaticamente, otimizam a distribuição de banda e personalizam planos de serviço, melhorando a experiência do cliente e reduzindo custos operacionais.';
+                    case 'varejo':
+                      return 'No varejo, agentes de IA personalizam experiências de compra, otimizam precificação e gerenciam inventário. Eles analisam comportamento do consumidor, recomendam produtos relevantes e ajustam estratégias de marketing em tempo real, aumentando conversões e fidelização.';
+                    case 'setor-imobiliario':
+                      return 'Agentes de IA transformam o setor imobiliário automatizando busca de propriedades, qualificação de leads e agendamento de visitas. Eles analisam preferências de clientes, sugerem propriedades compatíveis e automatizam processos de documentação, acelerando vendas e locações.';
+                    default:
+                      return 'Agentes de IA automatizam processos específicos do seu setor, reduzindo custos operacionais e aumentando a eficiência da sua equipe.';
+                  }
+                })()}
               </p>
             </div>
             
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
-                2
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-                {t('setores:dynamic.howItWorks.steps.implementacao.title')}
+            <div className="bg-gray-50 dark:bg-gray-700/50 rounded-xl p-6">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+                Benefícios Estratégicos
               </h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                {t('setores:dynamic.howItWorks.steps.implementacao.description')}
-              </p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
-                3
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-                {t('setores:dynamic.howItWorks.steps.otimizacao.title')}
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                {t('setores:dynamic.howItWorks.steps.otimizacao.description')}
-              </p>
+              <ul className="space-y-3">
+                {(() => {
+                  switch (sector.id) {
+                    case 'advocacia':
+                      return [
+                        'Redução de 75% no tempo de pesquisa jurídica',
+                        'Geração automática de petições em minutos',
+                        'Zero perda de prazos processuais',
+                        'Atendimento ao cliente 24/7 automatizado'
+                      ];
+                    case 'bancos':
+                      return [
+                        'Análise de crédito 10x mais rápida',
+                        'Detecção de fraudes em tempo real',
+                        'Redução de 60% em custos operacionais',
+                        'Experiência do cliente altamente personalizada'
+                      ];
+                    case 'comercio':
+                      return [
+                        'Otimização automática de estoque reduz desperdícios',
+                        'Previsão de demanda com 95% de precisão',
+                        'Aumento de 40% em vendas através de personalização',
+                        'Gestão de preços dinâmica e inteligente'
+                      ];
+                    case 'industria':
+                      return [
+                        'Manutenção preditiva reduz paradas em 80%',
+                        'Controle de qualidade automatizado',
+                        'Otimização de produção aumenta eficiência em 50%',
+                        'Redução de custos operacionais significativa'
+                      ];
+                    case 'saude':
+                      return [
+                        'Auxílio em diagnóstico com maior precisão',
+                        'Agendamento automatizado reduz esperas',
+                        'Gestão de prontuários eletrônicos eficiente',
+                        'Análise de exames em tempo real'
+                      ];
+                    case 'telecomunicacoes':
+                      return [
+                        'Resolução automática de 85% dos problemas técnicos',
+                        'Otimização de rede em tempo real',
+                        'Redução de 50% em chamados de suporte',
+                        'Personalização de planos baseada em uso'
+                      ];
+                    case 'varejo':
+                      return [
+                        'Personalização aumenta conversões em 60%',
+                        'Otimização de precificação em tempo real',
+                        'Gestão inteligente de inventário',
+                        'Recomendações de produtos altamente precisas'
+                      ];
+                    case 'setor-imobiliario':
+                      return [
+                        'Qualificação automática de leads',
+                        'Matching inteligente entre clientes e propriedades',
+                        'Agendamento automatizado de visitas',
+                        'Processamento de documentação 5x mais rápido'
+                      ];
+                    default:
+                      return [
+                        'Aumento significativo na produtividade',
+                        'Redução de custos operacionais',
+                        'Melhoria na qualidade dos processos',
+                        'Escalabilidade sem limites'
+                      ];
+                  }
+                })().map((benefit, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-600 dark:text-gray-300">{benefit}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Pricing Section */}
+      {/* CTA Section - Automation */}
       <section className="py-16 px-4 md:px-6 bg-gray-50 dark:bg-gray-900">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              {t('setores:dynamic.plans.title')}
-            </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300">
-              {t('setores:dynamic.plans.subtitle', { 
-                sector: t(`setores:sectors.${sector.id}.name`, { defaultValue: sector.name })
-              })}
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
-              <div className="text-center mb-6">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                  {t('setores:dynamic.plans.basic.title')}
-                </h3>
-                <div className="text-lg text-gray-600 dark:text-gray-300 mb-2">
-                  {t('setores:dynamic.plans.description')}
-                </div>
+        <div className="container mx-auto max-w-4xl">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 md:p-12 shadow-xl border border-gray-200 dark:border-gray-700">
+            <div className="text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+                {(() => {
+                  const sectorName = t(`setores:sectors.${sector.id}.name`, { defaultValue: sector.name });
+                  switch (sector.id) {
+                    case 'advocacia':
+                      return 'Quer automatizar seu escritório de advocacia com agentes de IA?';
+                    case 'bancos':
+                      return 'Quer automatizar seu banco ou instituição financeira com agentes de IA?';
+                    case 'comercio':
+                      return 'Quer automatizar seu comércio com agentes de IA?';
+                    case 'industria':
+                      return 'Quer automatizar sua indústria com agentes de IA?';
+                    case 'saude':
+                      return 'Quer automatizar sua clínica ou hospital com agentes de IA?';
+                    case 'telecomunicacoes':
+                      return 'Quer automatizar sua empresa de telecomunicações com agentes de IA?';
+                    case 'varejo':
+                      return 'Quer automatizar seu varejo com agentes de IA?';
+                    case 'setor-imobiliario':
+                      return 'Quer automatizar seu setor imobiliário com agentes de IA?';
+                    default:
+                      return `Quer automatizar ${sectorName.toLowerCase()} com agentes de IA?`;
+                  }
+                })()}
+              </h2>
+              <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
+                Entre em contato conosco ou marque uma reunião com nosso especialista
+              </p>
+              
+              <div className="flex justify-center">
+                <Button 
+                  onClick={handleContactClick}
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  {t('setores:buttons.requestQuote')}
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
               </div>
-              
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-500 mt-1 flex-shrink-0" />
-                  <span className="text-sm text-gray-600 dark:text-gray-300">{t('setores:dynamic.plans.basic.features.analise')}</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-500 mt-1 flex-shrink-0" />
-                  <span className="text-sm text-gray-600 dark:text-gray-300">{t('setores:dynamic.plans.basic.features.implementacao')}</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-500 mt-1 flex-shrink-0" />
-                  <span className="text-sm text-gray-600 dark:text-gray-300">{t('setores:dynamic.plans.basic.features.suporte')}</span>
-                </li>
-              </ul>
-              
-              <Button 
-                onClick={handleContactClick}
-                className="w-full bg-gray-600 hover:bg-gray-700 text-white"
-              >
-                {t('setores:dynamic.plans.requestQuote')}
-              </Button>
-            </div>
-
-            <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg ring-2 ring-blue-600">
-              <div className="text-center mb-6">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                  {t('setores:dynamic.plans.professional.title')}
-                </h3>
-                <div className="text-lg text-gray-600 dark:text-gray-300 mb-2">
-                  {t('setores:dynamic.plans.description')}
-                </div>
-              </div>
-              
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-500 mt-1 flex-shrink-0" />
-                  <span className="text-sm text-gray-600 dark:text-gray-300">{t('setores:dynamic.plans.professional.features.analise')}</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-500 mt-1 flex-shrink-0" />
-                  <span className="text-sm text-gray-600 dark:text-gray-300">{t('setores:dynamic.plans.professional.features.implementacao')}</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-500 mt-1 flex-shrink-0" />
-                  <span className="text-sm text-gray-600 dark:text-gray-300">{t('setores:dynamic.plans.professional.features.suporte')}</span>
-                </li>
-              </ul>
-              
-              <Button 
-                onClick={handleContactClick}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white"
-              >
-                {t('setores:dynamic.plans.requestQuote')}
-              </Button>
-            </div>
-
-            <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
-              <div className="text-center mb-6">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                  {t('setores:dynamic.plans.enterprise.title')}
-                </h3>
-                <div className="text-lg text-gray-600 dark:text-gray-300 mb-2">
-                  {t('setores:dynamic.plans.description')}
-                </div>
-              </div>
-              
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-500 mt-1 flex-shrink-0" />
-                  <span className="text-sm text-gray-600 dark:text-gray-300">{t('setores:dynamic.plans.enterprise.features.analise')}</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-500 mt-1 flex-shrink-0" />
-                  <span className="text-sm text-gray-600 dark:text-gray-300">{t('setores:dynamic.plans.enterprise.features.implementacao')}</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-500 mt-1 flex-shrink-0" />
-                  <span className="text-sm text-gray-600 dark:text-gray-300">{t('setores:dynamic.plans.enterprise.features.suporte')}</span>
-                </li>
-              </ul>
-              
-              <Button 
-                onClick={handleContactClick}
-                className="w-full bg-gray-600 hover:bg-gray-700 text-white"
-              >
-                {t('setores:dynamic.plans.requestQuote')}
-              </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 px-4 md:px-6 bg-blue-600">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            {t('setores:dynamic.cta.title', { 
-              sector: t(`setores:sectors.${sector.id}.name`, { defaultValue: sector.name })
-            })}
-          </h2>
-          <p className="text-xl text-blue-100 mb-8">
-            {t('setores:dynamic.cta.subtitle')}
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              onClick={handleContactClick}
-              className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 text-lg"
-            >
-              {t('setores:dynamic.plans.requestQuote')}
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            
-            <Button 
-              variant="outline"
-              onClick={handleDiagnosticoClick}
-              className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 text-lg font-medium bg-transparent"
-            >
-              {t('setores:buttons.freeDiagnostic')}
-            </Button>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };

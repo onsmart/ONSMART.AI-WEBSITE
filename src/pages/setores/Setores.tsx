@@ -33,10 +33,6 @@ const Setores: React.FC = () => {
     return iconMap[sectorId] || Building2;
   };
 
-  const handleDiagnosticoClick = () => {
-    navigate('/diagnostico');
-  };
-
   return (
     <>
       <UnifiedSEO 
@@ -159,7 +155,7 @@ const Setores: React.FC = () => {
                   {t('setores:sections.cta.subtitle')}
                 </p>
                 
-                <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+                <div className="flex justify-center">
                   <Button 
                     onClick={handleCtaClick}
                     className="bg-gradient-to-r from-brand-blue to-blue-600 hover:from-blue-600 hover:to-brand-blue text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 text-sm sm:text-base"
@@ -168,17 +164,6 @@ const Setores: React.FC = () => {
                       <Building2 className="h-3 w-3 sm:h-4 sm:w-4" />
                       {t('setores:buttons.requestQuote')}
                       <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4" />
-                    </div>
-                  </Button>
-                  
-                  <Button 
-                    onClick={handleDiagnosticoClick}
-                    variant="outline"
-                    className="border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white py-2 sm:py-3 px-4 sm:px-6 rounded-xl transition-all duration-300 text-sm sm:text-base"
-                  >
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4" />
-                      {t('setores:buttons.freeDiagnostic')}
                     </div>
                   </Button>
                 </div>

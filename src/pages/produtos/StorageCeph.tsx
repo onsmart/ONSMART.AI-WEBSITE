@@ -262,7 +262,7 @@ export default function StorageCeph() {
               variant="outline"
               size="lg" 
               className="font-medium px-8 py-6 text-lg rounded-xl"
-              onClick={() => navigate('/produtos')}
+              onClick={() => navigate('/ecossistema-ibm')}
             >
               {t('cta.viewOthers', { ns: 'common' })}
             </Button>

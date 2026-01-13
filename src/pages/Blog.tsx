@@ -5,6 +5,8 @@ import BlogSearchAndFilters from '@/components/blog/BlogSearchAndFilters';
 import BlogGrid from '@/components/blog/BlogGrid';
 import BlogNewsletter from '@/components/blog/BlogNewsletter';
 import BlogEngagementTracker from '@/components/blog/BlogEngagementTracker';
+import LinkedInArticlesFeed from '@/components/blog/LinkedInArticlesFeed';
+import EbooksFeed from '@/components/blog/EbooksFeed';
 import { blogPosts, blogCategories } from '@/components/blog/data/blogData';
 import { useTranslation } from 'react-i18next';
 
@@ -22,6 +24,29 @@ const Blog = () => {
       return matchesSearch && matchesCategory;
     });
   }, [searchTerm, selectedCategory]);
+
+  // Renderizar conteúdo baseado na categoria selecionada
+  const renderContent = () => {
+    if (selectedCategory === 'ebooks') {
+      return <EbooksFeed />;
+    } else if (selectedCategory === 'artigos') {
+      return <LinkedInArticlesFeed />;
+    } else {
+      // 'todos' - mostrar ambos
+      return (
+        <>
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">Artigos</h2>
+            <LinkedInArticlesFeed />
+          </div>
+          <div>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">E-books</h2>
+            <EbooksFeed />
+          </div>
+        </>
+      );
+    }
+  };
 
   return (
     <BlogEngagementTracker selectedCategory={selectedCategory}>
@@ -57,15 +82,13 @@ const Blog = () => {
           </div>
           
           <div className="max-w-6xl mx-auto relative z-10">
-            <BlogGrid articles={filteredArticles} />
+            {renderContent()}
           </div>
         </section>
 
         {/* Enhanced Newsletter Section */}
-        <section className="py-20 px-4">
-          <div className="max-w-4xl mx-auto">
-            <BlogNewsletter />
-          </div>
+        <section className="py-8 md:py-12">
+          <BlogNewsletter />
         </section>
 
         {/* Enhanced CTA Section */}

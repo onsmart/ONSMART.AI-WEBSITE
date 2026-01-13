@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, CheckCircle, Star, Users, TrendingUp, Calendar, Clock, DollarSign } from 'lucide-react';
+import { ArrowRight, CheckCircle, Star, Users, TrendingUp } from 'lucide-react';
 import { getServiceBySlug } from '@/data/servicesData';
 import NotFound from '@/pages/NotFound';
 import ServiceChart from '@/components/shared/ServiceChart';
@@ -37,10 +37,6 @@ const ServiceDynamic: React.FC = () => {
 
   const handleContactClick = () => {
     navigate('/contato');
-  };
-
-  const handleDiagnosticoClick = () => {
-    navigate('/diagnostico');
   };
 
   // Configurações específicas por serviço
@@ -116,24 +112,6 @@ const ServiceDynamic: React.FC = () => {
               <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
                 {serviceTranslations?.heroSubtitle || service.heroSubtitle || service.description}
               </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  onClick={handleContactClick}
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg"
-                >
-                  {t('buttons.requestQuote')}
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                
-                <Button 
-                  variant="outline"
-                  onClick={handleDiagnosticoClick}
-                  className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 hover:border-blue-700 px-8 py-3 text-lg font-medium bg-white"
-                >
-                  {t('buttons.freeDiagnostic')}
-                </Button>
-              </div>
             </div>
             
             <div className="relative">
@@ -143,200 +121,172 @@ const ServiceDynamic: React.FC = () => {
         </div>
       </section>
 
-
-      {/* Features Section */}
-      <section className="py-16 px-4 md:px-6 bg-gray-50 dark:bg-gray-900">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              {t('sections.features.title')}
-            </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300">
-              {t('sections.features.subtitle')}
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {(serviceTranslations?.detailedFeatures || service.features || []).map((feature: any, index: number) => {
-              // Se for objeto, usar diretamente; se não, buscar da tradução ou service.features
-              let featureData;
-              if (typeof feature === 'object' && feature !== null && feature.title) {
-                featureData = feature;
-              } else if (serviceTranslations?.detailedFeatures?.[index]) {
-                featureData = serviceTranslations.detailedFeatures[index];
-              } else if (service.features[index] && typeof service.features[index] === 'object') {
-                featureData = service.features[index];
-              } else {
-                featureData = {
-                  title: feature || `Feature ${index + 1}`,
-                  description: '',
-                  benefits: []
-                };
-              }
-              
-              return (
-                <div key={index} className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-                    {featureData.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">
-                    {featureData.description}
-                  </p>
-                  <ul className="space-y-2">
-                    {(featureData.benefits || []).slice(0, 3).map((benefit: string, idx: number) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <CheckCircle className="h-4 w-4 text-green-500 mt-1 flex-shrink-0" />
-                        <span className="text-sm text-gray-600 dark:text-gray-300">{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Process Section */}
+      {/* Why Adopt Section */}
       <section className="py-16 px-4 md:px-6 bg-white dark:bg-gray-800">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              {t('sections.process.title')}
+              Por que adotar agentes de IA para {serviceTranslations?.title || service.name}?
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300">
-              {t('sections.process.subtitle')}
-            </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            {(serviceTranslations?.process || service.process || []).map((step: any, index: number) => {
-              // Se for objeto com step, usar diretamente; se não, buscar da tradução ou service.process
-              let stepData;
-              if (typeof step === 'object' && step !== null && (step.step || step.title)) {
-                stepData = step;
-              } else if (serviceTranslations?.process?.[index]) {
-                stepData = serviceTranslations.process[index];
-              } else if (service.process[index] && typeof service.process[index] === 'object') {
-                stepData = service.process[index];
-              } else {
-                stepData = {
-                  step: index + 1,
-                  title: step || `Step ${index + 1}`,
-                  description: ''
-                };
-              }
-              
-              return (
-                <div key={index} className="text-center">
-                  <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
-                    {stepData.step || (index + 1)}
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-                    {stepData.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300">
-                    {stepData.description}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section className="py-16 px-4 md:px-6 bg-gray-50 dark:bg-gray-900">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              {t('sections.pricing.title')}
-            </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300">
-              {t('sections.pricing.subtitle')}
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {(serviceTranslations?.pricing || service.pricing || []).map((plan: any, index: number) => {
-              // Se for objeto com tier, usar diretamente; se não, buscar da tradução ou service.pricing
-              let planData;
-              if (typeof plan === 'object' && plan !== null && plan.tier) {
-                planData = plan;
-              } else if (serviceTranslations?.pricing?.[index]) {
-                planData = serviceTranslations.pricing[index];
-              } else if (service.pricing[index] && typeof service.pricing[index] === 'object') {
-                planData = service.pricing[index];
-              } else {
-                planData = {
-                  tier: plan || `Plan ${index + 1}`,
-                  price: '',
-                  features: []
-                };
-              }
-              
-              return (
-                <div key={index} className={`bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg ${index === 1 ? 'ring-2 ring-blue-600' : ''}`}>
-                  <div className="text-center mb-6">
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                      {planData.tier}
-                    </h3>
-                    <div className="text-lg text-gray-600 dark:text-gray-300 mb-2">
-                      {t('sections.pricing.completeSolution')}
-                    </div>
-                  </div>
-                  
-                  <ul className="space-y-3 mb-6">
-                    {(planData.features || []).slice(0, 3).map((feature: string, idx: number) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <CheckCircle className="h-4 w-4 text-green-500 mt-1 flex-shrink-0" />
-                        <span className="text-sm text-gray-600 dark:text-gray-300">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <Button 
-                    onClick={handleContactClick}
-                    className={`w-full ${index === 1 ? 'bg-blue-600 hover:bg-blue-700' : 'bg-gray-600 hover:bg-gray-700'} text-white`}
-                  >
-                    {t('buttons.requestQuote')}
-                  </Button>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 px-4 md:px-6 bg-blue-600">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            {serviceTranslations?.ctaTitle || service.ctaTitle}
-          </h2>
-          <p className="text-xl text-blue-100 mb-8">
-            {serviceTranslations?.ctaSubtitle || service.ctaSubtitle}
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              onClick={handleContactClick}
-              className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 text-lg"
-            >
-              {t('buttons.requestQuote')}
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-gray-50 dark:bg-gray-700/50 rounded-xl p-6">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+                {(() => {
+                  switch (serviceKey) {
+                    case 'diagnostico':
+                      return 'Automatização Inteligente de Análises';
+                    case 'aceleracao':
+                      return 'Aceleração Estratégica de Implementação';
+                    case 'implementacao':
+                      return 'Implementação Técnica Otimizada';
+                    case 'treinamento':
+                      return 'Treinamento Personalizado e Contínuo';
+                    case 'suporte':
+                      return 'Suporte Proativo 24/7';
+                    case 'analise':
+                      return 'Análise de Dados em Tempo Real';
+                    default:
+                      return 'Automação Inteligente';
+                  }
+                })()}
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                {(() => {
+                  switch (serviceKey) {
+                    case 'diagnostico':
+                      return 'Nossos agentes de IA realizam diagnósticos automatizados e contínuos, identificando oportunidades de melhoria em tempo real. Eles analisam processos, dados e métricas de desempenho, fornecendo insights acionáveis sem intervenção manual constante.';
+                    case 'aceleracao':
+                      return 'Agentes de IA aceleram significativamente a adoção de IA na sua empresa, automatizando processos de onboarding, treinamento e suporte. Eles garantem que sua equipe esteja sempre atualizada e preparada para utilizar as novas tecnologias de forma eficiente.';
+                    case 'implementacao':
+                      return 'A implementação técnica se torna mais rápida e precisa com agentes de IA. Eles automatizam configurações, testes e validações, reduzindo erros humanos e garantindo que todas as integrações sejam feitas corretamente desde o primeiro momento.';
+                    case 'treinamento':
+                      return 'Agentes de IA oferecem treinamento personalizado e adaptativo para cada membro da equipe. Eles identificam lacunas de conhecimento, criam conteúdos personalizados e acompanham o progresso, garantindo que todos dominem as ferramentas de IA.';
+                    case 'suporte':
+                      return 'Com agentes de IA, você tem suporte contínuo e proativo. Eles monitoram sistemas, identificam problemas antes que se tornem críticos, resolvem questões automaticamente e escalam apenas quando necessário, garantindo máxima disponibilidade.';
+                    case 'analise':
+                      return 'Agentes de IA transformam a análise de dados em um processo contínuo e automatizado. Eles processam grandes volumes de informação, identificam padrões, geram relatórios e alertas em tempo real, permitindo decisões mais rápidas e baseadas em dados.';
+                    default:
+                      return 'Agentes de IA automatizam processos complexos, reduzindo custos operacionais e aumentando a eficiência da sua equipe.';
+                  }
+                })()}
+              </p>
+            </div>
             
-            <Button 
-              variant="outline"
-              onClick={handleDiagnosticoClick}
-              className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 text-lg font-medium bg-transparent"
-            >
-              {t('buttons.freeDiagnostic')}
-            </Button>
+            <div className="bg-gray-50 dark:bg-gray-700/50 rounded-xl p-6">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+                Benefícios Estratégicos
+              </h3>
+              <ul className="space-y-3">
+                {(() => {
+                  switch (serviceKey) {
+                    case 'diagnostico':
+                      return [
+                        'Redução de até 80% no tempo de análise de processos',
+                        'Identificação automática de gargalos e oportunidades',
+                        'Relatórios detalhados gerados automaticamente',
+                        'Monitoramento contínuo sem necessidade de intervenção manual'
+                      ];
+                    case 'aceleracao':
+                      return [
+                        'Redução de 60% no tempo de adoção de novas tecnologias',
+                        'Onboarding automatizado e personalizado para cada usuário',
+                        'Suporte contínuo durante toda a jornada de transformação',
+                        'Métricas de adoção em tempo real'
+                      ];
+                    case 'implementacao':
+                      return [
+                        'Implementação 3x mais rápida que métodos tradicionais',
+                        'Redução de 90% em erros de configuração',
+                        'Testes automatizados garantem qualidade desde o início',
+                        'Documentação técnica gerada automaticamente'
+                      ];
+                    case 'treinamento':
+                      return [
+                        'Treinamento personalizado baseado no perfil de cada usuário',
+                        'Aumento de 70% na retenção de conhecimento',
+                        'Acompanhamento contínuo do progresso individual',
+                        'Conteúdo atualizado automaticamente conforme novas funcionalidades'
+                      ];
+                    case 'suporte':
+                      return [
+                        'Disponibilidade 24/7 sem custos adicionais de equipe',
+                        'Resolução automática de 85% dos problemas comuns',
+                        'Alertas proativos antes que problemas se tornem críticos',
+                        'Histórico completo de interações para análise contínua'
+                      ];
+                    case 'analise':
+                      return [
+                        'Processamento de dados em tempo real 24/7',
+                        'Identificação automática de tendências e anomalias',
+                        'Relatórios executivos gerados automaticamente',
+                        'Integração com múltiplas fontes de dados simultaneamente'
+                      ];
+                    default:
+                      return [
+                        'Aumento significativo na produtividade',
+                        'Redução de custos operacionais',
+                        'Melhoria na qualidade dos processos',
+                        'Escalabilidade sem limites'
+                      ];
+                  }
+                })().map((benefit, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-600 dark:text-gray-300">{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
+
+      {/* CTA Section - Automation */}
+      <section className="py-16 px-4 md:px-6 bg-gray-50 dark:bg-gray-900">
+        <div className="container mx-auto max-w-4xl">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 md:p-12 shadow-xl border border-gray-200 dark:border-gray-700">
+            <div className="text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+                {(() => {
+                  const serviceName = serviceTranslations?.title || service.name;
+                  switch (serviceKey) {
+                    case 'diagnostico':
+                      return 'Quer automatizar o diagnóstico de IA da sua empresa com agentes de IA?';
+                    case 'aceleracao':
+                      return 'Quer acelerar a adoção de IA na sua empresa com agentes de IA?';
+                    case 'implementacao':
+                      return 'Quer automatizar a implementação técnica de IA com agentes de IA?';
+                    case 'treinamento':
+                      return 'Quer automatizar o treinamento de IA da sua equipe com agentes de IA?';
+                    case 'suporte':
+                      return 'Quer automatizar o suporte contínuo de IA com agentes de IA?';
+                    case 'analise':
+                      return 'Quer automatizar a análise de dados da sua empresa com agentes de IA?';
+                    default:
+                      return `Quer automatizar ${serviceName.toLowerCase()} com agentes de IA?`;
+                  }
+                })()}
+              </h2>
+              <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
+                Entre em contato conosco ou marque uma reunião com nosso especialista
+              </p>
+              
+              <div className="flex justify-center">
+                <Button 
+                  onClick={handleContactClick}
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  {t('buttons.requestQuote')}
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 };

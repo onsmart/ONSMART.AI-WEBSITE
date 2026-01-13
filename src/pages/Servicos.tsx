@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { ArrowRight, CheckCircle, Target, Users, Zap, Star, Shield, TrendingUp, Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import UnifiedSEO from '@/components/shared/UnifiedSEO';
 import { useTranslation } from 'react-i18next';
 
@@ -15,18 +14,6 @@ const Servicos = () => {
   const handleContactClick = () => {
     navigate('/contato');
   };
-
-  const handleDiagnosticoClick = () => {
-    navigate('/diagnostico');
-  };
-
-  const handleVerDetalhesClick = (slug: string) => {
-    navigate(`/servicos/${slug}`);
-  };
-
-  const serviceKeys = ['diagnostico', 'aceleracao', 'implementacao', 'treinamento', 'suporte', 'analise'];
-  const serviceIcons = [Target, Users, Zap, Star, Shield, TrendingUp];
-  const serviceColors = ["text-blue-600", "text-green-600", "text-purple-600", "text-orange-600", "text-red-600", "text-cyan-600"];
 
   if (isSubmitted) {
     return (
@@ -183,102 +170,6 @@ const Servicos = () => {
           </div>
         </section>
 
-        {/* Services Grid */}
-        <section className="py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 bg-gradient-to-br from-white via-blue-50/20 to-brand-blue/5 dark:bg-gradient-to-br dark:from-gray-800/50 dark:via-blue-900/10 dark:to-brand-blue/5">
-          <div className="container mx-auto max-w-7xl px-4 sm:px-6 md:px-8 relative z-10 w-full">
-            <div className="text-center mb-8 animate-fade-in">
-              {/* Badge Superior Profissional */}
-              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-brand-blue/10 to-brand-blue/5 text-brand-blue px-3 py-1.5 rounded-full text-sm font-semibold mb-4 border border-brand-blue/20">
-                <Zap className="h-3 w-3" />
-                {t('services.badge')}
-              </div>
-              
-              {/* Título principal - Padronizado */}
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-gray-900 dark:text-white leading-tight px-2 sm:px-0">
-                {t('services.title')} <span className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">{t('services.titleHighlight')}</span>
-              </h2>
-              
-              {/* Subheadline compacto */}
-              <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-6 leading-relaxed px-4 sm:px-2 md:px-0">
-                {t('services.subtitle')} <span className="font-bold text-brand-blue">{t('services.subtitleHighlight1')}</span> {t('services.subtitleEnd')} <span className="font-bold text-brand-blue">{t('services.subtitleHighlight2')}</span>, {t('services.subtitleEnd2')}
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {serviceKeys.map((serviceKey, index) => {
-                const serviceData = t(`services.items.${serviceKey}`, { returnObjects: true }) as any;
-                const IconComponent = serviceIcons[index];
-                const slugMap: Record<string, string> = {
-                  diagnostico: 'diagnostico-ia',
-                  aceleracao: 'aceleracao-adocao-ia',
-                  implementacao: 'implementacao-tecnica',
-                  treinamento: 'treinamento-ia',
-                  suporte: 'suporte-continuo',
-                  analise: 'analise-dados'
-                };
-                return (
-                  <Card key={serviceKey} className="group hover:shadow-lg transition-all duration-300 border-0 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm h-full">
-                    <CardContent className="p-6 h-full flex flex-col">
-                      <div className="text-center flex-1 flex flex-col">
-                        <div className={`inline-flex items-center justify-center w-12 h-12 rounded-lg mb-4 ${serviceColors[index]} bg-opacity-10`}>
-                          <IconComponent className={`h-6 w-6 ${serviceColors[index]}`} />
-                        </div>
-                        
-                        <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">{serviceData.title}</h3>
-                        <p className="text-gray-600 mb-6 leading-relaxed flex-1 min-h-[120px]">{serviceData.description}</p>
-                        
-                        <div className="space-y-2 mb-6">
-                          {serviceData.features.map((feature: string, idx: number) => (
-                            <div key={idx} className="flex items-center text-sm text-gray-600">
-                              <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
-                              {feature}
-                            </div>
-                          ))}
-                        </div>
-                        
-                        <div className="flex justify-between items-center mb-6 text-sm">
-                          <div>
-                            <div className="text-gray-500">{t('services.labels.investment')}</div>
-                            <div className="font-semibold text-gray-900 dark:text-gray-100">{serviceData.price}</div>
-                          </div>
-                          <div>
-                            <div className="text-gray-500">{t('services.labels.duration')}</div>
-                            <div className="font-semibold text-gray-900 dark:text-gray-100">{serviceData.duration}</div>
-                          </div>
-                        </div>
-                        
-                        <div className="space-y-3 mt-auto">
-                          <Button 
-                            variant="outline"
-                            className="w-full border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400"
-                            onClick={() => handleVerDetalhesClick(slugMap[serviceKey])}
-                          >
-                            {t('services.labels.viewDetails')}
-                          </Button>
-                          
-                          <Button 
-                            className="w-full bg-gradient-to-r from-brand-blue to-blue-600 hover:from-blue-600 hover:to-brand-blue text-white"
-                            onClick={() => {
-                              if (serviceKey === 'diagnostico') {
-                                handleDiagnosticoClick();
-                              } else {
-                                handleContactClick();
-                              }
-                            }}
-                          >
-                            {serviceData.button}
-                            <ArrowRight className="h-4 w-4 ml-2" />
-                          </Button>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
         {/* Contact Info */}
         <section className="py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 bg-gradient-to-br from-white via-blue-50/20 to-brand-blue/5 dark:bg-gradient-to-br dark:from-gray-800/50 dark:via-blue-900/10 dark:to-brand-blue/5">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 md:px-8 relative z-10 w-full">
@@ -341,22 +232,14 @@ const Servicos = () => {
                 </a>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  onClick={handleDiagnosticoClick}
-                  className="bg-gradient-to-r from-brand-blue to-blue-600 hover:from-blue-600 hover:to-brand-blue text-white px-8 py-3"
-                >
-                  <Target className="h-5 w-5 mr-2" />
-                  {t('contact.buttons.freeDiagnostic')}
-                </Button>
-                
+              <div className="flex justify-center">
                 <Button
                   onClick={handleContactClick}
-                  variant="outline"
-                  className="border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white px-8 py-3"
+                  className="bg-gradient-to-r from-brand-blue to-blue-600 hover:from-blue-600 hover:to-brand-blue text-white px-8 py-3"
                 >
                   <Users className="h-5 w-5 mr-2" />
-                  {t('contact.buttons.talkExpert')}
+                  {t('buttons.requestQuote')}
+                  <ArrowRight className="h-5 w-5 ml-2" />
                 </Button>
               </div>
             </div>

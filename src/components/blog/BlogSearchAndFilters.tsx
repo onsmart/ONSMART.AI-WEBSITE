@@ -20,7 +20,8 @@ const BlogSearchAndFilters: React.FC<BlogSearchAndFiltersProps> = ({
   setSelectedCategory
 }) => {
   const { t } = useTranslation('blog');
-  const categories = ['todos', ...Object.keys(blogCategories)];
+  // Filtros: todos, artigos, ebooks
+  const categories = ['todos', 'artigos', 'ebooks'];
 
   return (
     <section className="py-8 px-4 md:px-6 bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
@@ -48,7 +49,7 @@ const BlogSearchAndFilters: React.FC<BlogSearchAndFiltersProps> = ({
                 onClick={() => setSelectedCategory(category)}
                 className="capitalize"
               >
-                {category === 'todos' ? t('filters.all') : t(`categories.${category}`) || category}
+                {category === 'todos' ? t('filters.all') : category === 'artigos' ? 'Artigos' : 'E-books'}
               </Button>
             ))}
           </div>

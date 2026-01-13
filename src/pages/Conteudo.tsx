@@ -2,17 +2,13 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, BookOpen, FileText, Video, Download, Users, TrendingUp, CheckCircle, Play, Calendar, GraduationCap, Wrench, BarChart3, Image, FileCheck, Calculator, Lightbulb, Target, Zap } from "lucide-react";
+import { ArrowRight, BookOpen, FileText, Download, Users, TrendingUp, Calendar, GraduationCap, Image, Lightbulb, Video, CheckCircle } from "lucide-react";
 import UnifiedSEO from "@/components/shared/UnifiedSEO";
 import { useTranslation } from 'react-i18next';
 
 const contentCategories = [
   { id: 'artigos', name: 'conteudo:categories.artigos', icon: FileText },
-  { id: 'videos', name: 'conteudo:categories.videos', icon: Play },
-  { id: 'ebooks', name: 'conteudo:categories.ebooks', icon: BookOpen },
-  { id: 'templates', name: 'conteudo:categories.templates', icon: FileCheck },
-  { id: 'checklists', name: 'conteudo:categories.checklists', icon: CheckCircle },
-  { id: 'calculadoras', name: 'conteudo:categories.calculadoras', icon: Calculator }
+  { id: 'ebooks', name: 'conteudo:categories.ebooks', icon: BookOpen }
 ];
 
 const Conteudo = () => {
@@ -23,27 +19,8 @@ const Conteudo = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [showAll, setShowAll] = useState(false);
-  const [selectedVideo, setSelectedVideo] = useState<any>(null);
-
   const handleCtaClick = () => {
     navigate('/contato');
-  };
-
-  // Função para extrair ID do vídeo do YouTube
-  const getYouTubeVideoId = (url: string) => {
-    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
-    const match = url.match(regExp);
-    return (match && match[2].length === 11) ? match[2] : null;
-  };
-
-  // Função para abrir vídeo no modal
-  const handleVideoClick = (video: any) => {
-    setSelectedVideo(video);
-  };
-
-  // Função para fechar modal
-  const closeVideoModal = () => {
-    setSelectedVideo(null);
   };
 
   // Reset showAll quando mudar de categoria
@@ -124,190 +101,6 @@ const Conteudo = () => {
     }
   };
 
-  // Lista de vídeos de fallback quando a API não estiver disponível
-  const fallbackVideos = [
-    {
-      id: 'F2wkF4KZz2Y',
-      type: 'video',
-      icon: Play,
-      title: 'OnSmart AI - Vídeo Oficial',
-      description: 'Conteúdo oficial da OnSmart AI sobre inteligência artificial e transformação digital.',
-      duration: 'Vídeo',
-      category: 'videos',
-      subcategory: 'Vídeos',
-      url: 'https://www.youtube.com/watch?v=F2wkF4KZz2Y',
-      thumbnail: 'https://img.youtube.com/vi/F2wkF4KZz2Y/mqdefault.jpg',
-      publishedAt: new Date().toISOString()
-    },
-    {
-      id: 'dQw4w9WgXcQ',
-      type: 'video',
-      icon: Play,
-      title: 'OnSmart AI - Inteligência Artificial para Empresas',
-      description: 'Descubra como a OnSmart AI pode transformar sua empresa com soluções de inteligência artificial personalizadas.',
-      duration: 'Vídeo',
-      category: 'videos',
-      subcategory: 'Vídeos',
-      url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-      thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg',
-      publishedAt: '2024-01-15T10:00:00Z'
-    },
-    {
-      id: 'jNQXAC9IVRw',
-      type: 'video',
-      icon: Play,
-      title: 'Vibe Enterprise - Plataforma de Gestão Inteligente',
-      description: 'Conheça a Vibe Enterprise, nossa plataforma completa de gestão empresarial com IA integrada.',
-      duration: 'Vídeo',
-      category: 'videos',
-      subcategory: 'Vídeos',
-      url: 'https://www.youtube.com/watch?v=jNQXAC9IVRw',
-      thumbnail: 'https://img.youtube.com/vi/jNQXAC9IVRw/mqdefault.jpg',
-      publishedAt: '2024-01-10T14:30:00Z'
-    }
-  ];
-
-  // Função para carregar vídeos da API do YouTube
-  const loadVideosFromAPI = async () => {
-    try {
-      console.log('🎬 Carregando vídeos reais do canal @onsmarttech...');
-      const API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
-      
-      // Primeiro, buscar o Channel ID usando o handle
-      let channelId = "UC7IkX4S0ixK0QBSdW8rDaXQ"; // fallback
-      
-      try {
-        console.log('🔍 Buscando Channel ID do @onsmarttech...');
-        const channelResponse = await fetch(
-          `https://www.googleapis.com/youtube/v3/channels?key=${API_KEY}&forUsername=onsmarttech&part=id`
-        );
-        
-        if (channelResponse.ok) {
-          const channelData = await channelResponse.json();
-          if (channelData.items && channelData.items.length > 0) {
-            channelId = channelData.items[0].id;
-            console.log('✅ Channel ID encontrado:', channelId);
-          }
-        }
-      } catch (channelError) {
-        console.warn('⚠️ Erro ao buscar Channel ID:', channelError);
-      }
-      
-      // Tentar buscar vídeos do canal OnSmart Tech diretamente
-      try {
-        console.log('🔍 Buscando vídeos do canal OnSmart Tech...');
-        const response = await fetch(
-          `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&maxResults=50&order=date&type=video&key=${API_KEY}`
-        );
-        
-        if (response.ok) {
-          const data = await response.json();
-          console.log('📊 Resposta da API:', data);
-          
-          if (data.items && data.items.length > 0) {
-            console.log('✅ Vídeos reais encontrados:', data.items.length);
-            
-            const videos = data.items
-              .filter((video: any) => {
-                const title = video.snippet.title.toLowerCase();
-                return title.includes('onsmart.ai') || title.includes('vibe enterprise');
-              })
-              .map((video: any) => ({
-                id: video.id.videoId,
-                type: 'video',
-                icon: Play,
-                title: video.snippet.title,
-                description: video.snippet.description.substring(0, 150) + '...',
-                duration: 'Vídeo',
-                category: 'videos',
-                subcategory: 'Vídeos',
-                url: `https://www.youtube.com/watch?v=${video.id.videoId}`,
-                thumbnail: video.snippet.thumbnails.medium?.url || video.snippet.thumbnails.default?.url,
-                publishedAt: video.snippet.publishedAt
-              }));
-            
-            console.log('📋 Vídeos reais carregados:', videos.map(v => v.title));
-            return videos;
-          }
-        } else if (response.status === 403) {
-          console.warn('⚠️ Quota da API excedida, usando vídeos de fallback');
-          return fallbackVideos;
-        } else {
-          console.warn('⚠️ Erro na busca por canal ID, tentando busca por nome...');
-        }
-      } catch (channelError) {
-        console.warn('⚠️ Erro ao buscar por canal ID:', channelError);
-      }
-      
-      // Se não conseguir pelo canal ID, tentar busca por nome
-      try {
-        console.log('🔍 Buscando por "OnSmart Tech" ou "onsmarttech"...');
-        const searchTerms = ['OnSmart Tech', 'onsmarttech', 'OnSmart AI', 'onsmart ai'];
-        
-        for (const term of searchTerms) {
-          console.log(`🔍 Tentando busca por: "${term}"`);
-          
-          const response = await fetch(
-            `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(term)}&maxResults=50&order=date&type=video&key=${API_KEY}`
-          );
-          
-          if (response.ok) {
-            const data = await response.json();
-            console.log(`📊 Resultados para "${term}":`, data.items?.length || 0);
-            
-            if (data.items && data.items.length > 0) {
-              // Filtrar vídeos que contenham "onsmart.AI" ou "Vibe Enterprise" no título
-              const filteredVideos = data.items.filter((video: any) => {
-                const title = video.snippet.title.toLowerCase();
-                
-                // Apenas vídeos com "onsmart.ai" ou "vibe enterprise" no título
-                return title.includes('onsmart.ai') || title.includes('vibe enterprise');
-              });
-              
-              if (filteredVideos.length > 0) {
-                console.log(`✅ Vídeos do OnSmart encontrados para "${term}":`, filteredVideos.length);
-                
-                const videos = filteredVideos.map((video: any) => ({
-                  id: video.id.videoId,
-                  type: 'video',
-                  icon: Play,
-                  title: video.snippet.title,
-                  description: video.snippet.description.substring(0, 150) + '...',
-                  duration: 'Vídeo',
-                  category: 'videos',
-                  subcategory: 'Vídeos',
-                  url: `https://www.youtube.com/watch?v=${video.id.videoId}`,
-                  thumbnail: video.snippet.thumbnails.medium?.url || video.snippet.thumbnails.default?.url,
-                  publishedAt: video.snippet.publishedAt
-                }));
-                
-                console.log('📋 Vídeos reais do OnSmart carregados:', videos.map(v => v.title));
-                return videos;
-              }
-            }
-          } else if (response.status === 403) {
-            console.warn('⚠️ Quota da API excedida, usando vídeos de fallback');
-            return fallbackVideos;
-          } else {
-            console.warn(`⚠️ Erro na busca por "${term}":`, response.status);
-          }
-        }
-      } catch (searchError) {
-        console.warn('⚠️ Erro na busca por nome:', searchError);
-      }
-      
-      // Se chegou até aqui, a API não está funcionando ou não encontrou vídeos
-      console.warn('⚠️ Não foi possível carregar vídeos reais, usando vídeos de exemplo');
-      
-      // Retornar vídeos de exemplo como fallback
-      console.log('📺 Usando vídeos de fallback:', fallbackVideos.length);
-      return fallbackVideos;
-      
-    } catch (error) {
-      console.error('❌ Erro geral ao carregar vídeos:', error);
-      return [];
-    }
-  };
 
   // Função para carregar e-books do Google Sheets
   const loadEbooksFromCMS = async () => {
@@ -443,20 +236,18 @@ const Conteudo = () => {
     try {
       console.log('🔄 Iniciando carregamento de todo o conteúdo...');
       
-      const [articles, videos, ebooks, webinars] = await Promise.all([
+      const [articles, ebooks, webinars] = await Promise.all([
         loadArticlesFromCMS(),
-        loadVideosFromAPI(),
         loadEbooksFromCMS(),
         loadWebinarsFromAPI()
       ]);
 
       console.log('📊 Conteúdo carregado:');
       console.log('📄 Artigos:', articles.length);
-      console.log('🎬 Vídeos:', videos.length);
       console.log('📚 E-books:', ebooks.length);
       console.log('🎥 Webinars:', webinars.length);
 
-      const allContent = [...articles, ...videos, ...ebooks, ...webinars];
+      const allContent = [...articles, ...ebooks, ...webinars];
       console.log('📦 Total de conteúdo:', allContent.length);
       
       setContentData(allContent);
@@ -478,11 +269,7 @@ const Conteudo = () => {
   const getContentByCategory = () => {
     const categoryMap: { [key: string]: string[] } = {
       'artigos': ['artigo'],
-      'videos': ['video'],
-      'ebooks': ['ebook'],
-      'templates': ['template'],
-      'checklists': ['checklist'],
-      'calculadoras': ['calculadora']
+      'ebooks': ['ebook']
     };
 
     console.log('🔍 Filtrando conteúdo para categoria:', selectedCategory);
@@ -494,33 +281,18 @@ const Conteudo = () => {
     const contentTypes = categoryMap[selectedCategory] || [];
     filtered = contentData.filter(content => contentTypes.includes(content.type));
     
-    // Para vídeos, aplicar filtro adicional por título
-    if (selectedCategory === 'videos') {
-      filtered = filtered.filter(content => {
-        if (content.type === 'video') {
-          const title = content.title.toLowerCase();
-          return title.includes('onsmart.ai') || title.includes('vibe enterprise');
-        }
-        return true;
-      });
-    }
-    
     console.log('🎯 Conteúdo filtrado:', filtered.length);
     console.log('📋 Conteúdo filtrado por tipo:', filtered.map(c => ({ type: c.type, title: c.title })));
 
-    // Para artigos, e-books e vídeos, mostrar apenas 3 inicialmente
-    if (selectedCategory === 'artigos' || selectedCategory === 'ebooks' || selectedCategory === 'videos') {
+    // Para artigos e e-books, mostrar apenas 3 inicialmente
+    if (selectedCategory === 'artigos' || selectedCategory === 'ebooks') {
       const articles = filtered.filter(content => content.type === 'artigo');
       const ebooks = filtered.filter(content => content.type === 'ebook');
-      const videos = filtered.filter(content => content.type === 'video');
-      const otherContent = filtered.filter(content => content.type !== 'artigo' && content.type !== 'ebook' && content.type !== 'video');
       
       if (selectedCategory === 'artigos') {
         return showAll ? articles : articles.slice(0, 3);
       } else if (selectedCategory === 'ebooks') {
         return showAll ? ebooks : ebooks.slice(0, 3);
-      } else if (selectedCategory === 'videos') {
-        return showAll ? videos : videos.slice(0, 3);
       }
     }
 
@@ -532,11 +304,7 @@ const Conteudo = () => {
   const getCategoryStats = () => {
     const categoryMap: { [key: string]: string[] } = {
       'artigos': ['artigo'],
-      'videos': ['video'],
-      'ebooks': ['ebook'],
-      'templates': ['template'],
-      'checklists': ['checklist'],
-      'calculadoras': ['calculadora']
+      'ebooks': ['ebook']
     };
 
     const stats: { [key: string]: number } = {
@@ -589,7 +357,7 @@ const Conteudo = () => {
                 }} />
                 
                 {/* Stats */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                <div className="grid grid-cols-2 gap-4 max-w-2xl mx-auto">
                   <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 shadow-md border border-gray-200/50 dark:border-gray-700/50">
                     <div className="flex items-center justify-center gap-2 mb-2">
                       <div className="w-8 h-8 bg-gradient-to-br from-brand-blue to-blue-600 rounded-lg flex items-center justify-center">
@@ -610,25 +378,6 @@ const Conteudo = () => {
                     <p className="text-xs text-gray-600 dark:text-gray-400">{t('hero.stats.ebooks')}</p>
                   </div>
                   
-                  <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 shadow-md border border-gray-200/50 dark:border-gray-700/50">
-                    <div className="flex items-center justify-center gap-2 mb-2">
-                      <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-violet-600 rounded-lg flex items-center justify-center">
-                        <Play className="h-4 w-4 text-white" />
-                      </div>
-                      <span className="font-bold text-gray-900 dark:text-gray-100">{stats.videos}+</span>
-                    </div>
-                    <p className="text-xs text-gray-600 dark:text-gray-400">{t('hero.stats.videos')}</p>
-                  </div>
-
-                  <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 shadow-md border border-gray-200/50 dark:border-gray-700/50">
-                    <div className="flex items-center justify-center gap-2 mb-2">
-                      <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-600 rounded-lg flex items-center justify-center">
-                        <Calculator className="h-4 w-4 text-white" />
-                      </div>
-                      <span className="font-bold text-gray-900 dark:text-gray-100">{stats.calculadoras}+</span>
-                    </div>
-                    <p className="text-xs text-gray-600 dark:text-gray-400">{t('hero.stats.tools')}</p>
-                  </div>
                 </div>
               </div>
             </div>
@@ -747,9 +496,7 @@ const Conteudo = () => {
                     key={content.id}
                     className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-md border border-gray-200/50 hover:shadow-lg transition-all duration-300 cursor-pointer group hover:-translate-y-1"
                     onClick={() => {
-                      if (content.type === 'video') {
-                        handleVideoClick(content);
-                      } else if (content.url) {
+                      if (content.url) {
                         window.open(content.url, '_blank', 'noopener,noreferrer');
                       }
                     }}
@@ -802,9 +549,8 @@ const Conteudo = () => {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center text-brand-blue text-sm font-medium group-hover:gap-2 transition-all">
                         <span>
-                          {content.type === 'ebook' || content.type === 'template' || content.type === 'checklist' ? t('actions.download') :
-                           content.type === 'video' || content.type === 'webinar' ? t('actions.watch') :
-                           content.type === 'calculadora' ? t('actions.use') :
+                          {content.type === 'ebook' ? t('actions.download') :
+                           content.type === 'webinar' ? t('actions.watch') :
                            content.type === 'curso' ? t('actions.start') :
                            t('actions.access')}
                         </span>
@@ -813,11 +559,7 @@ const Conteudo = () => {
                       
                       <div className="flex items-center gap-1 text-xs text-gray-500">
                         {content.type === 'ebook' && <Download className="h-3 w-3" />}
-                        {content.type === 'video' && <Video className="h-3 w-3" />}
                         {content.type === 'webinar' && <Calendar className="h-3 w-3" />}
-                        {content.type === 'template' && <FileCheck className="h-3 w-3" />}
-                        {content.type === 'checklist' && <CheckCircle className="h-3 w-3" />}
-                        {content.type === 'calculadora' && <Calculator className="h-3 w-3" />}
                         {content.type === 'curso' && <GraduationCap className="h-3 w-3" />}
                         {content.type === 'case' && <TrendingUp className="h-3 w-3" />}
                         {content.type === 'infografico' && <Image className="h-3 w-3" />}
@@ -825,11 +567,7 @@ const Conteudo = () => {
                         {content.type === 'artigo' && <FileText className="h-3 w-3" />}
                         <span>
                           {content.type === 'ebook' ? t('contentTypes.pdf') :
-                           content.type === 'video' ? t('contentTypes.video') :
                            content.type === 'webinar' ? t('contentTypes.webinar') :
-                           content.type === 'template' ? t('contentTypes.template') :
-                           content.type === 'checklist' ? t('contentTypes.checklist') :
-                           content.type === 'calculadora' ? t('contentTypes.calculator') :
                            content.type === 'curso' ? t('contentTypes.course') :
                            content.type === 'case' ? t('contentTypes.case') :
                            content.type === 'infografico' ? t('contentTypes.infographic') :
@@ -843,17 +581,16 @@ const Conteudo = () => {
                 </div>
               )}
               
-              {/* Botão Mostrar Mais para artigos, e-books e vídeos */}
+              {/* Botão Mostrar Mais para artigos e e-books */}
               {((selectedCategory === 'artigos' && contentData.filter(c => c.type === 'artigo').length > 3) ||
-                (selectedCategory === 'ebooks' && contentData.filter(c => c.type === 'ebook').length > 3) ||
-                (selectedCategory === 'videos' && contentData.filter(c => c.type === 'video').length > 3)) && (
+                (selectedCategory === 'ebooks' && contentData.filter(c => c.type === 'ebook').length > 3)) && (
                 <div className="text-center mt-8">
                   <Button
                     onClick={() => setShowAll(!showAll)}
                     className="bg-gradient-to-r from-brand-blue to-blue-600 hover:from-blue-600 hover:to-brand-blue text-white px-8 py-3"
                   >
                     {showAll ? t('actions.viewLess') : 
-                      `${t('actions.viewMore')} (${selectedCategory === 'artigos' ? contentData.filter(c => c.type === 'artigo').length - 3 : selectedCategory === 'ebooks' ? contentData.filter(c => c.type === 'ebook').length - 3 : contentData.filter(c => c.type === 'video').length - 3} ${t('actions.remaining')})`
+                      `${t('actions.viewMore')} (${selectedCategory === 'artigos' ? contentData.filter(c => c.type === 'artigo').length - 3 : contentData.filter(c => c.type === 'ebook').length - 3} ${t('actions.remaining')})`
                     }
                   </Button>
                 </div>
@@ -971,77 +708,6 @@ const Conteudo = () => {
         </div>
       </div>
 
-      {/* Modal de Vídeo */}
-      {selectedVideo && (
-        <div 
-          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[9999] flex items-center justify-center p-4"
-          onClick={closeVideoModal}
-        >
-          <div 
-            className="relative w-full max-w-6xl bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Header do Modal */}
-            <div className="flex items-center justify-between p-6 border-b border-gray-200 bg-gradient-to-r from-brand-blue to-blue-600">
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                  <Play className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-white text-lg">{t('videoModal.channel')}</h3>
-                  <p className="text-white/80 text-sm">{t('videoModal.official')}</p>
-                </div>
-              </div>
-              <button
-                onClick={closeVideoModal}
-                className="p-2 hover:bg-white/20 rounded-full transition-colors"
-              >
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-
-            {/* Player do YouTube */}
-            <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-              <iframe
-                className="absolute top-0 left-0 w-full h-full"
-                src={`https://www.youtube.com/embed/${getYouTubeVideoId(selectedVideo.url)}?autoplay=1&rel=0&modestbranding=1&showinfo=0`}
-                title={selectedVideo.title}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
-
-            {/* Informações do Vídeo */}
-            <div className="p-6 bg-gray-50 dark:bg-gray-900">
-              <h4 className="font-bold text-gray-900 dark:text-gray-100 text-lg mb-2 line-clamp-2">{selectedVideo.title}</h4>
-              <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-3">{selectedVideo.description}</p>
-              
-              {/* Footer do Modal */}
-              <div className="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center">
-                    <Play className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-900 dark:text-gray-100">{t('videoModal.channel')}</p>
-                    <p className="text-xs text-gray-500 dark:text-gray-400">{t('videoModal.official')}</p>
-                  </div>
-                </div>
-                <button
-                  onClick={() => window.open(selectedVideo.url, '_blank', 'noopener,noreferrer')}
-                  className="px-6 py-2 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-lg transition-colors flex items-center space-x-2"
-                >
-                  <Play className="w-4 h-4" />
-                  <span>{t('videoModal.watchOnYouTube')}</span>
-                </button>
-              </div>
-            </div>
-          </div>
-      </div>
-      )}
     </>
   );
 };

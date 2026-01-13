@@ -1,45 +1,14 @@
 import React from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Download, FileText, Book, Users } from "lucide-react";
+import { Users } from "lucide-react";
 import UnifiedSEO from "@/components/shared/UnifiedSEO";
+import ContentInDevelopment from "@/components/shared/ContentInDevelopment";
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
 const MateriaisGratuitos = () => {
   const { t } = useTranslation(['materiaisGratuitos', 'common']);
   const navigate = useNavigate();
-  
-  const materiais = [
-    {
-      title: t('materials.completeGuide.title'),
-      description: t('materials.completeGuide.description'),
-      icon: Book,
-      downloadUrl: "#",
-      pages: t('materials.completeGuide.pages')
-    },
-    {
-      title: t('materials.implementationChecklist.title'),
-      description: t('materials.implementationChecklist.description'),
-      icon: FileText,
-      downloadUrl: "#",
-      pages: t('materials.implementationChecklist.pages')
-    },
-    {
-      title: t('materials.roiTemplate.title'),
-      description: t('materials.roiTemplate.description'),
-      icon: FileText,
-      downloadUrl: "#",
-      pages: t('materials.roiTemplate.pages')
-    },
-    {
-      title: t('materials.leaderMethodology.title'),
-      description: t('materials.leaderMethodology.description'),
-      icon: Book,
-      downloadUrl: "#",
-      pages: t('materials.leaderMethodology.pages')
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50/30 dark:from-gray-900 dark:via-gray-900 dark:to-gray-900">
@@ -74,72 +43,17 @@ const MateriaisGratuitos = () => {
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
             {t('hero.description')}
           </p>
-          
-          {/* CTA buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
-              className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue hover:from-blue-600 hover:via-brand-blue hover:to-blue-600 text-white px-8 py-3"
-            >
-              <Download className="mr-2 h-5 w-5" />
-              {t('hero.downloadAll')}
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="border-2 border-brand-blue text-brand-blue hover:bg-gradient-to-r hover:from-brand-blue hover:via-blue-600 hover:to-brand-blue hover:text-white hover:border-transparent px-8 py-3"
-            >
-              {t('hero.viewSuccessCases')}
-            </Button>
-          </div>
         </div>
       </section>
 
       {/* Enhanced Materials Grid */}
       <section className="py-20 px-4">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-              {t('specialized.title')}
-            </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              {t('specialized.description')}
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            {materiais.map((material, index) => {
-              const IconComponent = material.icon;
-              return (
-                <Card key={index} className="group hover:shadow-2xl transition-all duration-300 border-0 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm">
-                  <CardHeader className="pb-4">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="p-3 bg-gradient-to-br from-brand-blue/10 to-blue-600/10 rounded-lg group-hover:scale-110 transition-transform duration-300">
-                        <IconComponent className="h-8 w-8 text-brand-blue" />
-                      </div>
-                      <div>
-                        <CardTitle className="text-xl font-bold text-gray-900 dark:text-gray-100 group-hover:text-brand-blue transition-colors">
-                          {material.title}
-                        </CardTitle>
-                        <p className="text-sm text-gray-500 mt-1">{material.pages}</p>
-                      </div>
-                    </div>
-                    <CardDescription className="text-gray-600 text-base leading-relaxed">
-                      {material.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <Button 
-                      className="w-full bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue hover:from-blue-600 hover:via-brand-blue hover:to-blue-600 text-white"
-                    >
-                      <Download className="mr-2 h-4 w-4" />
-                      {t('buttons.download')}
-                    </Button>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
+          <ContentInDevelopment 
+            namespace="materiaisGratuitos"
+            customDescription="Estamos preparando materiais exclusivos como e-books, guias completos, checklists de implementação e templates de ROI para você."
+            customMessage="Em breve você poderá baixar materiais valiosos aqui"
+          />
         </div>
       </section>
 

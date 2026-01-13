@@ -2,8 +2,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { BookOpen, Play, Download, CheckCircle } from 'lucide-react';
+import { BookOpen, CheckCircle, Clock, Sparkles } from 'lucide-react';
 import UnifiedSEO from '@/components/shared/UnifiedSEO';
 
 const IABasico = () => {
@@ -40,15 +39,15 @@ const IABasico = () => {
               {t('hero.subtitle')}
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue hover:from-brand-blue/90 hover:via-blue-600/90 hover:to-brand-blue/90 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-                <Play className="mr-2 h-5 w-5" />
-                {t('hero.buttons.startCourse')}
-              </Button>
-              <Button variant="outline" size="lg" className="border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300">
-                <Download className="mr-2 h-5 w-5" />
-                {t('hero.buttons.downloadMaterial')}
-              </Button>
+            {/* Coming Soon Message */}
+            <div className="inline-flex items-center gap-3 px-6 py-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl border-2 border-brand-blue/30 shadow-lg hover:shadow-xl hover:border-brand-blue/50 hover:scale-105 transition-all duration-300 cursor-default group">
+              <div className="relative">
+                <Clock className="h-6 w-6 text-brand-blue group-hover:rotate-12 transition-transform duration-300" />
+              </div>
+              <span className="text-lg font-semibold text-gray-900 dark:text-gray-100">
+                {t('hero.comingSoon', { defaultValue: 'Curso estará disponível em breve' })}
+              </span>
+              <Sparkles className="h-5 w-5 text-brand-blue group-hover:rotate-12 transition-transform duration-300" />
             </div>
           </div>
         </section>
