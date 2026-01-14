@@ -12,9 +12,12 @@
     "days": "30 days",
     "subtitle": "Join <strong>{{count}}+ companies</strong> that increased <strong>productivity by 420%</strong> with our <strong>exclusive methodology</strong> of AI Agents.",
     "stats": {
-      "companies": "{{count}}+ companies transformed",
-      "increase": "{{percent}}% average increase",
-      "implementation": "{{days}} days implementation"
+      "companies": "companies transformed",
+      "increase": "average increase",
+      "implementation": "days implementation",
+      "companiesValue": "350+",
+      "increaseValue": "420%",
+      "implementationValue": "30"
     },
     "cta": {
       "primary": "Start Transformation Now",
@@ -30,6 +33,50 @@
   "features": {
     "title": "Our Solutions",
     "description": "Custom AI Agents for your company"
+  },
+  "whyAIAgents": {
+    "badge": "Benefits",
+    "title": "Why have AI agents",
+    "titleHighlight": "in your business",
+    "description": "Discover how AI Agents can transform your operations and free your team for strategic activities",
+    "items": [
+      {
+        "icon": "Zap",
+        "title": "Intelligent Automation",
+        "description": "Automate repetitive tasks and complex processes, freeing your team to focus on higher-value strategic activities.",
+        "color": "from-blue-500 to-blue-600"
+      },
+      {
+        "icon": "Clock",
+        "title": "24/7 Availability",
+        "description": "AI Agents work continuously, without needing breaks, ensuring your processes operate at all times.",
+        "color": "from-green-500 to-green-600"
+      },
+      {
+        "icon": "Shield",
+        "title": "Error Reduction",
+        "description": "Minimize human errors through consistent and accurate processing, improving the quality and reliability of operations.",
+        "color": "from-purple-500 to-purple-600"
+      },
+      {
+        "icon": "TrendingUp",
+        "title": "Scalability",
+        "description": "Increase your operational capacity without proportionally increasing costs, adapting quickly to demand.",
+        "color": "from-orange-500 to-orange-600"
+      },
+      {
+        "icon": "Users",
+        "title": "Personalized Experience",
+        "description": "Offer personalized service and solutions for each customer, improving satisfaction and engagement.",
+        "color": "from-red-500 to-red-600"
+      },
+      {
+        "icon": "Brain",
+        "title": "Continuous Learning",
+        "description": "AI Agents learn and adapt over time, continuously improving their performance and results.",
+        "color": "from-indigo-500 to-indigo-600"
+      }
+    ]
   },
   "testimonials": {
     "badge": "Testimonials",

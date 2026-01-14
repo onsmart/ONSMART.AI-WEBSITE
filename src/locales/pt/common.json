@@ -86,6 +86,11 @@
   "theme": {
     "switchToDark": "Alternar para tema escuro",
     "switchToLight": "Alternar para tema claro"
+  },
+  "contentInDevelopment": {
+    "title": "Conteúdo em Desenvolvimento",
+    "description": "Estamos preparando conteúdos exclusivos sobre Growth Marketing, Inteligência Artificial e automação para você.",
+    "message": "Em breve você encontrará insights valiosos aqui"
   }
 }
 

@@ -41,7 +41,7 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({ isActive, isActivePrefix, han
 
   return (
     <nav className="hidden lg:flex relative z-[90] flex max-w-max flex-1 items-center justify-center">
-      <ul className="group flex flex-1 list-none items-center justify-center gap-1.5 sm:gap-2 md:gap-2.5">
+      <ul className="group flex flex-1 list-none items-center justify-center gap-2 sm:gap-2.5 md:gap-3">
         <NavMenuItem
           icon={Home}
           label={t('menu.home')}

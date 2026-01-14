@@ -12,9 +12,12 @@
     "days": "30 días",
     "subtitle": "Únete a las <strong>{{count}}+ empresas</strong> que aumentaron <strong>productividad en 420%</strong> con nuestra <strong>metodología exclusiva</strong> de Agentes de IA.",
     "stats": {
-      "companies": "{{count}}+ empresas transformadas",
-      "increase": "{{percent}}% aumento promedio",
-      "implementation": "{{days}} días implementación"
+      "companies": "empresas transformadas",
+      "increase": "aumento promedio",
+      "implementation": "días implementación",
+      "companiesValue": "350+",
+      "increaseValue": "420%",
+      "implementationValue": "30"
     },
     "cta": {
       "primary": "Comenzar Transformación Ahora",
@@ -30,6 +33,50 @@
   "features": {
     "title": "Nuestras Soluciones",
     "description": "Agentes de IA personalizados para tu empresa"
+  },
+  "whyAIAgents": {
+    "badge": "Beneficios",
+    "title": "Por qué tener agentes de IA",
+    "titleHighlight": "en tu negocio",
+    "description": "Descubre cómo los Agentes de IA pueden transformar tu operación y liberar tu equipo para actividades estratégicas",
+    "items": [
+      {
+        "icon": "Zap",
+        "title": "Automatización Inteligente",
+        "description": "Automatiza tareas repetitivas y procesos complejos, liberando tu equipo para enfocarse en actividades de mayor valor estratégico.",
+        "color": "from-blue-500 to-blue-600"
+      },
+      {
+        "icon": "Clock",
+        "title": "Disponibilidad 24/7",
+        "description": "Los Agentes de IA trabajan continuamente, sin necesidad de pausas, garantizando que tus procesos operen en todos los horarios.",
+        "color": "from-green-500 to-green-600"
+      },
+      {
+        "icon": "Shield",
+        "title": "Reducción de Errores",
+        "description": "Minimiza errores humanos a través de procesamiento consistente y preciso, mejorando la calidad y confiabilidad de las operaciones.",
+        "color": "from-purple-500 to-purple-600"
+      },
+      {
+        "icon": "TrendingUp",
+        "title": "Escalabilidad",
+        "description": "Aumenta tu capacidad operacional sin aumentar proporcionalmente los costos, adaptándote rápidamente a la demanda.",
+        "color": "from-orange-500 to-orange-600"
+      },
+      {
+        "icon": "Users",
+        "title": "Experiencia Personalizada",
+        "description": "Ofrece atención y soluciones personalizadas para cada cliente, mejorando la satisfacción y el compromiso.",
+        "color": "from-red-500 to-red-600"
+      },
+      {
+        "icon": "Brain",
+        "title": "Aprendizaje Continuo",
+        "description": "Los Agentes de IA aprenden y se adaptan con el tiempo, mejorando continuamente su desempeño y resultados.",
+        "color": "from-indigo-500 to-indigo-600"
+      }
+    ]
   },
   "testimonials": {
     "badge": "Testimonios",

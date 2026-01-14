@@ -4,15 +4,6 @@
     "description": "Aprenda os fundamentos da Inteligência Artificial com nosso curso IA Básico. Conceitos essenciais para iniciantes em IA empresarial.",
     "keywords": "curso ia basico, inteligencia artificial iniciantes, fundamentos ia, aprender ia, curso gratuito ia"
   },
-  "hero": {
-    "badge": "onsmartAI University",
-    "title": "IA Básico",
-    "subtitle": "Aprenda os fundamentos da Inteligência Artificial e como ela pode transformar sua empresa",
-    "buttons": {
-      "startCourse": "Começar Curso",
-      "downloadMaterial": "Material PDF"
-    }
-  },
   "curriculum": {
     "title": "Módulos do",
     "titleHighlight": "Curso",
@@ -66,6 +57,16 @@
         "Identificar oportunidades de automação",
         "Calcular ROI de projetos de IA"
       ]
+    }
+  },
+  "hero": {
+    "badge": "onsmartAI University",
+    "title": "IA Básico",
+    "subtitle": "Aprenda os fundamentos da Inteligência Artificial e como ela pode transformar sua empresa",
+    "comingSoon": "Curso estará disponível em breve",
+    "buttons": {
+      "startCourse": "Começar Curso",
+      "downloadMaterial": "Material PDF"
     }
   }
 }

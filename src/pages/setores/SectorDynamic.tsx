@@ -125,139 +125,37 @@ const SectorDynamic: React.FC = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Por que adotar agentes de IA para {t(`setores:sectors.${sector.id}.name`, { defaultValue: sector.name })}?
+              {t('setores:whyAdopt.title', { sector: t(`setores:sectors.${sector.id}.name`, { defaultValue: sector.name }) })}
             </h2>
           </div>
           
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-gray-50 dark:bg-gray-700/50 rounded-xl p-6">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-                {(() => {
-                  switch (sector.id) {
-                    case 'advocacia':
-                      return 'Automação Jurídica Inteligente';
-                    case 'bancos':
-                      return 'Transformação Digital Financeira';
-                    case 'comercio':
-                      return 'Otimização de Operações Comerciais';
-                    case 'industria':
-                      return 'Indústria 4.0 com IA';
-                    case 'saude':
-                      return 'Assistência Médica Inteligente';
-                    case 'telecomunicacoes':
-                      return 'Telecomunicações de Nova Geração';
-                    case 'varejo':
-                      return 'Varejo Inteligente e Personalizado';
-                    case 'setor-imobiliario':
-                      return 'Imobiliária Digital e Eficiente';
-                    default:
-                      return 'Automação Inteligente';
-                  }
-                })()}
+                {t(`setores:whyAdopt.sections.${sector.id}.title`, { defaultValue: 'Automação Inteligente' })}
               </h3>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                {(() => {
-                  switch (sector.id) {
-                    case 'advocacia':
-                      return 'Agentes de IA transformam escritórios de advocacia ao automatizar pesquisas jurídicas, geração de petições e atendimento ao cliente. Eles reduzem drasticamente o tempo gasto em tarefas repetitivas, permitindo que advogados se concentrem em estratégias e casos complexos, aumentando a produtividade e a qualidade do serviço.';
-                    case 'bancos':
-                      return 'No setor bancário, agentes de IA automatizam análise de crédito, detecção de fraudes e atendimento ao cliente. Eles processam grandes volumes de transações em tempo real, identificam padrões suspeitos e oferecem recomendações personalizadas, melhorando a segurança e a experiência do cliente.';
-                    case 'comercio':
-                      return 'Agentes de IA otimizam operações comerciais através da automação de gestão de estoque, previsão de demanda e atendimento ao cliente. Eles analisam tendências de mercado, ajustam preços dinamicamente e personalizam recomendações, resultando em maior eficiência operacional e aumento de vendas.';
-                    case 'industria':
-                      return 'Na indústria, agentes de IA automatizam manutenção preditiva, controle de qualidade e otimização de produção. Eles monitoram equipamentos em tempo real, preveem falhas antes que ocorram e otimizam processos de manufatura, reduzindo custos e aumentando a eficiência produtiva.';
-                    case 'saude':
-                      return 'No setor de saúde, agentes de IA auxiliam em diagnósticos, agendamento de consultas e gestão de prontuários. Eles analisam exames médicos, identificam padrões em sintomas e automatizam processos administrativos, permitindo que profissionais de saúde foquem no cuidado ao paciente.';
-                    case 'telecomunicacoes':
-                      return 'Agentes de IA revolucionam telecomunicações ao automatizar suporte técnico, otimização de redes e análise de tráfego. Eles resolvem problemas de conectividade automaticamente, otimizam a distribuição de banda e personalizam planos de serviço, melhorando a experiência do cliente e reduzindo custos operacionais.';
-                    case 'varejo':
-                      return 'No varejo, agentes de IA personalizam experiências de compra, otimizam precificação e gerenciam inventário. Eles analisam comportamento do consumidor, recomendam produtos relevantes e ajustam estratégias de marketing em tempo real, aumentando conversões e fidelização.';
-                    case 'setor-imobiliario':
-                      return 'Agentes de IA transformam o setor imobiliário automatizando busca de propriedades, qualificação de leads e agendamento de visitas. Eles analisam preferências de clientes, sugerem propriedades compatíveis e automatizam processos de documentação, acelerando vendas e locações.';
-                    default:
-                      return 'Agentes de IA automatizam processos específicos do seu setor, reduzindo custos operacionais e aumentando a eficiência da sua equipe.';
-                  }
-                })()}
+                {t(`setores:whyAdopt.sections.${sector.id}.description`, { defaultValue: 'Agentes de IA automatizam processos específicos do seu setor, reduzindo custos operacionais e aumentando a eficiência da sua equipe.' })}
               </p>
             </div>
             
             <div className="bg-gray-50 dark:bg-gray-700/50 rounded-xl p-6">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-                Benefícios Estratégicos
+                {t('setores:whyAdopt.strategicBenefits.title')}
               </h3>
               <ul className="space-y-3">
                 {(() => {
-                  switch (sector.id) {
-                    case 'advocacia':
-                      return [
-                        'Redução de 75% no tempo de pesquisa jurídica',
-                        'Geração automática de petições em minutos',
-                        'Zero perda de prazos processuais',
-                        'Atendimento ao cliente 24/7 automatizado'
-                      ];
-                    case 'bancos':
-                      return [
-                        'Análise de crédito 10x mais rápida',
-                        'Detecção de fraudes em tempo real',
-                        'Redução de 60% em custos operacionais',
-                        'Experiência do cliente altamente personalizada'
-                      ];
-                    case 'comercio':
-                      return [
-                        'Otimização automática de estoque reduz desperdícios',
-                        'Previsão de demanda com 95% de precisão',
-                        'Aumento de 40% em vendas através de personalização',
-                        'Gestão de preços dinâmica e inteligente'
-                      ];
-                    case 'industria':
-                      return [
-                        'Manutenção preditiva reduz paradas em 80%',
-                        'Controle de qualidade automatizado',
-                        'Otimização de produção aumenta eficiência em 50%',
-                        'Redução de custos operacionais significativa'
-                      ];
-                    case 'saude':
-                      return [
-                        'Auxílio em diagnóstico com maior precisão',
-                        'Agendamento automatizado reduz esperas',
-                        'Gestão de prontuários eletrônicos eficiente',
-                        'Análise de exames em tempo real'
-                      ];
-                    case 'telecomunicacoes':
-                      return [
-                        'Resolução automática de 85% dos problemas técnicos',
-                        'Otimização de rede em tempo real',
-                        'Redução de 50% em chamados de suporte',
-                        'Personalização de planos baseada em uso'
-                      ];
-                    case 'varejo':
-                      return [
-                        'Personalização aumenta conversões em 60%',
-                        'Otimização de precificação em tempo real',
-                        'Gestão inteligente de inventário',
-                        'Recomendações de produtos altamente precisas'
-                      ];
-                    case 'setor-imobiliario':
-                      return [
-                        'Qualificação automática de leads',
-                        'Matching inteligente entre clientes e propriedades',
-                        'Agendamento automatizado de visitas',
-                        'Processamento de documentação 5x mais rápido'
-                      ];
-                    default:
-                      return [
-                        'Aumento significativo na produtividade',
-                        'Redução de custos operacionais',
-                        'Melhoria na qualidade dos processos',
-                        'Escalabilidade sem limites'
-                      ];
-                  }
-                })().map((benefit, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-600 dark:text-gray-300">{benefit}</span>
-                  </li>
-                ))}
+                  const benefits = t(`setores:whyAdopt.sections.${sector.id}.benefits`, { 
+                    returnObjects: true, 
+                    defaultValue: t('setores:whyAdopt.strategicBenefits.default', { returnObjects: true }) 
+                  }) as string[];
+                  return benefits.map((benefit, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-600 dark:text-gray-300">{benefit}</span>
+                    </li>
+                  ));
+                })()}
               </ul>
             </div>
           </div>
@@ -270,32 +168,12 @@ const SectorDynamic: React.FC = () => {
           <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 md:p-12 shadow-xl border border-gray-200 dark:border-gray-700">
             <div className="text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-                {(() => {
-                  const sectorName = t(`setores:sectors.${sector.id}.name`, { defaultValue: sector.name });
-                  switch (sector.id) {
-                    case 'advocacia':
-                      return 'Quer automatizar seu escritório de advocacia com agentes de IA?';
-                    case 'bancos':
-                      return 'Quer automatizar seu banco ou instituição financeira com agentes de IA?';
-                    case 'comercio':
-                      return 'Quer automatizar seu comércio com agentes de IA?';
-                    case 'industria':
-                      return 'Quer automatizar sua indústria com agentes de IA?';
-                    case 'saude':
-                      return 'Quer automatizar sua clínica ou hospital com agentes de IA?';
-                    case 'telecomunicacoes':
-                      return 'Quer automatizar sua empresa de telecomunicações com agentes de IA?';
-                    case 'varejo':
-                      return 'Quer automatizar seu varejo com agentes de IA?';
-                    case 'setor-imobiliario':
-                      return 'Quer automatizar seu setor imobiliário com agentes de IA?';
-                    default:
-                      return `Quer automatizar ${sectorName.toLowerCase()} com agentes de IA?`;
-                  }
-                })()}
+                {t(`setores:whyAdopt.cta.title.${sector.id}`, { 
+                  defaultValue: t('setores:whyAdopt.cta.title.default', { sector: t(`setores:sectors.${sector.id}.name`, { defaultValue: sector.name }) })
+                })}
               </h2>
               <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-                Entre em contato conosco ou marque uma reunião com nosso especialista
+                {t('setores:whyAdopt.cta.subtitle')}
               </p>
               
               <div className="flex justify-center">

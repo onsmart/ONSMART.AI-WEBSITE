@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, memo, useCallback } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -12,19 +12,18 @@ import { scrollToElement } from "@/utils/scrollUtils";
 import LanguageSwitcher from "@/components/shared/LanguageSwitcher";
 import { useTranslation } from "react-i18next";
 
-const Navbar = () => {
+const Navbar = memo(() => {
   const { t } = useTranslation('navigation');
   const location = useLocation();
   const navigate = useNavigate();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   
   // These functions are still needed for backward compatibility with other components
-  const isActive = (path: string) => location.pathname === path;
-  const isActivePrefix = (prefix: string) => location.pathname.startsWith(prefix);
-
+  const isActive = useCallback((path: string) => location.pathname === path, [location.pathname]);
+  const isActivePrefix = useCallback((prefix: string) => location.pathname.startsWith(prefix), [location.pathname]);
 
   // Handle navigation to diagnostico with improved scroll behavior
-  const handleDiagnosticoClick = () => {
+  const handleDiagnosticoClick = useCallback(() => {
     if (location.pathname === "/diagnostico") {
       // If already on diagnostico page, just scroll to form
       scrollToElement('diagnostico-form', '#diagnostico-form-section');
@@ -36,12 +35,12 @@ const Navbar = () => {
         scrollToElement('diagnostico-form', '#diagnostico-form-section');
       }, 300);
     }
-  };
+  }, [location.pathname, navigate]);
 
   // Handle navigation to contato - simple navigation without auto-scroll
-  const handleContatoClick = () => {
+  const handleContatoClick = useCallback(() => {
     navigate("/contato");
-  };
+  }, [navigate]);
 
 
   // Handle potential click outside to close dropdown
@@ -95,12 +94,15 @@ const Navbar = () => {
       <div 
         id="navigation"
         className={cn(
-          "fixed top-0 z-[100] w-full bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-md py-0 border-b border-gray-200/50 dark:border-gray-800/50 transition-all duration-300"
+          "fixed top-0 z-[100] w-full bg-white dark:bg-gray-900 shadow-lg border-b border-gray-200 dark:border-gray-800 transition-all duration-300"
         )}
+        style={{
+          boxShadow: '0 4px 20px -2px rgba(121, 185, 234, 0.08), 0 2px 8px -2px rgba(12, 13, 14, 0.04)'
+        }}
         role="banner"
         aria-label={t('menu.navigationLabel')}
       >
-        <div className="w-full flex items-center justify-between px-2 sm:px-4 md:px-6 lg:px-8 xl:px-12 py-3 gap-2 sm:gap-3 md:gap-4">
+        <div className="w-full flex items-center justify-between px-3 sm:px-5 md:px-6 lg:px-10 xl:px-16 py-3.5 gap-2 sm:gap-3 md:gap-4">
           {/* Logo - Esquerda */}
           <div className="flex-shrink-0">
             <Logo />
@@ -134,7 +136,10 @@ const Navbar = () => {
             
             {/* Botão CTA - Ícone apenas em tablet, ícone+texto em desktop */}
             <Button 
-              className="hidden md:flex bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-500 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl border-0 transition-all duration-300 hover:scale-105 whitespace-nowrap px-4 py-2"
+              className="hidden md:flex bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-500 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl border-0 transition-all duration-200 hover:scale-105 active:scale-95 whitespace-nowrap px-5 py-2.5"
+              style={{
+                boxShadow: '0 4px 14px -2px rgba(249, 115, 22, 0.4), 0 2px 6px -2px rgba(249, 115, 22, 0.2)'
+              }}
               onClick={handleDiagnosticoClick}
               aria-label={t('menu.scheduleDiagnosticAria')}
             >
@@ -150,6 +155,8 @@ const Navbar = () => {
 
     </>
   );
-};
+});
+
+Navbar.displayName = 'Navbar';
 
 export default Navbar;

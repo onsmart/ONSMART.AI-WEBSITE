@@ -60,5 +60,10 @@
     "title": "Ready to Implement AI?",
     "subtitle": "Talk to our specialists and transform your company with AI",
     "button": "Talk to Specialist"
+  },
+  "contentInDevelopment": {
+    "title": "Content in Development",
+    "description": "We are developing exclusive tools such as ROI calculators, digital maturity assessors, productivity simulators and automation planners for you.",
+    "message": "Soon you will have access to valuable tools here"
   }
 }

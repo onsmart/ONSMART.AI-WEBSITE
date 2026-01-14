@@ -51,8 +51,6 @@ const MateriaisGratuitos = () => {
         <div className="max-w-5xl mx-auto">
           <ContentInDevelopment 
             namespace="materiaisGratuitos"
-            customDescription="Estamos preparando materiais exclusivos como e-books, guias completos, checklists de implementação e templates de ROI para você."
-            customMessage="Em breve você poderá baixar materiais valiosos aqui"
           />
         </div>
       </section>
@@ -91,7 +89,7 @@ const MateriaisGratuitos = () => {
           </p>
           
           {/* CTA buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex justify-center">
             <Button 
               size="lg" 
               className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue hover:from-blue-600 hover:via-brand-blue hover:to-blue-600 text-white px-8 py-3"
@@ -99,13 +97,6 @@ const MateriaisGratuitos = () => {
             >
               <Users className="mr-2 h-5 w-5" />
               {t('exclusive.scheduleDiagnostic')}
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-gray-900 px-8 py-3"
-            >
-              {t('exclusive.viewAllMaterials')}
             </Button>
           </div>
         </div>

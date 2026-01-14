@@ -55,5 +55,10 @@
     "title": "Pronto para Implementar IA?",
     "subtitle": "Fale com nossos especialistas e transforme sua empresa com IA",
     "button": "Falar com Especialista"
+  },
+  "contentInDevelopment": {
+    "title": "Conteúdo em Desenvolvimento",
+    "description": "Estamos desenvolvendo ferramentas exclusivas como calculadoras de ROI, avaliadores de maturidade digital, simuladores de produtividade e planejadores de automação para você.",
+    "message": "Em breve você terá acesso a ferramentas valiosas aqui"
   }
 }

@@ -72,6 +72,11 @@
     "description": "Accede a materiales exclusivos y acelera tu viaje de transformación digital con IA",
     "scheduleDiagnostic": "Agendar Diagnóstico",
     "viewAllMaterials": "Ver Todos los Materiales"
+  },
+  "contentInDevelopment": {
+    "title": "Contenido en Desarrollo",
+    "description": "Estamos preparando materiales exclusivos como e-books, guías completas, listas de verificación de implementación y plantillas de ROI para usted.",
+    "message": "Pronto podrá descargar materiales valiosos aquí"
   }
 }
 

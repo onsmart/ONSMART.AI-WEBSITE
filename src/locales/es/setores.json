@@ -410,5 +410,113 @@
       "title": "Transforme el sector de {{sector}} con Inteligencia Artificial",
       "subtitle": "Agende un diagnóstico gratuito y descubra cómo la IA puede revolucionar sus resultados."
     }
+  },
+  "whyAdopt": {
+    "title": "¿Por qué adoptar agentes de IA para {{sector}}?",
+    "sections": {
+      "advocacia": {
+        "title": "Automatización Legal Inteligente",
+        "description": "Los agentes de IA transforman los bufetes de abogados al automatizar investigaciones legales, generación de documentos y atención al cliente. Reducen drásticamente el tiempo dedicado a tareas repetitivas, permitiendo que los abogados se concentren en estrategias y casos complejos, aumentando la productividad y la calidad del servicio.",
+        "benefits": [
+          "Reducción del 75% en el tiempo de investigación legal",
+          "Generación automática de documentos en minutos",
+          "Cero pérdida de plazos procesales",
+          "Atención al cliente 24/7 automatizada"
+        ]
+      },
+      "bancos": {
+        "title": "Transformación Digital Financiera",
+        "description": "En el sector bancario, los agentes de IA automatizan análisis de crédito, detección de fraudes y atención al cliente. Procesan grandes volúmenes de transacciones en tiempo real, identifican patrones sospechosos y ofrecen recomendaciones personalizadas, mejorando la seguridad y la experiencia del cliente.",
+        "benefits": [
+          "Análisis de crédito 10x más rápido",
+          "Detección de fraudes en tiempo real",
+          "Reducción del 60% en costos operativos",
+          "Experiencia del cliente altamente personalizada"
+        ]
+      },
+      "comercio": {
+        "title": "Optimización de Operaciones Comerciales",
+        "description": "Los agentes de IA optimizan las operaciones comerciales mediante la automatización de gestión de inventario, pronóstico de demanda y atención al cliente. Analizan tendencias del mercado, ajustan precios dinámicamente y personalizan recomendaciones, resultando en mayor eficiencia operativa y aumento de ventas.",
+        "benefits": [
+          "Optimización automática de inventario reduce desperdicios",
+          "Pronóstico de demanda con 95% de precisión",
+          "Aumento del 40% en ventas a través de personalización",
+          "Gestión de precios dinámica e inteligente"
+        ]
+      },
+      "industria": {
+        "title": "Industria 4.0 con IA",
+        "description": "En la industria, los agentes de IA automatizan mantenimiento predictivo, control de calidad y optimización de producción. Monitorean equipos en tiempo real, predicen fallas antes de que ocurran y optimizan procesos de manufactura, reduciendo costos y aumentando la eficiencia productiva.",
+        "benefits": [
+          "Mantenimiento predictivo reduce paradas en 80%",
+          "Control de calidad automatizado",
+          "Optimización de producción aumenta eficiencia en 50%",
+          "Reducción significativa de costos operativos"
+        ]
+      },
+      "saude": {
+        "title": "Asistencia Médica Inteligente",
+        "description": "En el sector de salud, los agentes de IA ayudan en diagnósticos, programación de citas y gestión de historiales médicos. Analizan exámenes médicos, identifican patrones en síntomas y automatizan procesos administrativos, permitiendo que los profesionales de salud se enfoquen en el cuidado del paciente.",
+        "benefits": [
+          "Asistencia en diagnóstico con mayor precisión",
+          "Programación automatizada reduce esperas",
+          "Gestión eficiente de historiales médicos electrónicos",
+          "Análisis de exámenes en tiempo real"
+        ]
+      },
+      "telecomunicacoes": {
+        "title": "Telecomunicaciones de Nueva Generación",
+        "description": "Los agentes de IA revolucionan las telecomunicaciones al automatizar soporte técnico, optimización de redes y análisis de tráfico. Resuelven problemas de conectividad automáticamente, optimizan la distribución de ancho de banda y personalizan planes de servicio, mejorando la experiencia del cliente y reduciendo costos operativos.",
+        "benefits": [
+          "Resolución automática del 85% de los problemas técnicos",
+          "Optimización de red en tiempo real",
+          "Reducción del 50% en llamadas de soporte",
+          "Personalización de planes basada en uso"
+        ]
+      },
+      "varejo": {
+        "title": "Retail Inteligente y Personalizado",
+        "description": "En el retail, los agentes de IA personalizan experiencias de compra, optimizan precios y gestionan inventario. Analizan comportamiento del consumidor, recomiendan productos relevantes y ajustan estrategias de marketing en tiempo real, aumentando conversiones y fidelización.",
+        "benefits": [
+          "La personalización aumenta conversiones en 60%",
+          "Optimización de precios en tiempo real",
+          "Gestión inteligente de inventario",
+          "Recomendaciones de productos altamente precisas"
+        ]
+      },
+      "setor-imobiliario": {
+        "title": "Inmobiliaria Digital y Eficiente",
+        "description": "Los agentes de IA transforman el sector inmobiliario automatizando búsqueda de propiedades, calificación de leads y programación de visitas. Analizan preferencias de clientes, sugieren propiedades compatibles y automatizan procesos de documentación, acelerando ventas y alquileres.",
+        "benefits": [
+          "Calificación automática de leads",
+          "Emparejamiento inteligente entre clientes y propiedades",
+          "Programación automatizada de visitas",
+          "Procesamiento de documentación 5x más rápido"
+        ]
+      }
+    },
+    "strategicBenefits": {
+      "title": "Beneficios Estratégicos",
+      "default": [
+        "Aumento significativo en la productividad",
+        "Reducción de costos operativos",
+        "Mejora en la calidad de los procesos",
+        "Escalabilidad sin límites"
+      ]
+    },
+    "cta": {
+      "title": {
+        "advocacia": "¿Quiere automatizar su bufete de abogados con agentes de IA?",
+        "bancos": "¿Quiere automatizar su banco o institución financiera con agentes de IA?",
+        "comercio": "¿Quiere automatizar su comercio con agentes de IA?",
+        "industria": "¿Quiere automatizar su industria con agentes de IA?",
+        "saude": "¿Quiere automatizar su clínica u hospital con agentes de IA?",
+        "telecomunicacoes": "¿Quiere automatizar su empresa de telecomunicaciones con agentes de IA?",
+        "varejo": "¿Quiere automatizar su retail con agentes de IA?",
+        "setor-imobiliario": "¿Quiere automatizar su sector inmobiliario con agentes de IA?",
+        "default": "¿Quiere automatizar {{sector}} con agentes de IA?"
+      },
+      "subtitle": "Contáctenos o programe una reunión con nuestro especialista"
+    }
   }
 }

@@ -148,13 +148,13 @@ const HeroSection = ({ handleContactClick, handleLearnMoreClick }: HeroSectionPr
           {/* Stats minimalistas */}
           <div className="flex flex-wrap justify-center gap-6 sm:gap-8 max-w-3xl mx-auto mb-8 sm:mb-10 text-sm sm:text-base text-gray-600 dark:text-gray-300">
             <div className="text-center">
-              <span className="font-bold text-brand-blue">350+</span> {t('hero.stats.companies', { count: 350 })}
+              <span className="font-bold text-brand-blue">{t('hero.stats.companiesValue')}</span> {t('hero.stats.companies')}
             </div>
             <div className="text-center">
-              <span className="font-bold text-green-600">420%</span> {t('hero.stats.increase', { percent: 420 })}
+              <span className="font-bold text-green-600">{t('hero.stats.increaseValue')}</span> {t('hero.stats.increase')}
             </div>
             <div className="text-center">
-              <span className="font-bold text-orange-600">30</span> {t('hero.stats.implementation', { days: 30 })}
+              <span className="font-bold text-orange-600">{t('hero.stats.implementationValue')}</span> {t('hero.stats.implementation')}
             </div>
           </div>
           

@@ -15,7 +15,7 @@ import ROICalculator from "@/components/home/ROICalculator";
 // Non-critical components - lazy load (simplified approach)
 const FeaturesTabs = lazy(() => import("@/components/home/FeaturesTabs"));
 const ResultsCarousel = lazy(() => import("@/components/home/ResultsCarousel"));
-const Testimonials = lazy(() => import("@/components/shared/Testimonials"));
+const WhyAIAgents = lazy(() => import("@/components/shared/WhyAIAgents"));
 const FAQ = lazy(() => import("@/components/home/FAQ"));
 
 const ComponentFallback = () => (
@@ -77,9 +77,9 @@ const Index = () => {
             <ROICalculator />
           </div>
           
-          {/* Only essential social proof */}
+          {/* Why AI Agents Section */}
           <Suspense fallback={<ComponentFallback />}>
-            <Testimonials />
+            <WhyAIAgents />
           </Suspense>
           
           {/* Essential FAQ for conversion */}

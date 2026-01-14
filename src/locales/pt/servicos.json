@@ -773,5 +773,91 @@
     "month5": "Mês 5",
     "certified": "Certificados",
     "chartNotAvailable": "Gráfico não disponível"
+  },
+  "whyAdopt": {
+    "title": "Por que adotar agentes de IA para {{service}}?",
+    "sections": {
+      "diagnostico": {
+        "title": "Automatização Inteligente de Análises",
+        "description": "Nossos agentes de IA realizam diagnósticos automatizados e contínuos, identificando oportunidades de melhoria em tempo real. Eles analisam processos, dados e métricas de desempenho, fornecendo insights acionáveis sem intervenção manual constante.",
+        "benefits": [
+          "Redução de até 80% no tempo de análise de processos",
+          "Identificação automática de gargalos e oportunidades",
+          "Relatórios detalhados gerados automaticamente",
+          "Monitoramento contínuo sem necessidade de intervenção manual"
+        ]
+      },
+      "aceleracao": {
+        "title": "Aceleração Estratégica de Implementação",
+        "description": "Agentes de IA aceleram significativamente a adoção de IA na sua empresa, automatizando processos de onboarding, treinamento e suporte. Eles garantem que sua equipe esteja sempre atualizada e preparada para utilizar as novas tecnologias de forma eficiente.",
+        "benefits": [
+          "Redução de 60% no tempo de adoção de novas tecnologias",
+          "Onboarding automatizado e personalizado para cada usuário",
+          "Suporte contínuo durante toda a jornada de transformação",
+          "Métricas de adoção em tempo real"
+        ]
+      },
+      "implementacao": {
+        "title": "Implementação Técnica Otimizada",
+        "description": "A implementação técnica se torna mais rápida e precisa com agentes de IA. Eles automatizam configurações, testes e validações, reduzindo erros humanos e garantindo que todas as integrações sejam feitas corretamente desde o primeiro momento.",
+        "benefits": [
+          "Implementação 3x mais rápida que métodos tradicionais",
+          "Redução de 90% em erros de configuração",
+          "Testes automatizados garantem qualidade desde o início",
+          "Documentação técnica gerada automaticamente"
+        ]
+      },
+      "treinamento": {
+        "title": "Treinamento Personalizado e Contínuo",
+        "description": "Agentes de IA oferecem treinamento personalizado e adaptativo para cada membro da equipe. Eles identificam lacunas de conhecimento, criam conteúdos personalizados e acompanham o progresso, garantindo que todos dominem as ferramentas de IA.",
+        "benefits": [
+          "Treinamento personalizado baseado no perfil de cada usuário",
+          "Aumento de 70% na retenção de conhecimento",
+          "Acompanhamento contínuo do progresso individual",
+          "Conteúdo atualizado automaticamente conforme novas funcionalidades"
+        ]
+      },
+      "suporte": {
+        "title": "Suporte Proativo 24/7",
+        "description": "Com agentes de IA, você tem suporte contínuo e proativo. Eles monitoram sistemas, identificam problemas antes que se tornem críticos, resolvem questões automaticamente e escalam apenas quando necessário, garantindo máxima disponibilidade.",
+        "benefits": [
+          "Disponibilidade 24/7 sem custos adicionais de equipe",
+          "Resolução automática de 85% dos problemas comuns",
+          "Alertas proativos antes que problemas se tornem críticos",
+          "Histórico completo de interações para análise contínua"
+        ]
+      },
+      "analise": {
+        "title": "Análise de Dados em Tempo Real",
+        "description": "Agentes de IA transformam a análise de dados em um processo contínuo e automatizado. Eles processam grandes volumes de informação, identificam padrões, geram relatórios e alertas em tempo real, permitindo decisões mais rápidas e baseadas em dados.",
+        "benefits": [
+          "Processamento de dados em tempo real 24/7",
+          "Identificação automática de tendências e anomalias",
+          "Relatórios executivos gerados automaticamente",
+          "Integração com múltiplas fontes de dados simultaneamente"
+        ]
+      }
+    },
+    "strategicBenefits": {
+      "title": "Benefícios Estratégicos",
+      "default": [
+        "Aumento significativo na produtividade",
+        "Redução de custos operacionais",
+        "Melhoria na qualidade dos processos",
+        "Escalabilidade sem limites"
+      ]
+    },
+    "cta": {
+      "title": {
+        "diagnostico": "Quer automatizar o diagnóstico de IA da sua empresa com agentes de IA?",
+        "aceleracao": "Quer acelerar a adoção de IA na sua empresa com agentes de IA?",
+        "implementacao": "Quer automatizar a implementação técnica de IA com agentes de IA?",
+        "treinamento": "Quer automatizar o treinamento de IA da sua equipe com agentes de IA?",
+        "suporte": "Quer automatizar o suporte contínuo de IA com agentes de IA?",
+        "analise": "Quer automatizar a análise de dados da sua empresa com agentes de IA?",
+        "default": "Quer automatizar {{service}} com agentes de IA?"
+      },
+      "subtitle": "Entre em contato conosco ou marque uma reunião com nosso especialista"
+    }
   }
 }

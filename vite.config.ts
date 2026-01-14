@@ -29,23 +29,56 @@ export default defineConfig(({ mode }) => ({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
+        manualChunks: (id) => {
           // Core React - keep together for better caching
-          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+          if (id.includes('node_modules/react') || id.includes('node_modules/react-dom') || id.includes('node_modules/react-router')) {
+            return 'vendor-react';
+          }
           
-          // UI essentials - bundle together for faster loading
-          'vendor-ui': [
-            '@radix-ui/react-dialog', 
-            '@radix-ui/react-slot',
-            '@radix-ui/react-select',
-            'lucide-react'
-          ],
+          // Radix UI components - bundle together
+          if (id.includes('node_modules/@radix-ui')) {
+            return 'vendor-radix';
+          }
+          
+          // UI essentials
+          if (id.includes('node_modules/lucide-react')) {
+            return 'vendor-icons';
+          }
           
           // Forms - only when needed
-          'vendor-forms': ['react-hook-form', '@hookform/resolvers', 'zod'],
+          if (id.includes('node_modules/react-hook-form') || id.includes('node_modules/@hookform') || id.includes('node_modules/zod')) {
+            return 'vendor-forms';
+          }
           
           // Utils - lightweight
-          'vendor-utils': ['date-fns', 'clsx', 'tailwind-merge', 'lodash-es']
+          if (id.includes('node_modules/date-fns') || id.includes('node_modules/clsx') || id.includes('node_modules/tailwind-merge') || id.includes('node_modules/lodash')) {
+            return 'vendor-utils';
+          }
+          
+          // i18n
+          if (id.includes('node_modules/i18next') || id.includes('node_modules/react-i18next')) {
+            return 'vendor-i18n';
+          }
+          
+          // Analytics and monitoring
+          if (id.includes('node_modules/react-ga4') || id.includes('node_modules/web-vitals')) {
+            return 'vendor-analytics';
+          }
+          
+          // Produtos pages - chunk separado para melhor code splitting
+          if (id.includes('/pages/produtos/')) {
+            return 'pages-produtos';
+          }
+          
+          // Soluções pages - chunk separado
+          if (id.includes('/pages/solucoes/')) {
+            return 'pages-solucoes';
+          }
+          
+          // Outras páginas menos críticas
+          if (id.includes('/pages/') && !id.includes('/pages/Index') && !id.includes('/pages/Servicos') && !id.includes('/pages/Contato')) {
+            return 'pages-other';
+          }
         },
         // Ensure favicon is copied correctly
         assetFileNames: (assetInfo) => {

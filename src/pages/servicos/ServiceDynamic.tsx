@@ -126,117 +126,36 @@ const ServiceDynamic: React.FC = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Por que adotar agentes de IA para {serviceTranslations?.title || service.name}?
+              {t('whyAdopt.title', { service: serviceTranslations?.title || service.name })}
             </h2>
           </div>
           
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-gray-50 dark:bg-gray-700/50 rounded-xl p-6">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-                {(() => {
-                  switch (serviceKey) {
-                    case 'diagnostico':
-                      return 'Automatização Inteligente de Análises';
-                    case 'aceleracao':
-                      return 'Aceleração Estratégica de Implementação';
-                    case 'implementacao':
-                      return 'Implementação Técnica Otimizada';
-                    case 'treinamento':
-                      return 'Treinamento Personalizado e Contínuo';
-                    case 'suporte':
-                      return 'Suporte Proativo 24/7';
-                    case 'analise':
-                      return 'Análise de Dados em Tempo Real';
-                    default:
-                      return 'Automação Inteligente';
-                  }
-                })()}
+                {serviceKey ? t(`whyAdopt.sections.${serviceKey}.title`, { defaultValue: 'Automação Inteligente' }) : 'Automação Inteligente'}
               </h3>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                {(() => {
-                  switch (serviceKey) {
-                    case 'diagnostico':
-                      return 'Nossos agentes de IA realizam diagnósticos automatizados e contínuos, identificando oportunidades de melhoria em tempo real. Eles analisam processos, dados e métricas de desempenho, fornecendo insights acionáveis sem intervenção manual constante.';
-                    case 'aceleracao':
-                      return 'Agentes de IA aceleram significativamente a adoção de IA na sua empresa, automatizando processos de onboarding, treinamento e suporte. Eles garantem que sua equipe esteja sempre atualizada e preparada para utilizar as novas tecnologias de forma eficiente.';
-                    case 'implementacao':
-                      return 'A implementação técnica se torna mais rápida e precisa com agentes de IA. Eles automatizam configurações, testes e validações, reduzindo erros humanos e garantindo que todas as integrações sejam feitas corretamente desde o primeiro momento.';
-                    case 'treinamento':
-                      return 'Agentes de IA oferecem treinamento personalizado e adaptativo para cada membro da equipe. Eles identificam lacunas de conhecimento, criam conteúdos personalizados e acompanham o progresso, garantindo que todos dominem as ferramentas de IA.';
-                    case 'suporte':
-                      return 'Com agentes de IA, você tem suporte contínuo e proativo. Eles monitoram sistemas, identificam problemas antes que se tornem críticos, resolvem questões automaticamente e escalam apenas quando necessário, garantindo máxima disponibilidade.';
-                    case 'analise':
-                      return 'Agentes de IA transformam a análise de dados em um processo contínuo e automatizado. Eles processam grandes volumes de informação, identificam padrões, geram relatórios e alertas em tempo real, permitindo decisões mais rápidas e baseadas em dados.';
-                    default:
-                      return 'Agentes de IA automatizam processos complexos, reduzindo custos operacionais e aumentando a eficiência da sua equipe.';
-                  }
-                })()}
+                {serviceKey ? t(`whyAdopt.sections.${serviceKey}.description`, { defaultValue: 'Agentes de IA automatizam processos complexos, reduzindo custos operacionais e aumentando a eficiência da sua equipe.' }) : 'Agentes de IA automatizam processos complexos, reduzindo custos operacionais e aumentando a eficiência da sua equipe.'}
               </p>
             </div>
             
             <div className="bg-gray-50 dark:bg-gray-700/50 rounded-xl p-6">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-                Benefícios Estratégicos
+                {t('whyAdopt.strategicBenefits.title')}
               </h3>
               <ul className="space-y-3">
                 {(() => {
-                  switch (serviceKey) {
-                    case 'diagnostico':
-                      return [
-                        'Redução de até 80% no tempo de análise de processos',
-                        'Identificação automática de gargalos e oportunidades',
-                        'Relatórios detalhados gerados automaticamente',
-                        'Monitoramento contínuo sem necessidade de intervenção manual'
-                      ];
-                    case 'aceleracao':
-                      return [
-                        'Redução de 60% no tempo de adoção de novas tecnologias',
-                        'Onboarding automatizado e personalizado para cada usuário',
-                        'Suporte contínuo durante toda a jornada de transformação',
-                        'Métricas de adoção em tempo real'
-                      ];
-                    case 'implementacao':
-                      return [
-                        'Implementação 3x mais rápida que métodos tradicionais',
-                        'Redução de 90% em erros de configuração',
-                        'Testes automatizados garantem qualidade desde o início',
-                        'Documentação técnica gerada automaticamente'
-                      ];
-                    case 'treinamento':
-                      return [
-                        'Treinamento personalizado baseado no perfil de cada usuário',
-                        'Aumento de 70% na retenção de conhecimento',
-                        'Acompanhamento contínuo do progresso individual',
-                        'Conteúdo atualizado automaticamente conforme novas funcionalidades'
-                      ];
-                    case 'suporte':
-                      return [
-                        'Disponibilidade 24/7 sem custos adicionais de equipe',
-                        'Resolução automática de 85% dos problemas comuns',
-                        'Alertas proativos antes que problemas se tornem críticos',
-                        'Histórico completo de interações para análise contínua'
-                      ];
-                    case 'analise':
-                      return [
-                        'Processamento de dados em tempo real 24/7',
-                        'Identificação automática de tendências e anomalias',
-                        'Relatórios executivos gerados automaticamente',
-                        'Integração com múltiplas fontes de dados simultaneamente'
-                      ];
-                    default:
-                      return [
-                        'Aumento significativo na produtividade',
-                        'Redução de custos operacionais',
-                        'Melhoria na qualidade dos processos',
-                        'Escalabilidade sem limites'
-                      ];
-                  }
-                })().map((benefit, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-600 dark:text-gray-300">{benefit}</span>
-                  </li>
-                ))}
+                  const benefits = serviceKey 
+                    ? (t(`whyAdopt.sections.${serviceKey}.benefits`, { returnObjects: true }) as string[])
+                    : (t('whyAdopt.strategicBenefits.default', { returnObjects: true }) as string[]);
+                  return benefits.map((benefit, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-600 dark:text-gray-300">{benefit}</span>
+                    </li>
+                  ));
+                })()}
               </ul>
             </div>
           </div>
@@ -249,28 +168,15 @@ const ServiceDynamic: React.FC = () => {
           <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 md:p-12 shadow-xl border border-gray-200 dark:border-gray-700">
             <div className="text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-                {(() => {
-                  const serviceName = serviceTranslations?.title || service.name;
-                  switch (serviceKey) {
-                    case 'diagnostico':
-                      return 'Quer automatizar o diagnóstico de IA da sua empresa com agentes de IA?';
-                    case 'aceleracao':
-                      return 'Quer acelerar a adoção de IA na sua empresa com agentes de IA?';
-                    case 'implementacao':
-                      return 'Quer automatizar a implementação técnica de IA com agentes de IA?';
-                    case 'treinamento':
-                      return 'Quer automatizar o treinamento de IA da sua equipe com agentes de IA?';
-                    case 'suporte':
-                      return 'Quer automatizar o suporte contínuo de IA com agentes de IA?';
-                    case 'analise':
-                      return 'Quer automatizar a análise de dados da sua empresa com agentes de IA?';
-                    default:
-                      return `Quer automatizar ${serviceName.toLowerCase()} com agentes de IA?`;
-                  }
-                })()}
+                {serviceKey 
+                  ? t(`whyAdopt.cta.title.${serviceKey}`, { 
+                      defaultValue: t('whyAdopt.cta.title.default', { service: serviceTranslations?.title || service.name })
+                    })
+                  : t('whyAdopt.cta.title.default', { service: serviceTranslations?.title || service.name })
+                }
               </h2>
               <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-                Entre em contato conosco ou marque uma reunião com nosso especialista
+                {t('whyAdopt.cta.subtitle')}
               </p>
               
               <div className="flex justify-center">

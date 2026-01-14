@@ -773,5 +773,91 @@
     "month5": "Month 5",
     "certified": "Certified",
     "chartNotAvailable": "Chart not available"
+  },
+  "whyAdopt": {
+    "title": "Why adopt AI agents for {{service}}?",
+    "sections": {
+      "diagnostico": {
+        "title": "Intelligent Analysis Automation",
+        "description": "Our AI agents perform automated and continuous diagnostics, identifying improvement opportunities in real-time. They analyze processes, data, and performance metrics, providing actionable insights without constant manual intervention.",
+        "benefits": [
+          "Up to 80% reduction in process analysis time",
+          "Automatic identification of bottlenecks and opportunities",
+          "Detailed reports generated automatically",
+          "Continuous monitoring without manual intervention"
+        ]
+      },
+      "aceleracao": {
+        "title": "Strategic Implementation Acceleration",
+        "description": "AI agents significantly accelerate AI adoption in your company by automating onboarding, training, and support processes. They ensure your team is always up-to-date and prepared to use new technologies efficiently.",
+        "benefits": [
+          "60% reduction in time to adopt new technologies",
+          "Automated and personalized onboarding for each user",
+          "Continuous support throughout the transformation journey",
+          "Real-time adoption metrics"
+        ]
+      },
+      "implementacao": {
+        "title": "Optimized Technical Implementation",
+        "description": "Technical implementation becomes faster and more accurate with AI agents. They automate configurations, tests, and validations, reducing human errors and ensuring all integrations are done correctly from the start.",
+        "benefits": [
+          "Implementation 3x faster than traditional methods",
+          "90% reduction in configuration errors",
+          "Automated tests ensure quality from the start",
+          "Technical documentation generated automatically"
+        ]
+      },
+      "treinamento": {
+        "title": "Personalized and Continuous Training",
+        "description": "AI agents offer personalized and adaptive training for each team member. They identify knowledge gaps, create personalized content, and track progress, ensuring everyone masters AI tools.",
+        "benefits": [
+          "Personalized training based on each user's profile",
+          "70% increase in knowledge retention",
+          "Continuous tracking of individual progress",
+          "Content automatically updated with new features"
+        ]
+      },
+      "suporte": {
+        "title": "Proactive 24/7 Support",
+        "description": "With AI agents, you have continuous and proactive support. They monitor systems, identify problems before they become critical, automatically resolve issues, and escalate only when necessary, ensuring maximum availability.",
+        "benefits": [
+          "24/7 availability without additional team costs",
+          "Automatic resolution of 85% of common problems",
+          "Proactive alerts before problems become critical",
+          "Complete interaction history for continuous analysis"
+        ]
+      },
+      "analise": {
+        "title": "Real-Time Data Analysis",
+        "description": "AI agents transform data analysis into a continuous and automated process. They process large volumes of information, identify patterns, generate reports and alerts in real-time, enabling faster, data-driven decisions.",
+        "benefits": [
+          "24/7 real-time data processing",
+          "Automatic identification of trends and anomalies",
+          "Executive reports generated automatically",
+          "Integration with multiple data sources simultaneously"
+        ]
+      }
+    },
+    "strategicBenefits": {
+      "title": "Strategic Benefits",
+      "default": [
+        "Significant increase in productivity",
+        "Reduction in operational costs",
+        "Improvement in process quality",
+        "Unlimited scalability"
+      ]
+    },
+    "cta": {
+      "title": {
+        "diagnostico": "Want to automate your company's AI diagnostics with AI agents?",
+        "aceleracao": "Want to accelerate AI adoption in your company with AI agents?",
+        "implementacao": "Want to automate AI technical implementation with AI agents?",
+        "treinamento": "Want to automate your team's AI training with AI agents?",
+        "suporte": "Want to automate continuous AI support with AI agents?",
+        "analise": "Want to automate your company's data analysis with AI agents?",
+        "default": "Want to automate {{service}} with AI agents?"
+      },
+      "subtitle": "Contact us or schedule a meeting with our specialist"
+    }
   }
 }

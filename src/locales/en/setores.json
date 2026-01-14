@@ -410,5 +410,113 @@
       "title": "Transform the {{sector}} sector with Artificial Intelligence",
       "subtitle": "Schedule a free diagnostic and discover how AI can revolutionize your results."
     }
+  },
+  "whyAdopt": {
+    "title": "Why adopt AI agents for {{sector}}?",
+    "sections": {
+      "advocacia": {
+        "title": "Intelligent Legal Automation",
+        "description": "AI agents transform law firms by automating legal research, document generation, and customer service. They drastically reduce time spent on repetitive tasks, allowing lawyers to focus on strategies and complex cases, increasing productivity and service quality.",
+        "benefits": [
+          "75% reduction in legal research time",
+          "Automatic document generation in minutes",
+          "Zero missed procedural deadlines",
+          "24/7 automated customer service"
+        ]
+      },
+      "bancos": {
+        "title": "Digital Financial Transformation",
+        "description": "In the banking sector, AI agents automate credit analysis, fraud detection, and customer service. They process large volumes of transactions in real-time, identify suspicious patterns, and offer personalized recommendations, improving security and customer experience.",
+        "benefits": [
+          "Credit analysis 10x faster",
+          "Real-time fraud detection",
+          "60% reduction in operational costs",
+          "Highly personalized customer experience"
+        ]
+      },
+      "comercio": {
+        "title": "Commercial Operations Optimization",
+        "description": "AI agents optimize commercial operations through inventory management automation, demand forecasting, and customer service. They analyze market trends, dynamically adjust prices, and personalize recommendations, resulting in greater operational efficiency and increased sales.",
+        "benefits": [
+          "Automatic inventory optimization reduces waste",
+          "Demand forecasting with 95% accuracy",
+          "40% increase in sales through personalization",
+          "Dynamic and intelligent pricing management"
+        ]
+      },
+      "industria": {
+        "title": "Industry 4.0 with AI",
+        "description": "In industry, AI agents automate predictive maintenance, quality control, and production optimization. They monitor equipment in real-time, predict failures before they occur, and optimize manufacturing processes, reducing costs and increasing productive efficiency.",
+        "benefits": [
+          "Predictive maintenance reduces downtime by 80%",
+          "Automated quality control",
+          "Production optimization increases efficiency by 50%",
+          "Significant reduction in operational costs"
+        ]
+      },
+      "saude": {
+        "title": "Intelligent Medical Assistance",
+        "description": "In the health sector, AI agents assist in diagnostics, appointment scheduling, and medical record management. They analyze medical exams, identify symptom patterns, and automate administrative processes, allowing healthcare professionals to focus on patient care.",
+        "benefits": [
+          "Diagnostic assistance with greater accuracy",
+          "Automated scheduling reduces wait times",
+          "Efficient electronic medical record management",
+          "Real-time exam analysis"
+        ]
+      },
+      "telecomunicacoes": {
+        "title": "Next-Generation Telecommunications",
+        "description": "AI agents revolutionize telecommunications by automating technical support, network optimization, and traffic analysis. They automatically resolve connectivity issues, optimize bandwidth distribution, and personalize service plans, improving customer experience and reducing operational costs.",
+        "benefits": [
+          "Automatic resolution of 85% of technical problems",
+          "Real-time network optimization",
+          "50% reduction in support calls",
+          "Usage-based plan personalization"
+        ]
+      },
+      "varejo": {
+        "title": "Intelligent and Personalized Retail",
+        "description": "In retail, AI agents personalize shopping experiences, optimize pricing, and manage inventory. They analyze consumer behavior, recommend relevant products, and adjust marketing strategies in real-time, increasing conversions and loyalty.",
+        "benefits": [
+          "Personalization increases conversions by 60%",
+          "Real-time pricing optimization",
+          "Intelligent inventory management",
+          "Highly accurate product recommendations"
+        ]
+      },
+      "setor-imobiliario": {
+        "title": "Digital and Efficient Real Estate",
+        "description": "AI agents transform the real estate sector by automating property search, lead qualification, and visit scheduling. They analyze client preferences, suggest compatible properties, and automate documentation processes, accelerating sales and rentals.",
+        "benefits": [
+          "Automatic lead qualification",
+          "Intelligent matching between clients and properties",
+          "Automated visit scheduling",
+          "Documentation processing 5x faster"
+        ]
+      }
+    },
+    "strategicBenefits": {
+      "title": "Strategic Benefits",
+      "default": [
+        "Significant increase in productivity",
+        "Reduction in operational costs",
+        "Improvement in process quality",
+        "Unlimited scalability"
+      ]
+    },
+    "cta": {
+      "title": {
+        "advocacia": "Want to automate your law firm with AI agents?",
+        "bancos": "Want to automate your bank or financial institution with AI agents?",
+        "comercio": "Want to automate your commerce with AI agents?",
+        "industria": "Want to automate your industry with AI agents?",
+        "saude": "Want to automate your clinic or hospital with AI agents?",
+        "telecomunicacoes": "Want to automate your telecommunications company with AI agents?",
+        "varejo": "Want to automate your retail with AI agents?",
+        "setor-imobiliario": "Want to automate your real estate sector with AI agents?",
+        "default": "Want to automate {{sector}} with AI agents?"
+      },
+      "subtitle": "Contact us or schedule a meeting with our specialist"
+    }
   }
 }

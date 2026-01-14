@@ -72,6 +72,11 @@
     "description": "Access exclusive materials and accelerate your digital transformation journey with AI",
     "scheduleDiagnostic": "Schedule Diagnostic",
     "viewAllMaterials": "View All Materials"
+  },
+  "contentInDevelopment": {
+    "title": "Content in Development",
+    "description": "We are preparing exclusive materials such as e-books, complete guides, implementation checklists and ROI templates for you.",
+    "message": "Soon you will be able to download valuable materials here"
   }
 }
 
