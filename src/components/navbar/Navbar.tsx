@@ -95,12 +95,12 @@ const Navbar = () => {
       <div 
         id="navigation"
         className={cn(
-          "fixed top-0 z-[100] w-full bg-white dark:bg-gray-900 shadow-lg py-0 border-b border-gray-200 dark:border-gray-800 transition-opacity duration-300"
+          "fixed top-0 z-[100] w-full bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-md py-0 border-b border-gray-200/50 dark:border-gray-800/50 transition-all duration-300"
         )}
         role="banner"
         aria-label={t('menu.navigationLabel')}
       >
-        <div className="w-full flex items-center justify-between px-2 sm:px-4 md:px-6 lg:px-8 xl:px-12 py-2.5 gap-2 sm:gap-3 md:gap-4">
+        <div className="w-full flex items-center justify-between px-2 sm:px-4 md:px-6 lg:px-8 xl:px-12 py-3 gap-2 sm:gap-3 md:gap-4">
           {/* Logo - Esquerda */}
           <div className="flex-shrink-0">
             <Logo />
@@ -134,7 +134,7 @@ const Navbar = () => {
             
             {/* Botão CTA - Ícone apenas em tablet, ícone+texto em desktop */}
             <Button 
-              className="hidden md:flex bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg shadow-lg border-2 border-orange-500 hover:border-orange-400 transition-all duration-300 hover:scale-105 whitespace-nowrap"
+              className="hidden md:flex bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-500 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl border-0 transition-all duration-300 hover:scale-105 whitespace-nowrap px-4 py-2"
               onClick={handleDiagnosticoClick}
               aria-label={t('menu.scheduleDiagnosticAria')}
             >

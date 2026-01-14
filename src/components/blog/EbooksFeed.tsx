@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { BookOpen, ExternalLink, Calendar, Clock, Download } from "lucide-react";
+import { BookOpen, ExternalLink, Calendar, Clock, Download, ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import LazyImage from "@/components/ui/lazy-image";
 
@@ -76,85 +76,132 @@ export default function EbooksFeed() {
 
   if (loading) {
     return (
-      <div className="py-16 text-center">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-brand-blue mx-auto mb-4"></div>
-        <p className="text-lg text-gray-500">Carregando e-books...</p>
+      <div className="py-20 text-center">
+        <div className="relative inline-block mb-6">
+          <div className="absolute inset-0 bg-green-500/20 rounded-full blur-xl animate-pulse"></div>
+          <div className="relative w-16 h-16 border-4 border-green-500/20 border-t-green-500 rounded-full animate-spin"></div>
+        </div>
+        <p className="text-lg font-medium text-gray-600 dark:text-gray-400">Carregando e-books...</p>
+        <p className="text-sm text-gray-500 dark:text-gray-500 mt-2">Aguarde um momento</p>
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="py-16 text-center">
-        <p className="text-lg text-red-500">Erro ao carregar e-books: {error}</p>
+      <div className="py-20 text-center">
+        <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 dark:bg-red-900/20 rounded-full mb-4">
+          <BookOpen className="h-8 w-8 text-red-600 dark:text-red-400" />
+        </div>
+        <p className="text-lg font-semibold text-red-600 dark:text-red-400 mb-2">Erro ao carregar e-books</p>
+        <p className="text-sm text-gray-600 dark:text-gray-400">{error}</p>
       </div>
     );
   }
 
   if (ebooks.length === 0) {
     return (
-      <div className="py-16 text-center">
-        <p className="text-lg text-gray-500">Nenhum e-book encontrado.</p>
+      <div className="py-20 text-center">
+        <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full mb-4">
+          <BookOpen className="h-8 w-8 text-gray-400" />
+        </div>
+        <p className="text-lg font-medium text-gray-600 dark:text-gray-400">Nenhum e-book encontrado.</p>
       </div>
     );
   }
 
   return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
       {ebooks.map((ebook, index) => (
-        <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
-          <div className="aspect-video bg-gray-200 dark:bg-gray-700 relative overflow-hidden">
-            {ebook.image ? (
-              <LazyImage
-                src={ebook.image}
-                alt={ebook.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
+        <Card 
+          key={index} 
+          className="overflow-hidden hover:shadow-2xl transition-all duration-300 group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-green-500/50 dark:hover:border-green-500/50 hover:-translate-y-1 cursor-pointer"
+          onClick={() => {
+            if (ebook.link) {
+              window.open(ebook.link, '_blank', 'noopener,noreferrer');
+            }
+          }}
+        >
+          {/* Image Container with improved styling */}
+          <div className="aspect-[16/9] bg-gradient-to-br from-gray-100 via-gray-200 to-gray-100 dark:from-gray-700 dark:via-gray-800 dark:to-gray-700 relative overflow-hidden">
+            {ebook.image && ebook.image.trim() !== '' ? (
+              <>
+                <LazyImage
+                  src={ebook.image}
+                  alt={ebook.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    target.style.display = 'none';
+                  }}
+                />
+                {/* Fallback se imagem falhar */}
+                <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-green-500/20 via-emerald-500/30 to-green-500/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                  <BookOpen className="h-12 w-12 text-green-500/50" />
+                </div>
+                {/* Overlay gradient for better text readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </>
             ) : (
-              <div className="w-full h-full bg-gradient-to-br from-brand-blue/20 to-brand-blue/40" />
+              <div className="w-full h-full bg-gradient-to-br from-green-500/20 via-emerald-500/30 to-green-500/20 flex items-center justify-center">
+                <BookOpen className="h-12 w-12 text-green-500/50" />
+              </div>
             )}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-            <Badge className="absolute top-4 left-4 z-10 bg-green-600 text-white">
+            
+            {/* Badge */}
+            <Badge className="absolute top-4 left-4 z-10 bg-gradient-to-r from-green-500 to-emerald-600 text-white shadow-lg border-0 px-3 py-1">
+              <BookOpen className="h-3 w-3 mr-1" />
               E-book
             </Badge>
+            
+            {/* Hover effect indicator */}
+            <div className="absolute bottom-4 right-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-full p-2 shadow-lg">
+                <ArrowRight className="h-4 w-4 text-green-500" />
+              </div>
+            </div>
           </div>
           
-          <CardHeader>
-            <CardTitle className="line-clamp-2 group-hover:text-brand-blue transition-colors text-gray-900 dark:text-gray-100">
+          <CardHeader className="pb-3">
+            <CardTitle className="line-clamp-2 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors duration-300 text-gray-900 dark:text-gray-100 text-lg font-bold leading-tight">
               {ebook.title}
             </CardTitle>
             {ebook.description && (
-              <p className="text-sm text-gray-600 dark:text-gray-300 line-clamp-3 mt-2">
+              <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-3 mt-3 leading-relaxed">
                 {ebook.description}
               </p>
             )}
           </CardHeader>
 
-          <CardContent>
-            <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-4">
-              <div className="flex items-center gap-1">
-                <Calendar className="h-4 w-4" />
+          <CardContent className="pt-0">
+            {/* Metadata */}
+            <div className="flex items-center gap-4 text-xs text-gray-500 dark:text-gray-400 mb-4 pb-4 border-b border-gray-200 dark:border-gray-700">
+              <div className="flex items-center gap-1.5">
+                <Calendar className="h-3.5 w-3.5" />
                 <span>E-book</span>
               </div>
-              <div className="flex items-center gap-1">
-                <Clock className="h-4 w-4" />
+              <div className="flex items-center gap-1.5">
+                <Clock className="h-3.5 w-3.5" />
                 <span>Download</span>
               </div>
             </div>
 
+            {/* CTA Button */}
             <Button
               variant="ghost"
               size="sm"
-              className="w-full text-brand-blue hover:text-brand-blue/80 hover:bg-brand-blue/10"
-              onClick={() => {
+              className="w-full text-green-600 hover:text-white hover:bg-gradient-to-r hover:from-green-500 hover:to-emerald-600 transition-all duration-300 group/btn"
+              onClick={(e) => {
+                e.stopPropagation();
                 if (ebook.link) {
                   window.open(ebook.link, '_blank', 'noopener,noreferrer');
                 }
               }}
             >
-              <Download className="h-4 w-4 mr-2" />
+              <Download className="h-4 w-4 mr-2 group-hover/btn:translate-y-[-2px] transition-transform" />
               Baixar E-book
+              <ArrowRight className="h-4 w-4 ml-2 opacity-0 group-hover/btn:opacity-100 group-hover/btn:translate-x-1 transition-all" />
             </Button>
           </CardContent>
         </Card>
@@ -162,4 +209,5 @@ export default function EbooksFeed() {
     </div>
   );
 }
+
 

@@ -13,7 +13,9 @@ export const isConteudoActive = (pathname: string) =>
   pathname.startsWith("/university/");
 
 // Check if services section is active
-export const isServicosActive = (pathname: string) => pathname === "/servicos";
+export const isServicosActive = (pathname: string) => 
+  pathname === "/servicos" || 
+  pathname.startsWith("/servicos/");
 
 // Check if home is active - only when path is exactly "/"
 export const isHomeActive = (pathname: string) => pathname === "/";

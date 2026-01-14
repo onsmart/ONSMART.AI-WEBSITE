@@ -35,9 +35,9 @@ const MobileDiagnosticoButton: React.FC<MobileDiagnosticoButtonProps> = ({ onClo
   };
   
   return (
-    <div className="mt-4">
+    <div className="mt-4 p-1 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl shadow-lg">
       <Button 
-        className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold border-2 border-orange-500 hover:border-orange-400 transition-all duration-300"
+        className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-500 text-white font-semibold border-0 transition-all duration-300 hover:shadow-xl py-3"
         onClick={handleClick}
       >
         <Calendar className="h-4 w-4 mr-2" />

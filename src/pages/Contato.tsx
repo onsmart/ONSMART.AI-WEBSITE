@@ -36,11 +36,7 @@ const Contato = () => {
                 {t('success.responseTime')} <span className="font-bold text-brand-blue">{t('success.responseTimeValue')}</span> {t('success.responseTimeEnd')}
               </p>
             </div>
-            <div className="text-xs sm:text-sm text-gray-600 mb-4 sm:mb-6 space-y-2">
-              <div className="flex items-center justify-center gap-2">
-                <Mail className="h-3 w-3 sm:h-4 sm:w-4 text-brand-blue" />
-                <span>{t('success.emailConfirmation')}</span>
-              </div>
+            <div className="text-xs sm:text-sm text-gray-600 mb-4 sm:mb-6">
               <div className="flex items-center justify-center gap-2">
                 <Clock className="h-3 w-3 sm:h-4 sm:w-4 text-green-500" />
                 <span>{t('success.responseTimeLabel')}</span>

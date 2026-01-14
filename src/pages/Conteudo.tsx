@@ -28,9 +28,6 @@ const Conteudo = () => {
     setShowAll(false);
   }, [selectedCategory]);
 
-  const handleDiagnosticoClick = () => {
-    navigate('/diagnostico');
-  };
 
   // Função para carregar artigos do Google Sheets
   const loadArticlesFromCMS = async () => {
@@ -598,56 +595,6 @@ const Conteudo = () => {
             </div>
           </section>
 
-          {/* Newsletter Section */}
-          <section className="py-16 bg-gradient-to-r from-gray-50 to-blue-50/30 dark:from-gray-900 dark:to-gray-900">
-            <div className="container mx-auto max-w-4xl px-4 sm:px-6 md:px-8 text-center">
-              <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-gray-200/50 dark:border-gray-700/50">
-                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500/10 to-violet-500/5 text-purple-600 px-3 py-1.5 rounded-full text-sm font-semibold mb-4 border border-purple-500/20">
-                  <Calendar className="h-3 w-3" />
-                  {t('newsletterSection.badge')}
-                </div>
-                
-                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4" dangerouslySetInnerHTML={{
-                  __html: t('newsletterSection.title').replace(/<span>/g, '<span class="bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 bg-clip-text text-transparent">').replace(/<\/span>/g, '</span>')
-                }} />
-                <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto" dangerouslySetInnerHTML={{
-                  __html: t('newsletterSection.subtitle').replace(/<span>/g, '<span class="font-bold text-brand-blue">').replace(/<\/span>/g, '</span>')
-                }} />
-                
-                <div className="flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto mb-6">
-                  <input
-                    type="email"
-                    placeholder={t('newsletterSection.placeholder')}
-                    className="flex-1 px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-brand-blue focus:ring-brand-blue focus:outline-none"
-                  />
-                  <Button 
-                    className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-600 text-white font-semibold py-3 px-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
-                  >
-                    <div className="flex items-center gap-2">
-                      <Calendar className="h-4 w-4" />
-                      {t('newsletterSection.button')}
-                    </div>
-                  </Button>
-                </div>
-                
-                <div className="flex flex-wrap justify-center items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
-                  <div className="flex items-center gap-1">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span>{t('newsletterSection.benefits.free')}</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                    <span>{t('newsletterSection.benefits.noSpam')}</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                    <span>{t('newsletterSection.benefits.cancel')}</span>
-                  </div>
-                </div>
-              </div>
-          </div>
-        </section>
-        
           {/* CTA Section */}
           <section className="py-16">
             <div className="container mx-auto max-w-4xl px-4 sm:px-6 md:px-8 text-center">
@@ -664,7 +611,7 @@ const Conteudo = () => {
                   __html: t('ctaSection.subtitle').replace(/<span>/g, '<span class="font-bold text-brand-blue">').replace(/<\/span>/g, '</span>')
                 }} />
                 
-                <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <div className="flex justify-center">
                   <Button 
                     onClick={handleCtaClick}
                     className="bg-gradient-to-r from-brand-blue to-blue-600 hover:from-blue-600 hover:to-brand-blue text-white font-semibold py-3 px-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
@@ -673,17 +620,6 @@ const Conteudo = () => {
                       <Users className="h-4 w-4" />
                       {t('ctaSection.button1')}
                       <ArrowRight className="h-4 w-4" />
-                    </div>
-                  </Button>
-                  
-                  <Button 
-                    onClick={handleDiagnosticoClick}
-                    variant="outline"
-                    className="border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white py-3 px-6 rounded-xl transition-all duration-300"
-                  >
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="h-4 w-4" />
-                      {t('ctaSection.button2')}
                     </div>
                   </Button>
                 </div>
