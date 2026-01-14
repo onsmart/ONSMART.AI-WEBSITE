@@ -157,9 +157,29 @@ nav *::after,
 [data-radix-dropdown-menu-trigger]::before,
 [data-radix-dropdown-menu-trigger]::after,
 [data-radix-dropdown-menu-trigger] *::before,
-[data-radix-dropdown-menu-trigger] *::after {
+[data-radix-dropdown-menu-trigger] *::after,
+button[data-radix-dropdown-menu-trigger]::before,
+button[data-radix-dropdown-menu-trigger]::after,
+button[data-radix-dropdown-menu-trigger] *::before,
+button[data-radix-dropdown-menu-trigger] *::after {
   content: none !important;
   display: none !important;
+}
+
+/* Remover outline e focus rings dos botões de dropdown */
+[data-radix-dropdown-menu-trigger],
+button[data-radix-dropdown-menu-trigger] {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+[data-radix-dropdown-menu-trigger]:focus,
+[data-radix-dropdown-menu-trigger]:focus-visible,
+button[data-radix-dropdown-menu-trigger]:focus,
+button[data-radix-dropdown-menu-trigger]:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+  ring: none !important;
 }
 
 /* Exceção: permitir ícones SVG dentro da navbar */
@@ -173,4 +193,93 @@ nav svg::after {
 [data-radix-navigation-menu-indicator],
 nav [data-radix-navigation-menu-indicator] {
   display: none !important;
+}
+
+/* Remover qualquer indicador ou elemento visual do DropdownMenu do Radix UI */
+[data-radix-dropdown-menu-indicator],
+nav [data-radix-dropdown-menu-indicator],
+[data-radix-dropdown-menu-trigger][data-state="open"]::before,
+[data-radix-dropdown-menu-trigger][data-state="open"]::after,
+[data-radix-dropdown-menu-trigger][data-state="closed"]::before,
+[data-radix-dropdown-menu-trigger][data-state="closed"]::after,
+button[data-radix-dropdown-menu-trigger][data-state="open"]::before,
+button[data-radix-dropdown-menu-trigger][data-state="open"]::after,
+button[data-radix-dropdown-menu-trigger][data-state="closed"]::before,
+button[data-radix-dropdown-menu-trigger][data-state="closed"]::after {
+  display: none !important;
+  content: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Garantir que não há bordas ou outlines estranhos no hover e durante transições */
+nav button:hover,
+nav button:focus,
+nav button:active,
+nav [data-radix-dropdown-menu-trigger]:hover,
+nav [data-radix-dropdown-menu-trigger]:focus,
+nav [data-radix-dropdown-menu-trigger]:active,
+nav button[data-radix-dropdown-menu-trigger]:hover,
+nav button[data-radix-dropdown-menu-trigger]:focus,
+nav button[data-radix-dropdown-menu-trigger]:active {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Remover qualquer elemento que possa aparecer como parêntese em TODOS os estados */
+nav button::before,
+nav button::after,
+nav [data-radix-dropdown-menu-trigger]::before,
+nav [data-radix-dropdown-menu-trigger]::after,
+nav button[data-radix-dropdown-menu-trigger]::before,
+nav button[data-radix-dropdown-menu-trigger]::after {
+  content: none !important;
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Remover elementos durante transições CSS */
+nav button *::before,
+nav button *::after,
+nav [data-radix-dropdown-menu-trigger] *::before,
+nav [data-radix-dropdown-menu-trigger] *::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Garantir que elementos filhos do botão também não tenham pseudo-elementos */
+nav button span::before,
+nav button span::after,
+nav [data-radix-dropdown-menu-trigger] span::before,
+nav [data-radix-dropdown-menu-trigger] span::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Remover elementos durante animações do Radix UI */
+[data-radix-dropdown-menu-trigger][data-state="open"] *::before,
+[data-radix-dropdown-menu-trigger][data-state="open"] *::after,
+[data-radix-dropdown-menu-trigger][data-state="closed"] *::before,
+[data-radix-dropdown-menu-trigger][data-state="closed"] *::after,
+button[data-radix-dropdown-menu-trigger][data-state="open"] *::before,
+button[data-radix-dropdown-menu-trigger][data-state="open"] *::after,
+button[data-radix-dropdown-menu-trigger][data-state="closed"] *::before,
+button[data-radix-dropdown-menu-trigger][data-state="closed"] *::after {
+  content: none !important;
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Garantir que durante transições CSS não apareça nada */
+nav button,
+nav [data-radix-dropdown-menu-trigger],
+nav button[data-radix-dropdown-menu-trigger] {
+  -webkit-tap-highlight-color: transparent !important;
+  tap-highlight-color: transparent !important;
 }

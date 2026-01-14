@@ -66,24 +66,25 @@ const DropdownMenuItem: React.FC<DropdownMenuItemProps> = ({
             <button
               ref={buttonRef}
               className={cn(
-                "relative flex items-center px-3 sm:px-4 md:px-5 py-2.5 rounded-lg transition-all duration-300 font-medium text-sm md:text-base whitespace-nowrap",
+                "relative flex items-center px-3 sm:px-4 md:px-5 py-2.5 rounded-lg transition-colors duration-200 font-medium text-sm md:text-base whitespace-nowrap outline-none focus:outline-none focus-visible:outline-none focus-visible:ring-0 border-0",
                 isActive && !isOpen 
                   ? "text-brand-blue font-semibold" 
                   : "text-gray-700 dark:text-gray-300 hover:text-brand-blue dark:hover:text-brand-blue",
                 isOpen && "text-brand-blue font-semibold"
               )}
               onClick={handleTriggerClick}
+              style={{ boxShadow: 'none', outline: 'none' }}
             >
               <span className="relative z-10">{label}</span>
               {/* Background hover effect */}
               <span className={cn(
-                "absolute inset-0 rounded-lg transition-all duration-300",
+                "absolute inset-0 rounded-lg transition-colors duration-200",
                 (isActive || isOpen)
                   ? "bg-brand-blue/10 dark:bg-brand-blue/20" 
                   : "bg-gray-100/0 dark:bg-gray-800/0 group-hover:bg-gray-100/80 dark:group-hover:bg-gray-800/80"
               )} />
               <ChevronDown className={cn(
-                "relative z-10 h-3.5 w-3.5 sm:h-4 sm:w-4 ml-1.5 flex-shrink-0 transition-all duration-300",
+                "relative z-10 h-3.5 w-3.5 sm:h-4 sm:w-4 ml-1.5 flex-shrink-0 transition-transform duration-200",
                 isActive && !isOpen 
                   ? "text-brand-blue" 
                   : "text-gray-600 dark:text-gray-400",
