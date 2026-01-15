@@ -40,10 +40,7 @@ export default defineConfig(({ mode }) => ({
             return 'vendor-radix';
           }
           
-          // UI essentials
-          if (id.includes('node_modules/lucide-react')) {
-            return 'vendor-icons';
-          }
+          
           
           // Forms - only when needed
           if (id.includes('node_modules/react-hook-form') || id.includes('node_modules/@hookform') || id.includes('node_modules/zod')) {
@@ -105,7 +102,7 @@ export default defineConfig(({ mode }) => ({
       'react', 
       'react-dom', 
       'react-router-dom',
-      'lucide-react',
+      'react-router-dom',
       '@radix-ui/react-dialog',
       '@radix-ui/react-slot',
       'lodash-es',
