@@ -6,6 +6,7 @@ import { LoadingSkeleton } from '@/components/ui/loading-skeleton';
 import Index from '@/pages/Index';
 import Servicos from '@/pages/Servicos';
 import Contato from '@/pages/Contato';
+import ContatoObrigado from '@/pages/ContatoObrigado';
 import Diagnostico from '@/pages/Diagnostico';
 import NotFound from '@/pages/NotFound';
 
@@ -87,6 +88,7 @@ const SimpleAppRoutes: React.FC = () => {
         <Route path="/servicos" element={<Servicos />} />
         <Route path="/servicos/:slug" element={<Suspense fallback={<PageFallback />}><ServiceDynamic /></Suspense>} />
         <Route path="/contato" element={<Contato />} />
+        <Route path="/contato/obrigado" element={<ContatoObrigado />} />
         <Route path="/diagnostico" element={<Diagnostico />} />
         <Route path="/conteudo" element={<Conteudo />} />
         <Route path="/blog" element={<Blog />} />
