@@ -22,15 +22,12 @@ const WhatsAppIcon = ({ className = "h-5 w-5" }: { className?: string }) => (
 
 const WhatsappButton: React.FC<WhatsappButtonProps> = ({
   phoneNumber = import.meta.env.VITE_COMPANY_PHONE || "5511996669247",
-  message = "Olá! Gostaria de agendar uma demonstração gratuita dos Agentes de IA da onsmart. Quando podemos conversar? [SRC=ONSMART]",
+  message = "Olá! Vim pelo site da Onsmart.ai",
   className = "",
   variant = "default"
 }) => {
-  // Adiciona o token [SRC=ONSMART] se não estiver presente na mensagem
-  const messageWithToken = message.includes('[SRC=ONSMART]') ? message : `${message} [SRC=ONSMART]`;
-  
   // Create WhatsApp Business API URL
-  const whatsappUrl = `https://api.whatsapp.com/send/?phone=${phoneNumber}&text=${encodeURIComponent(messageWithToken)}&type=phone_number&app_absent=0`;
+  const whatsappUrl = `https://api.whatsapp.com/send/?phone=${phoneNumber}&text=${encodeURIComponent(message)}&type=phone_number&app_absent=0`;
   
   const handleClick = (e: React.MouseEvent) => {
     e.stopPropagation();

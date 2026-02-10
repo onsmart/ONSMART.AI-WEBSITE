@@ -22,7 +22,7 @@ export const MobileStickyFooter: React.FC = () => {
 
 
   const openWhatsApp = () => {
-    window.open('https://wa.me/5511996669247?text=' + encodeURIComponent('Olá! Gostaria de saber mais sobre Agentes de IA [SRC=ONSMART]'), '_blank');
+    window.open('https://wa.me/5511996669247?text=' + encodeURIComponent('Olá! Vim pelo site da Onsmart.ai'), '_blank');
   };
 
   if (!isVisible) return null;

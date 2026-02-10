@@ -30,7 +30,7 @@ const ServicesCtaSection: React.FC<ServicesCtaSectionProps> = ({ handleContactCl
   };
 
   const handleWhatsAppClick = () => {
-    const whatsappUrl = "https://wa.me/5511996669247?text=" + encodeURIComponent("Olá! Gostaria de saber mais sobre os serviços de IA da onsmartAI. [SRC=ONSMART]");
+    const whatsappUrl = "https://wa.me/5511996669247?text=" + encodeURIComponent("Olá! Vim pelo site da Onsmart.ai");
     window.open(whatsappUrl, "_blank");
   };
 

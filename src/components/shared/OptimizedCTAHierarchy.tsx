@@ -121,7 +121,7 @@ const OptimizedCTAHierarchy: React.FC<OptimizedCTAHierarchyProps> = ({
 
     trackFunnelStep('whatsapp_contact', 'OptimizedCTAHierarchy');
     
-    const whatsappUrl = "https://wa.me/5511996669247?text=" + encodeURIComponent("Olá! Gostaria de conversar sobre Agentes de IA para minha empresa. [SRC=ONSMART]");
+    const whatsappUrl = "https://wa.me/5511996669247?text=" + encodeURIComponent("Olá! Vim pelo site da Onsmart.ai");
     window.open(whatsappUrl, "_blank");
   };
 

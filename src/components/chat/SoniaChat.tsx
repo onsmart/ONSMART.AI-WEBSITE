@@ -45,7 +45,7 @@ const SoniaChat: React.FC<SoniaChatProps> = ({ className = '' }) => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   
   const WHATSAPP_NUMBER = '551150931836';
-  const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá [SRC=ONSMART]')}`;
+  const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Vim pelo site da Onsmart.ai')}`;
   
   // Ajustar tamanho do QR Code baseado no tamanho da tela
   useEffect(() => {
