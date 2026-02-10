@@ -29,7 +29,7 @@ const WhatsappSection: React.FC = () => {
           <div className="flex justify-center mb-4">
             <WhatsappButton 
               phoneNumber="5511996669247"
-              message="Olá! Gostaria de agendar uma demonstração gratuita dos Agentes de IA da onsmart. Qual o melhor horário para conversarmos?" 
+              message="Olá! Gostaria de agendar uma demonstração gratuita dos Agentes de IA da onsmart. Qual o melhor horário para conversarmos? [SRC=ONSMART]" 
               variant="inline"
             />
           </div>

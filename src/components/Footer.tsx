@@ -174,7 +174,7 @@ const Footer = () => {
                       <span className="text-xs break-all">atendimento.ai@onsmart.com.br</span>
                     </a>
                     <a 
-                      href="https://wa.me/5511996669247" 
+                      href="https://wa.me/5511996669247?text=Olá%20[SRC=ONSMART]" 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="flex items-center gap-2 text-gray-300 hover:text-green-400 transition-colors group"
@@ -183,7 +183,7 @@ const Footer = () => {
                       <span className="text-xs">+55 (11) 99666-9247</span>
                     </a>
                     <a 
-                      href="https://wa.me/551150931836" 
+                      href="https://wa.me/551150931836?text=Olá%20[SRC=ONSMART]" 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="flex items-center gap-2 text-gray-300 hover:text-green-400 transition-colors group"

@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { MessageCircle, Bot } from 'lucide-react';
 
-const WHATSAPP_LINK = 'https://wa.me/5511996669247?text=Ol%C3%A1!%20Quero%20testar%20os%20Agentes%20de%20IA%20da%20onsmart.';
+const WHATSAPP_LINK = 'https://wa.me/5511996669247?text=' + encodeURIComponent('Olá! Quero testar os Agentes de IA da onsmart. [SRC=ONSMART]');
 
 const WhatsAppTestButton: React.FC = () => {
   return (

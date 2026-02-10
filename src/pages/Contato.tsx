@@ -169,7 +169,7 @@ const Contato = () => {
                     </div>
                     
                     <a 
-                      href="https://wa.me/551150931836" 
+                      href="https://wa.me/551150931836?text=Olá%20[SRC=ONSMART]" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 rounded-lg hover:bg-gray-50/50 transition-colors cursor-pointer group"

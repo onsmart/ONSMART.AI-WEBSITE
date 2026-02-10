@@ -26,7 +26,7 @@ const WhatsAppSection: React.FC<WhatsAppSectionProps> = ({
         <div className="flex justify-center">
           <WhatsappButton 
             phoneNumber="5511996669247"
-            message="Olá! Estou interessado em saber mais sobre o diagnóstico de IA para minha empresa. Pode me ajudar?" 
+            message="Olá! Estou interessado em saber mais sobre o diagnóstico de IA para minha empresa. Pode me ajudar? [SRC=ONSMART]" 
           />
         </div>
       </div>}

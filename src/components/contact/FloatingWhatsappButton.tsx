@@ -10,7 +10,7 @@ interface FloatingWhatsappButtonProps {
 
 const FloatingWhatsappButton: React.FC<FloatingWhatsappButtonProps> = ({
   phoneNumber = import.meta.env.VITE_COMPANY_PHONE || "5511996669247",
-  message = "Olá! Gostaria de agendar uma demonstração gratuita dos Agentes de IA da onsmart. Quando podemos conversar?",
+  message = "Olá! Gostaria de agendar uma demonstração gratuita dos Agentes de IA da onsmart. Quando podemos conversar? [SRC=ONSMART]",
   position = "bottom-right",
 }) => {
   const positionClasses = {

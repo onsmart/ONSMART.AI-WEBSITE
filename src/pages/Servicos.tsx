@@ -218,7 +218,7 @@ const Servicos = () => {
                 </div>
 
                 <a 
-                  href="https://wa.me/551150931836" 
+                  href="https://wa.me/551150931836?text=Olá%20[SRC=ONSMART]" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-center group cursor-pointer"
