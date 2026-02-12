@@ -168,6 +168,11 @@
         "label": "WhatsApp de Sonia",
         "value": "+55 11 5093-1836",
         "description": "Habla con nuestra asistente IA"
+      },
+      "humanizedWhatsApp": {
+        "label": "WhatsApp Humanizado",
+        "value": "+55 11 99813-8045",
+        "description": "Atención personalizada y humanizada"
       }
     },
     "email": {

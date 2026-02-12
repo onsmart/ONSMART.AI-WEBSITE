@@ -183,6 +183,22 @@ const Contato = () => {
                         <p className="text-xs text-green-600 font-medium">{t('info.contactInfo.soniaWhatsApp.description')}</p>
                       </div>
                     </a>
+                    
+                    <a 
+                      href="https://wa.me/5511998138045?text=Olá!%20Vim%20pelo%20site%20da%20Onsmart.ai" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 rounded-lg hover:bg-gray-50/50 transition-colors cursor-pointer group"
+                    >
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                        <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 dark:text-gray-100 text-xs sm:text-sm">{t('info.contactInfo.humanizedWhatsApp.label')}</h4>
+                        <p className="text-xs sm:text-sm text-gray-600">{t('info.contactInfo.humanizedWhatsApp.value')}</p>
+                        <p className="text-xs text-blue-600 font-medium">{t('info.contactInfo.humanizedWhatsApp.description')}</p>
+                      </div>
+                    </a>
                   </div>
                 </div>
 

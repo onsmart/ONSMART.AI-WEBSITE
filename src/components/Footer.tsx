@@ -192,6 +192,16 @@ const Footer = () => {
                       <span className="text-xs">+55 (11) 5093-1836</span>
                       <span className="text-xs text-green-400">(Sonia IA)</span>
                     </a>
+                    <a 
+                      href="https://wa.me/5511998138045?text=Olá!%20Vim%20pelo%20site%20da%20Onsmart.ai" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors group"
+                    >
+                      <MessageCircle className="h-3 w-3 flex-shrink-0" />
+                      <span className="text-xs">+55 (11) 99813-8045</span>
+                      <span className="text-xs text-blue-400">(Atendimento Humanizado)</span>
+                    </a>
                   </div>
                 </div>
               </div>
