@@ -14,6 +14,7 @@ import NotFound from '@/pages/NotFound';
 const Conteudo = lazy(() => import('@/pages/Conteudo'));
 const Blog = lazy(() => import('@/pages/Blog'));
 const BlogPost = lazy(() => import('@/pages/BlogPost'));
+const ArtigoIACompliancePMEs = lazy(() => import('@/pages/ArtigoIACompliancePMEs'));
 const PoliticaPrivacidade = lazy(() => import('@/pages/PoliticaPrivacidade'));
 const TermosUso = lazy(() => import('@/pages/TermosUso'));
 const Planos = lazy(() => import('@/pages/Planos'));
@@ -93,6 +94,7 @@ const SimpleAppRoutes: React.FC = () => {
         <Route path="/conteudo" element={<Conteudo />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
+        <Route path="/blog/ia-compliance-pmes" element={<ArtigoIACompliancePMEs />} />
         <Route path="/materiais-gratuitos" element={<MateriaisGratuitos />} />
         <Route path="/ferramentas-gratuitas" element={<FerramentasGratuitas />} />
         <Route path="/glossario-ia" element={<Glossario />} />
