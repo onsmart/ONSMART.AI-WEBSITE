@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Users } from "lucide-react";
 import UnifiedSEO from "@/components/shared/UnifiedSEO";
 import ContentInDevelopment from "@/components/shared/ContentInDevelopment";
+import EbooksFeed from "@/components/blog/EbooksFeed";
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
@@ -46,12 +47,19 @@ const MateriaisGratuitos = () => {
         </div>
       </section>
 
-      {/* Enhanced Materials Grid */}
+      {/* Materiais da tabela marketing (e-books) + fallback em desenvolvimento */}
       <section className="py-20 px-4">
         <div className="max-w-5xl mx-auto">
-          <ContentInDevelopment 
-            namespace="materiaisGratuitos"
-          />
+          <div className="flex flex-wrap gap-3 mb-8">
+            <div className="h-1 w-12 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full" />
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100">
+              E-books e materiais
+            </h2>
+          </div>
+          <EbooksFeed />
+          <div className="mt-16">
+            <ContentInDevelopment namespace="materiaisGratuitos" />
+          </div>
         </div>
       </section>
 

@@ -19,7 +19,9 @@ const PoliticaPrivacidade = lazy(() => import('@/pages/PoliticaPrivacidade'));
 const TermosUso = lazy(() => import('@/pages/TermosUso'));
 const Planos = lazy(() => import('@/pages/Planos'));
 const MateriaisGratuitos = lazy(() => import('@/pages/MateriaisGratuitos'));
+const MaterialGratuitoPost = lazy(() => import('@/pages/MaterialGratuitoPost'));
 const FerramentasGratuitas = lazy(() => import('@/pages/FerramentasGratuitas'));
+const FerramentaPostPage = lazy(() => import('@/pages/FerramentaPostPage'));
 const Glossario = lazy(() => import('@/pages/Glossario'));
 const IABasico = lazy(() => import('@/pages/university/IABasico'));
 const AgentesIAUniversity = lazy(() => import('@/pages/university/AgentesIA'));
@@ -27,6 +29,9 @@ const EcossistemaIBM = lazy(() => import('@/pages/EcossistemaIBM'));
 const AgentesIA = lazy(() => import('@/pages/AgentesIA'));
 const Sobre = lazy(() => import('@/pages/Sobre'));
 const ImageTest = lazy(() => import('@/pages/ImageTest'));
+
+// Marketing area (tRPC + auth)
+const MarketingApp = lazy(() => import('@/pages/marketing/MarketingApp'));
 
 // Páginas de Soluções - lazy loading
 const AutomacaoVendas = lazy(() => import('@/pages/solucoes/AutomacaoVendas'));
@@ -96,7 +101,9 @@ const SimpleAppRoutes: React.FC = () => {
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/blog/ia-compliance-pmes" element={<ArtigoIACompliancePMEs />} />
         <Route path="/materiais-gratuitos" element={<MateriaisGratuitos />} />
+        <Route path="/materiais-gratuitos/:slug" element={<MaterialGratuitoPost />} />
         <Route path="/ferramentas-gratuitas" element={<FerramentasGratuitas />} />
+        <Route path="/ferramentas/:slug" element={<FerramentaPostPage />} />
         <Route path="/glossario-ia" element={<Glossario />} />
         <Route path="/university/ia-basico" element={<IABasico />} />
         <Route path="/university/agentes-ia" element={<AgentesIAUniversity />} />
@@ -152,6 +159,9 @@ const SimpleAppRoutes: React.FC = () => {
         
         {/* Rota de Teste de Imagens */}
         <Route path="/image-test" element={<ImageTest />} />
+        
+        {/* Área de Marketing */}
+        <Route path="/marketing/*" element={<MarketingApp />} />
         
         <Route path="*" element={<NotFound />} />
       </Routes>

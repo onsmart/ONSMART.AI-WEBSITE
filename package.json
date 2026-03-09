@@ -6,16 +6,26 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:server": "tsc -p server/tsconfig.json",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
     "server": "node server.js",
     "dev:full": "concurrently \"npm run dev\" \"npm run server\"",
-    "start": "npm run build && npm run server",
+    "dev:one": "npm run build:server && concurrently \"npm run dev\" \"npm run server\"",
+    "start": "npm run build && npm run build:server && node server.js",
     "docker:monitor": "node scripts/docker-monitor.js",
     "docker:status": "node scripts/docker-monitor.js --once",
     "setup:env": "node setup-env.js",
-    "vercel:ignore": "node scripts/ignore-branch.js"
+    "vercel:ignore": "node scripts/ignore-branch.js",
+    "seed:marketing": "tsx server/scripts/seed-marketing-user.ts",
+    "sync:marketing": "tsx server/scripts/sync-marketing.ts",
+    "test:supabase": "node scripts/tests/test-supabase.js",
+    "test:resend": "node scripts/tests/test-resend.js",
+    "test:mailchimp": "node scripts/tests/test-mailchimp.js",
+    "test:hubspot": "node scripts/tests/test-hubspot.js",
+    "test:site": "node scripts/tests/test-site.js",
+    "test:services": "node scripts/tests/run-all.js"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -56,6 +66,7 @@
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",
     "concurrently": "^8.2.2",
+    "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "date-fns": "^3.6.0",
     "dotenv": "^16.3.1",
@@ -83,9 +94,16 @@
     "vaul": "^0.9.3",
     "web-vitals": "^5.0.1",
     "workbox-window": "^7.3.0",
-    "zod": "^3.23.8"
+    "zod": "^3.23.8",
+    "@trpc/server": "^11.0.0",
+    "@trpc/client": "^11.0.0",
+    "@trpc/react-query": "^11.0.0",
+    "jose": "^5.9.6",
+    "bcryptjs": "^2.4.3",
+    "resend": "^4.0.0"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
     "@eslint/js": "^9.9.0",
     "@tailwindcss/typography": "^0.5.15",
     "@types/i18next-browser-languagedetector": "^3.0.0",
@@ -103,6 +121,7 @@
     "tailwindcss": "^3.4.11",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
-    "vite": "^4.5.3"
+    "vite": "^4.5.3",
+    "tsx": "^4.19.2"
   }
 }

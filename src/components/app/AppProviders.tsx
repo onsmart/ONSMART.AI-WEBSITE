@@ -3,6 +3,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
+import { trpc, createTrpcClient } from "@/trpc";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -13,6 +14,8 @@ const queryClient = new QueryClient({
   },
 });
 
+const trpcClient = createTrpcClient();
+
 interface AppProvidersProps {
   children: React.ReactNode;
 }
@@ -21,11 +24,13 @@ const AppProviders = ({ children }: AppProvidersProps) => {
   return (
     <StrictMode>
       <QueryClientProvider client={queryClient}>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          {children}
-        </TooltipProvider>
+        <trpc.Provider client={trpcClient} queryClient={queryClient}>
+          <TooltipProvider>
+            <Toaster />
+            <Sonner />
+            {children}
+          </TooltipProvider>
+        </trpc.Provider>
       </QueryClientProvider>
     </StrictMode>
   );

@@ -1,5 +1,5 @@
 
-import React, { useMemo } from 'react';
+import React, { useMemo, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
@@ -7,12 +7,98 @@ import { Card, CardContent } from '@/components/ui/card';
 import { ArrowLeft, Calendar, User, Clock, Share2 } from 'lucide-react';
 import UnifiedSEO from '@/components/shared/UnifiedSEO';
 import { blogPosts } from '@/components/blog/data/blogData';
+import { trpc } from '@/trpc';
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const { t, i18n } = useTranslation(['blogPost', 'blog', 'common']);
 
-  // Buscar o artigo pelo slug
+  const { data: marketingContent, isLoading: loadingMarketing, isError: marketingError } = trpc.marketing.public.getBySlug.useQuery(
+    slug!,
+    { enabled: !!slug, retry: false }
+  );
+
+  const isLinkedIn =
+    marketingContent &&
+    (marketingContent as { post_source?: string }).post_source === 'linkedin' &&
+    (marketingContent as { external_url?: string | null }).external_url;
+
+  useEffect(() => {
+    if (isLinkedIn && (marketingContent as { external_url?: string }).external_url) {
+      window.location.href = (marketingContent as { external_url: string }).external_url;
+    }
+  }, [isLinkedIn, marketingContent]);
+
+  if (isLinkedIn) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p className="text-gray-600 dark:text-gray-400">Redirecionando para o LinkedIn...</p>
+      </div>
+    );
+  }
+
+  // Conteúdo do marketing (artigo no site)
+  if (marketingContent && !isLinkedIn) {
+    const row = marketingContent as {
+      titulo: string;
+      resumo: string | null;
+      conteudo: string | null;
+      imagem_url: string | null;
+      updated_at: string;
+    };
+    return (
+      <>
+        <UnifiedSEO
+          title={`${row.titulo} | Blog OnSmartAI`}
+          description={row.resumo || undefined}
+        />
+        <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:bg-gray-900">
+          <div className="container mx-auto max-w-4xl px-4 py-16">
+            <Button asChild variant="ghost" className="mb-8">
+              <Link to="/blog">
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                {t('backButton')}
+              </Link>
+            </Button>
+            <article className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+              <div className="p-8">
+                <div className="flex items-center gap-4 mb-6 text-sm text-gray-600 dark:text-gray-400">
+                  <Calendar className="h-4 w-4" />
+                  {row.updated_at
+                    ? new Date(row.updated_at).toLocaleDateString('pt-BR')
+                    : null}
+                </div>
+                <h1 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">
+                  {row.titulo}
+                </h1>
+                {row.resumo && (
+                  <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 pb-6 border-b border-gray-200 dark:border-gray-700">
+                    {row.resumo}
+                  </p>
+                )}
+                {row.conteudo && (
+                  <div
+                    className="marketing-content-prose prose prose-lg max-w-none mx-auto dark:prose-invert prose-headings:text-gray-900 dark:prose-headings:text-white prose-p:text-gray-700 dark:prose-p:text-gray-300 prose-headings:font-bold prose-h2:text-2xl prose-h2:mt-8 prose-h2:mb-4 prose-h2:pb-2 prose-h2:border-b prose-h2:border-gray-200 dark:prose-h2:border-gray-700 prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3 prose-p:leading-relaxed prose-p:mb-4 prose-ul:my-4 prose-ol:my-4"
+                    dangerouslySetInnerHTML={{ __html: row.conteudo }}
+                  />
+                )}
+              </div>
+            </article>
+          </div>
+        </div>
+      </>
+    );
+  }
+
+  if (loadingMarketing) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-10 w-10 border-2 border-brand-blue border-t-transparent" />
+      </div>
+    );
+  }
+
+  // Fallback: artigo estático (blogData)
   const article = blogPosts.find(post => post.slug === slug);
 
   // Obter traduções do artigo

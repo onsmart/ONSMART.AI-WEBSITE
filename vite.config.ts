@@ -12,6 +12,18 @@ export default defineConfig(({ mode }) => ({
         target: 'http://localhost:3001',
         changeOrigin: true,
         secure: false,
+        configure: (proxy) => {
+          proxy.on('proxyRes', (proxyRes) => {
+            const setCookie = proxyRes.headers['set-cookie'];
+            if (setCookie) {
+              proxyRes.headers['set-cookie'] = setCookie.map((cookie: string) =>
+                cookie
+                  .replace(/;\s*Secure/gi, '')
+                  .replace(/Domain=[^;]+;?/gi, '')
+              );
+            }
+          });
+        },
       },
     },
   },

@@ -1,13 +1,12 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import UnifiedSEO from '@/components/shared/UnifiedSEO';
 import BlogHero from '@/components/blog/BlogHero';
 import BlogSearchAndFilters from '@/components/blog/BlogSearchAndFilters';
-import BlogGrid from '@/components/blog/BlogGrid';
 import BlogNewsletter from '@/components/blog/BlogNewsletter';
 import BlogEngagementTracker from '@/components/blog/BlogEngagementTracker';
-import LinkedInArticlesFeed from '@/components/blog/LinkedInArticlesFeed';
+import MarketingBlogFeed from '@/components/blog/MarketingBlogFeed';
 import EbooksFeed from '@/components/blog/EbooksFeed';
-import { blogPosts, blogCategories } from '@/components/blog/data/blogData';
+import { blogCategories } from '@/components/blog/data/blogData';
 import { useTranslation } from 'react-i18next';
 
 const Blog = () => {
@@ -15,24 +14,14 @@ const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState('todos');
   const { t } = useTranslation(['blog', 'common']);
 
-  // Filtrar artigos baseado na busca e categoria
-  const filteredArticles = useMemo(() => {
-    return blogPosts.filter(article => {
-      const matchesSearch = article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           article.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
-      const matchesCategory = selectedCategory === 'todos' || article.category === selectedCategory;
-      return matchesSearch && matchesCategory;
-    });
-  }, [searchTerm, selectedCategory]);
-
   // Renderizar conteúdo baseado na categoria selecionada
   const renderContent = () => {
     if (selectedCategory === 'ebooks') {
       return <EbooksFeed />;
     } else if (selectedCategory === 'artigos') {
-      return <LinkedInArticlesFeed />;
+      return <MarketingBlogFeed />;
     } else {
-      // 'todos' - mostrar ambos
+      // 'todos' - mostrar artigos (marketing) + e-books
       return (
         <>
           <div className="mb-16">
@@ -40,7 +29,7 @@ const Blog = () => {
               <div className="h-1 w-12 bg-gradient-to-r from-brand-blue to-blue-600 rounded-full"></div>
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100">Artigos</h2>
             </div>
-            <LinkedInArticlesFeed />
+            <MarketingBlogFeed />
           </div>
           <div>
             <div className="flex items-center gap-3 mb-8">

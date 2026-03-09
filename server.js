@@ -12,8 +12,12 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+// Cookie parser for marketing tRPC (httpOnly cookies)
+import cookieParser from 'cookie-parser';
+app.use(cookieParser());
+
 // Middleware
-app.use(cors());
+app.use(cors({ origin: true, credentials: true }));
 app.use(express.json());
 
 // Serve static files from dist directory
@@ -270,6 +274,68 @@ app.post('/api/openai-proxy', async (req, res) => {
   }
 });
 
+// Format plain text to responsive HTML using GPT (for marketing content editor)
+app.post('/api/openai-format-html', async (req, res) => {
+  try {
+    const { text } = req.body;
+    if (!text || typeof text !== 'string') {
+      return res.status(400).json({ error: 'Campo "text" é obrigatório' });
+    }
+
+    const apiKey = process.env.OPENAI_API_KEY;
+    if (!apiKey) {
+      return res.status(500).json({ error: 'API OpenAI não configurada' });
+    }
+
+    const systemPrompt = `Você é um editor que converte texto em HTML para artigos de site. O resultado será exibido centralizado na página, em layout responsivo.
+
+ESTRUTURA OBRIGATÓRIA:
+1. Títulos de seção: qualquer linha que pareça título (frase curta, sozinha, em geral com maiúsculas) → <h2>texto</h2>. Exemplo: "A Cidade Onde as Ideias Acordam" → <h2>A Cidade Onde as Ideias Acordam</h2>.
+2. Parágrafos: TODO bloco de texto contínuo deve estar dentro de <p>...</p>. NUNCA deixe texto solto fora de tags.
+3. Primeiro h2: use para o primeiro título do texto. Os demais títulos de seção também em <h2>.
+4. Subtítulos opcionais: se houver frase que seja subtítulo de um h2, use <h3>.
+5. Listas: itens enumerados ou com marcadores → <ul><li>...</li></ul> ou <ol><li>...</li></ol>.
+6. Ênfase: <strong> para negrito, <em> para itálico quando fizer sentido.
+
+TAGS PERMITIDAS: apenas p, h2, h3, h4, ul, ol, li, strong, em, a, br. Sem script, style ou atributos inline.
+
+SAÍDA: retorne SOMENTE o HTML, sem explicação, sem markdown, sem \`\`\` ou texto extra.`;
+
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify({
+        model: process.env.OPENAI_MODEL || 'gpt-4o-mini',
+        messages: [
+          { role: 'system', content: systemPrompt },
+          { role: 'user', content: text },
+        ],
+        temperature: 0.2,
+        max_tokens: 4000,
+      }),
+    });
+
+    if (!response.ok) {
+      const errText = await response.text();
+      console.error('OpenAI format-html error:', response.status, errText);
+      return res.status(response.status).json({ error: 'Erro ao formatar com IA' });
+    }
+
+    const data = await response.json();
+    let html = data.choices?.[0]?.message?.content?.trim();
+    if (!html) return res.status(500).json({ error: 'Resposta vazia da IA' });
+    html = html.replace(/^```(?:html)?\s*/i, '').replace(/\s*```$/i, '').trim();
+
+    res.json({ html });
+  } catch (error) {
+    console.error('Error in openai-format-html:', error);
+    res.status(500).json({ error: 'Erro interno ao formatar' });
+  }
+});
+
 // ElevenLabs Widget endpoint (completely secure - no API calls needed)
 app.get('/api/elevenlabs-widget', (req, res) => {
   try {
@@ -316,6 +382,16 @@ app.get('/api/elevenlabs-widget', (req, res) => {
 app.get('/health', (req, res) => {
   res.json({ status: 'OK', message: 'Server is running' });
 });
+
+// Marketing tRPC (mount after build:server)
+try {
+  const { createMarketingTrpcMiddleware, runBackfillIfEnabled, runMarketingSeedIfEnabled } = await import('./dist-server/index.js');
+  app.use('/api/trpc', createMarketingTrpcMiddleware());
+  runMarketingSeedIfEnabled().catch((err) => console.error('[marketing] Seed:', err));
+  runBackfillIfEnabled().catch((err) => console.error('[marketing] Backfill:', err));
+} catch (e) {
+  console.warn('Marketing tRPC not loaded (run npm run build:server):', e.message);
+}
 
 // Catch all handler: must be last route - redireciona todas as rotas para index.html
 // Isso é necessário para SPAs que usam React Router
