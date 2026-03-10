@@ -1,6 +1,5 @@
 /**
- * Vercel Serverless Function: expõe o tRPC do marketing em /api/trpc/*.
- * Arquivo [...trpc].js (catch-all) para /api/trpc/qualquer-coisa.
+ * Vercel Serverless Function: expõe o tRPC do marketing em /api/trpc e /api/trpc/*.
  * Requer "npm run build && npm run build:server" no Build Command.
  */
 export default async function handler(req, res) {
@@ -16,11 +15,15 @@ export default async function handler(req, res) {
     const { createMarketingTrpcMiddleware } = await import('../../dist-server/index.js');
     const middleware = createMarketingTrpcMiddleware();
 
-    const originalUrl = req.url || '/';
-    const pathPrefix = '/api/trpc';
-    req.url = originalUrl.startsWith(pathPrefix)
-      ? originalUrl.slice(pathPrefix.length) || '/'
-      : originalUrl;
+    let path = (req.url || '/').replace(/^\//, '');
+    const prefix = 'api/trpc';
+    if (path.startsWith(prefix)) {
+      path = path.slice(prefix.length).replace(/^\//, '') || '/';
+    }
+    // Rewrite /api/trpc -> /api/trpc/_ envia path "_"; tratar como /
+    const pathOnly = path.split('?')[0];
+    const query = path.includes('?') ? '?' + path.slice(path.indexOf('?') + 1) : '';
+    req.url = ((pathOnly === '_' || pathOnly === '') ? '/' : '/' + pathOnly) + query;
 
     return new Promise((resolve) => {
       middleware(req, res, (err) => {
