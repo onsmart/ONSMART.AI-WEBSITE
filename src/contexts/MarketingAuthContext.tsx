@@ -15,7 +15,7 @@ interface MarketingUser {
 interface MarketingAuthContextValue {
   user: MarketingUser | null | undefined;
   isLoading: boolean;
-  login: (email: string, password: string) => Promise<void>;
+  login: (email: string, password: string) => Promise<{ user: MarketingUser }>;
   logout: () => Promise<void>;
   refresh: () => Promise<void>;
 }
@@ -45,7 +45,8 @@ export function MarketingAuthProvider({ children }: { children: React.ReactNode 
 
   const login = useCallback(
     async (email: string, password: string) => {
-      await loginMutation.mutateAsync({ email, password });
+      const result = await loginMutation.mutateAsync({ email, password });
+      return result;
     },
     [loginMutation]
   );

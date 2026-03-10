@@ -21,22 +21,17 @@ ON CONFLICT (email) DO UPDATE SET
   name = EXCLUDED.name,
   updated_at = now();
 
--- Opcional: segundo usuário para teste
--- Descomente e edite se quiser mais de um acesso
-
-/*
 INSERT INTO marketing_users (email, password_hash, name)
 VALUES
   (
-    'outro@onsmart.com.br',
-    crypt('outrasenha', gen_salt('bf', 10)),
-    'Outro Usuário'
+    'mateus.mantovani@onsmart.com.br',
+    crypt('Arizona@10161921!', gen_salt('bf', 10)),
+    'Mateus Mantovani'
   )
 ON CONFLICT (email) DO UPDATE SET
   password_hash = EXCLUDED.password_hash,
   name = EXCLUDED.name,
   updated_at = now();
-*/
 
 -- Conferir usuários criados
 SELECT id, email, name, created_at FROM marketing_users ORDER BY created_at;

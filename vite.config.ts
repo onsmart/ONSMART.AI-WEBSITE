@@ -13,14 +13,16 @@ export default defineConfig(({ mode }) => ({
         changeOrigin: true,
         secure: false,
         configure: (proxy) => {
-          proxy.on('proxyRes', (proxyRes) => {
+          proxy.on('proxyRes', (proxyRes, req, res) => {
             const setCookie = proxyRes.headers['set-cookie'];
             if (setCookie) {
-              proxyRes.headers['set-cookie'] = setCookie.map((cookie: string) =>
+              // Reescreve cookies para o cliente (remove Secure/Domain) e garante envio
+              const rewritten = setCookie.map((cookie: string) =>
                 cookie
                   .replace(/;\s*Secure/gi, '')
                   .replace(/Domain=[^;]+;?/gi, '')
               );
+              proxyRes.headers['set-cookie'] = rewritten;
             }
           });
         },

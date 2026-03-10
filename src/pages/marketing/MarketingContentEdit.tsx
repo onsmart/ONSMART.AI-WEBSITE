@@ -56,6 +56,7 @@ export default function MarketingContentEdit() {
   const [pdfPath, setPdfPath] = useState('');
   const [postSource, setPostSource] = useState<'site' | 'linkedin'>('site');
   const [externalUrl, setExternalUrl] = useState('');
+  const [uploadError, setUploadError] = useState<string | null>(null);
   const { data: existing, isLoading: loadingExisting } = trpc.marketing.content.getById.useQuery(id!, { enabled: !!id });
   const utils = trpc.useUtils();
   const createMutation = trpc.marketing.content.create.useMutation({
@@ -139,7 +140,16 @@ export default function MarketingContentEdit() {
       }
 
       if (!res.ok) throw new Error(data.error || 'Erro ao formatar');
-      if (data.html) setConteudo(data.html);
+      if (data.html) {
+        // Garantir que tags sejam HTML real (não entidades), para o preview e a página renderizarem corretamente
+        const decoded = String(data.html)
+          .replace(/&lt;/g, '<')
+          .replace(/&gt;/g, '>')
+          .replace(/&amp;/g, '&')
+          .replace(/&quot;/g, '"')
+          .replace(/&#39;/g, "'");
+        setConteudo(decoded);
+      }
     } catch (err) {
       alert(err instanceof Error ? err.message : 'Erro ao formatar com IA. Verifique se a API OpenAI está configurada.');
     } finally {
@@ -148,16 +158,26 @@ export default function MarketingContentEdit() {
   };
 
   const handleFile = async (file: File, bucket: 'pdf' | 'image') => {
+    setUploadError(null);
     const reader = new FileReader();
     reader.onload = async () => {
       const base64 = (reader.result as string).split(',')[1];
-      if (!base64) return;
+      if (!base64) {
+        setUploadError('Falha ao ler o arquivo.');
+        return;
+      }
       const contentType = file.type || (bucket === 'pdf' ? 'application/pdf' : 'image/jpeg');
-      const path = `${Date.now()}-${file.name}`;
-      const result = await uploadMutation.mutateAsync({ bucket, path, base64, contentType });
-      if (bucket === 'image') setImagemUrl(result.url);
-      else setPdfPath(result.path);
+      const path = `${Date.now()}-${file.name.replace(/[^a-zA-Z0-9._-]/g, '_')}`;
+      try {
+        const result = await uploadMutation.mutateAsync({ bucket, path, base64, contentType });
+        if (bucket === 'image') setImagemUrl(result.url);
+        else setPdfPath(result.path);
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : 'Erro ao enviar arquivo. Verifique o tamanho (recomendado < 6MB) e a conexão.';
+        setUploadError(msg);
+      }
     };
+    reader.onerror = () => setUploadError('Falha ao ler o arquivo.');
     reader.readAsDataURL(file);
   };
 
@@ -185,93 +205,120 @@ export default function MarketingContentEdit() {
     }
   };
 
+  // Botão Criar/Salvar só habilita com título, slug e conteúdo preenchidos.
+  // Para ferramentas/materiais: conteúdo = texto OU PDF anexado OU imagem (qualquer um conta).
+  const showContentField = type !== 'blog_artigos' || postSource === 'site';
+  const hasContent =
+    !showContentField ||
+    conteudo.trim().length > 0 ||
+    (pdfPath && pdfPath.trim().length > 0) ||
+    (imagemUrl && imagemUrl.trim().length > 0);
+  const hasRequiredFields =
+    titulo.trim().length > 0 && slug.trim().length > 0 && hasContent;
+  const canSubmit = hasRequiredFields && !createMutation.isPending && !updateMutation.isPending;
+
   if (!isNew && loadingExisting) {
-    return <div className="p-8 text-center">Carregando...</div>;
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100/80 dark:from-gray-900 dark:to-gray-900/95 flex items-center justify-center">
+        <div className="h-10 w-10 rounded-full border-2 border-brand-blue border-t-transparent animate-spin" />
+      </div>
+    );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 p-4">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100/80 dark:from-gray-900 dark:to-gray-900/95 p-4">
       <div className="max-w-3xl mx-auto">
-        <Button variant="ghost" asChild className="mb-4">
+        <Button variant="ghost" asChild className="mb-4 text-gray-600 hover:text-brand-blue dark:text-gray-400 dark:hover:text-brand-blue">
           <Link to="/marketing"><ArrowLeft className="h-4 w-4 mr-2" />Voltar</Link>
         </Button>
-        <Card>
-          <CardHeader>
-            <h1 className="text-xl font-bold">{isNew ? 'Novo conteúdo' : 'Editar conteúdo'}</h1>
+        <Card className="rounded-2xl border border-gray-200/80 dark:border-gray-700/80 shadow-xl shadow-gray-200/30 dark:shadow-none bg-white dark:bg-gray-800 overflow-hidden">
+          <div className="h-1 w-full bg-gradient-to-r from-brand-blue to-blue-600" />
+          <CardHeader className="pb-6 pt-8 px-8 border-b border-gray-100 dark:border-gray-700/50">
+            <h1 className="text-xl font-bold text-gray-900 dark:text-white">
+              {isNew ? 'Novo conteúdo' : 'Editar conteúdo'}
+            </h1>
           </CardHeader>
-          <CardContent>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <Label>Tipo</Label>
-                <select value={type} onChange={(e) => setType(e.target.value)} className="w-full mt-1 rounded border px-3 py-2">
+          <CardContent className="px-8 pb-8 pt-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="space-y-2">
+                <Label className="text-sm font-medium text-gray-700 dark:text-gray-300">Tipo</Label>
+                <select
+                  value={type}
+                  onChange={(e) => setType(e.target.value)}
+                  className="w-full h-11 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800/80 text-gray-900 dark:text-gray-100 px-4 transition-all duration-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 focus:outline-none"
+                >
                   {TYPES.map((t) => <option key={t.value} value={t.value}>{t.label}</option>)}
                 </select>
               </div>
-              <div>
-                <Label>Status</Label>
-                <select value={status} onChange={(e) => setStatus(e.target.value as 'draft' | 'published')} className="w-full mt-1 rounded border px-3 py-2">
+              <div className="space-y-2">
+                <Label className="text-sm font-medium text-gray-700 dark:text-gray-300">Status</Label>
+                <select
+                  value={status}
+                  onChange={(e) => setStatus(e.target.value as 'draft' | 'published')}
+                  className="w-full h-11 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800/80 text-gray-900 dark:text-gray-100 px-4 transition-all duration-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 focus:outline-none"
+                >
                   <option value="draft">Rascunho</option>
                   <option value="published">Publicado</option>
                 </select>
-                <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                <p className="text-xs text-gray-500 dark:text-gray-400">
                   Use Rascunho para ocultar o conteúdo do site e editar com calma. Você pode voltar para Publicado quando quiser.
                 </p>
               </div>
               {type === 'blog_artigos' && (
                 <>
-                  <div>
-                    <Label>Tipo de postagem</Label>
+                  <div className="space-y-2">
+                    <Label className="text-sm font-medium text-gray-700 dark:text-gray-300">Tipo de postagem</Label>
                     <select
                       value={postSource}
                       onChange={(e) => setPostSource(e.target.value as 'site' | 'linkedin')}
-                      className="w-full mt-1 rounded border px-3 py-2"
+                      className="w-full h-11 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800/80 text-gray-900 dark:text-gray-100 px-4 transition-all duration-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 focus:outline-none"
                     >
                       <option value="site">Conteúdo no site (escrever artigo aqui)</option>
                       <option value="linkedin">Apenas link do LinkedIn (card redireciona para o post)</option>
                     </select>
                   </div>
                   {postSource === 'linkedin' && (
-                    <div>
-                      <Label>URL do LinkedIn</Label>
+                    <div className="space-y-2">
+                      <Label className="text-sm font-medium text-gray-700 dark:text-gray-300">URL do LinkedIn</Label>
                       <Input
                         type="url"
                         value={externalUrl}
                         onChange={(e) => setExternalUrl(e.target.value)}
                         placeholder="https://www.linkedin.com/..."
-                        className="mt-1"
+                        className="h-11 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800/80 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20"
                       />
-                      <p className="text-xs text-gray-500 mt-1">O card no blog abrirá este link ao clicar.</p>
+                      <p className="text-xs text-gray-500 dark:text-gray-400">O card no blog abrirá este link ao clicar.</p>
                     </div>
                   )}
                 </>
               )}
-              <div>
-                <Label>Título</Label>
-                <Input value={titulo} onChange={handleTituloChange} required className="mt-1" />
+              <div className="space-y-2">
+                <Label className="text-sm font-medium text-gray-700 dark:text-gray-300">Título</Label>
+                <Input value={titulo} onChange={handleTituloChange} required className="h-11 rounded-xl border-gray-200 dark:border-gray-600 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20" />
               </div>
-              <div>
-                <Label>Slug</Label>
+              <div className="space-y-2">
+                <Label className="text-sm font-medium text-gray-700 dark:text-gray-300">Slug</Label>
                 <Input
                   value={slug}
                   onChange={handleSlugChange}
                   placeholder="Gerado automaticamente a partir do título"
-                  className="mt-1 font-mono text-sm"
+                  className="h-11 rounded-xl font-mono text-sm border-gray-200 dark:border-gray-600 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20"
                 />
-                <p className="text-xs text-gray-500 mt-1">Gerado automaticamente ao digitar o título. Você pode editar manualmente.</p>
+                <p className="text-xs text-gray-500 dark:text-gray-400">Gerado automaticamente ao digitar o título. Você pode editar manualmente.</p>
               </div>
-              <div>
-                <Label>Resumo (opcional)</Label>
+              <div className="space-y-2">
+                <Label className="text-sm font-medium text-gray-700 dark:text-gray-300">Resumo (opcional)</Label>
                 <textarea
                   value={resumo}
                   onChange={(e) => setResumo(e.target.value)}
                   placeholder="Breve descrição para cards e listagens"
-                  className="w-full mt-1 rounded border px-3 py-2 min-h-[60px] text-sm"
+                  className="w-full min-h-[80px] rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800/80 text-gray-900 dark:text-gray-100 px-4 py-3 text-sm transition-all duration-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 focus:outline-none resize-y"
                 />
               </div>
               {(type !== 'blog_artigos' || postSource === 'site') && (
-              <div>
+              <div className="space-y-2">
                 <div className="flex items-center justify-between gap-2 flex-wrap">
-                  <Label>Conteúdo</Label>
+                  <Label className="text-sm font-medium text-gray-700 dark:text-gray-300">Conteúdo</Label>
                   <div className="flex items-center gap-2">
                     <Button
                       type="button"
@@ -279,6 +326,7 @@ export default function MarketingContentEdit() {
                       size="sm"
                       onClick={handleFormatWithAI}
                       disabled={formattingContent}
+                      className="rounded-lg border-gray-200 dark:border-gray-600 hover:border-brand-blue hover:bg-brand-blue/5"
                     >
                       <Sparkles className="h-4 w-4 mr-1.5" />
                       {formattingContent ? 'Formatando...' : 'Formatar com IA'}
@@ -288,6 +336,7 @@ export default function MarketingContentEdit() {
                       variant="outline"
                       size="sm"
                       onClick={() => setPreviewModalOpen(true)}
+                      className="rounded-lg border-gray-200 dark:border-gray-600 hover:border-brand-blue hover:bg-brand-blue/5"
                     >
                       <Eye className="h-4 w-4 mr-1.5" />
                       Preview
@@ -298,7 +347,7 @@ export default function MarketingContentEdit() {
                   value={conteudo}
                   onChange={(e) => setConteudo(e.target.value)}
                   placeholder="Digite o texto. Use &quot;Formatar com IA&quot; para converter em HTML responsivo."
-                  className="w-full mt-1 rounded border px-3 py-2 min-h-[200px] font-mono text-sm"
+                  className="w-full min-h-[200px] rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800/80 font-mono text-sm px-4 py-3 transition-all duration-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 focus:outline-none resize-y"
                 />
               </div>
               )}
@@ -318,7 +367,8 @@ export default function MarketingContentEdit() {
                           className="marketing-content-prose prose prose-lg max-w-none mx-auto dark:prose-invert
                             prose-headings:font-bold prose-headings:tracking-tight
                             prose-h2:text-2xl prose-h2:mt-8 prose-h2:mb-4 prose-h2:pb-2 prose-h2:border-b prose-h2:border-gray-200 dark:prose-h2:border-gray-700 first:prose-h2:mt-0
-                            prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3
+                            prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3 prose-h3:font-semibold
+                            prose-h4:text-lg prose-h4:mt-4 prose-h4:mb-2 prose-h4:font-semibold
                             prose-p:text-gray-700 dark:prose-p:text-gray-300 prose-p:leading-relaxed prose-p:mb-4
                             prose-ul:my-4 prose-ol:my-4 prose-li:my-1"
                           dangerouslySetInnerHTML={{
@@ -340,21 +390,72 @@ export default function MarketingContentEdit() {
                   </div>
                 </DialogContent>
               </Dialog>
-              <div>
-                <Label>Imagem (URL ou upload)</Label>
-                <Input value={imagemUrl} onChange={(e) => setImagemUrl(e.target.value)} placeholder="URL ou envie arquivo" className="mt-1" />
-                <input type="file" accept="image/*" className="mt-2 block" onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0], 'image')} />
+              {uploadError && (
+                <p className="text-sm text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-900/20 rounded-xl px-4 py-2">
+                  {uploadError}
+                </p>
+              )}
+              <div className="space-y-2">
+                <Label className="text-sm font-medium text-gray-700 dark:text-gray-300">Imagem (URL ou upload)</Label>
+                <Input
+                  value={imagemUrl}
+                  onChange={(e) => setImagemUrl(e.target.value)}
+                  placeholder="URL ou envie arquivo"
+                  className="h-11 rounded-xl border-gray-200 dark:border-gray-600 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20"
+                />
+                <label className="flex items-center justify-center gap-2 h-11 rounded-xl border border-dashed border-gray-300 dark:border-gray-600 hover:border-brand-blue/50 hover:bg-brand-blue/5 dark:hover:bg-brand-blue/10 cursor-pointer transition-colors text-sm text-gray-600 dark:text-gray-400 mt-2">
+                  <input type="file" accept="image/*" className="sr-only" onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0], 'image')} />
+                  Enviar imagem
+                </label>
               </div>
-              <div>
-                <Label>PDF (upload)</Label>
-                <Input value={pdfPath} readOnly placeholder="Caminho após upload" className="mt-1 bg-gray-100" />
-                <input type="file" accept="application/pdf" className="mt-2 block" onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0], 'pdf')} />
+              <div className="space-y-2">
+                <Label className="text-sm font-medium text-gray-700 dark:text-gray-300">PDF (upload)</Label>
+                <div className="flex gap-2 items-center flex-wrap">
+                  <Input
+                    value={pdfPath}
+                    readOnly
+                    placeholder="Caminho após upload"
+                    className="h-11 rounded-xl bg-gray-100 dark:bg-gray-800/80 border-gray-200 dark:border-gray-600 font-mono text-sm flex-1 min-w-0"
+                  />
+                  {pdfPath.trim() ? (
+                    <Button
+                      type="button"
+                      variant="outline"
+                      size="sm"
+                      onClick={() => { setPdfPath(''); setUploadError(null); }}
+                      className="h-11 rounded-xl border-red-200 dark:border-red-800 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 shrink-0"
+                    >
+                      Remover PDF
+                    </Button>
+                  ) : null}
+                </div>
+                <label className="flex items-center justify-center gap-2 h-11 rounded-xl border border-dashed border-gray-300 dark:border-gray-600 hover:border-brand-blue/50 hover:bg-brand-blue/5 dark:hover:bg-brand-blue/10 cursor-pointer transition-colors text-sm text-gray-600 dark:text-gray-400 mt-2">
+                  <input type="file" accept="application/pdf" className="sr-only" onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0], 'pdf')} />
+                  {pdfPath.trim() ? 'Substituir PDF' : 'Enviar PDF'}
+                </label>
               </div>
-              <div className="flex gap-2">
-                <Button type="submit" disabled={createMutation.isPending || updateMutation.isPending}>
+              <div className="flex flex-col gap-3 pt-4">
+                {!hasRequiredFields && (
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    Preencha título, slug e conteúdo (ou anexe um PDF/imagem) para habilitar o botão {isNew ? 'Criar' : 'Salvar'}.
+                  </p>
+                )}
+                <div className="flex gap-3">
+                <Button
+                  type="submit"
+                  disabled={!canSubmit}
+                  className={`h-11 rounded-xl px-6 font-medium ${
+                    canSubmit
+                      ? 'bg-gradient-to-r from-brand-blue to-blue-600 hover:from-blue-600 hover:to-brand-blue text-white shadow-md shadow-brand-blue/25'
+                      : 'bg-gray-200 dark:bg-gray-700 text-gray-400 dark:text-gray-500 cursor-not-allowed'
+                  }`}
+                >
                   {isNew ? 'Criar' : 'Salvar'}
                 </Button>
-                <Button type="button" variant="outline" asChild><Link to="/marketing">Cancelar</Link></Button>
+                <Button type="button" variant="outline" asChild className="h-11 rounded-xl border-gray-200 dark:border-gray-600">
+                  <Link to="/marketing">Cancelar</Link>
+                </Button>
+              </div>
               </div>
             </form>
           </CardContent>

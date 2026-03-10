@@ -12,7 +12,7 @@ export async function runSeedIfEnabled(): Promise<void> {
   const url = process.env.SUPABASE_URL;
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
   const email = (process.env.MARKETING_SEED_EMAIL || 'marketing@onsmart.com.br').toLowerCase().trim();
-  const password = process.env.MARKETING_SEED_PASSWORD || 'senha123';
+  const password = process.env.MARKETING_SEED_PASSWORD || 'Mkt2026!@';
 
   if (!url || !key) {
     console.warn('[marketing] Seed skipped: SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY required');

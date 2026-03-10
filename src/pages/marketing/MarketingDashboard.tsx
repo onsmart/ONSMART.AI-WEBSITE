@@ -27,12 +27,12 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { MoreHorizontal, Plus, LogOut, Search } from 'lucide-react';
+import { MoreHorizontal, Plus, LogOut, Search, FileText, LayoutGrid, BookOpen } from 'lucide-react';
 
 const TYPES = [
-  { value: 'blog_artigos', label: 'Blog / Artigos' },
-  { value: 'ferramentas', label: 'Ferramentas' },
-  { value: 'materiais_gratuitos', label: 'Materiais Gratuitos' },
+  { value: 'blog_artigos', label: 'Blog / Artigos', icon: FileText },
+  { value: 'ferramentas', label: 'Ferramentas', icon: LayoutGrid },
+  { value: 'materiais_gratuitos', label: 'Materiais Gratuitos', icon: BookOpen },
 ] as const;
 
 export default function MarketingDashboard() {
@@ -60,64 +60,86 @@ export default function MarketingDashboard() {
   };
 
   const contents = data?.rows ?? [];
-  const total = data?.total ?? 0;
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <header className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 px-4 py-3 flex items-center justify-between">
-        <div className="flex items-center gap-4">
-          <Link to="/" className="text-lg font-semibold text-gray-900 dark:text-white">
-            OnSmart.AI
-          </Link>
-          <span className="text-sm text-gray-500">Marketing</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <span className="text-sm text-gray-600 dark:text-gray-400">{user?.email}</span>
-          <Button variant="ghost" size="sm" onClick={handleLogout}>
-            <LogOut className="h-4 w-4 mr-1" />
-            Sair
-          </Button>
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100/80 dark:from-gray-900 dark:to-gray-900/95">
+      <header className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 shadow-sm">
+        <div className="max-w-6xl mx-auto px-4 md:px-6 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <Link
+              to="/"
+              className="text-lg font-bold bg-gradient-to-r from-brand-blue to-blue-600 bg-clip-text text-transparent hover:opacity-90 transition-opacity"
+            >
+              OnSmart.AI
+            </Link>
+            <Badge variant="secondary" className="bg-brand-blue/10 text-brand-blue border-brand-blue/20 font-medium">
+              Marketing
+            </Badge>
+          </div>
+          <div className="flex items-center gap-3">
+            <span className="text-sm text-gray-600 dark:text-gray-400 truncate max-w-[180px] md:max-w-none">
+              {user?.email}
+            </span>
+            <Button variant="ghost" size="sm" onClick={handleLogout} className="text-gray-600 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-950/30">
+              <LogOut className="h-4 w-4 mr-1.5" />
+              Sair
+            </Button>
+          </div>
         </div>
       </header>
 
       <main className="max-w-6xl mx-auto p-4 md:p-6">
-        <Card>
-          <CardHeader>
-            <h1 className="text-2xl font-bold">Conteúdos</h1>
-            <p className="text-sm text-gray-500">
-              Os artigos atuais do site são carregados automaticamente em produção. Edite, exclua ou crie novos aqui; as alterações aparecem no site na hora. Em desenvolvimento use um Supabase separado no .env para não afetar a produção.
-            </p>
+        <Card className="rounded-xl border-gray-200/80 dark:border-gray-700 shadow-lg bg-white dark:bg-gray-800 overflow-hidden">
+          <CardHeader className="pb-4 border-b border-gray-100 dark:border-gray-700/50 bg-gradient-to-r from-gray-50/80 to-white dark:from-gray-800/50 dark:to-gray-800">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div>
+                <h1 className="text-2xl font-bold text-gray-900 dark:text-white tracking-tight">
+                  Conteúdos
+                </h1>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-1 max-w-2xl">
+                  Os artigos do site são carregados automaticamente em produção. Edite, exclua ou crie novos aqui; as alterações aparecem no site na hora.
+                </p>
+              </div>
+            </div>
           </CardHeader>
-          <CardContent>
+          <CardContent className="pt-6">
             <Tabs value={activeTab} onValueChange={setActiveTab}>
-              <TabsList className="grid w-full grid-cols-3 mb-4">
-                {TYPES.map((t) => (
-                  <TabsTrigger key={t.value} value={t.value}>
-                    {t.label}
-                  </TabsTrigger>
-                ))}
+              <TabsList className="grid w-full grid-cols-3 mb-6 p-1 h-11 bg-gray-100 dark:bg-gray-700/50 rounded-lg">
+                {TYPES.map((t) => {
+                  const Icon = t.icon;
+                  return (
+                    <TabsTrigger
+                      key={t.value}
+                      value={t.value}
+                      className="rounded-md data-[state=active]:bg-white data-[state=active]:text-brand-blue data-[state=active]:shadow-sm dark:data-[state=active]:bg-gray-800 dark:data-[state=active]:text-brand-blue font-medium transition-all"
+                    >
+                      <Icon className="h-4 w-4 mr-2 opacity-70" />
+                      {t.label}
+                    </TabsTrigger>
+                  );
+                })}
               </TabsList>
 
-              <div className="flex flex-wrap gap-2 mb-4">
+              <div className="flex flex-wrap gap-3 mb-6">
                 <div className="relative flex-1 min-w-[200px]">
                   <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
                   <Input
                     placeholder="Buscar por título ou resumo..."
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
-                    className="pl-9"
+                    className="pl-9 rounded-lg border-gray-200 dark:border-gray-600 focus-visible:ring-brand-blue/30"
                   />
                 </div>
                 <select
                   value={statusFilter}
                   onChange={(e) => setStatusFilter(e.target.value)}
-                  className="rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-2 text-sm"
+                  className="rounded-lg border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-2 text-sm focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue/50 transition-shadow"
                 >
                   <option value="">Todos os status</option>
                   <option value="draft">Rascunho</option>
                   <option value="published">Publicado</option>
                 </select>
-                <Button asChild>
+                <Button asChild className="rounded-lg bg-brand-blue hover:bg-brand-blue/90 text-white shadow-md hover:shadow-lg transition-all">
                   <Link to={`/marketing/content/new?type=${activeTab}`}>
                     <Plus className="h-4 w-4 mr-2" />
                     Novo
@@ -128,67 +150,95 @@ export default function MarketingDashboard() {
               {TYPES.map((type) => (
                 <TabsContent key={type.value} value={type.value} className="mt-0">
                   {isLoading ? (
-                    <div className="py-8 text-center text-gray-500">Carregando...</div>
+                    <div className="py-16 flex flex-col items-center justify-center text-gray-500">
+                      <div className="h-10 w-10 rounded-full border-2 border-brand-blue border-t-transparent animate-spin mb-3" />
+                      <span>Carregando...</span>
+                    </div>
+                  ) : contents.length === 0 ? (
+                    <div className="py-16 px-4 rounded-xl bg-gradient-to-br from-brand-blue/5 to-blue-50/50 dark:from-brand-blue/10 dark:to-gray-800 border border-brand-blue/10">
+                      <div className="max-w-sm mx-auto text-center">
+                        <div className="w-14 h-14 rounded-2xl bg-brand-blue/10 flex items-center justify-center mx-auto mb-4">
+                          {(() => {
+                            const Icon = TYPES.find((t) => t.value === activeTab)?.icon ?? FileText;
+                            return <Icon className="h-7 w-7 text-brand-blue" />;
+                          })()}
+                        </div>
+                        <h3 className="font-semibold text-gray-900 dark:text-white mb-1">
+                          Nenhum conteúdo nesta aba
+                        </h3>
+                        <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
+                          {activeTab === 'blog_artigos'
+                            ? 'Em produção os artigos são carregados ao subir o servidor. Crie um manualmente com o botão abaixo se quiser.'
+                            : 'Clique em "Novo" para criar o primeiro.'}
+                        </p>
+                        <Button asChild className="bg-brand-blue hover:bg-brand-blue/90 text-white rounded-lg shadow-md">
+                          <Link to={`/marketing/content/new?type=${activeTab}`}>
+                            <Plus className="h-4 w-4 mr-2" />
+                            Criar conteúdo
+                          </Link>
+                        </Button>
+                      </div>
+                    </div>
                   ) : (
-                    <Table>
-                      <TableHeader>
-                        <TableRow>
-                          <TableHead>Título</TableHead>
-                          <TableHead>Slug</TableHead>
-                          <TableHead>Tipo</TableHead>
-                          <TableHead>Status</TableHead>
-                          <TableHead>Atualizado</TableHead>
-                          <TableHead className="w-12" />
-                        </TableRow>
-                      </TableHeader>
-                      <TableBody>
-                        {contents.length === 0 ? (
-                          <TableRow>
-                            <TableCell colSpan={6} className="text-center text-gray-500 py-8">
-                              {activeTab === 'blog_artigos'
-                                ? 'Nenhum artigo. Em produção os artigos do site são carregados ao subir o servidor (MARKETING_BACKFILL_FROM_SITE=true). Crie um com "Novo" se quiser.'
-                                : 'Nenhum conteúdo. Clique em "Novo" para criar.'}
-                            </TableCell>
+                    <div className="rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
+                      <Table>
+                        <TableHeader>
+                          <TableRow className="bg-gray-50 dark:bg-gray-800/50 hover:bg-gray-50 dark:hover:bg-gray-800/50 border-b border-gray-200 dark:border-gray-700">
+                            <TableHead className="font-semibold text-gray-700 dark:text-gray-300">Título</TableHead>
+                            <TableHead className="font-semibold text-gray-700 dark:text-gray-300">Slug</TableHead>
+                            <TableHead className="font-semibold text-gray-700 dark:text-gray-300">Tipo</TableHead>
+                            <TableHead className="font-semibold text-gray-700 dark:text-gray-300">Status</TableHead>
+                            <TableHead className="font-semibold text-gray-700 dark:text-gray-300">Atualizado</TableHead>
+                            <TableHead className="w-12" />
                           </TableRow>
-                        ) : (
-                          contents.map((row) => (
-                            <TableRow key={row.id}>
-                              <TableCell className="font-medium">{row.titulo}</TableCell>
-                              <TableCell className="text-muted-foreground font-mono text-xs">
+                        </TableHeader>
+                        <TableBody>
+                          {contents.map((row) => (
+                            <TableRow
+                              key={row.id}
+                              className="hover:bg-brand-blue/5 dark:hover:bg-brand-blue/10 transition-colors border-b border-gray-100 dark:border-gray-700/50 last:border-0"
+                            >
+                              <TableCell className="font-medium text-gray-900 dark:text-white py-4">
+                                {row.titulo}
+                              </TableCell>
+                              <TableCell className="text-muted-foreground font-mono text-xs py-4">
                                 {row.slug}
                               </TableCell>
-                              <TableCell>
+                              <TableCell className="py-4">
                                 {(row as { post_source?: string }).post_source === 'linkedin' ? (
-                                  <Badge variant="outline" className="text-blue-600 border-blue-300">
+                                  <Badge variant="outline" className="text-blue-600 border-blue-300 bg-blue-50 dark:bg-blue-950/30">
                                     LinkedIn
                                   </Badge>
                                 ) : (
-                                  <Badge variant="outline" className="text-gray-600">
+                                  <Badge variant="outline" className="text-gray-600 bg-gray-100 dark:bg-gray-700">
                                     Site
                                   </Badge>
                                 )}
                               </TableCell>
-                              <TableCell>
-                                <Badge variant={row.status === 'published' ? 'default' : 'secondary'}>
+                              <TableCell className="py-4">
+                                <Badge
+                                  variant={row.status === 'published' ? 'default' : 'secondary'}
+                                  className={row.status === 'published' ? 'bg-green-600 hover:bg-green-600' : ''}
+                                >
                                   {row.status === 'published' ? 'Publicado' : 'Rascunho'}
                                 </Badge>
                               </TableCell>
-                              <TableCell className="text-sm text-gray-500">
+                              <TableCell className="text-sm text-gray-500 py-4">
                                 {new Date(row.updated_at).toLocaleDateString('pt-BR')}
                               </TableCell>
-                              <TableCell>
+                              <TableCell className="py-4">
                                 <DropdownMenu>
                                   <DropdownMenuTrigger asChild>
-                                    <Button variant="ghost" size="icon">
+                                    <Button variant="ghost" size="icon" className="rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
                                       <MoreHorizontal className="h-4 w-4" />
                                     </Button>
                                   </DropdownMenuTrigger>
-                                  <DropdownMenuContent align="end">
+                                  <DropdownMenuContent align="end" className="rounded-lg shadow-lg">
                                     <DropdownMenuItem asChild>
                                       <Link to={`/marketing/content/${row.id}`}>Editar</Link>
                                     </DropdownMenuItem>
                                     <DropdownMenuItem
-                                      className="text-red-600"
+                                      className="text-red-600 focus:text-red-600 focus:bg-red-50 dark:focus:bg-red-950/30"
                                       onClick={() => {
                                         if (window.confirm('Excluir este conteúdo?')) {
                                           deleteMutation.mutate(row.id);
@@ -201,10 +251,10 @@ export default function MarketingDashboard() {
                                 </DropdownMenu>
                               </TableCell>
                             </TableRow>
-                          ))
-                        )}
-                      </TableBody>
-                    </Table>
+                          ))}
+                        </TableBody>
+                      </Table>
+                    </div>
                   )}
                 </TabsContent>
               ))}

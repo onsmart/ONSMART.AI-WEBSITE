@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
 import UnifiedSEO from "@/components/shared/UnifiedSEO";
-import ContentInDevelopment from "@/components/shared/ContentInDevelopment";
+import FerramentasFeed from "@/components/blog/FerramentasFeed";
 import { useTranslation } from 'react-i18next';
 
 const FerramentasGratuitas = () => {
@@ -50,12 +50,16 @@ const FerramentasGratuitas = () => {
         </div>
       </section>
 
-      {/* Enhanced Tools Grid */}
+      {/* Lista de ferramentas (marketing_contents type: ferramentas) ou Conteúdo em Desenvolvimento */}
       <section className="py-20 px-4">
         <div className="max-w-5xl mx-auto">
-          <ContentInDevelopment 
-            namespace="ferramentasGratuitas"
-          />
+          <div className="flex flex-wrap gap-3 mb-8">
+            <div className="h-1 w-12 bg-gradient-to-r from-brand-blue to-blue-600 rounded-full" />
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100">
+              Ferramentas disponíveis
+            </h2>
+          </div>
+          <FerramentasFeed />
         </div>
       </section>
 

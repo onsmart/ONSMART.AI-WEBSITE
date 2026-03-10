@@ -4,10 +4,11 @@ import { useParams, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { ArrowLeft, Calendar, User, Clock, Share2 } from 'lucide-react';
+import { ArrowLeft, Calendar, User, Clock } from 'lucide-react';
 import UnifiedSEO from '@/components/shared/UnifiedSEO';
 import { blogPosts } from '@/components/blog/data/blogData';
 import { trpc } from '@/trpc';
+import { ShareArticleBlock } from '@/components/blog/ShareArticleBlock';
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -67,6 +68,13 @@ const BlogPost = () => {
                   {row.updated_at
                     ? new Date(row.updated_at).toLocaleDateString('pt-BR')
                     : null}
+                  <ShareArticleBlock
+                    title={row.titulo}
+                    label="Compartilhar"
+                    copyLabel="Copiar link"
+                    copiedLabel="Copiado!"
+                    className="ml-auto"
+                  />
                 </div>
                 <h1 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">
                   {row.titulo}
@@ -78,7 +86,7 @@ const BlogPost = () => {
                 )}
                 {row.conteudo && (
                   <div
-                    className="marketing-content-prose prose prose-lg max-w-none mx-auto dark:prose-invert prose-headings:text-gray-900 dark:prose-headings:text-white prose-p:text-gray-700 dark:prose-p:text-gray-300 prose-headings:font-bold prose-h2:text-2xl prose-h2:mt-8 prose-h2:mb-4 prose-h2:pb-2 prose-h2:border-b prose-h2:border-gray-200 dark:prose-h2:border-gray-700 prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3 prose-p:leading-relaxed prose-p:mb-4 prose-ul:my-4 prose-ol:my-4"
+                    className="marketing-content-prose prose prose-lg max-w-none mx-auto dark:prose-invert prose-headings:text-gray-900 dark:prose-headings:text-white prose-p:text-gray-700 dark:prose-p:text-gray-300 prose-headings:font-bold prose-h2:text-2xl prose-h2:mt-8 prose-h2:mb-4 prose-h2:pb-2 prose-h2:border-b prose-h2:border-gray-200 dark:prose-h2:border-gray-700 prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3 prose-h3:font-semibold prose-h4:text-lg prose-h4:mt-4 prose-h4:mb-2 prose-h4:font-semibold prose-p:leading-relaxed prose-p:mb-4 prose-ul:my-4 prose-ol:my-4"
                     dangerouslySetInnerHTML={{ __html: row.conteudo }}
                   />
                 )}
@@ -230,10 +238,12 @@ const BlogPost = () => {
                 <span className="inline-block bg-brand-blue/10 text-brand-blue px-3 py-1 rounded-full text-sm font-medium">
                   {t(`blog:categories.${translatedPost.category}`) || translatedPost.category}
                 </span>
-                <Button variant="outline" size="sm">
-                  <Share2 className="mr-2 h-4 w-4" />
-                  {t('share')}
-                </Button>
+                <ShareArticleBlock
+                  title={translatedPost.title}
+                  label={t('share')}
+                  copyLabel={t('shareCopyLink', 'Copiar link')}
+                  copiedLabel={t('shareCopied', 'Link copiado!')}
+                />
               </div>
 
               {/* Article Content */}

@@ -28,11 +28,46 @@ export function sanitizeUrl(url: string): string {
   }
 }
 
-/** Strip dangerous tags from HTML; keep safe structure. */
+/** Strip dangerous tags from HTML; keep safe structure. Allows safe inline styles. */
+const SAFE_CSS_PROPERTIES = new Set([
+  'margin', 'margin-top', 'margin-right', 'margin-bottom', 'margin-left',
+  'padding', 'padding-top', 'padding-right', 'padding-bottom', 'padding-left',
+  'line-height', 'color', 'font-size', 'font-weight', 'font-style',
+  'text-align', 'letter-spacing', 'word-spacing',
+  'border', 'border-bottom', 'border-top', 'border-color', 'border-width',
+  'max-width', 'width',
+]);
+const UNSAFE_CSS_PATTERN = /url\s*\(|expression\s*\(|behavior\s*:|javascript\s*:/gi;
+
+function sanitizeStyleValue(value: string): string {
+  if (!value || typeof value !== 'string') return '';
+  return value.replace(UNSAFE_CSS_PATTERN, '').trim();
+}
+
+function sanitizeStyleAttribute(style: string): string {
+  if (!style || typeof style !== 'string') return '';
+  const declarations = style.split(';').filter(Boolean);
+  const safe: string[] = [];
+  for (const decl of declarations) {
+    const colon = decl.indexOf(':');
+    if (colon === -1) continue;
+    const prop = decl.slice(0, colon).trim().toLowerCase();
+    const value = sanitizeStyleValue(decl.slice(colon + 1).trim());
+    if (SAFE_CSS_PROPERTIES.has(prop) && value) safe.push(`${prop}: ${value}`);
+  }
+  return safe.join('; ');
+}
+
 export function sanitizeRichText(html: string): string {
   if (!html || typeof html !== 'string') return '';
-  return html
+  let out = html
     .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
     .replace(/on\w+\s*=\s*["'][^"']*["']/gi, '')
     .replace(/javascript:/gi, '');
+  // Sanitize style attributes: only allow safe CSS properties
+  out = out.replace(/\s*style\s*=\s*["']([^"']*)["']/gi, (_, content) => {
+    const cleaned = sanitizeStyleAttribute(content);
+    return cleaned ? ` style="${cleaned}"` : '';
+  });
+  return out;
 }

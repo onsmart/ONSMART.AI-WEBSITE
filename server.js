@@ -16,9 +16,9 @@ const PORT = process.env.PORT || 3001;
 import cookieParser from 'cookie-parser';
 app.use(cookieParser());
 
-// Middleware
-app.use(cors({ origin: true, credentials: true }));
-app.use(express.json());
+// Middleware (limite do body para upload de PDF/imagem em base64 via tRPC; configurável por BODY_LIMIT_MB no .env)
+const bodyLimitMb = process.env.BODY_LIMIT_MB || '15';
+app.use(express.json({ limit: `${bodyLimitMb}mb` }));
 
 // Serve static files from dist directory
 app.use(express.static(path.join(__dirname, 'dist')));
@@ -287,19 +287,58 @@ app.post('/api/openai-format-html', async (req, res) => {
       return res.status(500).json({ error: 'API OpenAI não configurada' });
     }
 
-    const systemPrompt = `Você é um editor que converte texto em HTML para artigos de site. O resultado será exibido centralizado na página, em layout responsivo.
+    const systemPrompt = `Você é um editor que transforma texto em HTML para artigos de site. O resultado será exibido com CSS "prose" e pode usar CSS inline no atributo style para deixar o documento mais profissional (espaçamento, tipografia, hierarquia visual).
 
-ESTRUTURA OBRIGATÓRIA:
-1. Títulos de seção: qualquer linha que pareça título (frase curta, sozinha, em geral com maiúsculas) → <h2>texto</h2>. Exemplo: "A Cidade Onde as Ideias Acordam" → <h2>A Cidade Onde as Ideias Acordam</h2>.
-2. Parágrafos: TODO bloco de texto contínuo deve estar dentro de <p>...</p>. NUNCA deixe texto solto fora de tags.
-3. Primeiro h2: use para o primeiro título do texto. Os demais títulos de seção também em <h2>.
-4. Subtítulos opcionais: se houver frase que seja subtítulo de um h2, use <h3>.
-5. Listas: itens enumerados ou com marcadores → <ul><li>...</li></ul> ou <ol><li>...</li></ol>.
-6. Ênfase: <strong> para negrito, <em> para itálico quando fizer sentido.
+HIERARQUIA OBRIGATÓRIA (siga à risca):
 
-TAGS PERMITIDAS: apenas p, h2, h3, h4, ul, ol, li, strong, em, a, br. Sem script, style ou atributos inline.
+1. TÍTULO DE SEÇÃO PRINCIPAL → sempre <h2>
+   Qualquer frase que for o título de uma seção (ex.: "Pequenas Mudanças", "O processo", "A conclusão") deve ser <h2>texto</h2>.
+   NUNCA use h1 (o título do artigo já existe na página).
 
-SAÍDA: retorne SOMENTE o HTML, sem explicação, sem markdown, sem \`\`\` ou texto extra.`;
+2. SUBTÍTULO / TÍTULO DE SUBSEÇÃO → sempre <h3>
+   Frases curtas que introduzem um bloco (ex.: "O começo", "O processo") devem ser <h3>texto</h3>, NÃO <strong> nem texto solto.
+
+3. PARÁGRAFOS
+   Todo texto contínuo em <p>...</p>. Separe ideias em parágrafos distintos; parágrafos curtos (2–4 frases) são melhores.
+
+4. LISTAS
+   Marcadores → <ul><li>...</li></ul>. Numeradas → <ol><li>...</li></ol>.
+
+5. ÊNFASE
+   <strong> para termos importantes. <em> para citações. <a href="URL">texto</a> para links (ex.: href="/contato").
+
+6. CALL-TO-ACTION NO FINAL
+   Convite à ação em <p> com <strong> e, se houver, <a href="/contato">...</a>.
+
+CSS INLINE (use para deixar o documento mais profissional):
+- Pode e deve usar o atributo style nas tags. Use APENAS estas propriedades (seguras): margin, margin-top, margin-bottom, padding, padding-bottom, line-height, color, font-size, font-weight, text-align, letter-spacing, border-bottom, max-width.
+- Valores: use unidades como rem, em, px ou % (ex.: 1.5rem, 1.6). Cores em hex (#374151) ou rgb/rgba.
+- Sugestões:
+  • h2: style="margin-top: 2rem; margin-bottom: 1rem; padding-bottom: 0.5rem; color: #111827; font-weight: 700; border-bottom: 1px solid #e5e7eb;"
+  • h3: style="margin-top: 1.5rem; margin-bottom: 0.75rem; color: #1f2937; font-weight: 600;"
+  • h4: style="margin-top: 1.25rem; margin-bottom: 0.5rem; color: #374151; font-weight: 600;"
+  • p: style="line-height: 1.75; margin-bottom: 1rem; color: #4b5563;"
+  • Primeiro parágrafo após título: style="line-height: 1.75; margin-bottom: 1rem; color: #374151; font-size: 1.0625rem;"
+- NÃO use: url(), expression(), behavior, javascript, ou propriedades que carreguem recursos externos.
+
+TAGS PERMITIDAS: p, h2, h3, h4, ul, ol, li, strong, em, a, br. Atributos permitidos: href, style. Sem script, div ou atributos event (onclick, etc.).
+
+EXEMPLO COM CSS INLINE (estrutura + estilo profissional):
+<h2 style="margin-top: 2rem; margin-bottom: 1rem; padding-bottom: 0.5rem; color: #111827; font-weight: 700; border-bottom: 1px solid #e5e7eb;">Pequenas Mudanças</h2>
+<h3 style="margin-top: 1.5rem; margin-bottom: 0.75rem; color: #1f2937; font-weight: 600;">O começo</h3>
+<p style="line-height: 1.75; margin-bottom: 1rem; color: #4b5563;">Às vezes, grandes resultados começam com ajustes simples.</p>
+<h3 style="margin-top: 1.5rem; margin-bottom: 0.75rem; color: #1f2937; font-weight: 600;">O processo</h3>
+<p style="line-height: 1.75; margin-bottom: 1rem; color: #4b5563;">Nem toda evolução acontece rápido.</p>
+<h3 style="margin-top: 1.5rem; margin-bottom: 0.75rem; color: #1f2937; font-weight: 600;">A conclusão</h3>
+<p style="line-height: 1.75; margin-bottom: 1rem; color: #4b5563;">No fim, o que parece pequeno pode fazer diferença.</p>
+
+REGRAS FINAIS:
+- Mantenha a ordem e o conteúdo do texto original. Não invente nem remova trechos.
+- Todo título ou subtítulo reconhecível deve ser h2 ou h3, nunca só negrito.
+- Use tags com caracteres < e > reais. NUNCA use entidades &lt; ou &gt;.
+- Se o texto já tiver HTML, preserve e respeite; apenas ajuste estrutura e estilos se necessário.
+- Aplique style inline em h2, h3, h4 e p para um visual consistente e profissional.
+- Retorne SOMENTE o HTML, sem explicação, sem markdown, sem \`\`\` ou texto extra.`;
 
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
@@ -313,7 +352,7 @@ SAÍDA: retorne SOMENTE o HTML, sem explicação, sem markdown, sem \`\`\` ou te
           { role: 'system', content: systemPrompt },
           { role: 'user', content: text },
         ],
-        temperature: 0.2,
+        temperature: 0.15,
         max_tokens: 4000,
       }),
     });
@@ -328,6 +367,13 @@ SAÍDA: retorne SOMENTE o HTML, sem explicação, sem markdown, sem \`\`\` ou te
     let html = data.choices?.[0]?.message?.content?.trim();
     if (!html) return res.status(500).json({ error: 'Resposta vazia da IA' });
     html = html.replace(/^```(?:html)?\s*/i, '').replace(/\s*```$/i, '').trim();
+    // Decodificar entidades HTML para que o frontend renderize as tags (não mostre como texto)
+    html = html
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'")
+      .replace(/&amp;/g, '&');
 
     res.json({ html });
   } catch (error) {

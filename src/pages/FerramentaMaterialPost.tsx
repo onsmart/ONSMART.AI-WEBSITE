@@ -7,7 +7,7 @@
 import React, { useState, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, BookOpen, Calendar, Download, Mail } from 'lucide-react';
+import { ArrowLeft, BookOpen, Calendar, Mail } from 'lucide-react';
 import UnifiedSEO from '@/components/shared/UnifiedSEO';
 import { trpc } from '@/trpc';
 import { LeadCaptureForm, getLeadCaptured } from '@/components/marketing/LeadCaptureForm';
@@ -154,45 +154,11 @@ export default function FerramentaMaterialPost({
 
               {showContent && (
                 <>
-                  <div className="flex items-center gap-2 text-green-600 dark:text-green-400 font-medium mb-6 p-4 bg-green-50 dark:bg-green-900/20 rounded-lg">
-                    <Mail className="h-5 w-5" />
+                  <div className="flex items-center gap-2 text-green-600 dark:text-green-400 font-medium p-4 bg-green-50 dark:bg-green-900/20 rounded-lg">
+                    <Mail className="h-5 w-5 shrink-0" />
                     O arquivo foi enviado para seu e-mail. Verifique a caixa de entrada e o spam.
                   </div>
-                  {row.conteudo && (
-                    <div
-                      className="marketing-content-prose prose prose-lg max-w-none mx-auto dark:prose-invert prose-headings:text-gray-900 dark:prose-headings:text-white prose-p:text-gray-700 dark:prose-p:text-gray-300 prose-headings:font-bold prose-h2:text-2xl prose-h2:mt-8 prose-h2:mb-4 prose-h2:pb-2 prose-h2:border-b prose-h2:border-gray-200 dark:prose-h2:border-gray-700 prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3 prose-p:leading-relaxed prose-p:mb-4 prose-ul:my-4 prose-ol:my-4 mb-8"
-                      dangerouslySetInnerHTML={{ __html: row.conteudo }}
-                    />
-                  )}
-                  {(row.pdf_path || row.imagem_url) && (
-                    <div className="mt-8 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-lg border border-gray-200 dark:border-gray-700">
-                      {row.pdfSignedUrl && (
-                        <div className="space-y-2">
-                          <p className="text-sm text-gray-600 dark:text-gray-400 flex items-center gap-2">
-                            <Download className="h-4 w-4" />
-                            PDF disponível no e-mail enviado. Você também pode visualizar abaixo:
-                          </p>
-                          <iframe
-                            title={row.titulo}
-                            src={row.pdfSignedUrl}
-                            className="w-full h-[600px] rounded border border-gray-200 dark:border-gray-700"
-                          />
-                        </div>
-                      )}
-                      {!row.pdfSignedUrl && row.imagem_url && (
-                        <div>
-                          <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
-                            Imagem enviada para seu e-mail:
-                          </p>
-                          <img
-                            src={row.imagem_url}
-                            alt={row.titulo}
-                            className="max-w-full h-auto rounded border border-gray-200 dark:border-gray-700"
-                          />
-                        </div>
-                      )}
-                    </div>
-                  )}
+                  {/* Conteúdo e arquivos não são exibidos aqui — apenas o envio por e-mail. */}
                 </>
               )}
             </div>
