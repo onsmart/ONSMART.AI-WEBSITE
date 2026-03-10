@@ -21,6 +21,7 @@ export default function MarketingLogin() {
   const { login } = useMarketingAuth();
   const [searchParams] = useSearchParams();
   const redirect = searchParams.get('redirect') || '/marketing';
+  const redirectTo = (redirect && redirect.startsWith('/')) ? redirect : `/${redirect}`;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,7 +30,7 @@ export default function MarketingLogin() {
     try {
       await login(email, password);
       await new Promise((r) => setTimeout(r, 600));
-      window.location.assign(redirect);
+      window.location.assign(redirectTo);
       return;
     } catch (err: unknown) {
       const message = err && typeof err === 'object' && 'message' in err ? String((err as Error).message) : 'Credenciais inválidas';

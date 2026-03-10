@@ -119,15 +119,27 @@ export default function MarketingContentEdit() {
       });
       const contentType = res.headers.get('content-type') || '';
       const raw = await res.text();
+      const rawPreview = typeof raw === 'string' ? raw.slice(0, 200) : String(raw);
 
       if (!contentType.includes('application/json')) {
-        console.error('Format HTML API returned non-JSON:', raw.slice(0, 200));
+        console.error('Format HTML API returned non-JSON:', rawPreview);
         const is404 = raw.includes('Cannot POST') || res.status === 404;
-        alert(
-          is404
-            ? 'Rota /api/openai-format-html não encontrada (404). Reinicie o backend: feche o terminal onde está rodando o servidor e suba de novo com npm run dev:one (front + backend juntos). O .env é lido ao iniciar o servidor.'
-            : 'A resposta do servidor não é válida (não é JSON). Verifique se o backend está rodando (npm run dev:one) e se OPENAI_API_KEY está definido no .env.'
-        );
+        const isTimeout =
+          res.status === 504 ||
+          raw.includes('FUNCTION_INVOCATION_TIMEOUT') ||
+          raw.toLowerCase().includes('timeout') ||
+          raw.includes('An error occurred with your');
+        if (isTimeout) {
+          alert('A formatação demorou demais (timeout). Tente com menos texto ou aguarde e tente novamente.');
+        } else if (is404) {
+          alert(
+            'Rota /api/openai-format-html não encontrada (404). Reinicie o backend: feche o terminal onde está rodando o servidor e suba de novo com npm run dev:one (front + backend juntos). O .env é lido ao iniciar o servidor.'
+          );
+        } else {
+          alert(
+            'A resposta do servidor não é válida (não é JSON). Verifique se o backend está rodando (npm run dev:one) e se OPENAI_API_KEY está definido no .env.'
+          );
+        }
         return;
       }
 

@@ -3,7 +3,6 @@
  */
 
 import React from 'react';
-import { useLocation } from 'react-router-dom';
 import { useMarketingAuth } from '@/contexts/MarketingAuthContext';
 
 interface MarketingProtectedRouteProps {
@@ -12,7 +11,6 @@ interface MarketingProtectedRouteProps {
 
 export function MarketingProtectedRoute({ children }: MarketingProtectedRouteProps) {
   const { user, isLoading } = useMarketingAuth();
-  const location = useLocation();
 
   if (isLoading) {
     return (
@@ -24,8 +22,11 @@ export function MarketingProtectedRoute({ children }: MarketingProtectedRoutePro
 
   if (!user) {
     const loginPath = '/marketing/login';
-    const from = (location.state as any)?.from?.pathname || loginPath;
-    window.location.href = `${loginPath}?redirect=${encodeURIComponent(from)}`;
+    const currentPath = typeof window !== 'undefined' ? window.location.pathname + window.location.search : '/marketing';
+    const redirectTo = (currentPath && currentPath !== loginPath && currentPath.startsWith('/marketing'))
+      ? currentPath
+      : '/marketing';
+    window.location.href = `${loginPath}?redirect=${encodeURIComponent(redirectTo)}`;
     return null;
   }
 

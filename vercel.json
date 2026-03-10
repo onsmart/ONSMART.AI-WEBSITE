@@ -5,6 +5,14 @@
       "destination": "/api/trpc/_"
     },
     {
+      "source": "/health",
+      "destination": "/api/trpc/__health"
+    },
+    {
+      "source": "/api/health",
+      "destination": "/api/trpc/__health"
+    },
+    {
       "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
@@ -29,7 +37,7 @@
       "maxDuration": 10
     },
     "api/openai-format-html.js": {
-      "maxDuration": 30
+      "maxDuration": 60
     }
   }
 }

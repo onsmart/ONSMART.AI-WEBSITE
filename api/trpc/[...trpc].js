@@ -11,6 +11,19 @@ export default async function handler(req, res) {
 
   if (req.method === 'OPTIONS') return res.status(200).end();
 
+  // Health check mesclado aqui para não ultrapassar 12 funções (rewrite /api/health e /health → /api/trpc/__health)
+  let rawForHealth = typeof req?.url === 'string' ? req.url : (req?.path ?? '/');
+  if (rawForHealth.startsWith('http')) {
+    try {
+      const u = new URL(rawForHealth);
+      rawForHealth = u.pathname + u.search;
+    } catch (_) {}
+  }
+  if ((rawForHealth.includes('__health') || rawForHealth === '/api/health' || rawForHealth.startsWith('/api/health')) && req.method === 'GET') {
+    res.setHeader('Content-Type', 'application/json');
+    return res.status(200).json({ ok: true, timestamp: new Date().toISOString() });
+  }
+
   try {
     const { createMarketingTrpcMiddleware } = await import('../../dist-server/index.js');
     const middleware = createMarketingTrpcMiddleware();

@@ -66,6 +66,24 @@ export default async function handler(req, res) {
 
   try {
     let body = req.body;
+    // Em alguns ambientes serverless o body não vem parseado; ler do stream.
+    if (body === undefined && typeof req.on === 'function') {
+      try {
+        const raw = await new Promise((resolve, reject) => {
+          let data = '';
+          req.on('data', (chunk) => { data += typeof chunk === 'string' ? chunk : chunk.toString(); });
+          req.on('end', () => resolve(data));
+          req.on('error', reject);
+        });
+        body = raw ? JSON.parse(raw) : {};
+      } catch (e) {
+        console.error('openai-format-html: body parse failed', e?.message || e);
+        return res.status(400).json({ error: 'Body inválido (JSON esperado)' });
+      }
+    }
+    if (body === undefined || body === null) {
+      return res.status(400).json({ error: 'Body da requisição não recebido. Envie JSON com Content-Type: application/json' });
+    }
     if (typeof body === 'string') {
       try {
         body = JSON.parse(body);
@@ -77,6 +95,9 @@ export default async function handler(req, res) {
     if (!text || typeof text !== 'string') {
       return res.status(400).json({ error: 'Campo "text" é obrigatório' });
     }
+    // Limitar tamanho para evitar timeout na Vercel (resposta da OpenAI mais rápida)
+    const maxChars = 12000;
+    const textToFormat = text.length > maxChars ? text.slice(0, maxChars) : text;
 
     const apiKey = process.env.OPENAI_API_KEY;
     if (!apiKey) {
@@ -93,10 +114,10 @@ export default async function handler(req, res) {
         model: process.env.OPENAI_MODEL || 'gpt-4o-mini',
         messages: [
           { role: 'system', content: SYSTEM_PROMPT },
-          { role: 'user', content: text },
+          { role: 'user', content: textToFormat },
         ],
         temperature: 0.15,
-        max_tokens: 4000,
+        max_tokens: 3000,
       }),
     });
 
