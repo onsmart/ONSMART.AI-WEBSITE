@@ -1,6 +1,6 @@
 /**
  * Formulário de captura de lead para liberar conteúdo (ferramentas / materiais gratuitos).
- * Após sucesso: salva em localStorage (lead_captured_${slug}, validade 30 dias) e chama onSuccess.
+ * Após sucesso: chama onSuccess (não armazena em localStorage).
  */
 
 import React, { useState } from 'react';
@@ -9,35 +9,6 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { trpc } from '@/trpc';
 import { Download, Mail, User, Phone } from 'lucide-react';
-
-const LEAD_CAPTURED_KEY = (slug: string) => `lead_captured_${slug}`;
-const VALIDITY_DAYS = 30;
-
-export interface LeadCapturedData {
-  nomeCompleto: string;
-  email: string;
-  telefone: string;
-  timestamp: number;
-}
-
-export function getLeadCaptured(slug: string): LeadCapturedData | null {
-  try {
-    const raw = localStorage.getItem(LEAD_CAPTURED_KEY(slug));
-    if (!raw) return null;
-    const data = JSON.parse(raw) as LeadCapturedData;
-    if (!data.timestamp) return null;
-    const maxAge = VALIDITY_DAYS * 24 * 60 * 60 * 1000;
-    if (Date.now() - data.timestamp > maxAge) return null;
-    return data;
-  } catch {
-    return null;
-  }
-}
-
-export function setLeadCaptured(slug: string, data: Omit<LeadCapturedData, 'timestamp'>): void {
-  const payload: LeadCapturedData = { ...data, timestamp: Date.now() };
-  localStorage.setItem(LEAD_CAPTURED_KEY(slug), JSON.stringify(payload));
-}
 
 export interface LeadCaptureFormProps {
   contentSlug: string;
@@ -54,7 +25,6 @@ export function LeadCaptureForm({ contentSlug, contentTitle, contentType, onSucc
 
   const sendMutation = trpc.marketing.content.sendPdfByEmail.useMutation({
     onSuccess: () => {
-      setLeadCaptured(contentSlug, { nomeCompleto, email, telefone });
       onSuccess();
     },
     onError: (e) => setError(e.message),
@@ -77,7 +47,7 @@ export function LeadCaptureForm({ contentSlug, contentTitle, contentType, onSucc
       : 'Receber material por e-mail';
 
   const inputBase =
-    'h-11 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800/80 text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 transition-all duration-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 focus:outline-none px-4';
+    'h-11 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800/80 text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 transition-all duration-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 focus:outline-none px-4 min-w-0';
 
   return (
     <div className="rounded-2xl border border-gray-200/80 dark:border-gray-700/80 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900/80 dark:to-gray-800/80 p-6 md:p-8 shadow-lg shadow-gray-200/50 dark:shadow-none">
@@ -98,14 +68,14 @@ export function LeadCaptureForm({ contentSlug, contentTitle, contentType, onSucc
             Nome completo *
           </Label>
           <div className="relative">
-            <User className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 dark:text-gray-500 pointer-events-none" />
+            <User className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 dark:text-gray-500 pointer-events-none shrink-0" />
             <Input
               id="lead-nome"
               value={nomeCompleto}
               onChange={(e) => setNomeCompleto(e.target.value)}
               required
               minLength={2}
-              className={`pl-10 ${inputBase}`}
+              className={`pl-11 ${inputBase}`}
               placeholder="Seu nome completo"
             />
           </div>
@@ -115,14 +85,14 @@ export function LeadCaptureForm({ contentSlug, contentTitle, contentType, onSucc
             E-mail *
           </Label>
           <div className="relative">
-            <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 dark:text-gray-500 pointer-events-none" />
+            <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 dark:text-gray-500 pointer-events-none shrink-0" />
             <Input
               id="lead-email"
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className={`pl-10 ${inputBase}`}
+              className={`pl-11 ${inputBase}`}
               placeholder="seu@email.com"
             />
           </div>
@@ -132,7 +102,7 @@ export function LeadCaptureForm({ contentSlug, contentTitle, contentType, onSucc
             Telefone *
           </Label>
           <div className="relative">
-            <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 dark:text-gray-500 pointer-events-none" />
+            <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 dark:text-gray-500 pointer-events-none shrink-0" />
             <Input
               id="lead-telefone"
               type="tel"
@@ -140,7 +110,7 @@ export function LeadCaptureForm({ contentSlug, contentTitle, contentType, onSucc
               onChange={(e) => setTelefone(e.target.value)}
               required
               minLength={8}
-              className={`pl-10 ${inputBase}`}
+              className={`pl-11 ${inputBase}`}
               placeholder="(00) 00000-0000"
             />
           </div>

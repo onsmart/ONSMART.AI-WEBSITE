@@ -1,16 +1,16 @@
 /**
  * Página compartilhada de conteúdo por slug: ferramentas e materiais gratuitos.
  * Conteúdo só é liberado após preencher formulário (nome, email, telefone).
- * Controle de acesso por localStorage (lead_captured_${slug}, validade 30 dias).
+ * Não armazena quem já enviou; acesso só na sessão atual após envio.
  */
 
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, BookOpen, Calendar, Mail } from 'lucide-react';
 import UnifiedSEO from '@/components/shared/UnifiedSEO';
 import { trpc } from '@/trpc';
-import { LeadCaptureForm, getLeadCaptured } from '@/components/marketing/LeadCaptureForm';
+import { LeadCaptureForm } from '@/components/marketing/LeadCaptureForm';
 
 type ContentTypeSlug = 'ferramentas' | 'materiais_gratuitos';
 
@@ -35,9 +35,8 @@ export default function FerramentaMaterialPost({
     retry: false,
   });
 
-  const stored = useMemo(() => (slug ? getLeadCaptured(slug) : null), [slug]);
-  const showForm = !hasAccess && !stored;
-  const showContent = hasAccess || !!stored;
+  const showForm = !hasAccess;
+  const showContent = hasAccess;
 
   if (isLoading) {
     return (

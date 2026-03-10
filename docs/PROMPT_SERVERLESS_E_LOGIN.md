@@ -23,7 +23,7 @@ A partir deste texto, gere um **segundo prompt** (Prompt 2) que eu possa enviar 
 Na Vercel, **não** existem serverless functions para:
 
 1. **Rotas Docker** (em `server.js`):
-   - `GET /api/docker/status`
+   - `GET /api/docker/status`![1773164255517](image/PROMPT_SERVERLESS_E_LOGIN/1773164255517.png)![1773164309784](image/PROMPT_SERVERLESS_E_LOGIN/1773164309784.png)
    - `GET /api/docker/containers`
    - `GET /api/docker/system`
    - `GET /api/docker/ollama`

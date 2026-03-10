@@ -1,6 +1,6 @@
 /**
  * Página de um material gratuito por slug (/materiais-gratuitos/:slug).
- * Usa o componente compartilhado com captura de lead e localStorage (30 dias).
+ * Usa o componente compartilhado com captura de lead (sem persistência em localStorage).
  */
 
 import FerramentaMaterialPost from './FerramentaMaterialPost';
