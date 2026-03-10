@@ -231,27 +231,30 @@ export default function MarketingContentEdit() {
 
   if (!isNew && loadingExisting) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100/80 dark:from-gray-900 dark:to-gray-900/95 flex items-center justify-center">
-        <div className="h-10 w-10 rounded-full border-2 border-brand-blue border-t-transparent animate-spin" />
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-gray-100/80 dark:from-gray-950 dark:to-gray-900/95 flex items-center justify-center p-4">
+        <div className="flex flex-col items-center gap-3">
+          <div className="h-10 w-10 rounded-full border-2 border-brand-blue border-t-transparent animate-spin" />
+          <span className="text-sm text-gray-500 dark:text-gray-400">Carregando...</span>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100/80 dark:from-gray-900 dark:to-gray-900/95 p-4">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-gray-100/80 dark:from-gray-950 dark:to-gray-900/95 p-4 sm:p-6">
       <div className="max-w-3xl mx-auto">
-        <Button variant="ghost" asChild className="mb-4 text-gray-600 hover:text-brand-blue dark:text-gray-400 dark:hover:text-brand-blue">
-          <Link to="/marketing"><ArrowLeft className="h-4 w-4 mr-2" />Voltar</Link>
+        <Button variant="ghost" asChild className="mb-4 text-gray-600 hover:text-brand-blue dark:text-gray-400 dark:hover:text-brand-blue rounded-xl">
+          <Link to="/marketing"><ArrowLeft className="h-4 w-4 mr-2 shrink-0" />Voltar</Link>
         </Button>
         <Card className="rounded-2xl border border-gray-200/80 dark:border-gray-700/80 shadow-xl shadow-gray-200/30 dark:shadow-none bg-white dark:bg-gray-800 overflow-hidden">
           <div className="h-1 w-full bg-gradient-to-r from-brand-blue to-blue-600" />
-          <CardHeader className="pb-6 pt-8 px-8 border-b border-gray-100 dark:border-gray-700/50">
-            <h1 className="text-xl font-bold text-gray-900 dark:text-white">
+          <CardHeader className="pb-6 pt-6 sm:pt-8 px-4 sm:px-6 md:px-8 border-b border-gray-100 dark:border-gray-700/50">
+            <h1 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">
               {isNew ? 'Novo conteúdo' : 'Editar conteúdo'}
             </h1>
           </CardHeader>
-          <CardContent className="px-8 pb-8 pt-6">
-            <form onSubmit={handleSubmit} className="space-y-6">
+          <CardContent className="px-4 sm:px-6 md:px-8 pb-6 sm:pb-8 pt-6">
+            <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
               <div className="space-y-2">
                 <Label className="text-sm font-medium text-gray-700 dark:text-gray-300">Tipo</Label>
                 <select
@@ -329,18 +332,18 @@ export default function MarketingContentEdit() {
               </div>
               {(type !== 'blog_artigos' || postSource === 'site') && (
               <div className="space-y-2">
-                <div className="flex items-center justify-between gap-2 flex-wrap">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                   <Label className="text-sm font-medium text-gray-700 dark:text-gray-300">Conteúdo</Label>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 flex-wrap">
                     <Button
                       type="button"
                       variant="outline"
                       size="sm"
                       onClick={handleFormatWithAI}
                       disabled={formattingContent}
-                      className="rounded-lg border-gray-200 dark:border-gray-600 hover:border-brand-blue hover:bg-brand-blue/5"
+                      className="rounded-xl border-gray-200 dark:border-gray-600 hover:border-brand-blue hover:bg-brand-blue/5"
                     >
-                      <Sparkles className="h-4 w-4 mr-1.5" />
+                      <Sparkles className="h-4 w-4 mr-1.5 shrink-0" />
                       {formattingContent ? 'Formatando...' : 'Formatar com IA'}
                     </Button>
                     <Button
@@ -348,9 +351,9 @@ export default function MarketingContentEdit() {
                       variant="outline"
                       size="sm"
                       onClick={() => setPreviewModalOpen(true)}
-                      className="rounded-lg border-gray-200 dark:border-gray-600 hover:border-brand-blue hover:bg-brand-blue/5"
+                      className="rounded-xl border-gray-200 dark:border-gray-600 hover:border-brand-blue hover:bg-brand-blue/5"
                     >
-                      <Eye className="h-4 w-4 mr-1.5" />
+                      <Eye className="h-4 w-4 mr-1.5 shrink-0" />
                       Preview
                     </Button>
                   </div>
@@ -452,11 +455,11 @@ export default function MarketingContentEdit() {
                     Preencha título, slug e conteúdo (ou anexe um PDF/imagem) para habilitar o botão {isNew ? 'Criar' : 'Salvar'}.
                   </p>
                 )}
-                <div className="flex gap-3">
+                <div className="flex flex-col sm:flex-row gap-3">
                 <Button
                   type="submit"
                   disabled={!canSubmit}
-                  className={`h-11 rounded-xl px-6 font-medium ${
+                  className={`h-11 rounded-xl px-6 font-medium w-full sm:w-auto ${
                     canSubmit
                       ? 'bg-gradient-to-r from-brand-blue to-blue-600 hover:from-blue-600 hover:to-brand-blue text-white shadow-md shadow-brand-blue/25'
                       : 'bg-gray-200 dark:bg-gray-700 text-gray-400 dark:text-gray-500 cursor-not-allowed'
@@ -464,7 +467,7 @@ export default function MarketingContentEdit() {
                 >
                   {isNew ? 'Criar' : 'Salvar'}
                 </Button>
-                <Button type="button" variant="outline" asChild className="h-11 rounded-xl border-gray-200 dark:border-gray-600">
+                <Button type="button" variant="outline" asChild className="h-11 rounded-xl border-gray-200 dark:border-gray-600 w-full sm:w-auto">
                   <Link to="/marketing">Cancelar</Link>
                 </Button>
               </div>

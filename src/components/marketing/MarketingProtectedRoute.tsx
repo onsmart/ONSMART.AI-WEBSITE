@@ -14,8 +14,9 @@ export function MarketingProtectedRoute({ children }: MarketingProtectedRoutePro
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900">
-        <div className="animate-spin rounded-full h-10 w-10 border-2 border-brand-blue border-t-transparent" />
+      <div className="min-h-screen flex flex-col items-center justify-center gap-4 p-4 bg-gradient-to-b from-slate-50 to-gray-100/80 dark:from-gray-950 dark:to-gray-900/95">
+        <div className="h-11 w-11 rounded-full border-2 border-brand-blue border-t-transparent animate-spin" />
+        <p className="text-sm text-gray-500 dark:text-gray-400">Carregando...</p>
       </div>
     );
   }
