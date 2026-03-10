@@ -15,14 +15,25 @@ export default async function handler(req, res) {
     const { createMarketingTrpcMiddleware } = await import('../../dist-server/index.js');
     const middleware = createMarketingTrpcMiddleware();
 
-    let path = (req.url || '/').replace(/^\//, '');
+    // req.url pode ser path ("/api/trpc/...") ou URL completa (Vercel); garantir string.
+    let raw = typeof req?.url === 'string' ? req.url : (req?.path ?? '/');
+    if (raw.startsWith('http://') || raw.startsWith('https://')) {
+      try {
+        const u = new URL(raw);
+        raw = u.pathname + u.search;
+      } catch (_) {
+        raw = '/';
+      }
+    }
+    let path = raw.replace(/^\//, '') || '';
     const prefix = 'api/trpc';
     if (path.startsWith(prefix)) {
       path = path.slice(prefix.length).replace(/^\//, '') || '/';
     }
     // Rewrite /api/trpc -> /api/trpc/_ envia path "_"; tratar como /
     const pathOnly = path.split('?')[0];
-    const query = path.includes('?') ? '?' + path.slice(path.indexOf('?') + 1) : '';
+    const qIdx = path.indexOf('?');
+    const query = qIdx >= 0 ? '?' + path.slice(qIdx + 1) : '';
     req.url = ((pathOnly === '_' || pathOnly === '') ? '/' : '/' + pathOnly) + query;
 
     return new Promise((resolve) => {
