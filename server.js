@@ -429,15 +429,34 @@ app.get('/health', (req, res) => {
   res.json({ status: 'OK', message: 'Server is running' });
 });
 
-// Marketing tRPC (mount after build:server)
+// Marketing tRPC (mount after build:server). Em produção, garantir que npm run build:server foi executado e que as requisições /api/* chegam a este servidor Node.
+let trpcLoaded = false;
 try {
   const { createMarketingTrpcMiddleware, runBackfillIfEnabled, runMarketingSeedIfEnabled } = await import('./dist-server/index.js');
   app.use('/api/trpc', createMarketingTrpcMiddleware());
+  trpcLoaded = true;
   runMarketingSeedIfEnabled().catch((err) => console.error('[marketing] Seed:', err));
   runBackfillIfEnabled().catch((err) => console.error('[marketing] Backfill:', err));
 } catch (e) {
   console.warn('Marketing tRPC not loaded (run npm run build:server):', e.message);
+  // Fallback: /api/trpc retorna JSON para o cliente não interpretar como HTML
+  app.use('/api/trpc', (req, res) => {
+    res.status(503).json({
+      error: 'Backend não disponível',
+      code: 'TRPC_NOT_LOADED',
+      message: 'O servidor da API não foi carregado. No deploy, execute "npm run build:server" e inicie com "node server.js" (ou "npm start").',
+    });
+  });
 }
+
+// Rota para verificar se a API está no ar (útil para proxy/deploy)
+app.get('/api/health', (req, res) => {
+  res.json({
+    status: 'OK',
+    trpcLoaded,
+    message: trpcLoaded ? 'API disponível' : 'API parcial: tRPC não carregado (execute npm run build:server)',
+  });
+});
 
 // Catch all handler: must be last route - redireciona todas as rotas para index.html
 // Isso é necessário para SPAs que usam React Router

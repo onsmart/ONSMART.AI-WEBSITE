@@ -6,6 +6,12 @@
     }
   ],
   "functions": {
+    "api/trpc/[...trpc].js": {
+      "maxDuration": 15
+    },
+    "api/trpc/index.js": {
+      "maxDuration": 15
+    },
     "api/elevenlabs-widget.js": {
       "maxDuration": 10
     },
