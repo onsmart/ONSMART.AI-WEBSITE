@@ -27,6 +27,9 @@
     },
     "api/whatsapp/webhook/connection-update.js": {
       "maxDuration": 10
+    },
+    "api/openai-format-html.js": {
+      "maxDuration": 30
     }
   }
 }
