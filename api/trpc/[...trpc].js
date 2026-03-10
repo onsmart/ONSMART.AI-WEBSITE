@@ -34,7 +34,10 @@ export default async function handler(req, res) {
     const pathOnly = path.split('?')[0];
     const qIdx = path.indexOf('?');
     const query = qIdx >= 0 ? '?' + path.slice(qIdx + 1) : '';
-    req.url = ((pathOnly === '_' || pathOnly === '') ? '/' : '/' + pathOnly) + query;
+    const pathname = (pathOnly === '_' || pathOnly === '') ? '/' : '/' + pathOnly;
+    req.url = pathname + query;
+    // O adapter Express do tRPC usa req.path (req.path.slice), não só req.url. Na Vercel req.path pode vir undefined.
+    req.path = pathname;
 
     return new Promise((resolve) => {
       middleware(req, res, (err) => {
