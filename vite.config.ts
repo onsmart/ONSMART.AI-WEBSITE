@@ -68,7 +68,6 @@ export default defineConfig(({ mode }) => ({
       'react',
       'react-dom',
       'react-router-dom',
-      'react-router-dom',
       '@radix-ui/react-dialog',
       '@radix-ui/react-slot',
       'lodash-es',

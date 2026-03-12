@@ -4,11 +4,13 @@
  */
 import { initTRPC, TRPCError } from '@trpc/server';
 const t = initTRPC.context().create();
+/** Mensagem de erro para não-autenticado na área de marketing (distinta de outros logins, ex. OAuth). */
+export const MARKETING_UNAUTHED_ERR_MSG = 'Marketing login required (10002)';
 export const router = t.router;
 export const publicProcedure = t.procedure;
 export const marketingProcedure = t.procedure.use(async (opts) => {
     if (!opts.ctx.marketingUser) {
-        throw new TRPCError({ code: 'UNAUTHORIZED', message: 'Marketing login required' });
+        throw new TRPCError({ code: 'UNAUTHORIZED', message: MARKETING_UNAUTHED_ERR_MSG });
     }
     return opts.next({
         ctx: {
