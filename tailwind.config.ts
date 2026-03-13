@@ -187,6 +187,10 @@ export default {
 				'shimmer': {
 					'0%': { backgroundPosition: '-200% 0' },
 					'100%': { backgroundPosition: '200% 0' }
+				},
+				'fade-in-up': {
+					'0%': { opacity: '0', transform: 'translateY(8px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
 				}
 			},
 			animation: {
@@ -199,7 +203,8 @@ export default {
 				'pulse-slow': 'pulse-slow 3s ease-in-out infinite',
 				'scale-up': 'scale-up 0.3s ease-out forwards',
 				'bounce-light': 'bounce-light 2s ease-in-out infinite',
-				'spin-slow': 'spin-slow 8s linear infinite'
+				'spin-slow': 'spin-slow 8s linear infinite',
+				'fade-in-up': 'fade-in-up 0.4s ease-out forwards'
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
