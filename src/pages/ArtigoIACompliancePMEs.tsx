@@ -257,7 +257,7 @@ const ArtigoIACompliancePMEs = () => {
                   <Button 
                     className="bg-brand-blue hover:bg-blue-600 text-white"
                     onClick={() => {
-                      const phoneNumber = "551150931836"; // Número da Sonia
+                      const phoneNumber = "15558991881"; // Número da Sonia
                       const message = "Olá! Vim pelo artigo sobre IA e Compliance em PMEs";
                       const whatsappUrl = `https://api.whatsapp.com/send/?phone=${phoneNumber}&text=${encodeURIComponent(message)}&type=phone_number&app_absent=0`;
                       window.open(whatsappUrl, "_blank", "noopener,noreferrer");

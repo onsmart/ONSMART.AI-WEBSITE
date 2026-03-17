@@ -12,7 +12,7 @@
 /**
  * Envia uma mensagem de texto via Evolution API v2.x
  * 
- * @param {string} to - Número do destinatário (formato: 551150931836 ou +551150931836)
+ * @param {string} to - Número do destinatário (formato: 15558991881 ou +15558991881)
  * @param {string} text - Texto da mensagem
  * @returns {Promise<Object>} Resposta da Evolution API
  */

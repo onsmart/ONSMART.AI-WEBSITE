@@ -218,7 +218,7 @@ const Servicos = () => {
                 </div>
 
                 <a 
-                  href="https://wa.me/551150931836?text=Olá!%20Vim%20pelo%20site%20da%20Onsmart.ai" 
+                  href="https://wa.me/15558991881?text=Olá!%20Vim%20pelo%20site%20da%20Onsmart.ai" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-center group cursor-pointer"
@@ -227,7 +227,7 @@ const Servicos = () => {
                     <MessageCircle className="h-6 w-6 text-white" />
                   </div>
                   <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">WhatsApp da Sonia</h3>
-                  <p className="text-sm text-gray-600">+55 11 5093-1836</p>
+                  <p className="text-sm text-gray-600">1 555 8991881</p>
                   <p className="text-xs text-green-600 font-medium mt-1">Assistente IA</p>
                 </a>
               </div>
