@@ -47,6 +47,8 @@ const defaultCSPConfig: CSPConfig = {
     "https://region1.google-analytics.com",
     "https://vc.hotjar.io",
     "https://in.hotjar.com",
+    "https://api.elevenlabs.io",
+    "https://api.us.elevenlabs.io",
     "wss:"
   ],
   fontSrc: [
