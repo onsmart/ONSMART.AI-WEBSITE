@@ -33,3 +33,7 @@ bun.lockb
 *.sln
 *.sw?
 .vercel
+
+# Lighthouse
+lighthouse-report.html
+lighthouse-report.json

@@ -26,7 +26,9 @@
     "test:mailchimp": "node scripts/tests/test-mailchimp.js",
     "test:hubspot": "node scripts/tests/test-hubspot.js",
     "test:site": "node scripts/tests/test-site.js",
-    "test:services": "node scripts/tests/run-all.js"
+    "test:services": "node scripts/tests/run-all.js",
+    "lighthouse": "lighthouse https://onsmart.ai --output=html --output-path=./lighthouse-report.html --chrome-flags=\"--headless\" --only-categories=performance,accessibility,best-practices,seo",
+    "lighthouse:view": "lighthouse https://onsmart.ai --output=html --output-path=./lighthouse-report.html --view --only-categories=performance,accessibility,best-practices,seo"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -120,6 +122,7 @@
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.9",
     "globals": "^15.9.0",
+    "lighthouse": "^11.4.0",
     "postcss": "^8.4.47",
     "rollup": "^4.52.4",
     "tailwindcss": "^3.4.11",

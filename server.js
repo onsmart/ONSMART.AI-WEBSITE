@@ -458,8 +458,31 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
-  console.log(`🤖 OpenAI proxy available at http://localhost:${PORT}/api/openai-proxy`);
-  console.log(`🎙️  ElevenLabs config available at http://localhost:${PORT}/api/elevenlabs-config`);
-});
+const portsToTry = [PORT, 3003, 3004, 3005].filter((p, i, arr) => arr.indexOf(p) === i);
+
+function tryListen(portIndex) {
+  const port = portsToTry[portIndex];
+  if (port == null) {
+    console.error('❌ Nenhuma porta disponível. Tente encerrar o processo que usa a porta 3001.');
+    process.exit(1);
+  }
+  const server = app.listen(port, () => {
+    const actualPort = server.address().port;
+    console.log(`🚀 Server running on http://localhost:${actualPort}`);
+    console.log(`🤖 OpenAI proxy available at http://localhost:${actualPort}/api/openai-proxy`);
+    console.log(`🎙️  ElevenLabs config available at http://localhost:${actualPort}/api/elevenlabs-config`);
+    if (actualPort !== PORT) {
+      console.warn(`\n⚠️  Porta ${PORT} estava em uso. O proxy do Vite (vite.config) aponta para ${PORT}. Para as APIs funcionarem, libere a porta ${PORT} e reinicie, ou altere "proxy['/api'].target" em vite.config.ts para http://localhost:${actualPort}\n`);
+    }
+  });
+  server.on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+      console.warn(`Porta ${port} em uso, tentando a próxima...`);
+      tryListen(portIndex + 1);
+    } else {
+      throw err;
+    }
+  });
+}
+
+tryListen(0);
