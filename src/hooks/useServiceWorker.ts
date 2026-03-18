@@ -19,7 +19,8 @@ const registerServiceWorker = async (config?: ServiceWorkerConfig) => {
   try {
     const registration = await navigator.serviceWorker.register('/sw.js', {
       scope: '/',
-      updateViaCache: 'none'
+      updateViaCache: 'none',
+      type: 'module'
     });
 
     console.log('SW: Registered successfully', registration);
