@@ -19,8 +19,10 @@ const defaultCSPConfig: CSPConfig = {
   defaultSrc: ["'self'"],
   scriptSrc: [
     "'self'",
-    "'unsafe-inline'", // Para desenvolvimento - remover em produção
-    "'unsafe-eval'", // Para desenvolvimento - remover em produção
+    "'unsafe-inline'", // Necessário para libs e widget ElevenLabs
+    "'unsafe-eval'", // Necessário para libs e widget ElevenLabs
+    "blob:", // Audio Worklets do ElevenLabs (rawAudioProcessor, etc.)
+    "data:", // Worklets injetados como data:application/javascript;base64,...
     "https://www.googletagmanager.com",
     "https://www.google-analytics.com",
     "https://static.hotjar.com",
