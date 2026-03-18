@@ -1,7 +1,22 @@
 // API Proxy para OpenAI - Protege a chave API no servidor
+// CORS: em produção defina OPENAI_PROXY_ALLOWED_ORIGIN (ex.: https://onsmart.ai ou múltiplas origens separadas por vírgula).
+// Rate limiting: recomenda-se configurar no edge (ex.: Vercel Rate Limit) ou com store externo (Redis).
+
+const MAX_MESSAGE_LENGTH = 8000;
+const MAX_MESSAGES_COUNT = 50;
+
+function getAllowedOrigin(req) {
+  const raw = process.env.OPENAI_PROXY_ALLOWED_ORIGIN || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null);
+  if (!raw) return '*';
+  const allowed = raw.split(',').map(o => o.trim()).map(o => o.startsWith('http') ? o : `https://${o}`);
+  const requestOrigin = (req.headers?.origin || '').trim();
+  if (requestOrigin && allowed.includes(requestOrigin)) return requestOrigin;
+  return allowed[0];
+}
+
 export default async function handler(req, res) {
-  // Configurar CORS
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  const origin = getAllowedOrigin(req);
+  res.setHeader('Access-Control-Allow-Origin', origin);
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
@@ -14,10 +29,25 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { message, messages } = req.body;
+    const { message, messages } = req.body || {};
 
     if (!message && !messages) {
       return res.status(400).json({ error: 'Message is required' });
+    }
+
+    if (message && typeof message === 'string' && message.length > MAX_MESSAGE_LENGTH) {
+      return res.status(400).json({ error: 'Message too long' });
+    }
+
+    const msgList = Array.isArray(messages) ? messages : null;
+    if (msgList && msgList.length > MAX_MESSAGES_COUNT) {
+      return res.status(400).json({ error: 'Too many messages' });
+    }
+
+    for (const m of msgList || []) {
+      if (m && typeof m.content === 'string' && m.content.length > MAX_MESSAGE_LENGTH) {
+        return res.status(400).json({ error: 'Message content too long' });
+      }
     }
 
     // Usar a chave API do servidor (sem prefixo VITE_)
@@ -27,14 +57,6 @@ export default async function handler(req, res) {
       console.error('❌ [openai-proxy] OpenAI API key not configured');
       return res.status(500).json({ error: 'API key not configured' });
     }
-
-    // Log de diagnóstico (sem expor a chave completa)
-    console.log('🔑 [openai-proxy] API Key check:', {
-      configured: !!apiKey,
-      length: apiKey.length,
-      startsWith: apiKey.substring(0, 7),
-      endsWith: apiKey.substring(apiKey.length - 4)
-    });
 
     // Preparar mensagens para a API
     const apiMessages = messages || [
@@ -68,17 +90,10 @@ export default async function handler(req, res) {
 
     if (!response.ok) {
       const errorData = await response.text();
-      console.error('❌ [openai-proxy] OpenAI API error:', response.status);
-      console.error('❌ [openai-proxy] Error details:', errorData.substring(0, 500));
-      console.error('❌ [openai-proxy] API Key info:', {
-        configured: !!apiKey,
-        length: apiKey.length,
-        startsWith: apiKey.substring(0, 7)
-      });
-      return res.status(response.status).json({ 
-        error: 'OpenAI API error',
-        status: response.status,
-        details: errorData 
+      console.error('❌ [openai-proxy] OpenAI API error:', response.status, errorData.substring(0, 200));
+      return res.status(502).json({
+        error: 'Service temporarily unavailable',
+        message: 'Desculpe, estou com dificuldades técnicas no momento. Nossa equipe comercial pode esclarecer suas dúvidas sobre nossos Agentes de IA. Gostaria que eu te conectasse com eles?'
       });
     }
 
@@ -95,7 +110,7 @@ export default async function handler(req, res) {
     });
 
   } catch (error) {
-    console.error('Proxy error:', error);
+    console.error('❌ [openai-proxy] Proxy error:', error?.message ?? String(error));
     return res.status(500).json({ 
       error: 'Internal server error',
       message: 'Desculpe, estou com dificuldades técnicas no momento. Mas posso te ajudar! Nossa equipe comercial pode esclarecer todas suas dúvidas sobre nossos Agentes de IA. Gostaria que eu te conectasse com eles?'

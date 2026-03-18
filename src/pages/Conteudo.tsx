@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, BookOpen, FileText, Download, Users, TrendingUp, Calendar, GraduationCap, Image, Lightbulb, Video, CheckCircle } from "lucide-react";
 import UnifiedSEO from "@/components/shared/UnifiedSEO";
 import { useTranslation } from 'react-i18next';
+import { sanitizeHtml } from '@/utils/sanitizeHtml';
 
 const contentCategories = [
   { id: 'artigos', name: 'conteudo:categories.artigos', icon: FileText },
@@ -350,7 +351,7 @@ const Conteudo = () => {
                   {t('hero.title')} <span className="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">{t('hero.titleHighlight')}</span> {t('hero.titleEnd')}
                 </h1>
                 <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8" dangerouslySetInnerHTML={{
-                  __html: t('hero.description').replace(/<span>/g, '<span class="font-bold text-brand-blue">').replace(/<\/span>/g, '</span>')
+                  __html: sanitizeHtml(t('hero.description').replace(/<span>/g, '<span class="font-bold text-brand-blue">').replace(/<\/span>/g, '</span>'))
                 }} />
                 
                 {/* Stats */}
@@ -605,10 +606,10 @@ const Conteudo = () => {
                 </div>
                 
                 <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4" dangerouslySetInnerHTML={{
-                  __html: t('ctaSection.title').replace(/<span>/g, '<span class="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">').replace(/<\/span>/g, '</span>')
+                  __html: sanitizeHtml(t('ctaSection.title').replace(/<span>/g, '<span class="bg-gradient-to-r from-brand-blue via-blue-600 to-brand-blue bg-clip-text text-transparent">').replace(/<\/span>/g, '</span>'))
                 }} />
                 <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto" dangerouslySetInnerHTML={{
-                  __html: t('ctaSection.subtitle').replace(/<span>/g, '<span class="font-bold text-brand-blue">').replace(/<\/span>/g, '</span>')
+                  __html: sanitizeHtml(t('ctaSection.subtitle').replace(/<span>/g, '<span class="font-bold text-brand-blue">').replace(/<\/span>/g, '</span>'))
                 }} />
                 
                 <div className="flex justify-center">

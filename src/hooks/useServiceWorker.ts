@@ -9,7 +9,7 @@ interface ServiceWorkerConfig {
 
 export const useServiceWorker = (config?: ServiceWorkerConfig) => {
   useEffect(() => {
-    if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
+    if ('serviceWorker' in navigator && import.meta.env.PROD) {
       registerServiceWorker(config);
     }
   }, [config]);

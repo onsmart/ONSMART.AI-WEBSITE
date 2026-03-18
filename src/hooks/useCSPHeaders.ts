@@ -37,7 +37,6 @@ const defaultCSPConfig: CSPConfig = {
     "data:",
     "blob:",
     "https:",
-,
     "https://www.google-analytics.com",
     "https://static.hotjar.com"
   ],
@@ -48,7 +47,6 @@ const defaultCSPConfig: CSPConfig = {
     "https://region1.google-analytics.com",
     "https://vc.hotjar.io",
     "https://in.hotjar.com",
-,
     "wss:"
   ],
   fontSrc: [
@@ -58,7 +56,8 @@ const defaultCSPConfig: CSPConfig = {
   ],
   frameSrc: [
     "'self'",
-    "https://vars.hotjar.com"
+    "https://vars.hotjar.com",
+    "https://www.google.com"
   ],
   mediaSrc: ["'self'"],
   objectSrc: ["'none'"],
@@ -102,7 +101,7 @@ export const useCSPHeaders = (customConfig?: Partial<CSPConfig>) => {
     }
 
     // Log para desenvolvimento
-    if (process.env.NODE_ENV === 'development') {
+    if (import.meta.env.DEV) {
       console.log('CSP Headers aplicados:', cspString);
     }
 

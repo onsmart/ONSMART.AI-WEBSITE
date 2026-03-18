@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
@@ -7,6 +6,7 @@ import CleanAppLayout from "@/components/app/CleanAppLayout";
 import SimpleAppRoutes from "@/components/app/SimpleAppRoutes";
 import SEOConfig from "@/components/seo/SEOConfig";
 import GoogleAnalytics from "@/components/seo/GoogleAnalytics";
+import { SecurityAndPWA } from "@/components/app/SecurityAndPWA";
 import { initGA, trackPageView, startActiveUserTracking } from "@/utils/analytics";
 import "./App.css";
 import ScrollToTop from "@/components/navigation/ScrollToTop";
@@ -29,6 +29,7 @@ function AppContent() {
 
   return (
     <>
+      <SecurityAndPWA />
       <GoogleAnalytics />
       <SEOConfig>
         <CleanAppLayout>

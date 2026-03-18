@@ -9,7 +9,7 @@ interface OptimizedSWConfig {
 
 export const useOptimizedServiceWorker = (config?: OptimizedSWConfig) => {
   useEffect(() => {
-    if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
+    if ('serviceWorker' in navigator && import.meta.env.PROD) {
       registerOptimizedSW(config);
     }
   }, [config]);

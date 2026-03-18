@@ -7,6 +7,7 @@ import DynamicVisualElements from "./DynamicVisualElements";
 import { useConversionMetrics } from "@/hooks/useConversionMetrics";
 import { getUrgencyMessage } from "@/utils/urgencyMessages";
 import TypewriterText from "@/components/ui/TypewriterText";
+import { sanitizeHtml } from "@/utils/sanitizeHtml";
 
 interface HeroSectionProps {
   handleContactClick: () => void;
@@ -139,10 +140,10 @@ const HeroSection = ({ handleContactClick, handleLearnMoreClick }: HeroSectionPr
           </h1>
           
           {/* Subheadline compacto */}
-          {/* Usamos dangerouslySetInnerHTML porque o JSON tem tags <strong> */}
+          {/* Conteúdo i18n com tags permitidas; sanitizado contra XSS */}
           <p 
             className="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto mb-8 sm:mb-10 leading-relaxed px-4 sm:px-2 md:px-0"
-            dangerouslySetInnerHTML={{ __html: t('hero.subtitle', { count: 350 }) }}
+            dangerouslySetInnerHTML={{ __html: sanitizeHtml(t('hero.subtitle', { count: 350 })) }}
           />
 
           {/* Stats minimalistas */}

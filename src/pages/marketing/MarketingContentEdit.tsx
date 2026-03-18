@@ -16,6 +16,7 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 import { ArrowLeft, Sparkles, Eye } from 'lucide-react';
+import { sanitizeHtml } from '@/utils/sanitizeHtml';
 
 function slugFromTitle(title: string): string {
   return title
@@ -389,7 +390,7 @@ export default function MarketingContentEdit() {
                           dangerouslySetInnerHTML={{
                             __html: (() => {
                               if (!conteudo) return '<p class="text-gray-400 italic">Nenhum conteúdo para visualizar.</p>';
-                              if (/<[a-z][\s\S]*>/i.test(conteudo)) return conteudo;
+                              if (/<[a-z][\s\S]*>/i.test(conteudo)) return sanitizeHtml(conteudo);
                               const escape = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
                               return conteudo
                                 .split(/\n\s*\n/)

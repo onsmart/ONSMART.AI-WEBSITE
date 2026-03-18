@@ -39,10 +39,10 @@ app.get('/api/docker/status', async (req, res) => {
       timestamp: new Date().toISOString()
     });
   } catch (error) {
+    console.error('[docker/status]', error?.message ?? error);
     res.json({
       dockerRunning: false,
       version: null,
-      error: error.message,
       timestamp: new Date().toISOString()
     });
   }
@@ -75,10 +75,8 @@ app.get('/api/docker/containers', async (req, res) => {
 
     res.json({ containers });
   } catch (error) {
-    res.status(500).json({ 
-      error: 'Erro ao listar containers',
-      details: error.message 
-    });
+    console.error('[docker/containers]', error?.message ?? error);
+    res.status(500).json({ error: 'Erro ao listar containers' });
   }
 });
 
@@ -112,10 +110,8 @@ app.get('/api/docker/system', async (req, res) => {
 
     res.json({ systemInfo });
   } catch (error) {
-    res.status(500).json({ 
-      error: 'Erro ao obter informações do sistema',
-      details: error.message 
-    });
+    console.error('[docker/system]', error?.message ?? error);
+    res.status(500).json({ error: 'Erro ao obter informações do sistema' });
   }
 });
 
@@ -155,10 +151,8 @@ app.get('/api/docker/ollama', async (req, res) => {
       timestamp: new Date().toISOString()
     });
   } catch (error) {
-    res.status(500).json({ 
-      error: 'Erro ao verificar status do Ollama',
-      details: error.message 
-    });
+    console.error('[docker/ollama]', error?.message ?? error);
+    res.status(500).json({ error: 'Erro ao verificar status do Ollama' });
   }
 });
 
@@ -176,10 +170,8 @@ app.post('/api/docker/containers/:containerName/:action', async (req, res) => {
       timestamp: new Date().toISOString()
     });
   } catch (error) {
-    res.status(500).json({ 
-      error: `Erro ao ${req.params.action} container`,
-      details: error.message 
-    });
+    console.error('[docker/containers action]', error?.message ?? error);
+    res.status(500).json({ error: `Erro ao ${req.params.action} container` });
   }
 });
 
@@ -198,10 +190,8 @@ app.get('/api/docker/containers/:containerName/logs', async (req, res) => {
     const logs = stdout.trim().split('\n');
     res.json({ logs });
   } catch (error) {
-    res.status(500).json({ 
-      error: 'Erro ao obter logs do container',
-      details: error.message 
-    });
+    console.error('[docker/logs]', error?.message ?? error);
+    res.status(500).json({ error: 'Erro ao obter logs do container' });
   }
 });
 
