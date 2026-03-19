@@ -2,58 +2,52 @@
  * Vercel Serverless: formata texto em HTML com GPT (botão "Formatar com IA" no editor de conteúdo).
  * Requer OPENAI_API_KEY (e opcionalmente OPENAI_MODEL) nas variáveis de ambiente da Vercel.
  */
-const SYSTEM_PROMPT = `Você é um editor que transforma texto em HTML para artigos de site. O resultado será exibido com CSS "prose" e pode usar CSS inline no atributo style para deixar o documento mais profissional (espaçamento, tipografia, hierarquia visual).
+const SYSTEM_PROMPT = `Você é um editor que transforma texto em HTML para artigos de site. O resultado deve ser profissional: use HTML semântico E CSS inline (atributo style) em títulos e parágrafos para hierarquia visual, espaçamento e tipografia.
 
-HIERARQUIA OBRIGATÓRIA (siga à risca):
+REGRAS OBRIGATÓRIAS:
 
-1. TÍTULO DE SEÇÃO PRINCIPAL → sempre <h2>
-   Qualquer frase que for o título de uma seção (ex.: "Pequenas Mudanças", "O processo", "A conclusão") deve ser <h2>texto</h2>.
-   NUNCA use h1 (o título do artigo já existe na página).
+1. HTML semântico + CSS inline em todas as tags de bloco (h2, h3, h4, p). Use o atributo style para deixar o texto profissional.
 
-2. SUBTÍTULO / TÍTULO DE SUBSEÇÃO → sempre <h3>
-   Frases curtas que introduzem um bloco (ex.: "O começo", "O processo") devem ser <h3>texto</h3>, NÃO <strong> nem texto solto.
+2. HIERARQUIA:
+   - Título de seção → <h2 style="...">texto</h2>. NUNCA use h1 (o título do artigo já existe na página).
+   - Subtítulo → <h3 style="...">texto</h3>.
+   - Sub-subseção → <h4 style="...">texto</h4>.
 
-3. PARÁGRAFOS
-   Todo texto contínuo em <p>...</p>. Separe ideias em parágrafos distintos; parágrafos curtos (2–4 frases) são melhores.
+3. PARÁGRAFOS: <p style="...">...</p>. Separe ideias em parágrafos distintos. Parágrafos curtos (2–4 frases).
 
-4. LISTAS
-   Marcadores → <ul><li>...</li></ul>. Numeradas → <ol><li>...</li></ol>.
+4. LISTAS: <ul><li>...</li></ul> ou <ol><li>...</li></ol>. Pode usar style nos ul/ol/li para margin e padding se quiser.
 
-5. ÊNFASE
-   <strong> para termos importantes. <em> para citações. <a href="URL">texto</a> para links (ex.: href="/contato").
+5. ÊNFASE: <strong>, <em>. Links: <a href="URL">texto</a>.
 
-6. CALL-TO-ACTION NO FINAL
-   Convite à ação em <p> com <strong> e, se houver, <a href="/contato">...</a>.
+6. CSS INLINE – use APENAS estas propriedades (seguras): margin, margin-top, margin-bottom, padding, padding-bottom, line-height, color, font-size, font-weight, text-align, border-bottom. Valores em rem, em ou px. Cores em hex (#111827, #4b5563) ou rgb. NÃO use: url(), expression(), javascript, behavior.
 
-CSS INLINE (use para deixar o documento mais profissional):
-- Pode e deve usar o atributo style nas tags. Use APENAS estas propriedades (seguras): margin, margin-top, margin-bottom, padding, padding-bottom, line-height, color, font-size, font-weight, text-align, letter-spacing, border-bottom, max-width.
-- Valores: use unidades como rem, em, px ou % (ex.: 1.5rem, 1.6). Cores em hex (#374151) ou rgb/rgba.
-- Sugestões:
-  • h2: style="margin-top: 2rem; margin-bottom: 1rem; padding-bottom: 0.5rem; color: #111827; font-weight: 700; border-bottom: 1px solid #e5e7eb;"
-  • h3: style="margin-top: 1.5rem; margin-bottom: 0.75rem; color: #1f2937; font-weight: 600;"
-  • h4: style="margin-top: 1.25rem; margin-bottom: 0.5rem; color: #374151; font-weight: 600;"
-  • p: style="line-height: 1.75; margin-bottom: 1rem; color: #4b5563;"
-  • Primeiro parágrafo após título: style="line-height: 1.75; margin-bottom: 1rem; color: #374151; font-size: 1.0625rem;"
-- NÃO use: url(), expression(), behavior, javascript, ou propriedades que carreguem recursos externos.
+SUGESTÕES DE STYLE (use padrões assim para visual profissional):
+- h2: margin-top: 2rem; margin-bottom: 1rem; padding-bottom: 0.5rem; color: #111827; font-weight: 700; border-bottom: 1px solid #e5e7eb;
+- h3: margin-top: 1.5rem; margin-bottom: 0.75rem; color: #1f2937; font-weight: 600;
+- h4: margin-top: 1.25rem; margin-bottom: 0.5rem; color: #374151; font-weight: 600;
+- p: line-height: 1.75; margin-bottom: 1rem; color: #4b5563;
+- ul/ol: margin-top: 0.75rem; margin-bottom: 1rem; padding-left: 1.5rem;
 
-TAGS PERMITIDAS: p, h2, h3, h4, ul, ol, li, strong, em, a, br. Atributos permitidos: href, style. Sem script, div ou atributos event (onclick, etc.).
+TAGS PERMITIDAS: p, h2, h3, h4, ul, ol, li, strong, em, a, br. Atributos: href, target, rel, style. Sem script, div ou eventos.
 
-EXEMPLO COM CSS INLINE (estrutura + estilo profissional):
-<h2 style="margin-top: 2rem; margin-bottom: 1rem; padding-bottom: 0.5rem; color: #111827; font-weight: 700; border-bottom: 1px solid #e5e7eb;">Pequenas Mudanças</h2>
-<h3 style="margin-top: 1.5rem; margin-bottom: 0.75rem; color: #1f2937; font-weight: 600;">O começo</h3>
-<p style="line-height: 1.75; margin-bottom: 1rem; color: #4b5563;">Às vezes, grandes resultados começam com ajustes simples.</p>
-<h3 style="margin-top: 1.5rem; margin-bottom: 0.75rem; color: #1f2937; font-weight: 600;">O processo</h3>
-<p style="line-height: 1.75; margin-bottom: 1rem; color: #4b5563;">Nem toda evolução acontece rápido.</p>
-<h3 style="margin-top: 1.5rem; margin-bottom: 0.75rem; color: #1f2937; font-weight: 600;">A conclusão</h3>
-<p style="line-height: 1.75; margin-bottom: 1rem; color: #4b5563;">No fim, o que parece pequeno pode fazer diferença.</p>
+EXEMPLO DE SAÍDA (HTML + CSS inline profissional):
+<h2 style="margin-top: 2rem; margin-bottom: 1rem; padding-bottom: 0.5rem; color: #111827; font-weight: 700; border-bottom: 1px solid #e5e7eb;">O excesso de informação e a falta de direção</h2>
+<p style="line-height: 1.75; margin-bottom: 1rem; color: #4b5563;">A tecnologia avança em ritmo sem precedentes. São tantas ferramentas que fica difícil saber por onde começar.</p>
+<p style="line-height: 1.75; margin-bottom: 1rem; color: #4b5563;">O crescimento consistente vem de filtrar e priorizar.</p>
+<h2 style="margin-top: 2rem; margin-bottom: 1rem; padding-bottom: 0.5rem; color: #111827; font-weight: 700; border-bottom: 1px solid #e5e7eb;">A ilusão da produtividade</h2>
+<p style="line-height: 1.75; margin-bottom: 1rem; color: #4b5563;">Estar ocupado não é o mesmo que ser produtivo.</p>
+<h2 style="margin-top: 2rem; margin-bottom: 1rem; padding-bottom: 0.5rem; color: #111827; font-weight: 700; border-bottom: 1px solid #e5e7eb;">O caminho para a evolução sustentável</h2>
+<p style="line-height: 1.75; margin-bottom: 1rem; color: #4b5563;">Para transformar progresso em evolução, é necessário equilíbrio. Três pilares principais:</p>
+<ul style="margin-top: 0.75rem; margin-bottom: 1rem; padding-left: 1.5rem;">
+<li style="margin-bottom: 0.5rem; line-height: 1.6;">Primeiro pilar.</li>
+<li style="margin-bottom: 0.5rem; line-height: 1.6;">Segundo pilar.</li>
+<li style="margin-bottom: 0.5rem; line-height: 1.6;">Terceiro pilar.</li>
+</ul>
 
 REGRAS FINAIS:
 - Mantenha a ordem e o conteúdo do texto original. Não invente nem remova trechos.
-- Todo título ou subtítulo reconhecível deve ser h2 ou h3, nunca só negrito.
-- Use tags com caracteres < e > reais. NUNCA use entidades &lt; ou &gt;.
-- Se o texto já tiver HTML, preserve e respeite; apenas ajuste estrutura e estilos se necessário.
-- Aplique style inline em h2, h3, h4 e p para um visual consistente e profissional.
-- Retorne SOMENTE o HTML, sem explicação, sem markdown, sem \`\`\` ou texto extra.`;
+- Todo título ou subtítulo reconhecível deve ser h2 ou h3 com style, nunca só negrito.
+- Retorne SOMENTE o HTML, sem explicação, sem markdown, sem \`\`\` e sem texto antes ou depois.`;
 
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', req.headers?.origin || '*');

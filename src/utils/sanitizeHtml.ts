@@ -10,7 +10,7 @@ const RICH_TEXT_CONFIG: DOMPurify.Config = {
     "h1", "h2", "h3", "h4", "h5", "h6", "span", "div", "blockquote",
     "code", "pre", "sub", "sup", "hr",
   ],
-  ALLOWED_ATTR: ["href", "target", "rel", "class"],
+  ALLOWED_ATTR: ["href", "target", "rel", "class", "style"],
   ADD_ATTR: ["target"],
 };
 
