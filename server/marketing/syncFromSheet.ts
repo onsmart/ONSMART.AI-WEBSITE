@@ -3,7 +3,7 @@
  * Run on server start when MARKETING_BACKFILL_FROM_SITE=true so content is persisted for edição.
  */
 
-import { createMarketingContent, getMarketingContentIdBySlug, updateMarketingContent } from './db.js';
+import { createMarketingContent, getMarketingContentById, getMarketingContentIdBySlug, updateMarketingContent } from './db.js';
 import { sanitizeSlug } from './sanitize.js';
 
 const DEFAULT_BLOG_SHEET_ID = '1GPgJ2wETkmEjZtJAxs1s8i2wnjjBdNSiykv-Hn-sbJ4';
@@ -43,14 +43,23 @@ export async function syncBlogFromSheet(): Promise<{ created: number; updated: n
     const existingId = await getMarketingContentIdBySlug(slug);
 
     if (existingId) {
-      const ok = await updateMarketingContent(existingId, {
-        titulo: title,
-        resumo: description,
-        imagem_url: image,
-        post_source: 'linkedin',
-        external_url: link,
-      });
-      if (ok) updated++;
+      const existing = await getMarketingContentById(existingId);
+      const changed =
+        !existing ||
+        existing.titulo !== title ||
+        (existing.resumo ?? null) !== description ||
+        (existing.imagem_url ?? null) !== image ||
+        (existing.external_url ?? null) !== link;
+      if (changed) {
+        const ok = await updateMarketingContent(existingId, {
+          titulo: title,
+          resumo: description,
+          imagem_url: image,
+          post_source: 'linkedin',
+          external_url: link,
+        });
+        if (ok) updated++;
+      }
     } else {
       const createdRow = await createMarketingContent({
         type: 'blog_artigos',
@@ -88,13 +97,22 @@ export async function syncEbooksFromSheet(): Promise<{ created: number; updated:
     const existingId = await getMarketingContentIdBySlug(slug);
 
     if (existingId) {
-      const ok = await updateMarketingContent(existingId, {
-        titulo: title,
-        resumo: description,
-        imagem_url: image,
-        external_url: link,
-      });
-      if (ok) updated++;
+      const existing = await getMarketingContentById(existingId);
+      const changed =
+        !existing ||
+        existing.titulo !== title ||
+        (existing.resumo ?? null) !== description ||
+        (existing.imagem_url ?? null) !== image ||
+        (existing.external_url ?? null) !== link;
+      if (changed) {
+        const ok = await updateMarketingContent(existingId, {
+          titulo: title,
+          resumo: description,
+          imagem_url: image,
+          external_url: link,
+        });
+        if (ok) updated++;
+      }
     } else {
       const createdRow = await createMarketingContent({
         type: 'materiais_gratuitos',

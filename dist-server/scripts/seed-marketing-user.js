@@ -5,6 +5,7 @@
  *
  * Requer SUPABASE_URL e SUPABASE_SERVICE_ROLE_KEY no .env (ou ambiente).
  */
+import 'dotenv/config';
 import bcrypt from 'bcryptjs';
 import { createClient } from '@supabase/supabase-js';
 const SEED_USERS = [

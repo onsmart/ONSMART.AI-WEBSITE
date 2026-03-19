@@ -17,6 +17,7 @@ const FeaturesTabs = lazy(() => import("@/components/home/FeaturesTabs"));
 const ResultsCarousel = lazy(() => import("@/components/home/ResultsCarousel"));
 const WhyAIAgents = lazy(() => import("@/components/shared/WhyAIAgents"));
 const FAQ = lazy(() => import("@/components/home/FAQ"));
+const CasesDeSucessoSection = lazy(() => import("@/components/home/CasesDeSucessoSection"));
 
 const ComponentFallback = () => (
   <div className="py-4">
@@ -76,6 +77,11 @@ const Index = () => {
           <div id="roi-calculator" data-component="roi-calculator">
             <ROICalculator />
           </div>
+
+          {/* Cases de Sucesso */}
+          <Suspense fallback={<ComponentFallback />}>
+            <CasesDeSucessoSection />
+          </Suspense>
           
           {/* Why AI Agents Section */}
           <Suspense fallback={<ComponentFallback />}>

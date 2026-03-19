@@ -77,7 +77,7 @@ export async function updateMarketingUser(
 
 // --- marketing_contents ---
 
-const CONTENT_TYPES = ['blog_artigos', 'ferramentas', 'materiais_gratuitos'] as const;
+const CONTENT_TYPES = ['blog_artigos', 'ferramentas', 'materiais_gratuitos', 'cases'] as const;
 
 export async function listMarketingContent(options: {
   type?: string;

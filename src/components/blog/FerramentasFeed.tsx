@@ -22,7 +22,7 @@ type ContentRow = {
   resumo: string | null;
   imagem_url: string | null;
   external_url?: string | null;
-  updated_at?: string;
+  created_at?: string;
 };
 
 export default function FerramentasFeed() {
@@ -121,8 +121,8 @@ function FerramentaCard({ item }: { item: ContentRow }) {
             <Calendar className="h-3.5 w-3.5" />
             <span>Ferramenta</span>
           </div>
-          {item.updated_at && (
-            <span>{new Date(item.updated_at).toLocaleDateString('pt-BR')}</span>
+          {item.created_at && (
+            <span>{new Date(item.created_at).toLocaleDateString('pt-BR')}</span>
           )}
         </div>
         {hasExternalLink ? (

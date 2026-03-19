@@ -46,7 +46,7 @@ const BlogPost = () => {
       resumo: string | null;
       conteudo: string | null;
       imagem_url: string | null;
-      updated_at: string;
+      created_at: string;
     };
     return (
       <>
@@ -66,8 +66,8 @@ const BlogPost = () => {
               <div className="p-8">
                 <div className="flex items-center gap-4 mb-6 text-sm text-gray-600 dark:text-gray-400">
                   <Calendar className="h-4 w-4" />
-                  {row.updated_at
-                    ? new Date(row.updated_at).toLocaleDateString('pt-BR')
+                  {row.created_at
+                    ? new Date(row.created_at).toLocaleDateString('pt-BR')
                     : null}
                   <ShareArticleBlock
                     title={row.titulo}

@@ -70,7 +70,7 @@ export default function FerramentaMaterialPost({
     resumo: string | null;
     conteudo: string | null;
     imagem_url: string | null;
-    updated_at: string;
+    created_at: string;
     pdf_path?: string | null;
     pdfSignedUrl?: string | null;
     external_url?: string | null;
@@ -129,7 +129,7 @@ export default function FerramentaMaterialPost({
             <div className="p-8">
               <div className="flex items-center gap-4 mb-6 text-sm text-gray-600 dark:text-gray-400">
                 <Calendar className="h-4 w-4" />
-                {row.updated_at ? new Date(row.updated_at).toLocaleDateString('pt-BR') : null}
+                {row.created_at ? new Date(row.created_at).toLocaleDateString('pt-BR') : null}
               </div>
               <h1 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">
                 {row.titulo}

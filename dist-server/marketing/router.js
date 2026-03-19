@@ -16,7 +16,24 @@ import { addOrUpdateMailchimpLead } from './mailchimp.js';
 import { addOrUpdateHubSpotContact } from './hubspot.js';
 const resendApiKey = process.env.RESEND_API_KEY;
 const resendSender = process.env.RESEND_SENDER_EMAIL || 'onboarding@resend.dev';
-const contentTypeSchema = z.enum(['blog_artigos', 'ferramentas', 'materiais_gratuitos']);
+/** Fetch YouTube video title and thumbnail via oEmbed (no API key). */
+async function fetchYouTubeMeta(videoUrl) {
+    try {
+        const url = `https://www.youtube.com/oembed?url=${encodeURIComponent(videoUrl)}&format=json`;
+        const res = await fetch(url, { signal: AbortSignal.timeout(8000) });
+        if (!res.ok)
+            return null;
+        const data = (await res.json());
+        if (data?.title && data?.thumbnail_url) {
+            return { video_title: data.title, video_thumbnail_url: data.thumbnail_url };
+        }
+        return null;
+    }
+    catch {
+        return null;
+    }
+}
+const contentTypeSchema = z.enum(['blog_artigos', 'ferramentas', 'materiais_gratuitos', 'cases']);
 const statusSchema = z.enum(['draft', 'published']);
 const slugSchema = z.string().min(1).regex(/^[a-z0-9-_]+$/, 'Slug: apenas letras minúsculas, números, hífen e underscore');
 const optionalUrlOrEmptySchema = z
@@ -151,7 +168,7 @@ export const marketingRouter = router({
             imagem_url: optionalUrlOrEmptySchema,
             pdf_path: z.string().max(2000).nullable().optional(),
             meta: z.record(z.unknown()).nullable().optional(),
-            post_source: z.enum(['site', 'linkedin']).optional(),
+            post_source: z.enum(['site', 'linkedin', 'youtube']).optional(),
             external_url: z.string().url().nullable().optional(),
         }))
             .mutation(async ({ input }) => {
@@ -162,6 +179,15 @@ export const marketingRouter = router({
             if (await isSlugTaken(slug)) {
                 throw new TRPCError({ code: 'CONFLICT', message: 'Slug already in use' });
             }
+            let meta = input.meta ?? null;
+            const postSource = input.post_source ?? 'site';
+            const externalUrl = input.external_url ?? null;
+            if (postSource === 'youtube' && externalUrl && /youtube\.com|youtu\.be/i.test(externalUrl)) {
+                const videoMeta = await fetchYouTubeMeta(externalUrl);
+                if (videoMeta) {
+                    meta = { ...(meta ?? {}), ...videoMeta };
+                }
+            }
             const created = await createMarketingContent({
                 type: input.type,
                 status: input.status,
@@ -171,9 +197,9 @@ export const marketingRouter = router({
                 conteudo: input.conteudo ? sanitizeRichText(input.conteudo) : null,
                 imagem_url: input.imagem_url ?? null,
                 pdf_path: input.pdf_path ?? null,
-                meta: input.meta ?? null,
-                post_source: input.post_source ?? 'site',
-                external_url: input.external_url ?? null,
+                meta,
+                post_source: postSource,
+                external_url: externalUrl,
             });
             if (!created)
                 throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: 'Create failed' });
@@ -191,7 +217,7 @@ export const marketingRouter = router({
             imagem_url: optionalUrlOrEmptySchema,
             pdf_path: z.string().max(2000).nullable().optional(),
             meta: z.record(z.unknown()).nullable().optional(),
-            post_source: z.enum(['site', 'linkedin']).optional(),
+            post_source: z.enum(['site', 'linkedin', 'youtube']).optional(),
             external_url: z.string().url().nullable().optional(),
         }))
             .mutation(async ({ input }) => {
@@ -203,8 +229,16 @@ export const marketingRouter = router({
             if (rest.slug !== undefined && (await isSlugTaken(slug, id))) {
                 throw new TRPCError({ code: 'CONFLICT', message: 'Slug already in use' });
             }
+            let meta = rest.meta;
+            if (rest.post_source === 'youtube' && rest.external_url && /youtube\.com|youtu\.be/i.test(rest.external_url)) {
+                const videoMeta = await fetchYouTubeMeta(rest.external_url);
+                if (videoMeta) {
+                    meta = { ...(rest.meta ?? {}), ...videoMeta };
+                }
+            }
             const updated = await updateMarketingContent(id, {
                 ...rest,
+                meta,
                 slug,
                 conteudo: rest.conteudo !== undefined ? (rest.conteudo ? sanitizeRichText(rest.conteudo) : null) : undefined,
             });

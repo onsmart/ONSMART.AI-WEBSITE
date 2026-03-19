@@ -44,7 +44,7 @@ const ContentPreview: React.FC<ContentPreviewProps> = ({ item, children, onDownl
             </div>
             <div className="flex items-center gap-1">
               <Calendar className="h-4 w-4" />
-              <span>Atualizado em {new Date(item.lastUpdated || '').toLocaleDateString('pt-BR')}</span>
+              <span>Publicado em {new Date(item.lastUpdated || '').toLocaleDateString('pt-BR')}</span>
             </div>
           </div>
 

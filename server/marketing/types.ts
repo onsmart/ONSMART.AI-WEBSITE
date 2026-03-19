@@ -1,9 +1,9 @@
 /**
  * Marketing area types.
- * Content type: blog_artigos | ferramentas | materiais_gratuitos (sem cases no site).
+ * Content type: blog_artigos | ferramentas | materiais_gratuitos | cases.
  */
 
-export type MarketingContentType = 'blog_artigos' | 'ferramentas' | 'materiais_gratuitos';
+export type MarketingContentType = 'blog_artigos' | 'ferramentas' | 'materiais_gratuitos' | 'cases';
 
 export type MarketingContentStatus = 'draft' | 'published';
 
@@ -27,7 +27,7 @@ export interface MarketingContent {
   imagem_url: string | null;
   pdf_path: string | null;
   meta: Record<string, unknown> | null;
-  post_source: 'site' | 'linkedin';
+  post_source: 'site' | 'linkedin' | 'youtube';
   external_url: string | null;
   created_at: string;
   updated_at: string;
@@ -43,7 +43,7 @@ export interface MarketingContentInsert {
   imagem_url?: string | null;
   pdf_path?: string | null;
   meta?: Record<string, unknown> | null;
-  post_source?: 'site' | 'linkedin';
+  post_source?: 'site' | 'linkedin' | 'youtube';
   external_url?: string | null;
 }
 
@@ -57,6 +57,6 @@ export interface MarketingContentUpdate {
   imagem_url?: string | null;
   pdf_path?: string | null;
   meta?: Record<string, unknown> | null;
-  post_source?: 'site' | 'linkedin';
+  post_source?: 'site' | 'linkedin' | 'youtube';
   external_url?: string | null;
 }

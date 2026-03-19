@@ -85,7 +85,7 @@ const ConteudoGrid: React.FC<ConteudoGridProps> = ({ selectedCategory }) => {
     downloadCount: cmsItem.download_count,
     previewUrl: cmsItem.preview_url,
     fileSize: cmsItem.file_size,
-    lastUpdated: cmsItem.updated_at,
+    lastUpdated: cmsItem.created_at,
     prerequisites: cmsItem.prerequisites || [],
     learningObjectives: cmsItem.learning_objectives || [],
     // Adicionar propriedades necessárias para ContentCard

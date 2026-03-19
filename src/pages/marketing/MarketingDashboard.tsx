@@ -28,12 +28,13 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { MarketingTutorialModal } from '@/components/marketing/MarketingTutorialModal';
-import { MoreHorizontal, Plus, LogOut, Search, FileText, LayoutGrid, BookOpen, HelpCircle } from 'lucide-react';
+import { MoreHorizontal, Plus, LogOut, Search, FileText, LayoutGrid, BookOpen, HelpCircle, Award } from 'lucide-react';
 
 const TYPES = [
   { value: 'blog_artigos', label: 'Blog / Artigos', icon: FileText },
   { value: 'ferramentas', label: 'Ferramentas', icon: LayoutGrid },
   { value: 'materiais_gratuitos', label: 'Materiais Gratuitos', icon: BookOpen },
+  { value: 'cases', label: 'Cases de Sucesso', icon: Award },
 ] as const;
 
 export default function MarketingDashboard() {
@@ -211,7 +212,7 @@ export default function MarketingDashboard() {
                             <TableHead className="font-semibold text-gray-700 dark:text-gray-300 hidden md:table-cell min-w-[100px]">Slug</TableHead>
                             <TableHead className="font-semibold text-gray-700 dark:text-gray-300 hidden lg:table-cell w-24">Tipo</TableHead>
                             <TableHead className="font-semibold text-gray-700 dark:text-gray-300 w-24">Status</TableHead>
-                            <TableHead className="font-semibold text-gray-700 dark:text-gray-300 hidden sm:table-cell w-28">Atualizado</TableHead>
+                            <TableHead className="font-semibold text-gray-700 dark:text-gray-300 hidden sm:table-cell w-28">Data</TableHead>
                             <TableHead className="w-12" />
                           </TableRow>
                         </TableHeader>
@@ -248,7 +249,7 @@ export default function MarketingDashboard() {
                                 </Badge>
                               </TableCell>
                               <TableCell className="text-sm text-gray-500 py-3 sm:py-4 hidden sm:table-cell">
-                                {new Date(row.updated_at).toLocaleDateString('pt-BR')}
+                                {new Date(row.created_at).toLocaleDateString('pt-BR')}
                               </TableCell>
                               <TableCell className="py-3 sm:py-4">
                                 <DropdownMenu>

@@ -66,7 +66,7 @@ export async function updateMarketingUser(id, updates) {
     return data;
 }
 // --- marketing_contents ---
-const CONTENT_TYPES = ['blog_artigos', 'ferramentas', 'materiais_gratuitos'];
+const CONTENT_TYPES = ['blog_artigos', 'ferramentas', 'materiais_gratuitos', 'cases'];
 export async function listMarketingContent(options) {
     if (!supabaseAdmin)
         return { rows: [], total: 0 };

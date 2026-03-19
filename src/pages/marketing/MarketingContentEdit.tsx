@@ -30,10 +30,25 @@ function slugFromTitle(title: string): string {
     .replace(/^-|-$/g, '') || 'post';
 }
 
+function youtubeVideoId(url: string): string | null {
+  const trimmed = url.trim();
+  const m = trimmed.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+  return m ? m[1] : null;
+}
+
+/** Garante URL absoluta para validação do backend (z.string().url()). */
+function normalizeExternalUrl(url: string): string {
+  const u = url.trim();
+  if (!u) return u;
+  if (/^https?:\/\//i.test(u)) return u;
+  return `https://${u.replace(/^\/+/, '')}`;
+}
+
 const TYPES = [
   { value: 'blog_artigos', label: 'Blog / Artigos' },
   { value: 'ferramentas', label: 'Ferramentas' },
   { value: 'materiais_gratuitos', label: 'Materiais Gratuitos' },
+  { value: 'cases', label: 'Cases de Sucesso' },
 ] as const;
 
 const FORMAT_HTML_API = '/api/openai-format-html';
@@ -55,10 +70,15 @@ export default function MarketingContentEdit() {
   const [formattingContent, setFormattingContent] = useState(false);
   const [imagemUrl, setImagemUrl] = useState('');
   const [pdfPath, setPdfPath] = useState('');
-  const [postSource, setPostSource] = useState<'site' | 'linkedin'>('site');
+  const [postSource, setPostSource] = useState<'site' | 'linkedin' | 'youtube'>('site');
   const [externalUrl, setExternalUrl] = useState('');
+  const [youtubeUrlToFetch, setYoutubeUrlToFetch] = useState<string | null>(null);
   const [uploadError, setUploadError] = useState<string | null>(null);
   const { data: existing, isLoading: loadingExisting } = trpc.marketing.content.getById.useQuery(id!, { enabled: !!id });
+  const { data: youtubeMeta } = trpc.marketing.youtube.fetchMeta.useQuery(
+    { url: youtubeUrlToFetch! },
+    { enabled: !!youtubeUrlToFetch && youtubeUrlToFetch.startsWith('http') }
+  );
   const utils = trpc.useUtils();
   const createMutation = trpc.marketing.content.create.useMutation({
     onSuccess: () => {
@@ -75,6 +95,13 @@ export default function MarketingContentEdit() {
   const uploadMutation = trpc.marketing.content.upload.useMutation();
 
   useEffect(() => {
+    if (youtubeMeta?.video_title) {
+      setTitulo(youtubeMeta.video_title);
+      setYoutubeUrlToFetch(null);
+    }
+  }, [youtubeMeta]);
+
+  useEffect(() => {
     if (existing) {
       setType(existing.type);
       setStatus(existing.status as 'draft' | 'published');
@@ -84,7 +111,13 @@ export default function MarketingContentEdit() {
       setConteudo(existing.conteudo || '');
       setImagemUrl(existing.imagem_url || '');
       setPdfPath(existing.pdf_path || '');
-      setPostSource((existing as { post_source?: string }).post_source === 'linkedin' ? 'linkedin' : 'site');
+      setPostSource(
+        (existing as { post_source?: string }).post_source === 'linkedin'
+          ? 'linkedin'
+          : (existing as { post_source?: string }).post_source === 'youtube'
+            ? 'youtube'
+            : 'site'
+      );
       setExternalUrl((existing as { external_url?: string | null }).external_url || '');
       setSlugManuallyEdited(false);
     } else if (isNew) {
@@ -93,11 +126,23 @@ export default function MarketingContentEdit() {
     }
   }, [existing, isNew, typeParam]);
 
+  // Para YouTube: ao colar a URL, preencher slug com o ID do vídeo (minúsculas) para habilitar o botão Criar
+  useEffect(() => {
+    if (postSource !== 'youtube' || slugManuallyEdited || !externalUrl.trim()) return;
+    const id = youtubeVideoId(externalUrl);
+    if (id) setSlug(`video-${id.toLowerCase()}`);
+  }, [postSource, externalUrl, slugManuallyEdited]);
+
+  // Novo conteúdo com link YouTube: deixar "Publicado" por padrão para aparecer no blog
+  useEffect(() => {
+    if (isNew && postSource === 'youtube') setStatus('published');
+  }, [isNew, postSource]);
+
   useEffect(() => {
     if (slugManuallyEdited) return;
     if (titulo.trim()) setSlug(slugFromTitle(titulo));
-    else if (isNew) setSlug('');
-  }, [titulo, slugManuallyEdited, isNew]);
+    else if (isNew && !(type === 'blog_artigos' && postSource === 'youtube' && externalUrl.trim())) setSlug('');
+  }, [titulo, slugManuallyEdited, isNew, type, postSource, externalUrl]);
 
   const handleTituloChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTitulo(e.target.value);
@@ -197,18 +242,29 @@ export default function MarketingContentEdit() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const isBlog = type === 'blog_artigos';
+    const tituloToSend =
+      isBlog && postSource === 'youtube' && !titulo.trim() ? 'Vídeo YouTube' : titulo;
+    const slugToSend =
+      slug.trim() ||
+      (isBlog && postSource === 'youtube' && externalUrl.trim()
+        ? `video-${(youtubeVideoId(externalUrl) ?? 'youtube').toLowerCase()}`
+        : slugFromTitle(tituloToSend));
+    const externalUrlToSend =
+      isBlog && (postSource === 'linkedin' || postSource === 'youtube') && externalUrl.trim()
+        ? normalizeExternalUrl(externalUrl)
+        : null;
     const payload = {
-      type: type as 'blog_artigos' | 'ferramentas' | 'materiais_gratuitos',
+      type: type as 'blog_artigos' | 'ferramentas' | 'materiais_gratuitos' | 'cases',
       status,
-      slug: slug || titulo.toLowerCase().replace(/\s+/g, '-'),
-      titulo,
+      slug: slugToSend,
+      titulo: tituloToSend,
       resumo: resumo || null,
       conteudo: conteudo || null,
       imagem_url: imagemUrl || null,
       pdf_path: pdfPath || null,
       ...(isBlog && {
         post_source: postSource,
-        external_url: postSource === 'linkedin' ? (externalUrl.trim() || null) : null,
+        external_url: externalUrlToSend,
       }),
     };
     if (isNew) {
@@ -220,14 +276,20 @@ export default function MarketingContentEdit() {
 
   // Botão Criar/Salvar só habilita com título, slug e conteúdo preenchidos.
   // Para ferramentas/materiais: conteúdo = texto OU PDF anexado OU imagem (qualquer um conta).
+  // Para blog: site = conteúdo; linkedin/youtube = external_url.
   const showContentField = type !== 'blog_artigos' || postSource === 'site';
   const hasContent =
     !showContentField ||
+    (postSource === 'youtube' && externalUrl.trim().length > 0) ||
+    (postSource === 'linkedin' && externalUrl.trim().length > 0) ||
     conteudo.trim().length > 0 ||
     (pdfPath && pdfPath.trim().length > 0) ||
     (imagemUrl && imagemUrl.trim().length > 0);
+  // Para YouTube: basta URL + slug (título é preenchido ao sair do campo ou pelo backend ao salvar)
   const hasRequiredFields =
-    titulo.trim().length > 0 && slug.trim().length > 0 && hasContent;
+    slug.trim().length > 0 &&
+    hasContent &&
+    (titulo.trim().length > 0 || (postSource === 'youtube' && externalUrl.trim().length > 0));
   const canSubmit = hasRequiredFields && !createMutation.isPending && !updateMutation.isPending;
 
   if (!isNew && loadingExisting) {
@@ -277,7 +339,9 @@ export default function MarketingContentEdit() {
                   <option value="published">Publicado</option>
                 </select>
                 <p className="text-xs text-gray-500 dark:text-gray-400">
-                  Use Rascunho para ocultar o conteúdo do site e editar com calma. Você pode voltar para Publicado quando quiser.
+                  {type === 'blog_artigos' && postSource === 'youtube'
+                    ? 'Conteúdos com status Publicado aparecem na listagem do blog. Use Rascunho para ocultar.'
+                    : 'Use Rascunho para ocultar o conteúdo do site e editar com calma. Você pode voltar para Publicado quando quiser.'}
                 </p>
               </div>
               {type === 'blog_artigos' && (
@@ -286,11 +350,12 @@ export default function MarketingContentEdit() {
                     <Label className="text-sm font-medium text-gray-700 dark:text-gray-300">Tipo de postagem</Label>
                     <select
                       value={postSource}
-                      onChange={(e) => setPostSource(e.target.value as 'site' | 'linkedin')}
+                      onChange={(e) => setPostSource(e.target.value as 'site' | 'linkedin' | 'youtube')}
                       className="w-full h-11 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800/80 text-gray-900 dark:text-gray-100 px-4 transition-all duration-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 focus:outline-none"
                     >
                       <option value="site">Conteúdo no site (escrever artigo aqui)</option>
                       <option value="linkedin">Apenas link do LinkedIn (card redireciona para o post)</option>
+                      <option value="youtube">Link de vídeo YouTube (título e capa carregados automaticamente)</option>
                     </select>
                   </div>
                   {postSource === 'linkedin' && (
@@ -306,11 +371,33 @@ export default function MarketingContentEdit() {
                       <p className="text-xs text-gray-500 dark:text-gray-400">O card no blog abrirá este link ao clicar.</p>
                     </div>
                   )}
+                  {postSource === 'youtube' && (
+                    <div className="space-y-2">
+                      <Label className="text-sm font-medium text-gray-700 dark:text-gray-300">URL do vídeo (YouTube)</Label>
+                      <Input
+                        type="url"
+                        value={externalUrl}
+                        onChange={(e) => setExternalUrl(e.target.value)}
+                        onBlur={() => {
+                          const url = externalUrl.trim();
+                          if (url && /youtube\.com|youtu\.be/i.test(url)) setYoutubeUrlToFetch(url);
+                        }}
+                        placeholder="https://www.youtube.com/watch?v=... ou https://youtu.be/..."
+                        className="h-11 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800/80 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20"
+                      />
+                      <p className="text-xs text-gray-500 dark:text-gray-400">Cole a URL e saia do campo: o título do vídeo será preenchido automaticamente. No card do blog será exibido o título persistido no YouTube.</p>
+                    </div>
+                  )}
                 </>
               )}
               <div className="space-y-2">
                 <Label className="text-sm font-medium text-gray-700 dark:text-gray-300">Título</Label>
-                <Input value={titulo} onChange={handleTituloChange} required className="h-11 rounded-xl border-gray-200 dark:border-gray-600 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20" />
+                <Input
+                  value={titulo}
+                  onChange={handleTituloChange}
+                  required={postSource !== 'youtube'}
+                  className="h-11 rounded-xl border-gray-200 dark:border-gray-600 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20"
+                />
               </div>
               <div className="space-y-2">
                 <Label className="text-sm font-medium text-gray-700 dark:text-gray-300">Slug</Label>
