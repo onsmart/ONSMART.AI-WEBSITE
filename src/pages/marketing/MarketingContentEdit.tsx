@@ -138,6 +138,11 @@ export default function MarketingContentEdit() {
     if (isNew && postSource === 'youtube') setStatus('published');
   }, [isNew, postSource]);
 
+  // Novo Case de Sucesso: deixar "Publicado" por padrão para aparecer na página inicial
+  useEffect(() => {
+    if (isNew && type === 'cases') setStatus('published');
+  }, [isNew, type]);
+
   useEffect(() => {
     if (slugManuallyEdited) return;
     if (titulo.trim()) setSlug(slugFromTitle(titulo));

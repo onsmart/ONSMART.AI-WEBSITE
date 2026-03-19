@@ -182,17 +182,19 @@ export const marketingRouter = router({
             let meta = input.meta ?? null;
             const postSource = input.post_source ?? 'site';
             const externalUrl = input.external_url ?? null;
+            let titulo = input.titulo;
             if (postSource === 'youtube' && externalUrl && /youtube\.com|youtu\.be/i.test(externalUrl)) {
                 const videoMeta = await fetchYouTubeMeta(externalUrl);
                 if (videoMeta) {
                     meta = { ...(meta ?? {}), ...videoMeta };
+                    titulo = videoMeta.video_title;
                 }
             }
             const created = await createMarketingContent({
                 type: input.type,
                 status: input.status,
                 slug,
-                titulo: input.titulo,
+                titulo,
                 resumo: input.resumo ?? null,
                 conteudo: input.conteudo ? sanitizeRichText(input.conteudo) : null,
                 imagem_url: input.imagem_url ?? null,
@@ -230,15 +232,18 @@ export const marketingRouter = router({
                 throw new TRPCError({ code: 'CONFLICT', message: 'Slug already in use' });
             }
             let meta = rest.meta;
+            let titulo = rest.titulo;
             if (rest.post_source === 'youtube' && rest.external_url && /youtube\.com|youtu\.be/i.test(rest.external_url)) {
                 const videoMeta = await fetchYouTubeMeta(rest.external_url);
                 if (videoMeta) {
                     meta = { ...(rest.meta ?? {}), ...videoMeta };
+                    titulo = videoMeta.video_title;
                 }
             }
             const updated = await updateMarketingContent(id, {
                 ...rest,
                 meta,
+                titulo,
                 slug,
                 conteudo: rest.conteudo !== undefined ? (rest.conteudo ? sanitizeRichText(rest.conteudo) : null) : undefined,
             });
@@ -352,6 +357,17 @@ export const marketingRouter = router({
                 console.error('[sendPdfByEmail] HubSpot:', hubspotResult.error);
             }
             return { success: true };
+        }),
+    }),
+    youtube: router({
+        fetchMeta: marketingProcedure
+            .input(z.object({ url: z.string().url() }))
+            .query(async ({ input }) => {
+            if (!/youtube\.com|youtu\.be/i.test(input.url)) {
+                return { video_title: null, video_thumbnail_url: null };
+            }
+            const meta = await fetchYouTubeMeta(input.url);
+            return meta ?? { video_title: null, video_thumbnail_url: null };
         }),
     }),
     public: router({
