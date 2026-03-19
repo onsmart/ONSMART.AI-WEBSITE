@@ -1,9 +1,9 @@
 
 // Service Worker Configuration
 export const CACHE_CONFIG = {
-  CACHE_NAME: 'onsmart-ai-v3',
-  STATIC_CACHE_NAME: 'static-v3',
-  DYNAMIC_CACHE_NAME: 'dynamic-v3'
+  CACHE_NAME: 'onsmart-ai-v4',
+  STATIC_CACHE_NAME: 'static-v4',
+  DYNAMIC_CACHE_NAME: 'dynamic-v4'
 };
 
 export const CRITICAL_ASSETS = [

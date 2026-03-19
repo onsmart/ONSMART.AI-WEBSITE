@@ -482,13 +482,21 @@ export default function MarketingContentEdit() {
                           dangerouslySetInnerHTML={{
                             __html: (() => {
                               if (!conteudo) return '<p class="text-gray-400 italic">Nenhum conteúdo para visualizar.</p>';
-                              if (/<[a-z][\s\S]*>/i.test(conteudo)) return sanitizeHtml(conteudo);
+                              // Detecta HTML (tag com nome de elemento)
+                              if (/<\s*[a-z][a-z0-9]*[\s>\/]/i.test(conteudo.trim())) {
+                                return sanitizeHtml(conteudo);
+                              }
                               const escape = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                              const pClass =
+                                'mb-4 text-base leading-relaxed text-gray-700 dark:text-gray-300 last:mb-0';
                               return conteudo
                                 .split(/\n\s*\n/)
                                 .map((block) => block.trim())
                                 .filter(Boolean)
-                                .map((block) => `<p>${escape(block).replace(/\n/g, '<br />')}</p>`)
+                                .map(
+                                  (block) =>
+                                    `<p class="${pClass}">${escape(block).replace(/\n/g, '<br />')}</p>`
+                                )
                                 .join('');
                             })(),
                           }}

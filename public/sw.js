@@ -54,6 +54,16 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+  // Não interceptar: painel de marketing, APIs e tRPC — evita "Failed to fetch" / respostas corrompidas
+  const path = url.pathname;
+  if (
+    path.startsWith('/api/') ||
+    path.startsWith('/marketing') ||
+    path.includes('/trpc')
+  ) {
+    return;
+  }
+
   event.respondWith(handleRequest(request));
 });
 
