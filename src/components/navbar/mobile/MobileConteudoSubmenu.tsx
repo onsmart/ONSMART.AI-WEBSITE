@@ -1,8 +1,8 @@
-
 import React from "react";
-import { BookOpen, FileText, Wrench, Book, GraduationCap } from "lucide-react";
+import { BookOpen, FileText, Wrench, Book } from "lucide-react";
 import MobileSubmenuItem from "./MobileSubmenuItem";
 import { useNavigate } from "react-router-dom";
+import { useHasPublishedFerramentas } from "@/hooks/useHasPublishedFerramentas";
 
 interface MobileConteudoSubmenuProps {
   isActive: (path: string) => boolean;
@@ -16,7 +16,8 @@ const MobileConteudoSubmenu: React.FC<MobileConteudoSubmenuProps> = ({
   onClose 
 }) => {
   const navigate = useNavigate();
-  
+  const { hasFerramentas } = useHasPublishedFerramentas();
+
   const handleNavigation = (path: string) => {
     // Close the mobile menu immediately
     onClose();
@@ -66,14 +67,16 @@ const MobileConteudoSubmenu: React.FC<MobileConteudoSubmenuProps> = ({
         Materiais Gratuitos
       </button>
       
-      <button 
-        type="button"
-        className="w-full text-left flex items-center gap-2 px-10 py-2 text-sm rounded-md hover:bg-primary/10 cursor-pointer"
-        onClick={() => handleNavigation("/ferramentas-gratuitas")}
-      >
-        <Wrench className="h-4 w-4" />
-        Ferramentas Gratuitas
-      </button>
+      {hasFerramentas && (
+        <button 
+          type="button"
+          className="w-full text-left flex items-center gap-2 px-10 py-2 text-sm rounded-md hover:bg-primary/10 cursor-pointer"
+          onClick={() => handleNavigation("/ferramentas-gratuitas")}
+        >
+          <Wrench className="h-4 w-4" />
+          Ferramentas Gratuitas
+        </button>
+      )}
       
       <button 
         type="button"
@@ -82,29 +85,6 @@ const MobileConteudoSubmenu: React.FC<MobileConteudoSubmenuProps> = ({
       >
         <Book className="h-4 w-4" />
         Glossário
-      </button>
-      
-      {/* University */}
-      <h4 className="px-8 py-2 text-sm font-medium text-gray-500 dark:text-gray-400">
-        onsmartAI University
-      </h4>
-      
-      <button 
-        type="button"
-        className="w-full text-left flex items-center gap-2 px-10 py-2 text-sm rounded-md hover:bg-primary/10 cursor-pointer"
-        onClick={() => handleNavigation("/university/ia-basico")}
-      >
-        <GraduationCap className="h-4 w-4" />
-        IA Básico
-      </button>
-      
-      <button 
-        type="button"
-        className="w-full text-left flex items-center gap-2 px-10 py-2 text-sm rounded-md hover:bg-primary/10 cursor-pointer"
-        onClick={() => handleNavigation("/university/agentes-ia")}
-      >
-        <GraduationCap className="h-4 w-4" />
-        Agentes de IA
       </button>
     </div>
   );

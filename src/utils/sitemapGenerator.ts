@@ -67,12 +67,6 @@ export const generateSitemap = (): string => {
       priority: 0.6
     },
     {
-      loc: `${baseUrl}/ferramentas-gratuitas`,
-      lastmod: currentDate,
-      changefreq: 'weekly',
-      priority: 0.6
-    },
-    {
       loc: `${baseUrl}/glossario-ia`,
       lastmod: currentDate,
       changefreq: 'monthly',

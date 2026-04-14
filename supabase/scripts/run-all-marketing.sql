@@ -84,21 +84,9 @@ CREATE TRIGGER trigger_marketing_contents_updated_at
 CREATE INDEX IF NOT EXISTS idx_marketing_contents_status ON marketing_contents (status);
 
 
--- ---------- 4. Seed do primeiro usuário de marketing ----------
-CREATE EXTENSION IF NOT EXISTS pgcrypto;
-
-INSERT INTO marketing_users (email, password_hash, name)
-VALUES
-  (
-    'marketing@onsmart.com.br',
-    crypt('senha123', gen_salt('bf', 10)),
-    'Marketing Admin'
-  )
-ON CONFLICT (email) DO UPDATE SET
-  password_hash = EXCLUDED.password_hash,
-  name = EXCLUDED.name,
-  updated_at = now();
-
+-- ---------- 4. Usuários marketing ----------
+-- Credenciais: crie no Supabase (SQL Editor) ou use seed local com MARKETING_SEED_USERS_JSON no .env.
+-- Ver supabase/scripts/seed-marketing-users.sql (modelo com INSERT comentado).
 
 -- ---------- 5. Conferir ----------
 SELECT id, email, name, created_at FROM marketing_users ORDER BY created_at;

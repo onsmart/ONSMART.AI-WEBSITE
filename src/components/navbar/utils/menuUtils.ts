@@ -4,13 +4,13 @@ export const handleContentClick = (e: React.MouseEvent) => {
 };
 
 // Check if the content section is active
-export const isConteudoActive = (pathname: string) => 
-  pathname === "/conteudo" || 
-  pathname === "/blog" || 
-  pathname === "/materiais-gratuitos" || 
+export const isConteudoActive = (pathname: string) =>
+  pathname === "/conteudo" ||
+  pathname === "/blog" ||
+  pathname === "/materiais-gratuitos" ||
   pathname === "/ferramentas-gratuitas" ||
-  pathname === "/glossario" || 
-  pathname.startsWith("/university/");
+  pathname.startsWith("/ferramentas/") ||
+  pathname === "/glossario";
 
 // Check if services section is active
 export const isServicosActive = (pathname: string) => 

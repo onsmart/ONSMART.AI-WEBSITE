@@ -5,29 +5,16 @@
 
 import { createMarketingContent, getMarketingContentById, getMarketingContentIdBySlug, updateMarketingContent } from './db.js';
 import { sanitizeSlug } from './sanitize.js';
-
-const DEFAULT_BLOG_SHEET_ID = '1GPgJ2wETkmEjZtJAxs1s8i2wnjjBdNSiykv-Hn-sbJ4';
-const DEFAULT_EBOOKS_SHEET_ID = '1VjjagCCY-UmkmSn__nZ6pw_Oejsx6Idc_i43AcYEfqg';
-
-async function fetchSheet(sheetId: string): Promise<{ table?: { rows?: { c: Array<{ v?: string }> }[] } }> {
-  const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json&tq=select *`;
-  const res = await fetch(url, { headers: { Accept: 'application/json' } });
-  if (!res.ok) throw new Error('Falha ao acessar a planilha');
-  const text = await res.text();
-  const jsonStart = text.indexOf('{');
-  const jsonEnd = text.lastIndexOf('}') + 1;
-  if (jsonStart < 0 || jsonEnd <= jsonStart) throw new Error('Resposta inválida da planilha');
-  try {
-    return JSON.parse(text.slice(jsonStart, jsonEnd));
-  } catch {
-    throw new Error('JSON inválido da planilha');
-  }
-}
+import {
+  DEFAULT_BLOG_SHEET_ID,
+  DEFAULT_EBOOKS_SHEET_ID,
+  fetchMarketingSheetJson,
+} from './sheetPublicList.js';
 
 /** Sync blog/artigos LinkedIn da planilha → marketing_contents type blog_artigos */
 export async function syncBlogFromSheet(): Promise<{ created: number; updated: number }> {
   const sheetId = process.env.MARKETING_GOOGLE_SHEET_ID || DEFAULT_BLOG_SHEET_ID;
-  const data = await fetchSheet(sheetId);
+  const data = await fetchMarketingSheetJson(sheetId);
   const rows = data.table?.rows?.slice(1) ?? [];
   let created = 0;
   let updated = 0;
@@ -81,7 +68,7 @@ export async function syncBlogFromSheet(): Promise<{ created: number; updated: n
 /** Sync e-books da planilha → marketing_contents type materiais_gratuitos. Slug com prefixo ebook- para não colidir com blog. */
 export async function syncEbooksFromSheet(): Promise<{ created: number; updated: number }> {
   const sheetId = process.env.MARKETING_EBOOKS_SHEET_ID || DEFAULT_EBOOKS_SHEET_ID;
-  const data = await fetchSheet(sheetId);
+  const data = await fetchMarketingSheetJson(sheetId);
   const rows = data.table?.rows?.slice(1) ?? [];
   let created = 0;
   let updated = 0;

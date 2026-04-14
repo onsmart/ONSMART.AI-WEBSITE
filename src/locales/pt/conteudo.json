@@ -72,6 +72,7 @@
   },
   "filters": {
     "title": "Filtre por Categoria",
+    "titleSingle": "Conteúdo disponível",
     "showing": "Mostrando",
     "of": "de",
     "contents": "conteúdos",
@@ -79,7 +80,7 @@
   },
   "loading": {
     "title": "Carregando Conteúdo",
-    "description": "Buscando artigos, vídeos e e-books especializados..."
+    "description": "Buscando artigos e e-books..."
   },
   "error": {
     "title": "Erro ao carregar conteúdo",

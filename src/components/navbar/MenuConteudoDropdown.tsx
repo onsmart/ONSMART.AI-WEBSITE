@@ -1,10 +1,7 @@
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { ArrowRight, BookOpen, FileText, GraduationCap, Wrench } from 'lucide-react';
-import { contentData, getContentByCategory } from '@/data/contentData';
-import { getContentIcon } from '@/utils/contentIcons';
+import { useHasPublishedFerramentas } from '@/hooks/useHasPublishedFerramentas';
 
 interface MenuConteudoDropdownProps {
   onMenuItemClick?: () => void;
@@ -15,28 +12,7 @@ const MenuConteudoDropdown: React.FC<MenuConteudoDropdownProps> = ({
 }) => {
   const { t } = useTranslation('navigation');
   const navigate = useNavigate();
-  
-  const handleContentClick = (contentSlug: string, category: string) => {
-    let path = '';
-    switch (category) {
-      case 'blog':
-        path = `/blog/${contentSlug}`;
-        break;
-      case 'material':
-        path = `/materiais/${contentSlug}`;
-        break;
-      case 'ferramenta':
-        path = `/ferramentas/${contentSlug}`;
-        break;
-      case 'university':
-        path = `/university/${contentSlug}`;
-        break;
-      default:
-        path = `/conteudo/${contentSlug}`;
-    }
-    navigate(path);
-    onMenuItemClick();
-  };
+  const { hasFerramentas } = useHasPublishedFerramentas();
 
   const handleViewAllClick = () => {
     navigate('/conteudo');
@@ -65,24 +41,17 @@ const MenuConteudoDropdown: React.FC<MenuConteudoDropdownProps> = ({
           >
             {t('menu.freeMaterials')}
           </button>
-          <button
-            onClick={() => {
-              navigate('/ferramentas-gratuitas');
-              onMenuItemClick();
-            }}
-            className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue rounded-md transition-colors"
-          >
-            {t('menu.freeTools')}
-          </button>
-          <button
-            onClick={() => {
-              navigate('/university/ia-basico');
-              onMenuItemClick();
-            }}
-            className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue rounded-md transition-colors"
-          >
-            {t('menu.university')}
-          </button>
+          {hasFerramentas && (
+            <button
+              onClick={() => {
+                navigate('/ferramentas-gratuitas');
+                onMenuItemClick();
+              }}
+              className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-blue rounded-md transition-colors"
+            >
+              {t('menu.freeTools')}
+            </button>
+          )}
           <hr className="my-2 border-gray-200" />
           <button
             onClick={handleViewAllClick}

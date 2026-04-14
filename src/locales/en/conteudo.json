@@ -72,6 +72,7 @@
   },
   "filters": {
     "title": "Filter by Category",
+    "titleSingle": "Available content",
     "showing": "Showing",
     "of": "of",
     "contents": "contents",
@@ -79,7 +80,7 @@
   },
   "loading": {
     "title": "Loading Content",
-    "description": "Searching for specialized articles, videos and e-books..."
+    "description": "Loading articles and e-books..."
   },
   "error": {
     "title": "Error loading content",

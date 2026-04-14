@@ -84,6 +84,7 @@ const SEOConfig: React.FC<SEOConfigProps> = ({ children }) => {
         },
         "sameAs": [
           "https://www.linkedin.com/company/onsmartai",
+          "https://www.instagram.com/onsmart.ai",
           "https://twitter.com/onsmartAI"
         ]
       };

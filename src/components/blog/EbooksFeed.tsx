@@ -25,13 +25,35 @@ type ContentRow = {
 };
 
 export default function EbooksFeed() {
-  const { data, isLoading, isError } = trpc.marketing.public.list.useQuery({
+  const primary = trpc.marketing.public.list.useQuery({
     type: 'materiais_gratuitos',
     limit: 50,
     offset: 0,
   });
 
-  const rows = (data?.rows ?? []) as ContentRow[];
+  const needFallback =
+    primary.isFetched &&
+    (primary.isError || (primary.data?.rows?.length ?? 0) === 0);
+
+  const sheet = trpc.marketing.public.listFromSheets.useQuery(
+    { kind: 'materiais_gratuitos' },
+    { enabled: needFallback },
+  );
+
+  const isLoading =
+    !primary.isFetched || (needFallback && !sheet.isFetched);
+
+  const rows = (
+    primary.isSuccess && (primary.data?.rows?.length ?? 0) > 0
+      ? primary.data!.rows
+      : sheet.data?.rows ?? []
+  ) as ContentRow[];
+
+  const isError =
+    primary.isFetched &&
+    needFallback &&
+    sheet.isFetched &&
+    sheet.isError;
 
   if (isLoading) {
     return (

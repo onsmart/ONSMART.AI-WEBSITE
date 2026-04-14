@@ -19,6 +19,7 @@ import {
   isSetoresActive,
   isProdutosActive,
 } from "../utils/menuUtils";
+import { useHasPublishedFerramentas } from "@/hooks/useHasPublishedFerramentas";
 
 interface MobileMenuItemsProps {
   isActive: (path: string) => boolean;
@@ -34,7 +35,8 @@ const MobileMenuItems: React.FC<MobileMenuItemsProps> = ({
   const { t } = useTranslation('navigation');
   const location = useLocation();
   const navigate = useNavigate();
-  
+  const { hasFerramentas } = useHasPublishedFerramentas();
+
   // Direct navigation handler that closes the menu after navigating
   const handleNavigate = (path: string) => {
     navigate(path);
@@ -273,36 +275,16 @@ const MobileMenuItems: React.FC<MobileMenuItemsProps> = ({
                   <div className="font-semibold text-gray-900 dark:text-gray-100">{t('menu.freeMaterials')}</div>
                   <div className="text-xs text-gray-600 dark:text-gray-400 mt-0.5">{t('menu.ebooksWhitepapers')}</div>
                 </button>
-                <button 
-                  type="button"
-                  className="w-full text-left px-4 py-3 text-sm rounded-lg hover:bg-white dark:hover:bg-gray-800 cursor-pointer transition-all duration-300 hover:translate-x-1 hover:shadow-sm border border-transparent hover:border-brand-blue/20"
-                  onClick={() => handleNavigate("/ferramentas-gratuitas")}
-                >
-                  <div className="font-semibold text-gray-900 dark:text-gray-100">{t('menu.freeTools')}</div>
-                  <div className="text-xs text-gray-600 dark:text-gray-400 mt-0.5">{t('menu.calculatorsTemplates')}</div>
-                </button>
-              </div>
-              
-              <h4 className="px-3 py-2 text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider">
-                {t('menu.university')}
-              </h4>
-              <div className="space-y-1">
-                <button 
-                  type="button"
-                  className="w-full text-left px-4 py-3 text-sm rounded-lg hover:bg-white dark:hover:bg-gray-800 cursor-pointer transition-all duration-300 hover:translate-x-1 hover:shadow-sm border border-transparent hover:border-brand-blue/20"
-                  onClick={() => handleNavigate("/university/ia-basico")}
-                >
-                  <div className="font-semibold text-gray-900 dark:text-gray-100">{t('menu.basicAI')}</div>
-                  <div className="text-xs text-gray-600 dark:text-gray-400 mt-0.5">{t('menu.aiFundamentals')}</div>
-                </button>
-                <button 
-                  type="button"
-                  className="w-full text-left px-4 py-3 text-sm rounded-lg hover:bg-white dark:hover:bg-gray-800 cursor-pointer transition-all duration-300 hover:translate-x-1 hover:shadow-sm border border-transparent hover:border-brand-blue/20"
-                  onClick={() => handleNavigate("/university/agentes-ia")}
-                >
-                  <div className="font-semibold text-gray-900 dark:text-gray-100">{t('menu.aiAgentsCourse')}</div>
-                  <div className="text-xs text-gray-600 dark:text-gray-400 mt-0.5">{t('menu.specializedCourse')}</div>
-                </button>
+                {hasFerramentas && (
+                  <button 
+                    type="button"
+                    className="w-full text-left px-4 py-3 text-sm rounded-lg hover:bg-white dark:hover:bg-gray-800 cursor-pointer transition-all duration-300 hover:translate-x-1 hover:shadow-sm border border-transparent hover:border-brand-blue/20"
+                    onClick={() => handleNavigate("/ferramentas-gratuitas")}
+                  >
+                    <div className="font-semibold text-gray-900 dark:text-gray-100">{t('menu.freeTools')}</div>
+                    <div className="text-xs text-gray-600 dark:text-gray-400 mt-0.5">{t('menu.calculatorsTemplates')}</div>
+                  </button>
+                )}
               </div>
             </div>
           </AccordionContent>

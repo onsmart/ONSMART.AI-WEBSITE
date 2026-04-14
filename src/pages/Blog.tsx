@@ -85,51 +85,6 @@ const Blog = () => {
         <section className="py-8 md:py-12">
           <BlogNewsletter />
         </section>
-
-        {/* Enhanced CTA Section */}
-        <section className="py-20 px-4 bg-gradient-to-br from-brand-blue via-blue-600 to-brand-blue relative overflow-hidden">
-          {/* SVG Background Pattern */}
-          <div className="absolute inset-0 opacity-10">
-            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="1"/>
-                </pattern>
-              </defs>
-              <rect width="100%" height="100%" fill="url(#grid)" />
-            </svg>
-          </div>
-          
-          <div className="max-w-4xl mx-auto text-center relative z-10">
-            {/* Animated badge */}
-            <div className="inline-flex items-center px-4 py-2 bg-white/20 rounded-full border border-white/30 mb-6">
-              <span className="text-white font-medium text-sm">{t('ctaSection.badge')}</span>
-            </div>
-            
-            {/* Main title with gradient */}
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              {t('ctaSection.title')}{" "}
-              <span className="bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
-                {t('ctaSection.titleHighlight')}
-              </span>
-              {t('ctaSection.titleEnd')}
-            </h2>
-            
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              {t('ctaSection.subtitle')}
-            </p>
-            
-            {/* CTA buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
-                {t('ctaSection.button1')}
-              </button>
-              <button className="border-2 border-white text-white bg-transparent px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-brand-blue transition-colors">
-                {t('ctaSection.button2')}
-              </button>
-            </div>
-          </div>
-        </section>
       </div>
     </BlogEngagementTracker>
   );

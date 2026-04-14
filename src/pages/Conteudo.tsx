@@ -1,15 +1,16 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, BookOpen, FileText, Download, Users, TrendingUp, Calendar, GraduationCap, Image, Lightbulb, Video, CheckCircle } from "lucide-react";
+import { ArrowRight, BookOpen, FileText, Download, Users, TrendingUp, Calendar, GraduationCap, Image, Lightbulb, CheckCircle } from "lucide-react";
 import UnifiedSEO from "@/components/shared/UnifiedSEO";
 import { useTranslation } from 'react-i18next';
 import { sanitizeHtml } from '@/utils/sanitizeHtml';
 
-const contentCategories = [
-  { id: 'artigos', name: 'conteudo:categories.artigos', icon: FileText },
-  { id: 'ebooks', name: 'conteudo:categories.ebooks', icon: BookOpen }
+/** Tipos de conteúdo que a central pode listar; só aparecem abas/hero se houver itens carregados. */
+const CATEGORY_DEFS = [
+  { id: 'artigos' as const, types: ['artigo'] as const, icon: FileText },
+  { id: 'ebooks' as const, types: ['ebook'] as const, icon: BookOpen },
 ];
 
 const Conteudo = () => {
@@ -171,91 +172,23 @@ const Conteudo = () => {
     }
   };
 
-  // Função para carregar webinars da API do YouTube
-  const loadWebinarsFromAPI = async () => {
-    try {
-      console.log('🎥 Carregando webinars do OnSmart Tech...');
-      
-      // Como a API excedeu a cota, vamos usar webinars de exemplo otimizados
-      console.log('📺 Usando webinars de exemplo do canal OnSmart Tech');
-      
-      return [
-        {
-          id: 'dQw4w9WgXcQ',
-          type: 'webinar',
-          icon: Video,
-          title: 'Webinar: Implementação de IA em Empresas',
-          description: 'Webinar completo sobre como implementar IA na sua empresa com a metodologia LÍDER da OnSmart AI.',
-          duration: 'Webinar',
-          category: 'webinars',
-          subcategory: 'Webinars',
-          url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-          thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg',
-          publishedAt: new Date().toISOString()
-        },
-        {
-          id: 'jNQXAC9IVRw',
-          type: 'webinar',
-          icon: Video,
-          title: 'Palestra: O Futuro dos Agentes de IA',
-          description: 'Palestra sobre como os Agentes de IA estão transformando os negócios e aumentando a produtividade.',
-          duration: 'Webinar',
-          category: 'webinars',
-          subcategory: 'Webinars',
-          url: 'https://www.youtube.com/watch?v=jNQXAC9IVRw',
-          thumbnail: 'https://img.youtube.com/vi/jNQXAC9IVRw/mqdefault.jpg',
-          publishedAt: new Date().toISOString()
-        },
-        {
-          id: 'fJ9rUzIMcZQ',
-          type: 'webinar',
-          icon: Video,
-          title: 'Evento: Transformação Digital com IA',
-          description: 'Evento especial sobre transformação digital e como a IA pode revolucionar sua empresa em 30 dias.',
-          duration: 'Webinar',
-          category: 'webinars',
-          subcategory: 'Webinars',
-          url: 'https://www.youtube.com/watch?v=fJ9rUzIMcZQ',
-          thumbnail: 'https://img.youtube.com/vi/fJ9rUzIMcZQ/mqdefault.jpg',
-          publishedAt: new Date().toISOString()
-        }
-      ];
-    } catch (error) {
-      console.error('❌ Erro ao carregar webinars:', error);
-      return [];
-    }
-  };
-
-  // Função para carregar todos os conteúdos
+  // Função para carregar todos os conteúdos (apenas o que o site mantém hoje: planilhas de artigos e e-books)
   const loadAllContent = async () => {
     setLoading(true);
     setError(null);
     
     try {
-      console.log('🔄 Iniciando carregamento de todo o conteúdo...');
-      
-      const [articles, ebooks, webinars] = await Promise.all([
+      const [articles, ebooks] = await Promise.all([
         loadArticlesFromCMS(),
         loadEbooksFromCMS(),
-        loadWebinarsFromAPI()
       ]);
 
-      console.log('📊 Conteúdo carregado:');
-      console.log('📄 Artigos:', articles.length);
-      console.log('📚 E-books:', ebooks.length);
-      console.log('🎥 Webinars:', webinars.length);
-
-      const allContent = [...articles, ...ebooks, ...webinars];
-      console.log('📦 Total de conteúdo:', allContent.length);
-      
-      setContentData(allContent);
-      console.log('✅ Conteúdo definido no estado');
+      setContentData([...articles, ...ebooks]);
     } catch (error) {
       setError('Erro ao carregar conteúdo. Tente novamente mais tarde.');
-      console.error('❌ Erro ao carregar conteúdo:', error);
+      console.error('Erro ao carregar conteúdo:', error);
     } finally {
       setLoading(false);
-      console.log('🏁 Carregamento finalizado');
     }
   };
 
@@ -264,60 +197,83 @@ const Conteudo = () => {
     loadAllContent();
   }, []);
 
+  const visibleCategories = useMemo(
+    () =>
+      CATEGORY_DEFS.filter((def) =>
+        def.types.some((t) => contentData.some((c) => c.type === t)),
+      ),
+    [contentData],
+  );
+
+  useEffect(() => {
+    if (loading) return;
+    setSelectedCategory((prev) =>
+      visibleCategories.some((v) => v.id === prev)
+        ? prev
+        : (visibleCategories[0]?.id ?? prev),
+    );
+  }, [loading, visibleCategories]);
+
   const getContentByCategory = () => {
-    const categoryMap: { [key: string]: string[] } = {
-      'artigos': ['artigo'],
-      'ebooks': ['ebook']
-    };
-
-    console.log('🔍 Filtrando conteúdo para categoria:', selectedCategory);
-    console.log('📊 Total de conteúdo disponível:', contentData.length);
-    console.log('📋 Tipos de conteúdo:', contentData.map(c => c.type));
-
-    let filtered = contentData;
-    
-    const contentTypes = categoryMap[selectedCategory] || [];
-    filtered = contentData.filter(content => contentTypes.includes(content.type));
-    
-    console.log('🎯 Conteúdo filtrado:', filtered.length);
-    console.log('📋 Conteúdo filtrado por tipo:', filtered.map(c => ({ type: c.type, title: c.title })));
-
-    // Para artigos e e-books, mostrar apenas 3 inicialmente
-    if (selectedCategory === 'artigos' || selectedCategory === 'ebooks') {
-      const articles = filtered.filter(content => content.type === 'artigo');
-      const ebooks = filtered.filter(content => content.type === 'ebook');
-      
-      if (selectedCategory === 'artigos') {
-        return showAll ? articles : articles.slice(0, 3);
-      } else if (selectedCategory === 'ebooks') {
-        return showAll ? ebooks : ebooks.slice(0, 3);
-      }
+    if (selectedCategory === 'artigos') {
+      const articles = contentData.filter((content) => content.type === 'artigo');
+      return showAll ? articles : articles.slice(0, 3);
     }
-
-    return filtered;
+    if (selectedCategory === 'ebooks') {
+      const ebooks = contentData.filter((content) => content.type === 'ebook');
+      return showAll ? ebooks : ebooks.slice(0, 3);
+    }
+    return [];
   };
 
   const filteredContent = getContentByCategory();
 
-  const getCategoryStats = () => {
-    const categoryMap: { [key: string]: string[] } = {
-      'artigos': ['artigo'],
-      'ebooks': ['ebook']
+  const stats = useMemo(() => {
+    const out: { total: number; artigos: number; ebooks: number } = {
+      total: 0,
+      artigos: 0,
+      ebooks: 0,
     };
+    for (const c of contentData) {
+      if (c.type === 'artigo') {
+        out.artigos += 1;
+        out.total += 1;
+      } else if (c.type === 'ebook') {
+        out.ebooks += 1;
+        out.total += 1;
+      }
+    }
+    return out;
+  }, [contentData]);
 
-    const stats: { [key: string]: number } = {
-      total: contentData.length
-    };
-
-    contentCategories.forEach(category => {
-      const contentTypes = categoryMap[category.id] || [];
-      stats[category.id] = contentData.filter(content => contentTypes.includes(content.type)).length;
-    });
-
-    return stats;
-  };
-
-  const stats = getCategoryStats();
+  const heroStatItems = useMemo(() => {
+    const items: Array<{
+      key: string;
+      count: number;
+      label: string;
+      icon: typeof FileText;
+      iconBg: string;
+    }> = [];
+    if (stats.artigos > 0) {
+      items.push({
+        key: 'artigos',
+        count: stats.artigos,
+        label: t('hero.stats.contents'),
+        icon: FileText,
+        iconBg: 'from-brand-blue to-blue-600',
+      });
+    }
+    if (stats.ebooks > 0) {
+      items.push({
+        key: 'ebooks',
+        count: stats.ebooks,
+        label: t('hero.stats.ebooks'),
+        icon: BookOpen,
+        iconBg: 'from-green-500 to-emerald-600',
+      });
+    }
+    return items;
+  }, [stats.artigos, stats.ebooks, t]);
 
   return (
     <>
@@ -354,78 +310,92 @@ const Conteudo = () => {
                   __html: sanitizeHtml(t('hero.description').replace(/<span>/g, '<span class="font-bold text-brand-blue">').replace(/<\/span>/g, '</span>'))
                 }} />
                 
-                {/* Stats */}
-                <div className="grid grid-cols-2 gap-4 max-w-2xl mx-auto">
-                  <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 shadow-md border border-gray-200/50 dark:border-gray-700/50">
-                    <div className="flex items-center justify-center gap-2 mb-2">
-                      <div className="w-8 h-8 bg-gradient-to-br from-brand-blue to-blue-600 rounded-lg flex items-center justify-center">
-                        <FileText className="h-4 w-4 text-white" />
+                {/* Stats: só tipos com pelo menos um item */}
+                {heroStatItems.length > 0 && (
+                  <div
+                    className={`grid gap-4 mx-auto ${
+                      heroStatItems.length === 1
+                        ? 'grid-cols-1 max-w-xs'
+                        : 'grid-cols-2 max-w-2xl'
+                    }`}
+                  >
+                    {heroStatItems.map((item) => (
+                      <div
+                        key={item.key}
+                        className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 shadow-md border border-gray-200/50 dark:border-gray-700/50"
+                      >
+                        <div className="flex items-center justify-center gap-2 mb-2">
+                          <div
+                            className={`w-8 h-8 bg-gradient-to-br ${item.iconBg} rounded-lg flex items-center justify-center`}
+                          >
+                            <item.icon className="h-4 w-4 text-white" />
+                          </div>
+                          <span className="font-bold text-gray-900 dark:text-gray-100">{item.count}+</span>
+                        </div>
+                        <p className="text-xs text-gray-600 dark:text-gray-400">{item.label}</p>
                       </div>
-                      <span className="font-bold text-gray-900 dark:text-gray-100">{stats.total}+</span>
-                    </div>
-                    <p className="text-xs text-gray-600 dark:text-gray-400">{t('hero.stats.contents')}</p>
+                    ))}
                   </div>
-                  
-                  <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-4 shadow-md border border-gray-200/50 dark:border-gray-700/50">
-                    <div className="flex items-center justify-center gap-2 mb-2">
-                      <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center">
-                        <BookOpen className="h-4 w-4 text-white" />
-                      </div>
-                      <span className="font-bold text-gray-900 dark:text-gray-100">{stats.ebooks}+</span>
-                    </div>
-                    <p className="text-xs text-gray-600 dark:text-gray-400">{t('hero.stats.ebooks')}</p>
-                  </div>
-                  
-                </div>
+                )}
               </div>
             </div>
           </section>
 
-          {/* Category Filters */}
-          <section className="py-8">
-            <div className="container mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
-              <div className="text-center mb-6">
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">
-                  {t('filters.title')}
-            </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                  {t('filters.showing')} <span className="font-semibold text-brand-blue">{filteredContent.length}</span> {t('filters.of')} <span className="font-semibold text-gray-900 dark:text-gray-100">{contentData.length}</span> {t('filters.contents')}
-                  {selectedCategory !== 'all' && (
-                    <span className="ml-2">
-                      {t('filters.in')} <span className="font-semibold text-brand-blue">
-                        {t(`categories.${selectedCategory}`)}
-                      </span>
-                    </span>
-                  )}
-                </p>
-              </div>
-              
-              <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
-                {contentCategories.map((category) => (
-                  <button
-                    key={category.id}
-                    onClick={() => setSelectedCategory(category.id)}
-                    className={`flex items-center gap-2 px-3 py-2 sm:px-4 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 ${
-                      selectedCategory === category.id
-                        ? 'bg-gradient-to-r from-brand-blue to-blue-600 text-white shadow-md scale-105'
-                        : 'bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm text-gray-700 dark:text-gray-300 hover:bg-brand-blue/10 dark:hover:bg-brand-blue/20 hover:text-brand-blue border border-gray-200/50 dark:border-gray-700/50 hover:scale-105'
-                    }`}
-                  >
-                    <category.icon className="h-3 w-3 sm:h-4 sm:w-4" />
-                    <span className="hidden sm:inline">{t(`categories.${category.id}`)}</span>
-                    <span className="sm:hidden">
-                      {t(`categories.${category.id}`).split(' ')[0]}
-                    </span>
-                    {category.id !== 'all' && (
-                      <span className="ml-1 text-xs opacity-75 bg-white/20 px-1.5 py-0.5 rounded-full">
-                        {stats[category.id as keyof typeof stats] || 0}
+          {/* Filtros por categoria: só se existir mais de um tipo com conteúdo */}
+          {visibleCategories.length > 0 && (
+            <section className="py-8">
+              <div className="container mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
+                <div className="text-center mb-6">
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">
+                    {visibleCategories.length > 1 ? t('filters.title') : t('filters.titleSingle')}
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                    {t('filters.showing')}{' '}
+                    <span className="font-semibold text-brand-blue">{filteredContent.length}</span>{' '}
+                    {t('filters.of')}{' '}
+                    <span className="font-semibold text-gray-900 dark:text-gray-100">
+                      {selectedCategory === 'artigos' ? stats.artigos : stats.ebooks}
+                    </span>{' '}
+                    {t('filters.contents')}
+                    {visibleCategories.length > 1 && (
+                      <span className="ml-2">
+                        {t('filters.in')}{' '}
+                        <span className="font-semibold text-brand-blue">
+                          {t(`categories.${selectedCategory}`)}
+                        </span>
                       </span>
                     )}
-                  </button>
-                ))}
+                  </p>
+                </div>
+
+                {visibleCategories.length > 1 && (
+                  <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
+                    {visibleCategories.map((category) => (
+                      <button
+                        key={category.id}
+                        type="button"
+                        onClick={() => setSelectedCategory(category.id)}
+                        className={`flex items-center gap-2 px-3 py-2 sm:px-4 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 ${
+                          selectedCategory === category.id
+                            ? 'bg-gradient-to-r from-brand-blue to-blue-600 text-white shadow-md scale-105'
+                            : 'bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm text-gray-700 dark:text-gray-300 hover:bg-brand-blue/10 dark:hover:bg-brand-blue/20 hover:text-brand-blue border border-gray-200/50 dark:border-gray-700/50 hover:scale-105'
+                        }`}
+                      >
+                        <category.icon className="h-3 w-3 sm:h-4 sm:w-4" />
+                        <span className="hidden sm:inline">{t(`categories.${category.id}`)}</span>
+                        <span className="sm:hidden">
+                          {t(`categories.${category.id}`).split(' ')[0]}
+                        </span>
+                        <span className="ml-1 text-xs opacity-75 bg-white/20 px-1.5 py-0.5 rounded-full">
+                          {category.id === 'artigos' ? stats.artigos : stats.ebooks}
+                        </span>
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
-          </div>
-        </section>
+            </section>
+          )}
         
           {/* Content Grid */}
           <section className="pb-16">
@@ -467,24 +437,22 @@ const Conteudo = () => {
                     {t('error.button')}
                   </Button>
                 </div>
+              ) : stats.total === 0 ? (
+                <div className="text-center py-12">
+                  <div className="text-gray-500 mb-4">
+                    <FileText className="h-12 w-12 mx-auto mb-2" />
+                    <p className="text-lg font-semibold">{t('empty.title')}</p>
+                    <p className="text-sm text-gray-600 mt-2">{t('empty.description1')}</p>
+                  </div>
+                </div>
               ) : filteredContent.length === 0 ? (
                 <div className="text-center py-12">
                   <div className="text-gray-500 mb-4">
                     <FileText className="h-12 w-12 mx-auto mb-2" />
                     <p className="text-lg font-semibold">{t('empty.title')}</p>
                     <p className="text-sm text-gray-600 mt-2">
-                      {selectedCategory === 'all' 
-                        ? t('empty.description1')
-                        : t('empty.description2', { category: t(`categories.${selectedCategory}`) })
-                      }
+                      {t('empty.description2', { category: t(`categories.${selectedCategory}`) })}
                     </p>
-                  </div>
-                  <div className="text-xs text-gray-400 mt-4 p-4 bg-gray-100 rounded">
-                    <p><strong>Debug Info:</strong></p>
-                    <p>Categoria selecionada: {selectedCategory}</p>
-                    <p>Conteúdo filtrado: {filteredContent.length}</p>
-                    <p>Total de conteúdo: {contentData.length}</p>
-                    <p>Tipos disponíveis: {contentData.map(c => c.type).join(', ')}</p>
                   </div>
                 </div>
               ) : (

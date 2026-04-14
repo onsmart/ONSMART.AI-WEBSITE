@@ -165,13 +165,35 @@ function ArticleCard({
 }
 
 export default function MarketingBlogFeed() {
-  const { data, isLoading, isError } = trpc.marketing.public.list.useQuery({
+  const primary = trpc.marketing.public.list.useQuery({
     type: 'blog_artigos',
     limit: 50,
     offset: 0,
   });
 
-  const rows = (data?.rows ?? []) as ContentRow[];
+  const needFallback =
+    primary.isFetched &&
+    (primary.isError || (primary.data?.rows?.length ?? 0) === 0);
+
+  const sheet = trpc.marketing.public.listFromSheets.useQuery(
+    { kind: 'blog_artigos' },
+    { enabled: needFallback },
+  );
+
+  const isLoading =
+    !primary.isFetched || (needFallback && !sheet.isFetched);
+
+  const rows = (
+    primary.isSuccess && (primary.data?.rows?.length ?? 0) > 0
+      ? primary.data!.rows
+      : sheet.data?.rows ?? []
+  ) as ContentRow[];
+
+  const isError =
+    primary.isFetched &&
+    needFallback &&
+    sheet.isFetched &&
+    sheet.isError;
 
   if (isLoading) {
     return (

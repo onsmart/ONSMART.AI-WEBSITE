@@ -27,6 +27,7 @@ import {
   deleteMarketingContent,
   isSlugTaken,
 } from './db.js';
+import { getPublicBlogRowsFromSheet, getPublicEbooksRowsFromSheet } from './sheetPublicList.js';
 import { uploadMarketingFile, getPublicUrl, getSignedUrl, downloadMarketingFile, fetchFileFromUrl } from './storage.js';
 import { sanitizeSlug, sanitizeRichText } from './sanitize.js';
 import type { BucketKind } from './storage.js';
@@ -449,5 +450,13 @@ export const marketingRouter = router({
       const pdfUrl = row.pdf_path ? await getSignedUrl('pdf', row.pdf_path, 3600) : null;
       return { ...row, pdfSignedUrl: pdfUrl };
     }),
+
+    /** Planilhas públicas (fallback quando Supabase vazio ou lista principal indisponível). */
+    listFromSheets: publicProcedure
+      .input(z.object({ kind: z.enum(['blog_artigos', 'materiais_gratuitos']) }))
+      .query(async ({ input }) => {
+        if (input.kind === 'blog_artigos') return getPublicBlogRowsFromSheet();
+        return getPublicEbooksRowsFromSheet();
+      }),
   }),
 });

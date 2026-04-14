@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { LoadingSkeleton } from '@/components/ui/loading-skeleton';
+import { useHasPublishedFerramentas } from '@/hooks/useHasPublishedFerramentas';
 
 // Páginas críticas - carregar imediatamente
 import Index from '@/pages/Index';
@@ -23,8 +24,6 @@ const MaterialGratuitoPost = lazy(() => import('@/pages/MaterialGratuitoPost'));
 const FerramentasGratuitas = lazy(() => import('@/pages/FerramentasGratuitas'));
 const FerramentaPostPage = lazy(() => import('@/pages/FerramentaPostPage'));
 const Glossario = lazy(() => import('@/pages/Glossario'));
-const IABasico = lazy(() => import('@/pages/university/IABasico'));
-const AgentesIAUniversity = lazy(() => import('@/pages/university/AgentesIA'));
 const EcossistemaIBM = lazy(() => import('@/pages/EcossistemaIBM'));
 const AgentesIA = lazy(() => import('@/pages/AgentesIA'));
 const Sobre = lazy(() => import('@/pages/Sobre'));
@@ -86,6 +85,17 @@ const PageFallback = () => (
   </div>
 );
 
+function FerramentasGratuitasGate() {
+  const { hasFerramentas, isReady } = useHasPublishedFerramentas();
+  if (!isReady) return <PageFallback />;
+  if (!hasFerramentas) return <Navigate to="/blog" replace />;
+  return (
+    <Suspense fallback={<PageFallback />}>
+      <FerramentasGratuitas />
+    </Suspense>
+  );
+}
+
 const SimpleAppRoutes: React.FC = () => {
   return (
     <Suspense fallback={<PageFallback />}>
@@ -102,13 +112,13 @@ const SimpleAppRoutes: React.FC = () => {
         <Route path="/blog/ia-compliance-pmes" element={<ArtigoIACompliancePMEs />} />
         <Route path="/materiais-gratuitos" element={<MateriaisGratuitos />} />
         <Route path="/materiais-gratuitos/:slug" element={<MaterialGratuitoPost />} />
-        <Route path="/ferramentas-gratuitas" element={<FerramentasGratuitas />} />
+        <Route path="/ferramentas-gratuitas" element={<FerramentasGratuitasGate />} />
         <Route path="/ferramentas/:slug" element={<FerramentaPostPage />} />
         <Route path="/glossario-ia" element={<Glossario />} />
-        <Route path="/university/ia-basico" element={<IABasico />} />
-        <Route path="/university/agentes-ia" element={<AgentesIAUniversity />} />
+        <Route path="/university/*" element={<Navigate to="/blog" replace />} />
         <Route path="/politica-privacidade" element={<PoliticaPrivacidade />} />
         <Route path="/termos-uso" element={<TermosUso />} />
+        <Route path="/termos-de-uso" element={<Navigate to="/termos-uso" replace />} />
         <Route path="/planos" element={<Planos />} />
         <Route path="/ecossistema-ibm" element={<EcossistemaIBM />} />
         <Route path="/agentes-ia" element={<AgentesIA />} />

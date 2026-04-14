@@ -1,16 +1,11 @@
 /**
- * Seed marketing users on startup when MARKETING_SEED_ON_STARTUP=true.
- * Creates/updates os 3 usuários de acesso à área de marketing.
+ * Seed de marketing na subida do server quando MARKETING_SEED_ON_STARTUP=true.
+ * Usuários vêm só de MARKETING_SEED_USERS_JSON (env); sem variável, nada é inserido.
  */
 
 import bcrypt from 'bcryptjs';
 import { createClient } from '@supabase/supabase-js';
-
-const MARKETING_SEED_USERS = [
-  { email: 'mateus.mantovani@onsmart.com.br', password: 'Arizona@10161921' },
-  { email: 'isabella.simiao@onsmart.com.br', password: 'Onsmart2026@isabellasimiao' },
-  { email: 'thomas.jaeger@onsmart.com.br', password: 'Onsmart2026@thomasjaeger' },
-];
+import { getMarketingSeedUsersFromEnv } from './seedUsersFromEnv.js';
 
 export async function runSeedIfEnabled(): Promise<void> {
   if (process.env.MARKETING_SEED_ON_STARTUP !== 'true') return;
@@ -23,17 +18,35 @@ export async function runSeedIfEnabled(): Promise<void> {
     return;
   }
 
+  let seedUsers;
+  try {
+    seedUsers = getMarketingSeedUsersFromEnv();
+  } catch (e) {
+    console.error('[marketing] MARKETING_SEED_USERS_JSON inválido:', e instanceof Error ? e.message : e);
+    return;
+  }
+
+  if (seedUsers.length === 0) {
+    console.warn(
+      '[marketing] Seed skipped: MARKETING_SEED_USERS_JSON vazio — defina a variável ou gerencie usuários no Supabase'
+    );
+    return;
+  }
+
   try {
     const supabase = createClient(url, key);
-    for (const { email, password } of MARKETING_SEED_USERS) {
+    for (const { email, password, name } of seedUsers) {
       const normalizedEmail = email.toLowerCase().trim();
       const passwordHash = await bcrypt.hash(password, 10);
+      const row: Record<string, string> = {
+        email: normalizedEmail,
+        password_hash: passwordHash,
+        updated_at: new Date().toISOString(),
+      };
+      if (name) row.name = name;
       const { data, error } = await supabase
         .from('marketing_users')
-        .upsert(
-          { email: normalizedEmail, password_hash: passwordHash, updated_at: new Date().toISOString() },
-          { onConflict: 'email' }
-        )
+        .upsert(row, { onConflict: 'email' })
         .select()
         .single();
 

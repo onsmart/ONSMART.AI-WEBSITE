@@ -59,7 +59,6 @@ const Footer = () => {
                 {[
                   { to: "/", label: t('footer.home') },
                   { to: "/servicos", label: t('footer.services') },
-                  { to: "/case-de-sucesso", label: t('footer.successCases') },
                   { to: "/conteudo", label: t('footer.contentCenter') },
                   { to: "/diagnostico", label: t('footer.diagnostic') },
                   { to: "/contato", label: t('footer.contact') }
@@ -135,7 +134,7 @@ const Footer = () => {
                       label: "LinkedIn"
                     },
                     { 
-                      href: "https://www.instagram.com/onsmarttech/", 
+                      href: "https://www.instagram.com/onsmart.ai", 
                       icon: Instagram, 
                       label: "Instagram"
                     },

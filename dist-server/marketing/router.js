@@ -8,6 +8,7 @@ import { getMarketingUserByEmail, getMarketingUserById, } from './db.js';
 import { signMarketingAccessToken, signMarketingRefreshToken, verifyMarketingToken, revokeMarketingToken, } from './jwt.js';
 import { setMarketingCookies, clearMarketingCookies } from './cookies.js';
 import { listMarketingContent, getMarketingContentById, getMarketingContentBySlug, getMarketingContentBySlugAllStatus, createMarketingContent, updateMarketingContent, deleteMarketingContent, isSlugTaken, } from './db.js';
+import { getPublicBlogRowsFromSheet, getPublicEbooksRowsFromSheet } from './sheetPublicList.js';
 import { uploadMarketingFile, getPublicUrl, getSignedUrl, downloadMarketingFile, fetchFileFromUrl } from './storage.js';
 import { sanitizeSlug, sanitizeRichText } from './sanitize.js';
 import bcrypt from 'bcryptjs';
@@ -395,6 +396,14 @@ export const marketingRouter = router({
                 throw new TRPCError({ code: 'NOT_FOUND', message: 'Content not found' });
             const pdfUrl = row.pdf_path ? await getSignedUrl('pdf', row.pdf_path, 3600) : null;
             return { ...row, pdfSignedUrl: pdfUrl };
+        }),
+        /** Planilhas públicas (fallback quando Supabase vazio ou lista principal indisponível). */
+        listFromSheets: publicProcedure
+            .input(z.object({ kind: z.enum(['blog_artigos', 'materiais_gratuitos']) }))
+            .query(async ({ input }) => {
+            if (input.kind === 'blog_artigos')
+                return getPublicBlogRowsFromSheet();
+            return getPublicEbooksRowsFromSheet();
         }),
     }),
 });
