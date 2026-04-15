@@ -13,6 +13,7 @@
     "viewAllServices": "View All Services",
     "viewAllSectors": "View All Sectors",
     "scheduleDiagnostic": "Schedule Diagnostic",
+    "scheduleDiagnosticShort": "Schedule",
     "scheduleDiagnosticAria": "Schedule free AI diagnostic",
     "skipToContent": "Skip to main content",
     "skipToNavigation": "Skip to navigation",
@@ -85,7 +86,13 @@
     "socialMedia": "Social Media",
     "contactSection": "Contact",
     "followUsOn": "Follow us on",
-    "location": "São Paulo, Brazil",
+    "location": "São Paulo and Curitiba, Brazil",
+    "cnpjLabel": "Tax ID (CNPJ)",
+    "cnpjValue": "20.955.046/0001-71",
+    "matrixLabel": "Head office",
+    "matrixAddress": "Rua Arizona, 1349, Suite 1B, Cidade Monções, ZIP 04567-901, São Paulo/SP",
+    "branchLabel": "Branch",
+    "branchAddress": "Rua Comendador Araújo, 499, Suite 1003, 10th floor, Downtown, ZIP 80420-000, Curitiba/PR",
     "poweredBy": "Powered by AI",
     "footerLabel": "Site footer"
   }

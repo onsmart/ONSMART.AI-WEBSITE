@@ -13,6 +13,7 @@
     "viewAllServices": "Ver Todos os Serviços",
     "viewAllSectors": "Ver Todos os Setores",
     "scheduleDiagnostic": "Agendar Diagnóstico",
+    "scheduleDiagnosticShort": "Agendar",
     "scheduleDiagnosticAria": "Agendar diagnóstico gratuito de IA",
     "skipToContent": "Pular para o conteúdo principal",
     "skipToNavigation": "Pular para a navegação",
@@ -85,7 +86,13 @@
     "socialMedia": "Redes Sociais",
     "contactSection": "Contato",
     "followUsOn": "Siga-nos no",
-    "location": "São Paulo, Brasil",
+    "location": "São Paulo e Curitiba, Brasil",
+    "cnpjLabel": "CNPJ",
+    "cnpjValue": "20.955.046/0001-71",
+    "matrixLabel": "Matriz",
+    "matrixAddress": "Rua Arizona, nº 1349, Conj 1B, Cidade Monções, CEP 04567-901, São Paulo/SP",
+    "branchLabel": "Filial",
+    "branchAddress": "Rua Comendador Araújo, nº 499, Cj 1003, 10º andar, Centro, CEP 80420-000, Curitiba/PR",
     "poweredBy": "Powered by AI",
     "footerLabel": "Rodapé do site"
   }

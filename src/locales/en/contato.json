@@ -142,9 +142,11 @@
       "badge": "Our Location",
       "title": "Visit our Office",
       "loading": "Loading map...",
-      "address": "Arizona Street, 1349",
-      "neighborhood": "Berrini",
-      "city": "São Paulo - SP"
+      "address": "Rua Arizona, 1349",
+      "neighborhood": "Cidade Monções",
+      "city": "São Paulo/SP — ZIP 04567-901",
+      "mapCaption": "Head office: Rua Arizona, 1349, Suite 1B — Cidade Monções — São Paulo/SP — ZIP 04567-901",
+      "iframeTitle": "onsmartAI head office map — São Paulo"
     },
     "contactInfo": {
       "email": {
@@ -159,10 +161,22 @@
         "label": "Hours",
         "value": "Monday to Friday, 9am to 6pm"
       },
+      "cnpj": {
+        "label": "CNPJ (Brazilian tax ID)",
+        "value": "20.955.046/0001-71"
+      },
+      "matrix": {
+        "label": "Head office",
+        "value": "Rua Arizona, 1349, Suite 1B, Cidade Monções, ZIP 04567-901, São Paulo/SP"
+      },
+      "branch": {
+        "label": "Branch",
+        "value": "Rua Comendador Araújo, 499, Suite 1003, 10th floor, Downtown, ZIP 80420-000, Curitiba/PR"
+      },
       "address": {
-        "label": "Address",
-        "value": "Arizona Street, 1349",
-        "city": "São Paulo - SP"
+        "label": "Addresses",
+        "value": "",
+        "city": ""
       },
       "soniaWhatsApp": {
         "label": "Sonia's WhatsApp",
@@ -187,7 +201,7 @@
     },
     "address": {
       "label": "Address",
-      "value": "São Paulo, SP - Brazil",
+      "value": "Head office in São Paulo (SP) and branch in Curitiba (PR)",
       "description": "In-person service by appointment"
     },
     "hours": {

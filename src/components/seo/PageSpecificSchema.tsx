@@ -146,10 +146,13 @@ const PageSpecificSchema: React.FC<PageSpecificSchemaProps> = ({
             ],
             "address": {
               "@type": "PostalAddress",
-              "addressCountry": "BR",
+              "streetAddress": "Rua Arizona, 1349, Conj 1B, Cidade Monções",
+              "addressLocality": "São Paulo",
               "addressRegion": "SP",
-              "addressLocality": "São Paulo"
-            }
+              "postalCode": "04567-901",
+              "addressCountry": "BR"
+            },
+            "taxID": "20.955.046/0001-71"
           }
         };
         

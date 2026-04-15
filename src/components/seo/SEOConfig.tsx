@@ -72,9 +72,13 @@ const SEOConfig: React.FC<SEOConfigProps> = ({ children }) => {
         "description": "Especialistas em Agentes de IA empresarial no Brasil",
         "address": {
           "@type": "PostalAddress",
-          "addressCountry": "BR",
-          "addressRegion": "São Paulo"
+          "streetAddress": "Rua Arizona, 1349, Conj 1B, Cidade Monções",
+          "addressLocality": "São Paulo",
+          "addressRegion": "SP",
+          "postalCode": "04567-901",
+          "addressCountry": "BR"
         },
+        "taxID": "20.955.046/0001-71",
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+55-11-99666-9247",

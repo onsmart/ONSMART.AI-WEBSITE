@@ -61,7 +61,8 @@ const defaultCSPConfig: CSPConfig = {
   frameSrc: [
     "'self'",
     "https://vars.hotjar.com",
-    "https://www.google.com"
+    "https://www.google.com",
+    "https://maps.google.com"
   ],
   mediaSrc: ["'self'"],
   objectSrc: ["'none'"],

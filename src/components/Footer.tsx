@@ -201,6 +201,17 @@ const Footer = () => {
                       <span className="text-xs">+55 (11) 99813-8045</span>
                       <span className="text-xs text-blue-400">(Atendimento Humanizado)</span>
                     </a>
+                    <div className="pt-2 mt-2 border-t border-gray-700/40 space-y-1.5 leading-snug">
+                      <p className="text-xs text-gray-400">
+                        <span className="text-gray-500">{t('footer.cnpjLabel')}</span> {t('footer.cnpjValue')}
+                      </p>
+                      <p className="text-xs text-gray-400">
+                        <span className="text-gray-500">{t('footer.matrixLabel')}:</span> {t('footer.matrixAddress')}
+                      </p>
+                      <p className="text-xs text-gray-400">
+                        <span className="text-gray-500">{t('footer.branchLabel')}:</span> {t('footer.branchAddress')}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

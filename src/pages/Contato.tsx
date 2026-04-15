@@ -157,14 +157,24 @@ const Contato = () => {
                       </div>
                     </div>
                     
-                    <div className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 rounded-lg hover:bg-gray-50/50 transition-colors">
+                    <div className="flex items-start gap-2 sm:gap-3 p-2 sm:p-3 rounded-lg hover:bg-gray-50/50 transition-colors">
                       <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
                         <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                       </div>
-                      <div>
+                      <div className="min-w-0 space-y-1.5">
                         <h4 className="font-semibold text-gray-900 dark:text-gray-100 text-xs sm:text-sm">{t('info.contactInfo.address.label')}</h4>
-                        <p className="text-xs sm:text-sm text-gray-600">Rua Arizona, 1349</p>
-                        <p className="text-xs text-gray-500">São Paulo - SP</p>
+                        <p className="text-xs sm:text-sm text-gray-600">
+                          <span className="font-medium text-gray-800 dark:text-gray-200">{t('info.contactInfo.cnpj.label')}:</span>{' '}
+                          {t('info.contactInfo.cnpj.value')}
+                        </p>
+                        <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                          <span className="font-medium text-gray-800 dark:text-gray-200">{t('info.contactInfo.matrix.label')}:</span>{' '}
+                          {t('info.contactInfo.matrix.value')}
+                        </p>
+                        <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                          <span className="font-medium text-gray-800 dark:text-gray-200">{t('info.contactInfo.branch.label')}:</span>{' '}
+                          {t('info.contactInfo.branch.value')}
+                        </p>
                       </div>
                     </div>
                     
@@ -229,21 +239,23 @@ const Contato = () => {
                     )}
                     
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.2847474916945!2d-46.66149092502845!3d-23.588926478787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce574b1b7b1b1b%3A0x1b1b1b1b1b1b1b1b!2sRua%20Arizona%2C%201349%20-%20Berrini%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"
+                      src={`https://www.google.com/maps?q=${encodeURIComponent(
+                        'Rua Arizona, 1349, Conj 1B, Cidade Monções, São Paulo, SP, 04567-901, Brasil'
+                      )}&output=embed&hl=pt&z=16`}
                       width="100%"
                       height="100%"
                       style={{ border: 0 }}
                       allowFullScreen
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
-                      title="Localização onsmart AI - Rua Arizona, 1349"
+                      title={t('info.location.iframeTitle')}
                       onLoad={() => setMapLoading(false)}
                     />
                   </div>
                   
                   <div className="mt-3 sm:mt-4 p-2 sm:p-3 bg-gradient-to-r from-gray-50 to-blue-50/30 rounded-lg border border-gray-200/50">
-                    <p className="text-xs text-gray-600 text-center">
-                      <span className="font-semibold">Rua Arizona, 1349</span> • Berrini • São Paulo - SP
+                    <p className="text-xs text-gray-600 text-center leading-relaxed">
+                      {t('info.location.mapCaption')}
                     </p>
                   </div>
                 </div>

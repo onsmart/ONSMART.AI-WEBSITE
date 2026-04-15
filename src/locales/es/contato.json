@@ -142,9 +142,11 @@
       "badge": "Nuestra Ubicación",
       "title": "Visite Nuestra Oficina",
       "loading": "Cargando mapa...",
-      "address": "Calle Arizona, 1349",
-      "neighborhood": "Berrini",
-      "city": "São Paulo - SP"
+      "address": "Rua Arizona, nº 1349",
+      "neighborhood": "Cidade Monções",
+      "city": "São Paulo/SP — CEP 04567-901",
+      "mapCaption": "Matriz: Rua Arizona, nº 1349, Conj 1B — Cidade Monções — São Paulo/SP — CEP 04567-901",
+      "iframeTitle": "Mapa de la matriz onsmartAI — São Paulo"
     },
     "contactInfo": {
       "email": {
@@ -159,10 +161,22 @@
         "label": "Horario",
         "value": "Lunes a Viernes, 9h a 18h"
       },
+      "cnpj": {
+        "label": "CNPJ",
+        "value": "20.955.046/0001-71"
+      },
+      "matrix": {
+        "label": "Matriz",
+        "value": "Rua Arizona, nº 1349, Conj 1B, Cidade Monções, CEP 04567-901, São Paulo/SP"
+      },
+      "branch": {
+        "label": "Sucursal",
+        "value": "Rua Comendador Araújo, nº 499, Cj 1003, piso 10, Centro, CEP 80420-000, Curitiba/PR"
+      },
       "address": {
-        "label": "Dirección",
-        "value": "Calle Arizona, 1349",
-        "city": "São Paulo - SP"
+        "label": "Direcciones",
+        "value": "",
+        "city": ""
       },
       "soniaWhatsApp": {
         "label": "WhatsApp de Sonia",
@@ -187,7 +201,7 @@
     },
     "address": {
       "label": "Dirección",
-      "value": "São Paulo, SP - Brasil",
+      "value": "Matriz en São Paulo (SP) y sucursal en Curitiba (PR)",
       "description": "Atención presencial con cita previa"
     },
     "hours": {

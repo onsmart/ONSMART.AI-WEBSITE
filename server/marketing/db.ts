@@ -88,31 +88,39 @@ export async function listMarketingContent(options: {
   offset?: number;
 }): Promise<{ rows: MarketingContent[]; total: number }> {
   if (!supabaseAdmin) return { rows: [], total: 0 };
-  let q = supabaseAdmin.from('marketing_contents').select('*', { count: 'exact' });
+  try {
+    let q = supabaseAdmin.from('marketing_contents').select('*', { count: 'exact' });
 
-  if (options.type && CONTENT_TYPES.includes(options.type as (typeof CONTENT_TYPES)[number])) {
-    q = q.eq('type', options.type);
-  }
-  if (options.status != null && options.status !== '') {
-    q = q.eq('status', options.status);
-  }
-  if (options.search && options.search.trim()) {
-    q = q.or(`titulo.ilike.%${options.search.trim()}%,resumo.ilike.%${options.search.trim()}%`);
-  }
+    if (options.type && CONTENT_TYPES.includes(options.type as (typeof CONTENT_TYPES)[number])) {
+      q = q.eq('type', options.type);
+    }
+    if (options.status != null && options.status !== '') {
+      q = q.eq('status', options.status);
+    }
+    if (options.search && options.search.trim()) {
+      q = q.or(`titulo.ilike.%${options.search.trim()}%,resumo.ilike.%${options.search.trim()}%`);
+    }
 
-  q = q.order('created_at', { ascending: false });
-  const limit = Math.min(Math.max(Number(options.limit) || 20, 1), 100);
-  const offset =
-    options.offset != null
-      ? Math.max(Number(options.offset), 0)
-      : options.page != null
-        ? Math.max((Number(options.page) - 1) * limit, 0)
-        : 0;
-  q = q.range(offset, offset + limit - 1);
+    q = q.order('created_at', { ascending: false });
+    const limit = Math.min(Math.max(Number(options.limit) || 20, 1), 100);
+    const offset =
+      options.offset != null
+        ? Math.max(Number(options.offset), 0)
+        : options.page != null
+          ? Math.max((Number(options.page) - 1) * limit, 0)
+          : 0;
+    q = q.range(offset, offset + limit - 1);
 
-  const { data, error, count } = await q;
-  if (error) return { rows: [], total: 0 };
-  return { rows: (data || []) as MarketingContent[], total: count ?? 0 };
+    const { data, error, count } = await q;
+    if (error) {
+      console.error('[marketing] listMarketingContent:', error.message);
+      return { rows: [], total: 0 };
+    }
+    return { rows: (data || []) as MarketingContent[], total: count ?? 0 };
+  } catch (e) {
+    console.error('[marketing] listMarketingContent:', e);
+    return { rows: [], total: 0 };
+  }
 }
 
 export async function getMarketingContentById(id: string): Promise<MarketingContent | null> {
