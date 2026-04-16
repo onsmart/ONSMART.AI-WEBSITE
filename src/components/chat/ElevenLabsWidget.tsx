@@ -1,72 +1,94 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { elevenLabsConfigService } from '@/lib/elevenlabsConfigService';
+import { loadElevenLabsScript, isElevenLabsConvaiElementDefined } from '@/lib/elevenlabsConfig';
 
 interface ElevenLabsWidgetProps {
   className?: string;
 }
 
+type WidgetStatus = 'loading' | 'ready' | 'unavailable';
+
 const ElevenLabsWidget: React.FC<ElevenLabsWidgetProps> = ({ className = '' }) => {
   const widgetRef = useRef<HTMLDivElement | null>(null);
-  const [isWidgetReady, setIsWidgetReady] = useState(false);
+  const [status, setStatus] = useState<WidgetStatus>('loading');
+  const [unavailableReason, setUnavailableReason] = useState<'script' | 'config' | 'network' | null>(null);
 
   useEffect(() => {
-    const initializeWidget = async () => {
+    let cancelled = false;
+
+    const run = async () => {
       try {
-        // Buscar HTML do widget do backend (sem Agent ID exposto)
+        await new Promise((r) => setTimeout(r, 200));
+
+        if (!isElevenLabsConvaiElementDefined()) {
+          try {
+            await loadElevenLabsScript();
+          } catch (e) {
+            console.warn('[ElevenLabsWidget] Script do widget não carregou:', e);
+            if (cancelled) return;
+            setUnavailableReason('script');
+            setStatus('unavailable');
+            return;
+          }
+        }
+
+        if (cancelled || !widgetRef.current) return;
+
         const widgetHtml = await elevenLabsConfigService.getWidgetHtml();
-        
-        if (!widgetHtml) {
-          // Servidor offline - modo silencioso
+        if (!widgetHtml?.trim()) {
+          if (cancelled) return;
+          setUnavailableReason('config');
+          setStatus('unavailable');
           return;
         }
 
-        if (!widgetRef.current) return;
-
-        // Limpar conteúdo anterior
         widgetRef.current.innerHTML = '';
-
-        // Inserir HTML do widget diretamente (Agent ID já está embedado no HTML)
         widgetRef.current.innerHTML = widgetHtml;
-
-        console.log('✅ ElevenLabs Conversational AI widget carregado');
-        setIsWidgetReady(true);
-      } catch (error) {
-        // Erro silencioso - servidor offline
+        if (cancelled) return;
+        setStatus('ready');
+      } catch (e) {
+        console.warn('[ElevenLabsWidget] Falha ao montar widget:', e);
+        if (!cancelled) {
+          setUnavailableReason('network');
+          setStatus('unavailable');
+        }
       }
     };
 
-    // Aguardar o script carregar
-    const checkScript = () => {
-      if (window.customElements && window.customElements.get('elevenlabs-convai')) {
-        initializeWidget();
-      } else {
-        setTimeout(checkScript, 500);
-      }
-    };
-
-    // Inicializar após um pequeno delay para garantir que o script foi carregado
-    setTimeout(checkScript, 1000);
+    void run();
 
     return () => {
-      // Limpar widget ao desmontar
+      cancelled = true;
       if (widgetRef.current) {
         widgetRef.current.innerHTML = '';
       }
     };
   }, []);
 
+  const unavailableMessage =
+    unavailableReason === 'config'
+      ? 'Voz da Sonia indisponível: configure o servidor (ElevenLabs).'
+      : unavailableReason === 'script'
+        ? 'Voz da Sonia indisponível: não foi possível carregar o widget (rede ou bloqueio).'
+        : 'Voz da Sonia indisponível no momento.';
+
   return (
     <div className={`elevenlabs-widget-container ${className}`}>
-      {!isWidgetReady && (
-        <div className="flex items-center justify-center h-full">
-          <div className="text-center">
+      {status === 'loading' && (
+        <div className="flex items-center justify-center h-full min-h-[120px]">
+          <div className="text-center px-2">
             <div className="w-8 h-8 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin mx-auto mb-2"></div>
             <p className="text-sm text-emerald-600">Carregando Sonia...</p>
           </div>
         </div>
       )}
-      <div ref={widgetRef} className="w-full h-full max-w-xs mx-auto">
-        {/* O widget do ElevenLabs será renderizado aqui via HTML do backend */}
+      {status === 'unavailable' && (
+        <div className="flex items-center justify-center h-full min-h-[120px] px-2">
+          <p className="text-xs text-center text-amber-700 dark:text-amber-400 leading-relaxed">{unavailableMessage}</p>
+        </div>
+      )}
+      <div ref={widgetRef} className={`w-full h-full max-w-xs mx-auto ${status === 'ready' ? '' : 'sr-only'}`} aria-hidden={status !== 'ready'}>
+        {/* HTML do widget injetado após script + /api/elevenlabs-widget */}
       </div>
     </div>
   );

@@ -27,6 +27,8 @@ const defaultCSPConfig: CSPConfig = {
     "https://www.google-analytics.com",
     "https://static.hotjar.com",
     "https://script.hotjar.com",
+    "https://unpkg.com", // @elevenlabs/convai-widget-embed (index.html + fallback)
+    "https://cdn.jsdelivr.net", // fallback CDN do widget ElevenLabs
   ],
   styleSrc: [
     "'self'",

@@ -28,72 +28,64 @@ export const ELEVENLABS_CONFIG = {
   }
 };
 
-// Função para verificar se o ElevenLabs está disponível
-export const isElevenLabsAvailable = (): boolean => {
-  return typeof window !== 'undefined' && !!window.elevenLabsConvAI;
+/** Custom element do pacote @elevenlabs/convai-widget-embed (fluxo atual do site). */
+export const isElevenLabsConvaiElementDefined = (): boolean => {
+  if (typeof window === 'undefined') return false;
+  try {
+    return !!window.customElements?.get('elevenlabs-convai');
+  } catch {
+    return false;
+  }
 };
 
-// Função para carregar o script do ElevenLabs
+/** API legada (window.elevenLabsConvAI) ou widget por custom element. */
+export const isElevenLabsAvailable = (): boolean => {
+  if (typeof window === 'undefined') return false;
+  return !!(window.elevenLabsConvAI && typeof window.elevenLabsConvAI.init === 'function') || isElevenLabsConvaiElementDefined();
+};
+
+/**
+ * Garante que o script do widget exista e que o custom element `elevenlabs-convai` esteja registrado.
+ * Usa polling com timeout (evita spinner infinito se CSP ou rede falharem).
+ */
 export const loadElevenLabsScript = (): Promise<void> => {
   return new Promise((resolve, reject) => {
-    console.log('Checking if ElevenLabs is already available...');
-    
+    if (typeof window === 'undefined') {
+      reject(new Error('No window'));
+      return;
+    }
     if (isElevenLabsAvailable()) {
-      console.log('ElevenLabs already available');
       resolve();
       return;
     }
 
-    // Verificar se algum script já está sendo carregado
-    const existingScript = document.querySelector('script[src*="elevenlabs"]');
-    if (existingScript) {
-      console.log('ElevenLabs script already exists, waiting for load...');
-      existingScript.addEventListener('load', () => {
-        console.log('Existing ElevenLabs script loaded');
-        // Aguardar um pouco para o objeto estar disponível
-        setTimeout(() => {
-          if (isElevenLabsAvailable()) {
-            resolve();
-          } else {
-            console.log('ElevenLabs script loaded but object not available, will use Web Speech API');
-            reject(new Error('ElevenLabs script loaded but object not available'));
-          }
-        }, 2000);
-      });
-      existingScript.addEventListener('error', () => {
-        console.error('Existing ElevenLabs script failed to load');
+    let pollId: ReturnType<typeof setInterval> | undefined;
+
+    let scriptEl = document.querySelector('script[src*="elevenlabs"]') as HTMLScriptElement | null;
+    if (!scriptEl) {
+      const scriptUrl = ELEVENLABS_CONFIG.scriptUrls[0];
+      console.log(`Carregando ElevenLabs convai: ${scriptUrl}`);
+      scriptEl = document.createElement('script');
+      scriptEl.src = scriptUrl;
+      scriptEl.async = true;
+      scriptEl.type = 'text/javascript';
+      scriptEl.onerror = () => {
+        if (pollId !== undefined) clearInterval(pollId);
         reject(new Error('Failed to load ElevenLabs script'));
-      });
-      return;
+      };
+      document.head.appendChild(scriptEl);
     }
 
-    // Tentar carregar apenas uma vez para evitar conflitos
-    const scriptUrl = ELEVENLABS_CONFIG.scriptUrls[0]; // Usar apenas a primeira URL
-    console.log(`Trying to load ElevenLabs script from: ${scriptUrl}`);
-    
-    const script = document.createElement('script');
-    script.src = scriptUrl;
-    script.async = true;
-    script.type = 'text/javascript';
-    
-    script.onload = () => {
-      console.log(`ElevenLabs script loaded successfully from: ${scriptUrl}`);
-      // Aguardar um pouco para o objeto estar disponível
-      setTimeout(() => {
-        if (isElevenLabsAvailable()) {
-          resolve();
-        } else {
-          console.log('Script loaded but ElevenLabs object not available, will use Web Speech API');
-          reject(new Error('ElevenLabs script loaded but object not available'));
-        }
-      }, 3000);
-    };
-    
-    script.onerror = () => {
-      console.error(`Failed to load ElevenLabs script from: ${scriptUrl}`);
-      reject(new Error('Failed to load ElevenLabs script'));
-    };
-    
-    document.head.appendChild(script);
+    const start = Date.now();
+    const maxMs = 20000;
+    pollId = window.setInterval(() => {
+      if (isElevenLabsAvailable()) {
+        if (pollId !== undefined) clearInterval(pollId);
+        resolve();
+      } else if (Date.now() - start > maxMs) {
+        if (pollId !== undefined) clearInterval(pollId);
+        reject(new Error('ElevenLabs convai widget timeout'));
+      }
+    }, 120);
   });
 };
