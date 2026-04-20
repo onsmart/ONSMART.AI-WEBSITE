@@ -450,11 +450,6 @@ const Contato = () => {
                           {t('form.trust.responseTime')}
                         </span>
                       </div>
-                      <div className="bg-green-50 border border-green-200 rounded-lg p-2 sm:p-3">
-                        <p className="text-xs text-green-700 font-medium">
-                          {t('form.lastCompanies')} <span className="font-bold">127 {t('form.companiesRequested')}</span>
-                        </p>
-                      </div>
                     </div>
                   </form>
                 </div>

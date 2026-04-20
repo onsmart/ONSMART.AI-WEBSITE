@@ -90,8 +90,6 @@
       "noSpam": "No spam",
       "responseTime": "Response in 2h"
     },
-    "lastCompanies": "Last 48 hours:",
-    "companiesRequested": "companies requested diagnostic",
     "name": {
       "label": "Full Name",
       "placeholder": "Enter your full name"

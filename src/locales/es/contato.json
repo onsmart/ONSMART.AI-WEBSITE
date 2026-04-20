@@ -90,8 +90,6 @@
       "noSpam": "Sin spam",
       "responseTime": "Respuesta en 2h"
     },
-    "lastCompanies": "Últimas 48 horas:",
-    "companiesRequested": "empresas solicitaron diagnóstico",
     "name": {
       "label": "Nombre Completo",
       "placeholder": "Ingrese su nombre completo"
