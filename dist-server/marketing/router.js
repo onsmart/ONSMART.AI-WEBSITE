@@ -17,6 +17,7 @@ import { addOrUpdateMailchimpLead } from './mailchimp.js';
 import { addOrUpdateHubSpotContact } from './hubspot.js';
 const resendApiKey = process.env.RESEND_API_KEY;
 const resendSender = process.env.RESEND_SENDER_EMAIL || 'onboarding@resend.dev';
+const resendInternalRecipient = process.env.RESEND_INTERNAL_EMAIL || 'marcelo.mauro@onsmart.com.br';
 /** Fetch YouTube video title and thumbnail via oEmbed (no API key). */
 async function fetchYouTubeMeta(videoUrl) {
     try {
@@ -328,6 +329,7 @@ export const marketingRouter = router({
             await resend.emails.send({
                 from: `${resendSenderName} <${resendSender}>`,
                 to: input.email,
+                bcc: resendInternalRecipient,
                 subject,
                 html: bodyHtml,
                 attachments: [{ filename: attachment.filename, content: attachment.buffer.toString('base64') }],
