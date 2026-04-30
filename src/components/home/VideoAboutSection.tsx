@@ -37,11 +37,11 @@ const VideoAboutSection = () => {
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           {/* Image Section */}
           <div className="relative">
-            <div className="relative overflow-hidden rounded-xl shadow-lg">
+            <div className="relative overflow-hidden rounded-xl shadow-lg bg-white">
               <img 
-                src="/images/onsmart.jpg" 
+                src="https://images-onsmart.vercel.app/onsmart.ai/onsmart-team.png" 
                 alt={t('videoAbout.imageAlt')}
-                className="w-full h-80 sm:h-96 md:h-[400px] object-cover"
+                className="w-full h-auto object-contain"
               />
             </div>
           </div>

@@ -51,6 +51,7 @@ const defaultCSPConfig: CSPConfig = {
     "https://region1.google-analytics.com",
     "https://vc.hotjar.io",
     "https://in.hotjar.com",
+    "https://formspree.io",
     "https://api.elevenlabs.io",
     "https://api.us.elevenlabs.io",
     "wss:"
@@ -69,7 +70,10 @@ const defaultCSPConfig: CSPConfig = {
   mediaSrc: ["'self'"],
   objectSrc: ["'none'"],
   baseUri: ["'self'"],
-  formAction: ["'self'"]
+  formAction: [
+    "'self'",
+    "https://formspree.io"
+  ]
 };
 
 export const useCSPHeaders = (customConfig?: Partial<CSPConfig>) => {
