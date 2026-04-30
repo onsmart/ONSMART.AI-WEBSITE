@@ -47,9 +47,9 @@
   "success": {
     "title": "Mensagem Enviada com Sucesso!",
     "message": "✓ Recebemos sua mensagem!",
-    "responseTime": "Nossa equipe responderá em até",
+    "responseTime": "Nossa equipe de Customer Success responderá em até",
     "responseTimeValue": "2 horas úteis",
-    "responseTimeEnd": "com uma proposta personalizada.",
+    "responseTimeEnd": "para o agendamento de uma reunião.",
     "emailConfirmation": "Confirmação enviada para seu email",
     "responseTimeLabel": "Tempo de resposta: até 2 horas úteis",
     "sendAnother": "Enviar Outra Mensagem",
