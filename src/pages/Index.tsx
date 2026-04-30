@@ -1,10 +1,11 @@
-import React, { Suspense, lazy, useEffect } from "react";
+import React, { Suspense, lazy } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { LoadingSkeleton } from "@/components/ui/loading-skeleton";
 import UnifiedSEO from "@/components/shared/UnifiedSEO";
 import { useConversionMetrics } from "@/hooks/useConversionMetrics";
 import MicroConversionTracker from "@/components/home/MicroConversionTracker";
+import { scrollToElement } from "@/utils/scrollUtils";
 
 // Critical components - load immediately
 import HeroSection from "@/components/home/HeroSection";
@@ -32,8 +33,11 @@ const Index = () => {
 
 
   const handleContactClick = () => {
-    trackFunnelStep('contact_click', 'homepage_hero');
-    navigate('/contato');
+    trackFunnelStep('diagnostico_click', 'homepage_hero');
+    navigate('/diagnostico');
+    setTimeout(() => {
+      scrollToElement('diagnostico-form', '#diagnostico-form-section');
+    }, 300);
   };
 
   const handleLearnMoreClick = () => {

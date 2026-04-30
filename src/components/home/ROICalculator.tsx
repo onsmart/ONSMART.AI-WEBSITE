@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
@@ -7,6 +8,7 @@ import { Calculator, TrendingUp, DollarSign, Clock, Users } from 'lucide-react';
 
 const ROICalculator: React.FC = () => {
   const { t, i18n } = useTranslation('home');
+  const navigate = useNavigate();
   const [employees, setEmployees] = useState(100);
   const [averageSalary, setAverageSalary] = useState(8000);
   const [automationRate, setAutomationRate] = useState(30);
@@ -172,13 +174,15 @@ const ROICalculator: React.FC = () => {
                 {/* Botões */}
                 <div className="space-y-3">
                   <Button 
-                    onClick={() => window.location.href = '/contato'} 
+                    type="button"
+                    onClick={() => navigate('/diagnostico')} 
                     className="w-full bg-brand-blue hover:bg-blue-600 text-white py-3 rounded-lg"
                   >
                     {t('roi.results.cta.consultancy')}
                   </Button>
                   <Button 
-                    onClick={() => window.location.href = '/diagnostico'} 
+                    type="button"
+                    onClick={() => navigate('/diagnostico')} 
                     variant="outline" 
                     className="w-full border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white py-3 rounded-lg"
                   >

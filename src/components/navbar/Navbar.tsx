@@ -37,12 +37,6 @@ const Navbar = memo(() => {
     }
   }, [location.pathname, navigate]);
 
-  // Handle navigation to contato - simple navigation without auto-scroll
-  const handleContatoClick = useCallback(() => {
-    navigate("/contato");
-  }, [navigate]);
-
-
   // Handle potential click outside to close dropdown
   useEffect(() => {
     const handleClickOutside = () => {
@@ -115,13 +109,13 @@ const Navbar = memo(() => {
               <TabletMenu 
                 isActive={isActive} 
                 isActivePrefix={isActivePrefix}
-                handleContatoClick={handleContatoClick}
+                handleContatoClick={handleDiagnosticoClick}
               />
               {/* Menu Desktop - Aparece a partir de lg (1024px+) */}
               <DesktopMenu 
                 isActive={isActive} 
                 isActivePrefix={isActivePrefix}
-                handleContatoClick={handleContatoClick}
+                handleContatoClick={handleDiagnosticoClick}
               />
             </div>
           </div>

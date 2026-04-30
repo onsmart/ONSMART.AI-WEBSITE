@@ -380,7 +380,7 @@ const MobileMenuItems: React.FC<MobileMenuItemsProps> = ({
             ? "bg-gradient-to-r from-brand-blue to-blue-600 text-white font-semibold shadow-lg" 
             : "bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800 border border-gray-200/50 dark:border-gray-700/50 hover:border-brand-blue/50 dark:hover:border-brand-blue/50 hover:shadow-md"
         )}
-        onClick={() => handleNavigate("/contato")}
+        onClick={() => handleNavigate("/diagnostico")}
       >
         <div className={cn(
           "p-1.5 rounded-lg mr-3 transition-all duration-300",

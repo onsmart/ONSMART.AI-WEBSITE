@@ -1,5 +1,5 @@
-
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import {
   Accordion,
@@ -10,6 +10,7 @@ import {
 
 const FAQ = () => {
   const { t } = useTranslation('home');
+  const navigate = useNavigate();
   
   // Obter itens do FAQ traduzidos
   const faqItems = t('faq.items', { returnObjects: true }) as Array<{
@@ -48,7 +49,8 @@ const FAQ = () => {
         
         <div className="text-center mt-6">
           <button 
-            onClick={() => window.location.href = '/contato'} 
+            type="button"
+            onClick={() => navigate('/diagnostico')} 
             className="text-brand-blue hover:text-brand-blue/80 font-medium text-sm inline-flex items-center"
           >
             {t('faq.cta.text')}

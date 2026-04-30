@@ -21,7 +21,8 @@ export const isServicosActive = (pathname: string) =>
 export const isHomeActive = (pathname: string) => pathname === "/";
 
 // Check if contact is active
-export const isContatoActive = (pathname: string) => pathname === "/contato";
+/** Item "Contato" da navbar leva a /diagnostico — ativo nessa rota. */
+export const isContatoActive = (pathname: string) => pathname === "/diagnostico";
 
 // Check if sectors section is active
 export const isSetoresActive = (pathname: string) => pathname === "/setores" || pathname.startsWith("/setores/");
